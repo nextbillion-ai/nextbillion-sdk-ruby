@@ -1,0 +1,128 @@
+module NextbillionSDK
+  module Models
+    type geocode_batch_create_response =
+      {
+        items: ::Array[NextbillionSDK::Models::GeocodeBatchCreateResponse::Item]
+      }
+
+    class GeocodeBatchCreateResponse < NextbillionSDK::Internal::Type::BaseModel
+      attr_reader items: ::Array[NextbillionSDK::Models::GeocodeBatchCreateResponse::Item]?
+
+      def items=: (
+        ::Array[NextbillionSDK::Models::GeocodeBatchCreateResponse::Item]
+      ) -> ::Array[NextbillionSDK::Models::GeocodeBatchCreateResponse::Item]
+
+      def initialize: (
+        ?items: ::Array[NextbillionSDK::Models::GeocodeBatchCreateResponse::Item]
+      ) -> void
+
+      def to_hash: -> {
+        items: ::Array[NextbillionSDK::Models::GeocodeBatchCreateResponse::Item]
+      }
+
+      type item =
+        {
+          id: String,
+          access: NextbillionSDK::Access,
+          address: NextbillionSDK::Address,
+          categories: ::Array[NextbillionSDK::Categories],
+          contacts: ::Array[NextbillionSDK::Contacts],
+          distance: Integer,
+          map_view: NextbillionSDK::MapView,
+          position: NextbillionSDK::Position,
+          scoring: NextbillionSDK::Models::GeocodeBatchCreateResponse::Item::Scoring,
+          title: String
+        }
+
+      class Item < NextbillionSDK::Internal::Type::BaseModel
+        attr_reader id: String?
+
+        def id=: (String) -> String
+
+        attr_reader access: NextbillionSDK::Access?
+
+        def access=: (NextbillionSDK::Access) -> NextbillionSDK::Access
+
+        attr_reader address: NextbillionSDK::Address?
+
+        def address=: (NextbillionSDK::Address) -> NextbillionSDK::Address
+
+        attr_reader categories: ::Array[NextbillionSDK::Categories]?
+
+        def categories=: (
+          ::Array[NextbillionSDK::Categories]
+        ) -> ::Array[NextbillionSDK::Categories]
+
+        attr_reader contacts: ::Array[NextbillionSDK::Contacts]?
+
+        def contacts=: (
+          ::Array[NextbillionSDK::Contacts]
+        ) -> ::Array[NextbillionSDK::Contacts]
+
+        attr_reader distance: Integer?
+
+        def distance=: (Integer) -> Integer
+
+        attr_reader map_view: NextbillionSDK::MapView?
+
+        def map_view=: (NextbillionSDK::MapView) -> NextbillionSDK::MapView
+
+        attr_reader position: NextbillionSDK::Position?
+
+        def position=: (NextbillionSDK::Position) -> NextbillionSDK::Position
+
+        attr_reader scoring: NextbillionSDK::Models::GeocodeBatchCreateResponse::Item::Scoring?
+
+        def scoring=: (
+          NextbillionSDK::Models::GeocodeBatchCreateResponse::Item::Scoring
+        ) -> NextbillionSDK::Models::GeocodeBatchCreateResponse::Item::Scoring
+
+        attr_reader title: String?
+
+        def title=: (String) -> String
+
+        def initialize: (
+          ?id: String,
+          ?access: NextbillionSDK::Access,
+          ?address: NextbillionSDK::Address,
+          ?categories: ::Array[NextbillionSDK::Categories],
+          ?contacts: ::Array[NextbillionSDK::Contacts],
+          ?distance: Integer,
+          ?map_view: NextbillionSDK::MapView,
+          ?position: NextbillionSDK::Position,
+          ?scoring: NextbillionSDK::Models::GeocodeBatchCreateResponse::Item::Scoring,
+          ?title: String
+        ) -> void
+
+        def to_hash: -> {
+          id: String,
+          access: NextbillionSDK::Access,
+          address: NextbillionSDK::Address,
+          categories: ::Array[NextbillionSDK::Categories],
+          contacts: ::Array[NextbillionSDK::Contacts],
+          distance: Integer,
+          map_view: NextbillionSDK::MapView,
+          position: NextbillionSDK::Position,
+          scoring: NextbillionSDK::Models::GeocodeBatchCreateResponse::Item::Scoring,
+          title: String
+        }
+
+        type scoring = { field_score: top, query_score: Float }
+
+        class Scoring < NextbillionSDK::Internal::Type::BaseModel
+          attr_reader field_score: top?
+
+          def field_score=: (top) -> top
+
+          attr_reader query_score: Float?
+
+          def query_score=: (Float) -> Float
+
+          def initialize: (?field_score: top, ?query_score: Float) -> void
+
+          def to_hash: -> { field_score: top, query_score: Float }
+        end
+      end
+    end
+  end
+end

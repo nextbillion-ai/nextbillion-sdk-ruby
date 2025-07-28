@@ -1,0 +1,260 @@
+module NextbillionSDK
+  module Models
+    type postalcode_retrieve_coordinates_response =
+      {
+        places: NextbillionSDK::Models::PostalcodeRetrieveCoordinatesResponse::Places,
+        warning: ::Array[String]
+      }
+
+    class PostalcodeRetrieveCoordinatesResponse < NextbillionSDK::Internal::Type::BaseModel
+      attr_reader places: NextbillionSDK::Models::PostalcodeRetrieveCoordinatesResponse::Places?
+
+      def places=: (
+        NextbillionSDK::Models::PostalcodeRetrieveCoordinatesResponse::Places
+      ) -> NextbillionSDK::Models::PostalcodeRetrieveCoordinatesResponse::Places
+
+      attr_reader warning: ::Array[String]?
+
+      def warning=: (::Array[String]) -> ::Array[String]
+
+      def initialize: (
+        ?places: NextbillionSDK::Models::PostalcodeRetrieveCoordinatesResponse::Places,
+        ?warning: ::Array[String]
+      ) -> void
+
+      def to_hash: -> {
+        places: NextbillionSDK::Models::PostalcodeRetrieveCoordinatesResponse::Places,
+        warning: ::Array[String]
+      }
+
+      type places =
+        {
+          address: String,
+          boundary: NextbillionSDK::Models::PostalcodeRetrieveCoordinatesResponse::Places::Boundary,
+          country: String,
+          country_code: String,
+          distance: Float,
+          district: String,
+          geopoint: NextbillionSDK::Models::PostalcodeRetrieveCoordinatesResponse::Places::Geopoint,
+          postalcode: String,
+          state: String,
+          subdistrict: String
+        }
+
+      class Places < NextbillionSDK::Internal::Type::BaseModel
+        attr_reader address: String?
+
+        def address=: (String) -> String
+
+        attr_reader boundary: NextbillionSDK::Models::PostalcodeRetrieveCoordinatesResponse::Places::Boundary?
+
+        def boundary=: (
+          NextbillionSDK::Models::PostalcodeRetrieveCoordinatesResponse::Places::Boundary
+        ) -> NextbillionSDK::Models::PostalcodeRetrieveCoordinatesResponse::Places::Boundary
+
+        attr_reader country: String?
+
+        def country=: (String) -> String
+
+        attr_reader country_code: String?
+
+        def country_code=: (String) -> String
+
+        attr_reader distance: Float?
+
+        def distance=: (Float) -> Float
+
+        attr_reader district: String?
+
+        def district=: (String) -> String
+
+        attr_reader geopoint: NextbillionSDK::Models::PostalcodeRetrieveCoordinatesResponse::Places::Geopoint?
+
+        def geopoint=: (
+          NextbillionSDK::Models::PostalcodeRetrieveCoordinatesResponse::Places::Geopoint
+        ) -> NextbillionSDK::Models::PostalcodeRetrieveCoordinatesResponse::Places::Geopoint
+
+        attr_reader postalcode: String?
+
+        def postalcode=: (String) -> String
+
+        attr_reader state: String?
+
+        def state=: (String) -> String
+
+        attr_reader subdistrict: String?
+
+        def subdistrict=: (String) -> String
+
+        def initialize: (
+          ?address: String,
+          ?boundary: NextbillionSDK::Models::PostalcodeRetrieveCoordinatesResponse::Places::Boundary,
+          ?country: String,
+          ?country_code: String,
+          ?distance: Float,
+          ?district: String,
+          ?geopoint: NextbillionSDK::Models::PostalcodeRetrieveCoordinatesResponse::Places::Geopoint,
+          ?postalcode: String,
+          ?state: String,
+          ?subdistrict: String
+        ) -> void
+
+        def to_hash: -> {
+          address: String,
+          boundary: NextbillionSDK::Models::PostalcodeRetrieveCoordinatesResponse::Places::Boundary,
+          country: String,
+          country_code: String,
+          distance: Float,
+          district: String,
+          geopoint: NextbillionSDK::Models::PostalcodeRetrieveCoordinatesResponse::Places::Geopoint,
+          postalcode: String,
+          state: String,
+          subdistrict: String
+        }
+
+        type boundary =
+          {
+            geometry: NextbillionSDK::Models::PostalcodeRetrieveCoordinatesResponse::Places::Boundary::Geometry,
+            multipolygon: ::Array[NextbillionSDK::Models::PostalcodeRetrieveCoordinatesResponse::Places::Boundary::Multipolygon],
+            properties: String,
+            type: String
+          }
+
+        class Boundary < NextbillionSDK::Internal::Type::BaseModel
+          attr_reader geometry: NextbillionSDK::Models::PostalcodeRetrieveCoordinatesResponse::Places::Boundary::Geometry?
+
+          def geometry=: (
+            NextbillionSDK::Models::PostalcodeRetrieveCoordinatesResponse::Places::Boundary::Geometry
+          ) -> NextbillionSDK::Models::PostalcodeRetrieveCoordinatesResponse::Places::Boundary::Geometry
+
+          attr_reader multipolygon: ::Array[NextbillionSDK::Models::PostalcodeRetrieveCoordinatesResponse::Places::Boundary::Multipolygon]?
+
+          def multipolygon=: (
+            ::Array[NextbillionSDK::Models::PostalcodeRetrieveCoordinatesResponse::Places::Boundary::Multipolygon]
+          ) -> ::Array[NextbillionSDK::Models::PostalcodeRetrieveCoordinatesResponse::Places::Boundary::Multipolygon]
+
+          attr_reader properties: String?
+
+          def properties=: (String) -> String
+
+          attr_reader type: String?
+
+          def type=: (String) -> String
+
+          def initialize: (
+            ?geometry: NextbillionSDK::Models::PostalcodeRetrieveCoordinatesResponse::Places::Boundary::Geometry,
+            ?multipolygon: ::Array[NextbillionSDK::Models::PostalcodeRetrieveCoordinatesResponse::Places::Boundary::Multipolygon],
+            ?properties: String,
+            ?type: String
+          ) -> void
+
+          def to_hash: -> {
+            geometry: NextbillionSDK::Models::PostalcodeRetrieveCoordinatesResponse::Places::Boundary::Geometry,
+            multipolygon: ::Array[NextbillionSDK::Models::PostalcodeRetrieveCoordinatesResponse::Places::Boundary::Multipolygon],
+            properties: String,
+            type: String
+          }
+
+          type geometry =
+            { coordinates: ::Array[::Array[::Array[Float]]], type: String }
+
+          class Geometry < NextbillionSDK::Internal::Type::BaseModel
+            attr_reader coordinates: ::Array[::Array[::Array[Float]]]?
+
+            def coordinates=: (
+              ::Array[::Array[::Array[Float]]]
+            ) -> ::Array[::Array[::Array[Float]]]
+
+            attr_reader type: String?
+
+            def type=: (String) -> String
+
+            def initialize: (
+              ?coordinates: ::Array[::Array[::Array[Float]]],
+              ?type: String
+            ) -> void
+
+            def to_hash: -> {
+              coordinates: ::Array[::Array[::Array[Float]]],
+              type: String
+            }
+          end
+
+          type multipolygon =
+            {
+              polygon: ::Array[NextbillionSDK::Models::PostalcodeRetrieveCoordinatesResponse::Places::Boundary::Multipolygon::Polygon]
+            }
+
+          class Multipolygon < NextbillionSDK::Internal::Type::BaseModel
+            attr_reader polygon: ::Array[NextbillionSDK::Models::PostalcodeRetrieveCoordinatesResponse::Places::Boundary::Multipolygon::Polygon]?
+
+            def polygon=: (
+              ::Array[NextbillionSDK::Models::PostalcodeRetrieveCoordinatesResponse::Places::Boundary::Multipolygon::Polygon]
+            ) -> ::Array[NextbillionSDK::Models::PostalcodeRetrieveCoordinatesResponse::Places::Boundary::Multipolygon::Polygon]
+
+            def initialize: (
+              ?polygon: ::Array[NextbillionSDK::Models::PostalcodeRetrieveCoordinatesResponse::Places::Boundary::Multipolygon::Polygon]
+            ) -> void
+
+            def to_hash: -> {
+              polygon: ::Array[NextbillionSDK::Models::PostalcodeRetrieveCoordinatesResponse::Places::Boundary::Multipolygon::Polygon]
+            }
+
+            type polygon =
+              {
+                points: ::Array[NextbillionSDK::Models::PostalcodeRetrieveCoordinatesResponse::Places::Boundary::Multipolygon::Polygon::Point]
+              }
+
+            class Polygon < NextbillionSDK::Internal::Type::BaseModel
+              attr_reader points: ::Array[NextbillionSDK::Models::PostalcodeRetrieveCoordinatesResponse::Places::Boundary::Multipolygon::Polygon::Point]?
+
+              def points=: (
+                ::Array[NextbillionSDK::Models::PostalcodeRetrieveCoordinatesResponse::Places::Boundary::Multipolygon::Polygon::Point]
+              ) -> ::Array[NextbillionSDK::Models::PostalcodeRetrieveCoordinatesResponse::Places::Boundary::Multipolygon::Polygon::Point]
+
+              def initialize: (
+                ?points: ::Array[NextbillionSDK::Models::PostalcodeRetrieveCoordinatesResponse::Places::Boundary::Multipolygon::Polygon::Point]
+              ) -> void
+
+              def to_hash: -> {
+                points: ::Array[NextbillionSDK::Models::PostalcodeRetrieveCoordinatesResponse::Places::Boundary::Multipolygon::Polygon::Point]
+              }
+
+              type point = { lat: Float, lng: Float }
+
+              class Point < NextbillionSDK::Internal::Type::BaseModel
+                attr_reader lat: Float?
+
+                def lat=: (Float) -> Float
+
+                attr_reader lng: Float?
+
+                def lng=: (Float) -> Float
+
+                def initialize: (?lat: Float, ?lng: Float) -> void
+
+                def to_hash: -> { lat: Float, lng: Float }
+              end
+            end
+          end
+        end
+
+        type geopoint = { lat: Float, lng: Float }
+
+        class Geopoint < NextbillionSDK::Internal::Type::BaseModel
+          attr_reader lat: Float?
+
+          def lat=: (Float) -> Float
+
+          attr_reader lng: Float?
+
+          def lng=: (Float) -> Float
+
+          def initialize: (?lat: Float, ?lng: Float) -> void
+
+          def to_hash: -> { lat: Float, lng: Float }
+        end
+      end
+    end
+  end
+end

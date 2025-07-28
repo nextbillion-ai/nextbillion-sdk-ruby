@@ -1,0 +1,173 @@
+module NextbillionSDK
+  module Models
+    type snap_to_road_snap_params =
+      {
+        key: String,
+        path: String,
+        approaches: NextbillionSDK::Models::SnapToRoadSnapParams::approaches,
+        avoid: NextbillionSDK::Models::SnapToRoadSnapParams::avoid,
+        geometry: NextbillionSDK::Models::SnapToRoadSnapParams::geometry,
+        mode: NextbillionSDK::Models::SnapToRoadSnapParams::mode,
+        option: NextbillionSDK::Models::SnapToRoadSnapParams::option,
+        radiuses: String,
+        road_info: NextbillionSDK::Models::SnapToRoadSnapParams::road_info,
+        timestamps: String,
+        tolerate_outlier: bool
+      }
+      & NextbillionSDK::Internal::Type::request_parameters
+
+    class SnapToRoadSnapParams < NextbillionSDK::Internal::Type::BaseModel
+      extend NextbillionSDK::Internal::Type::RequestParameters::Converter
+      include NextbillionSDK::Internal::Type::RequestParameters
+
+      attr_accessor key: String
+
+      attr_accessor path: String
+
+      attr_reader approaches: NextbillionSDK::Models::SnapToRoadSnapParams::approaches?
+
+      def approaches=: (
+        NextbillionSDK::Models::SnapToRoadSnapParams::approaches
+      ) -> NextbillionSDK::Models::SnapToRoadSnapParams::approaches
+
+      attr_reader avoid: NextbillionSDK::Models::SnapToRoadSnapParams::avoid?
+
+      def avoid=: (
+        NextbillionSDK::Models::SnapToRoadSnapParams::avoid
+      ) -> NextbillionSDK::Models::SnapToRoadSnapParams::avoid
+
+      attr_reader geometry: NextbillionSDK::Models::SnapToRoadSnapParams::geometry?
+
+      def geometry=: (
+        NextbillionSDK::Models::SnapToRoadSnapParams::geometry
+      ) -> NextbillionSDK::Models::SnapToRoadSnapParams::geometry
+
+      attr_reader mode: NextbillionSDK::Models::SnapToRoadSnapParams::mode?
+
+      def mode=: (
+        NextbillionSDK::Models::SnapToRoadSnapParams::mode
+      ) -> NextbillionSDK::Models::SnapToRoadSnapParams::mode
+
+      attr_reader option: NextbillionSDK::Models::SnapToRoadSnapParams::option?
+
+      def option=: (
+        NextbillionSDK::Models::SnapToRoadSnapParams::option
+      ) -> NextbillionSDK::Models::SnapToRoadSnapParams::option
+
+      attr_reader radiuses: String?
+
+      def radiuses=: (String) -> String
+
+      attr_reader road_info: NextbillionSDK::Models::SnapToRoadSnapParams::road_info?
+
+      def road_info=: (
+        NextbillionSDK::Models::SnapToRoadSnapParams::road_info
+      ) -> NextbillionSDK::Models::SnapToRoadSnapParams::road_info
+
+      attr_reader timestamps: String?
+
+      def timestamps=: (String) -> String
+
+      attr_reader tolerate_outlier: bool?
+
+      def tolerate_outlier=: (bool) -> bool
+
+      def initialize: (
+        key: String,
+        path: String,
+        ?approaches: NextbillionSDK::Models::SnapToRoadSnapParams::approaches,
+        ?avoid: NextbillionSDK::Models::SnapToRoadSnapParams::avoid,
+        ?geometry: NextbillionSDK::Models::SnapToRoadSnapParams::geometry,
+        ?mode: NextbillionSDK::Models::SnapToRoadSnapParams::mode,
+        ?option: NextbillionSDK::Models::SnapToRoadSnapParams::option,
+        ?radiuses: String,
+        ?road_info: NextbillionSDK::Models::SnapToRoadSnapParams::road_info,
+        ?timestamps: String,
+        ?tolerate_outlier: bool,
+        ?request_options: NextbillionSDK::request_opts
+      ) -> void
+
+      def to_hash: -> {
+        key: String,
+        path: String,
+        approaches: NextbillionSDK::Models::SnapToRoadSnapParams::approaches,
+        avoid: NextbillionSDK::Models::SnapToRoadSnapParams::avoid,
+        geometry: NextbillionSDK::Models::SnapToRoadSnapParams::geometry,
+        mode: NextbillionSDK::Models::SnapToRoadSnapParams::mode,
+        option: NextbillionSDK::Models::SnapToRoadSnapParams::option,
+        radiuses: String,
+        road_info: NextbillionSDK::Models::SnapToRoadSnapParams::road_info,
+        timestamps: String,
+        tolerate_outlier: bool,
+        request_options: NextbillionSDK::RequestOptions
+      }
+
+      type approaches = :"`unrestricted`" | :"`curb`"
+
+      module Approaches
+        extend NextbillionSDK::Internal::Type::Enum
+
+        UNRESTRICTED: :"`unrestricted`"
+        CURB: :"`curb`"
+
+        def self?.values: -> ::Array[NextbillionSDK::Models::SnapToRoadSnapParams::approaches]
+      end
+
+      type avoid = :toll | :ferry | :highway | :none
+
+      module Avoid
+        extend NextbillionSDK::Internal::Type::Enum
+
+        TOLL: :toll
+        FERRY: :ferry
+        HIGHWAY: :highway
+        NONE: :none
+
+        def self?.values: -> ::Array[NextbillionSDK::Models::SnapToRoadSnapParams::avoid]
+      end
+
+      type geometry = :"`polyline`" | :"`polyline6`" | :"`geojson`"
+
+      module Geometry
+        extend NextbillionSDK::Internal::Type::Enum
+
+        POLYLINE: :"`polyline`"
+        POLYLINE6: :"`polyline6`"
+        GEOJSON: :"`geojson`"
+
+        def self?.values: -> ::Array[NextbillionSDK::Models::SnapToRoadSnapParams::geometry]
+      end
+
+      type mode = :"`car`" | :"`truck`"
+
+      module Mode
+        extend NextbillionSDK::Internal::Type::Enum
+
+        CAR: :"`car`"
+        TRUCK: :"`truck`"
+
+        def self?.values: -> ::Array[NextbillionSDK::Models::SnapToRoadSnapParams::mode]
+      end
+
+      type option = :"`flexible`"
+
+      module Option
+        extend NextbillionSDK::Internal::Type::Enum
+
+        FLEXIBLE: :"`flexible`"
+
+        def self?.values: -> ::Array[NextbillionSDK::Models::SnapToRoadSnapParams::option]
+      end
+
+      type road_info = :"`max_speed`"
+
+      module RoadInfo
+        extend NextbillionSDK::Internal::Type::Enum
+
+        MAX_SPEED: :"`max_speed`"
+
+        def self?.values: -> ::Array[NextbillionSDK::Models::SnapToRoadSnapParams::road_info]
+      end
+    end
+  end
+end

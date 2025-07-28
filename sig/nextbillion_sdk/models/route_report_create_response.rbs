@@ -1,0 +1,408 @@
+module NextbillionSDK
+  module Models
+    type route_report_create_response =
+      {
+        geometry: ::Array[String],
+        mileage: ::Array[NextbillionSDK::Models::RouteReportCreateResponse::Mileage],
+        msg: String,
+        road_summary: ::Array[NextbillionSDK::Models::RouteReportCreateResponse::RoadSummary],
+        status: String
+      }
+
+    class RouteReportCreateResponse < NextbillionSDK::Internal::Type::BaseModel
+      attr_reader geometry: ::Array[String]?
+
+      def geometry=: (::Array[String]) -> ::Array[String]
+
+      attr_reader mileage: ::Array[NextbillionSDK::Models::RouteReportCreateResponse::Mileage]?
+
+      def mileage=: (
+        ::Array[NextbillionSDK::Models::RouteReportCreateResponse::Mileage]
+      ) -> ::Array[NextbillionSDK::Models::RouteReportCreateResponse::Mileage]
+
+      attr_reader msg: String?
+
+      def msg=: (String) -> String
+
+      attr_reader road_summary: ::Array[NextbillionSDK::Models::RouteReportCreateResponse::RoadSummary]?
+
+      def road_summary=: (
+        ::Array[NextbillionSDK::Models::RouteReportCreateResponse::RoadSummary]
+      ) -> ::Array[NextbillionSDK::Models::RouteReportCreateResponse::RoadSummary]
+
+      attr_reader status: String?
+
+      def status=: (String) -> String
+
+      def initialize: (
+        ?geometry: ::Array[String],
+        ?mileage: ::Array[NextbillionSDK::Models::RouteReportCreateResponse::Mileage],
+        ?msg: String,
+        ?road_summary: ::Array[NextbillionSDK::Models::RouteReportCreateResponse::RoadSummary],
+        ?status: String
+      ) -> void
+
+      def to_hash: -> {
+        geometry: ::Array[String],
+        mileage: ::Array[NextbillionSDK::Models::RouteReportCreateResponse::Mileage],
+        msg: String,
+        road_summary: ::Array[NextbillionSDK::Models::RouteReportCreateResponse::RoadSummary],
+        status: String
+      }
+
+      type mileage =
+        {
+          segment: NextbillionSDK::Models::RouteReportCreateResponse::Mileage::Segment,
+          summary: NextbillionSDK::Models::RouteReportCreateResponse::Mileage::Summary
+        }
+
+      class Mileage < NextbillionSDK::Internal::Type::BaseModel
+        attr_reader segment: NextbillionSDK::Models::RouteReportCreateResponse::Mileage::Segment?
+
+        def segment=: (
+          NextbillionSDK::Models::RouteReportCreateResponse::Mileage::Segment
+        ) -> NextbillionSDK::Models::RouteReportCreateResponse::Mileage::Segment
+
+        attr_reader summary: NextbillionSDK::Models::RouteReportCreateResponse::Mileage::Summary?
+
+        def summary=: (
+          NextbillionSDK::Models::RouteReportCreateResponse::Mileage::Summary
+        ) -> NextbillionSDK::Models::RouteReportCreateResponse::Mileage::Summary
+
+        def initialize: (
+          ?segment: NextbillionSDK::Models::RouteReportCreateResponse::Mileage::Segment,
+          ?summary: NextbillionSDK::Models::RouteReportCreateResponse::Mileage::Summary
+        ) -> void
+
+        def to_hash: -> {
+          segment: NextbillionSDK::Models::RouteReportCreateResponse::Mileage::Segment,
+          summary: NextbillionSDK::Models::RouteReportCreateResponse::Mileage::Summary
+        }
+
+        type segment =
+          {
+            country: ::Array[NextbillionSDK::Models::RouteReportCreateResponse::Mileage::Segment::Country],
+            state: ::Array[NextbillionSDK::Models::RouteReportCreateResponse::Mileage::Segment::State]
+          }
+
+        class Segment < NextbillionSDK::Internal::Type::BaseModel
+          attr_reader country: ::Array[NextbillionSDK::Models::RouteReportCreateResponse::Mileage::Segment::Country]?
+
+          def country=: (
+            ::Array[NextbillionSDK::Models::RouteReportCreateResponse::Mileage::Segment::Country]
+          ) -> ::Array[NextbillionSDK::Models::RouteReportCreateResponse::Mileage::Segment::Country]
+
+          attr_reader state: ::Array[NextbillionSDK::Models::RouteReportCreateResponse::Mileage::Segment::State]?
+
+          def state=: (
+            ::Array[NextbillionSDK::Models::RouteReportCreateResponse::Mileage::Segment::State]
+          ) -> ::Array[NextbillionSDK::Models::RouteReportCreateResponse::Mileage::Segment::State]
+
+          def initialize: (
+            ?country: ::Array[NextbillionSDK::Models::RouteReportCreateResponse::Mileage::Segment::Country],
+            ?state: ::Array[NextbillionSDK::Models::RouteReportCreateResponse::Mileage::Segment::State]
+          ) -> void
+
+          def to_hash: -> {
+            country: ::Array[NextbillionSDK::Models::RouteReportCreateResponse::Mileage::Segment::Country],
+            state: ::Array[NextbillionSDK::Models::RouteReportCreateResponse::Mileage::Segment::State]
+          }
+
+          type country =
+            { distance: Float, length: Integer, offset: Integer, value: String }
+
+          class Country < NextbillionSDK::Internal::Type::BaseModel
+            attr_reader distance: Float?
+
+            def distance=: (Float) -> Float
+
+            attr_reader length: Integer?
+
+            def length=: (Integer) -> Integer
+
+            attr_reader offset: Integer?
+
+            def offset=: (Integer) -> Integer
+
+            attr_reader value: String?
+
+            def value=: (String) -> String
+
+            def initialize: (
+              ?distance: Float,
+              ?length: Integer,
+              ?offset: Integer,
+              ?value: String
+            ) -> void
+
+            def to_hash: -> {
+              distance: Float,
+              length: Integer,
+              offset: Integer,
+              value: String
+            }
+          end
+
+          type state =
+            { distance: Float, length: Integer, offset: Integer, value: String }
+
+          class State < NextbillionSDK::Internal::Type::BaseModel
+            attr_reader distance: Float?
+
+            def distance=: (Float) -> Float
+
+            attr_reader length: Integer?
+
+            def length=: (Integer) -> Integer
+
+            attr_reader offset: Integer?
+
+            def offset=: (Integer) -> Integer
+
+            attr_reader value: String?
+
+            def value=: (String) -> String
+
+            def initialize: (
+              ?distance: Float,
+              ?length: Integer,
+              ?offset: Integer,
+              ?value: String
+            ) -> void
+
+            def to_hash: -> {
+              distance: Float,
+              length: Integer,
+              offset: Integer,
+              value: String
+            }
+          end
+        end
+
+        type summary = { country: top, state: top }
+
+        class Summary < NextbillionSDK::Internal::Type::BaseModel
+          attr_reader country: top?
+
+          def country=: (top) -> top
+
+          attr_reader state: top?
+
+          def state=: (top) -> top
+
+          def initialize: (?country: top, ?state: top) -> void
+
+          def to_hash: -> { country: top, state: top }
+        end
+      end
+
+      type road_summary =
+        {
+          segment: NextbillionSDK::Models::RouteReportCreateResponse::RoadSummary::Segment,
+          summary: NextbillionSDK::Models::RouteReportCreateResponse::RoadSummary::Summary
+        }
+
+      class RoadSummary < NextbillionSDK::Internal::Type::BaseModel
+        attr_reader segment: NextbillionSDK::Models::RouteReportCreateResponse::RoadSummary::Segment?
+
+        def segment=: (
+          NextbillionSDK::Models::RouteReportCreateResponse::RoadSummary::Segment
+        ) -> NextbillionSDK::Models::RouteReportCreateResponse::RoadSummary::Segment
+
+        attr_reader summary: NextbillionSDK::Models::RouteReportCreateResponse::RoadSummary::Summary?
+
+        def summary=: (
+          NextbillionSDK::Models::RouteReportCreateResponse::RoadSummary::Summary
+        ) -> NextbillionSDK::Models::RouteReportCreateResponse::RoadSummary::Summary
+
+        def initialize: (
+          ?segment: NextbillionSDK::Models::RouteReportCreateResponse::RoadSummary::Segment,
+          ?summary: NextbillionSDK::Models::RouteReportCreateResponse::RoadSummary::Summary
+        ) -> void
+
+        def to_hash: -> {
+          segment: NextbillionSDK::Models::RouteReportCreateResponse::RoadSummary::Segment,
+          summary: NextbillionSDK::Models::RouteReportCreateResponse::RoadSummary::Summary
+        }
+
+        type segment =
+          {
+            max_speed: ::Array[NextbillionSDK::Models::RouteReportCreateResponse::RoadSummary::Segment::MaxSpeed],
+            road_class: ::Array[NextbillionSDK::Models::RouteReportCreateResponse::RoadSummary::Segment::RoadClass]
+          }
+
+        class Segment < NextbillionSDK::Internal::Type::BaseModel
+          attr_reader max_speed: ::Array[NextbillionSDK::Models::RouteReportCreateResponse::RoadSummary::Segment::MaxSpeed]?
+
+          def max_speed=: (
+            ::Array[NextbillionSDK::Models::RouteReportCreateResponse::RoadSummary::Segment::MaxSpeed]
+          ) -> ::Array[NextbillionSDK::Models::RouteReportCreateResponse::RoadSummary::Segment::MaxSpeed]
+
+          attr_reader road_class: ::Array[NextbillionSDK::Models::RouteReportCreateResponse::RoadSummary::Segment::RoadClass]?
+
+          def road_class=: (
+            ::Array[NextbillionSDK::Models::RouteReportCreateResponse::RoadSummary::Segment::RoadClass]
+          ) -> ::Array[NextbillionSDK::Models::RouteReportCreateResponse::RoadSummary::Segment::RoadClass]
+
+          def initialize: (
+            ?max_speed: ::Array[NextbillionSDK::Models::RouteReportCreateResponse::RoadSummary::Segment::MaxSpeed],
+            ?road_class: ::Array[NextbillionSDK::Models::RouteReportCreateResponse::RoadSummary::Segment::RoadClass]
+          ) -> void
+
+          def to_hash: -> {
+            max_speed: ::Array[NextbillionSDK::Models::RouteReportCreateResponse::RoadSummary::Segment::MaxSpeed],
+            road_class: ::Array[NextbillionSDK::Models::RouteReportCreateResponse::RoadSummary::Segment::RoadClass]
+          }
+
+          type max_speed =
+            {
+              distance: Integer,
+              length: Integer,
+              offset: Integer,
+              value: Integer
+            }
+
+          class MaxSpeed < NextbillionSDK::Internal::Type::BaseModel
+            attr_reader distance: Integer?
+
+            def distance=: (Integer) -> Integer
+
+            attr_reader length: Integer?
+
+            def length=: (Integer) -> Integer
+
+            attr_reader offset: Integer?
+
+            def offset=: (Integer) -> Integer
+
+            attr_reader value: Integer?
+
+            def value=: (Integer) -> Integer
+
+            def initialize: (
+              ?distance: Integer,
+              ?length: Integer,
+              ?offset: Integer,
+              ?value: Integer
+            ) -> void
+
+            def to_hash: -> {
+              distance: Integer,
+              length: Integer,
+              offset: Integer,
+              value: Integer
+            }
+          end
+
+          type road_class =
+            {
+              distance: Integer,
+              length: Integer,
+              offset: Integer,
+              value: String
+            }
+
+          class RoadClass < NextbillionSDK::Internal::Type::BaseModel
+            attr_reader distance: Integer?
+
+            def distance=: (Integer) -> Integer
+
+            attr_reader length: Integer?
+
+            def length=: (Integer) -> Integer
+
+            attr_reader offset: Integer?
+
+            def offset=: (Integer) -> Integer
+
+            attr_reader value: String?
+
+            def value=: (String) -> String
+
+            def initialize: (
+              ?distance: Integer,
+              ?length: Integer,
+              ?offset: Integer,
+              ?value: String
+            ) -> void
+
+            def to_hash: -> {
+              distance: Integer,
+              length: Integer,
+              offset: Integer,
+              value: String
+            }
+          end
+        end
+
+        type summary =
+          {
+            distance: Float,
+            duration: Float,
+            has_bridge: bool,
+            has_roundabout: bool,
+            has_toll: bool,
+            has_tunnel: bool,
+            road_class: top,
+            toll_distance: Float
+          }
+
+        class Summary < NextbillionSDK::Internal::Type::BaseModel
+          attr_reader distance: Float?
+
+          def distance=: (Float) -> Float
+
+          attr_reader duration: Float?
+
+          def duration=: (Float) -> Float
+
+          attr_reader has_bridge: bool?
+
+          def has_bridge=: (bool) -> bool
+
+          attr_reader has_roundabout: bool?
+
+          def has_roundabout=: (bool) -> bool
+
+          attr_reader has_toll: bool?
+
+          def has_toll=: (bool) -> bool
+
+          attr_reader has_tunnel: bool?
+
+          def has_tunnel=: (bool) -> bool
+
+          attr_reader road_class: top?
+
+          def road_class=: (top) -> top
+
+          attr_reader toll_distance: Float?
+
+          def toll_distance=: (Float) -> Float
+
+          def initialize: (
+            ?distance: Float,
+            ?duration: Float,
+            ?has_bridge: bool,
+            ?has_roundabout: bool,
+            ?has_toll: bool,
+            ?has_tunnel: bool,
+            ?road_class: top,
+            ?toll_distance: Float
+          ) -> void
+
+          def to_hash: -> {
+            distance: Float,
+            duration: Float,
+            has_bridge: bool,
+            has_roundabout: bool,
+            has_toll: bool,
+            has_tunnel: bool,
+            road_class: top,
+            toll_distance: Float
+          }
+        end
+      end
+    end
+  end
+end

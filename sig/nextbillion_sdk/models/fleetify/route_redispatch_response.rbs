@@ -1,0 +1,359 @@
+module NextbillionSDK
+  module Models
+    module Fleetify
+      type route_redispatch_response =
+        {
+          data: NextbillionSDK::Models::Fleetify::RouteRedispatchResponse::Data,
+          message: String,
+          status: Integer
+        }
+
+      class RouteRedispatchResponse < NextbillionSDK::Internal::Type::BaseModel
+        attr_reader data: NextbillionSDK::Models::Fleetify::RouteRedispatchResponse::Data?
+
+        def data=: (
+          NextbillionSDK::Models::Fleetify::RouteRedispatchResponse::Data
+        ) -> NextbillionSDK::Models::Fleetify::RouteRedispatchResponse::Data
+
+        attr_reader message: String?
+
+        def message=: (String) -> String
+
+        attr_reader status: Integer?
+
+        def status=: (Integer) -> Integer
+
+        def initialize: (
+          ?data: NextbillionSDK::Models::Fleetify::RouteRedispatchResponse::Data,
+          ?message: String,
+          ?status: Integer
+        ) -> void
+
+        def to_hash: -> {
+          data: NextbillionSDK::Models::Fleetify::RouteRedispatchResponse::Data,
+          message: String,
+          status: Integer
+        }
+
+        type data =
+          {
+            id: String,
+            completed_steps: Integer,
+            completion: NextbillionSDK::Models::Fleetify::RouteRedispatchResponse::Data::Completion,
+            created_at: Integer,
+            distance: Integer,
+            document_snapshot: ::Array[top],
+            driver: NextbillionSDK::Models::Fleetify::RouteRedispatchResponse::Data::Driver,
+            ro_request_id: String,
+            routing: NextbillionSDK::Fleetify::RoutingResponse,
+            short_id: String,
+            steps: NextbillionSDK::Models::Fleetify::RouteRedispatchResponse::Data::Steps,
+            total_steps: Integer,
+            updated_at: Integer,
+            vehicle_id: String
+          }
+
+        class Data < NextbillionSDK::Internal::Type::BaseModel
+          attr_reader id: String?
+
+          def id=: (String) -> String
+
+          attr_reader completed_steps: Integer?
+
+          def completed_steps=: (Integer) -> Integer
+
+          attr_reader completion: NextbillionSDK::Models::Fleetify::RouteRedispatchResponse::Data::Completion?
+
+          def completion=: (
+            NextbillionSDK::Models::Fleetify::RouteRedispatchResponse::Data::Completion
+          ) -> NextbillionSDK::Models::Fleetify::RouteRedispatchResponse::Data::Completion
+
+          attr_reader created_at: Integer?
+
+          def created_at=: (Integer) -> Integer
+
+          attr_reader distance: Integer?
+
+          def distance=: (Integer) -> Integer
+
+          attr_reader document_snapshot: ::Array[top]?
+
+          def document_snapshot=: (::Array[top]) -> ::Array[top]
+
+          attr_reader driver: NextbillionSDK::Models::Fleetify::RouteRedispatchResponse::Data::Driver?
+
+          def driver=: (
+            NextbillionSDK::Models::Fleetify::RouteRedispatchResponse::Data::Driver
+          ) -> NextbillionSDK::Models::Fleetify::RouteRedispatchResponse::Data::Driver
+
+          attr_reader ro_request_id: String?
+
+          def ro_request_id=: (String) -> String
+
+          attr_reader routing: NextbillionSDK::Fleetify::RoutingResponse?
+
+          def routing=: (
+            NextbillionSDK::Fleetify::RoutingResponse
+          ) -> NextbillionSDK::Fleetify::RoutingResponse
+
+          attr_reader short_id: String?
+
+          def short_id=: (String) -> String
+
+          attr_reader steps: NextbillionSDK::Models::Fleetify::RouteRedispatchResponse::Data::Steps?
+
+          def steps=: (
+            NextbillionSDK::Models::Fleetify::RouteRedispatchResponse::Data::Steps
+          ) -> NextbillionSDK::Models::Fleetify::RouteRedispatchResponse::Data::Steps
+
+          attr_reader total_steps: Integer?
+
+          def total_steps=: (Integer) -> Integer
+
+          attr_reader updated_at: Integer?
+
+          def updated_at=: (Integer) -> Integer
+
+          attr_reader vehicle_id: String?
+
+          def vehicle_id=: (String) -> String
+
+          def initialize: (
+            ?id: String,
+            ?completed_steps: Integer,
+            ?completion: NextbillionSDK::Models::Fleetify::RouteRedispatchResponse::Data::Completion,
+            ?created_at: Integer,
+            ?distance: Integer,
+            ?document_snapshot: ::Array[top],
+            ?driver: NextbillionSDK::Models::Fleetify::RouteRedispatchResponse::Data::Driver,
+            ?ro_request_id: String,
+            ?routing: NextbillionSDK::Fleetify::RoutingResponse,
+            ?short_id: String,
+            ?steps: NextbillionSDK::Models::Fleetify::RouteRedispatchResponse::Data::Steps,
+            ?total_steps: Integer,
+            ?updated_at: Integer,
+            ?vehicle_id: String
+          ) -> void
+
+          def to_hash: -> {
+            id: String,
+            completed_steps: Integer,
+            completion: NextbillionSDK::Models::Fleetify::RouteRedispatchResponse::Data::Completion,
+            created_at: Integer,
+            distance: Integer,
+            document_snapshot: ::Array[top],
+            driver: NextbillionSDK::Models::Fleetify::RouteRedispatchResponse::Data::Driver,
+            ro_request_id: String,
+            routing: NextbillionSDK::Fleetify::RoutingResponse,
+            short_id: String,
+            steps: NextbillionSDK::Models::Fleetify::RouteRedispatchResponse::Data::Steps,
+            total_steps: Integer,
+            updated_at: Integer,
+            vehicle_id: String
+          }
+
+          type completion =
+            {
+              status: NextbillionSDK::Models::Fleetify::RouteRedispatchResponse::Data::Completion::status
+            }
+
+          class Completion < NextbillionSDK::Internal::Type::BaseModel
+            attr_reader status: NextbillionSDK::Models::Fleetify::RouteRedispatchResponse::Data::Completion::status?
+
+            def status=: (
+              NextbillionSDK::Models::Fleetify::RouteRedispatchResponse::Data::Completion::status
+            ) -> NextbillionSDK::Models::Fleetify::RouteRedispatchResponse::Data::Completion::status
+
+            def initialize: (
+              ?status: NextbillionSDK::Models::Fleetify::RouteRedispatchResponse::Data::Completion::status
+            ) -> void
+
+            def to_hash: -> {
+              status: NextbillionSDK::Models::Fleetify::RouteRedispatchResponse::Data::Completion::status
+            }
+
+            type status = :"`scheduled`" | :"`completed`"
+
+            module Status
+              extend NextbillionSDK::Internal::Type::Enum
+
+              SCHEDULED: :"`scheduled`"
+              COMPLETED: :"`completed`"
+
+              def self?.values: -> ::Array[NextbillionSDK::Models::Fleetify::RouteRedispatchResponse::Data::Completion::status]
+            end
+          end
+
+          type driver = { id: String, email: String, fullname: String }
+
+          class Driver < NextbillionSDK::Internal::Type::BaseModel
+            attr_reader id: String?
+
+            def id=: (String) -> String
+
+            attr_reader email: String?
+
+            def email=: (String) -> String
+
+            attr_reader fullname: String?
+
+            def fullname=: (String) -> String
+
+            def initialize: (
+              ?id: String,
+              ?email: String,
+              ?fullname: String
+            ) -> void
+
+            def to_hash: -> { id: String, email: String, fullname: String }
+          end
+
+          type steps =
+            {
+              id: String,
+              address: String,
+              arrival: Integer,
+              completion: NextbillionSDK::Models::Fleetify::RouteRedispatchResponse::Data::Steps::Completion,
+              created_at: Integer,
+              document_snapshot: ::Array[top],
+              duration: Integer,
+              location: ::Array[Float],
+              meta: NextbillionSDK::Models::Fleetify::RouteRedispatchResponse::Data::Steps::Meta,
+              short_id: String,
+              type: String,
+              updated_at: Integer
+            }
+
+          class Steps < NextbillionSDK::Internal::Type::BaseModel
+            attr_reader id: String?
+
+            def id=: (String) -> String
+
+            attr_reader address: String?
+
+            def address=: (String) -> String
+
+            attr_reader arrival: Integer?
+
+            def arrival=: (Integer) -> Integer
+
+            attr_reader completion: NextbillionSDK::Models::Fleetify::RouteRedispatchResponse::Data::Steps::Completion?
+
+            def completion=: (
+              NextbillionSDK::Models::Fleetify::RouteRedispatchResponse::Data::Steps::Completion
+            ) -> NextbillionSDK::Models::Fleetify::RouteRedispatchResponse::Data::Steps::Completion
+
+            attr_reader created_at: Integer?
+
+            def created_at=: (Integer) -> Integer
+
+            attr_reader document_snapshot: ::Array[top]?
+
+            def document_snapshot=: (::Array[top]) -> ::Array[top]
+
+            attr_reader duration: Integer?
+
+            def duration=: (Integer) -> Integer
+
+            attr_reader location: ::Array[Float]?
+
+            def location=: (::Array[Float]) -> ::Array[Float]
+
+            attr_reader meta: NextbillionSDK::Models::Fleetify::RouteRedispatchResponse::Data::Steps::Meta?
+
+            def meta=: (
+              NextbillionSDK::Models::Fleetify::RouteRedispatchResponse::Data::Steps::Meta
+            ) -> NextbillionSDK::Models::Fleetify::RouteRedispatchResponse::Data::Steps::Meta
+
+            attr_reader short_id: String?
+
+            def short_id=: (String) -> String
+
+            attr_reader type: String?
+
+            def type=: (String) -> String
+
+            attr_reader updated_at: Integer?
+
+            def updated_at=: (Integer) -> Integer
+
+            def initialize: (
+              ?id: String,
+              ?address: String,
+              ?arrival: Integer,
+              ?completion: NextbillionSDK::Models::Fleetify::RouteRedispatchResponse::Data::Steps::Completion,
+              ?created_at: Integer,
+              ?document_snapshot: ::Array[top],
+              ?duration: Integer,
+              ?location: ::Array[Float],
+              ?meta: NextbillionSDK::Models::Fleetify::RouteRedispatchResponse::Data::Steps::Meta,
+              ?short_id: String,
+              ?type: String,
+              ?updated_at: Integer
+            ) -> void
+
+            def to_hash: -> {
+              id: String,
+              address: String,
+              arrival: Integer,
+              completion: NextbillionSDK::Models::Fleetify::RouteRedispatchResponse::Data::Steps::Completion,
+              created_at: Integer,
+              document_snapshot: ::Array[top],
+              duration: Integer,
+              location: ::Array[Float],
+              meta: NextbillionSDK::Models::Fleetify::RouteRedispatchResponse::Data::Steps::Meta,
+              short_id: String,
+              type: String,
+              updated_at: Integer
+            }
+
+            type completion = { status: String }
+
+            class Completion < NextbillionSDK::Internal::Type::BaseModel
+              attr_reader status: String?
+
+              def status=: (String) -> String
+
+              def initialize: (?status: String) -> void
+
+              def to_hash: -> { status: String }
+            end
+
+            type meta =
+              {
+                customer_name: String,
+                customer_phone_number: String,
+                instructions: String
+              }
+
+            class Meta < NextbillionSDK::Internal::Type::BaseModel
+              attr_reader customer_name: String?
+
+              def customer_name=: (String) -> String
+
+              attr_reader customer_phone_number: String?
+
+              def customer_phone_number=: (String) -> String
+
+              attr_reader instructions: String?
+
+              def instructions=: (String) -> String
+
+              def initialize: (
+                ?customer_name: String,
+                ?customer_phone_number: String,
+                ?instructions: String
+              ) -> void
+
+              def to_hash: -> {
+                customer_name: String,
+                customer_phone_number: String,
+                instructions: String
+              }
+            end
+          end
+        end
+      end
+    end
+  end
+end

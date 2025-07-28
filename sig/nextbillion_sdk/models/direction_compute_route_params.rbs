@@ -1,0 +1,391 @@
+module NextbillionSDK
+  module Models
+    type direction_compute_route_params =
+      {
+        destination: String,
+        origin: String,
+        altcount: Integer,
+        alternatives: bool,
+        approaches: String,
+        avoid: NextbillionSDK::Models::DirectionComputeRouteParams::avoid,
+        bearings: String,
+        cross_border: bool,
+        departure_time: Integer,
+        drive_time_limits: String,
+        emission_class: NextbillionSDK::Models::DirectionComputeRouteParams::emission_class,
+        exclude: NextbillionSDK::Models::DirectionComputeRouteParams::exclude,
+        geometry: NextbillionSDK::Models::DirectionComputeRouteParams::geometry,
+        hazmat_type: NextbillionSDK::Models::DirectionComputeRouteParams::hazmat_type,
+        mode: NextbillionSDK::Models::DirectionComputeRouteParams::mode,
+        option: NextbillionSDK::Models::DirectionComputeRouteParams::option,
+        overview: NextbillionSDK::Models::DirectionComputeRouteParams::overview,
+        rest_times: String,
+        road_info: NextbillionSDK::Models::DirectionComputeRouteParams::road_info,
+        route_type: NextbillionSDK::Models::DirectionComputeRouteParams::route_type,
+        steps: bool,
+        truck_axle_load: Float,
+        truck_size: String,
+        truck_weight: Integer,
+        turn_angle_range: Integer,
+        waypoints: String
+      }
+      & NextbillionSDK::Internal::Type::request_parameters
+
+    class DirectionComputeRouteParams < NextbillionSDK::Internal::Type::BaseModel
+      extend NextbillionSDK::Internal::Type::RequestParameters::Converter
+      include NextbillionSDK::Internal::Type::RequestParameters
+
+      attr_accessor destination: String
+
+      attr_accessor origin: String
+
+      attr_reader altcount: Integer?
+
+      def altcount=: (Integer) -> Integer
+
+      attr_reader alternatives: bool?
+
+      def alternatives=: (bool) -> bool
+
+      attr_reader approaches: String?
+
+      def approaches=: (String) -> String
+
+      attr_reader avoid: NextbillionSDK::Models::DirectionComputeRouteParams::avoid?
+
+      def avoid=: (
+        NextbillionSDK::Models::DirectionComputeRouteParams::avoid
+      ) -> NextbillionSDK::Models::DirectionComputeRouteParams::avoid
+
+      attr_reader bearings: String?
+
+      def bearings=: (String) -> String
+
+      attr_reader cross_border: bool?
+
+      def cross_border=: (bool) -> bool
+
+      attr_reader departure_time: Integer?
+
+      def departure_time=: (Integer) -> Integer
+
+      attr_reader drive_time_limits: String?
+
+      def drive_time_limits=: (String) -> String
+
+      attr_reader emission_class: NextbillionSDK::Models::DirectionComputeRouteParams::emission_class?
+
+      def emission_class=: (
+        NextbillionSDK::Models::DirectionComputeRouteParams::emission_class
+      ) -> NextbillionSDK::Models::DirectionComputeRouteParams::emission_class
+
+      attr_reader exclude: NextbillionSDK::Models::DirectionComputeRouteParams::exclude?
+
+      def exclude=: (
+        NextbillionSDK::Models::DirectionComputeRouteParams::exclude
+      ) -> NextbillionSDK::Models::DirectionComputeRouteParams::exclude
+
+      attr_reader geometry: NextbillionSDK::Models::DirectionComputeRouteParams::geometry?
+
+      def geometry=: (
+        NextbillionSDK::Models::DirectionComputeRouteParams::geometry
+      ) -> NextbillionSDK::Models::DirectionComputeRouteParams::geometry
+
+      attr_reader hazmat_type: NextbillionSDK::Models::DirectionComputeRouteParams::hazmat_type?
+
+      def hazmat_type=: (
+        NextbillionSDK::Models::DirectionComputeRouteParams::hazmat_type
+      ) -> NextbillionSDK::Models::DirectionComputeRouteParams::hazmat_type
+
+      attr_reader mode: NextbillionSDK::Models::DirectionComputeRouteParams::mode?
+
+      def mode=: (
+        NextbillionSDK::Models::DirectionComputeRouteParams::mode
+      ) -> NextbillionSDK::Models::DirectionComputeRouteParams::mode
+
+      attr_reader option: NextbillionSDK::Models::DirectionComputeRouteParams::option?
+
+      def option=: (
+        NextbillionSDK::Models::DirectionComputeRouteParams::option
+      ) -> NextbillionSDK::Models::DirectionComputeRouteParams::option
+
+      attr_reader overview: NextbillionSDK::Models::DirectionComputeRouteParams::overview?
+
+      def overview=: (
+        NextbillionSDK::Models::DirectionComputeRouteParams::overview
+      ) -> NextbillionSDK::Models::DirectionComputeRouteParams::overview
+
+      attr_reader rest_times: String?
+
+      def rest_times=: (String) -> String
+
+      attr_reader road_info: NextbillionSDK::Models::DirectionComputeRouteParams::road_info?
+
+      def road_info=: (
+        NextbillionSDK::Models::DirectionComputeRouteParams::road_info
+      ) -> NextbillionSDK::Models::DirectionComputeRouteParams::road_info
+
+      attr_reader route_type: NextbillionSDK::Models::DirectionComputeRouteParams::route_type?
+
+      def route_type=: (
+        NextbillionSDK::Models::DirectionComputeRouteParams::route_type
+      ) -> NextbillionSDK::Models::DirectionComputeRouteParams::route_type
+
+      attr_reader steps: bool?
+
+      def steps=: (bool) -> bool
+
+      attr_reader truck_axle_load: Float?
+
+      def truck_axle_load=: (Float) -> Float
+
+      attr_reader truck_size: String?
+
+      def truck_size=: (String) -> String
+
+      attr_reader truck_weight: Integer?
+
+      def truck_weight=: (Integer) -> Integer
+
+      attr_reader turn_angle_range: Integer?
+
+      def turn_angle_range=: (Integer) -> Integer
+
+      attr_reader waypoints: String?
+
+      def waypoints=: (String) -> String
+
+      def initialize: (
+        destination: String,
+        origin: String,
+        ?altcount: Integer,
+        ?alternatives: bool,
+        ?approaches: String,
+        ?avoid: NextbillionSDK::Models::DirectionComputeRouteParams::avoid,
+        ?bearings: String,
+        ?cross_border: bool,
+        ?departure_time: Integer,
+        ?drive_time_limits: String,
+        ?emission_class: NextbillionSDK::Models::DirectionComputeRouteParams::emission_class,
+        ?exclude: NextbillionSDK::Models::DirectionComputeRouteParams::exclude,
+        ?geometry: NextbillionSDK::Models::DirectionComputeRouteParams::geometry,
+        ?hazmat_type: NextbillionSDK::Models::DirectionComputeRouteParams::hazmat_type,
+        ?mode: NextbillionSDK::Models::DirectionComputeRouteParams::mode,
+        ?option: NextbillionSDK::Models::DirectionComputeRouteParams::option,
+        ?overview: NextbillionSDK::Models::DirectionComputeRouteParams::overview,
+        ?rest_times: String,
+        ?road_info: NextbillionSDK::Models::DirectionComputeRouteParams::road_info,
+        ?route_type: NextbillionSDK::Models::DirectionComputeRouteParams::route_type,
+        ?steps: bool,
+        ?truck_axle_load: Float,
+        ?truck_size: String,
+        ?truck_weight: Integer,
+        ?turn_angle_range: Integer,
+        ?waypoints: String,
+        ?request_options: NextbillionSDK::request_opts
+      ) -> void
+
+      def to_hash: -> {
+        destination: String,
+        origin: String,
+        altcount: Integer,
+        alternatives: bool,
+        approaches: String,
+        avoid: NextbillionSDK::Models::DirectionComputeRouteParams::avoid,
+        bearings: String,
+        cross_border: bool,
+        departure_time: Integer,
+        drive_time_limits: String,
+        emission_class: NextbillionSDK::Models::DirectionComputeRouteParams::emission_class,
+        exclude: NextbillionSDK::Models::DirectionComputeRouteParams::exclude,
+        geometry: NextbillionSDK::Models::DirectionComputeRouteParams::geometry,
+        hazmat_type: NextbillionSDK::Models::DirectionComputeRouteParams::hazmat_type,
+        mode: NextbillionSDK::Models::DirectionComputeRouteParams::mode,
+        option: NextbillionSDK::Models::DirectionComputeRouteParams::option,
+        overview: NextbillionSDK::Models::DirectionComputeRouteParams::overview,
+        rest_times: String,
+        road_info: NextbillionSDK::Models::DirectionComputeRouteParams::road_info,
+        route_type: NextbillionSDK::Models::DirectionComputeRouteParams::route_type,
+        steps: bool,
+        truck_axle_load: Float,
+        truck_size: String,
+        truck_weight: Integer,
+        turn_angle_range: Integer,
+        waypoints: String,
+        request_options: NextbillionSDK::RequestOptions
+      }
+
+      type avoid =
+        :toll
+        | :ferry
+        | :highway
+        | :none
+        | :sharp_turn
+        | :uturn
+        | :service_road
+        | :left_turn
+        | :right_turn
+        | :bbox
+        | :geofence_id
+        | :tunnel
+
+      module Avoid
+        extend NextbillionSDK::Internal::Type::Enum
+
+        TOLL: :toll
+        FERRY: :ferry
+        HIGHWAY: :highway
+        NONE: :none
+        SHARP_TURN: :sharp_turn
+        UTURN: :uturn
+        SERVICE_ROAD: :service_road
+        LEFT_TURN: :left_turn
+        RIGHT_TURN: :right_turn
+        BBOX: :bbox
+        GEOFENCE_ID: :geofence_id
+        TUNNEL: :tunnel
+
+        def self?.values: -> ::Array[NextbillionSDK::Models::DirectionComputeRouteParams::avoid]
+      end
+
+      type emission_class =
+        :euro0
+        | :euro1
+        | :euro2
+        | :euro3
+        | :euro4
+        | :euro5
+        | :euro6
+        | :euro7
+        | :euro8
+        | :euro9
+
+      module EmissionClass
+        extend NextbillionSDK::Internal::Type::Enum
+
+        EURO0: :euro0
+        EURO1: :euro1
+        EURO2: :euro2
+        EURO3: :euro3
+        EURO4: :euro4
+        EURO5: :euro5
+        EURO6: :euro6
+        EURO7: :euro7
+        EURO8: :euro8
+        EURO9: :euro9
+
+        def self?.values: -> ::Array[NextbillionSDK::Models::DirectionComputeRouteParams::emission_class]
+      end
+
+      type exclude =
+        :toll
+        | :ferry
+        | :highway
+        | :service_road
+        | :uturn
+        | :sharp_turn
+        | :left_turn
+        | :right_turn
+        | :none
+
+      module Exclude
+        extend NextbillionSDK::Internal::Type::Enum
+
+        TOLL: :toll
+        FERRY: :ferry
+        HIGHWAY: :highway
+        SERVICE_ROAD: :service_road
+        UTURN: :uturn
+        SHARP_TURN: :sharp_turn
+        LEFT_TURN: :left_turn
+        RIGHT_TURN: :right_turn
+        NONE: :none
+
+        def self?.values: -> ::Array[NextbillionSDK::Models::DirectionComputeRouteParams::exclude]
+      end
+
+      type geometry = :polyline | :polyline6 | :geojson
+
+      module Geometry
+        extend NextbillionSDK::Internal::Type::Enum
+
+        POLYLINE: :polyline
+        POLYLINE6: :polyline6
+        GEOJSON: :geojson
+
+        def self?.values: -> ::Array[NextbillionSDK::Models::DirectionComputeRouteParams::geometry]
+      end
+
+      type hazmat_type =
+        :general | :circumstantial | :explosive | :harmful_to_water
+
+      module HazmatType
+        extend NextbillionSDK::Internal::Type::Enum
+
+        GENERAL: :general
+        CIRCUMSTANTIAL: :circumstantial
+        EXPLOSIVE: :explosive
+        HARMFUL_TO_WATER: :harmful_to_water
+
+        def self?.values: -> ::Array[NextbillionSDK::Models::DirectionComputeRouteParams::hazmat_type]
+      end
+
+      type mode = :car | :truck
+
+      module Mode
+        extend NextbillionSDK::Internal::Type::Enum
+
+        CAR: :car
+        TRUCK: :truck
+
+        def self?.values: -> ::Array[NextbillionSDK::Models::DirectionComputeRouteParams::mode]
+      end
+
+      type option = :fast | :flexible
+
+      module Option
+        extend NextbillionSDK::Internal::Type::Enum
+
+        FAST: :fast
+        FLEXIBLE: :flexible
+
+        def self?.values: -> ::Array[NextbillionSDK::Models::DirectionComputeRouteParams::option]
+      end
+
+      type overview = :full | :simplified | :false
+
+      module Overview
+        extend NextbillionSDK::Internal::Type::Enum
+
+        FULL: :full
+        SIMPLIFIED: :simplified
+        FALSE: :false
+
+        def self?.values: -> ::Array[NextbillionSDK::Models::DirectionComputeRouteParams::overview]
+      end
+
+      type road_info = :max_speed | :toll_distance | :toll_cost
+
+      module RoadInfo
+        extend NextbillionSDK::Internal::Type::Enum
+
+        MAX_SPEED: :max_speed
+        TOLL_DISTANCE: :toll_distance
+        TOLL_COST: :toll_cost
+
+        def self?.values: -> ::Array[NextbillionSDK::Models::DirectionComputeRouteParams::road_info]
+      end
+
+      type route_type = :fastest | :shortest
+
+      module RouteType
+        extend NextbillionSDK::Internal::Type::Enum
+
+        FASTEST: :fastest
+        SHORTEST: :shortest
+
+        def self?.values: -> ::Array[NextbillionSDK::Models::DirectionComputeRouteParams::route_type]
+      end
+    end
+  end
+end

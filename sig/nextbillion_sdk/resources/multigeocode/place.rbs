@@ -1,0 +1,39 @@
+module NextbillionSDK
+  module Resources
+    class Multigeocode
+      class Place
+        def create: (
+          key: String,
+          place: ::Array[NextbillionSDK::Multigeocode::PlaceCreateParams::Place],
+          ?data_source: NextbillionSDK::Multigeocode::PlaceCreateParams::DataSource,
+          ?force: bool,
+          ?score: Integer,
+          ?request_options: NextbillionSDK::request_opts
+        ) -> NextbillionSDK::Models::Multigeocode::PlaceCreateResponse
+
+        def retrieve: (
+          String doc_id,
+          key: String,
+          ?request_options: NextbillionSDK::request_opts
+        ) -> NextbillionSDK::Models::Multigeocode::PlaceRetrieveResponse
+
+        def update: (
+          String doc_id,
+          key: String,
+          ?data_source: NextbillionSDK::Multigeocode::PlaceUpdateParams::DataSource,
+          ?place: ::Array[NextbillionSDK::Multigeocode::PlaceItem],
+          ?score: Integer,
+          ?request_options: NextbillionSDK::request_opts
+        ) -> NextbillionSDK::Models::Multigeocode::PlaceUpdateResponse
+
+        def delete: (
+          String doc_id,
+          key: String,
+          ?request_options: NextbillionSDK::request_opts
+        ) -> NextbillionSDK::Models::Multigeocode::PlaceDeleteResponse
+
+        def initialize: (client: NextbillionSDK::Client) -> void
+      end
+    end
+  end
+end

@@ -1,0 +1,54 @@
+module NextbillionSDK
+  module Models
+    module Skynet
+      type config_update_params =
+        {
+          key: String,
+          cluster: NextbillionSDK::Models::Skynet::ConfigUpdateParams::cluster,
+          webhook: ::Array[String]
+        }
+        & NextbillionSDK::Internal::Type::request_parameters
+
+      class ConfigUpdateParams < NextbillionSDK::Internal::Type::BaseModel
+        extend NextbillionSDK::Internal::Type::RequestParameters::Converter
+        include NextbillionSDK::Internal::Type::RequestParameters
+
+        attr_accessor key: String
+
+        attr_reader cluster: NextbillionSDK::Models::Skynet::ConfigUpdateParams::cluster?
+
+        def cluster=: (
+          NextbillionSDK::Models::Skynet::ConfigUpdateParams::cluster
+        ) -> NextbillionSDK::Models::Skynet::ConfigUpdateParams::cluster
+
+        attr_reader webhook: ::Array[String]?
+
+        def webhook=: (::Array[String]) -> ::Array[String]
+
+        def initialize: (
+          key: String,
+          ?cluster: NextbillionSDK::Models::Skynet::ConfigUpdateParams::cluster,
+          ?webhook: ::Array[String],
+          ?request_options: NextbillionSDK::request_opts
+        ) -> void
+
+        def to_hash: -> {
+          key: String,
+          cluster: NextbillionSDK::Models::Skynet::ConfigUpdateParams::cluster,
+          webhook: ::Array[String],
+          request_options: NextbillionSDK::RequestOptions
+        }
+
+        type cluster = :america
+
+        module Cluster
+          extend NextbillionSDK::Internal::Type::Enum
+
+          AMERICA: :america
+
+          def self?.values: -> ::Array[NextbillionSDK::Models::Skynet::ConfigUpdateParams::cluster]
+        end
+      end
+    end
+  end
+end

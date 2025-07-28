@@ -1,0 +1,27 @@
+module NextbillionSDK
+  module Resources
+    class Geofence
+      class Batch
+        def create: (
+          key: String,
+          ?geofences: ::Array[NextbillionSDK::GeofenceEntityCreate],
+          ?request_options: NextbillionSDK::request_opts
+        ) -> NextbillionSDK::Models::Geofence::BatchCreateResponse
+
+        def list: (
+          ids: String,
+          key: String,
+          ?request_options: NextbillionSDK::request_opts
+        ) -> NextbillionSDK::Models::Geofence::BatchListResponse
+
+        def delete: (
+          key: String,
+          ?ids: ::Array[String],
+          ?request_options: NextbillionSDK::request_opts
+        ) -> NextbillionSDK::Skynet::SimpleResp
+
+        def initialize: (client: NextbillionSDK::Client) -> void
+      end
+    end
+  end
+end

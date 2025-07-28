@@ -1,0 +1,9 @@
+module NextbillionSDK
+  module Models
+    module Fleetify
+      module Routes
+        DocumentSubmission: NextbillionSDK::Internal::Type::Converter
+      end
+    end
+  end
+end

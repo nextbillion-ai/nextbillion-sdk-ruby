@@ -1,0 +1,16 @@
+module NextbillionSDK
+  module Resources
+    class Postalcode
+      def retrieve_coordinates: (
+        key: String,
+        ?at: NextbillionSDK::PostalcodeRetrieveCoordinatesParams::At,
+        ?country: String,
+        ?format_: NextbillionSDK::Models::PostalcodeRetrieveCoordinatesParams::format_,
+        ?postalcode: String,
+        ?request_options: NextbillionSDK::request_opts
+      ) -> NextbillionSDK::Models::PostalcodeRetrieveCoordinatesResponse
+
+      def initialize: (client: NextbillionSDK::Client) -> void
+    end
+  end
+end

@@ -1,0 +1,47 @@
+module NextbillionSDK
+  module Models
+    type batch_create_params =
+      {
+        key: String,
+        requests: ::Array[NextbillionSDK::BatchCreateParams::Request]
+      }
+      & NextbillionSDK::Internal::Type::request_parameters
+
+    class BatchCreateParams < NextbillionSDK::Internal::Type::BaseModel
+      extend NextbillionSDK::Internal::Type::RequestParameters::Converter
+      include NextbillionSDK::Internal::Type::RequestParameters
+
+      attr_accessor key: String
+
+      attr_reader requests: ::Array[NextbillionSDK::BatchCreateParams::Request]?
+
+      def requests=: (
+        ::Array[NextbillionSDK::BatchCreateParams::Request]
+      ) -> ::Array[NextbillionSDK::BatchCreateParams::Request]
+
+      def initialize: (
+        key: String,
+        ?requests: ::Array[NextbillionSDK::BatchCreateParams::Request],
+        ?request_options: NextbillionSDK::request_opts
+      ) -> void
+
+      def to_hash: -> {
+        key: String,
+        requests: ::Array[NextbillionSDK::BatchCreateParams::Request],
+        request_options: NextbillionSDK::RequestOptions
+      }
+
+      type request = { query: String }
+
+      class Request < NextbillionSDK::Internal::Type::BaseModel
+        attr_reader query: String?
+
+        def query=: (String) -> String
+
+        def initialize: (?query: String) -> void
+
+        def to_hash: -> { query: String }
+      end
+    end
+  end
+end

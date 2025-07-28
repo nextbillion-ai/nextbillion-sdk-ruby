@@ -1,0 +1,41 @@
+module NextbillionSDK
+  module Resources
+    class Fleetify
+      class DocumentTemplates
+        def create: (
+          key: String,
+          content: ::Array[NextbillionSDK::Fleetify::DocumentTemplateContentRequest],
+          name: String,
+          ?request_options: NextbillionSDK::request_opts
+        ) -> NextbillionSDK::Models::Fleetify::DocumentTemplateCreateResponse
+
+        def retrieve: (
+          String id,
+          key: String,
+          ?request_options: NextbillionSDK::request_opts
+        ) -> NextbillionSDK::Models::Fleetify::DocumentTemplateRetrieveResponse
+
+        def update: (
+          String id,
+          key: String,
+          ?content: ::Array[NextbillionSDK::Fleetify::DocumentTemplateContentRequest],
+          ?name: String,
+          ?request_options: NextbillionSDK::request_opts
+        ) -> NextbillionSDK::Models::Fleetify::DocumentTemplateUpdateResponse
+
+        def list: (
+          key: String,
+          ?request_options: NextbillionSDK::request_opts
+        ) -> NextbillionSDK::Models::Fleetify::DocumentTemplateListResponse
+
+        def delete: (
+          String id,
+          key: String,
+          ?request_options: NextbillionSDK::request_opts
+        ) -> NextbillionSDK::Models::Fleetify::DocumentTemplateDeleteResponse
+
+        def initialize: (client: NextbillionSDK::Client) -> void
+      end
+    end
+  end
+end
