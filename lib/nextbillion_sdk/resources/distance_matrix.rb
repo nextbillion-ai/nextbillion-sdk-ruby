@@ -2,8 +2,8 @@
 
 module NextbillionSDK
   module Resources
-    class Distancematrix
-      # @return [NextbillionSDK::Resources::Distancematrix::Json]
+    class DistanceMatrix
+      # @return [NextbillionSDK::Resources::DistanceMatrix::Json]
       attr_reader :json
 
       # @api private
@@ -11,7 +11,7 @@ module NextbillionSDK
       # @param client [NextbillionSDK::Client]
       def initialize(client:)
         @client = client
-        @json = NextbillionSDK::Resources::Distancematrix::Json.new(client: client)
+        @json = NextbillionSDK::Resources::DistanceMatrix::Json.new(client: client)
       end
     end
   end

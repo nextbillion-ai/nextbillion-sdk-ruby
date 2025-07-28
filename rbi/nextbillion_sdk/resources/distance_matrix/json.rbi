@@ -2,7 +2,7 @@
 
 module NextbillionSDK
   module Resources
-    class Distancematrix
+    class DistanceMatrix
       class Json
         # asfd
         sig do
@@ -24,16 +24,16 @@ module NextbillionSDK
             key: String,
             origins: String,
             approaches:
-              NextbillionSDK::Distancematrix::JsonRetrieveParams::Approaches::OrSymbol,
+              NextbillionSDK::DistanceMatrix::JsonRetrieveParams::Approaches::OrSymbol,
             avoid:
-              NextbillionSDK::Distancematrix::JsonRetrieveParams::Avoid::OrSymbol,
+              NextbillionSDK::DistanceMatrix::JsonRetrieveParams::Avoid::OrSymbol,
             bearings: String,
             mode:
-              NextbillionSDK::Distancematrix::JsonRetrieveParams::Mode::OrSymbol,
+              NextbillionSDK::DistanceMatrix::JsonRetrieveParams::Mode::OrSymbol,
             route_failed_prompt: T::Boolean,
             request_options: NextbillionSDK::RequestOptions::OrHash
           ).returns(
-            NextbillionSDK::Models::Distancematrix::JsonRetrieveResponse
+            NextbillionSDK::Models::DistanceMatrix::JsonRetrieveResponse
           )
         end
         def retrieve(

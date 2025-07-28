@@ -46,8 +46,8 @@ module NextbillionSDK
     sig { returns(NextbillionSDK::Resources::RestrictionsItems) }
     attr_reader :restrictions_items
 
-    sig { returns(NextbillionSDK::Resources::Distancematrix) }
-    attr_reader :distancematrix
+    sig { returns(NextbillionSDK::Resources::DistanceMatrix) }
+    attr_reader :distance_matrix
 
     sig { returns(NextbillionSDK::Resources::Autocomplete) }
     attr_reader :autocomplete

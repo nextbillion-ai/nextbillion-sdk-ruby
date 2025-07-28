@@ -2,7 +2,7 @@
 
 module NextbillionSDK
   module Resources
-    class Distancematrix
+    class DistanceMatrix
       class Json
         # asfd
         #
@@ -12,7 +12,7 @@ module NextbillionSDK
         #
         # @return [nil]
         #
-        # @see NextbillionSDK::Models::Distancematrix::JsonCreateParams
+        # @see NextbillionSDK::Models::DistanceMatrix::JsonCreateParams
         def create(params = {})
           @client.request(
             method: :post,
@@ -23,7 +23,7 @@ module NextbillionSDK
         end
 
         # Some parameter documentations has been truncated, see
-        # {NextbillionSDK::Models::Distancematrix::JsonRetrieveParams} for more details.
+        # {NextbillionSDK::Models::DistanceMatrix::JsonRetrieveParams} for more details.
         #
         # Nextbillion.ai Distance Matrix API computes distances and ETAs between a set of
         # origins and destinations — could be for one-to-many or many-to-many scenarios.
@@ -41,28 +41,28 @@ module NextbillionSDK
         #
         # @param origins [String] "origins" are the starting point of your route. Ensure that "origins" are routab
         #
-        # @param approaches [Symbol, NextbillionSDK::Models::Distancematrix::JsonRetrieveParams::Approaches] A semicolon-separated list indicating the side of the road from which the route
+        # @param approaches [Symbol, NextbillionSDK::Models::DistanceMatrix::JsonRetrieveParams::Approaches] A semicolon-separated list indicating the side of the road from which the route
         #
-        # @param avoid [Symbol, NextbillionSDK::Models::Distancematrix::JsonRetrieveParams::Avoid] Setting this will ensure the route avoids ferries, tolls, highways or nothing. M
+        # @param avoid [Symbol, NextbillionSDK::Models::DistanceMatrix::JsonRetrieveParams::Avoid] Setting this will ensure the route avoids ferries, tolls, highways or nothing. M
         #
         # @param bearings [String] Limits the search to segments with given bearing in degrees towards true north i
         #
-        # @param mode [Symbol, NextbillionSDK::Models::Distancematrix::JsonRetrieveParams::Mode] Set which driving mode the service should use to determine the "distance" and "d
+        # @param mode [Symbol, NextbillionSDK::Models::DistanceMatrix::JsonRetrieveParams::Mode] Set which driving mode the service should use to determine the "distance" and "d
         #
         # @param route_failed_prompt [Boolean] A prompt to modify the response in case no feasible route is available for a giv
         #
         # @param request_options [NextbillionSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [NextbillionSDK::Models::Distancematrix::JsonRetrieveResponse]
+        # @return [NextbillionSDK::Models::DistanceMatrix::JsonRetrieveResponse]
         #
-        # @see NextbillionSDK::Models::Distancematrix::JsonRetrieveParams
+        # @see NextbillionSDK::Models::DistanceMatrix::JsonRetrieveParams
         def retrieve(params)
-          parsed, options = NextbillionSDK::Distancematrix::JsonRetrieveParams.dump_request(params)
+          parsed, options = NextbillionSDK::DistanceMatrix::JsonRetrieveParams.dump_request(params)
           @client.request(
             method: :get,
             path: "distancematrix/json",
             query: parsed,
-            model: NextbillionSDK::Models::Distancematrix::JsonRetrieveResponse,
+            model: NextbillionSDK::Models::DistanceMatrix::JsonRetrieveResponse,
             options: options
           )
         end

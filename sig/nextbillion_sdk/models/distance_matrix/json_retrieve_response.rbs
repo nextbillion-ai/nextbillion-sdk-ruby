@@ -1,10 +1,10 @@
 module NextbillionSDK
   module Models
-    module Distancematrix
+    module DistanceMatrix
       type json_retrieve_response =
         {
           msg: String,
-          rows: ::Array[NextbillionSDK::Models::Distancematrix::JsonRetrieveResponse::Row],
+          rows: ::Array[NextbillionSDK::Models::DistanceMatrix::JsonRetrieveResponse::Row],
           status: String
         }
 
@@ -13,11 +13,11 @@ module NextbillionSDK
 
         def msg=: (String) -> String
 
-        attr_reader rows: ::Array[NextbillionSDK::Models::Distancematrix::JsonRetrieveResponse::Row]?
+        attr_reader rows: ::Array[NextbillionSDK::Models::DistanceMatrix::JsonRetrieveResponse::Row]?
 
         def rows=: (
-          ::Array[NextbillionSDK::Models::Distancematrix::JsonRetrieveResponse::Row]
-        ) -> ::Array[NextbillionSDK::Models::Distancematrix::JsonRetrieveResponse::Row]
+          ::Array[NextbillionSDK::Models::DistanceMatrix::JsonRetrieveResponse::Row]
+        ) -> ::Array[NextbillionSDK::Models::DistanceMatrix::JsonRetrieveResponse::Row]
 
         attr_reader status: String?
 
@@ -25,34 +25,34 @@ module NextbillionSDK
 
         def initialize: (
           ?msg: String,
-          ?rows: ::Array[NextbillionSDK::Models::Distancematrix::JsonRetrieveResponse::Row],
+          ?rows: ::Array[NextbillionSDK::Models::DistanceMatrix::JsonRetrieveResponse::Row],
           ?status: String
         ) -> void
 
         def to_hash: -> {
           msg: String,
-          rows: ::Array[NextbillionSDK::Models::Distancematrix::JsonRetrieveResponse::Row],
+          rows: ::Array[NextbillionSDK::Models::DistanceMatrix::JsonRetrieveResponse::Row],
           status: String
         }
 
         type row =
           {
-            elements: ::Array[NextbillionSDK::Models::Distancematrix::JsonRetrieveResponse::Row::Element]
+            elements: ::Array[NextbillionSDK::Models::DistanceMatrix::JsonRetrieveResponse::Row::Element]
           }
 
         class Row < NextbillionSDK::Internal::Type::BaseModel
-          attr_reader elements: ::Array[NextbillionSDK::Models::Distancematrix::JsonRetrieveResponse::Row::Element]?
+          attr_reader elements: ::Array[NextbillionSDK::Models::DistanceMatrix::JsonRetrieveResponse::Row::Element]?
 
           def elements=: (
-            ::Array[NextbillionSDK::Models::Distancematrix::JsonRetrieveResponse::Row::Element]
-          ) -> ::Array[NextbillionSDK::Models::Distancematrix::JsonRetrieveResponse::Row::Element]
+            ::Array[NextbillionSDK::Models::DistanceMatrix::JsonRetrieveResponse::Row::Element]
+          ) -> ::Array[NextbillionSDK::Models::DistanceMatrix::JsonRetrieveResponse::Row::Element]
 
           def initialize: (
-            ?elements: ::Array[NextbillionSDK::Models::Distancematrix::JsonRetrieveResponse::Row::Element]
+            ?elements: ::Array[NextbillionSDK::Models::DistanceMatrix::JsonRetrieveResponse::Row::Element]
           ) -> void
 
           def to_hash: -> {
-            elements: ::Array[NextbillionSDK::Models::Distancematrix::JsonRetrieveResponse::Row::Element]
+            elements: ::Array[NextbillionSDK::Models::DistanceMatrix::JsonRetrieveResponse::Row::Element]
           }
 
           type element = { distance: Float, duration: Float }

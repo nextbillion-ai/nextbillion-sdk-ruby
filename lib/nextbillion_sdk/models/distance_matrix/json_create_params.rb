@@ -2,8 +2,8 @@
 
 module NextbillionSDK
   module Models
-    module Distancematrix
-      # @see NextbillionSDK::Resources::Distancematrix::Json#create
+    module DistanceMatrix
+      # @see NextbillionSDK::Resources::DistanceMatrix::Json#create
       class JsonCreateParams < NextbillionSDK::Internal::Type::BaseModel
         extend NextbillionSDK::Internal::Type::RequestParameters::Converter
         include NextbillionSDK::Internal::Type::RequestParameters
