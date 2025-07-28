@@ -1,0 +1,65 @@
+module NextbillionSDK
+  module Resources
+    class Geofence
+      attr_reader console: NextbillionSDK::Resources::Geofence::Console
+
+      attr_reader batch: NextbillionSDK::Resources::Geofence::Batch
+
+      def create: (
+        key: String,
+        type: NextbillionSDK::Models::GeofenceEntityCreate::type_,
+        ?circle: NextbillionSDK::GeofenceEntityCreate::Circle,
+        ?custom_id: String,
+        ?isochrone: NextbillionSDK::GeofenceEntityCreate::Isochrone,
+        ?meta_data: top,
+        ?name: String,
+        ?polygon: NextbillionSDK::GeofenceEntityCreate::Polygon,
+        ?tags: ::Array[String],
+        ?request_options: NextbillionSDK::request_opts
+      ) -> NextbillionSDK::Models::GeofenceCreateResponse
+
+      def retrieve: (
+        String id,
+        key: String,
+        ?request_options: NextbillionSDK::request_opts
+      ) -> NextbillionSDK::Models::GeofenceRetrieveResponse
+
+      def update: (
+        String id,
+        key: String,
+        ?circle: NextbillionSDK::GeofenceUpdateParams::Circle,
+        ?isochrone: NextbillionSDK::GeofenceUpdateParams::Isochrone,
+        ?meta_data: top,
+        ?name: String,
+        ?polygon: NextbillionSDK::GeofenceUpdateParams::Polygon,
+        ?tags: ::Array[String],
+        ?type: NextbillionSDK::Models::GeofenceUpdateParams::type_,
+        ?request_options: NextbillionSDK::request_opts
+      ) -> NextbillionSDK::Skynet::SimpleResp
+
+      def list: (
+        key: String,
+        ?pn: Integer,
+        ?ps: Integer,
+        ?tags: String,
+        ?request_options: NextbillionSDK::request_opts
+      ) -> NextbillionSDK::Models::GeofenceListResponse
+
+      def delete: (
+        String id,
+        key: String,
+        ?request_options: NextbillionSDK::request_opts
+      ) -> NextbillionSDK::Skynet::SimpleResp
+
+      def contains: (
+        key: String,
+        locations: String,
+        ?geofences: String,
+        ?verbose: String,
+        ?request_options: NextbillionSDK::request_opts
+      ) -> NextbillionSDK::Models::GeofenceContainsResponse
+
+      def initialize: (client: NextbillionSDK::Client) -> void
+    end
+  end
+end

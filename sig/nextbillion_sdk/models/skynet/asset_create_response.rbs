@@ -1,0 +1,52 @@
+module NextbillionSDK
+  module Models
+    module Skynet
+      type asset_create_response =
+        {
+          data: NextbillionSDK::Models::Skynet::AssetCreateResponse::Data,
+          message: String,
+          status: String
+        }
+
+      class AssetCreateResponse < NextbillionSDK::Internal::Type::BaseModel
+        attr_reader data: NextbillionSDK::Models::Skynet::AssetCreateResponse::Data?
+
+        def data=: (
+          NextbillionSDK::Models::Skynet::AssetCreateResponse::Data
+        ) -> NextbillionSDK::Models::Skynet::AssetCreateResponse::Data
+
+        attr_reader message: String?
+
+        def message=: (String) -> String
+
+        attr_reader status: String?
+
+        def status=: (String) -> String
+
+        def initialize: (
+          ?data: NextbillionSDK::Models::Skynet::AssetCreateResponse::Data,
+          ?message: String,
+          ?status: String
+        ) -> void
+
+        def to_hash: -> {
+          data: NextbillionSDK::Models::Skynet::AssetCreateResponse::Data,
+          message: String,
+          status: String
+        }
+
+        type data = { id: String }
+
+        class Data < NextbillionSDK::Internal::Type::BaseModel
+          attr_reader id: String?
+
+          def id=: (String) -> String
+
+          def initialize: (?id: String) -> void
+
+          def to_hash: -> { id: String }
+        end
+      end
+    end
+  end
+end

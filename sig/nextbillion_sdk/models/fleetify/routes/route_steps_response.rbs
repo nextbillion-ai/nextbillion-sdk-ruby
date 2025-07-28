@@ -1,0 +1,223 @@
+module NextbillionSDK
+  module Models
+    module Fleetify
+      class RouteStepsResponse = Routes::RouteStepsResponse
+
+      module Routes
+        type route_steps_response =
+          {
+            id: String,
+            address: String,
+            arrival: Integer,
+            completion: NextbillionSDK::Fleetify::Routes::RouteStepsResponse::Completion,
+            created_at: Integer,
+            document_snapshot: ::Array[top],
+            duration: Integer,
+            location: ::Array[Float],
+            meta: NextbillionSDK::Fleetify::Routes::RouteStepsResponse::Meta,
+            short_id: String,
+            type: String,
+            updated_at: Integer
+          }
+
+        class RouteStepsResponse < NextbillionSDK::Internal::Type::BaseModel
+          attr_reader id: String?
+
+          def id=: (String) -> String
+
+          attr_reader address: String?
+
+          def address=: (String) -> String
+
+          attr_reader arrival: Integer?
+
+          def arrival=: (Integer) -> Integer
+
+          attr_reader completion: NextbillionSDK::Fleetify::Routes::RouteStepsResponse::Completion?
+
+          def completion=: (
+            NextbillionSDK::Fleetify::Routes::RouteStepsResponse::Completion
+          ) -> NextbillionSDK::Fleetify::Routes::RouteStepsResponse::Completion
+
+          attr_reader created_at: Integer?
+
+          def created_at=: (Integer) -> Integer
+
+          attr_reader document_snapshot: ::Array[top]?
+
+          def document_snapshot=: (::Array[top]) -> ::Array[top]
+
+          attr_reader duration: Integer?
+
+          def duration=: (Integer) -> Integer
+
+          attr_reader location: ::Array[Float]?
+
+          def location=: (::Array[Float]) -> ::Array[Float]
+
+          attr_reader meta: NextbillionSDK::Fleetify::Routes::RouteStepsResponse::Meta?
+
+          def meta=: (
+            NextbillionSDK::Fleetify::Routes::RouteStepsResponse::Meta
+          ) -> NextbillionSDK::Fleetify::Routes::RouteStepsResponse::Meta
+
+          attr_reader short_id: String?
+
+          def short_id=: (String) -> String
+
+          attr_reader type: String?
+
+          def type=: (String) -> String
+
+          attr_reader updated_at: Integer?
+
+          def updated_at=: (Integer) -> Integer
+
+          def initialize: (
+            ?id: String,
+            ?address: String,
+            ?arrival: Integer,
+            ?completion: NextbillionSDK::Fleetify::Routes::RouteStepsResponse::Completion,
+            ?created_at: Integer,
+            ?document_snapshot: ::Array[top],
+            ?duration: Integer,
+            ?location: ::Array[Float],
+            ?meta: NextbillionSDK::Fleetify::Routes::RouteStepsResponse::Meta,
+            ?short_id: String,
+            ?type: String,
+            ?updated_at: Integer
+          ) -> void
+
+          def to_hash: -> {
+            id: String,
+            address: String,
+            arrival: Integer,
+            completion: NextbillionSDK::Fleetify::Routes::RouteStepsResponse::Completion,
+            created_at: Integer,
+            document_snapshot: ::Array[top],
+            duration: Integer,
+            location: ::Array[Float],
+            meta: NextbillionSDK::Fleetify::Routes::RouteStepsResponse::Meta,
+            short_id: String,
+            type: String,
+            updated_at: Integer
+          }
+
+          type completion =
+            {
+              completed_at: Integer,
+              completed_by_mode: NextbillionSDK::Models::Fleetify::Routes::route_step_completion_mode,
+              completion_mode: NextbillionSDK::Models::Fleetify::Routes::route_step_completion_mode,
+              document: top,
+              document_modified_at: Integer,
+              geofence_config: NextbillionSDK::Fleetify::Routes::RouteStepGeofenceConfig,
+              status: NextbillionSDK::Models::Fleetify::Routes::RouteStepsResponse::Completion::status
+            }
+
+          class Completion < NextbillionSDK::Internal::Type::BaseModel
+            attr_reader completed_at: Integer?
+
+            def completed_at=: (Integer) -> Integer
+
+            attr_reader completed_by_mode: NextbillionSDK::Models::Fleetify::Routes::route_step_completion_mode?
+
+            def completed_by_mode=: (
+              NextbillionSDK::Models::Fleetify::Routes::route_step_completion_mode
+            ) -> NextbillionSDK::Models::Fleetify::Routes::route_step_completion_mode
+
+            attr_reader completion_mode: NextbillionSDK::Models::Fleetify::Routes::route_step_completion_mode?
+
+            def completion_mode=: (
+              NextbillionSDK::Models::Fleetify::Routes::route_step_completion_mode
+            ) -> NextbillionSDK::Models::Fleetify::Routes::route_step_completion_mode
+
+            attr_reader document: top?
+
+            def document=: (top) -> top
+
+            attr_reader document_modified_at: Integer?
+
+            def document_modified_at=: (Integer) -> Integer
+
+            attr_reader geofence_config: NextbillionSDK::Fleetify::Routes::RouteStepGeofenceConfig?
+
+            def geofence_config=: (
+              NextbillionSDK::Fleetify::Routes::RouteStepGeofenceConfig
+            ) -> NextbillionSDK::Fleetify::Routes::RouteStepGeofenceConfig
+
+            attr_reader status: NextbillionSDK::Models::Fleetify::Routes::RouteStepsResponse::Completion::status?
+
+            def status=: (
+              NextbillionSDK::Models::Fleetify::Routes::RouteStepsResponse::Completion::status
+            ) -> NextbillionSDK::Models::Fleetify::Routes::RouteStepsResponse::Completion::status
+
+            def initialize: (
+              ?completed_at: Integer,
+              ?completed_by_mode: NextbillionSDK::Models::Fleetify::Routes::route_step_completion_mode,
+              ?completion_mode: NextbillionSDK::Models::Fleetify::Routes::route_step_completion_mode,
+              ?document: top,
+              ?document_modified_at: Integer,
+              ?geofence_config: NextbillionSDK::Fleetify::Routes::RouteStepGeofenceConfig,
+              ?status: NextbillionSDK::Models::Fleetify::Routes::RouteStepsResponse::Completion::status
+            ) -> void
+
+            def to_hash: -> {
+              completed_at: Integer,
+              completed_by_mode: NextbillionSDK::Models::Fleetify::Routes::route_step_completion_mode,
+              completion_mode: NextbillionSDK::Models::Fleetify::Routes::route_step_completion_mode,
+              document: top,
+              document_modified_at: Integer,
+              geofence_config: NextbillionSDK::Fleetify::Routes::RouteStepGeofenceConfig,
+              status: NextbillionSDK::Models::Fleetify::Routes::RouteStepsResponse::Completion::status
+            }
+
+            type status = :scheduled | :completed | :canceled
+
+            module Status
+              extend NextbillionSDK::Internal::Type::Enum
+
+              SCHEDULED: :scheduled
+              COMPLETED: :completed
+              CANCELED: :canceled
+
+              def self?.values: -> ::Array[NextbillionSDK::Models::Fleetify::Routes::RouteStepsResponse::Completion::status]
+            end
+          end
+
+          type meta =
+            {
+              customer_name: String,
+              customer_phone_number: String,
+              instructions: String
+            }
+
+          class Meta < NextbillionSDK::Internal::Type::BaseModel
+            attr_reader customer_name: String?
+
+            def customer_name=: (String) -> String
+
+            attr_reader customer_phone_number: String?
+
+            def customer_phone_number=: (String) -> String
+
+            attr_reader instructions: String?
+
+            def instructions=: (String) -> String
+
+            def initialize: (
+              ?customer_name: String,
+              ?customer_phone_number: String,
+              ?instructions: String
+            ) -> void
+
+            def to_hash: -> {
+              customer_name: String,
+              customer_phone_number: String,
+              instructions: String
+            }
+          end
+        end
+      end
+    end
+  end
+end

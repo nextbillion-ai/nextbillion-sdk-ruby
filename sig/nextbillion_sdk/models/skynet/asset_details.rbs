@@ -1,0 +1,175 @@
+module NextbillionSDK
+  module Models
+    module Skynet
+      type asset_details =
+        {
+          id: String,
+          attributes: top,
+          created_at: Integer,
+          description: String,
+          device_id: String,
+          latest_location: NextbillionSDK::Skynet::AssetDetails::LatestLocation,
+          meta_data: top,
+          name: String,
+          state: String,
+          tags: ::Array[String],
+          tracked_at: Integer,
+          updated_at: Integer
+        }
+
+      class AssetDetails < NextbillionSDK::Internal::Type::BaseModel
+        attr_reader id: String?
+
+        def id=: (String) -> String
+
+        attr_reader attributes: top?
+
+        def attributes=: (top) -> top
+
+        attr_reader created_at: Integer?
+
+        def created_at=: (Integer) -> Integer
+
+        attr_reader description: String?
+
+        def description=: (String) -> String
+
+        attr_reader device_id: String?
+
+        def device_id=: (String) -> String
+
+        attr_reader latest_location: NextbillionSDK::Skynet::AssetDetails::LatestLocation?
+
+        def latest_location=: (
+          NextbillionSDK::Skynet::AssetDetails::LatestLocation
+        ) -> NextbillionSDK::Skynet::AssetDetails::LatestLocation
+
+        attr_reader meta_data: top?
+
+        def meta_data=: (top) -> top
+
+        attr_reader name: String?
+
+        def name=: (String) -> String
+
+        attr_reader state: String?
+
+        def state=: (String) -> String
+
+        attr_reader tags: ::Array[String]?
+
+        def tags=: (::Array[String]) -> ::Array[String]
+
+        attr_reader tracked_at: Integer?
+
+        def tracked_at=: (Integer) -> Integer
+
+        attr_reader updated_at: Integer?
+
+        def updated_at=: (Integer) -> Integer
+
+        def initialize: (
+          ?id: String,
+          ?attributes: top,
+          ?created_at: Integer,
+          ?description: String,
+          ?device_id: String,
+          ?latest_location: NextbillionSDK::Skynet::AssetDetails::LatestLocation,
+          ?meta_data: top,
+          ?name: String,
+          ?state: String,
+          ?tags: ::Array[String],
+          ?tracked_at: Integer,
+          ?updated_at: Integer
+        ) -> void
+
+        def to_hash: -> {
+          id: String,
+          attributes: top,
+          created_at: Integer,
+          description: String,
+          device_id: String,
+          latest_location: NextbillionSDK::Skynet::AssetDetails::LatestLocation,
+          meta_data: top,
+          name: String,
+          state: String,
+          tags: ::Array[String],
+          tracked_at: Integer,
+          updated_at: Integer
+        }
+
+        type latest_location =
+          {
+            accuracy: Float,
+            altitude: Float,
+            bearing: Float,
+            location: NextbillionSDK::Skynet::AssetDetails::LatestLocation::Location,
+            speed: Float,
+            timestamp: Integer
+          }
+
+        class LatestLocation < NextbillionSDK::Internal::Type::BaseModel
+          attr_reader accuracy: Float?
+
+          def accuracy=: (Float) -> Float
+
+          attr_reader altitude: Float?
+
+          def altitude=: (Float) -> Float
+
+          attr_reader bearing: Float?
+
+          def bearing=: (Float) -> Float
+
+          attr_reader location: NextbillionSDK::Skynet::AssetDetails::LatestLocation::Location?
+
+          def location=: (
+            NextbillionSDK::Skynet::AssetDetails::LatestLocation::Location
+          ) -> NextbillionSDK::Skynet::AssetDetails::LatestLocation::Location
+
+          attr_reader speed: Float?
+
+          def speed=: (Float) -> Float
+
+          attr_reader timestamp: Integer?
+
+          def timestamp=: (Integer) -> Integer
+
+          def initialize: (
+            ?accuracy: Float,
+            ?altitude: Float,
+            ?bearing: Float,
+            ?location: NextbillionSDK::Skynet::AssetDetails::LatestLocation::Location,
+            ?speed: Float,
+            ?timestamp: Integer
+          ) -> void
+
+          def to_hash: -> {
+            accuracy: Float,
+            altitude: Float,
+            bearing: Float,
+            location: NextbillionSDK::Skynet::AssetDetails::LatestLocation::Location,
+            speed: Float,
+            timestamp: Integer
+          }
+
+          type location = { lat: Float, lon: Float }
+
+          class Location < NextbillionSDK::Internal::Type::BaseModel
+            attr_reader lat: Float?
+
+            def lat=: (Float) -> Float
+
+            attr_reader lon: Float?
+
+            def lon=: (Float) -> Float
+
+            def initialize: (?lat: Float, ?lon: Float) -> void
+
+            def to_hash: -> { lat: Float, lon: Float }
+          end
+        end
+      end
+    end
+  end
+end

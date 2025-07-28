@@ -1,0 +1,47 @@
+module NextbillionSDK
+  module Models
+    module Skynet
+      type config_retrieve_params =
+        {
+          key: String,
+          cluster: NextbillionSDK::Models::Skynet::ConfigRetrieveParams::cluster
+        }
+        & NextbillionSDK::Internal::Type::request_parameters
+
+      class ConfigRetrieveParams < NextbillionSDK::Internal::Type::BaseModel
+        extend NextbillionSDK::Internal::Type::RequestParameters::Converter
+        include NextbillionSDK::Internal::Type::RequestParameters
+
+        attr_accessor key: String
+
+        attr_reader cluster: NextbillionSDK::Models::Skynet::ConfigRetrieveParams::cluster?
+
+        def cluster=: (
+          NextbillionSDK::Models::Skynet::ConfigRetrieveParams::cluster
+        ) -> NextbillionSDK::Models::Skynet::ConfigRetrieveParams::cluster
+
+        def initialize: (
+          key: String,
+          ?cluster: NextbillionSDK::Models::Skynet::ConfigRetrieveParams::cluster,
+          ?request_options: NextbillionSDK::request_opts
+        ) -> void
+
+        def to_hash: -> {
+          key: String,
+          cluster: NextbillionSDK::Models::Skynet::ConfigRetrieveParams::cluster,
+          request_options: NextbillionSDK::RequestOptions
+        }
+
+        type cluster = :america
+
+        module Cluster
+          extend NextbillionSDK::Internal::Type::Enum
+
+          AMERICA: :america
+
+          def self?.values: -> ::Array[NextbillionSDK::Models::Skynet::ConfigRetrieveParams::cluster]
+        end
+      end
+    end
+  end
+end

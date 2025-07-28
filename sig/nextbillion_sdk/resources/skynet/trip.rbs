@@ -1,0 +1,63 @@
+module NextbillionSDK
+  module Resources
+    class Skynet
+      class Trip
+        def retrieve: (
+          String id,
+          key: String,
+          ?cluster: NextbillionSDK::Models::Skynet::TripRetrieveParams::cluster,
+          ?request_options: NextbillionSDK::request_opts
+        ) -> NextbillionSDK::Models::Skynet::TripRetrieveResponse
+
+        def update: (
+          String id,
+          key: String,
+          asset_id: String,
+          ?cluster: NextbillionSDK::Models::Skynet::TripUpdateParams::cluster,
+          ?attributes: top,
+          ?description: String,
+          ?meta_data: top,
+          ?name: String,
+          ?stops: ::Array[NextbillionSDK::Skynet::TripUpdateParams::Stop],
+          ?request_options: NextbillionSDK::request_opts
+        ) -> NextbillionSDK::Skynet::SimpleResp
+
+        def delete: (
+          String id,
+          key: String,
+          ?cluster: NextbillionSDK::Models::Skynet::TripDeleteParams::cluster,
+          ?request_options: NextbillionSDK::request_opts
+        ) -> NextbillionSDK::Skynet::SimpleResp
+
+        def end_: (
+          key: String,
+          id: String,
+          ?cluster: NextbillionSDK::Models::Skynet::TripEndParams::cluster,
+          ?request_options: NextbillionSDK::request_opts
+        ) -> NextbillionSDK::Skynet::SimpleResp
+
+        def get_summary: (
+          String id,
+          key: String,
+          ?cluster: NextbillionSDK::Models::Skynet::TripGetSummaryParams::cluster,
+          ?request_options: NextbillionSDK::request_opts
+        ) -> NextbillionSDK::Models::Skynet::TripGetSummaryResponse
+
+        def start: (
+          key: String,
+          asset_id: String,
+          ?cluster: NextbillionSDK::Models::Skynet::TripStartParams::cluster,
+          ?attributes: top,
+          ?custom_id: String,
+          ?description: String,
+          ?meta_data: top,
+          ?name: String,
+          ?stops: ::Array[NextbillionSDK::Skynet::TripStartParams::Stop],
+          ?request_options: NextbillionSDK::request_opts
+        ) -> NextbillionSDK::Models::Skynet::TripStartResponse
+
+        def initialize: (client: NextbillionSDK::Client) -> void
+      end
+    end
+  end
+end

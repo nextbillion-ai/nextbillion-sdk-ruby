@@ -1,0 +1,7 @@
+module NextbillionSDK
+  module Models
+    module Skynet
+      Metadata: NextbillionSDK::Internal::Type::Converter
+    end
+  end
+end

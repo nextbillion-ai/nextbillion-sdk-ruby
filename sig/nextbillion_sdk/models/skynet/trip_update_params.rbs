@@ -1,0 +1,113 @@
+module NextbillionSDK
+  module Models
+    module Skynet
+      type trip_update_params =
+        {
+          key: String,
+          asset_id: String,
+          cluster: NextbillionSDK::Models::Skynet::TripUpdateParams::cluster,
+          attributes: top,
+          description: String,
+          meta_data: top,
+          name: String,
+          stops: ::Array[NextbillionSDK::Skynet::TripUpdateParams::Stop]
+        }
+        & NextbillionSDK::Internal::Type::request_parameters
+
+      class TripUpdateParams < NextbillionSDK::Internal::Type::BaseModel
+        extend NextbillionSDK::Internal::Type::RequestParameters::Converter
+        include NextbillionSDK::Internal::Type::RequestParameters
+
+        attr_accessor key: String
+
+        attr_accessor asset_id: String
+
+        attr_reader cluster: NextbillionSDK::Models::Skynet::TripUpdateParams::cluster?
+
+        def cluster=: (
+          NextbillionSDK::Models::Skynet::TripUpdateParams::cluster
+        ) -> NextbillionSDK::Models::Skynet::TripUpdateParams::cluster
+
+        attr_reader attributes: top?
+
+        def attributes=: (top) -> top
+
+        attr_reader description: String?
+
+        def description=: (String) -> String
+
+        attr_reader meta_data: top?
+
+        def meta_data=: (top) -> top
+
+        attr_reader name: String?
+
+        def name=: (String) -> String
+
+        attr_reader stops: ::Array[NextbillionSDK::Skynet::TripUpdateParams::Stop]?
+
+        def stops=: (
+          ::Array[NextbillionSDK::Skynet::TripUpdateParams::Stop]
+        ) -> ::Array[NextbillionSDK::Skynet::TripUpdateParams::Stop]
+
+        def initialize: (
+          key: String,
+          asset_id: String,
+          ?cluster: NextbillionSDK::Models::Skynet::TripUpdateParams::cluster,
+          ?attributes: top,
+          ?description: String,
+          ?meta_data: top,
+          ?name: String,
+          ?stops: ::Array[NextbillionSDK::Skynet::TripUpdateParams::Stop],
+          ?request_options: NextbillionSDK::request_opts
+        ) -> void
+
+        def to_hash: -> {
+          key: String,
+          asset_id: String,
+          cluster: NextbillionSDK::Models::Skynet::TripUpdateParams::cluster,
+          attributes: top,
+          description: String,
+          meta_data: top,
+          name: String,
+          stops: ::Array[NextbillionSDK::Skynet::TripUpdateParams::Stop],
+          request_options: NextbillionSDK::RequestOptions
+        }
+
+        type cluster = :america
+
+        module Cluster
+          extend NextbillionSDK::Internal::Type::Enum
+
+          AMERICA: :america
+
+          def self?.values: -> ::Array[NextbillionSDK::Models::Skynet::TripUpdateParams::cluster]
+        end
+
+        type stop = { geofence_id: String, meta_data: top, name: String }
+
+        class Stop < NextbillionSDK::Internal::Type::BaseModel
+          attr_reader geofence_id: String?
+
+          def geofence_id=: (String) -> String
+
+          attr_reader meta_data: top?
+
+          def meta_data=: (top) -> top
+
+          attr_reader name: String?
+
+          def name=: (String) -> String
+
+          def initialize: (
+            ?geofence_id: String,
+            ?meta_data: top,
+            ?name: String
+          ) -> void
+
+          def to_hash: -> { geofence_id: String, meta_data: top, name: String }
+        end
+      end
+    end
+  end
+end

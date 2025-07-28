@@ -1,0 +1,37 @@
+module NextbillionSDK
+  module Models
+    module Geofence
+      type batch_list_response =
+        {
+          data: NextbillionSDK::Models::Geofence::BatchListResponse::Data,
+          status: String
+        }
+
+      class BatchListResponse < NextbillionSDK::Internal::Type::BaseModel
+        attr_accessor data: NextbillionSDK::Models::Geofence::BatchListResponse::Data
+
+        attr_accessor status: String
+
+        def initialize: (
+          data: NextbillionSDK::Models::Geofence::BatchListResponse::Data,
+          status: String
+        ) -> void
+
+        def to_hash: -> {
+          data: NextbillionSDK::Models::Geofence::BatchListResponse::Data,
+          status: String
+        }
+
+        type data = { list: ::Array[NextbillionSDK::GeofenceAPI] }
+
+        class Data < NextbillionSDK::Internal::Type::BaseModel
+          attr_accessor list: ::Array[NextbillionSDK::GeofenceAPI]
+
+          def initialize: (list: ::Array[NextbillionSDK::GeofenceAPI]) -> void
+
+          def to_hash: -> { list: ::Array[NextbillionSDK::GeofenceAPI] }
+        end
+      end
+    end
+  end
+end

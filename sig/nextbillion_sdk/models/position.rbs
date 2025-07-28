@@ -1,0 +1,19 @@
+module NextbillionSDK
+  module Models
+    type position = { lat: String, lng: String }
+
+    class Position < NextbillionSDK::Internal::Type::BaseModel
+      attr_reader lat: String?
+
+      def lat=: (String) -> String
+
+      attr_reader lng: String?
+
+      def lng=: (String) -> String
+
+      def initialize: (?lat: String, ?lng: String) -> void
+
+      def to_hash: -> { lat: String, lng: String }
+    end
+  end
+end

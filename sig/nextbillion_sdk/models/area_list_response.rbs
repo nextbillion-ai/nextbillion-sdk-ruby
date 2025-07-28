@@ -1,0 +1,43 @@
+module NextbillionSDK
+  module Models
+    type area_list_response_item =
+      { code: String, modes: ::Array[String], name: String, timezone: Float }
+
+    class AreaListResponseItem < NextbillionSDK::Internal::Type::BaseModel
+      attr_reader code: String?
+
+      def code=: (String) -> String
+
+      attr_reader modes: ::Array[String]?
+
+      def modes=: (::Array[String]) -> ::Array[String]
+
+      attr_reader name: String?
+
+      def name=: (String) -> String
+
+      attr_reader timezone: Float?
+
+      def timezone=: (Float) -> Float
+
+      def initialize: (
+        ?code: String,
+        ?modes: ::Array[String],
+        ?name: String,
+        ?timezone: Float
+      ) -> void
+
+      def to_hash: -> {
+        code: String,
+        modes: ::Array[String],
+        name: String,
+        timezone: Float
+      }
+    end
+
+    type area_list_response =
+      ::Array[NextbillionSDK::Models::AreaListResponseItem]
+
+    AreaListResponse: NextbillionSDK::Internal::Type::Converter
+  end
+end

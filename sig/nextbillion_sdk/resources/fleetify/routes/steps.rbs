@@ -1,0 +1,61 @@
+module NextbillionSDK
+  module Resources
+    class Fleetify
+      class Routes
+        class Steps
+          def create: (
+            String route_id,
+            key: String,
+            arrival: Integer,
+            location: ::Array[Float],
+            position: Integer,
+            type: NextbillionSDK::Models::Fleetify::Routes::StepCreateParams::type_,
+            ?address: String,
+            ?completion_mode: NextbillionSDK::Models::Fleetify::Routes::route_step_completion_mode,
+            ?document_template_id: String,
+            ?duration: Integer,
+            ?geofence_config: NextbillionSDK::Fleetify::Routes::RouteStepGeofenceConfig,
+            ?meta: NextbillionSDK::Fleetify::Routes::StepCreateParams::Meta,
+            ?request_options: NextbillionSDK::request_opts
+          ) -> NextbillionSDK::Models::Fleetify::Routes::StepCreateResponse
+
+          def update: (
+            String step_id,
+            route_id: String,
+            key: String,
+            arrival: Integer,
+            position: Integer,
+            ?address: String,
+            ?completion_mode: NextbillionSDK::Models::Fleetify::Routes::route_step_completion_mode,
+            ?document_template_id: String,
+            ?duration: Integer,
+            ?geofence_config: NextbillionSDK::Fleetify::Routes::RouteStepGeofenceConfig,
+            ?location: ::Array[Float],
+            ?meta: NextbillionSDK::Fleetify::Routes::StepUpdateParams::Meta,
+            ?type: NextbillionSDK::Models::Fleetify::Routes::StepUpdateParams::type_,
+            ?request_options: NextbillionSDK::request_opts
+          ) -> NextbillionSDK::Models::Fleetify::Routes::StepUpdateResponse
+
+          def delete: (
+            String step_id,
+            route_id: String,
+            key: String,
+            ?request_options: NextbillionSDK::request_opts
+          ) -> NextbillionSDK::Models::Fleetify::Routes::StepDeleteResponse
+
+          def complete: (
+            String step_id,
+            route_id: String,
+            key: String,
+            ?document: top,
+            ?mode: String,
+            ?status: String,
+            ?request_options: NextbillionSDK::request_opts
+          ) -> nil
+
+          def initialize: (client: NextbillionSDK::Client) -> void
+        end
+      end
+    end
+  end
+end

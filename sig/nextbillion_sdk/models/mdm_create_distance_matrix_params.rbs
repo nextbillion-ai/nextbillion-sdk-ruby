@@ -1,0 +1,273 @@
+module NextbillionSDK
+  module Models
+    type mdm_create_distance_matrix_params =
+      {
+        key: String,
+        option: NextbillionSDK::Models::MdmCreateDistanceMatrixParams::option,
+        origins: String,
+        spliter: NextbillionSDK::Models::MdmCreateDistanceMatrixParams::spliter,
+        area: NextbillionSDK::Models::MdmCreateDistanceMatrixParams::area,
+        avoid: NextbillionSDK::Models::MdmCreateDistanceMatrixParams::avoid,
+        cross_border: bool,
+        departure_time: Integer,
+        destinations: String,
+        destinations_approach: NextbillionSDK::Models::MdmCreateDistanceMatrixParams::destinations_approach,
+        hazmat_type: NextbillionSDK::Models::MdmCreateDistanceMatrixParams::hazmat_type,
+        mode: NextbillionSDK::Models::MdmCreateDistanceMatrixParams::mode,
+        origins_approach: NextbillionSDK::Models::MdmCreateDistanceMatrixParams::origins_approach,
+        route_type: NextbillionSDK::Models::MdmCreateDistanceMatrixParams::route_type,
+        truck_axle_load: Float,
+        truck_size: String,
+        truck_weight: Integer
+      }
+      & NextbillionSDK::Internal::Type::request_parameters
+
+    class MdmCreateDistanceMatrixParams < NextbillionSDK::Internal::Type::BaseModel
+      extend NextbillionSDK::Internal::Type::RequestParameters::Converter
+      include NextbillionSDK::Internal::Type::RequestParameters
+
+      attr_accessor key: String
+
+      attr_accessor option: NextbillionSDK::Models::MdmCreateDistanceMatrixParams::option
+
+      attr_accessor origins: String
+
+      attr_reader spliter: NextbillionSDK::Models::MdmCreateDistanceMatrixParams::spliter?
+
+      def spliter=: (
+        NextbillionSDK::Models::MdmCreateDistanceMatrixParams::spliter
+      ) -> NextbillionSDK::Models::MdmCreateDistanceMatrixParams::spliter
+
+      attr_reader area: NextbillionSDK::Models::MdmCreateDistanceMatrixParams::area?
+
+      def area=: (
+        NextbillionSDK::Models::MdmCreateDistanceMatrixParams::area
+      ) -> NextbillionSDK::Models::MdmCreateDistanceMatrixParams::area
+
+      attr_reader avoid: NextbillionSDK::Models::MdmCreateDistanceMatrixParams::avoid?
+
+      def avoid=: (
+        NextbillionSDK::Models::MdmCreateDistanceMatrixParams::avoid
+      ) -> NextbillionSDK::Models::MdmCreateDistanceMatrixParams::avoid
+
+      attr_reader cross_border: bool?
+
+      def cross_border=: (bool) -> bool
+
+      attr_reader departure_time: Integer?
+
+      def departure_time=: (Integer) -> Integer
+
+      attr_reader destinations: String?
+
+      def destinations=: (String) -> String
+
+      attr_reader destinations_approach: NextbillionSDK::Models::MdmCreateDistanceMatrixParams::destinations_approach?
+
+      def destinations_approach=: (
+        NextbillionSDK::Models::MdmCreateDistanceMatrixParams::destinations_approach
+      ) -> NextbillionSDK::Models::MdmCreateDistanceMatrixParams::destinations_approach
+
+      attr_reader hazmat_type: NextbillionSDK::Models::MdmCreateDistanceMatrixParams::hazmat_type?
+
+      def hazmat_type=: (
+        NextbillionSDK::Models::MdmCreateDistanceMatrixParams::hazmat_type
+      ) -> NextbillionSDK::Models::MdmCreateDistanceMatrixParams::hazmat_type
+
+      attr_reader mode: NextbillionSDK::Models::MdmCreateDistanceMatrixParams::mode?
+
+      def mode=: (
+        NextbillionSDK::Models::MdmCreateDistanceMatrixParams::mode
+      ) -> NextbillionSDK::Models::MdmCreateDistanceMatrixParams::mode
+
+      attr_reader origins_approach: NextbillionSDK::Models::MdmCreateDistanceMatrixParams::origins_approach?
+
+      def origins_approach=: (
+        NextbillionSDK::Models::MdmCreateDistanceMatrixParams::origins_approach
+      ) -> NextbillionSDK::Models::MdmCreateDistanceMatrixParams::origins_approach
+
+      attr_reader route_type: NextbillionSDK::Models::MdmCreateDistanceMatrixParams::route_type?
+
+      def route_type=: (
+        NextbillionSDK::Models::MdmCreateDistanceMatrixParams::route_type
+      ) -> NextbillionSDK::Models::MdmCreateDistanceMatrixParams::route_type
+
+      attr_reader truck_axle_load: Float?
+
+      def truck_axle_load=: (Float) -> Float
+
+      attr_reader truck_size: String?
+
+      def truck_size=: (String) -> String
+
+      attr_reader truck_weight: Integer?
+
+      def truck_weight=: (Integer) -> Integer
+
+      def initialize: (
+        key: String,
+        option: NextbillionSDK::Models::MdmCreateDistanceMatrixParams::option,
+        origins: String,
+        ?spliter: NextbillionSDK::Models::MdmCreateDistanceMatrixParams::spliter,
+        ?area: NextbillionSDK::Models::MdmCreateDistanceMatrixParams::area,
+        ?avoid: NextbillionSDK::Models::MdmCreateDistanceMatrixParams::avoid,
+        ?cross_border: bool,
+        ?departure_time: Integer,
+        ?destinations: String,
+        ?destinations_approach: NextbillionSDK::Models::MdmCreateDistanceMatrixParams::destinations_approach,
+        ?hazmat_type: NextbillionSDK::Models::MdmCreateDistanceMatrixParams::hazmat_type,
+        ?mode: NextbillionSDK::Models::MdmCreateDistanceMatrixParams::mode,
+        ?origins_approach: NextbillionSDK::Models::MdmCreateDistanceMatrixParams::origins_approach,
+        ?route_type: NextbillionSDK::Models::MdmCreateDistanceMatrixParams::route_type,
+        ?truck_axle_load: Float,
+        ?truck_size: String,
+        ?truck_weight: Integer,
+        ?request_options: NextbillionSDK::request_opts
+      ) -> void
+
+      def to_hash: -> {
+        key: String,
+        option: NextbillionSDK::Models::MdmCreateDistanceMatrixParams::option,
+        origins: String,
+        spliter: NextbillionSDK::Models::MdmCreateDistanceMatrixParams::spliter,
+        area: NextbillionSDK::Models::MdmCreateDistanceMatrixParams::area,
+        avoid: NextbillionSDK::Models::MdmCreateDistanceMatrixParams::avoid,
+        cross_border: bool,
+        departure_time: Integer,
+        destinations: String,
+        destinations_approach: NextbillionSDK::Models::MdmCreateDistanceMatrixParams::destinations_approach,
+        hazmat_type: NextbillionSDK::Models::MdmCreateDistanceMatrixParams::hazmat_type,
+        mode: NextbillionSDK::Models::MdmCreateDistanceMatrixParams::mode,
+        origins_approach: NextbillionSDK::Models::MdmCreateDistanceMatrixParams::origins_approach,
+        route_type: NextbillionSDK::Models::MdmCreateDistanceMatrixParams::route_type,
+        truck_axle_load: Float,
+        truck_size: String,
+        truck_weight: Integer,
+        request_options: NextbillionSDK::RequestOptions
+      }
+
+      type option = :flexible
+
+      module Option
+        extend NextbillionSDK::Internal::Type::Enum
+
+        FLEXIBLE: :flexible
+
+        def self?.values: -> ::Array[NextbillionSDK::Models::MdmCreateDistanceMatrixParams::option]
+      end
+
+      type spliter =
+        :od_number_spliter | :straight_distance_spliter | :location_spliter
+
+      module Spliter
+        extend NextbillionSDK::Internal::Type::Enum
+
+        OD_NUMBER_SPLITER: :od_number_spliter
+        STRAIGHT_DISTANCE_SPLITER: :straight_distance_spliter
+        LOCATION_SPLITER: :location_spliter
+
+        def self?.values: -> ::Array[NextbillionSDK::Models::MdmCreateDistanceMatrixParams::spliter]
+      end
+
+      type area = :singapore | :usa | :india
+
+      module Area
+        extend NextbillionSDK::Internal::Type::Enum
+
+        SINGAPORE: :singapore
+        USA: :usa
+        INDIA: :india
+
+        def self?.values: -> ::Array[NextbillionSDK::Models::MdmCreateDistanceMatrixParams::area]
+      end
+
+      type avoid =
+        :"`toll`"
+        | :"`ferry`"
+        | :"`highway`"
+        | :"`sharp_turn`"
+        | :"`service_road`"
+        | :"`bbox`"
+        | :"`left_turn`"
+        | :"`right_turn`"
+        | :"`none`"
+
+      module Avoid
+        extend NextbillionSDK::Internal::Type::Enum
+
+        TOLL: :"`toll`"
+        FERRY: :"`ferry`"
+        HIGHWAY: :"`highway`"
+        SHARP_TURN: :"`sharp_turn`"
+        SERVICE_ROAD: :"`service_road`"
+        BBOX: :"`bbox`"
+        LEFT_TURN: :"`left_turn`"
+        RIGHT_TURN: :"`right_turn`"
+        NONE: :"`none`"
+
+        def self?.values: -> ::Array[NextbillionSDK::Models::MdmCreateDistanceMatrixParams::avoid]
+      end
+
+      type destinations_approach = :"`unrestricted`" | :"`curb`"
+
+      module DestinationsApproach
+        extend NextbillionSDK::Internal::Type::Enum
+
+        UNRESTRICTED: :"`unrestricted`"
+        CURB: :"`curb`"
+
+        def self?.values: -> ::Array[NextbillionSDK::Models::MdmCreateDistanceMatrixParams::destinations_approach]
+      end
+
+      type hazmat_type =
+        :"`general`"
+        | :"`circumstantial`"
+        | :"`explosive`"
+        | :"`harmful_to_water`"
+
+      module HazmatType
+        extend NextbillionSDK::Internal::Type::Enum
+
+        GENERAL: :"`general`"
+        CIRCUMSTANTIAL: :"`circumstantial`"
+        EXPLOSIVE: :"`explosive`"
+        HARMFUL_TO_WATER: :"`harmful_to_water`"
+
+        def self?.values: -> ::Array[NextbillionSDK::Models::MdmCreateDistanceMatrixParams::hazmat_type]
+      end
+
+      type mode = :"`car`" | :"`truck`"
+
+      module Mode
+        extend NextbillionSDK::Internal::Type::Enum
+
+        CAR: :"`car`"
+        TRUCK: :"`truck`"
+
+        def self?.values: -> ::Array[NextbillionSDK::Models::MdmCreateDistanceMatrixParams::mode]
+      end
+
+      type origins_approach = :"`unrestricted`" | :"`curb`"
+
+      module OriginsApproach
+        extend NextbillionSDK::Internal::Type::Enum
+
+        UNRESTRICTED: :"`unrestricted`"
+        CURB: :"`curb`"
+
+        def self?.values: -> ::Array[NextbillionSDK::Models::MdmCreateDistanceMatrixParams::origins_approach]
+      end
+
+      type route_type = :"`fastest`" | :"`shortest`"
+
+      module RouteType
+        extend NextbillionSDK::Internal::Type::Enum
+
+        FASTEST: :"`fastest`"
+        SHORTEST: :"`shortest`"
+
+        def self?.values: -> ::Array[NextbillionSDK::Models::MdmCreateDistanceMatrixParams::route_type]
+      end
+    end
+  end
+end
