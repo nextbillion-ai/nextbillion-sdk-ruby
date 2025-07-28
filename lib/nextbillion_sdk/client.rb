@@ -51,8 +51,8 @@ module NextbillionSDK
     # @return [NextbillionSDK::Resources::RestrictionsItems]
     attr_reader :restrictions_items
 
-    # @return [NextbillionSDK::Resources::Distancematrix]
-    attr_reader :distancematrix
+    # @return [NextbillionSDK::Resources::DistanceMatrix]
+    attr_reader :distance_matrix
 
     # @return [NextbillionSDK::Resources::Autocomplete]
     attr_reader :autocomplete
@@ -149,7 +149,7 @@ module NextbillionSDK
       @isochrone = NextbillionSDK::Resources::Isochrone.new(client: self)
       @restrictions = NextbillionSDK::Resources::Restrictions.new(client: self)
       @restrictions_items = NextbillionSDK::Resources::RestrictionsItems.new(client: self)
-      @distancematrix = NextbillionSDK::Resources::Distancematrix.new(client: self)
+      @distance_matrix = NextbillionSDK::Resources::DistanceMatrix.new(client: self)
       @autocomplete = NextbillionSDK::Resources::Autocomplete.new(client: self)
       @navigation = NextbillionSDK::Resources::Navigation.new(client: self)
       @map = NextbillionSDK::Resources::Map.new(client: self)

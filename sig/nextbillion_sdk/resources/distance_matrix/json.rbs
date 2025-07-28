@@ -1,6 +1,6 @@
 module NextbillionSDK
   module Resources
-    class Distancematrix
+    class DistanceMatrix
       class Json
         def create: (?request_options: NextbillionSDK::request_opts) -> nil
 
@@ -8,13 +8,13 @@ module NextbillionSDK
           destinations: String,
           key: String,
           origins: String,
-          ?approaches: NextbillionSDK::Models::Distancematrix::JsonRetrieveParams::approaches,
-          ?avoid: NextbillionSDK::Models::Distancematrix::JsonRetrieveParams::avoid,
+          ?approaches: NextbillionSDK::Models::DistanceMatrix::JsonRetrieveParams::approaches,
+          ?avoid: NextbillionSDK::Models::DistanceMatrix::JsonRetrieveParams::avoid,
           ?bearings: String,
-          ?mode: NextbillionSDK::Models::Distancematrix::JsonRetrieveParams::mode,
+          ?mode: NextbillionSDK::Models::DistanceMatrix::JsonRetrieveParams::mode,
           ?route_failed_prompt: bool,
           ?request_options: NextbillionSDK::request_opts
-        ) -> NextbillionSDK::Models::Distancematrix::JsonRetrieveResponse
+        ) -> NextbillionSDK::Models::DistanceMatrix::JsonRetrieveResponse
 
         def initialize: (client: NextbillionSDK::Client) -> void
       end

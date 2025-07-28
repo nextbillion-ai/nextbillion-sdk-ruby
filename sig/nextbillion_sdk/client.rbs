@@ -32,7 +32,7 @@ module NextbillionSDK
 
     attr_reader restrictions_items: NextbillionSDK::Resources::RestrictionsItems
 
-    attr_reader distancematrix: NextbillionSDK::Resources::Distancematrix
+    attr_reader distance_matrix: NextbillionSDK::Resources::DistanceMatrix
 
     attr_reader autocomplete: NextbillionSDK::Resources::Autocomplete
 

@@ -2,12 +2,12 @@
 
 module NextbillionSDK
   module Models
-    module Distancematrix
+    module DistanceMatrix
       class JsonRetrieveResponse < NextbillionSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              NextbillionSDK::Models::Distancematrix::JsonRetrieveResponse,
+              NextbillionSDK::Models::DistanceMatrix::JsonRetrieveResponse,
               NextbillionSDK::Internal::AnyHash
             )
           end
@@ -26,7 +26,7 @@ module NextbillionSDK
           returns(
             T.nilable(
               T::Array[
-                NextbillionSDK::Models::Distancematrix::JsonRetrieveResponse::Row
+                NextbillionSDK::Models::DistanceMatrix::JsonRetrieveResponse::Row
               ]
             )
           )
@@ -37,7 +37,7 @@ module NextbillionSDK
           params(
             rows:
               T::Array[
-                NextbillionSDK::Models::Distancematrix::JsonRetrieveResponse::Row::OrHash
+                NextbillionSDK::Models::DistanceMatrix::JsonRetrieveResponse::Row::OrHash
               ]
           ).void
         end
@@ -57,7 +57,7 @@ module NextbillionSDK
             msg: String,
             rows:
               T::Array[
-                NextbillionSDK::Models::Distancematrix::JsonRetrieveResponse::Row::OrHash
+                NextbillionSDK::Models::DistanceMatrix::JsonRetrieveResponse::Row::OrHash
               ],
             status: String
           ).returns(T.attached_class)
@@ -82,7 +82,7 @@ module NextbillionSDK
               msg: String,
               rows:
                 T::Array[
-                  NextbillionSDK::Models::Distancematrix::JsonRetrieveResponse::Row
+                  NextbillionSDK::Models::DistanceMatrix::JsonRetrieveResponse::Row
                 ],
               status: String
             }
@@ -95,7 +95,7 @@ module NextbillionSDK
           OrHash =
             T.type_alias do
               T.any(
-                NextbillionSDK::Models::Distancematrix::JsonRetrieveResponse::Row,
+                NextbillionSDK::Models::DistanceMatrix::JsonRetrieveResponse::Row,
                 NextbillionSDK::Internal::AnyHash
               )
             end
@@ -109,7 +109,7 @@ module NextbillionSDK
             returns(
               T.nilable(
                 T::Array[
-                  NextbillionSDK::Models::Distancematrix::JsonRetrieveResponse::Row::Element
+                  NextbillionSDK::Models::DistanceMatrix::JsonRetrieveResponse::Row::Element
                 ]
               )
             )
@@ -120,7 +120,7 @@ module NextbillionSDK
             params(
               elements:
                 T::Array[
-                  NextbillionSDK::Models::Distancematrix::JsonRetrieveResponse::Row::Element::OrHash
+                  NextbillionSDK::Models::DistanceMatrix::JsonRetrieveResponse::Row::Element::OrHash
                 ]
             ).void
           end
@@ -130,7 +130,7 @@ module NextbillionSDK
             params(
               elements:
                 T::Array[
-                  NextbillionSDK::Models::Distancematrix::JsonRetrieveResponse::Row::Element::OrHash
+                  NextbillionSDK::Models::DistanceMatrix::JsonRetrieveResponse::Row::Element::OrHash
                 ]
             ).returns(T.attached_class)
           end
@@ -149,7 +149,7 @@ module NextbillionSDK
               {
                 elements:
                   T::Array[
-                    NextbillionSDK::Models::Distancematrix::JsonRetrieveResponse::Row::Element
+                    NextbillionSDK::Models::DistanceMatrix::JsonRetrieveResponse::Row::Element
                   ]
               }
             )
@@ -161,7 +161,7 @@ module NextbillionSDK
             OrHash =
               T.type_alias do
                 T.any(
-                  NextbillionSDK::Models::Distancematrix::JsonRetrieveResponse::Row::Element,
+                  NextbillionSDK::Models::DistanceMatrix::JsonRetrieveResponse::Row::Element,
                   NextbillionSDK::Internal::AnyHash
                 )
               end

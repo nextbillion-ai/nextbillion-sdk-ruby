@@ -25,7 +25,7 @@ module NextbillionSDK
 
   class DiscoverRetrieveParams = NextbillionSDK::Models::DiscoverRetrieveParams
 
-  module Distancematrix = NextbillionSDK::Models::Distancematrix
+  module DistanceMatrix = NextbillionSDK::Models::DistanceMatrix
 
   module Fleetify = NextbillionSDK::Models::Fleetify
 

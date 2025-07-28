@@ -2,8 +2,8 @@
 
 module NextbillionSDK
   module Models
-    module Distancematrix
-      # @see NextbillionSDK::Resources::Distancematrix::Json#retrieve
+    module DistanceMatrix
+      # @see NextbillionSDK::Resources::DistanceMatrix::Json#retrieve
       class JsonRetrieveParams < NextbillionSDK::Internal::Type::BaseModel
         extend NextbillionSDK::Internal::Type::RequestParameters::Converter
         include NextbillionSDK::Internal::Type::RequestParameters
@@ -43,8 +43,8 @@ module NextbillionSDK
         #   curbside restriction on the "destinations" points provided at the first and
         #   third index.
         #
-        #   @return [Symbol, NextbillionSDK::Models::Distancematrix::JsonRetrieveParams::Approaches, nil]
-        optional :approaches, enum: -> { NextbillionSDK::Distancematrix::JsonRetrieveParams::Approaches }
+        #   @return [Symbol, NextbillionSDK::Models::DistanceMatrix::JsonRetrieveParams::Approaches, nil]
+        optional :approaches, enum: -> { NextbillionSDK::DistanceMatrix::JsonRetrieveParams::Approaches }
 
         # @!attribute avoid
         #   Setting this will ensure the route avoids ferries, tolls, highways or nothing.
@@ -54,8 +54,8 @@ module NextbillionSDK
         #   be avoided by default. When this parameter is provided, only the mentioned
         #   objects are avoided.
         #
-        #   @return [Symbol, NextbillionSDK::Models::Distancematrix::JsonRetrieveParams::Avoid, nil]
-        optional :avoid, enum: -> { NextbillionSDK::Distancematrix::JsonRetrieveParams::Avoid }
+        #   @return [Symbol, NextbillionSDK::Models::DistanceMatrix::JsonRetrieveParams::Avoid, nil]
+        optional :avoid, enum: -> { NextbillionSDK::DistanceMatrix::JsonRetrieveParams::Avoid }
 
         # @!attribute bearings
         #   Limits the search to segments with given bearing in degrees towards true north
@@ -96,8 +96,8 @@ module NextbillionSDK
         #   [support@nextbillion.ai](mailto:support@nextbillion.ai) in case you need
         #   additional profiles.
         #
-        #   @return [Symbol, NextbillionSDK::Models::Distancematrix::JsonRetrieveParams::Mode, nil]
-        optional :mode, enum: -> { NextbillionSDK::Distancematrix::JsonRetrieveParams::Mode }
+        #   @return [Symbol, NextbillionSDK::Models::DistanceMatrix::JsonRetrieveParams::Mode, nil]
+        optional :mode, enum: -> { NextbillionSDK::DistanceMatrix::JsonRetrieveParams::Mode }
 
         # @!attribute route_failed_prompt
         #   A prompt to modify the response in case no feasible route is available for a
@@ -122,7 +122,7 @@ module NextbillionSDK
 
         # @!method initialize(destinations:, key:, origins:, approaches: nil, avoid: nil, bearings: nil, mode: nil, route_failed_prompt: nil, request_options: {})
         #   Some parameter documentations has been truncated, see
-        #   {NextbillionSDK::Models::Distancematrix::JsonRetrieveParams} for more details.
+        #   {NextbillionSDK::Models::DistanceMatrix::JsonRetrieveParams} for more details.
         #
         #   @param destinations [String] "destinations" are the ending coordinates of your route. Ensure that "destinatio
         #
@@ -130,13 +130,13 @@ module NextbillionSDK
         #
         #   @param origins [String] "origins" are the starting point of your route. Ensure that "origins" are routab
         #
-        #   @param approaches [Symbol, NextbillionSDK::Models::Distancematrix::JsonRetrieveParams::Approaches] A semicolon-separated list indicating the side of the road from which the route
+        #   @param approaches [Symbol, NextbillionSDK::Models::DistanceMatrix::JsonRetrieveParams::Approaches] A semicolon-separated list indicating the side of the road from which the route
         #
-        #   @param avoid [Symbol, NextbillionSDK::Models::Distancematrix::JsonRetrieveParams::Avoid] Setting this will ensure the route avoids ferries, tolls, highways or nothing. M
+        #   @param avoid [Symbol, NextbillionSDK::Models::DistanceMatrix::JsonRetrieveParams::Avoid] Setting this will ensure the route avoids ferries, tolls, highways or nothing. M
         #
         #   @param bearings [String] Limits the search to segments with given bearing in degrees towards true north i
         #
-        #   @param mode [Symbol, NextbillionSDK::Models::Distancematrix::JsonRetrieveParams::Mode] Set which driving mode the service should use to determine the "distance" and "d
+        #   @param mode [Symbol, NextbillionSDK::Models::DistanceMatrix::JsonRetrieveParams::Mode] Set which driving mode the service should use to determine the "distance" and "d
         #
         #   @param route_failed_prompt [Boolean] A prompt to modify the response in case no feasible route is available for a giv
         #
