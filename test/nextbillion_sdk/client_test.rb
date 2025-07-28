@@ -27,8 +27,15 @@ class NextbillionSDKTest < Minitest::Test
     super
   end
 
+  def test_raises_on_missing_non_nullable_opts
+    e = assert_raises(ArgumentError) do
+      NextbillionSDK::Client.new
+    end
+    assert_match(/is required/, e.message)
+  end
+
   def test_client_default_request_default_retry_attempts
-    stub_request(:post, "http://localhost/fleetify/routes").to_return_json(status: 500, body: {})
+    stub_request(:post, "http://localhost/fleetify/routes?key").to_return_json(status: 500, body: {})
 
     nextbillion_sdk = NextbillionSDK::Client.new(base_url: "http://localhost", api_key: "My API Key")
 
@@ -44,7 +51,7 @@ class NextbillionSDKTest < Minitest::Test
   end
 
   def test_client_given_request_default_retry_attempts
-    stub_request(:post, "http://localhost/fleetify/routes").to_return_json(status: 500, body: {})
+    stub_request(:post, "http://localhost/fleetify/routes?key").to_return_json(status: 500, body: {})
 
     nextbillion_sdk =
       NextbillionSDK::Client.new(base_url: "http://localhost", api_key: "My API Key", max_retries: 3)
@@ -61,7 +68,7 @@ class NextbillionSDKTest < Minitest::Test
   end
 
   def test_client_default_request_given_retry_attempts
-    stub_request(:post, "http://localhost/fleetify/routes").to_return_json(status: 500, body: {})
+    stub_request(:post, "http://localhost/fleetify/routes?key").to_return_json(status: 500, body: {})
 
     nextbillion_sdk = NextbillionSDK::Client.new(base_url: "http://localhost", api_key: "My API Key")
 
@@ -78,7 +85,7 @@ class NextbillionSDKTest < Minitest::Test
   end
 
   def test_client_given_request_given_retry_attempts
-    stub_request(:post, "http://localhost/fleetify/routes").to_return_json(status: 500, body: {})
+    stub_request(:post, "http://localhost/fleetify/routes?key").to_return_json(status: 500, body: {})
 
     nextbillion_sdk =
       NextbillionSDK::Client.new(base_url: "http://localhost", api_key: "My API Key", max_retries: 3)
@@ -96,7 +103,7 @@ class NextbillionSDKTest < Minitest::Test
   end
 
   def test_client_retry_after_seconds
-    stub_request(:post, "http://localhost/fleetify/routes").to_return_json(
+    stub_request(:post, "http://localhost/fleetify/routes?key").to_return_json(
       status: 500,
       headers: {"retry-after" => "1.3"},
       body: {}
@@ -118,7 +125,7 @@ class NextbillionSDKTest < Minitest::Test
   end
 
   def test_client_retry_after_date
-    stub_request(:post, "http://localhost/fleetify/routes").to_return_json(
+    stub_request(:post, "http://localhost/fleetify/routes?key").to_return_json(
       status: 500,
       headers: {"retry-after" => (Time.now + 10).httpdate},
       body: {}
@@ -142,7 +149,7 @@ class NextbillionSDKTest < Minitest::Test
   end
 
   def test_client_retry_after_ms
-    stub_request(:post, "http://localhost/fleetify/routes").to_return_json(
+    stub_request(:post, "http://localhost/fleetify/routes?key").to_return_json(
       status: 500,
       headers: {"retry-after-ms" => "1300"},
       body: {}
@@ -164,7 +171,7 @@ class NextbillionSDKTest < Minitest::Test
   end
 
   def test_retry_count_header
-    stub_request(:post, "http://localhost/fleetify/routes").to_return_json(status: 500, body: {})
+    stub_request(:post, "http://localhost/fleetify/routes?key").to_return_json(status: 500, body: {})
 
     nextbillion_sdk = NextbillionSDK::Client.new(base_url: "http://localhost", api_key: "My API Key")
 
@@ -182,7 +189,7 @@ class NextbillionSDKTest < Minitest::Test
   end
 
   def test_omit_retry_count_header
-    stub_request(:post, "http://localhost/fleetify/routes").to_return_json(status: 500, body: {})
+    stub_request(:post, "http://localhost/fleetify/routes?key").to_return_json(status: 500, body: {})
 
     nextbillion_sdk = NextbillionSDK::Client.new(base_url: "http://localhost", api_key: "My API Key")
 
@@ -201,7 +208,7 @@ class NextbillionSDKTest < Minitest::Test
   end
 
   def test_overwrite_retry_count_header
-    stub_request(:post, "http://localhost/fleetify/routes").to_return_json(status: 500, body: {})
+    stub_request(:post, "http://localhost/fleetify/routes?key").to_return_json(status: 500, body: {})
 
     nextbillion_sdk = NextbillionSDK::Client.new(base_url: "http://localhost", api_key: "My API Key")
 
@@ -218,7 +225,7 @@ class NextbillionSDKTest < Minitest::Test
   end
 
   def test_client_redirect_307
-    stub_request(:post, "http://localhost/fleetify/routes").to_return_json(
+    stub_request(:post, "http://localhost/fleetify/routes?key").to_return_json(
       status: 307,
       headers: {"location" => "/redirected"},
       body: {}
@@ -252,7 +259,7 @@ class NextbillionSDKTest < Minitest::Test
   end
 
   def test_client_redirect_303
-    stub_request(:post, "http://localhost/fleetify/routes").to_return_json(
+    stub_request(:post, "http://localhost/fleetify/routes?key").to_return_json(
       status: 303,
       headers: {"location" => "/redirected"},
       body: {}
@@ -281,7 +288,7 @@ class NextbillionSDKTest < Minitest::Test
   end
 
   def test_client_redirect_auth_keep_same_origin
-    stub_request(:post, "http://localhost/fleetify/routes").to_return_json(
+    stub_request(:post, "http://localhost/fleetify/routes?key").to_return_json(
       status: 307,
       headers: {"location" => "/redirected"},
       body: {}
@@ -313,7 +320,7 @@ class NextbillionSDKTest < Minitest::Test
   end
 
   def test_client_redirect_auth_strip_cross_origin
-    stub_request(:post, "http://localhost/fleetify/routes").to_return_json(
+    stub_request(:post, "http://localhost/fleetify/routes?key").to_return_json(
       status: 307,
       headers: {"location" => "https://example.com/redirected"},
       body: {}
@@ -341,7 +348,7 @@ class NextbillionSDKTest < Minitest::Test
   end
 
   def test_default_headers
-    stub_request(:post, "http://localhost/fleetify/routes").to_return_json(status: 200, body: {})
+    stub_request(:post, "http://localhost/fleetify/routes?key").to_return_json(status: 200, body: {})
 
     nextbillion_sdk = NextbillionSDK::Client.new(base_url: "http://localhost", api_key: "My API Key")
 
