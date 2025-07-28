@@ -10,7 +10,7 @@ module NextbillionSDK
 
     DEFAULT_MAX_RETRY_DELAY = T.let(8.0, Float)
 
-    sig { returns(T.nilable(String)) }
+    sig { returns(String) }
     attr_reader :api_key
 
     sig { returns(NextbillionSDK::Resources::Fleetify) }
@@ -90,7 +90,7 @@ module NextbillionSDK
 
     # @api private
     sig { override.returns(T::Hash[String, String]) }
-    private def auth_headers
+    private def auth_query
     end
 
     # Creates and returns a new client for interacting with the API.

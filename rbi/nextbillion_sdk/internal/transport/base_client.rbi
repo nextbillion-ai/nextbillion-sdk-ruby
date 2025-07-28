@@ -180,7 +180,7 @@ module NextbillionSDK
 
         # @api private
         sig { overridable.returns(T::Hash[String, String]) }
-        private def auth_headers
+        private def auth_query
         end
 
         # @api private
