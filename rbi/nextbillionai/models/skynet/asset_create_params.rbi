@@ -37,33 +37,32 @@ module Nextbillionai
         end
         attr_writer :cluster
 
-        # `attributes` can be used to store custom information about an asset in
-        # `key`:`value` format. Use `attributes` to add any useful information or context
-        # to your assets like the vehicle type, shift timing etc. Moreover, these
-        # attributes can be used to filter `assets` in **Search**, **Monitor**, and _Get
-        # Asset List_ queries.
+        # attributes can be used to store custom information about an asset in key:value
+        # format. Use attributes to add any useful information or context to your assets
+        # like the vehicle type, shift timing etc. Moreover, these attributes can be used
+        # to filter assets in **Search**, **Monitor**, and _Get Asset List_ queries.
         #
-        # Please note that the maximum number of `key`:`value` pairs that can be added to
-        # an `attributes` object is 100. Also, the overall size of `attributes` object
-        # should not exceed 65kb.
+        # Please note that the maximum number of key:value pairs that can be added to an
+        # attributes object is 100. Also, the overall size of attributes object should not
+        # exceed 65kb.
         sig { returns(T.nilable(T.anything)) }
         attr_reader :attributes
 
         sig { params(attributes: T.anything).void }
         attr_writer :attributes
 
-        # Set a unique ID for the new `asset`. If not provided, an ID will be
-        # automatically generated in UUID format. A valid `custom_id` can contain letters,
-        # numbers, "-", & "\_" only.
+        # Set a unique ID for the new asset. If not provided, an ID will be automatically
+        # generated in UUID format. A valid custom*id can contain letters, numbers, "-", &
+        # "*" only.
         #
-        # Please note that the ID of an `asset` can not be changed once it is created.
+        # Please note that the ID of an asset can not be changed once it is created.
         sig { returns(T.nilable(String)) }
         attr_reader :custom_id
 
         sig { params(custom_id: String).void }
         attr_writer :custom_id
 
-        # Description for the `asset`.
+        # Description for the asset.
         sig { returns(T.nilable(String)) }
         attr_reader :description
 
@@ -78,23 +77,22 @@ module Nextbillionai
         sig { params(meta_data: T.anything).void }
         attr_writer :meta_data
 
-        # Name of the `asset`. Use this field to assign a meaningful, custom name to the
-        # `asset` being created.
+        # Name of the asset. Use this field to assign a meaningful, custom name to the
+        # asset being created.
         sig { returns(T.nilable(String)) }
         attr_reader :name
 
         sig { params(name: String).void }
         attr_writer :name
 
-        # **This parameter will be deprecated soon! Please use the `attributes` parameter
-        # to add labels or markers for the asset.**
+        # **This parameter will be deprecated soon! Please use the attributes parameter to
+        # add labels or markers for the asset.**
         #
-        # Tags of the `asset`. `tags` can be used for filtering assets in operations like
-        # _Get Asset List_ and asset **Search** methods. They can also be used for
-        # monitoring of assets using the **Monitor** methods after linking `tags` and
-        # `asset`.
+        # Tags of the asset. tags can be used for filtering assets in operations like _Get
+        # Asset List_ and asset **Search** methods. They can also be used for monitoring
+        # of assets using the **Monitor** methods after linking tags and asset.
         #
-        # Valid `tags` are strings consisting of alphanumeric characters (A-Z, a-z, 0-9)
+        # Valid tags are strings consisting of alphanumeric characters (A-Z, a-z, 0-9)
         # along with the underscore ('\_') and hyphen ('-') symbols.
         sig { returns(T.nilable(T::Array[String])) }
         attr_reader :tags
@@ -122,39 +120,37 @@ module Nextbillionai
           key:,
           # the cluster of the region you want to use
           cluster: nil,
-          # `attributes` can be used to store custom information about an asset in
-          # `key`:`value` format. Use `attributes` to add any useful information or context
-          # to your assets like the vehicle type, shift timing etc. Moreover, these
-          # attributes can be used to filter `assets` in **Search**, **Monitor**, and _Get
-          # Asset List_ queries.
+          # attributes can be used to store custom information about an asset in key:value
+          # format. Use attributes to add any useful information or context to your assets
+          # like the vehicle type, shift timing etc. Moreover, these attributes can be used
+          # to filter assets in **Search**, **Monitor**, and _Get Asset List_ queries.
           #
-          # Please note that the maximum number of `key`:`value` pairs that can be added to
-          # an `attributes` object is 100. Also, the overall size of `attributes` object
-          # should not exceed 65kb.
+          # Please note that the maximum number of key:value pairs that can be added to an
+          # attributes object is 100. Also, the overall size of attributes object should not
+          # exceed 65kb.
           attributes: nil,
-          # Set a unique ID for the new `asset`. If not provided, an ID will be
-          # automatically generated in UUID format. A valid `custom_id` can contain letters,
-          # numbers, "-", & "\_" only.
+          # Set a unique ID for the new asset. If not provided, an ID will be automatically
+          # generated in UUID format. A valid custom*id can contain letters, numbers, "-", &
+          # "*" only.
           #
-          # Please note that the ID of an `asset` can not be changed once it is created.
+          # Please note that the ID of an asset can not be changed once it is created.
           custom_id: nil,
-          # Description for the `asset`.
+          # Description for the asset.
           description: nil,
           # Any valid json object data. Can be used to save customized data. Max size is
           # 65kb.
           meta_data: nil,
-          # Name of the `asset`. Use this field to assign a meaningful, custom name to the
-          # `asset` being created.
+          # Name of the asset. Use this field to assign a meaningful, custom name to the
+          # asset being created.
           name: nil,
-          # **This parameter will be deprecated soon! Please use the `attributes` parameter
-          # to add labels or markers for the asset.**
+          # **This parameter will be deprecated soon! Please use the attributes parameter to
+          # add labels or markers for the asset.**
           #
-          # Tags of the `asset`. `tags` can be used for filtering assets in operations like
-          # _Get Asset List_ and asset **Search** methods. They can also be used for
-          # monitoring of assets using the **Monitor** methods after linking `tags` and
-          # `asset`.
+          # Tags of the asset. tags can be used for filtering assets in operations like _Get
+          # Asset List_ and asset **Search** methods. They can also be used for monitoring
+          # of assets using the **Monitor** methods after linking tags and asset.
           #
-          # Valid `tags` are strings consisting of alphanumeric characters (A-Z, a-z, 0-9)
+          # Valid tags are strings consisting of alphanumeric characters (A-Z, a-z, 0-9)
           # along with the underscore ('\_') and hyphen ('-') symbols.
           tags: nil,
           request_options: {}

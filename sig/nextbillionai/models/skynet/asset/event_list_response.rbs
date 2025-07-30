@@ -152,16 +152,15 @@ module Nextbillionai
                 triggered_timestamp: Integer
               }
 
-              type event_type =
-                :"`enter`" | :"`exit`" | :"`speeding`" | :"`idle`"
+              type event_type = :enter | :exit | :speeding | :idle
 
               module EventType
                 extend Nextbillionai::Internal::Type::Enum
 
-                ENTER: :"`enter`"
-                EXIT: :"`exit`"
-                SPEEDING: :"`speeding`"
-                IDLE: :"`idle`"
+                ENTER: :enter
+                EXIT: :exit
+                SPEEDING: :speeding
+                IDLE: :idle
 
                 def self?.values: -> ::Array[Nextbillionai::Models::Skynet::Asset::EventListResponse::Data::List::event_type]
               end

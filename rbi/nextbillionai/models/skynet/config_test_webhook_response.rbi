@@ -13,7 +13,7 @@ module Nextbillionai
           end
 
         # A string indicating the state of the response. Please note this value will
-        # always be `Ok`.
+        # always be Ok.
         #
         # The sample event information will be received on the webhook, if they were
         # successfully configured. If no event information is received by the webhook,
@@ -28,7 +28,7 @@ module Nextbillionai
         sig { params(status: String).returns(T.attached_class) }
         def self.new(
           # A string indicating the state of the response. Please note this value will
-          # always be `Ok`.
+          # always be Ok.
           #
           # The sample event information will be received on the webhook, if they were
           # successfully configured. If no event information is received by the webhook,

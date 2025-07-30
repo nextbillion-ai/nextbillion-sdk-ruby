@@ -36,7 +36,7 @@ module Nextbillionai
 
           # @!attribute created_at
           #   Represents the timestamp of the creation in seconds since the Unix epoch.
-          #   Example: `1738743999`.
+          #   Example: 1738743999.
           #
           #   @return [Integer, nil]
           optional :created_at, Integer
@@ -44,15 +44,15 @@ module Nextbillionai
           # @!attribute document_snapshot
           #   Returns the details of the document that was used for collecting the proof of
           #   completion for the step. In case no document template ID was provided for the
-          #   given step, then a `null` value is returned. Each object represents a new field
-          #   in the document.
+          #   given step, then a null value is returned. Each object represents a new field in
+          #   the document.
           #
           #   @return [Array<Object>, nil]
           optional :document_snapshot,
                    Nextbillionai::Internal::Type::ArrayOf[Nextbillionai::Internal::Type::Unknown]
 
           # @!attribute duration
-          #   Returns the duration for `layover` or `break` type steps.
+          #   Returns the duration for layover or break type steps.
           #
           #   @return [Integer, nil]
           optional :duration, Integer
@@ -79,17 +79,16 @@ module Nextbillionai
           optional :short_id, String
 
           # @!attribute type
-          #   Returns the step type. It can belong to one of the following: `start`, `job` ,
-          #   `pickup`, `delivery`, `break`, `layover` , and `end`. For any given step, it
-          #   would be the same as that specified in the input request while configuring the
-          #   step details.
+          #   Returns the step type. It can belong to one of the following: start, job ,
+          #   pickup, delivery, break, layover , and end. For any given step, it would be the
+          #   same as that specified in the input request while configuring the step details.
           #
           #   @return [String, nil]
           optional :type, String
 
           # @!attribute updated_at
           #   Represents the timestamp of the last update in seconds since the Unix epoch.
-          #   Example: `1738743999`.
+          #   Example: 1738743999.
           #
           #   @return [Integer, nil]
           optional :updated_at, Integer
@@ -110,7 +109,7 @@ module Nextbillionai
           #
           #   @param document_snapshot [Array<Object>] Returns the details of the document that was used for collecting the proof of co
           #
-          #   @param duration [Integer] Returns the duration for `layover` or `break` type steps.
+          #   @param duration [Integer] Returns the duration for layover or break type steps.
           #
           #   @param location [Array<Float>] Returns the location coordinates where the step is executed.
           #
@@ -118,7 +117,7 @@ module Nextbillionai
           #
           #   @param short_id [String] Returns a unique short ID of the step for easier referencing and displaying purp
           #
-          #   @param type [String] Returns the step type. It can belong to one of the following: `start`, `job` , `
+          #   @param type [String] Returns the step type. It can belong to one of the following: start, job , picku
           #
           #   @param updated_at [Integer] Represents the timestamp of the last update in seconds since the Unix epoch. Exa
 
@@ -126,7 +125,7 @@ module Nextbillionai
           class Completion < Nextbillionai::Internal::Type::BaseModel
             # @!attribute completed_at
             #   Represents the timestamp of the completion in seconds since the Unix epoch.
-            #   Example: `1738743999`.
+            #   Example: 1738743999.
             #
             #   @return [Integer, nil]
             optional :completed_at, Integer
@@ -135,10 +134,10 @@ module Nextbillionai
             #   Specify the mode of completion to be used for the step. Currently, following
             #   values are allowed:
             #
-            #   - `manual`: Steps must be marked as completed manually through the Driver App.
-            #   - `geofence`: Steps are marked as completed automatically based on the entry
+            #   - manual: Steps must be marked as completed manually through the Driver App.
+            #   - geofence: Steps are marked as completed automatically based on the entry
             #     conditions and geofence specified.
-            #   - `geofence_manual_fallback`: Steps will be marked as completed automatically
+            #   - geofence_manual_fallback: Steps will be marked as completed automatically
             #     based on geofence and entry condition configurations but there will also be a
             #     provision for manually updating the status in case, geofence detection fails.
             #
@@ -149,10 +148,10 @@ module Nextbillionai
             #   Specify the mode of completion to be used for the step. Currently, following
             #   values are allowed:
             #
-            #   - `manual`: Steps must be marked as completed manually through the Driver App.
-            #   - `geofence`: Steps are marked as completed automatically based on the entry
+            #   - manual: Steps must be marked as completed manually through the Driver App.
+            #   - geofence: Steps are marked as completed automatically based on the entry
             #     conditions and geofence specified.
-            #   - `geofence_manual_fallback`: Steps will be marked as completed automatically
+            #   - geofence_manual_fallback: Steps will be marked as completed automatically
             #     based on geofence and entry condition configurations but there will also be a
             #     provision for manually updating the status in case, geofence detection fails.
             #
@@ -169,7 +168,7 @@ module Nextbillionai
 
             # @!attribute document_modified_at
             #   Represents the timestamp of the last doc modification in seconds since the Unix
-            #   epoch. Example: `1738743999`.
+            #   epoch. Example: 1738743999.
             #
             #   @return [Integer, nil]
             optional :document_modified_at, Integer
@@ -177,7 +176,7 @@ module Nextbillionai
             # @!attribute geofence_config
             #   Specify the configurations of the geofence which will be used to detect presence
             #   of the driver and complete the tasks automatically. Please note that this
-            #   attribute is required when `completion_mode` is either "geofence" or
+            #   attribute is required when completion_mode is either "geofence" or
             #   "geofence_manual_fallback".
             #
             #   @return [Nextbillionai::Models::Fleetify::Routes::RouteStepGeofenceConfig, nil]
@@ -230,14 +229,14 @@ module Nextbillionai
           class Meta < Nextbillionai::Internal::Type::BaseModel
             # @!attribute customer_name
             #   Returns the customer name associated with the step. It can configured in the
-            #   input request using the `metadata` attribute of the step.
+            #   input request using the metadata attribute of the step.
             #
             #   @return [String, nil]
             optional :customer_name, String
 
             # @!attribute customer_phone_number
             #   Returns the customer's phone number associated with the step. It can configured
-            #   in the input request using the `metadata` attribute of the step.
+            #   in the input request using the metadata attribute of the step.
             #
             #   @return [String, nil]
             optional :customer_phone_number, String

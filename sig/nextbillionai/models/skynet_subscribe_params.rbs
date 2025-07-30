@@ -38,14 +38,14 @@ module Nextbillionai
         request_options: Nextbillionai::RequestOptions
       }
 
-      type action = :"`TRIP_SUBSCRIBE`" | :"`TRIP_UNSUBSCRIBE`" | :"`HEARTBEAT`"
+      type action = :TRIP_SUBSCRIBE | :TRIP_UNSUBSCRIBE | :HEARTBEAT
 
       module Action
         extend Nextbillionai::Internal::Type::Enum
 
-        TRIP_SUBSCRIBE: :"`TRIP_SUBSCRIBE`"
-        TRIP_UNSUBSCRIBE: :"`TRIP_UNSUBSCRIBE`"
-        HEARTBEAT: :"`HEARTBEAT`"
+        TRIP_SUBSCRIBE: :TRIP_SUBSCRIBE
+        TRIP_UNSUBSCRIBE: :TRIP_UNSUBSCRIBE
+        HEARTBEAT: :HEARTBEAT
 
         def self?.values: -> ::Array[Nextbillionai::Models::SkynetSubscribeParams::action]
       end

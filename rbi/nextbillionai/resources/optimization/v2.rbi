@@ -66,25 +66,25 @@ module Nextbillionai
           # Query param: A key is a unique identifier that is required to authenticate a
           # request to the API.
           key:,
-          # Body param: The `locations` object is used to define all the locations that will
+          # Body param: The locations object is used to define all the locations that will
           # be used during the optimization process. Read more about this attribute in the
           # [Location Object](#location-object) section.
           locations:,
-          # Body param: The `vehicles` attribute describes the characteristics and
-          # constraints of the vehicles that will be used for fulfilling the tasks. Read
-          # more about this attribute in the [Vehicle Object](#vehicle-object) section.
+          # Body param: The vehicles attribute describes the characteristics and constraints
+          # of the vehicles that will be used for fulfilling the tasks. Read more about this
+          # attribute in the [Vehicle Object](#vehicle-object) section.
           vehicles:,
           # Body param: An array of arrays to denote the user-defined costs of traveling
-          # between each pair of geographic coordinates mentioned in the `location` array.
-          # The number of arrays should be equal to the number of coordinate points
-          # mentioned in the `location` array and each array should contain the same number
-          # of elements as well. Please note that `cost_matrix` is effective only when
-          # `travel_cost=customized`. Read more about this attribute in the
+          # between each pair of geographic coordinates mentioned in the location array. The
+          # number of arrays should be equal to the number of coordinate points mentioned in
+          # the location array and each array should contain the same number of elements as
+          # well. Please note that cost_matrix is effective only when
+          # travel_cost=customized. Read more about this attribute in the
           # [Custom Cost Matrix](#custom-cost-matrix) section.
           cost_matrix: nil,
-          # Body param: `depots` object is used to collect the details of a depot. Depots
-          # can be used as a starting point and/or ending point for the routes and vehicles.
-          # They also can be used to fulfil pickup and delivery type`jobs` . The loads which
+          # Body param: depots object is used to collect the details of a depot. Depots can
+          # be used as a starting point and/or ending point for the routes and vehicles.
+          # They also can be used to fulfil pickup and delivery typejobs . The loads which
           # are to be delivered at task locations will be picked from depots and loads
           # picked-up from task locations will be delivered back to the depots. A depot can
           # be configured using the following fields:
@@ -94,87 +94,86 @@ module Nextbillionai
           description: nil,
           # Body param: An array of arrays to denote the user-defined distances, in meters,
           # for travelling between each pair of geographic coordinates mentioned in the
-          # `location` array. When this input is provided, actual distances between the
+          # location array. When this input is provided, actual distances between the
           # locations will be ignored in favor of the values provided in this input for any
           # distance calculations during the optimization process. The values provided here
-          # will also be used for cost calculations when `travel_cost` is “distance”.
+          # will also be used for cost calculations when travel_cost is “distance”.
           #
           # The number of arrays in the input should be equal to the number of coordinate
-          # points mentioned in the `location` array and each array, in turn, should contain
+          # points mentioned in the location array and each array, in turn, should contain
           # the same number of elements as well.
           #
           # **Note:**
           #
-          # - `duration_matrix` is mandatory when using`distance_matrix`.
-          # - When using `distance_matrix` route geometry will not be available in the
+          # - duration_matrix is mandatory when usingdistance_matrix.
+          # - When using distance_matrix route geometry will not be available in the
           #   optimized solution.
           distance_matrix: nil,
           # Body param: An array of arrays to denote the user-defined durations, in seconds,
           # for travelling between each pair of geographic coordinates mentioned in the
-          # `location` array. When this input is provided, actual durations between the
+          # location array. When this input is provided, actual durations between the
           # locations will be ignored in favor of the values provided in the matrix for any
           # ETA calculations during the optimization process. The values provided in the
-          # matrix will also be used for cost calculations when `travel_cost` is “duration”.
+          # matrix will also be used for cost calculations when travel_cost is “duration”.
           #
           # The number of arrays in the input should be equal to the number of coordinate
-          # points mentioned in the `location` array and each array, in turn, should contain
+          # points mentioned in the location array and each array, in turn, should contain
           # the same number of elements as well.
           #
-          # Please note that, unlike `distance_matrix`, `duration_matrix` can be used
+          # Please note that, unlike distance_matrix, duration_matrix can be used
           # independently in following cases:
           #
-          # - when `travel_cost` is “duration”
-          # - when `travel_cost` is “customized” and a `cost_matrix` is provided
+          # - when travel_cost is “duration”
+          # - when travel_cost is “customized” and a cost_matrix is provided
           #
           # Also, the route geometry will not be available in the optimized solution when
-          # using `duration_matrix`.
+          # using duration_matrix.
           duration_matrix: nil,
           # Body param: The previous optimization request id used to retrieve solution for
           # reoptimization
           existing_solution_id: nil,
-          # Body param: `jobs` object is used to collect the details of a particular job or
+          # Body param: jobs object is used to collect the details of a particular job or
           # task that needs to be completed as part of the optimization process. Each job
-          # can have either a `pickup` or `delivery` step, but not both. Read more about
-          # this attribute in the [Job Object](#job-object) section.
+          # can have either a pickup or delivery step, but not both. Read more about this
+          # attribute in the [Job Object](#job-object) section.
           #
-          # Please note that either the `jobs` or the `shipments` attribute should be
-          # specified to build a valid request.
+          # Please note that either the jobs or the shipments attribute should be specified
+          # to build a valid request.
           jobs: nil,
           # Body param: It represents the set of options that can be used to configure
           # optimization algorithms so that the solver provides a solution that meets the
           # desired business objectives.
           options: nil,
-          # Body param: `relations` attribute is an array of individual relation objects.
-          # `type` parameter and `steps` object are mandatory when using this attribute.
+          # Body param: relations attribute is an array of individual relation objects. type
+          # parameter and steps object are mandatory when using this attribute.
           #
           # Please note:
           #
-          # - The soft constraints are **not** effective when using the `relations`
-          #   attribute.
+          # - The soft constraints are **not** effective when using the relations attribute.
           # - In case a given relation can't be satisfied, the optimizer will flag all the
           #   tasks involved in that "relation" as unassigned.
           #
           # Read more about this attribute in the [Relations Object](#relations-object)
           # section.
           relations: nil,
-          # Body param: The `shipments` object is used to collect the details of shipments
+          # Body param: The shipments object is used to collect the details of shipments
           # that need to be completed as part of the optimization process.
           #
           # Each shipment should have a pickup and the corresponding delivery step.
           #
-          # Please note that either the `jobs` or the `shipments` attribute should be
-          # specified to build a valid request.
+          # Please note that either the jobs or the shipments attribute should be specified
+          # to build a valid request.
           shipments: nil,
           # Body param: This attribute is related to the re-optimization feature. It allows
           # for the previous optimization result to be provided in case new orders are
-          # received and the solution needs to be re-planned. The `solution` attribute
-          # should contain the same routes as the previous optimization result. `solution`
-          # attribute is an array of objects with each object corresponding to one route.
+          # received and the solution needs to be re-planned. The solution attribute should
+          # contain the same routes as the previous optimization result. solution attribute
+          # is an array of objects with each object corresponding to one route.
           solution: nil,
-          # Body param: `unassigned` attribute is related to the re-optimization feature.
-          # This attribute should contain the tasks that were not assigned during an earlier
-          # optimization process. Please note that the `unassigned` part in request should
-          # be consistent with the `unassigned` part in the previous optimization result.
+          # Body param: unassigned attribute is related to the re-optimization feature. This
+          # attribute should contain the tasks that were not assigned during an earlier
+          # optimization process. Please note that the unassigned part in request should be
+          # consistent with the unassigned part in the previous optimization result.
           #
           # Users can reduce the number of unassigned tasks in the re-optimized solution, by
           # following strategies such as:
@@ -196,8 +195,8 @@ module Nextbillionai
           #
           # Please note that
           #
-          # - Each zone should have a geometry specified either through`geometry` or through
-          #   the `geofence_id` parameter.
+          # - Each zone should have a geometry specified either throughgeometry or through
+          #   the geofence_id parameter.
           # - When zone IDs are not provided for individual tasks (jobs or shipments) then
           #   the API will automatically allocate zones based on the task’s geolocation and
           #   the geometries of the zones provided here. Otherwise, if the zone IDs are

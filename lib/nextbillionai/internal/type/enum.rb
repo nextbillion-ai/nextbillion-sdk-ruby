@@ -31,11 +31,11 @@ module Nextbillionai
       #
       # @example
       #   case route_step_completion_mode
-      #   in :"`manual`"
+      #   in :manual
       #     # ...
-      #   in :"`geofence`"
+      #   in :geofence
       #     # ...
-      #   in :"`geofence_manual_fallback`"
+      #   in :geofence_manual_fallback
       #     # ...
       #   else
       #     puts(route_step_completion_mode)

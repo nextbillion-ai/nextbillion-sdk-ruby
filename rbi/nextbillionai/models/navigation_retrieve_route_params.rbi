@@ -441,12 +441,12 @@ module Nextbillionai
 
         UNRESTRICTED =
           T.let(
-            :"`unrestricted`",
+            :unrestricted,
             Nextbillionai::NavigationRetrieveRouteParams::Approaches::TaggedSymbol
           )
         CURB =
           T.let(
-            :"`curb`",
+            :curb,
             Nextbillionai::NavigationRetrieveRouteParams::Approaches::TaggedSymbol
           )
 
@@ -527,17 +527,17 @@ module Nextbillionai
 
         POLYLINE =
           T.let(
-            :"`polyline`",
+            :polyline,
             Nextbillionai::NavigationRetrieveRouteParams::Geometry::TaggedSymbol
           )
         POLYLINE6 =
           T.let(
-            :"`polyline6`",
+            :polyline6,
             Nextbillionai::NavigationRetrieveRouteParams::Geometry::TaggedSymbol
           )
         GEOJSON =
           T.let(
-            :"`geojson`",
+            :geojson,
             Nextbillionai::NavigationRetrieveRouteParams::Geometry::TaggedSymbol
           )
 
@@ -587,12 +587,12 @@ module Nextbillionai
 
         CAR =
           T.let(
-            :"`car`",
+            :car,
             Nextbillionai::NavigationRetrieveRouteParams::Mode::TaggedSymbol
           )
         TRUCK =
           T.let(
-            :"`truck`",
+            :truck,
             Nextbillionai::NavigationRetrieveRouteParams::Mode::TaggedSymbol
           )
 
@@ -663,17 +663,17 @@ module Nextbillionai
 
         FULL =
           T.let(
-            :"`full`",
+            :full,
             Nextbillionai::NavigationRetrieveRouteParams::Overview::TaggedSymbol
           )
         SIMPLIFIED =
           T.let(
-            :"`simplified`",
+            :simplified,
             Nextbillionai::NavigationRetrieveRouteParams::Overview::TaggedSymbol
           )
         FALSE =
           T.let(
-            :"`false`",
+            :false,
             Nextbillionai::NavigationRetrieveRouteParams::Overview::TaggedSymbol
           )
 

@@ -17,14 +17,14 @@ module Nextbillionai
 
         # @!attribute filter
         #   Specify the filtering criterion for the vehicles with respect to each order's
-        #   location. `filter` is a mandatory input for all requests.
+        #   location. filter is a mandatory input for all requests.
         #
         #   @return [Nextbillionai::Models::Optimization::DriverAssignmentAssignParams::Filter]
         required :filter, -> { Nextbillionai::Optimization::DriverAssignmentAssignParams::Filter }
 
         # @!attribute orders
         #   Collects the details of open orders to be fulfilled. Each object represents one
-        #   order. All requests must include `orders` as a mandatory input. A maximum of 200
+        #   order. All requests must include orders as a mandatory input. A maximum of 200
         #   orders is allowed per request.
         #
         #   @return [Array<Nextbillionai::Models::Optimization::DriverAssignmentAssignParams::Order>]
@@ -35,8 +35,8 @@ module Nextbillionai
 
         # @!attribute vehicles
         #   Collects the details of vehicles available to fulfill the orders. Each object
-        #   represents one vehicle. All requests must include `vehicles` as a mandatory
-        #   input. A maximum of 100 vehicles is allowed per request.
+        #   represents one vehicle. All requests must include vehicles as a mandatory input.
+        #   A maximum of 100 vehicles is allowed per request.
         #
         #   @return [Array<Nextbillionai::Models::Optimization::Vehicle>]
         required :vehicles,
@@ -69,7 +69,7 @@ module Nextbillionai
 
         class Filter < Nextbillionai::Internal::Type::BaseModel
           # @!attribute driving_distance
-          #   Defines a `driving_distance` filter, in meters. If a vehicle needs to drive
+          #   Defines a driving_distance filter, in meters. If a vehicle needs to drive
           #   further than this distance to reach a pickup location, it will not be assigned
           #   to that order. Valid range of values for this filter is \[1, 10000\].
           #
@@ -80,7 +80,7 @@ module Nextbillionai
           #   Specify a duration, in seconds, which will be used to filter out ineligible
           #   vehicles for each order. Any vehicle which would take more time than specified
           #   here, to reach the pickup location of a given order, will be ruled out for
-          #   assignment for that particular order. Valid values for `pickup_eta` are \[1,
+          #   assignment for that particular order. Valid values for pickup_eta are \[1,
           #   3600\].
           #
           #   @return [Integer, nil]
@@ -89,7 +89,7 @@ module Nextbillionai
           # @!attribute radius
           #   Specify a radius, in meters, which will be used to filter out ineligible
           #   vehicles for each order. The pickup location of an order will act as the center
-          #   of the circle when identifying eligible vehicles. Valid values for `radius` are
+          #   of the circle when identifying eligible vehicles. Valid values for radius are
           #   \[1, 10000\].
           #
           #   @return [Float, nil]
@@ -101,9 +101,9 @@ module Nextbillionai
           #   more details.
           #
           #   Specify the filtering criterion for the vehicles with respect to each order's
-          #   location. `filter` is a mandatory input for all requests.
+          #   location. filter is a mandatory input for all requests.
           #
-          #   @param driving_distance [Float] Defines a `driving_distance` filter, in meters. If a vehicle needs to drive furt
+          #   @param driving_distance [Float] Defines a driving_distance filter, in meters. If a vehicle needs to drive furthe
           #
           #   @param pickup_eta [Integer] Specify a duration, in seconds, which will be used to filter out ineligible vehi
           #
@@ -126,12 +126,12 @@ module Nextbillionai
 
           # @!attribute attributes
           #   Specify custom attributes for the orders. Each attribute should be created as a
-          #   `key:value` pair. The **keys** provided can be used in
-          #   `options.order_attribute_priority_mappings` to assign a custom priority for this
+          #   key:value pair. The **keys** provided can be used in
+          #   options.order_attribute_priority_mappings to assign a custom priority for this
           #   order based on its attributes.
           #
-          #   The maximum number of key:value pairs that can be specified under `attributes`
-          #   for a given order, is limited to 30.
+          #   The maximum number of key:value pairs that can be specified under attributes for
+          #   a given order, is limited to 30.
           #
           #   @return [Object, nil]
           optional :attributes, Nextbillionai::Internal::Type::Unknown
@@ -143,7 +143,7 @@ module Nextbillionai
           #   Please note
           #
           #   - The last location provided is treated as the destination of the trip.
-          #   - `dropoffs` is mandatory when `dropoff_details` is set to **true**.
+          #   - dropoffs is mandatory when dropoff_details is set to **true**.
           #
           #   @return [Array<Nextbillionai::Models::Optimization::DriverAssignmentAssignParams::Order::Dropoff>, nil]
           optional :dropoffs,
@@ -154,8 +154,8 @@ module Nextbillionai
           # @!attribute priority
           #   Specify the priority for this order. A higher value indicates a higher priority.
           #   When specified, it will override any priority score deduced from
-          #   `order_attribute_priority_mappings` for this order. Valid values are \[1, 10\]
-          #   and default is 0.
+          #   order_attribute_priority_mappings for this order. Valid values are \[1, 10\] and
+          #   default is 0.
           #
           #   @return [Integer, nil]
           optional :priority, Integer
@@ -175,16 +175,16 @@ module Nextbillionai
           #   condition—meaning all specified criteria must be met individually for a vehicle
           #   to be considered.
           #
-          #   For example, if `required_all_of_attributes`, `required_any_of_attributes`, and
-          #   `exclude_all_of_attributes` are all provided, an eligible vehicle must satisfy
-          #   the following to be considered for assignments:
+          #   For example, if required_all_of_attributes, required_any_of_attributes, and
+          #   exclude_all_of_attributes are all provided, an eligible vehicle must satisfy the
+          #   following to be considered for assignments:
           #
-          #   1.  Meet all conditions specified in `required_all_of_attributes`.
-          #   2.  Meet at least one of the conditions listed in `required_any_of_attributes`.
-          #   3.  Not meet any conditions mentioned in `exclude_all_of_attributes`.
+          #   1.  Meet all conditions specified in required_all_of_attributes.
+          #   2.  Meet at least one of the conditions listed in required_any_of_attributes.
+          #   3.  Not meet any conditions mentioned in exclude_all_of_attributes.
           #
-          #   Consequently, a vehicle which does not have any `attributes` defined can't be
-          #   assigned to an order which has `vehicle_preferences` configured.
+          #   Consequently, a vehicle which does not have any attributes defined can't be
+          #   assigned to an order which has vehicle_preferences configured.
           #
           #   @return [Nextbillionai::Models::Optimization::DriverAssignmentAssignParams::Order::VehiclePreferences, nil]
           optional :vehicle_preferences,
@@ -305,16 +305,16 @@ module Nextbillionai
             #   condition—meaning all specified criteria must be met individually for a vehicle
             #   to be considered.
             #
-            #   For example, if `required_all_of_attributes`, `required_any_of_attributes`, and
-            #   `exclude_all_of_attributes` are all provided, an eligible vehicle must satisfy
-            #   the following to be considered for assignments:
+            #   For example, if required_all_of_attributes, required_any_of_attributes, and
+            #   exclude_all_of_attributes are all provided, an eligible vehicle must satisfy the
+            #   following to be considered for assignments:
             #
-            #   1.  Meet all conditions specified in `required_all_of_attributes`.
-            #   2.  Meet at least one of the conditions listed in `required_any_of_attributes`.
-            #   3.  Not meet any conditions mentioned in `exclude_all_of_attributes`.
+            #   1.  Meet all conditions specified in required_all_of_attributes.
+            #   2.  Meet at least one of the conditions listed in required_any_of_attributes.
+            #   3.  Not meet any conditions mentioned in exclude_all_of_attributes.
             #
-            #   Consequently, a vehicle which does not have any `attributes` defined can't be
-            #   assigned to an order which has `vehicle_preferences` configured.
+            #   Consequently, a vehicle which does not have any attributes defined can't be
+            #   assigned to an order which has vehicle_preferences configured.
             #
             #   @param exclude_all_of_attributes [Array<Nextbillionai::Models::Optimization::DriverAssignmentAssignParams::Order::VehiclePreferences::ExcludeAllOfAttribute>] An array of objects to add exclusion requirements for the order. A vehicle must
             #
@@ -325,17 +325,17 @@ module Nextbillionai
 
             class ExcludeAllOfAttribute < Nextbillionai::Internal::Type::BaseModel
               # @!attribute attribute
-              #   Specify the name of the attribute. The `attribute` is compared to the keys (of
-              #   each `key:value` pair) in `vehicles.attributes` during evaluation.
+              #   Specify the name of the attribute. The attribute is compared to the keys (of
+              #   each key:value pair) in vehicles.attributes during evaluation.
               #
               #   @return [String]
               required :attribute, String
 
               # @!attribute operator
-              #   Specify the operator to denote the relation between `attribute` and the `value`
-              #   specified above. The `attribute` , `operator` and `value` together constitute
-              #   the condition that a vehicle must meet to be eligible for assignment. Currently,
-              #   we support following operators currently:
+              #   Specify the operator to denote the relation between attribute and the value
+              #   specified above. The attribute , operator and value together constitute the
+              #   condition that a vehicle must meet to be eligible for assignment. Currently, we
+              #   support following operators currently:
               #
               #   - Equal to (==)
               #   - Less than (<)
@@ -344,17 +344,17 @@ module Nextbillionai
               #   - Greater than equal to (>=)
               #   - Contains (contains)
               #
-              #   Please note that when using "contains" operator only one `value` can be
-              #   specified and the corresponding `attribute` must contain multiple values when
-              #   defined for a vehicle.
+              #   Please note that when using "contains" operator only one value can be specified
+              #   and the corresponding attribute must contain multiple values when defined for a
+              #   vehicle.
               #
               #   @return [String]
               required :operator, String
 
               # @!attribute value
-              #   Specify the desired value of the attribute to be applied for this order. `value`
-              #   provided here is compared to the values (of each `key:value` pair) in
-              #   `vehicles.attributes` during evaluation.
+              #   Specify the desired value of the attribute to be applied for this order. value
+              #   provided here is compared to the values (of each key:value pair) in
+              #   vehicles.attributes during evaluation.
               #
               #   @return [String]
               required :value, String
@@ -364,26 +364,26 @@ module Nextbillionai
               #   {Nextbillionai::Models::Optimization::DriverAssignmentAssignParams::Order::VehiclePreferences::ExcludeAllOfAttribute}
               #   for more details.
               #
-              #   @param attribute [String] Specify the name of the attribute. The `attribute` is compared to the keys (of e
+              #   @param attribute [String] Specify the name of the attribute. The attribute is compared to the keys (of eac
               #
-              #   @param operator [String] Specify the operator to denote the relation between `attribute` and the `value`
+              #   @param operator [String] Specify the operator to denote the relation between attribute and the value spec
               #
-              #   @param value [String] Specify the desired value of the attribute to be applied for this order. `value`
+              #   @param value [String] Specify the desired value of the attribute to be applied for this order. value p
             end
 
             class RequiredAllOfAttribute < Nextbillionai::Internal::Type::BaseModel
               # @!attribute attribute
-              #   Specify the name of the attribute. The `attribute` is compared to the keys (of
-              #   each `key:value` pair) in `vehicles.attributes` during evaluation.
+              #   Specify the name of the attribute. The attribute is compared to the keys (of
+              #   each key:value pair) in vehicles.attributes during evaluation.
               #
               #   @return [String]
               required :attribute, String
 
               # @!attribute operator
-              #   Specify the operator to denote the relation between `attribute` and the `value`
-              #   specified above. The `attribute` , `operator` and `value` together constitute
-              #   the condition that a vehicle must meet to be eligible for assignment. Currently,
-              #   we support following operators currently:
+              #   Specify the operator to denote the relation between attribute and the value
+              #   specified above. The attribute , operator and value together constitute the
+              #   condition that a vehicle must meet to be eligible for assignment. Currently, we
+              #   support following operators currently:
               #
               #   - Equal to (==)
               #   - Less than (<)
@@ -392,17 +392,17 @@ module Nextbillionai
               #   - Greater than equal to (>=)
               #   - Contains (contains)
               #
-              #   Please note that when using "contains" operator only one `value` can be
-              #   specified and the corresponding `attribute` must contain multiple values when
-              #   defined for a vehicle.
+              #   Please note that when using "contains" operator only one value can be specified
+              #   and the corresponding attribute must contain multiple values when defined for a
+              #   vehicle.
               #
               #   @return [String]
               required :operator, String
 
               # @!attribute value
-              #   Specify the desired value of the attribute to be applied for this order. `value`
-              #   provided here is compared to the values (of each `key:value` pair) in
-              #   `vehicles.attributes` during evaluation.
+              #   Specify the desired value of the attribute to be applied for this order. value
+              #   provided here is compared to the values (of each key:value pair) in
+              #   vehicles.attributes during evaluation.
               #
               #   @return [String]
               required :value, String
@@ -412,26 +412,26 @@ module Nextbillionai
               #   {Nextbillionai::Models::Optimization::DriverAssignmentAssignParams::Order::VehiclePreferences::RequiredAllOfAttribute}
               #   for more details.
               #
-              #   @param attribute [String] Specify the name of the attribute. The `attribute` is compared to the keys (of e
+              #   @param attribute [String] Specify the name of the attribute. The attribute is compared to the keys (of eac
               #
-              #   @param operator [String] Specify the operator to denote the relation between `attribute` and the `value`
+              #   @param operator [String] Specify the operator to denote the relation between attribute and the value spec
               #
-              #   @param value [String] Specify the desired value of the attribute to be applied for this order. `value`
+              #   @param value [String] Specify the desired value of the attribute to be applied for this order. value p
             end
 
             class RequiredAnyOfAttribute < Nextbillionai::Internal::Type::BaseModel
               # @!attribute attribute
-              #   Specify the name of the attribute. The `attribute` is compared to the keys (of
-              #   each `key:value` pair) in `vehicles.attributes` during evaluation.
+              #   Specify the name of the attribute. The attribute is compared to the keys (of
+              #   each key:value pair) in vehicles.attributes during evaluation.
               #
               #   @return [String]
               required :attribute, String
 
               # @!attribute operator
-              #   Specify the operator to denote the relation between `attribute` and the `value`
-              #   specified above. The `attribute` , `operator` and `value` together constitute
-              #   the condition that a vehicle must meet to be eligible for assignment. Currently,
-              #   we support following operators currently:
+              #   Specify the operator to denote the relation between attribute and the value
+              #   specified above. The attribute , operator and value together constitute the
+              #   condition that a vehicle must meet to be eligible for assignment. Currently, we
+              #   support following operators currently:
               #
               #   - Equal to (==)
               #   - Less than (<)
@@ -440,17 +440,17 @@ module Nextbillionai
               #   - Greater than equal to (>=)
               #   - Contains (contains)
               #
-              #   Please note that when using "contains" operator only one `value` can be
-              #   specified and the corresponding `attribute` must contain multiple values when
-              #   defined for a vehicle.
+              #   Please note that when using "contains" operator only one value can be specified
+              #   and the corresponding attribute must contain multiple values when defined for a
+              #   vehicle.
               #
               #   @return [String]
               required :operator, String
 
               # @!attribute value
-              #   Specify the desired value of the attribute to be applied for this order. `value`
-              #   provided here is compared to the values (of each `key:value` pair) in
-              #   `vehicles.attributes` during evaluation.
+              #   Specify the desired value of the attribute to be applied for this order. value
+              #   provided here is compared to the values (of each key:value pair) in
+              #   vehicles.attributes during evaluation.
               #
               #   @return [String]
               required :value, String
@@ -460,11 +460,11 @@ module Nextbillionai
               #   {Nextbillionai::Models::Optimization::DriverAssignmentAssignParams::Order::VehiclePreferences::RequiredAnyOfAttribute}
               #   for more details.
               #
-              #   @param attribute [String] Specify the name of the attribute. The `attribute` is compared to the keys (of e
+              #   @param attribute [String] Specify the name of the attribute. The attribute is compared to the keys (of eac
               #
-              #   @param operator [String] Specify the operator to denote the relation between `attribute` and the `value`
+              #   @param operator [String] Specify the operator to denote the relation between attribute and the value spec
               #
-              #   @param value [String] Specify the desired value of the attribute to be applied for this order. `value`
+              #   @param value [String] Specify the desired value of the attribute to be applied for this order. value p
             end
           end
         end
@@ -479,7 +479,7 @@ module Nextbillionai
           #   - It is not necessary that the service will return the specified number of
           #     alternate assignments for each order. The number of alternate assignments
           #     returned will depend on the number of vehicles provided in the input.
-          #   - Order which could not be assigned to any vehicles due to their `filter` or
+          #   - Order which could not be assigned to any vehicles due to their filter or
           #     attribute matching criteria will not be eligible for alternate assignments as
           #     well.
           #
@@ -544,17 +544,17 @@ module Nextbillionai
 
           class OrderAttributePriorityMapping < Nextbillionai::Internal::Type::BaseModel
             # @!attribute attribute
-            #   Specify the name of the attribute. The `attribute` is compared to the keys (of
-            #   each `key:value` pair) in `orders.attributes` during evaluation.
+            #   Specify the name of the attribute. The attribute is compared to the keys (of
+            #   each key:value pair) in orders.attributes during evaluation.
             #
             #   @return [String]
             required :attribute, String
 
             # @!attribute operator
-            #   Specify the operator to denote the relation between `attribute` and the `value`
-            #   specified above. The `attribute` , `operator` and `value` together constitute
-            #   the condition that an order must meet to assume the specified priority. We
-            #   support the following operators currently:
+            #   Specify the operator to denote the relation between attribute and the value
+            #   specified above. The attribute , operator and value together constitute the
+            #   condition that an order must meet to assume the specified priority. We support
+            #   the following operators currently:
             #
             #   - Equal to (==)
             #   - Less than (<)
@@ -563,9 +563,9 @@ module Nextbillionai
             #   - Greater than equal to (>=)
             #   - Contains (contains)
             #
-            #   Please note that when using "contains" operator only one `value` can be
-            #   specified and the corresponding `attribute` must contain multiple values when
-            #   defined for an order.
+            #   Please note that when using "contains" operator only one value can be specified
+            #   and the corresponding attribute must contain multiple values when defined for an
+            #   order.
             #
             #   @return [String]
             required :operator, String
@@ -579,9 +579,9 @@ module Nextbillionai
             required :priority, String
 
             # @!attribute value
-            #   Specify the desired value of the attribute to be applied for this order. `value`
-            #   provided here is compared to the values (of each `key:value` pair) in
-            #   `orders.attributes` during evaluation.
+            #   Specify the desired value of the attribute to be applied for this order. value
+            #   provided here is compared to the values (of each key:value pair) in
+            #   orders.attributes during evaluation.
             #
             #   @return [String]
             required :value, String
@@ -591,13 +591,13 @@ module Nextbillionai
             #   {Nextbillionai::Models::Optimization::DriverAssignmentAssignParams::Options::OrderAttributePriorityMapping}
             #   for more details.
             #
-            #   @param attribute [String] Specify the name of the attribute. The `attribute` is compared to the keys (of e
+            #   @param attribute [String] Specify the name of the attribute. The attribute is compared to the keys (of eac
             #
-            #   @param operator [String] Specify the operator to denote the relation between `attribute` and the `value`
+            #   @param operator [String] Specify the operator to denote the relation between attribute and the value spec
             #
             #   @param priority [String] Specify the priority score that should be assigned when an order qualifies the c
             #
-            #   @param value [String] Specify the desired value of the attribute to be applied for this order. `value`
+            #   @param value [String] Specify the desired value of the attribute to be applied for this order. value p
           end
 
           # Choose a travel cost that will be used by the service for assigning vehicles
@@ -617,17 +617,17 @@ module Nextbillionai
 
           class VehicleAttributePriorityMapping < Nextbillionai::Internal::Type::BaseModel
             # @!attribute attribute
-            #   Specify the name of the attribute. The `attribute` is compared to the keys (of
-            #   each `key:value` pair) in `vehicles.attributes` during evaluation.
+            #   Specify the name of the attribute. The attribute is compared to the keys (of
+            #   each key:value pair) in vehicles.attributes during evaluation.
             #
             #   @return [String]
             required :attribute, String
 
             # @!attribute operator
-            #   Specify the operator to denote the relation between `attribute` and the `value`
-            #   specified above. The `attribute` , `operator` and `value` together constitute
-            #   the condition that a vehicle must meet to assume the specified priority. We
-            #   support the following operators currently:
+            #   Specify the operator to denote the relation between attribute and the value
+            #   specified above. The attribute , operator and value together constitute the
+            #   condition that a vehicle must meet to assume the specified priority. We support
+            #   the following operators currently:
             #
             #   - Equal to (==)
             #   - Less than (<)
@@ -636,9 +636,9 @@ module Nextbillionai
             #   - Greater than equal to (>=)
             #   - Contains (contains)
             #
-            #   Please note that when using "contains" operator only one `value` can be
-            #   specified and the corresponding `attribute` must contain multiple values when
-            #   defined for a vehicle.
+            #   Please note that when using "contains" operator only one value can be specified
+            #   and the corresponding attribute must contain multiple values when defined for a
+            #   vehicle.
             #
             #   @return [String]
             required :operator, String
@@ -652,9 +652,9 @@ module Nextbillionai
             required :priority, String
 
             # @!attribute value
-            #   Specify the desired value of the attribute to be applied for this vehicle.
-            #   `value` provided here is compared to the values (of each `key:value` pair) in
-            #   `vehicles.attributes` during evaluation.
+            #   Specify the desired value of the attribute to be applied for this vehicle. value
+            #   provided here is compared to the values (of each key:value pair) in
+            #   vehicles.attributes during evaluation.
             #
             #   @return [String]
             required :value, String
@@ -664,13 +664,13 @@ module Nextbillionai
             #   {Nextbillionai::Models::Optimization::DriverAssignmentAssignParams::Options::VehicleAttributePriorityMapping}
             #   for more details.
             #
-            #   @param attribute [String] Specify the name of the attribute. The `attribute` is compared to the keys (of e
+            #   @param attribute [String] Specify the name of the attribute. The attribute is compared to the keys (of eac
             #
-            #   @param operator [String] Specify the operator to denote the relation between `attribute` and the `value`
+            #   @param operator [String] Specify the operator to denote the relation between attribute and the value spec
             #
             #   @param priority [String] Specify the priority score that should be assigned when a vehicle qualifies the
             #
-            #   @param value [String] Specify the desired value of the attribute to be applied for this vehicle. `valu
+            #   @param value [String] Specify the desired value of the attribute to be applied for this vehicle. value
           end
         end
       end

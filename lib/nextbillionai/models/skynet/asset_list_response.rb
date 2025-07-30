@@ -20,7 +20,7 @@ module Nextbillionai
 
         # @!attribute status
         #   A string indicating the state of the response. On successful responses, the
-        #   value will be `Ok`. Indicative error messages are returned for different errors.
+        #   value will be Ok. Indicative error messages are returned for different errors.
         #   See the [API Error Codes](#api-error-codes) section below for more information.
         #
         #   @return [String, nil]
@@ -39,7 +39,7 @@ module Nextbillionai
         # @see Nextbillionai::Models::Skynet::AssetListResponse#data
         class Data < Nextbillionai::Internal::Type::BaseModel
           # @!attribute list
-          #   An array of objects, with each object representing one `asset`.
+          #   An array of objects, with each object representing one asset.
           #
           #   @return [Array<Nextbillionai::Models::Skynet::AssetDetails>, nil]
           optional :list, -> { Nextbillionai::Internal::Type::ArrayOf[Nextbillionai::Skynet::AssetDetails] }
@@ -57,7 +57,7 @@ module Nextbillionai
           #
           #   A data object containing the list of assets.
           #
-          #   @param list [Array<Nextbillionai::Models::Skynet::AssetDetails>] An array of objects, with each object representing one `asset`.
+          #   @param list [Array<Nextbillionai::Models::Skynet::AssetDetails>] An array of objects, with each object representing one asset.
           #
           #   @param page [Nextbillionai::Models::Skynet::Pagination] An object with pagination details of the search results. Use this object to impl
         end

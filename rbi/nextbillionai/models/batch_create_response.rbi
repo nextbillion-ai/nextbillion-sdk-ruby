@@ -21,8 +21,8 @@ module Nextbillionai
       attr_writer :msg
 
       # Returns the overall status of the API request. Its value will belong to one of
-      # `success`, `failed`, and `pending`. It can also contain HTTP error codes in case
-      # of a failed request or operation.
+      # success, failed, and pending. It can also contain HTTP error codes in case of a
+      # failed request or operation.
       sig { returns(T.nilable(String)) }
       attr_reader :status
 
@@ -48,8 +48,8 @@ module Nextbillionai
         # request.
         msg: nil,
         # Returns the overall status of the API request. Its value will belong to one of
-        # `success`, `failed`, and `pending`. It can also contain HTTP error codes in case
-        # of a failed request or operation.
+        # success, failed, and pending. It can also contain HTTP error codes in case of a
+        # failed request or operation.
         status: nil,
         # Returns the unique ID of the batch processing task. Use this ID using the GET
         # request to retrieve the solution once the task processing is completed.

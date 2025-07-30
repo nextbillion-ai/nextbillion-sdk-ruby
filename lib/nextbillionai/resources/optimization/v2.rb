@@ -40,13 +40,13 @@ module Nextbillionai
         #
         # @param key [String] Query param: A key is a unique identifier that is required to authenticate a req
         #
-        # @param locations [Nextbillionai::Models::Optimization::V2SubmitParams::Locations] Body param: The `locations` object is used to define all the locations that will
+        # @param locations [Nextbillionai::Models::Optimization::V2SubmitParams::Locations] Body param: The locations object is used to define all the locations that will b
         #
-        # @param vehicles [Array<Nextbillionai::Models::Optimization::Vehicle>] Body param: The `vehicles` attribute describes the characteristics and constrain
+        # @param vehicles [Array<Nextbillionai::Models::Optimization::Vehicle>] Body param: The vehicles attribute describes the characteristics and constraints
         #
         # @param cost_matrix [Array<Array<Integer>>] Body param: An array of arrays to denote the user-defined costs of traveling bet
         #
-        # @param depots [Array<Nextbillionai::Models::Optimization::V2SubmitParams::Depot>] Body param: `depots` object is used to collect the details of a depot. Depots ca
+        # @param depots [Array<Nextbillionai::Models::Optimization::V2SubmitParams::Depot>] Body param: depots object is used to collect the details of a depot. Depots can
         #
         # @param description [String] Body param: Define the optimization job using any custom message. This descripti
         #
@@ -56,17 +56,17 @@ module Nextbillionai
         #
         # @param existing_solution_id [String] Body param: The previous optimization request id used to retrieve solution for r
         #
-        # @param jobs [Array<Nextbillionai::Models::Optimization::Job>] Body param: `jobs` object is used to collect the details of a particular job or
+        # @param jobs [Array<Nextbillionai::Models::Optimization::Job>] Body param: jobs object is used to collect the details of a particular job or ta
         #
         # @param options [Nextbillionai::Models::Optimization::V2SubmitParams::Options] Body param: It represents the set of options that can be used to configure optim
         #
-        # @param relations [Array<Nextbillionai::Models::Optimization::V2SubmitParams::Relation>] Body param: `relations` attribute is an array of individual relation objects. `t
+        # @param relations [Array<Nextbillionai::Models::Optimization::V2SubmitParams::Relation>] Body param: relations attribute is an array of individual relation objects. type
         #
-        # @param shipments [Array<Nextbillionai::Models::Optimization::Shipment>] Body param: The `shipments` object is used to collect the details of shipments t
+        # @param shipments [Array<Nextbillionai::Models::Optimization::Shipment>] Body param: The shipments object is used to collect the details of shipments tha
         #
         # @param solution [Array<Nextbillionai::Models::Optimization::V2SubmitParams::Solution>] Body param: This attribute is related to the re-optimization feature. It allows
         #
-        # @param unassigned [Nextbillionai::Models::Optimization::V2SubmitParams::Unassigned] Body param: `unassigned` attribute is related to the re-optimization feature. Th
+        # @param unassigned [Nextbillionai::Models::Optimization::V2SubmitParams::Unassigned] Body param: unassigned attribute is related to the re-optimization feature. This
         #
         # @param zones [Array<Nextbillionai::Models::Optimization::V2SubmitParams::Zone>] Body param: An array of objects to specify geometry of all the zones involved. E
         #

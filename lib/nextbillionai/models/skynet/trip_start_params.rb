@@ -29,23 +29,23 @@ module Nextbillionai
         optional :cluster, enum: -> { Nextbillionai::Skynet::TripStartParams::Cluster }
 
         # @!attribute attributes
-        #   `attributes` can be used to store custom information about a trip in
-        #   `key`:`value` format. Use `attributes` to add any useful information or context
-        #   to your trips like the driver name, destination etc.
+        #   attributes can be used to store custom information about a trip in key:value
+        #   format. Use attributes to add any useful information or context to your trips
+        #   like the driver name, destination etc.
         #
-        #   Please note that the maximum number of `key`:`value` pairs that can be added to
-        #   an `attributes` object is 100. Also, the overall size of `attributes` object
-        #   should not exceed 65kb.
+        #   Please note that the maximum number of key:value pairs that can be added to an
+        #   attributes object is 100. Also, the overall size of attributes object should not
+        #   exceed 65kb.
         #
         #   @return [Object, nil]
         optional :attributes, Nextbillionai::Internal::Type::Unknown
 
         # @!attribute custom_id
-        #   Set a unique ID for the new `trip`. If not provided, an ID will be automatically
-        #   generated in UUID format. A valid `custom_id` can contain letters, numbers, “-”,
-        #   & “\_” only.
+        #   Set a unique ID for the new trip. If not provided, an ID will be automatically
+        #   generated in UUID format. A valid custom_id can contain letters, numbers, “-”, &
+        #   “\_” only.
         #
-        #   Please note that the ID of a `trip` can not be changed once it is created.
+        #   Please note that the ID of a trip can not be changed once it is created.
         #
         #   @return [String, nil]
         optional :custom_id, String
@@ -89,9 +89,9 @@ module Nextbillionai
         #
         #   @param cluster [Symbol, Nextbillionai::Models::Skynet::TripStartParams::Cluster] the cluster of the region you want to use
         #
-        #   @param attributes [Object] `attributes` can be used to store custom information about a trip in `key`:`valu
+        #   @param attributes [Object] attributes can be used to store custom information about a trip in key:value for
         #
-        #   @param custom_id [String] Set a unique ID for the new `trip`. If not provided, an ID will be automatically
+        #   @param custom_id [String] Set a unique ID for the new trip. If not provided, an ID will be automatically g
         #
         #   @param description [String] Add a custom description for the trip.
         #

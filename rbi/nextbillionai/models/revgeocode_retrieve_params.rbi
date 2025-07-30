@@ -37,18 +37,18 @@ module Nextbillionai
       #
       #   The country codes are to be provided in all uppercase.
       #
-      #   Format: `countryCode:{countryCode}[,{countryCode}]`
+      #   Format: countryCode:{countryCode}[,{countryCode}]
       #
       # - a circular area, provided as latitude, longitude, and radius (an integer with
       #   meters as unit)
       #
-      #   Format: `circle:{latitude},{longitude};r={radius}`
+      #   Format: circle:{latitude},{longitude};r={radius}
       #
       # - a bounding box, provided as _west longitude_, _south latitude_, _east
       #   longitude_, _north latitude_
       #
-      #   Format:
-      #   `bbox:{west longitude},{south latitude},{east longitude},{north latitude}`
+      #   Format: bbox:{west longitude},{south latitude},{east longitude},{north
+      #   latitude}
       sig { returns(T.nilable(String)) }
       attr_reader :in_
 
@@ -93,18 +93,18 @@ module Nextbillionai
         #
         #   The country codes are to be provided in all uppercase.
         #
-        #   Format: `countryCode:{countryCode}[,{countryCode}]`
+        #   Format: countryCode:{countryCode}[,{countryCode}]
         #
         # - a circular area, provided as latitude, longitude, and radius (an integer with
         #   meters as unit)
         #
-        #   Format: `circle:{latitude},{longitude};r={radius}`
+        #   Format: circle:{latitude},{longitude};r={radius}
         #
         # - a bounding box, provided as _west longitude_, _south latitude_, _east
         #   longitude_, _north latitude_
         #
-        #   Format:
-        #   `bbox:{west longitude},{south latitude},{east longitude},{north latitude}`
+        #   Format: bbox:{west longitude},{south latitude},{east longitude},{north
+        #   latitude}
         in_: nil,
         # Select the language to be used for result rendering from a list of
         # [BCP 47](https://en.wikipedia.org/wiki/IETF_language_tag) compliant language

@@ -9,8 +9,8 @@ class Nextbillionai::Test::Resources::RouteReportTest < Nextbillionai::Test::Res
     response =
       @nextbillion_sdk.route_report.create(
         key: "key=API_KEY",
-        original_shape: "original_shape=sbp}_Almgp`FnLuToKmKviB{eDlcGhpFvj@qbAwoA_mA",
-        original_shape_type: :"`polyline`"
+        original_shape: "original_shape=sbp}_AlmgpFnLuToKmKviB{eDlcGhpFvj@qbAwoA_mA",
+        original_shape_type: :polyline
       )
 
     assert_pattern do

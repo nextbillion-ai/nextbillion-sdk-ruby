@@ -296,12 +296,12 @@ module Nextbillionai
 
         UNRESTRICTED =
           T.let(
-            :"`unrestricted`",
+            :unrestricted,
             Nextbillionai::SnapToRoadSnapParams::Approaches::TaggedSymbol
           )
         CURB =
           T.let(
-            :"`curb`",
+            :curb,
             Nextbillionai::SnapToRoadSnapParams::Approaches::TaggedSymbol
           )
 
@@ -371,17 +371,17 @@ module Nextbillionai
 
         POLYLINE =
           T.let(
-            :"`polyline`",
+            :polyline,
             Nextbillionai::SnapToRoadSnapParams::Geometry::TaggedSymbol
           )
         POLYLINE6 =
           T.let(
-            :"`polyline6`",
+            :polyline6,
             Nextbillionai::SnapToRoadSnapParams::Geometry::TaggedSymbol
           )
         GEOJSON =
           T.let(
-            :"`geojson`",
+            :geojson,
             Nextbillionai::SnapToRoadSnapParams::Geometry::TaggedSymbol
           )
 
@@ -417,15 +417,9 @@ module Nextbillionai
         OrSymbol = T.type_alias { T.any(Symbol, String) }
 
         CAR =
-          T.let(
-            :"`car`",
-            Nextbillionai::SnapToRoadSnapParams::Mode::TaggedSymbol
-          )
+          T.let(:car, Nextbillionai::SnapToRoadSnapParams::Mode::TaggedSymbol)
         TRUCK =
-          T.let(
-            :"`truck`",
-            Nextbillionai::SnapToRoadSnapParams::Mode::TaggedSymbol
-          )
+          T.let(:truck, Nextbillionai::SnapToRoadSnapParams::Mode::TaggedSymbol)
 
         sig do
           override.returns(
@@ -453,7 +447,7 @@ module Nextbillionai
 
         FLEXIBLE =
           T.let(
-            :"`flexible`",
+            :flexible,
             Nextbillionai::SnapToRoadSnapParams::Option::TaggedSymbol
           )
 
@@ -479,7 +473,7 @@ module Nextbillionai
 
         MAX_SPEED =
           T.let(
-            :"`max_speed`",
+            :max_speed,
             Nextbillionai::SnapToRoadSnapParams::RoadInfo::TaggedSymbol
           )
 

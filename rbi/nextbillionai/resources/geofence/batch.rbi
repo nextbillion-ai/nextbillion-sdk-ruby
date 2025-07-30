@@ -32,7 +32,7 @@ module Nextbillionai
           ).returns(Nextbillionai::Models::Geofence::BatchListResponse)
         end
         def list(
-          # Comma(`,`) separated list of IDs of the geofences to be searched.
+          # Comma(,) separated list of IDs of the geofences to be searched.
           ids:,
           # A key is a unique identifier that is required to authenticate a request to the
           # API.

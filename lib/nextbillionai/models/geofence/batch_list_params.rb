@@ -9,7 +9,7 @@ module Nextbillionai
         include Nextbillionai::Internal::Type::RequestParameters
 
         # @!attribute ids
-        #   Comma(`,`) separated list of IDs of the geofences to be searched.
+        #   Comma(,) separated list of IDs of the geofences to be searched.
         #
         #   @return [String]
         required :ids, String
@@ -25,7 +25,7 @@ module Nextbillionai
         #   Some parameter documentations has been truncated, see
         #   {Nextbillionai::Models::Geofence::BatchListParams} for more details.
         #
-        #   @param ids [String] Comma(`,`) separated list of IDs of the geofences to be searched.
+        #   @param ids [String] Comma(,) separated list of IDs of the geofences to be searched.
         #
         #   @param key [String] A key is a unique identifier that is required to authenticate a request to the A
         #

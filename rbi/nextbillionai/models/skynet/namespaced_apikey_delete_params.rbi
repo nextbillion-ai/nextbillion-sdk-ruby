@@ -29,8 +29,8 @@ module Nextbillionai
         sig { returns(String) }
         attr_accessor :key_to_delete
 
-        # Specify the name of the `namespace` to which the \`key_to_delete\` belongs.
-        # Please note that a namespace key cannot be deleted using another namespace key.
+        # Specify the name of the namespace to which the \key_to_delete\ belongs. Please
+        # note that a namespace key cannot be deleted using another namespace key.
         sig { returns(String) }
         attr_accessor :namespace
 
@@ -53,8 +53,8 @@ module Nextbillionai
           key:,
           # Specify the key to be deleted.
           key_to_delete:,
-          # Specify the name of the `namespace` to which the \`key_to_delete\` belongs.
-          # Please note that a namespace key cannot be deleted using another namespace key.
+          # Specify the name of the namespace to which the \key_to_delete\ belongs. Please
+          # note that a namespace key cannot be deleted using another namespace key.
           namespace:,
           request_options: {}
         )

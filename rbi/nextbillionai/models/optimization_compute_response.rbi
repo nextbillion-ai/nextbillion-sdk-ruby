@@ -12,7 +12,7 @@ module Nextbillionai
         end
 
       # A string indicating the state of the response. This is a separate code than the
-      # HTTP status code. On normal valid responses, the value will be `Ok`.
+      # HTTP status code. On normal valid responses, the value will be Ok.
       sig { returns(T.nilable(String)) }
       attr_reader :code
 
@@ -96,7 +96,7 @@ module Nextbillionai
       end
       def self.new(
         # A string indicating the state of the response. This is a separate code than the
-        # HTTP status code. On normal valid responses, the value will be `Ok`.
+        # HTTP status code. On normal valid responses, the value will be Ok.
         code: nil,
         # Contains the latitude and longitude of a location
         location: nil,
@@ -208,7 +208,7 @@ module Nextbillionai
         end
         attr_writer :geojson
 
-        # `polyline` or `polyline6` format of route geometry.
+        # polyline or polyline6 format of route geometry.
         sig { returns(T.nilable(String)) }
         attr_reader :geometry
 
@@ -256,7 +256,7 @@ module Nextbillionai
           duration: nil,
           # The GeoJSON representation of the route.
           geojson: nil,
-          # `polyline` or `polyline6` format of route geometry.
+          # polyline or polyline6 format of route geometry.
           geometry: nil,
           legs: nil
         )
@@ -289,14 +289,14 @@ module Nextbillionai
               )
             end
 
-          # The encoded geometry of the geojson in the `trip`.
+          # The encoded geometry of the geojson in the trip.
           sig { returns(T.nilable(String)) }
           attr_reader :geometry
 
           sig { params(geometry: String).void }
           attr_writer :geometry
 
-          # Additional properties associated with the `trip`.
+          # Additional properties associated with the trip.
           sig { returns(T.nilable(String)) }
           attr_reader :properties
 
@@ -331,9 +331,9 @@ module Nextbillionai
             ).returns(T.attached_class)
           end
           def self.new(
-            # The encoded geometry of the geojson in the `trip`.
+            # The encoded geometry of the geojson in the trip.
             geometry: nil,
-            # Additional properties associated with the `trip`.
+            # Additional properties associated with the trip.
             properties: nil,
             # The type of the GeoJSON object.
             type: nil
@@ -474,7 +474,7 @@ module Nextbillionai
           end
           attr_writer :steps
 
-          # Summary of the `leg` object.
+          # Summary of the leg object.
           sig { returns(T.nilable(String)) }
           attr_reader :summary
 
@@ -499,7 +499,7 @@ module Nextbillionai
             duration: nil,
             # An array of step objects.
             steps: nil,
-            # Summary of the `leg` object.
+            # Summary of the leg object.
             summary: nil
           )
           end
@@ -529,21 +529,21 @@ module Nextbillionai
                 )
               end
 
-            # Distance of the `step` object in meters.
+            # Distance of the step object in meters.
             sig { returns(T.nilable(Float)) }
             attr_reader :distance
 
             sig { params(distance: Float).void }
             attr_writer :distance
 
-            # Duration of the `step` object in seconds.
+            # Duration of the step object in seconds.
             sig { returns(T.nilable(Float)) }
             attr_reader :duration
 
             sig { params(duration: Float).void }
             attr_writer :duration
 
-            # The GeoJSON representation of the `step`.
+            # The GeoJSON representation of the step.
             sig do
               returns(
                 T.nilable(
@@ -561,7 +561,7 @@ module Nextbillionai
             end
             attr_writer :geojson
 
-            # Encoded geometry of the `step` in the selected format.
+            # Encoded geometry of the step in the selected format.
             sig { returns(T.nilable(String)) }
             attr_reader :geometry
 
@@ -578,13 +578,13 @@ module Nextbillionai
               ).returns(T.attached_class)
             end
             def self.new(
-              # Distance of the `step` object in meters.
+              # Distance of the step object in meters.
               distance: nil,
-              # Duration of the `step` object in seconds.
+              # Duration of the step object in seconds.
               duration: nil,
-              # The GeoJSON representation of the `step`.
+              # The GeoJSON representation of the step.
               geojson: nil,
-              # Encoded geometry of the `step` in the selected format.
+              # Encoded geometry of the step in the selected format.
               geometry: nil
             )
             end
@@ -612,14 +612,14 @@ module Nextbillionai
                   )
                 end
 
-              # The encoded geometry of the geojson in the `step`.
+              # The encoded geometry of the geojson in the step.
               sig { returns(T.nilable(String)) }
               attr_reader :geometry
 
               sig { params(geometry: String).void }
               attr_writer :geometry
 
-              # Additional properties associated with the `step`.
+              # Additional properties associated with the step.
               sig { returns(T.nilable(String)) }
               attr_reader :properties
 
@@ -644,7 +644,7 @@ module Nextbillionai
               end
               attr_writer :type
 
-              # The GeoJSON representation of the `step`.
+              # The GeoJSON representation of the step.
               sig do
                 params(
                   geometry: String,
@@ -654,9 +654,9 @@ module Nextbillionai
                 ).returns(T.attached_class)
               end
               def self.new(
-                # The encoded geometry of the geojson in the `step`.
+                # The encoded geometry of the geojson in the step.
                 geometry: nil,
-                # Additional properties associated with the `step`.
+                # Additional properties associated with the step.
                 properties: nil,
                 # The type of the GeoJSON object.
                 type: nil

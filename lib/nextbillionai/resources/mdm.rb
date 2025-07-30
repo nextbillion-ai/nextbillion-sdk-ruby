@@ -14,7 +14,7 @@ module Nextbillionai
       #
       # @param option [Symbol, Nextbillionai::Models::MdmCreateDistanceMatrixParams::Option] Query param: Use this option to switch to truck-specific routing or time based r
       #
-      # @param origins [String] Body param: `origins` are the starting point of your route. Ensure that origins
+      # @param origins [String] Body param: origins are the starting point of your route. Ensure that origins ar
       #
       # @param spliter [Symbol, Nextbillionai::Models::MdmCreateDistanceMatrixParams::Spliter] Query param: Specify a spliter to split the matrix by. It accepts 2 values:
       #
@@ -26,17 +26,17 @@ module Nextbillionai
       #
       # @param departure_time [Integer] Body param: This is a number in UNIX epoch timestamp in seconds format that can
       #
-      # @param destinations [String] Body param: `destinations` are the ending coordinates of your route. Ensure that
+      # @param destinations [String] Body param: destinations are the ending coordinates of your route. Ensure that d
       #
-      # @param destinations_approach [Symbol, Nextbillionai::Models::MdmCreateDistanceMatrixParams::DestinationsApproach] Body param: Specify the side of the road from which to approach `destinations` p
+      # @param destinations_approach [Symbol, Nextbillionai::Models::MdmCreateDistanceMatrixParams::DestinationsApproach] Body param: Specify the side of the road from which to approach destinations poi
       #
       # @param hazmat_type [Symbol, Nextbillionai::Models::MdmCreateDistanceMatrixParams::HazmatType] Body param: Specify the type of hazardous material being carried and the service
       #
       # @param mode [Symbol, Nextbillionai::Models::MdmCreateDistanceMatrixParams::Mode] Body param: Set which driving mode the service should use to determine a route.
       #
-      # @param origins_approach [Symbol, Nextbillionai::Models::MdmCreateDistanceMatrixParams::OriginsApproach] Body param: Specify the side of the road from which to approach `origins` points
+      # @param origins_approach [Symbol, Nextbillionai::Models::MdmCreateDistanceMatrixParams::OriginsApproach] Body param: Specify the side of the road from which to approach origins points.
       #
-      # @param route_type [Symbol, Nextbillionai::Models::MdmCreateDistanceMatrixParams::RouteType] Body param: Set the route type that needs to be returned. Please note that `rout
+      # @param route_type [Symbol, Nextbillionai::Models::MdmCreateDistanceMatrixParams::RouteType] Body param: Set the route type that needs to be returned. Please note that route
       #
       # @param truck_axle_load [Float] Body param: Specify the total load per axle (including the weight of trailers an
       #

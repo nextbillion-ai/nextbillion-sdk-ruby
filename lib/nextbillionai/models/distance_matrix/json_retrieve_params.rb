@@ -155,8 +155,8 @@ module Nextbillionai
         module Approaches
           extend Nextbillionai::Internal::Type::Enum
 
-          UNRESTRICTED = :"`unrestricted`"
-          CURB = :"`curb`"
+          UNRESTRICTED = :unrestricted
+          CURB = :curb
 
           # @!method self.values
           #   @return [Array<Symbol>]
@@ -208,8 +208,8 @@ module Nextbillionai
         module Mode
           extend Nextbillionai::Internal::Type::Enum
 
-          CAR = :"`car`"
-          TRUCK = :"`truck`"
+          CAR = :car
+          TRUCK = :truck
 
           # @!method self.values
           #   @return [Array<Symbol>]

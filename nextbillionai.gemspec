@@ -7,7 +7,7 @@ Gem::Specification.new do |s|
   s.version = Nextbillionai::VERSION
   s.summary = "Ruby library to access the Nextbillion SDK API"
   s.authors = ["Nextbillion SDK"]
-  s.email = ""
+  s.email = "yun@nextbillion.ai"
   s.homepage = "https://gemdocs.org/gems/nextbillionai"
   s.metadata["homepage_uri"] = s.homepage
   s.metadata["source_code_uri"] = "https://github.com/nextbillion-ai/nextbillion-sdk-ruby"

@@ -74,7 +74,7 @@ module Nextbillionai
       attr_writer :road_summary
 
       # A string indicating the state of the response. On normal responses, the value
-      # will be `Ok`. Indicative HTTP error codes are returned for different errors. See
+      # will be Ok. Indicative HTTP error codes are returned for different errors. See
       # the
       # [**API Errors Codes**](https://app.reapi.com/ws/hmx8aL45B5jjrJa8/p/vNNilNksLVz675pI/s/ealJmVGjTQv4x5Wi/edit/path/VYzo7gOlRsQQZo0U#api-error-codes)
       # section below for more information.
@@ -115,7 +115,7 @@ module Nextbillionai
         # represents an individual route in the input request.
         road_summary: nil,
         # A string indicating the state of the response. On normal responses, the value
-        # will be `Ok`. Indicative HTTP error codes are returned for different errors. See
+        # will be Ok. Indicative HTTP error codes are returned for different errors. See
         # the
         # [**API Errors Codes**](https://app.reapi.com/ws/hmx8aL45B5jjrJa8/p/vNNilNksLVz675pI/s/ealJmVGjTQv4x5Wi/edit/path/VYzo7gOlRsQQZo0U#api-error-codes)
         # section below for more information.
@@ -334,8 +334,8 @@ module Nextbillionai
             attr_writer :distance
 
             # Represents a sequence of ‘n’ consecutive vertices in the route geometry starting
-            # from the `offset`, forming a continuous section of route with a distance
-            # indicated in `distance`field.
+            # from the offset, forming a continuous section of route with a distance indicated
+            # in distancefield.
             sig { returns(T.nilable(Integer)) }
             attr_reader :length
 
@@ -369,8 +369,8 @@ module Nextbillionai
               # Represents the total distance of this segment, in meters.
               distance: nil,
               # Represents a sequence of ‘n’ consecutive vertices in the route geometry starting
-              # from the `offset`, forming a continuous section of route with a distance
-              # indicated in `distance`field.
+              # from the offset, forming a continuous section of route with a distance indicated
+              # in distancefield.
               length: nil,
               # Represents the index value of the vertex of current segment's starting point in
               # route geometry. First vertex in the route geometry has an offset of 0.
@@ -411,8 +411,8 @@ module Nextbillionai
             attr_writer :distance
 
             # Represents a sequence of ‘n’ consecutive vertices in the route geometry starting
-            # from the `offset`, forming a continuous section of route with a distance
-            # indicated in `distance`field.
+            # from the offset, forming a continuous section of route with a distance indicated
+            # in distancefield.
             sig { returns(T.nilable(Integer)) }
             attr_reader :length
 
@@ -446,8 +446,8 @@ module Nextbillionai
               # Represents the real distance of this segment, in meters.
               distance: nil,
               # Represents a sequence of ‘n’ consecutive vertices in the route geometry starting
-              # from the `offset`, forming a continuous section of route with a distance
-              # indicated in `distance`field.
+              # from the offset, forming a continuous section of route with a distance indicated
+              # in distancefield.
               length: nil,
               # Represents the index value of the vertex of current segment's starting point in
               # route geometry. First vertex in the route geometry has an offset of 0.
@@ -481,7 +481,7 @@ module Nextbillionai
               )
             end
 
-          # A break up of country-wise distances that the route covers in `key:value` pair
+          # A break up of country-wise distances that the route covers in key:value pair
           # format.
           sig { returns(T.nilable(T.anything)) }
           attr_reader :country
@@ -489,8 +489,8 @@ module Nextbillionai
           sig { params(country: T.anything).void }
           attr_writer :country
 
-          # A break up of state-wise distances that the route covers specified in
-          # `key:value` pair format.
+          # A break up of state-wise distances that the route covers specified in key:value
+          # pair format.
           sig { returns(T.nilable(T.anything)) }
           attr_reader :state
 
@@ -505,11 +505,11 @@ module Nextbillionai
             )
           end
           def self.new(
-            # A break up of country-wise distances that the route covers in `key:value` pair
+            # A break up of country-wise distances that the route covers in key:value pair
             # format.
             country: nil,
-            # A break up of state-wise distances that the route covers specified in
-            # `key:value` pair format.
+            # A break up of state-wise distances that the route covers specified in key:value
+            # pair format.
             state: nil
           )
           end
@@ -710,8 +710,8 @@ module Nextbillionai
             attr_writer :distance
 
             # Represents a sequence of ‘n’ consecutive vertices in the route geometry starting
-            # from the `offset`, forming a continuous section of route where the maximum speed
-            # is same and is indicated in `value`.
+            # from the offset, forming a continuous section of route where the maximum speed
+            # is same and is indicated in value.
             sig { returns(T.nilable(Integer)) }
             attr_reader :length
 
@@ -748,8 +748,8 @@ module Nextbillionai
               # Returns the total distance of this segment, in meters.
               distance: nil,
               # Represents a sequence of ‘n’ consecutive vertices in the route geometry starting
-              # from the `offset`, forming a continuous section of route where the maximum speed
-              # is same and is indicated in `value`.
+              # from the offset, forming a continuous section of route where the maximum speed
+              # is same and is indicated in value.
               length: nil,
               # Represents the index value of the vertex of current segment's starting point in
               # route geometry. First vertex in the route geometry has an offset of 0.
@@ -793,8 +793,8 @@ module Nextbillionai
             attr_writer :distance
 
             # Represents a sequence of ‘n’ consecutive vertices in the route geometry starting
-            # from the `offset`, forming a continuous section of route with a distance
-            # indicated in `distance`field.
+            # from the offset, forming a continuous section of route with a distance indicated
+            # in distancefield.
             sig { returns(T.nilable(Integer)) }
             attr_reader :length
 
@@ -828,8 +828,8 @@ module Nextbillionai
               # Returns the total distance of this segment, in meters.
               distance: nil,
               # Represents a sequence of ‘n’ consecutive vertices in the route geometry starting
-              # from the `offset`, forming a continuous section of route with a distance
-              # indicated in `distance`field.
+              # from the offset, forming a continuous section of route with a distance indicated
+              # in distancefield.
               length: nil,
               # Represents the index value of the vertex of current segment's starting point in
               # route geometry. First vertex in the route geometry has an offset of 0.
@@ -907,7 +907,7 @@ module Nextbillionai
 
           # An object with details about the different types of road classes that the route
           # goes through. Distance traversed on a given road class is also returned. The
-          # contents of this object follow the `key:value` pair format.
+          # contents of this object follow the key:value pair format.
           sig { returns(T.nilable(T.anything)) }
           attr_reader :road_class
 
@@ -915,7 +915,7 @@ module Nextbillionai
           attr_writer :road_class
 
           # Returns the total distance travelled on toll roads. This field is present in the
-          # response only when the `has_toll` property is true.
+          # response only when the has_toll property is true.
           sig { returns(T.nilable(Float)) }
           attr_reader :toll_distance
 
@@ -951,10 +951,10 @@ module Nextbillionai
             has_tunnel: nil,
             # An object with details about the different types of road classes that the route
             # goes through. Distance traversed on a given road class is also returned. The
-            # contents of this object follow the `key:value` pair format.
+            # contents of this object follow the key:value pair format.
             road_class: nil,
             # Returns the total distance travelled on toll roads. This field is present in the
-            # response only when the `has_toll` property is true.
+            # response only when the has_toll property is true.
             toll_distance: nil
           )
           end

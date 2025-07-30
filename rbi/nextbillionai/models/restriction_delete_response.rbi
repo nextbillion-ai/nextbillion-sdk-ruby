@@ -18,7 +18,7 @@ module Nextbillionai
       sig { params(id: Float).void }
       attr_writer :id
 
-      # Returns the state of the restriction. It would always be `deleted`.
+      # Returns the state of the restriction. It would always be deleted.
       sig { returns(T.nilable(String)) }
       attr_reader :state
 
@@ -29,7 +29,7 @@ module Nextbillionai
       def self.new(
         # It is the unique ID of the restriction.
         id: nil,
-        # Returns the state of the restriction. It would always be `deleted`.
+        # Returns the state of the restriction. It would always be deleted.
         state: nil
       )
       end

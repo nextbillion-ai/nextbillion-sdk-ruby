@@ -105,7 +105,7 @@ module Nextbillionai
         attr_writer :distance
 
         # The bounding box enclosing the geometric shape (area or line) that an individual
-        # result covers. `place` typed results have no `mapView`.
+        # result covers. place typed results have no mapView.
         sig { returns(T.nilable(Nextbillionai::MapView)) }
         attr_reader :map_view
 
@@ -195,7 +195,7 @@ module Nextbillionai
           # meters.
           distance: nil,
           # The bounding box enclosing the geometric shape (area or line) that an individual
-          # result covers. `place` typed results have no `mapView`.
+          # result covers. place typed results have no mapView.
           map_view: nil,
           # Returns the operating hours of the place, if available.
           opening_hours: nil,
@@ -487,7 +487,7 @@ module Nextbillionai
             end
 
           # A breakdown of how closely individual field of the result matched with the
-          # provided query `q`.
+          # provided query q.
           sig { returns(T.nilable(T.anything)) }
           attr_reader :field_score
 
@@ -495,7 +495,7 @@ module Nextbillionai
           attr_writer :field_score
 
           # A score, out of 1, indicating how closely the result matches with the provided
-          # query `q` .
+          # query q .
           sig { returns(T.nilable(Float)) }
           attr_reader :query_score
 
@@ -510,10 +510,10 @@ module Nextbillionai
           end
           def self.new(
             # A breakdown of how closely individual field of the result matched with the
-            # provided query `q`.
+            # provided query q.
             field_score: nil,
             # A score, out of 1, indicating how closely the result matches with the provided
-            # query `q` .
+            # query q .
             query_score: nil
           )
           end

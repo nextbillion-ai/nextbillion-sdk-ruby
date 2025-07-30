@@ -26,7 +26,7 @@ module Nextbillionai
       attr_writer :data
 
       # A string indicating the state of the response. On successful responses, the
-      # value will be `Ok`. Indicative error messages are returned for different errors.
+      # value will be Ok. Indicative error messages are returned for different errors.
       # See the [API Error Codes](#api-error-codes) section below for more information.
       sig { returns(T.nilable(String)) }
       attr_reader :status
@@ -43,7 +43,7 @@ module Nextbillionai
       def self.new(
         data: nil,
         # A string indicating the state of the response. On successful responses, the
-        # value will be `Ok`. Indicative error messages are returned for different errors.
+        # value will be Ok. Indicative error messages are returned for different errors.
         # See the [API Error Codes](#api-error-codes) section below for more information.
         status: nil
       )
@@ -69,9 +69,9 @@ module Nextbillionai
             )
           end
 
-        # An array of objects containing each of the geofences provided in the `geofences`
-        # input. If `geofences` in not provided then the array will return all the
-        # geofences associated with the `key`
+        # An array of objects containing each of the geofences provided in the geofences
+        # input. If geofences in not provided then the array will return all the geofences
+        # associated with the key
         sig do
           returns(
             T.nilable(
@@ -102,9 +102,9 @@ module Nextbillionai
           ).returns(T.attached_class)
         end
         def self.new(
-          # An array of objects containing each of the geofences provided in the `geofences`
-          # input. If `geofences` in not provided then the array will return all the
-          # geofences associated with the `key`
+          # An array of objects containing each of the geofences provided in the geofences
+          # input. If geofences in not provided then the array will return all the geofences
+          # associated with the key
           result_list: nil
         )
         end
@@ -148,8 +148,7 @@ module Nextbillionai
           attr_writer :geofence_id
 
           # An array of objects with results of the contains check for each of the
-          # coordinate points in `locations` against the geofence represented by
-          # `geofence_id`.
+          # coordinate points in locations against the geofence represented by geofence_id.
           sig do
             returns(
               T.nilable(
@@ -187,8 +186,7 @@ module Nextbillionai
             # ID of the geofence provided/generated at the time of creating the geofence.
             geofence_id: nil,
             # An array of objects with results of the contains check for each of the
-            # coordinate points in `locations` against the geofence represented by
-            # `geofence_id`.
+            # coordinate points in locations against the geofence represented by geofence_id.
             result: nil
           )
           end
@@ -217,14 +215,14 @@ module Nextbillionai
                 )
               end
 
-            # `true` when a coordinate point in `locations` is contained by this geofence.
+            # true when a coordinate point in locations is contained by this geofence.
             sig { returns(T.nilable(T::Boolean)) }
             attr_reader :contain
 
             sig { params(contain: T::Boolean).void }
             attr_writer :contain
 
-            # Index of the coordinate point in the input `locations`.
+            # Index of the coordinate point in the input locations.
             sig { returns(T.nilable(Integer)) }
             attr_reader :location_index
 
@@ -237,9 +235,9 @@ module Nextbillionai
               )
             end
             def self.new(
-              # `true` when a coordinate point in `locations` is contained by this geofence.
+              # true when a coordinate point in locations is contained by this geofence.
               contain: nil,
-              # Index of the coordinate point in the input `locations`.
+              # Index of the coordinate point in the input locations.
               location_index: nil
             )
             end

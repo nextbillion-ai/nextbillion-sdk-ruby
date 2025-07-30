@@ -33,20 +33,20 @@ module Nextbillionai
           sig { params(document: T.anything).void }
           attr_writer :document
 
-          # Sets the status of the route step. Currently only `completed` is supported.
+          # Sets the status of the route step. Currently only completed is supported.
           #
-          # Note: once marked `completed`, a step cannot transition to other statuses. You
-          # can only update the document afterwards.
+          # Note: once marked completed, a step cannot transition to other statuses. You can
+          # only update the document afterwards.
           sig { returns(T.nilable(String)) }
           attr_reader :mode
 
           sig { params(mode: String).void }
           attr_writer :mode
 
-          # Sets the status of the route step. Currently only `completed` is supported.
+          # Sets the status of the route step. Currently only completed is supported.
           #
-          # Note: once marked `completed`, a step cannot transition to other statuses. You
-          # can only update the document afterwards.
+          # Note: once marked completed, a step cannot transition to other statuses. You can
+          # only update the document afterwards.
           sig { returns(T.nilable(String)) }
           attr_reader :status
 
@@ -72,15 +72,15 @@ module Nextbillionai
             # labels and values can be of any type depend on the type of according document
             # item.
             document: nil,
-            # Sets the status of the route step. Currently only `completed` is supported.
+            # Sets the status of the route step. Currently only completed is supported.
             #
-            # Note: once marked `completed`, a step cannot transition to other statuses. You
-            # can only update the document afterwards.
+            # Note: once marked completed, a step cannot transition to other statuses. You can
+            # only update the document afterwards.
             mode: nil,
-            # Sets the status of the route step. Currently only `completed` is supported.
+            # Sets the status of the route step. Currently only completed is supported.
             #
-            # Note: once marked `completed`, a step cannot transition to other statuses. You
-            # can only update the document afterwards.
+            # Note: once marked completed, a step cannot transition to other statuses. You can
+            # only update the document afterwards.
             status: nil,
             request_options: {}
           )

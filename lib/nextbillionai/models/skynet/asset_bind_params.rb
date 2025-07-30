@@ -16,11 +16,11 @@ module Nextbillionai
         required :key, String
 
         # @!attribute device_id
-        #   Device ID to be linked to the `asset` identified by `id`.
+        #   Device ID to be linked to the asset identified by id.
         #
-        #   Please note that the device needs to be linked to an `asset` before using it in
+        #   Please note that the device needs to be linked to an asset before using it in
         #   the _Upload locations of an Asset_ method for sending GPS information about the
-        #   `asset`.
+        #   asset.
         #
         #   @return [String]
         required :device_id, String
@@ -31,7 +31,7 @@ module Nextbillionai
         #
         #   @param key [String] A key is a unique identifier that is required to authenticate a request to the A
         #
-        #   @param device_id [String] Device ID to be linked to the `asset` identified by `id`.
+        #   @param device_id [String] Device ID to be linked to the asset identified by id.
         #
         #   @param request_options [Nextbillionai::RequestOptions, Hash{Symbol=>Object}]
       end

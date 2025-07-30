@@ -95,7 +95,7 @@ module Nextbillionai
 
       # This parameter is used to filter restrictions based on their state i.e. whether
       # the restriction is currently enabled, disabled, or deleted. For example, users
-      # can retrieve a list of all the deleted restrictions by setting `state=deleted`.
+      # can retrieve a list of all the deleted restrictions by setting state=deleted.
       sig do
         returns(
           T.nilable(Nextbillionai::RestrictionListByBboxParams::State::OrSymbol)
@@ -133,7 +133,7 @@ module Nextbillionai
       end
       attr_writer :status
 
-      # This is internal parameter with a default value as `false`.
+      # This is internal parameter with a default value as false.
       sig { returns(T.nilable(T::Boolean)) }
       attr_reader :transform
 
@@ -185,7 +185,7 @@ module Nextbillionai
         source: nil,
         # This parameter is used to filter restrictions based on their state i.e. whether
         # the restriction is currently enabled, disabled, or deleted. For example, users
-        # can retrieve a list of all the deleted restrictions by setting `state=deleted`.
+        # can retrieve a list of all the deleted restrictions by setting state=deleted.
         state: nil,
         # Restrictions can be active or inactive at a given time by virtue of their
         # nature. For example, maximum speed limits can be active on the roads leading to
@@ -195,7 +195,7 @@ module Nextbillionai
         # Use this parameter to filter the restrictions based on their status at the time
         # of making the request i.e. whether they are in force or not.
         status: nil,
-        # This is internal parameter with a default value as `false`.
+        # This is internal parameter with a default value as false.
         transform: nil,
         request_options: {}
       )
@@ -368,7 +368,7 @@ module Nextbillionai
 
       # This parameter is used to filter restrictions based on their state i.e. whether
       # the restriction is currently enabled, disabled, or deleted. For example, users
-      # can retrieve a list of all the deleted restrictions by setting `state=deleted`.
+      # can retrieve a list of all the deleted restrictions by setting state=deleted.
       module State
         extend Nextbillionai::Internal::Type::Enum
 
@@ -380,17 +380,17 @@ module Nextbillionai
 
         ENABLED =
           T.let(
-            :"`enabled`",
+            :enabled,
             Nextbillionai::RestrictionListByBboxParams::State::TaggedSymbol
           )
         DISABLED =
           T.let(
-            :"`disabled`",
+            :disabled,
             Nextbillionai::RestrictionListByBboxParams::State::TaggedSymbol
           )
         DELETED =
           T.let(
-            :"`deleted`",
+            :deleted,
             Nextbillionai::RestrictionListByBboxParams::State::TaggedSymbol
           )
 
@@ -423,12 +423,12 @@ module Nextbillionai
 
         ACTIVE =
           T.let(
-            :"`active`",
+            :active,
             Nextbillionai::RestrictionListByBboxParams::Status::TaggedSymbol
           )
         INACTIVE =
           T.let(
-            :"`inactive`",
+            :inactive,
             Nextbillionai::RestrictionListByBboxParams::Status::TaggedSymbol
           )
 

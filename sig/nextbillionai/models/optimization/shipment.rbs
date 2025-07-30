@@ -295,16 +295,14 @@ module Nextbillionai
             width: Float
           }
 
-          type alignment =
-            :"`strict`" | :"`parallel`" | :"`fixed_bottom`" | :"`\" \"`"
+          type alignment = :strict | :parallel | :fixed_bottom
 
           module Alignment
             extend Nextbillionai::Internal::Type::Enum
 
-            STRICT: :"`strict`"
-            PARALLEL: :"`parallel`"
-            FIXED_BOTTOM: :"`fixed_bottom`"
-            Unknown1: :"`\" \"`"
+            STRICT: :strict
+            PARALLEL: :parallel
+            FIXED_BOTTOM: :fixed_bottom
 
             def self?.values: -> ::Array[Nextbillionai::Models::Optimization::Shipment::Volume::alignment]
           end

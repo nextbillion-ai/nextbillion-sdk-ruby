@@ -37,7 +37,7 @@ module Nextbillionai
         attr_writer :message
 
         # A string indicating the state of the response. On successful responses, the
-        # value will be `Ok`. Indicative error messages are returned for different errors.
+        # value will be Ok. Indicative error messages are returned for different errors.
         # See the [API Error Codes](#api-error-codes) section below for more information.
         sig { returns(T.nilable(String)) }
         attr_reader :status
@@ -60,7 +60,7 @@ module Nextbillionai
           # successful, this field is not present in the response.
           message: nil,
           # A string indicating the state of the response. On successful responses, the
-          # value will be `Ok`. Indicative error messages are returned for different errors.
+          # value will be Ok. Indicative error messages are returned for different errors.
           # See the [API Error Codes](#api-error-codes) section below for more information.
           status: nil
         )
@@ -153,8 +153,8 @@ module Nextbillionai
             sig { params(asset_id: String).void }
             attr_writer :asset_id
 
-            # Returns the `attributes` provided for the trip at the time of starting or
-            # updating it.
+            # Returns the attributes provided for the trip at the time of starting or updating
+            # it.
             sig { returns(T.nilable(T.anything)) }
             attr_reader :attributes
 
@@ -285,8 +285,8 @@ module Nextbillionai
               # Returns the ID of the asset linked to the trip when the trip was started or
               # updated.
               asset_id: nil,
-              # Returns the `attributes` provided for the trip at the time of starting or
-              # updating it.
+              # Returns the attributes provided for the trip at the time of starting or updating
+              # it.
               attributes: nil,
               # Returns the time, expressed as UNIX epoch timestamp in milliseconds, when the
               # trip was created.

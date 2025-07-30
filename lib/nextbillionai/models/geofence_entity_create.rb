@@ -11,16 +11,16 @@ module Nextbillionai
 
       # @!attribute circle
       #   Provide the details to create a circular geofence. Please note that this object
-      #   is mandatory when `type` is `circle`. When the `type` is not `circle`, the
-      #   properties of this object will be ignored while creating the geofence.
+      #   is mandatory when type is circle. When the type is not circle, the properties of
+      #   this object will be ignored while creating the geofence.
       #
       #   @return [Nextbillionai::Models::GeofenceEntityCreate::Circle, nil]
       optional :circle, -> { Nextbillionai::GeofenceEntityCreate::Circle }
 
       # @!attribute custom_id
       #   Set an unique ID for the new geofence. If not provided, an ID will be
-      #   automatically generated in UUID format. A valid `custom_id` can contain letters,
-      #   numbers, "-", & "\_" only.
+      #   automatically generated in UUID format. A valid custom*id can contain letters,
+      #   numbers, "-", & "*" only.
       #
       #   Please note that the ID of a geofence can not be changed once it is created.
       #
@@ -29,8 +29,8 @@ module Nextbillionai
 
       # @!attribute isochrone
       #   Provide the details to create an isochrone based geofence. Use this object when
-      #   `type` is `isochrone`. When the `type` is not `isochrone`, the properties of
-      #   this object will be ignored while creating the geofence.
+      #   type is isochrone. When the type is not isochrone, the properties of this object
+      #   will be ignored while creating the geofence.
       #
       #   @return [Nextbillionai::Models::GeofenceEntityCreate::Isochrone, nil]
       optional :isochrone, -> { Nextbillionai::GeofenceEntityCreate::Isochrone }
@@ -40,8 +40,8 @@ module Nextbillionai
       #   provide more context and information about the geofence being created like
       #   country, group ID etc.
       #
-      #   The data being added should be in valid JSON object format (i.e. `key` and
-      #   `value` pairs). Max size allowed for the object is 65kb.
+      #   The data being added should be in valid JSON object format (i.e. key and value
+      #   pairs). Max size allowed for the object is 65kb.
       #
       #   @return [Object, nil]
       optional :meta_data, Nextbillionai::Internal::Type::Unknown
@@ -55,8 +55,8 @@ module Nextbillionai
 
       # @!attribute polygon
       #   Provide the details to create a custom polygon type of geofence. Please note
-      #   that this object is mandatory when `type` is `polygon`. When the `type` is not
-      #   `polygon`, the properties of this object will be ignored while creating the
+      #   that this object is mandatory when type is polygon. When the type is not
+      #   polygon, the properties of this object will be ignored while creating the
       #   geofence.
       #
       #   Self-intersecting polygons or polygons containing other polygons are invalid and
@@ -68,10 +68,10 @@ module Nextbillionai
       optional :polygon, -> { Nextbillionai::GeofenceEntityCreate::Polygon }
 
       # @!attribute tags
-      #   An array of strings to associate multiple tags to the geofence. `tags` can be
-      #   used to search or filter geofences (using `Get Geofence List` method).
+      #   An array of strings to associate multiple tags to the geofence. tags can be used
+      #   to search or filter geofences (using Get Geofence List method).
       #
-      #   Create valid `tags` using a string consisting of alphanumeric characters (A-Z,
+      #   Create valid tags using a string consisting of alphanumeric characters (A-Z,
       #   a-z, 0-9) along with the underscore ('\_') and hyphen ('-') symbols.
       #
       #   @return [Array<String>, nil]
@@ -95,7 +95,7 @@ module Nextbillionai
       #
       #   @param polygon [Nextbillionai::Models::GeofenceEntityCreate::Polygon] Provide the details to create a custom polygon type of geofence. Please note tha
       #
-      #   @param tags [Array<String>] An array of strings to associate multiple tags to the geofence. `tags` can be us
+      #   @param tags [Array<String>] An array of strings to associate multiple tags to the geofence. tags can be used
 
       # Specify the type of the geofence that is being created.
       #
@@ -103,9 +103,9 @@ module Nextbillionai
       module Type
         extend Nextbillionai::Internal::Type::Enum
 
-        CIRCLE = :"`circle`"
-        POLYGON = :"`polygon`"
-        ISOCHRONE = :"`isochrone`"
+        CIRCLE = :circle
+        POLYGON = :polygon
+        ISOCHRONE = :isochrone
 
         # @!method self.values
         #   @return [Array<Symbol>]
@@ -131,8 +131,8 @@ module Nextbillionai
         #   {Nextbillionai::Models::GeofenceEntityCreate::Circle} for more details.
         #
         #   Provide the details to create a circular geofence. Please note that this object
-        #   is mandatory when `type` is `circle`. When the `type` is not `circle`, the
-        #   properties of this object will be ignored while creating the geofence.
+        #   is mandatory when type is circle. When the type is not circle, the properties of
+        #   this object will be ignored while creating the geofence.
         #
         #   @param center [Nextbillionai::Models::GeofenceEntityCreate::Circle::Center] Coordinate of the location which will act as the center of a circular geofence.
         #
@@ -141,13 +141,13 @@ module Nextbillionai
         # @see Nextbillionai::Models::GeofenceEntityCreate::Circle#center
         class Center < Nextbillionai::Internal::Type::BaseModel
           # @!attribute lat
-          #   Latitude of the `center` location.
+          #   Latitude of the center location.
           #
           #   @return [Float]
           required :lat, Float
 
           # @!attribute lon
-          #   Longitude of the `center` location.
+          #   Longitude of the center location.
           #
           #   @return [Float]
           required :lon, Float
@@ -155,9 +155,9 @@ module Nextbillionai
           # @!method initialize(lat:, lon:)
           #   Coordinate of the location which will act as the center of a circular geofence.
           #
-          #   @param lat [Float] Latitude of the `center` location.
+          #   @param lat [Float] Latitude of the center location.
           #
-          #   @param lon [Float] Longitude of the `center` location.
+          #   @param lon [Float] Longitude of the center location.
         end
       end
 
@@ -166,7 +166,7 @@ module Nextbillionai
         # @!attribute coordinates
         #   Coordinates of the location, in [latitude,longitude] format, which would act as
         #   the starting point for identifying the isochrone polygon or the boundary of
-        #   reachable area. This parameter is mandatory when `type` is `isochrone`.
+        #   reachable area. This parameter is mandatory when type is isochrone.
         #
         #   @return [String]
         required :coordinates, String
@@ -175,12 +175,12 @@ module Nextbillionai
         #   The distance, in meters, for which an isochrone polygon needs to be determined.
         #   When provided, the API would create a geofence representing the area that can be
         #   reached after driving the given number of meters starting from the point
-        #   specified in `coordinates`.
+        #   specified in coordinates.
         #
         #   The maximum distance that can be specified is 60000 meters (60km).
         #
-        #   At least one of `contours_meter` or `contours_minute` is mandatory when `type`
-        #   is `isochrone`.
+        #   At least one of contours_meter or contours_minute is mandatory when type is
+        #   isochrone.
         #
         #   @return [Integer, nil]
         optional :contours_meter, Integer
@@ -189,12 +189,12 @@ module Nextbillionai
         #   The duration, in minutes, for which an isochrone polygon needs to be determined.
         #   When provided, the API would create a geofence representing the area that can be
         #   reached after driving for the given number of minutes starting from the point
-        #   specified in `coordinates`.
+        #   specified in coordinates.
         #
         #   The maximum duration that can be specified is 40 minutes.
         #
-        #   At least one of `contours_meter` or `contours_minute` is mandatory when `type`
-        #   is `isochrone`.
+        #   At least one of contours_meter or contours_minute is mandatory when type is
+        #   isochrone.
         #
         #   @return [Integer, nil]
         optional :contours_minute, Integer
@@ -220,9 +220,9 @@ module Nextbillionai
         # @!attribute mode
         #   Set which driving mode the service should use to determine the isochrone line.
         #
-        #   For example, if you use `car`, the API will return an isochrone polygon that a
-        #   car can cover within the specified time or after driving the specified distance.
-        #   Using `truck` will return an isochrone that a truck can reach after taking into
+        #   For example, if you use car, the API will return an isochrone polygon that a car
+        #   can cover within the specified time or after driving the specified distance.
+        #   Using truck will return an isochrone that a truck can reach after taking into
         #   account appropriate truck routing restrictions.
         #
         #   @return [Symbol, Nextbillionai::Models::GeofenceEntityCreate::Isochrone::Mode, nil]
@@ -233,8 +233,8 @@ module Nextbillionai
         #   {Nextbillionai::Models::GeofenceEntityCreate::Isochrone} for more details.
         #
         #   Provide the details to create an isochrone based geofence. Use this object when
-        #   `type` is `isochrone`. When the `type` is not `isochrone`, the properties of
-        #   this object will be ignored while creating the geofence.
+        #   type is isochrone. When the type is not isochrone, the properties of this object
+        #   will be ignored while creating the geofence.
         #
         #   @param coordinates [String] Coordinates of the location, in [latitude,longitude] format, which would act as
         #
@@ -250,17 +250,17 @@ module Nextbillionai
 
         # Set which driving mode the service should use to determine the isochrone line.
         #
-        # For example, if you use `car`, the API will return an isochrone polygon that a
-        # car can cover within the specified time or after driving the specified distance.
-        # Using `truck` will return an isochrone that a truck can reach after taking into
+        # For example, if you use car, the API will return an isochrone polygon that a car
+        # can cover within the specified time or after driving the specified distance.
+        # Using truck will return an isochrone that a truck can reach after taking into
         # account appropriate truck routing restrictions.
         #
         # @see Nextbillionai::Models::GeofenceEntityCreate::Isochrone#mode
         module Mode
           extend Nextbillionai::Internal::Type::Enum
 
-          CAR = :"`car`"
-          TRUCK = :"`truck`"
+          CAR = :car
+          TRUCK = :truck
 
           # @!method self.values
           #   @return [Array<Symbol>]
@@ -282,8 +282,8 @@ module Nextbillionai
         #   {Nextbillionai::Models::GeofenceEntityCreate::Polygon} for more details.
         #
         #   Provide the details to create a custom polygon type of geofence. Please note
-        #   that this object is mandatory when `type` is `polygon`. When the `type` is not
-        #   `polygon`, the properties of this object will be ignored while creating the
+        #   that this object is mandatory when type is polygon. When the type is not
+        #   polygon, the properties of this object will be ignored while creating the
         #   geofence.
         #
         #   Self-intersecting polygons or polygons containing other polygons are invalid and
@@ -304,7 +304,7 @@ module Nextbillionai
                    Nextbillionai::Internal::Type::ArrayOf[Nextbillionai::Internal::Type::ArrayOf[Float]]
 
           # @!attribute type
-          #   Type of the geoJSON geometry. Should always be `Polygon`.
+          #   Type of the geoJSON geometry. Should always be Polygon.
           #
           #   @return [String]
           required :type, String
@@ -320,7 +320,7 @@ module Nextbillionai
           #
           #   @param coordinates [Array<Array<Float>>] An array of coordinates in the [longitude, latitude] format, representing the ge
           #
-          #   @param type [String] Type of the geoJSON geometry. Should always be `Polygon`.
+          #   @param type [String] Type of the geoJSON geometry. Should always be Polygon.
         end
       end
     end

@@ -11,8 +11,8 @@ module Nextbillionai
         optional :label, String
 
         # @!attribute meta
-        #   Returns the options configured for `single_choice` or `multi_choices` type
-        #   document items.
+        #   Returns the options configured for single_choice or multi_choices type document
+        #   items.
         #
         #   @return [Nextbillionai::Models::Fleetify::DocumentTemplateContentResponse::Meta, nil]
         optional :meta, -> { Nextbillionai::Fleetify::DocumentTemplateContentResponse::Meta }
@@ -31,15 +31,15 @@ module Nextbillionai
 
         # @!attribute type
         #   Returns the data type of the document field. It will always belong to one of
-        #   `string`, `number`, `date_time`, `photos`, `multi_choices`, `signature`,
-        #   `barcode`, and `single_choice.`
+        #   string, number, date_time, photos, multi_choices, signature, barcode, and
+        #   single_choice.
         #
         #   @return [String, nil]
         optional :type, String
 
         # @!attribute validation
-        #   Returns the validation rules for `number` , `multi_choices` , and `photos`
-        #   document field types.
+        #   Returns the validation rules for number , multi_choices , and photos document
+        #   field types.
         #
         #   @return [Nextbillionai::Models::Fleetify::DocumentTemplateContentResponse::Validation, nil]
         optional :validation, -> { Nextbillionai::Fleetify::DocumentTemplateContentResponse::Validation }
@@ -55,20 +55,20 @@ module Nextbillionai
         #
         #   @param label [String] Returns the label of the document field.
         #
-        #   @param meta [Nextbillionai::Models::Fleetify::DocumentTemplateContentResponse::Meta] Returns the options configured for `single_choice` or `multi_choices` type docum
+        #   @param meta [Nextbillionai::Models::Fleetify::DocumentTemplateContentResponse::Meta] Returns the options configured for single_choice or multi_choices type document
         #
         #   @param name [String] Returns the name of the document field.
         #
         #   @param required [Boolean] Indicates if the document field is mandatory or not.
         #
-        #   @param type [String] Returns the data type of the document field. It will always belong to one of `st
+        #   @param type [String] Returns the data type of the document field. It will always belong to one of str
         #
-        #   @param validation [Nextbillionai::Models::Fleetify::DocumentTemplateContentResponse::Validation] Returns the validation rules for `number` , `multi_choices` , and `photos` docum
+        #   @param validation [Nextbillionai::Models::Fleetify::DocumentTemplateContentResponse::Validation] Returns the validation rules for number , multi_choices , and photos document fi
 
         # @see Nextbillionai::Models::Fleetify::DocumentTemplateContentResponse#meta
         class Meta < Nextbillionai::Internal::Type::BaseModel
           # @!attribute options
-          #   An array of objects returning the options for `multi_choices` or `single_choice`
+          #   An array of objects returning the options for multi_choices or single_choice
           #   type document field. Each object represents one configured option.
           #
           #   @return [Array<Nextbillionai::Models::Fleetify::DocumentTemplateContentResponse::Meta::Option>, nil]
@@ -82,10 +82,10 @@ module Nextbillionai
           #   {Nextbillionai::Models::Fleetify::DocumentTemplateContentResponse::Meta} for
           #   more details.
           #
-          #   Returns the options configured for `single_choice` or `multi_choices` type
-          #   document items.
+          #   Returns the options configured for single_choice or multi_choices type document
+          #   items.
           #
-          #   @param options [Array<Nextbillionai::Models::Fleetify::DocumentTemplateContentResponse::Meta::Option>] An array of objects returning the options for `multi_choices` or `single_choice`
+          #   @param options [Array<Nextbillionai::Models::Fleetify::DocumentTemplateContentResponse::Meta::Option>] An array of objects returning the options for multi_choices or single_choice typ
 
           class Option < Nextbillionai::Internal::Type::BaseModel
             # @!attribute label
@@ -115,15 +115,15 @@ module Nextbillionai
         # @see Nextbillionai::Models::Fleetify::DocumentTemplateContentResponse#validation
         class Validation < Nextbillionai::Internal::Type::BaseModel
           # @!attribute max
-          #   Returns the maximum allowed value for `number` type document item, as specified
-          #   at the time of configuring the field. This parameter is not present in the
-          #   response if it was not provided in the input.
+          #   Returns the maximum allowed value for number type document item, as specified at
+          #   the time of configuring the field. This parameter is not present in the response
+          #   if it was not provided in the input.
           #
           #   @return [Integer, nil]
           optional :max, Integer
 
           # @!attribute max_items
-          #   Returns the maximum number of items required for `multi_choices`, `photos` type
+          #   Returns the maximum number of items required for multi_choices, photos type
           #   document items. This parameter will not be present in the response if it was not
           #   provided in the input.
           #
@@ -131,15 +131,15 @@ module Nextbillionai
           optional :max_items, String
 
           # @!attribute min
-          #   Returns the minimum allowed value for `number` type document item, as specified
-          #   at the time of configuring the field. This parameter is not present in the
-          #   response if it was not provided in the input.
+          #   Returns the minimum allowed value for number type document item, as specified at
+          #   the time of configuring the field. This parameter is not present in the response
+          #   if it was not provided in the input.
           #
           #   @return [Integer, nil]
           optional :min, Integer
 
           # @!attribute min_items
-          #   Returns the minimum number of items required for `multi_choices`, `photos` type
+          #   Returns the minimum number of items required for multi_choices, photos type
           #   document items. This parameter will not be present in the response if it was not
           #   provided in the input.
           #
@@ -151,16 +151,16 @@ module Nextbillionai
           #   {Nextbillionai::Models::Fleetify::DocumentTemplateContentResponse::Validation}
           #   for more details.
           #
-          #   Returns the validation rules for `number` , `multi_choices` , and `photos`
-          #   document field types.
+          #   Returns the validation rules for number , multi_choices , and photos document
+          #   field types.
           #
-          #   @param max [Integer] Returns the maximum allowed value for `number` type document item, as specified
+          #   @param max [Integer] Returns the maximum allowed value for number type document item, as specified at
           #
-          #   @param max_items [String] Returns the maximum number of items required for `multi_choices`, `photos` type
+          #   @param max_items [String] Returns the maximum number of items required for multi_choices, photos type docu
           #
-          #   @param min [Integer] Returns the minimum allowed value for `number` type document item, as specified
+          #   @param min [Integer] Returns the minimum allowed value for number type document item, as specified at
           #
-          #   @param min_items [String] Returns the minimum number of items required for `multi_choices`, `photos` type
+          #   @param min_items [String] Returns the minimum number of items required for multi_choices, photos type docu
         end
       end
     end

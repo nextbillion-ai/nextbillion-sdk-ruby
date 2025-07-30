@@ -97,7 +97,7 @@ module Nextbillionai
         attr_writer :contacts
 
         # The bounding box enclosing the geometric shape (area or line) that an individual
-        # result covers. `place` typed results have no `mapView`.
+        # result covers. place typed results have no mapView.
         sig { returns(T.nilable(Nextbillionai::MapView)) }
         attr_reader :map_view
 
@@ -143,7 +143,7 @@ module Nextbillionai
           # Contact information like phone, email or website.
           contacts: nil,
           # The bounding box enclosing the geometric shape (area or line) that an individual
-          # result covers. `place` typed results have no `mapView`.
+          # result covers. place typed results have no mapView.
           map_view: nil,
           # Returns the location coordinates of the result.
           position: nil,

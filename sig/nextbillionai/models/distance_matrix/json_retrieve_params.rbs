@@ -74,13 +74,13 @@ module Nextbillionai
           request_options: Nextbillionai::RequestOptions
         }
 
-        type approaches = :"`unrestricted`" | :"`curb`"
+        type approaches = :unrestricted | :curb
 
         module Approaches
           extend Nextbillionai::Internal::Type::Enum
 
-          UNRESTRICTED: :"`unrestricted`"
-          CURB: :"`curb`"
+          UNRESTRICTED: :unrestricted
+          CURB: :curb
 
           def self?.values: -> ::Array[Nextbillionai::Models::DistanceMatrix::JsonRetrieveParams::approaches]
         end
@@ -98,13 +98,13 @@ module Nextbillionai
           def self?.values: -> ::Array[Nextbillionai::Models::DistanceMatrix::JsonRetrieveParams::avoid]
         end
 
-        type mode = :"`car`" | :"`truck`"
+        type mode = :car | :truck
 
         module Mode
           extend Nextbillionai::Internal::Type::Enum
 
-          CAR: :"`car`"
-          TRUCK: :"`truck`"
+          CAR: :car
+          TRUCK: :truck
 
           def self?.values: -> ::Array[Nextbillionai::Models::DistanceMatrix::JsonRetrieveParams::mode]
         end

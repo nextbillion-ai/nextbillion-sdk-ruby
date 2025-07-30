@@ -155,8 +155,8 @@ module Nextbillionai
       module Approaches
         extend Nextbillionai::Internal::Type::Enum
 
-        UNRESTRICTED = :"`unrestricted`"
-        CURB = :"`curb`"
+        UNRESTRICTED = :unrestricted
+        CURB = :curb
 
         # @!method self.values
         #   @return [Array<Symbol>]
@@ -188,9 +188,9 @@ module Nextbillionai
       module Geometry
         extend Nextbillionai::Internal::Type::Enum
 
-        POLYLINE = :"`polyline`"
-        POLYLINE6 = :"`polyline6`"
-        GEOJSON = :"`geojson`"
+        POLYLINE = :polyline
+        POLYLINE6 = :polyline6
+        GEOJSON = :geojson
 
         # @!method self.values
         #   @return [Array<Symbol>]
@@ -210,8 +210,8 @@ module Nextbillionai
       module Mode
         extend Nextbillionai::Internal::Type::Enum
 
-        CAR = :"`car`"
-        TRUCK = :"`truck`"
+        CAR = :car
+        TRUCK = :truck
 
         # @!method self.values
         #   @return [Array<Symbol>]
@@ -226,7 +226,7 @@ module Nextbillionai
       module Option
         extend Nextbillionai::Internal::Type::Enum
 
-        FLEXIBLE = :"`flexible`"
+        FLEXIBLE = :flexible
 
         # @!method self.values
         #   @return [Array<Symbol>]
@@ -237,7 +237,7 @@ module Nextbillionai
       module RoadInfo
         extend Nextbillionai::Internal::Type::Enum
 
-        MAX_SPEED = :"`max_speed`"
+        MAX_SPEED = :max_speed
 
         # @!method self.values
         #   @return [Array<Symbol>]

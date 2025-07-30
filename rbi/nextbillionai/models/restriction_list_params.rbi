@@ -26,7 +26,7 @@ module Nextbillionai
       attr_accessor :key
 
       # The number of restrictions to be returned in the response. Please note that if
-      # the `limit` is set to a number more than the total number of available
+      # the limit is set to a number more than the total number of available
       # restrictions, then all restrictions would be returned together.
       sig { returns(Integer) }
       attr_accessor :limit
@@ -36,7 +36,7 @@ module Nextbillionai
       # first item returned in the result would be the item at (offset + 1) position in
       # collection.
       #
-      # Users can use `offset` along with `limit` to implement paginated result.
+      # Users can use offset along with limit to implement paginated result.
       sig { returns(Integer) }
       attr_accessor :offset
 
@@ -95,7 +95,7 @@ module Nextbillionai
 
       # This parameter is used to filter restrictions based on their state i.e. whether
       # the restriction is currently enabled, disabled, or deleted. For example, users
-      # can retrieve a list of all the deleted restrictions by setting `state=deleted`.
+      # can retrieve a list of all the deleted restrictions by setting state=deleted.
       sig do
         returns(
           T.nilable(Nextbillionai::RestrictionListParams::State::OrSymbol)
@@ -164,7 +164,7 @@ module Nextbillionai
         # API.
         key:,
         # The number of restrictions to be returned in the response. Please note that if
-        # the `limit` is set to a number more than the total number of available
+        # the limit is set to a number more than the total number of available
         # restrictions, then all restrictions would be returned together.
         limit:,
         # An integer value indicating the number of items in the collection that need to
@@ -172,7 +172,7 @@ module Nextbillionai
         # first item returned in the result would be the item at (offset + 1) position in
         # collection.
         #
-        # Users can use `offset` along with `limit` to implement paginated result.
+        # Users can use offset along with limit to implement paginated result.
         offset:,
         # Specify the modes of travel that the restriction pertains to.
         mode: nil,
@@ -186,7 +186,7 @@ module Nextbillionai
         source: nil,
         # This parameter is used to filter restrictions based on their state i.e. whether
         # the restriction is currently enabled, disabled, or deleted. For example, users
-        # can retrieve a list of all the deleted restrictions by setting `state=deleted`.
+        # can retrieve a list of all the deleted restrictions by setting state=deleted.
         state: nil,
         # Restrictions can be active or inactive at a given time by virtue of their
         # nature. For example, maximum speed limits can be active on the roads leading to
@@ -235,30 +235,15 @@ module Nextbillionai
         OrSymbol = T.type_alias { T.any(Symbol, String) }
 
         MODE_0W =
-          T.let(
-            :"`0w`",
-            Nextbillionai::RestrictionListParams::Mode::TaggedSymbol
-          )
+          T.let(:"0w", Nextbillionai::RestrictionListParams::Mode::TaggedSymbol)
         MODE_2W =
-          T.let(
-            :"`2w`",
-            Nextbillionai::RestrictionListParams::Mode::TaggedSymbol
-          )
+          T.let(:"2w", Nextbillionai::RestrictionListParams::Mode::TaggedSymbol)
         MODE_3W =
-          T.let(
-            :"`3w`",
-            Nextbillionai::RestrictionListParams::Mode::TaggedSymbol
-          )
+          T.let(:"3w", Nextbillionai::RestrictionListParams::Mode::TaggedSymbol)
         MODE_4W =
-          T.let(
-            :"`4w`",
-            Nextbillionai::RestrictionListParams::Mode::TaggedSymbol
-          )
+          T.let(:"4w", Nextbillionai::RestrictionListParams::Mode::TaggedSymbol)
         MODE_6W =
-          T.let(
-            :"`6w`",
-            Nextbillionai::RestrictionListParams::Mode::TaggedSymbol
-          )
+          T.let(:"6w", Nextbillionai::RestrictionListParams::Mode::TaggedSymbol)
 
         sig do
           override.returns(
@@ -281,32 +266,32 @@ module Nextbillionai
 
         TURN =
           T.let(
-            :"`turn`",
+            :turn,
             Nextbillionai::RestrictionListParams::RestrictionType::TaggedSymbol
           )
         PARKING =
           T.let(
-            :"`parking`",
+            :parking,
             Nextbillionai::RestrictionListParams::RestrictionType::TaggedSymbol
           )
         FIXEDSPEED =
           T.let(
-            :"`fixedspeed`",
+            :fixedspeed,
             Nextbillionai::RestrictionListParams::RestrictionType::TaggedSymbol
           )
         MAXSPEED =
           T.let(
-            :"`maxspeed`",
+            :maxspeed,
             Nextbillionai::RestrictionListParams::RestrictionType::TaggedSymbol
           )
         CLOSURE =
           T.let(
-            :"`closure`",
+            :closure,
             Nextbillionai::RestrictionListParams::RestrictionType::TaggedSymbol
           )
         TRUCK =
           T.let(
-            :"`truck`",
+            :truck,
             Nextbillionai::RestrictionListParams::RestrictionType::TaggedSymbol
           )
 
@@ -354,7 +339,7 @@ module Nextbillionai
 
       # This parameter is used to filter restrictions based on their state i.e. whether
       # the restriction is currently enabled, disabled, or deleted. For example, users
-      # can retrieve a list of all the deleted restrictions by setting `state=deleted`.
+      # can retrieve a list of all the deleted restrictions by setting state=deleted.
       module State
         extend Nextbillionai::Internal::Type::Enum
 
@@ -366,17 +351,17 @@ module Nextbillionai
 
         ENABLED =
           T.let(
-            :"`enabled`",
+            :enabled,
             Nextbillionai::RestrictionListParams::State::TaggedSymbol
           )
         DISABLED =
           T.let(
-            :"`disabled`",
+            :disabled,
             Nextbillionai::RestrictionListParams::State::TaggedSymbol
           )
         DELETED =
           T.let(
-            :"`deleted`",
+            :deleted,
             Nextbillionai::RestrictionListParams::State::TaggedSymbol
           )
 
@@ -407,12 +392,12 @@ module Nextbillionai
 
         ACTIVE =
           T.let(
-            :"`active`",
+            :active,
             Nextbillionai::RestrictionListParams::Status::TaggedSymbol
           )
         INACTIVE =
           T.let(
-            :"`inactive`",
+            :inactive,
             Nextbillionai::RestrictionListParams::Status::TaggedSymbol
           )
 

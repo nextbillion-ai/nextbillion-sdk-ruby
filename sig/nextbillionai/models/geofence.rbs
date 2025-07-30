@@ -145,14 +145,14 @@ module Nextbillionai
         def to_hash: -> { lat: Float, lon: Float }
       end
 
-      type type_ = :"`circle`" | :"`polygon`" | :"`isochrone`"
+      type type_ = :circle | :polygon | :isochrone
 
       module Type
         extend Nextbillionai::Internal::Type::Enum
 
-        CIRCLE: :"`circle`"
-        POLYGON: :"`polygon`"
-        ISOCHRONE: :"`isochrone`"
+        CIRCLE: :circle
+        POLYGON: :polygon
+        ISOCHRONE: :isochrone
 
         def self?.values: -> ::Array[Nextbillionai::Models::GeofenceAPI::type_]
       end

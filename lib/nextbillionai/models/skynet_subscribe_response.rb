@@ -11,7 +11,7 @@ module Nextbillionai
       optional :id, String
 
       # @!attribute error
-      #   Returns the error message when `status: error`. Otherwise, response doesn't
+      #   Returns the error message when status: error. Otherwise, response doesn't
       #   contain this field.
       #
       #   @return [String, nil]
@@ -36,7 +36,7 @@ module Nextbillionai
       #
       #   @param id [String] Subscription ID as provided in the input action message.
       #
-      #   @param error [String] Returns the error message when `status: error`. Otherwise, response doesn't cont
+      #   @param error [String] Returns the error message when status: error. Otherwise, response doesn't contai
       #
       #   @param status [String] Status of the action. It can have only two values - "success" or "error".
       #

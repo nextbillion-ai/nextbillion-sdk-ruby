@@ -72,7 +72,7 @@ module Nextbillionai
             )
           end
 
-        # Returns the address of the `postalcode` returned.
+        # Returns the address of the postalcode returned.
         sig { returns(T.nilable(String)) }
         attr_reader :address
 
@@ -83,11 +83,11 @@ module Nextbillionai
         # will not be returned in case the boundary information of the postal code
         # provided is not available (only for selected countries).
         #
-        # Please note the contents of this object will change based on the `format` field
-        # in the input. When the `format` field is not present in the input this object
-        # would contain `multipolygon` - `polygon` - `points` objects depending on the
-        # boundary of the given postal code. When the `format` field is present in the
-        # input, then the contents of this object would match the
+        # Please note the contents of this object will change based on the format field in
+        # the input. When the format field is not present in the input this object would
+        # contain multipolygon - polygon - points objects depending on the boundary of the
+        # given postal code. When the format field is present in the input, then the
+        # contents of this object would match the
         # [geojson format and standard](https://datatracker.ietf.org/doc/html/rfc7946).
         sig do
           returns(
@@ -115,7 +115,7 @@ module Nextbillionai
         attr_writer :country
 
         # Returns the [alpha-3 ISO code](https://www.iban.com/country-codes) of the
-        # country containing the `postalcode` returned.
+        # country containing the postalcode returned.
         sig { returns(T.nilable(String)) }
         attr_reader :country_code
 
@@ -123,8 +123,8 @@ module Nextbillionai
         attr_writer :country_code
 
         # This property is returned only when the API is requested to fetch the postal
-        # code containing the location coordinate provided in the `at` input parameter.
-        # `distance` denotes the straight line distance, in meters, from the requested
+        # code containing the location coordinate provided in the at input parameter.
+        # distance denotes the straight line distance, in meters, from the requested
         # location coordinate to the postal code centroid.
         sig { returns(T.nilable(Float)) }
         attr_reader :distance
@@ -201,28 +201,28 @@ module Nextbillionai
           ).returns(T.attached_class)
         end
         def self.new(
-          # Returns the address of the `postalcode` returned.
+          # Returns the address of the postalcode returned.
           address: nil,
           # An object containing the boundary details of the postal code area. This object
           # will not be returned in case the boundary information of the postal code
           # provided is not available (only for selected countries).
           #
-          # Please note the contents of this object will change based on the `format` field
-          # in the input. When the `format` field is not present in the input this object
-          # would contain `multipolygon` - `polygon` - `points` objects depending on the
-          # boundary of the given postal code. When the `format` field is present in the
-          # input, then the contents of this object would match the
+          # Please note the contents of this object will change based on the format field in
+          # the input. When the format field is not present in the input this object would
+          # contain multipolygon - polygon - points objects depending on the boundary of the
+          # given postal code. When the format field is present in the input, then the
+          # contents of this object would match the
           # [geojson format and standard](https://datatracker.ietf.org/doc/html/rfc7946).
           boundary: nil,
           # Name of the country containing the geographic coordinate point / postal code
           # provided in the input request.
           country: nil,
           # Returns the [alpha-3 ISO code](https://www.iban.com/country-codes) of the
-          # country containing the `postalcode` returned.
+          # country containing the postalcode returned.
           country_code: nil,
           # This property is returned only when the API is requested to fetch the postal
-          # code containing the location coordinate provided in the `at` input parameter.
-          # `distance` denotes the straight line distance, in meters, from the requested
+          # code containing the location coordinate provided in the at input parameter.
+          # distance denotes the straight line distance, in meters, from the requested
           # location coordinate to the postal code centroid.
           distance: nil,
           # Name of the district or region containing the geographic coordinate point /
@@ -274,8 +274,8 @@ module Nextbillionai
             end
 
           # An object with geoJSON details of the boundary. This object is returned when the
-          # `format` field is set to `geojson` in the input request, otherwise it is not
-          # present in the response. The contents of this object follow the
+          # format field is set to geojson in the input request, otherwise it is not present
+          # in the response. The contents of this object follow the
           # [geoJSON standard](https://datatracker.ietf.org/doc/html/rfc7946).
           sig do
             returns(
@@ -296,11 +296,10 @@ module Nextbillionai
 
           # An array of objects containing information about all the polygons forming the
           # postal code area. In case, the postal code area is formed by multiple polygons
-          # not containing each other, a matching count of `polygon` objects will be
-          # returned.
+          # not containing each other, a matching count of polygon objects will be returned.
           #
-          # Please note that this object is returned only when `format` field is not
-          # specified in the input, otherwise it is not present in the response.
+          # Please note that this object is returned only when format field is not specified
+          # in the input, otherwise it is not present in the response.
           sig do
             returns(
               T.nilable(
@@ -329,8 +328,8 @@ module Nextbillionai
           sig { params(properties: String).void }
           attr_writer :properties
 
-          # Type of the geoJSON object. This parameter is returned when the `format` field
-          # is set to `geojson` in the input request, otherwise it is not present in the
+          # Type of the geoJSON object. This parameter is returned when the format field is
+          # set to geojson in the input request, otherwise it is not present in the
           # response. The contents of this object follow the
           # [geoJSON standard](https://datatracker.ietf.org/doc/html/rfc7946).
           sig { returns(T.nilable(String)) }
@@ -343,11 +342,11 @@ module Nextbillionai
           # will not be returned in case the boundary information of the postal code
           # provided is not available (only for selected countries).
           #
-          # Please note the contents of this object will change based on the `format` field
-          # in the input. When the `format` field is not present in the input this object
-          # would contain `multipolygon` - `polygon` - `points` objects depending on the
-          # boundary of the given postal code. When the `format` field is present in the
-          # input, then the contents of this object would match the
+          # Please note the contents of this object will change based on the format field in
+          # the input. When the format field is not present in the input this object would
+          # contain multipolygon - polygon - points objects depending on the boundary of the
+          # given postal code. When the format field is present in the input, then the
+          # contents of this object would match the
           # [geojson format and standard](https://datatracker.ietf.org/doc/html/rfc7946).
           sig do
             params(
@@ -363,22 +362,21 @@ module Nextbillionai
           end
           def self.new(
             # An object with geoJSON details of the boundary. This object is returned when the
-            # `format` field is set to `geojson` in the input request, otherwise it is not
-            # present in the response. The contents of this object follow the
+            # format field is set to geojson in the input request, otherwise it is not present
+            # in the response. The contents of this object follow the
             # [geoJSON standard](https://datatracker.ietf.org/doc/html/rfc7946).
             geometry: nil,
             # An array of objects containing information about all the polygons forming the
             # postal code area. In case, the postal code area is formed by multiple polygons
-            # not containing each other, a matching count of `polygon` objects will be
-            # returned.
+            # not containing each other, a matching count of polygon objects will be returned.
             #
-            # Please note that this object is returned only when `format` field is not
-            # specified in the input, otherwise it is not present in the response.
+            # Please note that this object is returned only when format field is not specified
+            # in the input, otherwise it is not present in the response.
             multipolygon: nil,
             # Property associated with the geoJSON shape.
             properties: nil,
-            # Type of the geoJSON object. This parameter is returned when the `format` field
-            # is set to `geojson` in the input request, otherwise it is not present in the
+            # Type of the geoJSON object. This parameter is returned when the format field is
+            # set to geojson in the input request, otherwise it is not present in the
             # response. The contents of this object follow the
             # [geoJSON standard](https://datatracker.ietf.org/doc/html/rfc7946).
             type: nil
@@ -429,8 +427,8 @@ module Nextbillionai
             attr_writer :type
 
             # An object with geoJSON details of the boundary. This object is returned when the
-            # `format` field is set to `geojson` in the input request, otherwise it is not
-            # present in the response. The contents of this object follow the
+            # format field is set to geojson in the input request, otherwise it is not present
+            # in the response. The contents of this object follow the
             # [geoJSON standard](https://datatracker.ietf.org/doc/html/rfc7946).
             sig do
               params(
@@ -470,8 +468,7 @@ module Nextbillionai
 
             # An object containing the details of a single polygon that is a part of the
             # postal code area. In case the postal code area contains other polygon(s), the
-            # details of such polygon(s) would be returned through an array of `points`
-            # object.
+            # details of such polygon(s) would be returned through an array of points object.
             sig do
               returns(
                 T.nilable(
@@ -504,8 +501,7 @@ module Nextbillionai
             def self.new(
               # An object containing the details of a single polygon that is a part of the
               # postal code area. In case the postal code area contains other polygon(s), the
-              # details of such polygon(s) would be returned through an array of `points`
-              # object.
+              # details of such polygon(s) would be returned through an array of points object.
               polygon: nil
             )
             end
@@ -532,7 +528,7 @@ module Nextbillionai
                   )
                 end
 
-              # Represents an array of geographic coordinates that define a `polygon` boundary.
+              # Represents an array of geographic coordinates that define a polygon boundary.
               sig do
                 returns(
                   T.nilable(
@@ -563,7 +559,7 @@ module Nextbillionai
                 ).returns(T.attached_class)
               end
               def self.new(
-                # Represents an array of geographic coordinates that define a `polygon` boundary.
+                # Represents an array of geographic coordinates that define a polygon boundary.
                 points: nil
               )
               end
