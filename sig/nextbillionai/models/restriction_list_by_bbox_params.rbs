@@ -1,0 +1,162 @@
+module Nextbillionai
+  module Models
+    type restriction_list_by_bbox_params =
+      {
+        key: String,
+        max_lat: Float,
+        max_lon: Float,
+        min_lat: Float,
+        min_lon: Float,
+        mode: ::Array[Nextbillionai::Models::RestrictionListByBboxParams::mode],
+        restriction_type: Nextbillionai::Models::RestrictionListByBboxParams::restriction_type,
+        source: Nextbillionai::Models::RestrictionListByBboxParams::source,
+        state: Nextbillionai::Models::RestrictionListByBboxParams::state,
+        status: Nextbillionai::Models::RestrictionListByBboxParams::status,
+        transform: bool
+      }
+      & Nextbillionai::Internal::Type::request_parameters
+
+    class RestrictionListByBboxParams < Nextbillionai::Internal::Type::BaseModel
+      extend Nextbillionai::Internal::Type::RequestParameters::Converter
+      include Nextbillionai::Internal::Type::RequestParameters
+
+      attr_accessor key: String
+
+      attr_accessor max_lat: Float
+
+      attr_accessor max_lon: Float
+
+      attr_accessor min_lat: Float
+
+      attr_accessor min_lon: Float
+
+      attr_reader mode: ::Array[Nextbillionai::Models::RestrictionListByBboxParams::mode]?
+
+      def mode=: (
+        ::Array[Nextbillionai::Models::RestrictionListByBboxParams::mode]
+      ) -> ::Array[Nextbillionai::Models::RestrictionListByBboxParams::mode]
+
+      attr_reader restriction_type: Nextbillionai::Models::RestrictionListByBboxParams::restriction_type?
+
+      def restriction_type=: (
+        Nextbillionai::Models::RestrictionListByBboxParams::restriction_type
+      ) -> Nextbillionai::Models::RestrictionListByBboxParams::restriction_type
+
+      attr_reader source: Nextbillionai::Models::RestrictionListByBboxParams::source?
+
+      def source=: (
+        Nextbillionai::Models::RestrictionListByBboxParams::source
+      ) -> Nextbillionai::Models::RestrictionListByBboxParams::source
+
+      attr_reader state: Nextbillionai::Models::RestrictionListByBboxParams::state?
+
+      def state=: (
+        Nextbillionai::Models::RestrictionListByBboxParams::state
+      ) -> Nextbillionai::Models::RestrictionListByBboxParams::state
+
+      attr_reader status: Nextbillionai::Models::RestrictionListByBboxParams::status?
+
+      def status=: (
+        Nextbillionai::Models::RestrictionListByBboxParams::status
+      ) -> Nextbillionai::Models::RestrictionListByBboxParams::status
+
+      attr_reader transform: bool?
+
+      def transform=: (bool) -> bool
+
+      def initialize: (
+        key: String,
+        max_lat: Float,
+        max_lon: Float,
+        min_lat: Float,
+        min_lon: Float,
+        ?mode: ::Array[Nextbillionai::Models::RestrictionListByBboxParams::mode],
+        ?restriction_type: Nextbillionai::Models::RestrictionListByBboxParams::restriction_type,
+        ?source: Nextbillionai::Models::RestrictionListByBboxParams::source,
+        ?state: Nextbillionai::Models::RestrictionListByBboxParams::state,
+        ?status: Nextbillionai::Models::RestrictionListByBboxParams::status,
+        ?transform: bool,
+        ?request_options: Nextbillionai::request_opts
+      ) -> void
+
+      def to_hash: -> {
+        key: String,
+        max_lat: Float,
+        max_lon: Float,
+        min_lat: Float,
+        min_lon: Float,
+        mode: ::Array[Nextbillionai::Models::RestrictionListByBboxParams::mode],
+        restriction_type: Nextbillionai::Models::RestrictionListByBboxParams::restriction_type,
+        source: Nextbillionai::Models::RestrictionListByBboxParams::source,
+        state: Nextbillionai::Models::RestrictionListByBboxParams::state,
+        status: Nextbillionai::Models::RestrictionListByBboxParams::status,
+        transform: bool,
+        request_options: Nextbillionai::RequestOptions
+      }
+
+      type mode = :"0w" | :"2w" | :"3w" | :"4w" | :"6w"
+
+      module Mode
+        extend Nextbillionai::Internal::Type::Enum
+
+        MODE_0W: :"0w"
+        MODE_2W: :"2w"
+        MODE_3W: :"3w"
+        MODE_4W: :"4w"
+        MODE_6W: :"6w"
+
+        def self?.values: -> ::Array[Nextbillionai::Models::RestrictionListByBboxParams::mode]
+      end
+
+      type restriction_type =
+        :turn | :parking | :fixedspeed | :maxspeed | :closure | :truck
+
+      module RestrictionType
+        extend Nextbillionai::Internal::Type::Enum
+
+        TURN: :turn
+        PARKING: :parking
+        FIXEDSPEED: :fixedspeed
+        MAXSPEED: :maxspeed
+        CLOSURE: :closure
+        TRUCK: :truck
+
+        def self?.values: -> ::Array[Nextbillionai::Models::RestrictionListByBboxParams::restriction_type]
+      end
+
+      type source = :rrt | :pbf
+
+      module Source
+        extend Nextbillionai::Internal::Type::Enum
+
+        RRT: :rrt
+        PBF: :pbf
+
+        def self?.values: -> ::Array[Nextbillionai::Models::RestrictionListByBboxParams::source]
+      end
+
+      type state = :"`enabled`" | :"`disabled`" | :"`deleted`"
+
+      module State
+        extend Nextbillionai::Internal::Type::Enum
+
+        ENABLED: :"`enabled`"
+        DISABLED: :"`disabled`"
+        DELETED: :"`deleted`"
+
+        def self?.values: -> ::Array[Nextbillionai::Models::RestrictionListByBboxParams::state]
+      end
+
+      type status = :"`active`" | :"`inactive`"
+
+      module Status
+        extend Nextbillionai::Internal::Type::Enum
+
+        ACTIVE: :"`active`"
+        INACTIVE: :"`inactive`"
+
+        def self?.values: -> ::Array[Nextbillionai::Models::RestrictionListByBboxParams::status]
+      end
+    end
+  end
+end

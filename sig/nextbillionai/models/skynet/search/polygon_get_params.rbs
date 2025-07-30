@@ -1,0 +1,125 @@
+module Nextbillionai
+  module Models
+    module Skynet
+      module Search
+        type polygon_get_params =
+          {
+            key: String,
+            polygon: String,
+            filter: String,
+            include_all_of_attributes: String,
+            include_any_of_attributes: String,
+            max_search_limit: bool,
+            pn: Integer,
+            ps: Integer,
+            sort_by: Nextbillionai::Models::Skynet::Search::PolygonGetParams::sort_by,
+            sort_destination: String,
+            sort_driving_mode: Nextbillionai::Models::Skynet::Search::PolygonGetParams::sort_driving_mode
+          }
+          & Nextbillionai::Internal::Type::request_parameters
+
+        class PolygonGetParams < Nextbillionai::Internal::Type::BaseModel
+          extend Nextbillionai::Internal::Type::RequestParameters::Converter
+          include Nextbillionai::Internal::Type::RequestParameters
+
+          attr_accessor key: String
+
+          attr_accessor polygon: String
+
+          attr_reader filter: String?
+
+          def filter=: (String) -> String
+
+          attr_reader include_all_of_attributes: String?
+
+          def include_all_of_attributes=: (String) -> String
+
+          attr_reader include_any_of_attributes: String?
+
+          def include_any_of_attributes=: (String) -> String
+
+          attr_reader max_search_limit: bool?
+
+          def max_search_limit=: (bool) -> bool
+
+          attr_reader pn: Integer?
+
+          def pn=: (Integer) -> Integer
+
+          attr_reader ps: Integer?
+
+          def ps=: (Integer) -> Integer
+
+          attr_reader sort_by: Nextbillionai::Models::Skynet::Search::PolygonGetParams::sort_by?
+
+          def sort_by=: (
+            Nextbillionai::Models::Skynet::Search::PolygonGetParams::sort_by
+          ) -> Nextbillionai::Models::Skynet::Search::PolygonGetParams::sort_by
+
+          attr_reader sort_destination: String?
+
+          def sort_destination=: (String) -> String
+
+          attr_reader sort_driving_mode: Nextbillionai::Models::Skynet::Search::PolygonGetParams::sort_driving_mode?
+
+          def sort_driving_mode=: (
+            Nextbillionai::Models::Skynet::Search::PolygonGetParams::sort_driving_mode
+          ) -> Nextbillionai::Models::Skynet::Search::PolygonGetParams::sort_driving_mode
+
+          def initialize: (
+            key: String,
+            polygon: String,
+            ?filter: String,
+            ?include_all_of_attributes: String,
+            ?include_any_of_attributes: String,
+            ?max_search_limit: bool,
+            ?pn: Integer,
+            ?ps: Integer,
+            ?sort_by: Nextbillionai::Models::Skynet::Search::PolygonGetParams::sort_by,
+            ?sort_destination: String,
+            ?sort_driving_mode: Nextbillionai::Models::Skynet::Search::PolygonGetParams::sort_driving_mode,
+            ?request_options: Nextbillionai::request_opts
+          ) -> void
+
+          def to_hash: -> {
+            key: String,
+            polygon: String,
+            filter: String,
+            include_all_of_attributes: String,
+            include_any_of_attributes: String,
+            max_search_limit: bool,
+            pn: Integer,
+            ps: Integer,
+            sort_by: Nextbillionai::Models::Skynet::Search::PolygonGetParams::sort_by,
+            sort_destination: String,
+            sort_driving_mode: Nextbillionai::Models::Skynet::Search::PolygonGetParams::sort_driving_mode,
+            request_options: Nextbillionai::RequestOptions
+          }
+
+          type sort_by = :"`distance`" | :"`duration`" | :"`straight_distance`"
+
+          module SortBy
+            extend Nextbillionai::Internal::Type::Enum
+
+            DISTANCE: :"`distance`"
+            DURATION: :"`duration`"
+            STRAIGHT_DISTANCE: :"`straight_distance`"
+
+            def self?.values: -> ::Array[Nextbillionai::Models::Skynet::Search::PolygonGetParams::sort_by]
+          end
+
+          type sort_driving_mode = :"`car`" | :"`truck`"
+
+          module SortDrivingMode
+            extend Nextbillionai::Internal::Type::Enum
+
+            CAR: :"`car`"
+            TRUCK: :"`truck`"
+
+            def self?.values: -> ::Array[Nextbillionai::Models::Skynet::Search::PolygonGetParams::sort_driving_mode]
+          end
+        end
+      end
+    end
+  end
+end

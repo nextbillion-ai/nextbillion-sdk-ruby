@@ -1,0 +1,38 @@
+module Nextbillionai
+  module Resources
+    class Skynet
+      class Search
+        class Polygon
+          def create: (
+            key: String,
+            polygon: Nextbillionai::Skynet::Search::PolygonCreateParams::Polygon,
+            ?filter: String,
+            ?match_filter: Nextbillionai::Skynet::Search::PolygonCreateParams::MatchFilter,
+            ?max_search_limit: bool,
+            ?pn: Integer,
+            ?ps: Integer,
+            ?sort: Nextbillionai::Skynet::Search::PolygonCreateParams::Sort,
+            ?request_options: Nextbillionai::request_opts
+          ) -> Nextbillionai::Skynet::SearchResponse
+
+          def get: (
+            key: String,
+            polygon: String,
+            ?filter: String,
+            ?include_all_of_attributes: String,
+            ?include_any_of_attributes: String,
+            ?max_search_limit: bool,
+            ?pn: Integer,
+            ?ps: Integer,
+            ?sort_by: Nextbillionai::Models::Skynet::Search::PolygonGetParams::sort_by,
+            ?sort_destination: String,
+            ?sort_driving_mode: Nextbillionai::Models::Skynet::Search::PolygonGetParams::sort_driving_mode,
+            ?request_options: Nextbillionai::request_opts
+          ) -> Nextbillionai::Skynet::SearchResponse
+
+          def initialize: (client: Nextbillionai::Client) -> void
+        end
+      end
+    end
+  end
+end

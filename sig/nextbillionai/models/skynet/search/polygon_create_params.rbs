@@ -1,0 +1,194 @@
+module Nextbillionai
+  module Models
+    module Skynet
+      module Search
+        type polygon_create_params =
+          {
+            key: String,
+            polygon: Nextbillionai::Skynet::Search::PolygonCreateParams::Polygon,
+            filter: String,
+            match_filter: Nextbillionai::Skynet::Search::PolygonCreateParams::MatchFilter,
+            max_search_limit: bool,
+            pn: Integer,
+            ps: Integer,
+            sort: Nextbillionai::Skynet::Search::PolygonCreateParams::Sort
+          }
+          & Nextbillionai::Internal::Type::request_parameters
+
+        class PolygonCreateParams < Nextbillionai::Internal::Type::BaseModel
+          extend Nextbillionai::Internal::Type::RequestParameters::Converter
+          include Nextbillionai::Internal::Type::RequestParameters
+
+          attr_accessor key: String
+
+          attr_accessor polygon: Nextbillionai::Skynet::Search::PolygonCreateParams::Polygon
+
+          attr_reader filter: String?
+
+          def filter=: (String) -> String
+
+          attr_reader match_filter: Nextbillionai::Skynet::Search::PolygonCreateParams::MatchFilter?
+
+          def match_filter=: (
+            Nextbillionai::Skynet::Search::PolygonCreateParams::MatchFilter
+          ) -> Nextbillionai::Skynet::Search::PolygonCreateParams::MatchFilter
+
+          attr_reader max_search_limit: bool?
+
+          def max_search_limit=: (bool) -> bool
+
+          attr_reader pn: Integer?
+
+          def pn=: (Integer) -> Integer
+
+          attr_reader ps: Integer?
+
+          def ps=: (Integer) -> Integer
+
+          attr_reader sort: Nextbillionai::Skynet::Search::PolygonCreateParams::Sort?
+
+          def sort=: (
+            Nextbillionai::Skynet::Search::PolygonCreateParams::Sort
+          ) -> Nextbillionai::Skynet::Search::PolygonCreateParams::Sort
+
+          def initialize: (
+            key: String,
+            polygon: Nextbillionai::Skynet::Search::PolygonCreateParams::Polygon,
+            ?filter: String,
+            ?match_filter: Nextbillionai::Skynet::Search::PolygonCreateParams::MatchFilter,
+            ?max_search_limit: bool,
+            ?pn: Integer,
+            ?ps: Integer,
+            ?sort: Nextbillionai::Skynet::Search::PolygonCreateParams::Sort,
+            ?request_options: Nextbillionai::request_opts
+          ) -> void
+
+          def to_hash: -> {
+            key: String,
+            polygon: Nextbillionai::Skynet::Search::PolygonCreateParams::Polygon,
+            filter: String,
+            match_filter: Nextbillionai::Skynet::Search::PolygonCreateParams::MatchFilter,
+            max_search_limit: bool,
+            pn: Integer,
+            ps: Integer,
+            sort: Nextbillionai::Skynet::Search::PolygonCreateParams::Sort,
+            request_options: Nextbillionai::RequestOptions
+          }
+
+          type polygon = { coordinates: ::Array[Float], type: String }
+
+          class Polygon < Nextbillionai::Internal::Type::BaseModel
+            attr_accessor coordinates: ::Array[Float]
+
+            attr_accessor type: String
+
+            def initialize: (coordinates: ::Array[Float], type: String) -> void
+
+            def to_hash: -> { coordinates: ::Array[Float], type: String }
+          end
+
+          type match_filter =
+            {
+              include_all_of_attributes: String,
+              include_any_of_attributes: String
+            }
+
+          class MatchFilter < Nextbillionai::Internal::Type::BaseModel
+            attr_reader include_all_of_attributes: String?
+
+            def include_all_of_attributes=: (String) -> String
+
+            attr_reader include_any_of_attributes: String?
+
+            def include_any_of_attributes=: (String) -> String
+
+            def initialize: (
+              ?include_all_of_attributes: String,
+              ?include_any_of_attributes: String
+            ) -> void
+
+            def to_hash: -> {
+              include_all_of_attributes: String,
+              include_any_of_attributes: String
+            }
+          end
+
+          type sort =
+            {
+              sort_by: Nextbillionai::Models::Skynet::Search::PolygonCreateParams::Sort::sort_by,
+              sort_destination: Nextbillionai::Skynet::Search::PolygonCreateParams::Sort::SortDestination,
+              sort_driving_mode: Nextbillionai::Models::Skynet::Search::PolygonCreateParams::Sort::sort_driving_mode
+            }
+
+          class Sort < Nextbillionai::Internal::Type::BaseModel
+            attr_reader sort_by: Nextbillionai::Models::Skynet::Search::PolygonCreateParams::Sort::sort_by?
+
+            def sort_by=: (
+              Nextbillionai::Models::Skynet::Search::PolygonCreateParams::Sort::sort_by
+            ) -> Nextbillionai::Models::Skynet::Search::PolygonCreateParams::Sort::sort_by
+
+            attr_reader sort_destination: Nextbillionai::Skynet::Search::PolygonCreateParams::Sort::SortDestination?
+
+            def sort_destination=: (
+              Nextbillionai::Skynet::Search::PolygonCreateParams::Sort::SortDestination
+            ) -> Nextbillionai::Skynet::Search::PolygonCreateParams::Sort::SortDestination
+
+            attr_reader sort_driving_mode: Nextbillionai::Models::Skynet::Search::PolygonCreateParams::Sort::sort_driving_mode?
+
+            def sort_driving_mode=: (
+              Nextbillionai::Models::Skynet::Search::PolygonCreateParams::Sort::sort_driving_mode
+            ) -> Nextbillionai::Models::Skynet::Search::PolygonCreateParams::Sort::sort_driving_mode
+
+            def initialize: (
+              ?sort_by: Nextbillionai::Models::Skynet::Search::PolygonCreateParams::Sort::sort_by,
+              ?sort_destination: Nextbillionai::Skynet::Search::PolygonCreateParams::Sort::SortDestination,
+              ?sort_driving_mode: Nextbillionai::Models::Skynet::Search::PolygonCreateParams::Sort::sort_driving_mode
+            ) -> void
+
+            def to_hash: -> {
+              sort_by: Nextbillionai::Models::Skynet::Search::PolygonCreateParams::Sort::sort_by,
+              sort_destination: Nextbillionai::Skynet::Search::PolygonCreateParams::Sort::SortDestination,
+              sort_driving_mode: Nextbillionai::Models::Skynet::Search::PolygonCreateParams::Sort::sort_driving_mode
+            }
+
+            type sort_by =
+              :"`distance`" | :"`duration`" | :"`straight_distance`"
+
+            module SortBy
+              extend Nextbillionai::Internal::Type::Enum
+
+              DISTANCE: :"`distance`"
+              DURATION: :"`duration`"
+              STRAIGHT_DISTANCE: :"`straight_distance`"
+
+              def self?.values: -> ::Array[Nextbillionai::Models::Skynet::Search::PolygonCreateParams::Sort::sort_by]
+            end
+
+            type sort_destination = { lat: Float, lon: Float }
+
+            class SortDestination < Nextbillionai::Internal::Type::BaseModel
+              attr_accessor lat: Float
+
+              attr_accessor lon: Float
+
+              def initialize: (lat: Float, lon: Float) -> void
+
+              def to_hash: -> { lat: Float, lon: Float }
+            end
+
+            type sort_driving_mode = :"`car`" | :"`truck`"
+
+            module SortDrivingMode
+              extend Nextbillionai::Internal::Type::Enum
+
+              CAR: :"`car`"
+              TRUCK: :"`truck`"
+
+              def self?.values: -> ::Array[Nextbillionai::Models::Skynet::Search::PolygonCreateParams::Sort::sort_driving_mode]
+            end
+          end
+        end
+      end
+    end
+  end
+end

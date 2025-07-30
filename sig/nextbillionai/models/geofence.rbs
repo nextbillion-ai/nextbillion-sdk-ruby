@@ -1,0 +1,161 @@
+module Nextbillionai
+  module Models
+    type geofence_api =
+      {
+        id: String,
+        circle_center: Nextbillionai::GeofenceAPI::CircleCenter,
+        circle_radius: Float,
+        created_at: Integer,
+        geojson: Nextbillionai::Geofence::PolygonGeojson,
+        ic_contours_meter: Integer,
+        ic_contours_minute: Integer,
+        ic_coordinates: String,
+        ic_denoise: Float,
+        ic_departure_time: Integer,
+        ic_mode: Float,
+        meta_data: top,
+        name: String,
+        tags: ::Array[String],
+        type: Nextbillionai::Models::GeofenceAPI::type_,
+        updated_at: Integer
+      }
+
+    class GeofenceAPI < Nextbillionai::Internal::Type::BaseModel
+      attr_reader id: String?
+
+      def id=: (String) -> String
+
+      attr_reader circle_center: Nextbillionai::GeofenceAPI::CircleCenter?
+
+      def circle_center=: (
+        Nextbillionai::GeofenceAPI::CircleCenter
+      ) -> Nextbillionai::GeofenceAPI::CircleCenter
+
+      attr_reader circle_radius: Float?
+
+      def circle_radius=: (Float) -> Float
+
+      attr_reader created_at: Integer?
+
+      def created_at=: (Integer) -> Integer
+
+      attr_reader geojson: Nextbillionai::Geofence::PolygonGeojson?
+
+      def geojson=: (
+        Nextbillionai::Geofence::PolygonGeojson
+      ) -> Nextbillionai::Geofence::PolygonGeojson
+
+      attr_reader ic_contours_meter: Integer?
+
+      def ic_contours_meter=: (Integer) -> Integer
+
+      attr_reader ic_contours_minute: Integer?
+
+      def ic_contours_minute=: (Integer) -> Integer
+
+      attr_reader ic_coordinates: String?
+
+      def ic_coordinates=: (String) -> String
+
+      attr_reader ic_denoise: Float?
+
+      def ic_denoise=: (Float) -> Float
+
+      attr_reader ic_departure_time: Integer?
+
+      def ic_departure_time=: (Integer) -> Integer
+
+      attr_reader ic_mode: Float?
+
+      def ic_mode=: (Float) -> Float
+
+      attr_reader meta_data: top?
+
+      def meta_data=: (top) -> top
+
+      attr_reader name: String?
+
+      def name=: (String) -> String
+
+      attr_reader tags: ::Array[String]?
+
+      def tags=: (::Array[String]) -> ::Array[String]
+
+      attr_reader type: Nextbillionai::Models::GeofenceAPI::type_?
+
+      def type=: (
+        Nextbillionai::Models::GeofenceAPI::type_
+      ) -> Nextbillionai::Models::GeofenceAPI::type_
+
+      attr_reader updated_at: Integer?
+
+      def updated_at=: (Integer) -> Integer
+
+      def initialize: (
+        ?id: String,
+        ?circle_center: Nextbillionai::GeofenceAPI::CircleCenter,
+        ?circle_radius: Float,
+        ?created_at: Integer,
+        ?geojson: Nextbillionai::Geofence::PolygonGeojson,
+        ?ic_contours_meter: Integer,
+        ?ic_contours_minute: Integer,
+        ?ic_coordinates: String,
+        ?ic_denoise: Float,
+        ?ic_departure_time: Integer,
+        ?ic_mode: Float,
+        ?meta_data: top,
+        ?name: String,
+        ?tags: ::Array[String],
+        ?type: Nextbillionai::Models::GeofenceAPI::type_,
+        ?updated_at: Integer
+      ) -> void
+
+      def to_hash: -> {
+        id: String,
+        circle_center: Nextbillionai::GeofenceAPI::CircleCenter,
+        circle_radius: Float,
+        created_at: Integer,
+        geojson: Nextbillionai::Geofence::PolygonGeojson,
+        ic_contours_meter: Integer,
+        ic_contours_minute: Integer,
+        ic_coordinates: String,
+        ic_denoise: Float,
+        ic_departure_time: Integer,
+        ic_mode: Float,
+        meta_data: top,
+        name: String,
+        tags: ::Array[String],
+        type: Nextbillionai::Models::GeofenceAPI::type_,
+        updated_at: Integer
+      }
+
+      type circle_center = { lat: Float, lon: Float }
+
+      class CircleCenter < Nextbillionai::Internal::Type::BaseModel
+        attr_reader lat: Float?
+
+        def lat=: (Float) -> Float
+
+        attr_reader lon: Float?
+
+        def lon=: (Float) -> Float
+
+        def initialize: (?lat: Float, ?lon: Float) -> void
+
+        def to_hash: -> { lat: Float, lon: Float }
+      end
+
+      type type_ = :"`circle`" | :"`polygon`" | :"`isochrone`"
+
+      module Type
+        extend Nextbillionai::Internal::Type::Enum
+
+        CIRCLE: :"`circle`"
+        POLYGON: :"`polygon`"
+        ISOCHRONE: :"`isochrone`"
+
+        def self?.values: -> ::Array[Nextbillionai::Models::GeofenceAPI::type_]
+      end
+    end
+  end
+end

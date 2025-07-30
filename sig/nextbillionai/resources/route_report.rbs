@@ -1,0 +1,14 @@
+module Nextbillionai
+  module Resources
+    class RouteReport
+      def create: (
+        key: String,
+        original_shape: String,
+        original_shape_type: Nextbillionai::Models::RouteReportCreateParams::original_shape_type,
+        ?request_options: Nextbillionai::request_opts
+      ) -> Nextbillionai::Models::RouteReportCreateResponse
+
+      def initialize: (client: Nextbillionai::Client) -> void
+    end
+  end
+end

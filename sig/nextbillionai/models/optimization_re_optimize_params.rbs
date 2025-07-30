@@ -1,0 +1,176 @@
+module Nextbillionai
+  module Models
+    type optimization_re_optimize_params =
+      {
+        key: String,
+        existing_request_id: String,
+        job_changes: Nextbillionai::OptimizationReOptimizeParams::JobChanges,
+        locations: ::Array[String],
+        shipment_changes: Nextbillionai::OptimizationReOptimizeParams::ShipmentChanges,
+        vehicle_changes: Nextbillionai::OptimizationReOptimizeParams::VehicleChanges
+      }
+      & Nextbillionai::Internal::Type::request_parameters
+
+    class OptimizationReOptimizeParams < Nextbillionai::Internal::Type::BaseModel
+      extend Nextbillionai::Internal::Type::RequestParameters::Converter
+      include Nextbillionai::Internal::Type::RequestParameters
+
+      attr_accessor key: String
+
+      attr_accessor existing_request_id: String
+
+      attr_reader job_changes: Nextbillionai::OptimizationReOptimizeParams::JobChanges?
+
+      def job_changes=: (
+        Nextbillionai::OptimizationReOptimizeParams::JobChanges
+      ) -> Nextbillionai::OptimizationReOptimizeParams::JobChanges
+
+      attr_reader locations: ::Array[String]?
+
+      def locations=: (::Array[String]) -> ::Array[String]
+
+      attr_reader shipment_changes: Nextbillionai::OptimizationReOptimizeParams::ShipmentChanges?
+
+      def shipment_changes=: (
+        Nextbillionai::OptimizationReOptimizeParams::ShipmentChanges
+      ) -> Nextbillionai::OptimizationReOptimizeParams::ShipmentChanges
+
+      attr_reader vehicle_changes: Nextbillionai::OptimizationReOptimizeParams::VehicleChanges?
+
+      def vehicle_changes=: (
+        Nextbillionai::OptimizationReOptimizeParams::VehicleChanges
+      ) -> Nextbillionai::OptimizationReOptimizeParams::VehicleChanges
+
+      def initialize: (
+        key: String,
+        existing_request_id: String,
+        ?job_changes: Nextbillionai::OptimizationReOptimizeParams::JobChanges,
+        ?locations: ::Array[String],
+        ?shipment_changes: Nextbillionai::OptimizationReOptimizeParams::ShipmentChanges,
+        ?vehicle_changes: Nextbillionai::OptimizationReOptimizeParams::VehicleChanges,
+        ?request_options: Nextbillionai::request_opts
+      ) -> void
+
+      def to_hash: -> {
+        key: String,
+        existing_request_id: String,
+        job_changes: Nextbillionai::OptimizationReOptimizeParams::JobChanges,
+        locations: ::Array[String],
+        shipment_changes: Nextbillionai::OptimizationReOptimizeParams::ShipmentChanges,
+        vehicle_changes: Nextbillionai::OptimizationReOptimizeParams::VehicleChanges,
+        request_options: Nextbillionai::RequestOptions
+      }
+
+      type job_changes =
+        {
+          add: ::Array[Nextbillionai::Optimization::Job],
+          modify: ::Array[Nextbillionai::Optimization::Job],
+          remove: ::Array[String]
+        }
+
+      class JobChanges < Nextbillionai::Internal::Type::BaseModel
+        attr_reader add: ::Array[Nextbillionai::Optimization::Job]?
+
+        def add=: (
+          ::Array[Nextbillionai::Optimization::Job]
+        ) -> ::Array[Nextbillionai::Optimization::Job]
+
+        attr_reader modify: ::Array[Nextbillionai::Optimization::Job]?
+
+        def modify=: (
+          ::Array[Nextbillionai::Optimization::Job]
+        ) -> ::Array[Nextbillionai::Optimization::Job]
+
+        attr_reader remove: ::Array[String]?
+
+        def remove=: (::Array[String]) -> ::Array[String]
+
+        def initialize: (
+          ?add: ::Array[Nextbillionai::Optimization::Job],
+          ?modify: ::Array[Nextbillionai::Optimization::Job],
+          ?remove: ::Array[String]
+        ) -> void
+
+        def to_hash: -> {
+          add: ::Array[Nextbillionai::Optimization::Job],
+          modify: ::Array[Nextbillionai::Optimization::Job],
+          remove: ::Array[String]
+        }
+      end
+
+      type shipment_changes =
+        {
+          add: ::Array[Nextbillionai::Optimization::Shipment],
+          modify: ::Array[Nextbillionai::Optimization::Shipment],
+          remove: ::Array[String]
+        }
+
+      class ShipmentChanges < Nextbillionai::Internal::Type::BaseModel
+        attr_reader add: ::Array[Nextbillionai::Optimization::Shipment]?
+
+        def add=: (
+          ::Array[Nextbillionai::Optimization::Shipment]
+        ) -> ::Array[Nextbillionai::Optimization::Shipment]
+
+        attr_reader modify: ::Array[Nextbillionai::Optimization::Shipment]?
+
+        def modify=: (
+          ::Array[Nextbillionai::Optimization::Shipment]
+        ) -> ::Array[Nextbillionai::Optimization::Shipment]
+
+        attr_reader remove: ::Array[String]?
+
+        def remove=: (::Array[String]) -> ::Array[String]
+
+        def initialize: (
+          ?add: ::Array[Nextbillionai::Optimization::Shipment],
+          ?modify: ::Array[Nextbillionai::Optimization::Shipment],
+          ?remove: ::Array[String]
+        ) -> void
+
+        def to_hash: -> {
+          add: ::Array[Nextbillionai::Optimization::Shipment],
+          modify: ::Array[Nextbillionai::Optimization::Shipment],
+          remove: ::Array[String]
+        }
+      end
+
+      type vehicle_changes =
+        {
+          add: ::Array[Nextbillionai::Optimization::Vehicle],
+          modify: Nextbillionai::Optimization::Vehicle,
+          remove: ::Array[String]
+        }
+
+      class VehicleChanges < Nextbillionai::Internal::Type::BaseModel
+        attr_reader add: ::Array[Nextbillionai::Optimization::Vehicle]?
+
+        def add=: (
+          ::Array[Nextbillionai::Optimization::Vehicle]
+        ) -> ::Array[Nextbillionai::Optimization::Vehicle]
+
+        attr_reader modify: Nextbillionai::Optimization::Vehicle?
+
+        def modify=: (
+          Nextbillionai::Optimization::Vehicle
+        ) -> Nextbillionai::Optimization::Vehicle
+
+        attr_reader remove: ::Array[String]?
+
+        def remove=: (::Array[String]) -> ::Array[String]
+
+        def initialize: (
+          ?add: ::Array[Nextbillionai::Optimization::Vehicle],
+          ?modify: Nextbillionai::Optimization::Vehicle,
+          ?remove: ::Array[String]
+        ) -> void
+
+        def to_hash: -> {
+          add: ::Array[Nextbillionai::Optimization::Vehicle],
+          modify: Nextbillionai::Optimization::Vehicle,
+          remove: ::Array[String]
+        }
+      end
+    end
+  end
+end

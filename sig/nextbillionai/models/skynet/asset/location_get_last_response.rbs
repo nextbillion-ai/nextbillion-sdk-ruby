@@ -1,0 +1,60 @@
+module Nextbillionai
+  module Models
+    module Skynet
+      module Asset
+        type location_get_last_response =
+          {
+            data: Nextbillionai::Models::Skynet::Asset::LocationGetLastResponse::Data,
+            message: String,
+            status: String
+          }
+
+        class LocationGetLastResponse < Nextbillionai::Internal::Type::BaseModel
+          attr_reader data: Nextbillionai::Models::Skynet::Asset::LocationGetLastResponse::Data?
+
+          def data=: (
+            Nextbillionai::Models::Skynet::Asset::LocationGetLastResponse::Data
+          ) -> Nextbillionai::Models::Skynet::Asset::LocationGetLastResponse::Data
+
+          attr_reader message: String?
+
+          def message=: (String) -> String
+
+          attr_reader status: String?
+
+          def status=: (String) -> String
+
+          def initialize: (
+            ?data: Nextbillionai::Models::Skynet::Asset::LocationGetLastResponse::Data,
+            ?message: String,
+            ?status: String
+          ) -> void
+
+          def to_hash: -> {
+            data: Nextbillionai::Models::Skynet::Asset::LocationGetLastResponse::Data,
+            message: String,
+            status: String
+          }
+
+          type data = { location: Nextbillionai::Skynet::Asset::TrackLocation }
+
+          class Data < Nextbillionai::Internal::Type::BaseModel
+            attr_reader location: Nextbillionai::Skynet::Asset::TrackLocation?
+
+            def location=: (
+              Nextbillionai::Skynet::Asset::TrackLocation
+            ) -> Nextbillionai::Skynet::Asset::TrackLocation
+
+            def initialize: (
+              ?location: Nextbillionai::Skynet::Asset::TrackLocation
+            ) -> void
+
+            def to_hash: -> {
+              location: Nextbillionai::Skynet::Asset::TrackLocation
+            }
+          end
+        end
+      end
+    end
+  end
+end

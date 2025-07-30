@@ -1,0 +1,27 @@
+module Nextbillionai
+  module Resources
+    class Skynet
+      class Config
+        def retrieve: (
+          key: String,
+          ?cluster: Nextbillionai::Models::Skynet::ConfigRetrieveParams::cluster,
+          ?request_options: Nextbillionai::request_opts
+        ) -> Nextbillionai::Models::Skynet::ConfigRetrieveResponse
+
+        def update: (
+          key: String,
+          ?cluster: Nextbillionai::Models::Skynet::ConfigUpdateParams::cluster,
+          ?webhook: ::Array[String],
+          ?request_options: Nextbillionai::request_opts
+        ) -> Nextbillionai::Skynet::SimpleResp
+
+        def test_webhook: (
+          key: String,
+          ?request_options: Nextbillionai::request_opts
+        ) -> Nextbillionai::Models::Skynet::ConfigTestWebhookResponse
+
+        def initialize: (client: Nextbillionai::Client) -> void
+      end
+    end
+  end
+end

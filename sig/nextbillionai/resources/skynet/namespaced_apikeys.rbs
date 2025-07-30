@@ -1,0 +1,22 @@
+module Nextbillionai
+  module Resources
+    class Skynet
+      class NamespacedApikeys
+        def create: (
+          key: String,
+          namespace: String,
+          ?request_options: Nextbillionai::request_opts
+        ) -> Nextbillionai::Models::Skynet::NamespacedApikeyCreateResponse
+
+        def delete: (
+          key: String,
+          key_to_delete: String,
+          namespace: String,
+          ?request_options: Nextbillionai::request_opts
+        ) -> Nextbillionai::Models::Skynet::NamespacedApikeyDeleteResponse
+
+        def initialize: (client: Nextbillionai::Client) -> void
+      end
+    end
+  end
+end

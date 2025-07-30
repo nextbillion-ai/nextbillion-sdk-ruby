@@ -1,0 +1,24 @@
+module Nextbillionai
+  module Resources
+    class Multigeocode
+      attr_reader place: Nextbillionai::Resources::Multigeocode::Place
+
+      def search: (
+        key: String,
+        at: Nextbillionai::MultigeocodeSearchParams::At,
+        query: String,
+        ?city: String,
+        ?country: String,
+        ?district: String,
+        ?limit: Integer,
+        ?radius: String,
+        ?state: String,
+        ?street: String,
+        ?sub_district: String,
+        ?request_options: Nextbillionai::request_opts
+      ) -> Nextbillionai::Models::MultigeocodeSearchResponse
+
+      def initialize: (client: Nextbillionai::Client) -> void
+    end
+  end
+end

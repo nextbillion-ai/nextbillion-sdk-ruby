@@ -1,3 +1,0 @@
-module NextbillionSDK
-  VERSION: String
-end

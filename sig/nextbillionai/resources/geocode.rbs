@@ -1,0 +1,38 @@
+module Nextbillionai
+  module Resources
+    class Geocode
+      def retrieve: (
+        key: String,
+        q: String,
+        ?at: String,
+        ?in_: String,
+        ?lang: String,
+        ?limit: Integer,
+        ?request_options: Nextbillionai::request_opts
+      ) -> Nextbillionai::Models::GeocodeRetrieveResponse
+
+      def batch_create: (
+        key: String,
+        body: ::Array[Nextbillionai::GeocodeBatchCreateParams::Body],
+        ?request_options: Nextbillionai::request_opts
+      ) -> Nextbillionai::Models::GeocodeBatchCreateResponse
+
+      def structured_retrieve: (
+        country_code: String,
+        key: String,
+        ?at: String,
+        ?city: String,
+        ?county: String,
+        ?house_number: String,
+        ?in_: String,
+        ?limit: Integer,
+        ?postal_code: String,
+        ?state: String,
+        ?street: String,
+        ?request_options: Nextbillionai::request_opts
+      ) -> Nextbillionai::Models::GeocodeStructuredRetrieveResponse
+
+      def initialize: (client: Nextbillionai::Client) -> void
+    end
+  end
+end

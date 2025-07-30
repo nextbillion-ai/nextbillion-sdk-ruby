@@ -1,0 +1,23 @@
+module Nextbillionai
+  module Resources
+    class Skynet
+      class Asset
+        class Event
+          def list: (
+            String id,
+            key: String,
+            ?cluster: Nextbillionai::Models::Skynet::Asset::EventListParams::cluster,
+            ?end_time: Integer,
+            ?monitor_id: String,
+            ?pn: Integer,
+            ?ps: Integer,
+            ?start_time: Integer,
+            ?request_options: Nextbillionai::request_opts
+          ) -> Nextbillionai::Models::Skynet::Asset::EventListResponse
+
+          def initialize: (client: Nextbillionai::Client) -> void
+        end
+      end
+    end
+  end
+end
