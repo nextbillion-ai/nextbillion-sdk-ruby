@@ -1,0 +1,21 @@
+module Nextbillionai
+  module Resources
+    class Isochrone
+      def compute: (
+        contours_meters: Integer,
+        contours_minutes: Integer,
+        coordinates: String,
+        key: String,
+        ?contours_colors: String,
+        ?denoise: Float,
+        ?departure_time: Integer,
+        ?generalize: Float,
+        ?mode: Nextbillionai::Models::IsochroneComputeParams::mode,
+        ?polygons: bool,
+        ?request_options: Nextbillionai::request_opts
+      ) -> Nextbillionai::Models::IsochroneComputeResponse
+
+      def initialize: (client: Nextbillionai::Client) -> void
+    end
+  end
+end

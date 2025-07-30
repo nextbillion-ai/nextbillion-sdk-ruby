@@ -1,0 +1,31 @@
+module Nextbillionai
+  module Resources
+    class Skynet
+      class Asset
+        class Location
+          def list: (
+            String id,
+            key: String,
+            ?cluster: Nextbillionai::Models::Skynet::Asset::LocationListParams::cluster,
+            ?correction: String,
+            ?end_time: Integer,
+            ?geometry_type: Nextbillionai::Models::Skynet::Asset::LocationListParams::geometry_type,
+            ?pn: Integer,
+            ?ps: Integer,
+            ?start_time: Integer,
+            ?request_options: Nextbillionai::request_opts
+          ) -> Nextbillionai::Models::Skynet::Asset::LocationListResponse
+
+          def get_last: (
+            String id,
+            key: String,
+            ?cluster: Nextbillionai::Models::Skynet::Asset::LocationGetLastParams::cluster,
+            ?request_options: Nextbillionai::request_opts
+          ) -> Nextbillionai::Models::Skynet::Asset::LocationGetLastResponse
+
+          def initialize: (client: Nextbillionai::Client) -> void
+        end
+      end
+    end
+  end
+end

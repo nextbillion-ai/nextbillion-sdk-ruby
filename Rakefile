@@ -150,7 +150,7 @@ multitask(:"build:gem") do
     sig/*
   GLOB
 
-  sh(*%w[gem build -- nextbillion_sdk.gemspec])
+  sh(*%w[gem build -- nextbillionai.gemspec])
   rm_rf(ignore_file)
 end
 

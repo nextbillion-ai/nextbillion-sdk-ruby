@@ -1,0 +1,9 @@
+module Nextbillionai
+  module Models
+    module Fleetify
+      module Routes
+        DocumentSubmission: Nextbillionai::Internal::Type::Converter
+      end
+    end
+  end
+end

@@ -1,0 +1,386 @@
+module Nextbillionai
+  module Models
+    type optimization_compute_response =
+      {
+        code: String,
+        location: Nextbillionai::Models::OptimizationComputeResponse::Location,
+        trips: ::Array[Nextbillionai::Models::OptimizationComputeResponse::Trip],
+        waypoints: ::Array[Nextbillionai::Models::OptimizationComputeResponse::Waypoint]
+      }
+
+    class OptimizationComputeResponse < Nextbillionai::Internal::Type::BaseModel
+      attr_reader code: String?
+
+      def code=: (String) -> String
+
+      attr_reader location: Nextbillionai::Models::OptimizationComputeResponse::Location?
+
+      def location=: (
+        Nextbillionai::Models::OptimizationComputeResponse::Location
+      ) -> Nextbillionai::Models::OptimizationComputeResponse::Location
+
+      attr_reader trips: ::Array[Nextbillionai::Models::OptimizationComputeResponse::Trip]?
+
+      def trips=: (
+        ::Array[Nextbillionai::Models::OptimizationComputeResponse::Trip]
+      ) -> ::Array[Nextbillionai::Models::OptimizationComputeResponse::Trip]
+
+      attr_reader waypoints: ::Array[Nextbillionai::Models::OptimizationComputeResponse::Waypoint]?
+
+      def waypoints=: (
+        ::Array[Nextbillionai::Models::OptimizationComputeResponse::Waypoint]
+      ) -> ::Array[Nextbillionai::Models::OptimizationComputeResponse::Waypoint]
+
+      def initialize: (
+        ?code: String,
+        ?location: Nextbillionai::Models::OptimizationComputeResponse::Location,
+        ?trips: ::Array[Nextbillionai::Models::OptimizationComputeResponse::Trip],
+        ?waypoints: ::Array[Nextbillionai::Models::OptimizationComputeResponse::Waypoint]
+      ) -> void
+
+      def to_hash: -> {
+        code: String,
+        location: Nextbillionai::Models::OptimizationComputeResponse::Location,
+        trips: ::Array[Nextbillionai::Models::OptimizationComputeResponse::Trip],
+        waypoints: ::Array[Nextbillionai::Models::OptimizationComputeResponse::Waypoint]
+      }
+
+      type location = { latitude: Float, longitude: Float }
+
+      class Location < Nextbillionai::Internal::Type::BaseModel
+        attr_reader latitude: Float?
+
+        def latitude=: (Float) -> Float
+
+        attr_reader longitude: Float?
+
+        def longitude=: (Float) -> Float
+
+        def initialize: (?latitude: Float, ?longitude: Float) -> void
+
+        def to_hash: -> { latitude: Float, longitude: Float }
+      end
+
+      type trip =
+        {
+          distance: Float,
+          duration: Float,
+          geojson: Nextbillionai::Models::OptimizationComputeResponse::Trip::Geojson,
+          geometry: String,
+          legs: ::Array[Nextbillionai::Models::OptimizationComputeResponse::Trip::Leg]
+        }
+
+      class Trip < Nextbillionai::Internal::Type::BaseModel
+        attr_reader distance: Float?
+
+        def distance=: (Float) -> Float
+
+        attr_reader duration: Float?
+
+        def duration=: (Float) -> Float
+
+        attr_reader geojson: Nextbillionai::Models::OptimizationComputeResponse::Trip::Geojson?
+
+        def geojson=: (
+          Nextbillionai::Models::OptimizationComputeResponse::Trip::Geojson
+        ) -> Nextbillionai::Models::OptimizationComputeResponse::Trip::Geojson
+
+        attr_reader geometry: String?
+
+        def geometry=: (String) -> String
+
+        attr_reader legs: ::Array[Nextbillionai::Models::OptimizationComputeResponse::Trip::Leg]?
+
+        def legs=: (
+          ::Array[Nextbillionai::Models::OptimizationComputeResponse::Trip::Leg]
+        ) -> ::Array[Nextbillionai::Models::OptimizationComputeResponse::Trip::Leg]
+
+        def initialize: (
+          ?distance: Float,
+          ?duration: Float,
+          ?geojson: Nextbillionai::Models::OptimizationComputeResponse::Trip::Geojson,
+          ?geometry: String,
+          ?legs: ::Array[Nextbillionai::Models::OptimizationComputeResponse::Trip::Leg]
+        ) -> void
+
+        def to_hash: -> {
+          distance: Float,
+          duration: Float,
+          geojson: Nextbillionai::Models::OptimizationComputeResponse::Trip::Geojson,
+          geometry: String,
+          legs: ::Array[Nextbillionai::Models::OptimizationComputeResponse::Trip::Leg]
+        }
+
+        type geojson =
+          {
+            geometry: String,
+            properties: String,
+            type: Nextbillionai::Models::OptimizationComputeResponse::Trip::Geojson::type_
+          }
+
+        class Geojson < Nextbillionai::Internal::Type::BaseModel
+          attr_reader geometry: String?
+
+          def geometry=: (String) -> String
+
+          attr_reader properties: String?
+
+          def properties=: (String) -> String
+
+          attr_reader type: Nextbillionai::Models::OptimizationComputeResponse::Trip::Geojson::type_?
+
+          def type=: (
+            Nextbillionai::Models::OptimizationComputeResponse::Trip::Geojson::type_
+          ) -> Nextbillionai::Models::OptimizationComputeResponse::Trip::Geojson::type_
+
+          def initialize: (
+            ?geometry: String,
+            ?properties: String,
+            ?type: Nextbillionai::Models::OptimizationComputeResponse::Trip::Geojson::type_
+          ) -> void
+
+          def to_hash: -> {
+            geometry: String,
+            properties: String,
+            type: Nextbillionai::Models::OptimizationComputeResponse::Trip::Geojson::type_
+          }
+
+          type type_ =
+            :Point
+            | :MultiPoint
+            | :LineString
+            | :MultiLineString
+            | :Polygon
+            | :MultiPolygon
+            | :GeometryCollection
+            | :Feature
+            | :FeatureCollection
+            | :Link
+
+          module Type
+            extend Nextbillionai::Internal::Type::Enum
+
+            POINT: :Point
+            MULTI_POINT: :MultiPoint
+            LINE_STRING: :LineString
+            MULTI_LINE_STRING: :MultiLineString
+            POLYGON: :Polygon
+            MULTI_POLYGON: :MultiPolygon
+            GEOMETRY_COLLECTION: :GeometryCollection
+            FEATURE: :Feature
+            FEATURE_COLLECTION: :FeatureCollection
+            LINK: :Link
+
+            def self?.values: -> ::Array[Nextbillionai::Models::OptimizationComputeResponse::Trip::Geojson::type_]
+          end
+        end
+
+        type leg =
+          {
+            distance: Float,
+            duration: Float,
+            steps: ::Array[Nextbillionai::Models::OptimizationComputeResponse::Trip::Leg::Step],
+            summary: String
+          }
+
+        class Leg < Nextbillionai::Internal::Type::BaseModel
+          attr_reader distance: Float?
+
+          def distance=: (Float) -> Float
+
+          attr_reader duration: Float?
+
+          def duration=: (Float) -> Float
+
+          attr_reader steps: ::Array[Nextbillionai::Models::OptimizationComputeResponse::Trip::Leg::Step]?
+
+          def steps=: (
+            ::Array[Nextbillionai::Models::OptimizationComputeResponse::Trip::Leg::Step]
+          ) -> ::Array[Nextbillionai::Models::OptimizationComputeResponse::Trip::Leg::Step]
+
+          attr_reader summary: String?
+
+          def summary=: (String) -> String
+
+          def initialize: (
+            ?distance: Float,
+            ?duration: Float,
+            ?steps: ::Array[Nextbillionai::Models::OptimizationComputeResponse::Trip::Leg::Step],
+            ?summary: String
+          ) -> void
+
+          def to_hash: -> {
+            distance: Float,
+            duration: Float,
+            steps: ::Array[Nextbillionai::Models::OptimizationComputeResponse::Trip::Leg::Step],
+            summary: String
+          }
+
+          type step =
+            {
+              distance: Float,
+              duration: Float,
+              geojson: Nextbillionai::Models::OptimizationComputeResponse::Trip::Leg::Step::Geojson,
+              geometry: String
+            }
+
+          class Step < Nextbillionai::Internal::Type::BaseModel
+            attr_reader distance: Float?
+
+            def distance=: (Float) -> Float
+
+            attr_reader duration: Float?
+
+            def duration=: (Float) -> Float
+
+            attr_reader geojson: Nextbillionai::Models::OptimizationComputeResponse::Trip::Leg::Step::Geojson?
+
+            def geojson=: (
+              Nextbillionai::Models::OptimizationComputeResponse::Trip::Leg::Step::Geojson
+            ) -> Nextbillionai::Models::OptimizationComputeResponse::Trip::Leg::Step::Geojson
+
+            attr_reader geometry: String?
+
+            def geometry=: (String) -> String
+
+            def initialize: (
+              ?distance: Float,
+              ?duration: Float,
+              ?geojson: Nextbillionai::Models::OptimizationComputeResponse::Trip::Leg::Step::Geojson,
+              ?geometry: String
+            ) -> void
+
+            def to_hash: -> {
+              distance: Float,
+              duration: Float,
+              geojson: Nextbillionai::Models::OptimizationComputeResponse::Trip::Leg::Step::Geojson,
+              geometry: String
+            }
+
+            type geojson =
+              {
+                geometry: String,
+                properties: String,
+                type: Nextbillionai::Models::OptimizationComputeResponse::Trip::Leg::Step::Geojson::type_
+              }
+
+            class Geojson < Nextbillionai::Internal::Type::BaseModel
+              attr_reader geometry: String?
+
+              def geometry=: (String) -> String
+
+              attr_reader properties: String?
+
+              def properties=: (String) -> String
+
+              attr_reader type: Nextbillionai::Models::OptimizationComputeResponse::Trip::Leg::Step::Geojson::type_?
+
+              def type=: (
+                Nextbillionai::Models::OptimizationComputeResponse::Trip::Leg::Step::Geojson::type_
+              ) -> Nextbillionai::Models::OptimizationComputeResponse::Trip::Leg::Step::Geojson::type_
+
+              def initialize: (
+                ?geometry: String,
+                ?properties: String,
+                ?type: Nextbillionai::Models::OptimizationComputeResponse::Trip::Leg::Step::Geojson::type_
+              ) -> void
+
+              def to_hash: -> {
+                geometry: String,
+                properties: String,
+                type: Nextbillionai::Models::OptimizationComputeResponse::Trip::Leg::Step::Geojson::type_
+              }
+
+              type type_ =
+                :Point
+                | :MultiPoint
+                | :LineString
+                | :MultiLineString
+                | :Polygon
+                | :MultiPolygon
+                | :GeometryCollection
+                | :Feature
+                | :FeatureCollection
+                | :Link
+
+              module Type
+                extend Nextbillionai::Internal::Type::Enum
+
+                POINT: :Point
+                MULTI_POINT: :MultiPoint
+                LINE_STRING: :LineString
+                MULTI_LINE_STRING: :MultiLineString
+                POLYGON: :Polygon
+                MULTI_POLYGON: :MultiPolygon
+                GEOMETRY_COLLECTION: :GeometryCollection
+                FEATURE: :Feature
+                FEATURE_COLLECTION: :FeatureCollection
+                LINK: :Link
+
+                def self?.values: -> ::Array[Nextbillionai::Models::OptimizationComputeResponse::Trip::Leg::Step::Geojson::type_]
+              end
+            end
+          end
+        end
+      end
+
+      type waypoint =
+        {
+          location: Nextbillionai::Models::OptimizationComputeResponse::Waypoint::Location,
+          name: String,
+          trips_index: Integer,
+          waypoint_index: Integer
+        }
+
+      class Waypoint < Nextbillionai::Internal::Type::BaseModel
+        attr_reader location: Nextbillionai::Models::OptimizationComputeResponse::Waypoint::Location?
+
+        def location=: (
+          Nextbillionai::Models::OptimizationComputeResponse::Waypoint::Location
+        ) -> Nextbillionai::Models::OptimizationComputeResponse::Waypoint::Location
+
+        attr_reader name: String?
+
+        def name=: (String) -> String
+
+        attr_reader trips_index: Integer?
+
+        def trips_index=: (Integer) -> Integer
+
+        attr_reader waypoint_index: Integer?
+
+        def waypoint_index=: (Integer) -> Integer
+
+        def initialize: (
+          ?location: Nextbillionai::Models::OptimizationComputeResponse::Waypoint::Location,
+          ?name: String,
+          ?trips_index: Integer,
+          ?waypoint_index: Integer
+        ) -> void
+
+        def to_hash: -> {
+          location: Nextbillionai::Models::OptimizationComputeResponse::Waypoint::Location,
+          name: String,
+          trips_index: Integer,
+          waypoint_index: Integer
+        }
+
+        type location = { latitude: Float, longitude: Float }
+
+        class Location < Nextbillionai::Internal::Type::BaseModel
+          attr_reader latitude: Float?
+
+          def latitude=: (Float) -> Float
+
+          attr_reader longitude: Float?
+
+          def longitude=: (Float) -> Float
+
+          def initialize: (?latitude: Float, ?longitude: Float) -> void
+
+          def to_hash: -> { latitude: Float, longitude: Float }
+        end
+      end
+    end
+  end
+end

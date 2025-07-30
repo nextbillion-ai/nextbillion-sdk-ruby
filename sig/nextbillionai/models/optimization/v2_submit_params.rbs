@@ -1,0 +1,1158 @@
+module Nextbillionai
+  module Models
+    module Optimization
+      type v2_submit_params =
+        {
+          key: String,
+          locations: Nextbillionai::Optimization::V2SubmitParams::Locations,
+          vehicles: ::Array[Nextbillionai::Optimization::Vehicle],
+          cost_matrix: ::Array[::Array[Integer]],
+          depots: ::Array[Nextbillionai::Optimization::V2SubmitParams::Depot],
+          description: String,
+          distance_matrix: ::Array[::Array[Integer]],
+          duration_matrix: ::Array[::Array[Integer]],
+          existing_solution_id: String,
+          jobs: ::Array[Nextbillionai::Optimization::Job],
+          options: Nextbillionai::Optimization::V2SubmitParams::Options,
+          relations: ::Array[Nextbillionai::Optimization::V2SubmitParams::Relation],
+          shipments: ::Array[Nextbillionai::Optimization::Shipment],
+          solution: ::Array[Nextbillionai::Optimization::V2SubmitParams::Solution],
+          unassigned: Nextbillionai::Optimization::V2SubmitParams::Unassigned,
+          zones: ::Array[Nextbillionai::Optimization::V2SubmitParams::Zone]
+        }
+        & Nextbillionai::Internal::Type::request_parameters
+
+      class V2SubmitParams < Nextbillionai::Internal::Type::BaseModel
+        extend Nextbillionai::Internal::Type::RequestParameters::Converter
+        include Nextbillionai::Internal::Type::RequestParameters
+
+        attr_accessor key: String
+
+        attr_accessor locations: Nextbillionai::Optimization::V2SubmitParams::Locations
+
+        attr_accessor vehicles: ::Array[Nextbillionai::Optimization::Vehicle]
+
+        attr_reader cost_matrix: ::Array[::Array[Integer]]?
+
+        def cost_matrix=: (
+          ::Array[::Array[Integer]]
+        ) -> ::Array[::Array[Integer]]
+
+        attr_reader depots: ::Array[Nextbillionai::Optimization::V2SubmitParams::Depot]?
+
+        def depots=: (
+          ::Array[Nextbillionai::Optimization::V2SubmitParams::Depot]
+        ) -> ::Array[Nextbillionai::Optimization::V2SubmitParams::Depot]
+
+        attr_reader description: String?
+
+        def description=: (String) -> String
+
+        attr_reader distance_matrix: ::Array[::Array[Integer]]?
+
+        def distance_matrix=: (
+          ::Array[::Array[Integer]]
+        ) -> ::Array[::Array[Integer]]
+
+        attr_reader duration_matrix: ::Array[::Array[Integer]]?
+
+        def duration_matrix=: (
+          ::Array[::Array[Integer]]
+        ) -> ::Array[::Array[Integer]]
+
+        attr_reader existing_solution_id: String?
+
+        def existing_solution_id=: (String) -> String
+
+        attr_reader jobs: ::Array[Nextbillionai::Optimization::Job]?
+
+        def jobs=: (
+          ::Array[Nextbillionai::Optimization::Job]
+        ) -> ::Array[Nextbillionai::Optimization::Job]
+
+        attr_reader options: Nextbillionai::Optimization::V2SubmitParams::Options?
+
+        def options=: (
+          Nextbillionai::Optimization::V2SubmitParams::Options
+        ) -> Nextbillionai::Optimization::V2SubmitParams::Options
+
+        attr_reader relations: ::Array[Nextbillionai::Optimization::V2SubmitParams::Relation]?
+
+        def relations=: (
+          ::Array[Nextbillionai::Optimization::V2SubmitParams::Relation]
+        ) -> ::Array[Nextbillionai::Optimization::V2SubmitParams::Relation]
+
+        attr_reader shipments: ::Array[Nextbillionai::Optimization::Shipment]?
+
+        def shipments=: (
+          ::Array[Nextbillionai::Optimization::Shipment]
+        ) -> ::Array[Nextbillionai::Optimization::Shipment]
+
+        attr_reader solution: ::Array[Nextbillionai::Optimization::V2SubmitParams::Solution]?
+
+        def solution=: (
+          ::Array[Nextbillionai::Optimization::V2SubmitParams::Solution]
+        ) -> ::Array[Nextbillionai::Optimization::V2SubmitParams::Solution]
+
+        attr_reader unassigned: Nextbillionai::Optimization::V2SubmitParams::Unassigned?
+
+        def unassigned=: (
+          Nextbillionai::Optimization::V2SubmitParams::Unassigned
+        ) -> Nextbillionai::Optimization::V2SubmitParams::Unassigned
+
+        attr_reader zones: ::Array[Nextbillionai::Optimization::V2SubmitParams::Zone]?
+
+        def zones=: (
+          ::Array[Nextbillionai::Optimization::V2SubmitParams::Zone]
+        ) -> ::Array[Nextbillionai::Optimization::V2SubmitParams::Zone]
+
+        def initialize: (
+          key: String,
+          locations: Nextbillionai::Optimization::V2SubmitParams::Locations,
+          vehicles: ::Array[Nextbillionai::Optimization::Vehicle],
+          ?cost_matrix: ::Array[::Array[Integer]],
+          ?depots: ::Array[Nextbillionai::Optimization::V2SubmitParams::Depot],
+          ?description: String,
+          ?distance_matrix: ::Array[::Array[Integer]],
+          ?duration_matrix: ::Array[::Array[Integer]],
+          ?existing_solution_id: String,
+          ?jobs: ::Array[Nextbillionai::Optimization::Job],
+          ?options: Nextbillionai::Optimization::V2SubmitParams::Options,
+          ?relations: ::Array[Nextbillionai::Optimization::V2SubmitParams::Relation],
+          ?shipments: ::Array[Nextbillionai::Optimization::Shipment],
+          ?solution: ::Array[Nextbillionai::Optimization::V2SubmitParams::Solution],
+          ?unassigned: Nextbillionai::Optimization::V2SubmitParams::Unassigned,
+          ?zones: ::Array[Nextbillionai::Optimization::V2SubmitParams::Zone],
+          ?request_options: Nextbillionai::request_opts
+        ) -> void
+
+        def to_hash: -> {
+          key: String,
+          locations: Nextbillionai::Optimization::V2SubmitParams::Locations,
+          vehicles: ::Array[Nextbillionai::Optimization::Vehicle],
+          cost_matrix: ::Array[::Array[Integer]],
+          depots: ::Array[Nextbillionai::Optimization::V2SubmitParams::Depot],
+          description: String,
+          distance_matrix: ::Array[::Array[Integer]],
+          duration_matrix: ::Array[::Array[Integer]],
+          existing_solution_id: String,
+          jobs: ::Array[Nextbillionai::Optimization::Job],
+          options: Nextbillionai::Optimization::V2SubmitParams::Options,
+          relations: ::Array[Nextbillionai::Optimization::V2SubmitParams::Relation],
+          shipments: ::Array[Nextbillionai::Optimization::Shipment],
+          solution: ::Array[Nextbillionai::Optimization::V2SubmitParams::Solution],
+          unassigned: Nextbillionai::Optimization::V2SubmitParams::Unassigned,
+          zones: ::Array[Nextbillionai::Optimization::V2SubmitParams::Zone],
+          request_options: Nextbillionai::RequestOptions
+        }
+
+        type locations =
+          {
+            location: ::Array[String],
+            id: Integer,
+            approaches: ::Array[Nextbillionai::Models::Optimization::V2SubmitParams::Locations::approach]
+          }
+
+        class Locations < Nextbillionai::Internal::Type::BaseModel
+          attr_accessor location: ::Array[String]
+
+          attr_reader id: Integer?
+
+          def id=: (Integer) -> Integer
+
+          attr_reader approaches: ::Array[Nextbillionai::Models::Optimization::V2SubmitParams::Locations::approach]?
+
+          def approaches=: (
+            ::Array[Nextbillionai::Models::Optimization::V2SubmitParams::Locations::approach]
+          ) -> ::Array[Nextbillionai::Models::Optimization::V2SubmitParams::Locations::approach]
+
+          def initialize: (
+            location: ::Array[String],
+            ?id: Integer,
+            ?approaches: ::Array[Nextbillionai::Models::Optimization::V2SubmitParams::Locations::approach]
+          ) -> void
+
+          def to_hash: -> {
+            location: ::Array[String],
+            id: Integer,
+            approaches: ::Array[Nextbillionai::Models::Optimization::V2SubmitParams::Locations::approach]
+          }
+
+          type approach = :"`unrestricted`" | :"`curb`" | :"\"\"(empty string)"
+
+          module Approach
+            extend Nextbillionai::Internal::Type::Enum
+
+            UNRESTRICTED: :"`unrestricted`"
+            CURB: :"`curb`"
+            EMPTY_STRING: :"\"\"(empty string)"
+
+            def self?.values: -> ::Array[Nextbillionai::Models::Optimization::V2SubmitParams::Locations::approach]
+          end
+        end
+
+        type depot =
+          {
+            id: String,
+            location_index: Integer,
+            description: String,
+            service: Integer,
+            time_windows: ::Array[::Array[Integer]]
+          }
+
+        class Depot < Nextbillionai::Internal::Type::BaseModel
+          attr_accessor id: String
+
+          attr_accessor location_index: Integer
+
+          attr_reader description: String?
+
+          def description=: (String) -> String
+
+          attr_reader service: Integer?
+
+          def service=: (Integer) -> Integer
+
+          attr_reader time_windows: ::Array[::Array[Integer]]?
+
+          def time_windows=: (
+            ::Array[::Array[Integer]]
+          ) -> ::Array[::Array[Integer]]
+
+          def initialize: (
+            id: String,
+            location_index: Integer,
+            ?description: String,
+            ?service: Integer,
+            ?time_windows: ::Array[::Array[Integer]]
+          ) -> void
+
+          def to_hash: -> {
+            id: String,
+            location_index: Integer,
+            description: String,
+            service: Integer,
+            time_windows: ::Array[::Array[Integer]]
+          }
+        end
+
+        type options =
+          {
+            constraint: Nextbillionai::Optimization::V2SubmitParams::Options::Constraint,
+            grouping: Nextbillionai::Optimization::V2SubmitParams::Options::Grouping,
+            objective: Nextbillionai::Optimization::V2SubmitParams::Options::Objective,
+            routing: Nextbillionai::Optimization::V2SubmitParams::Options::Routing
+          }
+
+        class Options < Nextbillionai::Internal::Type::BaseModel
+          attr_reader constraint: Nextbillionai::Optimization::V2SubmitParams::Options::Constraint?
+
+          def constraint=: (
+            Nextbillionai::Optimization::V2SubmitParams::Options::Constraint
+          ) -> Nextbillionai::Optimization::V2SubmitParams::Options::Constraint
+
+          attr_reader grouping: Nextbillionai::Optimization::V2SubmitParams::Options::Grouping?
+
+          def grouping=: (
+            Nextbillionai::Optimization::V2SubmitParams::Options::Grouping
+          ) -> Nextbillionai::Optimization::V2SubmitParams::Options::Grouping
+
+          attr_reader objective: Nextbillionai::Optimization::V2SubmitParams::Options::Objective?
+
+          def objective=: (
+            Nextbillionai::Optimization::V2SubmitParams::Options::Objective
+          ) -> Nextbillionai::Optimization::V2SubmitParams::Options::Objective
+
+          attr_reader routing: Nextbillionai::Optimization::V2SubmitParams::Options::Routing?
+
+          def routing=: (
+            Nextbillionai::Optimization::V2SubmitParams::Options::Routing
+          ) -> Nextbillionai::Optimization::V2SubmitParams::Options::Routing
+
+          def initialize: (
+            ?constraint: Nextbillionai::Optimization::V2SubmitParams::Options::Constraint,
+            ?grouping: Nextbillionai::Optimization::V2SubmitParams::Options::Grouping,
+            ?objective: Nextbillionai::Optimization::V2SubmitParams::Options::Objective,
+            ?routing: Nextbillionai::Optimization::V2SubmitParams::Options::Routing
+          ) -> void
+
+          def to_hash: -> {
+            constraint: Nextbillionai::Optimization::V2SubmitParams::Options::Constraint,
+            grouping: Nextbillionai::Optimization::V2SubmitParams::Options::Grouping,
+            objective: Nextbillionai::Optimization::V2SubmitParams::Options::Objective,
+            routing: Nextbillionai::Optimization::V2SubmitParams::Options::Routing
+          }
+
+          type constraint =
+            {
+              max_activity_waiting_time: Integer,
+              max_vehicle_overtime: Integer,
+              max_visit_lateness: Integer
+            }
+
+          class Constraint < Nextbillionai::Internal::Type::BaseModel
+            attr_reader max_activity_waiting_time: Integer?
+
+            def max_activity_waiting_time=: (Integer) -> Integer
+
+            attr_reader max_vehicle_overtime: Integer?
+
+            def max_vehicle_overtime=: (Integer) -> Integer
+
+            attr_reader max_visit_lateness: Integer?
+
+            def max_visit_lateness=: (Integer) -> Integer
+
+            def initialize: (
+              ?max_activity_waiting_time: Integer,
+              ?max_vehicle_overtime: Integer,
+              ?max_visit_lateness: Integer
+            ) -> void
+
+            def to_hash: -> {
+              max_activity_waiting_time: Integer,
+              max_vehicle_overtime: Integer,
+              max_visit_lateness: Integer
+            }
+          end
+
+          type grouping =
+            {
+              order_grouping: Nextbillionai::Optimization::V2SubmitParams::Options::Grouping::OrderGrouping,
+              proximity_factor: Float,
+              route_grouping: Nextbillionai::Optimization::V2SubmitParams::Options::Grouping::RouteGrouping
+            }
+
+          class Grouping < Nextbillionai::Internal::Type::BaseModel
+            attr_reader order_grouping: Nextbillionai::Optimization::V2SubmitParams::Options::Grouping::OrderGrouping?
+
+            def order_grouping=: (
+              Nextbillionai::Optimization::V2SubmitParams::Options::Grouping::OrderGrouping
+            ) -> Nextbillionai::Optimization::V2SubmitParams::Options::Grouping::OrderGrouping
+
+            attr_reader proximity_factor: Float?
+
+            def proximity_factor=: (Float) -> Float
+
+            attr_reader route_grouping: Nextbillionai::Optimization::V2SubmitParams::Options::Grouping::RouteGrouping?
+
+            def route_grouping=: (
+              Nextbillionai::Optimization::V2SubmitParams::Options::Grouping::RouteGrouping
+            ) -> Nextbillionai::Optimization::V2SubmitParams::Options::Grouping::RouteGrouping
+
+            def initialize: (
+              ?order_grouping: Nextbillionai::Optimization::V2SubmitParams::Options::Grouping::OrderGrouping,
+              ?proximity_factor: Float,
+              ?route_grouping: Nextbillionai::Optimization::V2SubmitParams::Options::Grouping::RouteGrouping
+            ) -> void
+
+            def to_hash: -> {
+              order_grouping: Nextbillionai::Optimization::V2SubmitParams::Options::Grouping::OrderGrouping,
+              proximity_factor: Float,
+              route_grouping: Nextbillionai::Optimization::V2SubmitParams::Options::Grouping::RouteGrouping
+            }
+
+            type order_grouping = { grouping_diameter: Float }
+
+            class OrderGrouping < Nextbillionai::Internal::Type::BaseModel
+              attr_reader grouping_diameter: Float?
+
+              def grouping_diameter=: (Float) -> Float
+
+              def initialize: (?grouping_diameter: Float) -> void
+
+              def to_hash: -> { grouping_diameter: Float }
+            end
+
+            type route_grouping =
+              {
+                penalty_factor: Float,
+                zone_diameter: Float,
+                zone_source: Nextbillionai::Models::Optimization::V2SubmitParams::Options::Grouping::RouteGrouping::zone_source
+              }
+
+            class RouteGrouping < Nextbillionai::Internal::Type::BaseModel
+              attr_reader penalty_factor: Float?
+
+              def penalty_factor=: (Float) -> Float
+
+              attr_reader zone_diameter: Float?
+
+              def zone_diameter=: (Float) -> Float
+
+              attr_reader zone_source: Nextbillionai::Models::Optimization::V2SubmitParams::Options::Grouping::RouteGrouping::zone_source?
+
+              def zone_source=: (
+                Nextbillionai::Models::Optimization::V2SubmitParams::Options::Grouping::RouteGrouping::zone_source
+              ) -> Nextbillionai::Models::Optimization::V2SubmitParams::Options::Grouping::RouteGrouping::zone_source
+
+              def initialize: (
+                ?penalty_factor: Float,
+                ?zone_diameter: Float,
+                ?zone_source: Nextbillionai::Models::Optimization::V2SubmitParams::Options::Grouping::RouteGrouping::zone_source
+              ) -> void
+
+              def to_hash: -> {
+                penalty_factor: Float,
+                zone_diameter: Float,
+                zone_source: Nextbillionai::Models::Optimization::V2SubmitParams::Options::Grouping::RouteGrouping::zone_source
+              }
+
+              type zone_source = :"`system_generated`" | :"`custom_definition`"
+
+              module ZoneSource
+                extend Nextbillionai::Internal::Type::Enum
+
+                SYSTEM_GENERATED: :"`system_generated`"
+                CUSTOM_DEFINITION: :"`custom_definition`"
+
+                def self?.values: -> ::Array[Nextbillionai::Models::Optimization::V2SubmitParams::Options::Grouping::RouteGrouping::zone_source]
+              end
+            end
+          end
+
+          type objective =
+            {
+              allow_early_arrival: bool,
+              custom: Nextbillionai::Optimization::V2SubmitParams::Options::Objective::Custom,
+              minimise_num_depots: bool,
+              solver_mode: Nextbillionai::Models::Optimization::V2SubmitParams::Options::Objective::solver_mode,
+              solving_time_limit: Integer,
+              travel_cost: Nextbillionai::Models::Optimization::V2SubmitParams::Options::Objective::travel_cost
+            }
+
+          class Objective < Nextbillionai::Internal::Type::BaseModel
+            attr_reader allow_early_arrival: bool?
+
+            def allow_early_arrival=: (bool) -> bool
+
+            attr_reader custom: Nextbillionai::Optimization::V2SubmitParams::Options::Objective::Custom?
+
+            def custom=: (
+              Nextbillionai::Optimization::V2SubmitParams::Options::Objective::Custom
+            ) -> Nextbillionai::Optimization::V2SubmitParams::Options::Objective::Custom
+
+            attr_reader minimise_num_depots: bool?
+
+            def minimise_num_depots=: (bool) -> bool
+
+            attr_reader solver_mode: Nextbillionai::Models::Optimization::V2SubmitParams::Options::Objective::solver_mode?
+
+            def solver_mode=: (
+              Nextbillionai::Models::Optimization::V2SubmitParams::Options::Objective::solver_mode
+            ) -> Nextbillionai::Models::Optimization::V2SubmitParams::Options::Objective::solver_mode
+
+            attr_reader solving_time_limit: Integer?
+
+            def solving_time_limit=: (Integer) -> Integer
+
+            attr_reader travel_cost: Nextbillionai::Models::Optimization::V2SubmitParams::Options::Objective::travel_cost?
+
+            def travel_cost=: (
+              Nextbillionai::Models::Optimization::V2SubmitParams::Options::Objective::travel_cost
+            ) -> Nextbillionai::Models::Optimization::V2SubmitParams::Options::Objective::travel_cost
+
+            def initialize: (
+              ?allow_early_arrival: bool,
+              ?custom: Nextbillionai::Optimization::V2SubmitParams::Options::Objective::Custom,
+              ?minimise_num_depots: bool,
+              ?solver_mode: Nextbillionai::Models::Optimization::V2SubmitParams::Options::Objective::solver_mode,
+              ?solving_time_limit: Integer,
+              ?travel_cost: Nextbillionai::Models::Optimization::V2SubmitParams::Options::Objective::travel_cost
+            ) -> void
+
+            def to_hash: -> {
+              allow_early_arrival: bool,
+              custom: Nextbillionai::Optimization::V2SubmitParams::Options::Objective::Custom,
+              minimise_num_depots: bool,
+              solver_mode: Nextbillionai::Models::Optimization::V2SubmitParams::Options::Objective::solver_mode,
+              solving_time_limit: Integer,
+              travel_cost: Nextbillionai::Models::Optimization::V2SubmitParams::Options::Objective::travel_cost
+            }
+
+            type custom =
+              {
+                type: Nextbillionai::Models::Optimization::V2SubmitParams::Options::Objective::Custom::type_,
+                value: Nextbillionai::Models::Optimization::V2SubmitParams::Options::Objective::Custom::value
+              }
+
+            class Custom < Nextbillionai::Internal::Type::BaseModel
+              attr_accessor type: Nextbillionai::Models::Optimization::V2SubmitParams::Options::Objective::Custom::type_
+
+              attr_accessor value: Nextbillionai::Models::Optimization::V2SubmitParams::Options::Objective::Custom::value
+
+              def initialize: (
+                type: Nextbillionai::Models::Optimization::V2SubmitParams::Options::Objective::Custom::type_,
+                value: Nextbillionai::Models::Optimization::V2SubmitParams::Options::Objective::Custom::value
+              ) -> void
+
+              def to_hash: -> {
+                type: Nextbillionai::Models::Optimization::V2SubmitParams::Options::Objective::Custom::type_,
+                value: Nextbillionai::Models::Optimization::V2SubmitParams::Options::Objective::Custom::value
+              }
+
+              type type_ = :"`min`" | :"`min-max`"
+
+              module Type
+                extend Nextbillionai::Internal::Type::Enum
+
+                MIN: :"`min`"
+                MIN_MAX: :"`min-max`"
+
+                def self?.values: -> ::Array[Nextbillionai::Models::Optimization::V2SubmitParams::Options::Objective::Custom::type_]
+              end
+
+              type value =
+                :"`vehicles`"
+                | :"`completion_time`"
+                | :"`travel_cost`"
+                | :"`tasks`"
+
+              module Value
+                extend Nextbillionai::Internal::Type::Enum
+
+                VEHICLES: :"`vehicles`"
+                COMPLETION_TIME: :"`completion_time`"
+                TRAVEL_COST: :"`travel_cost`"
+                TASKS: :"`tasks`"
+
+                def self?.values: -> ::Array[Nextbillionai::Models::Optimization::V2SubmitParams::Options::Objective::Custom::value]
+              end
+            end
+
+            type solver_mode = :"`flexible`" | :"`fast`" | :"`internal`"
+
+            module SolverMode
+              extend Nextbillionai::Internal::Type::Enum
+
+              FLEXIBLE: :"`flexible`"
+              FAST: :"`fast`"
+              INTERNAL: :"`internal`"
+
+              def self?.values: -> ::Array[Nextbillionai::Models::Optimization::V2SubmitParams::Options::Objective::solver_mode]
+            end
+
+            type travel_cost =
+              :"`duration`"
+              | :"`distance`"
+              | :"`air_distance`"
+              | :"`customized`"
+
+            module TravelCost
+              extend Nextbillionai::Internal::Type::Enum
+
+              DURATION: :"`duration`"
+              DISTANCE: :"`distance`"
+              AIR_DISTANCE: :"`air_distance`"
+              CUSTOMIZED: :"`customized`"
+
+              def self?.values: -> ::Array[Nextbillionai::Models::Optimization::V2SubmitParams::Options::Objective::travel_cost]
+            end
+          end
+
+          type routing =
+            {
+              allow: ::Array[Nextbillionai::Models::Optimization::V2SubmitParams::Options::Routing::allow],
+              avoid: ::Array[Nextbillionai::Models::Optimization::V2SubmitParams::Options::Routing::avoid],
+              context: Nextbillionai::Models::Optimization::V2SubmitParams::Options::Routing::context,
+              cross_border: bool,
+              disable_cache: bool,
+              hazmat_type: ::Array[Nextbillionai::Models::Optimization::V2SubmitParams::Options::Routing::hazmat_type],
+              mode: Nextbillionai::Models::Optimization::V2SubmitParams::Options::Routing::mode,
+              profiles: top,
+              traffic_timestamp: Integer,
+              truck_axle_load: Float,
+              truck_size: String,
+              truck_weight: Integer
+            }
+
+          class Routing < Nextbillionai::Internal::Type::BaseModel
+            attr_reader allow: ::Array[Nextbillionai::Models::Optimization::V2SubmitParams::Options::Routing::allow]?
+
+            def allow=: (
+              ::Array[Nextbillionai::Models::Optimization::V2SubmitParams::Options::Routing::allow]
+            ) -> ::Array[Nextbillionai::Models::Optimization::V2SubmitParams::Options::Routing::allow]
+
+            attr_reader avoid: ::Array[Nextbillionai::Models::Optimization::V2SubmitParams::Options::Routing::avoid]?
+
+            def avoid=: (
+              ::Array[Nextbillionai::Models::Optimization::V2SubmitParams::Options::Routing::avoid]
+            ) -> ::Array[Nextbillionai::Models::Optimization::V2SubmitParams::Options::Routing::avoid]
+
+            attr_reader context: Nextbillionai::Models::Optimization::V2SubmitParams::Options::Routing::context?
+
+            def context=: (
+              Nextbillionai::Models::Optimization::V2SubmitParams::Options::Routing::context
+            ) -> Nextbillionai::Models::Optimization::V2SubmitParams::Options::Routing::context
+
+            attr_reader cross_border: bool?
+
+            def cross_border=: (bool) -> bool
+
+            attr_reader disable_cache: bool?
+
+            def disable_cache=: (bool) -> bool
+
+            attr_reader hazmat_type: ::Array[Nextbillionai::Models::Optimization::V2SubmitParams::Options::Routing::hazmat_type]?
+
+            def hazmat_type=: (
+              ::Array[Nextbillionai::Models::Optimization::V2SubmitParams::Options::Routing::hazmat_type]
+            ) -> ::Array[Nextbillionai::Models::Optimization::V2SubmitParams::Options::Routing::hazmat_type]
+
+            attr_reader mode: Nextbillionai::Models::Optimization::V2SubmitParams::Options::Routing::mode?
+
+            def mode=: (
+              Nextbillionai::Models::Optimization::V2SubmitParams::Options::Routing::mode
+            ) -> Nextbillionai::Models::Optimization::V2SubmitParams::Options::Routing::mode
+
+            attr_reader profiles: top?
+
+            def profiles=: (top) -> top
+
+            attr_reader traffic_timestamp: Integer?
+
+            def traffic_timestamp=: (Integer) -> Integer
+
+            attr_reader truck_axle_load: Float?
+
+            def truck_axle_load=: (Float) -> Float
+
+            attr_reader truck_size: String?
+
+            def truck_size=: (String) -> String
+
+            attr_reader truck_weight: Integer?
+
+            def truck_weight=: (Integer) -> Integer
+
+            def initialize: (
+              ?allow: ::Array[Nextbillionai::Models::Optimization::V2SubmitParams::Options::Routing::allow],
+              ?avoid: ::Array[Nextbillionai::Models::Optimization::V2SubmitParams::Options::Routing::avoid],
+              ?context: Nextbillionai::Models::Optimization::V2SubmitParams::Options::Routing::context,
+              ?cross_border: bool,
+              ?disable_cache: bool,
+              ?hazmat_type: ::Array[Nextbillionai::Models::Optimization::V2SubmitParams::Options::Routing::hazmat_type],
+              ?mode: Nextbillionai::Models::Optimization::V2SubmitParams::Options::Routing::mode,
+              ?profiles: top,
+              ?traffic_timestamp: Integer,
+              ?truck_axle_load: Float,
+              ?truck_size: String,
+              ?truck_weight: Integer
+            ) -> void
+
+            def to_hash: -> {
+              allow: ::Array[Nextbillionai::Models::Optimization::V2SubmitParams::Options::Routing::allow],
+              avoid: ::Array[Nextbillionai::Models::Optimization::V2SubmitParams::Options::Routing::avoid],
+              context: Nextbillionai::Models::Optimization::V2SubmitParams::Options::Routing::context,
+              cross_border: bool,
+              disable_cache: bool,
+              hazmat_type: ::Array[Nextbillionai::Models::Optimization::V2SubmitParams::Options::Routing::hazmat_type],
+              mode: Nextbillionai::Models::Optimization::V2SubmitParams::Options::Routing::mode,
+              profiles: top,
+              traffic_timestamp: Integer,
+              truck_axle_load: Float,
+              truck_size: String,
+              truck_weight: Integer
+            }
+
+            type allow = :taxi | :hov
+
+            module Allow
+              extend Nextbillionai::Internal::Type::Enum
+
+              TAXI: :taxi
+              HOV: :hov
+
+              def self?.values: -> ::Array[Nextbillionai::Models::Optimization::V2SubmitParams::Options::Routing::allow]
+            end
+
+            type avoid =
+              :"`toll`"
+              | :"`highway`"
+              | :"`bbox`"
+              | :"`left_turn`"
+              | :"`right_turn`"
+              | :"`sharp_turn`"
+              | :"`uturn`"
+              | :"`service_road`"
+              | :"`ferry`"
+              | :"`none` "
+
+            module Avoid
+              extend Nextbillionai::Internal::Type::Enum
+
+              TOLL: :"`toll`"
+              HIGHWAY: :"`highway`"
+              BBOX: :"`bbox`"
+              LEFT_TURN: :"`left_turn`"
+              RIGHT_TURN: :"`right_turn`"
+              SHARP_TURN: :"`sharp_turn`"
+              UTURN: :"`uturn`"
+              SERVICE_ROAD: :"`service_road`"
+              FERRY: :"`ferry`"
+              NONE: :"`none` "
+
+              def self?.values: -> ::Array[Nextbillionai::Models::Optimization::V2SubmitParams::Options::Routing::avoid]
+            end
+
+            type context = :"`avgspeed`"
+
+            module Context
+              extend Nextbillionai::Internal::Type::Enum
+
+              AVGSPEED: :"`avgspeed`"
+
+              def self?.values: -> ::Array[Nextbillionai::Models::Optimization::V2SubmitParams::Options::Routing::context]
+            end
+
+            type hazmat_type =
+              :"`general`"
+              | :"`circumstantial`"
+              | :"`explosive`"
+              | :"`harmful_to_water`"
+
+            module HazmatType
+              extend Nextbillionai::Internal::Type::Enum
+
+              GENERAL: :"`general`"
+              CIRCUMSTANTIAL: :"`circumstantial`"
+              EXPLOSIVE: :"`explosive`"
+              HARMFUL_TO_WATER: :"`harmful_to_water`"
+
+              def self?.values: -> ::Array[Nextbillionai::Models::Optimization::V2SubmitParams::Options::Routing::hazmat_type]
+            end
+
+            type mode = :"`car`" | :"`truck`"
+
+            module Mode
+              extend Nextbillionai::Internal::Type::Enum
+
+              CAR: :"`car`"
+              TRUCK: :"`truck`"
+
+              def self?.values: -> ::Array[Nextbillionai::Models::Optimization::V2SubmitParams::Options::Routing::mode]
+            end
+          end
+        end
+
+        type relation =
+          {
+            steps: ::Array[Nextbillionai::Optimization::V2SubmitParams::Relation::Step],
+            type: Nextbillionai::Models::Optimization::V2SubmitParams::Relation::type_,
+            id: Integer,
+            max_duration: Integer,
+            min_duration: Integer,
+            vehicle: String
+          }
+
+        class Relation < Nextbillionai::Internal::Type::BaseModel
+          attr_accessor steps: ::Array[Nextbillionai::Optimization::V2SubmitParams::Relation::Step]
+
+          attr_accessor type: Nextbillionai::Models::Optimization::V2SubmitParams::Relation::type_
+
+          attr_reader id: Integer?
+
+          def id=: (Integer) -> Integer
+
+          attr_reader max_duration: Integer?
+
+          def max_duration=: (Integer) -> Integer
+
+          attr_reader min_duration: Integer?
+
+          def min_duration=: (Integer) -> Integer
+
+          attr_reader vehicle: String?
+
+          def vehicle=: (String) -> String
+
+          def initialize: (
+            steps: ::Array[Nextbillionai::Optimization::V2SubmitParams::Relation::Step],
+            type: Nextbillionai::Models::Optimization::V2SubmitParams::Relation::type_,
+            ?id: Integer,
+            ?max_duration: Integer,
+            ?min_duration: Integer,
+            ?vehicle: String
+          ) -> void
+
+          def to_hash: -> {
+            steps: ::Array[Nextbillionai::Optimization::V2SubmitParams::Relation::Step],
+            type: Nextbillionai::Models::Optimization::V2SubmitParams::Relation::type_,
+            id: Integer,
+            max_duration: Integer,
+            min_duration: Integer,
+            vehicle: String
+          }
+
+          type step =
+            {
+              type: Nextbillionai::Models::Optimization::V2SubmitParams::Relation::Step::type_,
+              id: String
+            }
+
+          class Step < Nextbillionai::Internal::Type::BaseModel
+            attr_accessor type: Nextbillionai::Models::Optimization::V2SubmitParams::Relation::Step::type_
+
+            attr_reader id: String?
+
+            def id=: (String) -> String
+
+            def initialize: (
+              type: Nextbillionai::Models::Optimization::V2SubmitParams::Relation::Step::type_,
+              ?id: String
+            ) -> void
+
+            def to_hash: -> {
+              type: Nextbillionai::Models::Optimization::V2SubmitParams::Relation::Step::type_,
+              id: String
+            }
+
+            type type_ =
+              :"`start`" | :"`end`" | :"`job`" | :"`pickup`" | :"`delivery`"
+
+            module Type
+              extend Nextbillionai::Internal::Type::Enum
+
+              START: :"`start`"
+              END_: :"`end`"
+              JOB: :"`job`"
+              PICKUP: :"`pickup`"
+              DELIVERY: :"`delivery`"
+
+              def self?.values: -> ::Array[Nextbillionai::Models::Optimization::V2SubmitParams::Relation::Step::type_]
+            end
+          end
+
+          type type_ =
+            :"`in_same_route`"
+            | :"`in_sequence`"
+            | :"`in_direct_sequence`"
+            | :"`precedence`"
+
+          module Type
+            extend Nextbillionai::Internal::Type::Enum
+
+            IN_SAME_ROUTE: :"`in_same_route`"
+            IN_SEQUENCE: :"`in_sequence`"
+            IN_DIRECT_SEQUENCE: :"`in_direct_sequence`"
+            PRECEDENCE: :"`precedence`"
+
+            def self?.values: -> ::Array[Nextbillionai::Models::Optimization::V2SubmitParams::Relation::type_]
+          end
+        end
+
+        type solution =
+          {
+            cost: Integer,
+            steps: ::Array[Nextbillionai::Optimization::V2SubmitParams::Solution::Step],
+            vehicle: String,
+            delivery: ::Array[Integer],
+            description: String,
+            distance: Integer,
+            duration: Integer,
+            geometry: String,
+            pickup: ::Array[Integer],
+            priority: Integer,
+            service: Integer,
+            setup: Integer,
+            waiting_time: Integer
+          }
+
+        class Solution < Nextbillionai::Internal::Type::BaseModel
+          attr_accessor cost: Integer
+
+          attr_accessor steps: ::Array[Nextbillionai::Optimization::V2SubmitParams::Solution::Step]
+
+          attr_accessor vehicle: String
+
+          attr_reader delivery: ::Array[Integer]?
+
+          def delivery=: (::Array[Integer]) -> ::Array[Integer]
+
+          attr_reader description: String?
+
+          def description=: (String) -> String
+
+          attr_reader distance: Integer?
+
+          def distance=: (Integer) -> Integer
+
+          attr_reader duration: Integer?
+
+          def duration=: (Integer) -> Integer
+
+          attr_reader geometry: String?
+
+          def geometry=: (String) -> String
+
+          attr_reader pickup: ::Array[Integer]?
+
+          def pickup=: (::Array[Integer]) -> ::Array[Integer]
+
+          attr_reader priority: Integer?
+
+          def priority=: (Integer) -> Integer
+
+          attr_reader service: Integer?
+
+          def service=: (Integer) -> Integer
+
+          attr_reader setup: Integer?
+
+          def setup=: (Integer) -> Integer
+
+          attr_reader waiting_time: Integer?
+
+          def waiting_time=: (Integer) -> Integer
+
+          def initialize: (
+            cost: Integer,
+            steps: ::Array[Nextbillionai::Optimization::V2SubmitParams::Solution::Step],
+            vehicle: String,
+            ?delivery: ::Array[Integer],
+            ?description: String,
+            ?distance: Integer,
+            ?duration: Integer,
+            ?geometry: String,
+            ?pickup: ::Array[Integer],
+            ?priority: Integer,
+            ?service: Integer,
+            ?setup: Integer,
+            ?waiting_time: Integer
+          ) -> void
+
+          def to_hash: -> {
+            cost: Integer,
+            steps: ::Array[Nextbillionai::Optimization::V2SubmitParams::Solution::Step],
+            vehicle: String,
+            delivery: ::Array[Integer],
+            description: String,
+            distance: Integer,
+            duration: Integer,
+            geometry: String,
+            pickup: ::Array[Integer],
+            priority: Integer,
+            service: Integer,
+            setup: Integer,
+            waiting_time: Integer
+          }
+
+          type step =
+            {
+              id: String,
+              arrival: Integer,
+              type: Nextbillionai::Models::Optimization::V2SubmitParams::Solution::Step::type_,
+              description: String,
+              distance: Integer,
+              duration: Integer,
+              load_: ::Array[Integer],
+              location: ::Array[Float],
+              location_index: Integer,
+              service: Integer,
+              setup: Integer,
+              waiting_time: Integer
+            }
+
+          class Step < Nextbillionai::Internal::Type::BaseModel
+            attr_accessor id: String
+
+            attr_accessor arrival: Integer
+
+            attr_accessor type: Nextbillionai::Models::Optimization::V2SubmitParams::Solution::Step::type_
+
+            attr_reader description: String?
+
+            def description=: (String) -> String
+
+            attr_reader distance: Integer?
+
+            def distance=: (Integer) -> Integer
+
+            attr_reader duration: Integer?
+
+            def duration=: (Integer) -> Integer
+
+            attr_reader load_: ::Array[Integer]?
+
+            def load_=: (::Array[Integer]) -> ::Array[Integer]
+
+            attr_reader location: ::Array[Float]?
+
+            def location=: (::Array[Float]) -> ::Array[Float]
+
+            attr_reader location_index: Integer?
+
+            def location_index=: (Integer) -> Integer
+
+            attr_reader service: Integer?
+
+            def service=: (Integer) -> Integer
+
+            attr_reader setup: Integer?
+
+            def setup=: (Integer) -> Integer
+
+            attr_reader waiting_time: Integer?
+
+            def waiting_time=: (Integer) -> Integer
+
+            def initialize: (
+              id: String,
+              arrival: Integer,
+              type: Nextbillionai::Models::Optimization::V2SubmitParams::Solution::Step::type_,
+              ?description: String,
+              ?distance: Integer,
+              ?duration: Integer,
+              ?load_: ::Array[Integer],
+              ?location: ::Array[Float],
+              ?location_index: Integer,
+              ?service: Integer,
+              ?setup: Integer,
+              ?waiting_time: Integer
+            ) -> void
+
+            def to_hash: -> {
+              id: String,
+              arrival: Integer,
+              type: Nextbillionai::Models::Optimization::V2SubmitParams::Solution::Step::type_,
+              description: String,
+              distance: Integer,
+              duration: Integer,
+              load_: ::Array[Integer],
+              location: ::Array[Float],
+              location_index: Integer,
+              service: Integer,
+              setup: Integer,
+              waiting_time: Integer
+            }
+
+            type type_ =
+              :"`start`"
+              | :"`end`"
+              | :"`job`"
+              | :"`pickup`"
+              | :"`delivery`"
+              | :"`break`"
+
+            module Type
+              extend Nextbillionai::Internal::Type::Enum
+
+              START: :"`start`"
+              END_: :"`end`"
+              JOB: :"`job`"
+              PICKUP: :"`pickup`"
+              DELIVERY: :"`delivery`"
+              BREAK: :"`break`"
+
+              def self?.values: -> ::Array[Nextbillionai::Models::Optimization::V2SubmitParams::Solution::Step::type_]
+            end
+          end
+        end
+
+        type unassigned =
+          { jobs: ::Array[String], shipments: ::Array[::Array[String]] }
+
+        class Unassigned < Nextbillionai::Internal::Type::BaseModel
+          attr_reader jobs: ::Array[String]?
+
+          def jobs=: (::Array[String]) -> ::Array[String]
+
+          attr_reader shipments: ::Array[::Array[String]]?
+
+          def shipments=: (::Array[::Array[String]]) -> ::Array[::Array[String]]
+
+          def initialize: (
+            ?jobs: ::Array[String],
+            ?shipments: ::Array[::Array[String]]
+          ) -> void
+
+          def to_hash: -> {
+            jobs: ::Array[String],
+            shipments: ::Array[::Array[String]]
+          }
+        end
+
+        type zone =
+          {
+            id: Integer,
+            geofence_id: String,
+            geometry: Nextbillionai::Optimization::V2SubmitParams::Zone::Geometry
+          }
+
+        class Zone < Nextbillionai::Internal::Type::BaseModel
+          attr_accessor id: Integer
+
+          attr_reader geofence_id: String?
+
+          def geofence_id=: (String) -> String
+
+          attr_reader geometry: Nextbillionai::Optimization::V2SubmitParams::Zone::Geometry?
+
+          def geometry=: (
+            Nextbillionai::Optimization::V2SubmitParams::Zone::Geometry
+          ) -> Nextbillionai::Optimization::V2SubmitParams::Zone::Geometry
+
+          def initialize: (
+            id: Integer,
+            ?geofence_id: String,
+            ?geometry: Nextbillionai::Optimization::V2SubmitParams::Zone::Geometry
+          ) -> void
+
+          def to_hash: -> {
+            id: Integer,
+            geofence_id: String,
+            geometry: Nextbillionai::Optimization::V2SubmitParams::Zone::Geometry
+          }
+
+          type geometry =
+            {
+              coordinates: ::Array[::Array[Float]],
+              description: String,
+              type: Nextbillionai::Models::Optimization::V2SubmitParams::Zone::Geometry::type_
+            }
+
+          class Geometry < Nextbillionai::Internal::Type::BaseModel
+            attr_reader coordinates: ::Array[::Array[Float]]?
+
+            def coordinates=: (
+              ::Array[::Array[Float]]
+            ) -> ::Array[::Array[Float]]
+
+            attr_reader description: String?
+
+            def description=: (String) -> String
+
+            attr_reader type: Nextbillionai::Models::Optimization::V2SubmitParams::Zone::Geometry::type_?
+
+            def type=: (
+              Nextbillionai::Models::Optimization::V2SubmitParams::Zone::Geometry::type_
+            ) -> Nextbillionai::Models::Optimization::V2SubmitParams::Zone::Geometry::type_
+
+            def initialize: (
+              ?coordinates: ::Array[::Array[Float]],
+              ?description: String,
+              ?type: Nextbillionai::Models::Optimization::V2SubmitParams::Zone::Geometry::type_
+            ) -> void
+
+            def to_hash: -> {
+              coordinates: ::Array[::Array[Float]],
+              description: String,
+              type: Nextbillionai::Models::Optimization::V2SubmitParams::Zone::Geometry::type_
+            }
+
+            type type_ = :"`Polygon`" | :"`MultiPolygon`"
+
+            module Type
+              extend Nextbillionai::Internal::Type::Enum
+
+              POLYGON: :"`Polygon`"
+              MULTI_POLYGON: :"`MultiPolygon`"
+
+              def self?.values: -> ::Array[Nextbillionai::Models::Optimization::V2SubmitParams::Zone::Geometry::type_]
+            end
+          end
+        end
+      end
+    end
+  end
+end

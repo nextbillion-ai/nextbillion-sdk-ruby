@@ -1,0 +1,69 @@
+module Nextbillionai
+  module Models
+    type contacts =
+      {
+        email: ::Array[Nextbillionai::ContactObject],
+        fax: ::Array[Nextbillionai::ContactObject],
+        mobile: ::Array[Nextbillionai::ContactObject],
+        phone: ::Array[Nextbillionai::ContactObject],
+        toll_free: ::Array[Nextbillionai::ContactObject],
+        www: ::Array[Nextbillionai::ContactObject]
+      }
+
+    class Contacts < Nextbillionai::Internal::Type::BaseModel
+      attr_reader email: ::Array[Nextbillionai::ContactObject]?
+
+      def email=: (
+        ::Array[Nextbillionai::ContactObject]
+      ) -> ::Array[Nextbillionai::ContactObject]
+
+      attr_reader fax: ::Array[Nextbillionai::ContactObject]?
+
+      def fax=: (
+        ::Array[Nextbillionai::ContactObject]
+      ) -> ::Array[Nextbillionai::ContactObject]
+
+      attr_reader mobile: ::Array[Nextbillionai::ContactObject]?
+
+      def mobile=: (
+        ::Array[Nextbillionai::ContactObject]
+      ) -> ::Array[Nextbillionai::ContactObject]
+
+      attr_reader phone: ::Array[Nextbillionai::ContactObject]?
+
+      def phone=: (
+        ::Array[Nextbillionai::ContactObject]
+      ) -> ::Array[Nextbillionai::ContactObject]
+
+      attr_reader toll_free: ::Array[Nextbillionai::ContactObject]?
+
+      def toll_free=: (
+        ::Array[Nextbillionai::ContactObject]
+      ) -> ::Array[Nextbillionai::ContactObject]
+
+      attr_reader www: ::Array[Nextbillionai::ContactObject]?
+
+      def www=: (
+        ::Array[Nextbillionai::ContactObject]
+      ) -> ::Array[Nextbillionai::ContactObject]
+
+      def initialize: (
+        ?email: ::Array[Nextbillionai::ContactObject],
+        ?fax: ::Array[Nextbillionai::ContactObject],
+        ?mobile: ::Array[Nextbillionai::ContactObject],
+        ?phone: ::Array[Nextbillionai::ContactObject],
+        ?toll_free: ::Array[Nextbillionai::ContactObject],
+        ?www: ::Array[Nextbillionai::ContactObject]
+      ) -> void
+
+      def to_hash: -> {
+        email: ::Array[Nextbillionai::ContactObject],
+        fax: ::Array[Nextbillionai::ContactObject],
+        mobile: ::Array[Nextbillionai::ContactObject],
+        phone: ::Array[Nextbillionai::ContactObject],
+        toll_free: ::Array[Nextbillionai::ContactObject],
+        www: ::Array[Nextbillionai::ContactObject]
+      }
+    end
+  end
+end

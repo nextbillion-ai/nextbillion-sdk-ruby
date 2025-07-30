@@ -1,0 +1,52 @@
+module Nextbillionai
+  module Models
+    module Skynet
+      type monitor_create_response =
+        {
+          data: Nextbillionai::Models::Skynet::MonitorCreateResponse::Data,
+          message: String,
+          status: String
+        }
+
+      class MonitorCreateResponse < Nextbillionai::Internal::Type::BaseModel
+        attr_reader data: Nextbillionai::Models::Skynet::MonitorCreateResponse::Data?
+
+        def data=: (
+          Nextbillionai::Models::Skynet::MonitorCreateResponse::Data
+        ) -> Nextbillionai::Models::Skynet::MonitorCreateResponse::Data
+
+        attr_reader message: String?
+
+        def message=: (String) -> String
+
+        attr_reader status: String?
+
+        def status=: (String) -> String
+
+        def initialize: (
+          ?data: Nextbillionai::Models::Skynet::MonitorCreateResponse::Data,
+          ?message: String,
+          ?status: String
+        ) -> void
+
+        def to_hash: -> {
+          data: Nextbillionai::Models::Skynet::MonitorCreateResponse::Data,
+          message: String,
+          status: String
+        }
+
+        type data = { id: String }
+
+        class Data < Nextbillionai::Internal::Type::BaseModel
+          attr_reader id: String?
+
+          def id=: (String) -> String
+
+          def initialize: (?id: String) -> void
+
+          def to_hash: -> { id: String }
+        end
+      end
+    end
+  end
+end

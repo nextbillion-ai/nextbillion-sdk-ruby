@@ -1,0 +1,3 @@
+module Nextbillionai
+  VERSION: String
+end

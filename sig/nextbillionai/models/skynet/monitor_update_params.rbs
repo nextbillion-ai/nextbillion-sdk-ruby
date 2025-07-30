@@ -1,0 +1,211 @@
+module Nextbillionai
+  module Models
+    module Skynet
+      type monitor_update_params =
+        {
+          key: String,
+          description: String,
+          geofence_config: Nextbillionai::Skynet::MonitorUpdateParams::GeofenceConfig,
+          geofence_ids: ::Array[String],
+          idle_config: Nextbillionai::Skynet::MonitorUpdateParams::IdleConfig,
+          match_filter: Nextbillionai::Skynet::MonitorUpdateParams::MatchFilter,
+          meta_data: top,
+          name: String,
+          speeding_config: Nextbillionai::Skynet::MonitorUpdateParams::SpeedingConfig,
+          tags: ::Array[String],
+          type: Nextbillionai::Models::Skynet::MonitorUpdateParams::type_
+        }
+        & Nextbillionai::Internal::Type::request_parameters
+
+      class MonitorUpdateParams < Nextbillionai::Internal::Type::BaseModel
+        extend Nextbillionai::Internal::Type::RequestParameters::Converter
+        include Nextbillionai::Internal::Type::RequestParameters
+
+        attr_accessor key: String
+
+        attr_reader description: String?
+
+        def description=: (String) -> String
+
+        attr_reader geofence_config: Nextbillionai::Skynet::MonitorUpdateParams::GeofenceConfig?
+
+        def geofence_config=: (
+          Nextbillionai::Skynet::MonitorUpdateParams::GeofenceConfig
+        ) -> Nextbillionai::Skynet::MonitorUpdateParams::GeofenceConfig
+
+        attr_reader geofence_ids: ::Array[String]?
+
+        def geofence_ids=: (::Array[String]) -> ::Array[String]
+
+        attr_reader idle_config: Nextbillionai::Skynet::MonitorUpdateParams::IdleConfig?
+
+        def idle_config=: (
+          Nextbillionai::Skynet::MonitorUpdateParams::IdleConfig
+        ) -> Nextbillionai::Skynet::MonitorUpdateParams::IdleConfig
+
+        attr_reader match_filter: Nextbillionai::Skynet::MonitorUpdateParams::MatchFilter?
+
+        def match_filter=: (
+          Nextbillionai::Skynet::MonitorUpdateParams::MatchFilter
+        ) -> Nextbillionai::Skynet::MonitorUpdateParams::MatchFilter
+
+        attr_reader meta_data: top?
+
+        def meta_data=: (top) -> top
+
+        attr_reader name: String?
+
+        def name=: (String) -> String
+
+        attr_reader speeding_config: Nextbillionai::Skynet::MonitorUpdateParams::SpeedingConfig?
+
+        def speeding_config=: (
+          Nextbillionai::Skynet::MonitorUpdateParams::SpeedingConfig
+        ) -> Nextbillionai::Skynet::MonitorUpdateParams::SpeedingConfig
+
+        attr_reader tags: ::Array[String]?
+
+        def tags=: (::Array[String]) -> ::Array[String]
+
+        attr_reader type: Nextbillionai::Models::Skynet::MonitorUpdateParams::type_?
+
+        def type=: (
+          Nextbillionai::Models::Skynet::MonitorUpdateParams::type_
+        ) -> Nextbillionai::Models::Skynet::MonitorUpdateParams::type_
+
+        def initialize: (
+          key: String,
+          ?description: String,
+          ?geofence_config: Nextbillionai::Skynet::MonitorUpdateParams::GeofenceConfig,
+          ?geofence_ids: ::Array[String],
+          ?idle_config: Nextbillionai::Skynet::MonitorUpdateParams::IdleConfig,
+          ?match_filter: Nextbillionai::Skynet::MonitorUpdateParams::MatchFilter,
+          ?meta_data: top,
+          ?name: String,
+          ?speeding_config: Nextbillionai::Skynet::MonitorUpdateParams::SpeedingConfig,
+          ?tags: ::Array[String],
+          ?type: Nextbillionai::Models::Skynet::MonitorUpdateParams::type_,
+          ?request_options: Nextbillionai::request_opts
+        ) -> void
+
+        def to_hash: -> {
+          key: String,
+          description: String,
+          geofence_config: Nextbillionai::Skynet::MonitorUpdateParams::GeofenceConfig,
+          geofence_ids: ::Array[String],
+          idle_config: Nextbillionai::Skynet::MonitorUpdateParams::IdleConfig,
+          match_filter: Nextbillionai::Skynet::MonitorUpdateParams::MatchFilter,
+          meta_data: top,
+          name: String,
+          speeding_config: Nextbillionai::Skynet::MonitorUpdateParams::SpeedingConfig,
+          tags: ::Array[String],
+          type: Nextbillionai::Models::Skynet::MonitorUpdateParams::type_,
+          request_options: Nextbillionai::RequestOptions
+        }
+
+        type geofence_config = { geofence_ids: ::Array[String] }
+
+        class GeofenceConfig < Nextbillionai::Internal::Type::BaseModel
+          attr_accessor geofence_ids: ::Array[String]
+
+          def initialize: (geofence_ids: ::Array[String]) -> void
+
+          def to_hash: -> { geofence_ids: ::Array[String] }
+        end
+
+        type idle_config =
+          { distance_tolerance: Float, time_tolerance: Integer }
+
+        class IdleConfig < Nextbillionai::Internal::Type::BaseModel
+          attr_accessor distance_tolerance: Float
+
+          attr_reader time_tolerance: Integer?
+
+          def time_tolerance=: (Integer) -> Integer
+
+          def initialize: (
+            distance_tolerance: Float,
+            ?time_tolerance: Integer
+          ) -> void
+
+          def to_hash: -> { distance_tolerance: Float, time_tolerance: Integer }
+        end
+
+        type match_filter =
+          { include_all_of_attributes: top, include_any_of_attributes: top }
+
+        class MatchFilter < Nextbillionai::Internal::Type::BaseModel
+          attr_reader include_all_of_attributes: top?
+
+          def include_all_of_attributes=: (top) -> top
+
+          attr_reader include_any_of_attributes: top?
+
+          def include_any_of_attributes=: (top) -> top
+
+          def initialize: (
+            ?include_all_of_attributes: top,
+            ?include_any_of_attributes: top
+          ) -> void
+
+          def to_hash: -> {
+            include_all_of_attributes: top,
+            include_any_of_attributes: top
+          }
+        end
+
+        type speeding_config =
+          {
+            customer_speed_limit: String,
+            time_tolerance: Integer,
+            use_admin_speed_limit: bool
+          }
+
+        class SpeedingConfig < Nextbillionai::Internal::Type::BaseModel
+          attr_reader customer_speed_limit: String?
+
+          def customer_speed_limit=: (String) -> String
+
+          attr_reader time_tolerance: Integer?
+
+          def time_tolerance=: (Integer) -> Integer
+
+          attr_reader use_admin_speed_limit: bool?
+
+          def use_admin_speed_limit=: (bool) -> bool
+
+          def initialize: (
+            ?customer_speed_limit: String,
+            ?time_tolerance: Integer,
+            ?use_admin_speed_limit: bool
+          ) -> void
+
+          def to_hash: -> {
+            customer_speed_limit: String,
+            time_tolerance: Integer,
+            use_admin_speed_limit: bool
+          }
+        end
+
+        type type_ =
+          :"`enter`"
+          | :"`exit`"
+          | :"`enter_and_exit`"
+          | :"`speeding`"
+          | :"`idle`"
+
+        module Type
+          extend Nextbillionai::Internal::Type::Enum
+
+          ENTER: :"`enter`"
+          EXIT: :"`exit`"
+          ENTER_AND_EXIT: :"`enter_and_exit`"
+          SPEEDING: :"`speeding`"
+          IDLE: :"`idle`"
+
+          def self?.values: -> ::Array[Nextbillionai::Models::Skynet::MonitorUpdateParams::type_]
+        end
+      end
+    end
+  end
+end

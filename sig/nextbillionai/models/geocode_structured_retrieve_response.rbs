@@ -1,0 +1,236 @@
+module Nextbillionai
+  module Models
+    type geocode_structured_retrieve_response =
+      {
+        items: ::Array[Nextbillionai::Models::GeocodeStructuredRetrieveResponse::Item]
+      }
+
+    class GeocodeStructuredRetrieveResponse < Nextbillionai::Internal::Type::BaseModel
+      attr_reader items: ::Array[Nextbillionai::Models::GeocodeStructuredRetrieveResponse::Item]?
+
+      def items=: (
+        ::Array[Nextbillionai::Models::GeocodeStructuredRetrieveResponse::Item]
+      ) -> ::Array[Nextbillionai::Models::GeocodeStructuredRetrieveResponse::Item]
+
+      def initialize: (
+        ?items: ::Array[Nextbillionai::Models::GeocodeStructuredRetrieveResponse::Item]
+      ) -> void
+
+      def to_hash: -> {
+        items: ::Array[Nextbillionai::Models::GeocodeStructuredRetrieveResponse::Item]
+      }
+
+      type item =
+        {
+          id: String,
+          access: Nextbillionai::Access,
+          address: Nextbillionai::Address,
+          categories: ::Array[Nextbillionai::Categories],
+          contacts: ::Array[Nextbillionai::Contacts],
+          distance: Integer,
+          map_view: Nextbillionai::MapView,
+          opening_hours: Nextbillionai::Models::GeocodeStructuredRetrieveResponse::Item::OpeningHours,
+          position: Nextbillionai::Position,
+          scoring: Nextbillionai::Models::GeocodeStructuredRetrieveResponse::Item::Scoring,
+          title: String
+        }
+
+      class Item < Nextbillionai::Internal::Type::BaseModel
+        attr_reader id: String?
+
+        def id=: (String) -> String
+
+        attr_reader access: Nextbillionai::Access?
+
+        def access=: (Nextbillionai::Access) -> Nextbillionai::Access
+
+        attr_reader address: Nextbillionai::Address?
+
+        def address=: (Nextbillionai::Address) -> Nextbillionai::Address
+
+        attr_reader categories: ::Array[Nextbillionai::Categories]?
+
+        def categories=: (
+          ::Array[Nextbillionai::Categories]
+        ) -> ::Array[Nextbillionai::Categories]
+
+        attr_reader contacts: ::Array[Nextbillionai::Contacts]?
+
+        def contacts=: (
+          ::Array[Nextbillionai::Contacts]
+        ) -> ::Array[Nextbillionai::Contacts]
+
+        attr_reader distance: Integer?
+
+        def distance=: (Integer) -> Integer
+
+        attr_reader map_view: Nextbillionai::MapView?
+
+        def map_view=: (Nextbillionai::MapView) -> Nextbillionai::MapView
+
+        attr_reader opening_hours: Nextbillionai::Models::GeocodeStructuredRetrieveResponse::Item::OpeningHours?
+
+        def opening_hours=: (
+          Nextbillionai::Models::GeocodeStructuredRetrieveResponse::Item::OpeningHours
+        ) -> Nextbillionai::Models::GeocodeStructuredRetrieveResponse::Item::OpeningHours
+
+        attr_reader position: Nextbillionai::Position?
+
+        def position=: (Nextbillionai::Position) -> Nextbillionai::Position
+
+        attr_reader scoring: Nextbillionai::Models::GeocodeStructuredRetrieveResponse::Item::Scoring?
+
+        def scoring=: (
+          Nextbillionai::Models::GeocodeStructuredRetrieveResponse::Item::Scoring
+        ) -> Nextbillionai::Models::GeocodeStructuredRetrieveResponse::Item::Scoring
+
+        attr_reader title: String?
+
+        def title=: (String) -> String
+
+        def initialize: (
+          ?id: String,
+          ?access: Nextbillionai::Access,
+          ?address: Nextbillionai::Address,
+          ?categories: ::Array[Nextbillionai::Categories],
+          ?contacts: ::Array[Nextbillionai::Contacts],
+          ?distance: Integer,
+          ?map_view: Nextbillionai::MapView,
+          ?opening_hours: Nextbillionai::Models::GeocodeStructuredRetrieveResponse::Item::OpeningHours,
+          ?position: Nextbillionai::Position,
+          ?scoring: Nextbillionai::Models::GeocodeStructuredRetrieveResponse::Item::Scoring,
+          ?title: String
+        ) -> void
+
+        def to_hash: -> {
+          id: String,
+          access: Nextbillionai::Access,
+          address: Nextbillionai::Address,
+          categories: ::Array[Nextbillionai::Categories],
+          contacts: ::Array[Nextbillionai::Contacts],
+          distance: Integer,
+          map_view: Nextbillionai::MapView,
+          opening_hours: Nextbillionai::Models::GeocodeStructuredRetrieveResponse::Item::OpeningHours,
+          position: Nextbillionai::Position,
+          scoring: Nextbillionai::Models::GeocodeStructuredRetrieveResponse::Item::Scoring,
+          title: String
+        }
+
+        type opening_hours =
+          {
+            time_ranges: ::Array[Nextbillionai::Models::GeocodeStructuredRetrieveResponse::Item::OpeningHours::TimeRange]
+          }
+
+        class OpeningHours < Nextbillionai::Internal::Type::BaseModel
+          attr_reader time_ranges: ::Array[Nextbillionai::Models::GeocodeStructuredRetrieveResponse::Item::OpeningHours::TimeRange]?
+
+          def time_ranges=: (
+            ::Array[Nextbillionai::Models::GeocodeStructuredRetrieveResponse::Item::OpeningHours::TimeRange]
+          ) -> ::Array[Nextbillionai::Models::GeocodeStructuredRetrieveResponse::Item::OpeningHours::TimeRange]
+
+          def initialize: (
+            ?time_ranges: ::Array[Nextbillionai::Models::GeocodeStructuredRetrieveResponse::Item::OpeningHours::TimeRange]
+          ) -> void
+
+          def to_hash: -> {
+            time_ranges: ::Array[Nextbillionai::Models::GeocodeStructuredRetrieveResponse::Item::OpeningHours::TimeRange]
+          }
+
+          type time_range =
+            {
+              end_time: Nextbillionai::Models::GeocodeStructuredRetrieveResponse::Item::OpeningHours::TimeRange::EndTime,
+              start_time: Nextbillionai::Models::GeocodeStructuredRetrieveResponse::Item::OpeningHours::TimeRange::StartTime
+            }
+
+          class TimeRange < Nextbillionai::Internal::Type::BaseModel
+            attr_reader end_time: Nextbillionai::Models::GeocodeStructuredRetrieveResponse::Item::OpeningHours::TimeRange::EndTime?
+
+            def end_time=: (
+              Nextbillionai::Models::GeocodeStructuredRetrieveResponse::Item::OpeningHours::TimeRange::EndTime
+            ) -> Nextbillionai::Models::GeocodeStructuredRetrieveResponse::Item::OpeningHours::TimeRange::EndTime
+
+            attr_reader start_time: Nextbillionai::Models::GeocodeStructuredRetrieveResponse::Item::OpeningHours::TimeRange::StartTime?
+
+            def start_time=: (
+              Nextbillionai::Models::GeocodeStructuredRetrieveResponse::Item::OpeningHours::TimeRange::StartTime
+            ) -> Nextbillionai::Models::GeocodeStructuredRetrieveResponse::Item::OpeningHours::TimeRange::StartTime
+
+            def initialize: (
+              ?end_time: Nextbillionai::Models::GeocodeStructuredRetrieveResponse::Item::OpeningHours::TimeRange::EndTime,
+              ?start_time: Nextbillionai::Models::GeocodeStructuredRetrieveResponse::Item::OpeningHours::TimeRange::StartTime
+            ) -> void
+
+            def to_hash: -> {
+              end_time: Nextbillionai::Models::GeocodeStructuredRetrieveResponse::Item::OpeningHours::TimeRange::EndTime,
+              start_time: Nextbillionai::Models::GeocodeStructuredRetrieveResponse::Item::OpeningHours::TimeRange::StartTime
+            }
+
+            type end_time = { date: String, hour: Integer, minute: Integer }
+
+            class EndTime < Nextbillionai::Internal::Type::BaseModel
+              attr_reader date: String?
+
+              def date=: (String) -> String
+
+              attr_reader hour: Integer?
+
+              def hour=: (Integer) -> Integer
+
+              attr_reader minute: Integer?
+
+              def minute=: (Integer) -> Integer
+
+              def initialize: (
+                ?date: String,
+                ?hour: Integer,
+                ?minute: Integer
+              ) -> void
+
+              def to_hash: -> { date: String, hour: Integer, minute: Integer }
+            end
+
+            type start_time = { date: String, hour: Integer, minute: Integer }
+
+            class StartTime < Nextbillionai::Internal::Type::BaseModel
+              attr_reader date: String?
+
+              def date=: (String) -> String
+
+              attr_reader hour: Integer?
+
+              def hour=: (Integer) -> Integer
+
+              attr_reader minute: Integer?
+
+              def minute=: (Integer) -> Integer
+
+              def initialize: (
+                ?date: String,
+                ?hour: Integer,
+                ?minute: Integer
+              ) -> void
+
+              def to_hash: -> { date: String, hour: Integer, minute: Integer }
+            end
+          end
+        end
+
+        type scoring = { field_score: top, query_score: Float }
+
+        class Scoring < Nextbillionai::Internal::Type::BaseModel
+          attr_reader field_score: top?
+
+          def field_score=: (top) -> top
+
+          attr_reader query_score: Float?
+
+          def query_score=: (Float) -> Float
+
+          def initialize: (?field_score: top, ?query_score: Float) -> void
+
+          def to_hash: -> { field_score: top, query_score: Float }
+        end
+      end
+    end
+  end
+end

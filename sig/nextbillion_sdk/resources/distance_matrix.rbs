@@ -1,9 +1,0 @@
-module NextbillionSDK
-  module Resources
-    class DistanceMatrix
-      attr_reader json: NextbillionSDK::Resources::DistanceMatrix::Json
-
-      def initialize: (client: NextbillionSDK::Client) -> void
-    end
-  end
-end

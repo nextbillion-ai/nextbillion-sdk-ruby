@@ -1,0 +1,75 @@
+module Nextbillionai
+  module Models
+    module Fleetify
+      type document_template_create_response =
+        {
+          data: Nextbillionai::Models::Fleetify::DocumentTemplateCreateResponse::Data,
+          msg: String,
+          status: Integer
+        }
+
+      class DocumentTemplateCreateResponse < Nextbillionai::Internal::Type::BaseModel
+        attr_reader data: Nextbillionai::Models::Fleetify::DocumentTemplateCreateResponse::Data?
+
+        def data=: (
+          Nextbillionai::Models::Fleetify::DocumentTemplateCreateResponse::Data
+        ) -> Nextbillionai::Models::Fleetify::DocumentTemplateCreateResponse::Data
+
+        attr_reader msg: String?
+
+        def msg=: (String) -> String
+
+        attr_reader status: Integer?
+
+        def status=: (Integer) -> Integer
+
+        def initialize: (
+          ?data: Nextbillionai::Models::Fleetify::DocumentTemplateCreateResponse::Data,
+          ?msg: String,
+          ?status: Integer
+        ) -> void
+
+        def to_hash: -> {
+          data: Nextbillionai::Models::Fleetify::DocumentTemplateCreateResponse::Data,
+          msg: String,
+          status: Integer
+        }
+
+        type data =
+          {
+            id: String,
+            content: ::Array[Nextbillionai::Fleetify::DocumentTemplateContentResponse],
+            name: String
+          }
+
+        class Data < Nextbillionai::Internal::Type::BaseModel
+          attr_reader id: String?
+
+          def id=: (String) -> String
+
+          attr_reader content: ::Array[Nextbillionai::Fleetify::DocumentTemplateContentResponse]?
+
+          def content=: (
+            ::Array[Nextbillionai::Fleetify::DocumentTemplateContentResponse]
+          ) -> ::Array[Nextbillionai::Fleetify::DocumentTemplateContentResponse]
+
+          attr_reader name: String?
+
+          def name=: (String) -> String
+
+          def initialize: (
+            ?id: String,
+            ?content: ::Array[Nextbillionai::Fleetify::DocumentTemplateContentResponse],
+            ?name: String
+          ) -> void
+
+          def to_hash: -> {
+            id: String,
+            content: ::Array[Nextbillionai::Fleetify::DocumentTemplateContentResponse],
+            name: String
+          }
+        end
+      end
+    end
+  end
+end
