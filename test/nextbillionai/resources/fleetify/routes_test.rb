@@ -10,7 +10,7 @@ class Nextbillionai::Test::Resources::Fleetify::RoutesTest < Nextbillionai::Test
       @nextbillion_sdk.fleetify.routes.create(
         key: "key",
         driver_email: "johndoe@abc.com",
-        steps: [{arrival: 0, location: [0], type: :"`start`"}]
+        steps: [{arrival: 0, location: [0], type: :start}]
       )
 
     assert_pattern do
@@ -32,7 +32,7 @@ class Nextbillionai::Test::Resources::Fleetify::RoutesTest < Nextbillionai::Test
       @nextbillion_sdk.fleetify.routes.redispatch(
         "routeID",
         key: "key",
-        operations: [{data: {}, operation: :"`create`"}]
+        operations: [{data: {}, operation: :create}]
       )
 
     assert_pattern do

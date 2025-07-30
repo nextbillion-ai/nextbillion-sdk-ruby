@@ -59,7 +59,7 @@ module Nextbillionai
       #   location.
       #
       #   Note: Supports 'meter' (m) and 'kilometer' (km) units. If no radius is given,
-      #   the search method returns as many results as specified in `limit`.
+      #   the search method returns as many results as specified in limit.
       #
       #   @return [String, nil]
       optional :radius, String

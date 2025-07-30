@@ -86,58 +86,58 @@ module Nextbillionai
         request_options: Nextbillionai::RequestOptions
       }
 
-      type approaches = :"`unrestricted`" | :"`curb`"
+      type approaches = :unrestricted | :curb
 
       module Approaches
         extend Nextbillionai::Internal::Type::Enum
 
-        UNRESTRICTED: :"`unrestricted`"
-        CURB: :"`curb`"
+        UNRESTRICTED: :unrestricted
+        CURB: :curb
 
         def self?.values: -> ::Array[Nextbillionai::Models::OptimizationComputeParams::approaches]
       end
 
-      type destination = :"`any`" | :"`last`"
+      type destination = :any | :last
 
       module Destination
         extend Nextbillionai::Internal::Type::Enum
 
-        ANY: :"`any`"
-        LAST: :"`last`"
+        ANY: :any
+        LAST: :last
 
         def self?.values: -> ::Array[Nextbillionai::Models::OptimizationComputeParams::destination]
       end
 
-      type geometries = :"`polyline`" | :"`polyline6`" | :"`geojson`"
+      type geometries = :polyline | :polyline6 | :geojson
 
       module Geometries
         extend Nextbillionai::Internal::Type::Enum
 
-        POLYLINE: :"`polyline`"
-        POLYLINE6: :"`polyline6`"
-        GEOJSON: :"`geojson`"
+        POLYLINE: :polyline
+        POLYLINE6: :polyline6
+        GEOJSON: :geojson
 
         def self?.values: -> ::Array[Nextbillionai::Models::OptimizationComputeParams::geometries]
       end
 
-      type mode = :"`car`" | :"`truck`"
+      type mode = :car | :truck
 
       module Mode
         extend Nextbillionai::Internal::Type::Enum
 
-        CAR: :"`car`"
-        TRUCK: :"`truck`"
+        CAR: :car
+        TRUCK: :truck
 
         def self?.values: -> ::Array[Nextbillionai::Models::OptimizationComputeParams::mode]
       end
 
-      type source = :"`any`" | :"`first`"
+      type source = :any | :first
 
       module Source
         extend Nextbillionai::Internal::Type::Enum
 
-        ANY: :"`any`"
-        FIRST: :"`first`"
+        ANY: :any
+        FIRST: :first
 
         def self?.values: -> ::Array[Nextbillionai::Models::OptimizationComputeParams::source]
       end

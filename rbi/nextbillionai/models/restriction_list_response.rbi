@@ -68,7 +68,7 @@ module Nextbillionai
           end
 
         # An integer value indicating the maximum number of items retrieved per "page".
-        # This is the same number as provided for the `limit` parameter in input.
+        # This is the same number as provided for the limit parameter in input.
         sig { returns(T.nilable(Integer)) }
         attr_reader :limit
 
@@ -98,7 +98,7 @@ module Nextbillionai
         end
         def self.new(
           # An integer value indicating the maximum number of items retrieved per "page".
-          # This is the same number as provided for the `limit` parameter in input.
+          # This is the same number as provided for the limit parameter in input.
           limit: nil,
           # An integer value indicating the number of items in the collection that were
           # skipped to display the current response. Please note that the offset starts from

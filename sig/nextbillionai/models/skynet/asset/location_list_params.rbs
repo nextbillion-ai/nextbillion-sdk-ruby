@@ -87,14 +87,14 @@ module Nextbillionai
             def self?.values: -> ::Array[Nextbillionai::Models::Skynet::Asset::LocationListParams::cluster]
           end
 
-          type geometry_type = :"`polyline`" | :"`polyline6`" | :"`geojson`"
+          type geometry_type = :polyline | :polyline6 | :geojson
 
           module GeometryType
             extend Nextbillionai::Internal::Type::Enum
 
-            POLYLINE: :"`polyline`"
-            POLYLINE6: :"`polyline6`"
-            GEOJSON: :"`geojson`"
+            POLYLINE: :polyline
+            POLYLINE6: :polyline6
+            GEOJSON: :geojson
 
             def self?.values: -> ::Array[Nextbillionai::Models::Skynet::Asset::LocationListParams::geometry_type]
           end

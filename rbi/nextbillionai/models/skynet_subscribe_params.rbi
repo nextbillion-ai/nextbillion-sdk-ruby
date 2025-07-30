@@ -110,17 +110,17 @@ module Nextbillionai
 
         TRIP_SUBSCRIBE =
           T.let(
-            :"`TRIP_SUBSCRIBE`",
+            :TRIP_SUBSCRIBE,
             Nextbillionai::SkynetSubscribeParams::Action::TaggedSymbol
           )
         TRIP_UNSUBSCRIBE =
           T.let(
-            :"`TRIP_UNSUBSCRIBE`",
+            :TRIP_UNSUBSCRIBE,
             Nextbillionai::SkynetSubscribeParams::Action::TaggedSymbol
           )
         HEARTBEAT =
           T.let(
-            :"`HEARTBEAT`",
+            :HEARTBEAT,
             Nextbillionai::SkynetSubscribeParams::Action::TaggedSymbol
           )
 
@@ -145,7 +145,7 @@ module Nextbillionai
         # Specify the ID of an active trip that needs to be subscribed. The ID of a trip
         # is returned in the response when _Start A Trip_ request is acknowledged.
         #
-        # This attribute is mandatory when `action` is set to either "TRIP_SUBSCRIBE" or
+        # This attribute is mandatory when action is set to either "TRIP_SUBSCRIBE" or
         # "TRIP_UNSUBSCRIBE"
         sig { returns(String) }
         attr_accessor :id
@@ -155,7 +155,7 @@ module Nextbillionai
           # Specify the ID of an active trip that needs to be subscribed. The ID of a trip
           # is returned in the response when _Start A Trip_ request is acknowledged.
           #
-          # This attribute is mandatory when `action` is set to either "TRIP_SUBSCRIBE" or
+          # This attribute is mandatory when action is set to either "TRIP_SUBSCRIBE" or
           # "TRIP_UNSUBSCRIBE"
           id:
         )

@@ -55,26 +55,26 @@ module Nextbillionai
         }
 
         type type_ =
-          :"`string`"
-          | :"`number`"
-          | :"`date_time`"
-          | :"`photos`"
-          | :"`multi_choices`"
-          | :"`signature`"
-          | :"`barcode`"
-          | :"`single_choice`"
+          :string
+          | :number
+          | :date_time
+          | :photos
+          | :multi_choices
+          | :signature
+          | :barcode
+          | :single_choice
 
         module Type
           extend Nextbillionai::Internal::Type::Enum
 
-          STRING: :"`string`"
-          NUMBER: :"`number`"
-          DATE_TIME: :"`date_time`"
-          PHOTOS: :"`photos`"
-          MULTI_CHOICES: :"`multi_choices`"
-          SIGNATURE: :"`signature`"
-          BARCODE: :"`barcode`"
-          SINGLE_CHOICE: :"`single_choice`"
+          STRING: :string
+          NUMBER: :number
+          DATE_TIME: :date_time
+          PHOTOS: :photos
+          MULTI_CHOICES: :multi_choices
+          SIGNATURE: :signature
+          BARCODE: :barcode
+          SINGLE_CHOICE: :single_choice
 
           def self?.values: -> ::Array[Nextbillionai::Models::Fleetify::DocumentTemplateContentRequest::type_]
         end

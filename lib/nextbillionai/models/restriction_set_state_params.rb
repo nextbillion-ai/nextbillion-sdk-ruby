@@ -15,7 +15,7 @@ module Nextbillionai
       required :key, String
 
       # @!attribute state
-      #   Use this field to specify the new `state` of the restriction. Please note that
+      #   Use this field to specify the new state of the restriction. Please note that
       #   this method cannot update the state of restrictions that are currently in
       #   'deleted' state.
       #
@@ -28,19 +28,19 @@ module Nextbillionai
       #
       #   @param key [String] A key is a unique identifier that is required to authenticate a request to the A
       #
-      #   @param state [Symbol, Nextbillionai::Models::RestrictionSetStateParams::State] Use this field to specify the new `state` of the restriction. Please note that t
+      #   @param state [Symbol, Nextbillionai::Models::RestrictionSetStateParams::State] Use this field to specify the new state of the restriction. Please note that thi
       #
       #   @param request_options [Nextbillionai::RequestOptions, Hash{Symbol=>Object}]
 
-      # Use this field to specify the new `state` of the restriction. Please note that
+      # Use this field to specify the new state of the restriction. Please note that
       # this method cannot update the state of restrictions that are currently in
       # 'deleted' state.
       module State
         extend Nextbillionai::Internal::Type::Enum
 
-        ENABLED = :"`enabled`"
-        DISABLED = :"`disabled`"
-        DELETED = :"`deleted`"
+        ENABLED = :enabled
+        DISABLED = :disabled
+        DELETED = :deleted
 
         # @!method self.values
         #   @return [Array<Symbol>]

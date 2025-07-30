@@ -21,18 +21,18 @@ module Nextbillionai
         #
         # @param cluster [Symbol, Nextbillionai::Models::Skynet::AssetCreateParams::Cluster] Query param: the cluster of the region you want to use
         #
-        # @param attributes [Object] Body param: `attributes` can be used to store custom information about an asset
+        # @param attributes [Object] Body param: attributes can be used to store custom information about an asset in
         #
-        # @param custom_id [String] Body param: Set a unique ID for the new `asset`. If not provided, an ID will be
+        # @param custom_id [String] Body param: Set a unique ID for the new asset. If not provided, an ID will be au
         #
-        # @param description [String] Body param: Description for the `asset`.
+        # @param description [String] Body param: Description for the asset.
         #
         # @param meta_data [Object] Body param: Any valid json object data. Can be used to save customized data. Max
         #
-        # @param name [String] Body param: Name of the `asset`. Use this field to assign a meaningful, custom n
+        # @param name [String] Body param: Name of the asset. Use this field to assign a meaningful, custom nam
         #
         # @param tags [Array<String>] Body param: \*\*This parameter will be deprecated soon! Please use the
-        # `attributes
+        # attributes
         #
         # @param request_options [Nextbillionai::RequestOptions, Hash{Symbol=>Object}, nil]
         #
@@ -59,7 +59,7 @@ module Nextbillionai
         #
         # @overload retrieve(id, key:, cluster: nil, request_options: {})
         #
-        # @param id [String] ID of the `asset` to be fetched. This is the same ID that was generated/provided
+        # @param id [String] ID of the asset to be fetched. This is the same ID that was generated/provided a
         #
         # @param key [String] A key is a unique identifier that is required to authenticate a request to the A
         #
@@ -88,22 +88,22 @@ module Nextbillionai
         #
         # @overload update(id, key:, cluster: nil, attributes: nil, description: nil, meta_data: nil, name: nil, tags: nil, request_options: {})
         #
-        # @param id [String] Path param: ID of the `asset` to be updated. This is the same ID that was genera
+        # @param id [String] Path param: ID of the asset to be updated. This is the same ID that was generate
         #
         # @param key [String] Query param: A key is a unique identifier that is required to authenticate a req
         #
         # @param cluster [Symbol, Nextbillionai::Models::Skynet::AssetUpdateParams::Cluster] Query param: the cluster of the region you want to use
         #
-        # @param attributes [Object] Body param: Use this param to update the `attributes` of an asset in `key`:`valu
+        # @param attributes [Object] Body param: Use this param to update the attributes of an asset in key:value for
         #
-        # @param description [String] Body param: Use this param to update the `description` of an `asset`.
+        # @param description [String] Body param: Use this param to update the description of an asset.
         #
         # @param meta_data [Object] Body param: Any valid json object data. Can be used to save customized data. Max
         #
-        # @param name [String] Body param: Use this param to update the `name` of an `asset`. Users can assign
+        # @param name [String] Body param: Use this param to update the name of an asset. Users can assign mean
         #
         # @param tags [Array<String>] Body param: \*\*This parameter will be deprecated soon! Please use the
-        # `attributes
+        # attributes
         #
         # @param request_options [Nextbillionai::RequestOptions, Hash{Symbol=>Object}, nil]
         #
@@ -134,18 +134,18 @@ module Nextbillionai
         #
         # @param cluster [Symbol, Nextbillionai::Models::Skynet::AssetListParams::Cluster] the cluster of the region you want to use
         #
-        # @param include_all_of_attributes [String] Use this parameter to filter the assets by their `attributes`. Only the assets h
+        # @param include_all_of_attributes [String] Use this parameter to filter the assets by their attributes. Only the assets hav
         #
-        # @param include_any_of_attributes [String] Use this parameter to filter the assets by their `attributes`. Assets having at
+        # @param include_any_of_attributes [String] Use this parameter to filter the assets by their attributes. Assets having at le
         #
-        # @param pn [Integer] Denotes page number. Use this along with the `ps` parameter to implement paginat
+        # @param pn [Integer] Denotes page number. Use this along with the ps parameter to implement paginatio
         #
-        # @param ps [Integer] Denotes number of search results per page. Use this along with the `pn` paramete
+        # @param ps [Integer] Denotes number of search results per page. Use this along with the pn parameter
         #
-        # @param sort [String] Provide a single field to sort the results by. Only `updated_at` or `created_at`
+        # @param sort [String] Provide a single field to sort the results by. Only updated_at or created_at fie
         #
         # @param tags [String] \*\*This parameter will be deprecated soon! Please use the
-        # `include_all_of_attribu
+        # include_all_of_attribut
         #
         # @param request_options [Nextbillionai::RequestOptions, Hash{Symbol=>Object}, nil]
         #
@@ -170,7 +170,7 @@ module Nextbillionai
         #
         # @overload delete(id, key:, cluster: nil, request_options: {})
         #
-        # @param id [String] ID of the `asset` to be deleted. This is the same ID that was generated/provided
+        # @param id [String] ID of the asset to be deleted. This is the same ID that was generated/provided a
         #
         # @param key [String] A key is a unique identifier that is required to authenticate a request to the A
         #
@@ -199,11 +199,11 @@ module Nextbillionai
         #
         # @overload bind(id, key:, device_id:, request_options: {})
         #
-        # @param id [String] Path param: ID of `asset` to which a device needs to be linked. This is the same
+        # @param id [String] Path param: ID of asset to which a device needs to be linked. This is the same I
         #
         # @param key [String] Query param: A key is a unique identifier that is required to authenticate a req
         #
-        # @param device_id [String] Body param: Device ID to be linked to the `asset` identified by `id`.
+        # @param device_id [String] Body param: Device ID to be linked to the asset identified by id.
         #
         # @param request_options [Nextbillionai::RequestOptions, Hash{Symbol=>Object}, nil]
         #
@@ -230,11 +230,11 @@ module Nextbillionai
         #
         # @overload track(id, key:, device_id:, locations:, cluster: nil, request_options: {})
         #
-        # @param id [String] Path param: ID of the `asset` whose track information is to be uploaded. This is
+        # @param id [String] Path param: ID of the asset whose track information is to be uploaded. This is t
         #
         # @param key [String] Query param: A key is a unique identifier that is required to authenticate a req
         #
-        # @param device_id [String] Body param: ID of the device used to upload the tracking information of the `ass
+        # @param device_id [String] Body param: ID of the device used to upload the tracking information of the asse
         #
         # @param locations [Nextbillionai::Models::Skynet::AssetTrackParams::Locations] Body param: An array of objects to collect the location tracking information for
         #
@@ -265,11 +265,11 @@ module Nextbillionai
         #
         # @overload update_attributes(id, key:, attributes:, request_options: {})
         #
-        # @param id [String] Path param: ID of the `asset` whose attributes need to be updated. This is the s
+        # @param id [String] Path param: ID of the asset whose attributes need to be updated. This is the sam
         #
         # @param key [String] Query param: A key is a unique identifier that is required to authenticate a req
         #
-        # @param attributes [Object] Body param: `attributes` can be used to add any useful information or context to
+        # @param attributes [Object] Body param: attributes can be used to add any useful information or context to y
         #
         # @param request_options [Nextbillionai::RequestOptions, Hash{Symbol=>Object}, nil]
         #

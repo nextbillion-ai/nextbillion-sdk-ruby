@@ -7,7 +7,7 @@ module Nextbillionai
       # @!attribute features
       #   A
       #   [GeoJSON FeatureCollection](https://datatracker.ietf.org/doc/html/rfc7946#section-3.3)
-      #   object with details of the isochrone contours. Each `feature` object in this
+      #   object with details of the isochrone contours. Each feature object in this
       #   collection represents an isochrone.
       #
       #   @return [Array<Nextbillionai::Models::IsochroneComputeResponse::Feature>, nil]
@@ -24,7 +24,7 @@ module Nextbillionai
 
       # @!attribute status
       #   A string indicating the state of the response. On normal responses, the value
-      #   will be `Ok`. Indicative HTTP error codes are returned for different errors. See
+      #   will be Ok. Indicative HTTP error codes are returned for different errors. See
       #   the [API Errors Codes](#api-error-codes) section below for more information.
       #
       #   @return [String, nil]
@@ -33,7 +33,7 @@ module Nextbillionai
       # @!attribute type
       #   Type of the GeoJSON object. As prescribed in
       #   [GeoJSON standard](https://datatracker.ietf.org/doc/html/rfc7946#section-1.4),
-      #   its value is `FeatureCollection` as the `feature` property contains a list of
+      #   its value is FeatureCollection as the feature property contains a list of
       #   geoJSON feature objects.
       #
       #   @return [String, nil]
@@ -66,7 +66,7 @@ module Nextbillionai
         optional :properties, -> { Nextbillionai::Models::IsochroneComputeResponse::Feature::Properties }
 
         # @!attribute type
-        #   Type of the GeoJSON object. Its value is `Feature` as per the
+        #   Type of the GeoJSON object. Its value is Feature as per the
         #   [GeoJSON standard](https://datatracker.ietf.org/doc/html/rfc7946#section-1.4)
         #   object.
         #
@@ -81,7 +81,7 @@ module Nextbillionai
         #
         #   @param properties [Nextbillionai::Models::IsochroneComputeResponse::Feature::Properties] An object with details of how the isochrone contour can be drawn on a map.
         #
-        #   @param type [String] Type of the GeoJSON object. Its value is `Feature` as per the [GeoJSON standard]
+        #   @param type [String] Type of the GeoJSON object. Its value is Feature as per the [GeoJSON standard](h
 
         # @see Nextbillionai::Models::IsochroneComputeResponse::Feature#geometry
         class Geometry < Nextbillionai::Internal::Type::BaseModel
@@ -120,10 +120,10 @@ module Nextbillionai
           optional :color, String
 
           # @!attribute contour
-          #   The value of the metric used in this contour. See the `metric` property to
-          #   determine whether this is a `time` or `distance` contour. When the `metric` is
-          #   `time` this value denotes the travel time in minutes and when the `metric` is
-          #   `distance` this value denotes the travel distance in kilometers.
+          #   The value of the metric used in this contour. See the metric property to
+          #   determine whether this is a time or distance contour. When the metric is time
+          #   this value denotes the travel time in minutes and when the metric is distance
+          #   this value denotes the travel distance in kilometers.
           #
           #   @return [Float, nil]
           optional :contour, Float
@@ -148,7 +148,7 @@ module Nextbillionai
           optional :fill_opacity, Float, api_name: :fillOpacity
 
           # @!attribute metric
-          #   The metric that the contour represents - either `distance` or `time`
+          #   The metric that the contour represents - either distance or time
           #
           #   @return [String, nil]
           optional :metric, String
@@ -169,7 +169,7 @@ module Nextbillionai
           #
           #   @param color [String] The hex code of the color of the isochrone contour line
           #
-          #   @param contour [Float] The value of the metric used in this contour. See the `metric` property to deter
+          #   @param contour [Float] The value of the metric used in this contour. See the metric property to determi
           #
           #   @param fill [String] The hex code for the fill color of the isochrone contour line.
           #
@@ -177,7 +177,7 @@ module Nextbillionai
           #
           #   @param fill_opacity [Float] The fill opacity for the isochrone contour line. It is a float value starting fr
           #
-          #   @param metric [String] The metric that the contour represents - either `distance` or `time`
+          #   @param metric [String] The metric that the contour represents - either distance or time
           #
           #   @param opacity [Float] The opacity of the isochrone contour line. It is a float value starting from 0.0
         end

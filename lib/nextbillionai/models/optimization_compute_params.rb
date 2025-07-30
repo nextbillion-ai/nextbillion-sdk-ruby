@@ -24,16 +24,16 @@ module Nextbillionai
 
       # @!attribute approaches
       #   A semicolon-separated list indicating the side of the road from which to
-      #   approach waypoints in a requested route. If provided, the number of `approaches`
-      #   must be the same as the number of `coordinates`. However, you can skip a
-      #   coordinate and show its position in the list with the `;` separator.
+      #   approach waypoints in a requested route. If provided, the number of approaches
+      #   must be the same as the number of coordinates. However, you can skip a
+      #   coordinate and show its position in the list with the ; separator.
       #
       #   @return [Symbol, Nextbillionai::Models::OptimizationComputeParams::Approaches, nil]
       optional :approaches, enum: -> { Nextbillionai::OptimizationComputeParams::Approaches }
 
       # @!attribute destination
-      #   Specify the destination coordinate of the returned route. If the input is
-      #   `last`, the last coordinate will be the destination.
+      #   Specify the destination coordinate of the returned route. If the input is last,
+      #   the last coordinate will be the destination.
       #
       #   @return [Symbol, Nextbillionai::Models::OptimizationComputeParams::Destination, nil]
       optional :destination, enum: -> { Nextbillionai::OptimizationComputeParams::Destination }
@@ -41,10 +41,9 @@ module Nextbillionai
       # @!attribute geometries
       #   Sets the output format of the route geometry in the response.
       #
-      #   On providing `polyline` and `polyline6` as input, respective encoded geometry is
-      #   returned. However, when `geojson` is provided as the input value, `polyline`
-      #   encoded geometry is returned in the response along with a geojson details of the
-      #   route.
+      #   On providing polyline and polyline6 as input, respective encoded geometry is
+      #   returned. However, when geojson is provided as the input value, polyline encoded
+      #   geometry is returned in the response along with a geojson details of the route.
       #
       #   @return [Symbol, Nextbillionai::Models::OptimizationComputeParams::Geometries, nil]
       optional :geometries, enum: -> { Nextbillionai::OptimizationComputeParams::Geometries }
@@ -107,7 +106,7 @@ module Nextbillionai
       #
       #   @param approaches [Symbol, Nextbillionai::Models::OptimizationComputeParams::Approaches] A semicolon-separated list indicating the side of the road from which to approac
       #
-      #   @param destination [Symbol, Nextbillionai::Models::OptimizationComputeParams::Destination] Specify the destination coordinate of the returned route. If the input is `last`
+      #   @param destination [Symbol, Nextbillionai::Models::OptimizationComputeParams::Destination] Specify the destination coordinate of the returned route. If the input is last,
       #
       #   @param geometries [Symbol, Nextbillionai::Models::OptimizationComputeParams::Geometries] Sets the output format of the route geometry in the response.
       #
@@ -122,26 +121,26 @@ module Nextbillionai
       #   @param request_options [Nextbillionai::RequestOptions, Hash{Symbol=>Object}]
 
       # A semicolon-separated list indicating the side of the road from which to
-      # approach waypoints in a requested route. If provided, the number of `approaches`
-      # must be the same as the number of `coordinates`. However, you can skip a
-      # coordinate and show its position in the list with the `;` separator.
+      # approach waypoints in a requested route. If provided, the number of approaches
+      # must be the same as the number of coordinates. However, you can skip a
+      # coordinate and show its position in the list with the ; separator.
       module Approaches
         extend Nextbillionai::Internal::Type::Enum
 
-        UNRESTRICTED = :"`unrestricted`"
-        CURB = :"`curb`"
+        UNRESTRICTED = :unrestricted
+        CURB = :curb
 
         # @!method self.values
         #   @return [Array<Symbol>]
       end
 
-      # Specify the destination coordinate of the returned route. If the input is
-      # `last`, the last coordinate will be the destination.
+      # Specify the destination coordinate of the returned route. If the input is last,
+      # the last coordinate will be the destination.
       module Destination
         extend Nextbillionai::Internal::Type::Enum
 
-        ANY = :"`any`"
-        LAST = :"`last`"
+        ANY = :any
+        LAST = :last
 
         # @!method self.values
         #   @return [Array<Symbol>]
@@ -149,16 +148,15 @@ module Nextbillionai
 
       # Sets the output format of the route geometry in the response.
       #
-      # On providing `polyline` and `polyline6` as input, respective encoded geometry is
-      # returned. However, when `geojson` is provided as the input value, `polyline`
-      # encoded geometry is returned in the response along with a geojson details of the
-      # route.
+      # On providing polyline and polyline6 as input, respective encoded geometry is
+      # returned. However, when geojson is provided as the input value, polyline encoded
+      # geometry is returned in the response along with a geojson details of the route.
       module Geometries
         extend Nextbillionai::Internal::Type::Enum
 
-        POLYLINE = :"`polyline`"
-        POLYLINE6 = :"`polyline6`"
-        GEOJSON = :"`geojson`"
+        POLYLINE = :polyline
+        POLYLINE6 = :polyline6
+        GEOJSON = :geojson
 
         # @!method self.values
         #   @return [Array<Symbol>]
@@ -191,8 +189,8 @@ module Nextbillionai
       module Mode
         extend Nextbillionai::Internal::Type::Enum
 
-        CAR = :"`car`"
-        TRUCK = :"`truck`"
+        CAR = :car
+        TRUCK = :truck
 
         # @!method self.values
         #   @return [Array<Symbol>]
@@ -203,8 +201,8 @@ module Nextbillionai
       module Source
         extend Nextbillionai::Internal::Type::Enum
 
-        ANY = :"`any`"
-        FIRST = :"`first`"
+        ANY = :any
+        FIRST = :first
 
         # @!method self.values
         #   @return [Array<Symbol>]

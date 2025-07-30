@@ -29,7 +29,7 @@ module Nextbillionai
 
       # @!method initialize(east: nil, north: nil, south: nil, west: nil)
       #   The bounding box enclosing the geometric shape (area or line) that an individual
-      #   result covers. `place` typed results have no `mapView`.
+      #   result covers. place typed results have no mapView.
       #
       #   @param east [String] Longitude of the eastern-side of the box.
       #

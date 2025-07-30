@@ -16,11 +16,11 @@ module Nextbillionai
         sig { returns(String) }
         attr_accessor :id
 
-        # An integer denoting the index (in the `location` array) of the location
+        # An integer denoting the index (in the location array) of the location
         # coordinates where the job needs to be performed. The valid range of values is
-        # \[0, length of `location` array).
+        # \[0, length of location array).
         #
-        # Please note the `location_index` is mandatory when using the `jobs` object.
+        # Please note the location_index is mandatory when using the jobs object.
         sig { returns(Integer) }
         attr_accessor :location_index
 
@@ -28,14 +28,14 @@ module Nextbillionai
         # delivery quantity. This attribute supports multidimensional quantities, to
         # support delivering quantities of different units/dimensions. It is recommended
         # to keep the dimensions of quantity for pickup/delivery consistent when defining
-        # them in `jobs` and `vehicles` (in `capacity` attribute).
+        # them in jobs and vehicles (in capacity attribute).
         #
         # Please note that the quantity of delivery will be added to the assigned
         # vehicle’s initial load.
         #
         # In case depots are being added, the delivery configured here can be fulfilled by
-        # vehicles starting from specific depots. Refer to `depot_ids` and
-        # `vehicles.start_depot_ids` to know more.
+        # vehicles starting from specific depots. Refer to depot_ids and
+        # vehicles.start_depot_ids to know more.
         sig { returns(T.nilable(T::Array[Integer])) }
         attr_reader :delivery
 
@@ -69,8 +69,8 @@ module Nextbillionai
         attr_writer :description
 
         # Specify whether the job route should follow LIFO (last in, first out). Use this
-        # parameter when `pickup` or `delivery` jobs are involved and the loading or
-        # unloading sequence of cargo is important. The default is `false`.
+        # parameter when pickup or delivery jobs are involved and the loading or unloading
+        # sequence of cargo is important. The default is false.
         sig { returns(T.nilable(T::Boolean)) }
         attr_reader :follow_lifo_order
 
@@ -80,21 +80,21 @@ module Nextbillionai
         # Use this parameter to specify the type of loads which are incompatible with the
         # job’s load type. Once this property is configured, the job can only be serviced
         # by a vehicle which has not serviced any other task with an incompatible
-        # `load_types` . Add multiple load types to indicate all the types which are
+        # load_types . Add multiple load types to indicate all the types which are
         # incompatible for this job. The incompatible load type considerations are ignored
         # for the first task of the route.
         #
         # For example, an input value of \[“groceries”, “food”\] means that current job’s
         # load is incompatible with both groceries and food type of loads. Consequently,
         # the optimizer will not assign this job to a vehicle which has served any task
-        # with `load_types` as either groceries or food.
+        # with load_types as either groceries or food.
         #
         # Note:
         #
         # - This parameter is effective only when a pickup / delivery is configured for
         #   the job.
-        # - If the job is part of any `relations` then, configured
-        #   `incompatible_load_types` might be ignored.
+        # - If the job is part of any relations then, configured incompatible_load_types
+        #   might be ignored.
         sig { returns(T.nilable(T::Array[String])) }
         attr_reader :incompatible_load_types
 
@@ -103,13 +103,13 @@ module Nextbillionai
 
         # Specify a joint order group ID that this job is associated with. Tasks having
         # the same joint order group ID are treated as a single unit: either all tasks in
-        # the group are assigned, or none are. Users can add tasks of both `jobs` and
-        # `shipments` types to a single joint order group by using the same unique ID.
+        # the group are assigned, or none are. Users can add tasks of both jobs and
+        # shipments types to a single joint order group by using the same unique ID.
         # Please note that:
         #
         # - Each job in a single joint order group will be fulfilled by a unique vehicle.
         # - Jobs belonging to a joint order group can be served in any sequence.
-        # - Joint order settings will not be effective if \`solution\` or \`relations\`
+        # - Joint order settings will not be effective if \solution\ or \relations\
         #   attributes are also provided in the input request.
         sig { returns(T.nilable(Integer)) }
         attr_reader :joint_order
@@ -119,20 +119,20 @@ module Nextbillionai
 
         # Use this parameter to specify the type of loads for the given job. Once this
         # property is configured, the job can not be served by a vehicle which has
-        # serviced any task whose load is incompatible with any of the`load_types`
-        # provided in this input. The load type considerations are ignored for the first
-        # task of the route.
+        # serviced any task whose load is incompatible with any of theload_types provided
+        # in this input. The load type considerations are ignored for the first task of
+        # the route.
         #
         # For example, an input value of \[“groceries”, “food”\] means that job’s load
         # characteristics belong to either one or both types. Consequently, the optimizer
         # will assign this job to a vehicle which has served other tasks whose
-        # `incompatible_load_types` do not contain either groceries or food.
+        # incompatible_load_types do not contain either groceries or food.
         #
         # Note:
         #
         # - This parameter is effective only when a pickup / delivery is configured for
         #   the job.
-        # - If the job is part of any `relations` then, `load_types` might be ignored.
+        # - If the job is part of any relations then, load_types might be ignored.
         sig { returns(T.nilable(T::Array[String])) }
         attr_reader :load_types
 
@@ -141,7 +141,7 @@ module Nextbillionai
 
         # It determines the allowable delay, in seconds, to begin a job after its
         # designated time window has concluded. Please note that this parameter would
-        # override the `constraint.max_visit_lateness` (global) if both are specified.
+        # override the constraint.max_visit_lateness (global) if both are specified.
         sig { returns(T.nilable(Integer)) }
         attr_reader :max_visit_lateness
 
@@ -149,13 +149,13 @@ module Nextbillionai
         attr_writer :max_visit_lateness
 
         # Specify any custom data that should be attached along with job fulfilment
-        # details in the `steps` attribute of the optimized solution. Users can leverage
+        # details in the steps attribute of the optimized solution. Users can leverage
         # this property to provide additional details/context when sharing information
         # about the job with integrated systems (TMS, Fleet Management, Driver dispatch
         # etc).
         #
-        # Please note that the `metadata` content must always be specified in a`key` :
-        # `value` pair format, where the “key” is always a string.
+        # Please note that the metadata content must always be specified in akey : value
+        # pair format, where the “key” is always a string.
         sig { returns(T.nilable(T.anything)) }
         attr_reader :metadata
 
@@ -165,16 +165,16 @@ module Nextbillionai
         # Specify the cost of keeping this job unassigned, namely, the cost of outsourcing
         # the job. When provided, the optimizer weighs the cost of assigning the job
         # against the cost of keeping it unassigned and chooses a solution with lower
-        # cost. In the solution, the `outsourcing_cost` of unassigned jobs is added to the
+        # cost. In the solution, the outsourcing_cost of unassigned jobs is added to the
         # total cost of the solution.
         #
-        # If the `outsourcing_cost` is not provided, which is to say that the job can not
-        # be outsourced, then the optimizer tries to fulfill the job irrespective of the
-        # cost incurred, subject to other constraints.
+        # If the outsourcing_cost is not provided, which is to say that the job can not be
+        # outsourced, then the optimizer tries to fulfill the job irrespective of the cost
+        # incurred, subject to other constraints.
         #
-        # Please note that `revenue` and `outsourcing_cost` can not be specified
-        # simultaneously for a job. Also, the `outsourcing_cost` would override the
-        # priority settings of the job.
+        # Please note that revenue and outsourcing_cost can not be specified
+        # simultaneously for a job. Also, the outsourcing_cost would override the priority
+        # settings of the job.
         sig { returns(T.nilable(Integer)) }
         attr_reader :outsourcing_cost
 
@@ -185,14 +185,14 @@ module Nextbillionai
         # quantity. This attribute supports multidimensional quantities, to support
         # picking up quantities of different units/dimensions. It is recommended to keep
         # the dimensions of quantity for pickup/delivery consistent when defining them in
-        # `jobs` and `vehicles` (in `capacity` attribute).
+        # jobs and vehicles (in capacity attribute).
         #
         # Please note that the vehicle will continue to carry the picked-up quantity until
         # its last stop.
         #
         # In case depots are being added, the pickup configured here can be fulfilled by
-        # vehicles ending at specific depots. Refer to `depot_ids` and
-        # `vehicles.end_depot_ids` to know more.
+        # vehicles ending at specific depots. Refer to depot_ids and
+        # vehicles.end_depot_ids to know more.
         sig { returns(T.nilable(T::Array[Integer])) }
         attr_reader :pickup
 
@@ -211,10 +211,10 @@ module Nextbillionai
         attr_writer :priority
 
         # Specify the revenue earned by completing this job. The optimizer uses the
-        # `revenue` input to identify the potential profit earned by fulfilling this job
-        # after taking into account the costs incurred to do so. The`options.objective`
-        # and `vehicles.costs` input are taken into account to identify the costs of
-        # fulfilling the job.
+        # revenue input to identify the potential profit earned by fulfilling this job
+        # after taking into account the costs incurred to do so. Theoptions.objective and
+        # vehicles.costs input are taken into account to identify the costs of fulfilling
+        # the job.
         #
         # In general, the optimizer will prefer fulfilling the tasks with higher profits
         # over the tasks with lower profits, should it need to reject some tasks in order
@@ -227,20 +227,20 @@ module Nextbillionai
         attr_writer :revenue
 
         # Use this parameter to prioritize completing a task relative to certain other
-        # tasks. A task configured with a `sequence_order` of 2 will be done after the
-        # task with `sequence_order` of 1, but before the task with `sequence_order` of 3.
-        # Valid range of values for this input is \[0,100\].
+        # tasks. A task configured with a sequence_order of 2 will be done after the task
+        # with sequence_order of 1, but before the task with sequence_order of 3. Valid
+        # range of values for this input is \[0,100\].
         #
         # Please note that:
         #
         # - Only the tasks within the same route are compared and ordered as per their
-        #   `sequence_order`.
-        # - Tasks without a `sequence_order` are not involved in the comparison.
-        # - Following is the precedence of `sequence_order` when used along side some of
-        #   the other constraints:
+        #   sequence_order.
+        # - Tasks without a sequence_order are not involved in the comparison.
+        # - Following is the precedence of sequence_order when used along side some of the
+        #   other constraints:
         #
-        #   - `relations` are prioritized over `sequence_order` comparisons.
-        #   - `sequence_order` will override `order_grouping` configurations.
+        #   - relations are prioritized over sequence_order comparisons.
+        #   - sequence_order will override order_grouping configurations.
         sig { returns(T.nilable(Integer)) }
         attr_reader :sequence_order
 
@@ -255,13 +255,13 @@ module Nextbillionai
         sig { params(service: Integer).void }
         attr_writer :service
 
-        # Specify the job set-up duration, in seconds. `setup` is the one-time effort
-        # needed apart from working on the original task - for example, effort to record
-        # some information for compliance, or effort to set-up the equipment, or perform
-        # any other action for completing all steps required to fulfil the job.
+        # Specify the job set-up duration, in seconds. setup is the one-time effort needed
+        # apart from working on the original task - for example, effort to record some
+        # information for compliance, or effort to set-up the equipment, or perform any
+        # other action for completing all steps required to fulfil the job.
         #
-        # Please note that `setup` time is applied only once for a given task location.
-        # `setup` time, unlike `service` time, is not repeated in case there are multiple
+        # Please note that setup time is applied only once for a given task location.
+        # setup time, unlike service time, is not repeated in case there are multiple
         # tasks at the same location.
         sig { returns(T.nilable(Integer)) }
         attr_reader :setup
@@ -298,7 +298,7 @@ module Nextbillionai
         # specify the final characteristics for the task: total height, total length,
         # total width.
         #
-        # Please note that vehicles which contain the `volume` input, will only be
+        # Please note that vehicles which contain the volume input, will only be
         # considered for arranging such items.
         sig { returns(T.nilable(Nextbillionai::Optimization::Job::Volume)) }
         attr_reader :volume
@@ -314,13 +314,12 @@ module Nextbillionai
         #
         # - If zone IDs are provided for any one of the jobs, then all other jobs should
         #   also be specified with zone IDs. Zone IDs provided here will override any zone
-        #   geometries provided in the `zones` attribute and these IDs will be used for
+        #   geometries provided in the zones attribute and these IDs will be used for
         #   allocating appropriate vehicles.
         # - Jobs can be auto-allocated to zones if this parameter is not specified while
-        #   the zone geometries (either `zones.geometry` or `zones.geofence_id`) are
-        #   provided.
+        #   the zone geometries (either zones.geometry or zones.geofence_id) are provided.
         # - Jobs not falling in any zones can be fulfilled by only those vehicles which
-        #   are allowed to take up tasks outside zones as well. Refer to `vehicles`
+        #   are allowed to take up tasks outside zones as well. Refer to vehicles
         #   attribute for more information.
         sig { returns(T.nilable(T::Array[Integer])) }
         attr_reader :zones
@@ -357,24 +356,24 @@ module Nextbillionai
         def self.new(
           # Provide an unique ID for the job. The IDs are case-sensitive.
           id:,
-          # An integer denoting the index (in the `location` array) of the location
+          # An integer denoting the index (in the location array) of the location
           # coordinates where the job needs to be performed. The valid range of values is
-          # \[0, length of `location` array).
+          # \[0, length of location array).
           #
-          # Please note the `location_index` is mandatory when using the `jobs` object.
+          # Please note the location_index is mandatory when using the jobs object.
           location_index:,
           # In case the job involves a delivery step, use this attribute to describe
           # delivery quantity. This attribute supports multidimensional quantities, to
           # support delivering quantities of different units/dimensions. It is recommended
           # to keep the dimensions of quantity for pickup/delivery consistent when defining
-          # them in `jobs` and `vehicles` (in `capacity` attribute).
+          # them in jobs and vehicles (in capacity attribute).
           #
           # Please note that the quantity of delivery will be added to the assigned
           # vehicle’s initial load.
           #
           # In case depots are being added, the delivery configured here can be fulfilled by
-          # vehicles starting from specific depots. Refer to `depot_ids` and
-          # `vehicles.start_depot_ids` to know more.
+          # vehicles starting from specific depots. Refer to depot_ids and
+          # vehicles.start_depot_ids to know more.
           delivery: nil,
           # Specify the depots which can be used to fulfil this job. In case of a pickup
           # job, the assigned vehicle will deliver the goods to the depot specified here, at
@@ -393,95 +392,95 @@ module Nextbillionai
           # Add a custom description for the job.
           description: nil,
           # Specify whether the job route should follow LIFO (last in, first out). Use this
-          # parameter when `pickup` or `delivery` jobs are involved and the loading or
-          # unloading sequence of cargo is important. The default is `false`.
+          # parameter when pickup or delivery jobs are involved and the loading or unloading
+          # sequence of cargo is important. The default is false.
           follow_lifo_order: nil,
           # Use this parameter to specify the type of loads which are incompatible with the
           # job’s load type. Once this property is configured, the job can only be serviced
           # by a vehicle which has not serviced any other task with an incompatible
-          # `load_types` . Add multiple load types to indicate all the types which are
+          # load_types . Add multiple load types to indicate all the types which are
           # incompatible for this job. The incompatible load type considerations are ignored
           # for the first task of the route.
           #
           # For example, an input value of \[“groceries”, “food”\] means that current job’s
           # load is incompatible with both groceries and food type of loads. Consequently,
           # the optimizer will not assign this job to a vehicle which has served any task
-          # with `load_types` as either groceries or food.
+          # with load_types as either groceries or food.
           #
           # Note:
           #
           # - This parameter is effective only when a pickup / delivery is configured for
           #   the job.
-          # - If the job is part of any `relations` then, configured
-          #   `incompatible_load_types` might be ignored.
+          # - If the job is part of any relations then, configured incompatible_load_types
+          #   might be ignored.
           incompatible_load_types: nil,
           # Specify a joint order group ID that this job is associated with. Tasks having
           # the same joint order group ID are treated as a single unit: either all tasks in
-          # the group are assigned, or none are. Users can add tasks of both `jobs` and
-          # `shipments` types to a single joint order group by using the same unique ID.
+          # the group are assigned, or none are. Users can add tasks of both jobs and
+          # shipments types to a single joint order group by using the same unique ID.
           # Please note that:
           #
           # - Each job in a single joint order group will be fulfilled by a unique vehicle.
           # - Jobs belonging to a joint order group can be served in any sequence.
-          # - Joint order settings will not be effective if \`solution\` or \`relations\`
+          # - Joint order settings will not be effective if \solution\ or \relations\
           #   attributes are also provided in the input request.
           joint_order: nil,
           # Use this parameter to specify the type of loads for the given job. Once this
           # property is configured, the job can not be served by a vehicle which has
-          # serviced any task whose load is incompatible with any of the`load_types`
-          # provided in this input. The load type considerations are ignored for the first
-          # task of the route.
+          # serviced any task whose load is incompatible with any of theload_types provided
+          # in this input. The load type considerations are ignored for the first task of
+          # the route.
           #
           # For example, an input value of \[“groceries”, “food”\] means that job’s load
           # characteristics belong to either one or both types. Consequently, the optimizer
           # will assign this job to a vehicle which has served other tasks whose
-          # `incompatible_load_types` do not contain either groceries or food.
+          # incompatible_load_types do not contain either groceries or food.
           #
           # Note:
           #
           # - This parameter is effective only when a pickup / delivery is configured for
           #   the job.
-          # - If the job is part of any `relations` then, `load_types` might be ignored.
+          # - If the job is part of any relations then, load_types might be ignored.
           load_types: nil,
           # It determines the allowable delay, in seconds, to begin a job after its
           # designated time window has concluded. Please note that this parameter would
-          # override the `constraint.max_visit_lateness` (global) if both are specified.
+          # override the constraint.max_visit_lateness (global) if both are specified.
           max_visit_lateness: nil,
           # Specify any custom data that should be attached along with job fulfilment
-          # details in the `steps` attribute of the optimized solution. Users can leverage
+          # details in the steps attribute of the optimized solution. Users can leverage
           # this property to provide additional details/context when sharing information
           # about the job with integrated systems (TMS, Fleet Management, Driver dispatch
           # etc).
           #
-          # Please note that the `metadata` content must always be specified in a`key` :
-          # `value` pair format, where the “key” is always a string.
+          # Please note that the metadata content must always be specified in akey : value
+          # pair format, where the “key” is always a string.
           metadata: nil,
           # Specify the cost of keeping this job unassigned, namely, the cost of outsourcing
           # the job. When provided, the optimizer weighs the cost of assigning the job
           # against the cost of keeping it unassigned and chooses a solution with lower
-          # cost. In the solution, the `outsourcing_cost` of unassigned jobs is added to the
+          # cost. In the solution, the outsourcing_cost of unassigned jobs is added to the
           # total cost of the solution.
           #
-          # If the `outsourcing_cost` is not provided, which is to say that the job can not
-          # be outsourced, then the optimizer tries to fulfill the job irrespective of the
-          # cost incurred, subject to other constraints.
+          # If the outsourcing_cost is not provided, which is to say that the job can not be
+          # outsourced, then the optimizer tries to fulfill the job irrespective of the cost
+          # incurred, subject to other constraints.
           #
-          # Please note that `revenue` and `outsourcing_cost` can not be specified
-          # simultaneously for a job. Also, the `outsourcing_cost` would override the
-          # priority settings of the job.
+          # Please note that revenue and outsourcing_cost can not be specified
+          # simultaneously for a job. Also, the outsourcing_cost would override the priority
+          # settings of the job.
           outsourcing_cost: nil,
           # In case the job involves a pickup step, use this attribute to describe pickup
           # quantity. This attribute supports multidimensional quantities, to support
           # picking up quantities of different units/dimensions. It is recommended to keep
           # the dimensions of quantity for pickup/delivery consistent when defining them in
-          # `jobs` and `vehicles` (in `capacity` attribute).
+          # jobs and vehicles (in capacity attribute).
           #
           # Please note that the vehicle will continue to carry the picked-up quantity until
           # its last stop.
           #
           # In case depots are being added, the pickup configured here can be fulfilled by
-          # vehicles ending at specific depots. Refer to `depot_ids` and
-          # `vehicles.end_depot_ids` to know more.
+          # vehicles ending at specific depots. Refer to depot_ids and
+          # vehicles.end_depot_ids to know more.
           pickup: nil,
           # Specify the priority of this job. The valid values are in the range of \[0,
           # 100\]. Default value is 0.
@@ -490,10 +489,10 @@ module Nextbillionai
           # assigned or not, but has nothing to do with the sequence of job fulfilment.
           priority: nil,
           # Specify the revenue earned by completing this job. The optimizer uses the
-          # `revenue` input to identify the potential profit earned by fulfilling this job
-          # after taking into account the costs incurred to do so. The`options.objective`
-          # and `vehicles.costs` input are taken into account to identify the costs of
-          # fulfilling the job.
+          # revenue input to identify the potential profit earned by fulfilling this job
+          # after taking into account the costs incurred to do so. Theoptions.objective and
+          # vehicles.costs input are taken into account to identify the costs of fulfilling
+          # the job.
           #
           # In general, the optimizer will prefer fulfilling the tasks with higher profits
           # over the tasks with lower profits, should it need to reject some tasks in order
@@ -501,31 +500,31 @@ module Nextbillionai
           # negative, it will remain unassigned whatsoever.
           revenue: nil,
           # Use this parameter to prioritize completing a task relative to certain other
-          # tasks. A task configured with a `sequence_order` of 2 will be done after the
-          # task with `sequence_order` of 1, but before the task with `sequence_order` of 3.
-          # Valid range of values for this input is \[0,100\].
+          # tasks. A task configured with a sequence_order of 2 will be done after the task
+          # with sequence_order of 1, but before the task with sequence_order of 3. Valid
+          # range of values for this input is \[0,100\].
           #
           # Please note that:
           #
           # - Only the tasks within the same route are compared and ordered as per their
-          #   `sequence_order`.
-          # - Tasks without a `sequence_order` are not involved in the comparison.
-          # - Following is the precedence of `sequence_order` when used along side some of
-          #   the other constraints:
+          #   sequence_order.
+          # - Tasks without a sequence_order are not involved in the comparison.
+          # - Following is the precedence of sequence_order when used along side some of the
+          #   other constraints:
           #
-          #   - `relations` are prioritized over `sequence_order` comparisons.
-          #   - `sequence_order` will override `order_grouping` configurations.
+          #   - relations are prioritized over sequence_order comparisons.
+          #   - sequence_order will override order_grouping configurations.
           sequence_order: nil,
           # Use this attribute to define the time duration, in seconds, needed to complete
           # the job. Default value is 0.
           service: nil,
-          # Specify the job set-up duration, in seconds. `setup` is the one-time effort
-          # needed apart from working on the original task - for example, effort to record
-          # some information for compliance, or effort to set-up the equipment, or perform
-          # any other action for completing all steps required to fulfil the job.
+          # Specify the job set-up duration, in seconds. setup is the one-time effort needed
+          # apart from working on the original task - for example, effort to record some
+          # information for compliance, or effort to set-up the equipment, or perform any
+          # other action for completing all steps required to fulfil the job.
           #
-          # Please note that `setup` time is applied only once for a given task location.
-          # `setup` time, unlike `service` time, is not repeated in case there are multiple
+          # Please note that setup time is applied only once for a given task location.
+          # setup time, unlike service time, is not repeated in case there are multiple
           # tasks at the same location.
           setup: nil,
           # Define the skills needed to complete the job. This attribute supports
@@ -547,7 +546,7 @@ module Nextbillionai
           # specify the final characteristics for the task: total height, total length,
           # total width.
           #
-          # Please note that vehicles which contain the `volume` input, will only be
+          # Please note that vehicles which contain the volume input, will only be
           # considered for arranging such items.
           volume: nil,
           # An array of integers specifying the IDs of the zone(s) that this job belongs to.
@@ -556,13 +555,12 @@ module Nextbillionai
           #
           # - If zone IDs are provided for any one of the jobs, then all other jobs should
           #   also be specified with zone IDs. Zone IDs provided here will override any zone
-          #   geometries provided in the `zones` attribute and these IDs will be used for
+          #   geometries provided in the zones attribute and these IDs will be used for
           #   allocating appropriate vehicles.
           # - Jobs can be auto-allocated to zones if this parameter is not specified while
-          #   the zone geometries (either `zones.geometry` or `zones.geofence_id`) are
-          #   provided.
+          #   the zone geometries (either zones.geometry or zones.geofence_id) are provided.
           # - Jobs not falling in any zones can be fulfilled by only those vehicles which
-          #   are allowed to take up tasks outside zones as well. Refer to `vehicles`
+          #   are allowed to take up tasks outside zones as well. Refer to vehicles
           #   attribute for more information.
           zones: nil
         )
@@ -675,7 +673,7 @@ module Nextbillionai
           # specify the final characteristics for the task: total height, total length,
           # total width.
           #
-          # Please note that vehicles which contain the `volume` input, will only be
+          # Please note that vehicles which contain the volume input, will only be
           # considered for arranging such items.
           sig do
             params(
@@ -769,22 +767,17 @@ module Nextbillionai
 
             STRICT =
               T.let(
-                :"`strict`",
+                :strict,
                 Nextbillionai::Optimization::Job::Volume::Alignment::TaggedSymbol
               )
             PARALLEL =
               T.let(
-                :"`parallel`",
+                :parallel,
                 Nextbillionai::Optimization::Job::Volume::Alignment::TaggedSymbol
               )
             FIXED_BOTTOM =
               T.let(
-                :"`fixed_bottom`",
-                Nextbillionai::Optimization::Job::Volume::Alignment::TaggedSymbol
-              )
-            Unknown0 =
-              T.let(
-                :"`\" \"`",
+                :fixed_bottom,
                 Nextbillionai::Optimization::Job::Volume::Alignment::TaggedSymbol
               )
 

@@ -13,7 +13,7 @@ module Nextbillionai
 
       # A
       # [GeoJSON FeatureCollection](https://datatracker.ietf.org/doc/html/rfc7946#section-3.3)
-      # object with details of the isochrone contours. Each `feature` object in this
+      # object with details of the isochrone contours. Each feature object in this
       # collection represents an isochrone.
       sig do
         returns(
@@ -44,7 +44,7 @@ module Nextbillionai
       attr_writer :msg
 
       # A string indicating the state of the response. On normal responses, the value
-      # will be `Ok`. Indicative HTTP error codes are returned for different errors. See
+      # will be Ok. Indicative HTTP error codes are returned for different errors. See
       # the [API Errors Codes](#api-error-codes) section below for more information.
       sig { returns(T.nilable(String)) }
       attr_reader :status
@@ -54,7 +54,7 @@ module Nextbillionai
 
       # Type of the GeoJSON object. As prescribed in
       # [GeoJSON standard](https://datatracker.ietf.org/doc/html/rfc7946#section-1.4),
-      # its value is `FeatureCollection` as the `feature` property contains a list of
+      # its value is FeatureCollection as the feature property contains a list of
       # geoJSON feature objects.
       sig { returns(T.nilable(String)) }
       attr_reader :type
@@ -76,7 +76,7 @@ module Nextbillionai
       def self.new(
         # A
         # [GeoJSON FeatureCollection](https://datatracker.ietf.org/doc/html/rfc7946#section-3.3)
-        # object with details of the isochrone contours. Each `feature` object in this
+        # object with details of the isochrone contours. Each feature object in this
         # collection represents an isochrone.
         features: nil,
         # Displays the error message in case of a failed request or operation. Please note
@@ -84,12 +84,12 @@ module Nextbillionai
         # request.
         msg: nil,
         # A string indicating the state of the response. On normal responses, the value
-        # will be `Ok`. Indicative HTTP error codes are returned for different errors. See
+        # will be Ok. Indicative HTTP error codes are returned for different errors. See
         # the [API Errors Codes](#api-error-codes) section below for more information.
         status: nil,
         # Type of the GeoJSON object. As prescribed in
         # [GeoJSON standard](https://datatracker.ietf.org/doc/html/rfc7946#section-1.4),
-        # its value is `FeatureCollection` as the `feature` property contains a list of
+        # its value is FeatureCollection as the feature property contains a list of
         # geoJSON feature objects.
         type: nil
       )
@@ -157,7 +157,7 @@ module Nextbillionai
         end
         attr_writer :properties
 
-        # Type of the GeoJSON object. Its value is `Feature` as per the
+        # Type of the GeoJSON object. Its value is Feature as per the
         # [GeoJSON standard](https://datatracker.ietf.org/doc/html/rfc7946#section-1.4)
         # object.
         sig { returns(T.nilable(String)) }
@@ -181,7 +181,7 @@ module Nextbillionai
           geometry: nil,
           # An object with details of how the isochrone contour can be drawn on a map.
           properties: nil,
-          # Type of the GeoJSON object. Its value is `Feature` as per the
+          # Type of the GeoJSON object. Its value is Feature as per the
           # [GeoJSON standard](https://datatracker.ietf.org/doc/html/rfc7946#section-1.4)
           # object.
           type: nil
@@ -265,10 +265,10 @@ module Nextbillionai
           sig { params(color: String).void }
           attr_writer :color
 
-          # The value of the metric used in this contour. See the `metric` property to
-          # determine whether this is a `time` or `distance` contour. When the `metric` is
-          # `time` this value denotes the travel time in minutes and when the `metric` is
-          # `distance` this value denotes the travel distance in kilometers.
+          # The value of the metric used in this contour. See the metric property to
+          # determine whether this is a time or distance contour. When the metric is time
+          # this value denotes the travel time in minutes and when the metric is distance
+          # this value denotes the travel distance in kilometers.
           sig { returns(T.nilable(Float)) }
           attr_reader :contour
 
@@ -297,7 +297,7 @@ module Nextbillionai
           sig { params(fill_opacity: Float).void }
           attr_writer :fill_opacity
 
-          # The metric that the contour represents - either `distance` or `time`
+          # The metric that the contour represents - either distance or time
           sig { returns(T.nilable(String)) }
           attr_reader :metric
 
@@ -327,10 +327,10 @@ module Nextbillionai
           def self.new(
             # The hex code of the color of the isochrone contour line
             color: nil,
-            # The value of the metric used in this contour. See the `metric` property to
-            # determine whether this is a `time` or `distance` contour. When the `metric` is
-            # `time` this value denotes the travel time in minutes and when the `metric` is
-            # `distance` this value denotes the travel distance in kilometers.
+            # The value of the metric used in this contour. See the metric property to
+            # determine whether this is a time or distance contour. When the metric is time
+            # this value denotes the travel time in minutes and when the metric is distance
+            # this value denotes the travel distance in kilometers.
             contour: nil,
             # The hex code for the fill color of the isochrone contour line.
             fill: nil,
@@ -339,7 +339,7 @@ module Nextbillionai
             # The fill opacity for the isochrone contour line. It is a float value starting
             # from 0.0 with a max value of 1.0. Higher number indicates a higher fill opacity.
             fill_opacity: nil,
-            # The metric that the contour represents - either `distance` or `time`
+            # The metric that the contour represents - either distance or time
             metric: nil,
             # The opacity of the isochrone contour line. It is a float value starting from 0.0
             # with a max value of 1.0. Higher number indicates a higher line opacity

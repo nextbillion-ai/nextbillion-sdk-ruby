@@ -9,7 +9,7 @@ class Nextbillionai::Test::Resources::Fleetify::DocumentTemplatesTest < Nextbill
     response =
       @nextbillion_sdk.fleetify.document_templates.create(
         key: "key",
-        content: [{label: "\"label\": \"Specify Completion Time\"", type: :"`string`"}],
+        content: [{label: "\"label\": \"Specify Completion Time\"", type: :string}],
         name: "name"
       )
 

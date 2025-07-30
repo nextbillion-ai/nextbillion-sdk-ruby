@@ -32,7 +32,7 @@ module Nextbillionai
       #
       # @param polygon [Nextbillionai::Models::GeofenceEntityCreate::Polygon] Body param: Provide the details to create a custom polygon type of geofence. Ple
       #
-      # @param tags [Array<String>] Body param: An array of strings to associate multiple tags to the geofence. `tag
+      # @param tags [Array<String>] Body param: An array of strings to associate multiple tags to the geofence. tags
       #
       # @param request_options [Nextbillionai::RequestOptions, Hash{Symbol=>Object}, nil]
       #
@@ -94,15 +94,15 @@ module Nextbillionai
       #
       # @param isochrone [Nextbillionai::Models::GeofenceUpdateParams::Isochrone] Body param: Use this object to update details of an isochrone based geofence. Pl
       #
-      # @param meta_data [Object] Body param: Updated the `meta_data` associated with a geofence. Use this field t
+      # @param meta_data [Object] Body param: Updated the meta_data associated with a geofence. Use this field to
       #
-      # @param name [String] Body param: Use this parameter to update the `name` of a geofence. Users can ass
+      # @param name [String] Body param: Use this parameter to update the name of a geofence. Users can assig
       #
       # @param polygon [Nextbillionai::Models::GeofenceUpdateParams::Polygon] Body param: Use this object to update details of a custom polygon geofence. Plea
       #
-      # @param tags [Array<String>] Body param: Use this parameter to add/modify one or multiple `tags` of a geofenc
+      # @param tags [Array<String>] Body param: Use this parameter to add/modify one or multiple tags of a geofence.
       #
-      # @param type [Symbol, Nextbillionai::Models::GeofenceUpdateParams::Type] Body param: Use this parameter to update the `type` of a geofence. Please note t
+      # @param type [Symbol, Nextbillionai::Models::GeofenceUpdateParams::Type] Body param: Use this parameter to update the type of a geofence. Please note tha
       #
       # @param request_options [Nextbillionai::RequestOptions, Hash{Symbol=>Object}, nil]
       #
@@ -131,11 +131,11 @@ module Nextbillionai
       #
       # @param key [String] A key is a unique identifier that is required to authenticate a request to the A
       #
-      # @param pn [Integer] Denotes page number. Use this along with the `ps` parameter to implement paginat
+      # @param pn [Integer] Denotes page number. Use this along with the ps parameter to implement paginatio
       #
-      # @param ps [Integer] Denotes number of search results per page. Use this along with the `pn` paramete
+      # @param ps [Integer] Denotes number of search results per page. Use this along with the pn parameter
       #
-      # @param tags [String] Comma (`,`) separated list of `tags` which will be used to filter the geofences.
+      # @param tags [String] Comma (,) separated list of tags which will be used to filter the geofences.
       #
       # @param request_options [Nextbillionai::RequestOptions, Hash{Symbol=>Object}, nil]
       #
@@ -191,9 +191,9 @@ module Nextbillionai
       #
       # @param locations [String] Pipe (|) separated coordinates, in [latitude,longitude] format, of the locations
       #
-      # @param geofences [String] A `,` separated list geofence IDs against which the `locations` will be searched
+      # @param geofences [String] A , separated list geofence IDs against which the locations will be searched. If
       #
-      # @param verbose [String] When `true`, an array with detailed information of geofences is returned. When `
+      # @param verbose [String] When true, an array with detailed information of geofences is returned. When fal
       #
       # @param request_options [Nextbillionai::RequestOptions, Hash{Symbol=>Object}, nil]
       #

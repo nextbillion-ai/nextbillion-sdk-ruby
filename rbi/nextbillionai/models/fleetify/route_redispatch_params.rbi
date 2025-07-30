@@ -148,10 +148,10 @@ module Nextbillionai
             # Specify the mode of completion to be used for the step. Currently, following
             # values are allowed:
             #
-            # - `manual`: Steps must be marked as completed manually through the Driver App.
-            # - `geofence`: Steps are marked as completed automatically based on the entry
+            # - manual: Steps must be marked as completed manually through the Driver App.
+            # - geofence: Steps are marked as completed automatically based on the entry
             #   conditions and geofence specified.
-            # - `geofence_manual_fallback`: Steps will be marked as completed automatically
+            # - geofence_manual_fallback: Steps will be marked as completed automatically
             #   based on geofence and entry condition configurations but there will also be a
             #   provision for manually updating the status in case, geofence detection fails.
             sig do
@@ -178,7 +178,7 @@ module Nextbillionai
             # create, read and manage the document templates.
             #
             # Please note that the document template ID can not be assigned to following step
-            # types - `start`, `end`, `break`, `layover`.
+            # types - start, end, break, layover.
             sig { returns(T.nilable(String)) }
             attr_reader :document_template_id
 
@@ -199,9 +199,9 @@ module Nextbillionai
             end
             attr_writer :step
 
-            # Specify the ID of the step to be updated or deleted. Either one of `id` or
-            # `short_id` of the step can be provided. This input will be ignored when
-            # `operation: create` .
+            # Specify the ID of the step to be updated or deleted. Either one of id or
+            # short_id of the step can be provided. This input will be ignored when operation:
+            # create .
             sig { returns(T.nilable(String)) }
             attr_reader :step_id
 
@@ -222,10 +222,10 @@ module Nextbillionai
               # Specify the mode of completion to be used for the step. Currently, following
               # values are allowed:
               #
-              # - `manual`: Steps must be marked as completed manually through the Driver App.
-              # - `geofence`: Steps are marked as completed automatically based on the entry
+              # - manual: Steps must be marked as completed manually through the Driver App.
+              # - geofence: Steps are marked as completed automatically based on the entry
               #   conditions and geofence specified.
-              # - `geofence_manual_fallback`: Steps will be marked as completed automatically
+              # - geofence_manual_fallback: Steps will be marked as completed automatically
               #   based on geofence and entry condition configurations but there will also be a
               #   provision for manually updating the status in case, geofence detection fails.
               completion_mode: nil,
@@ -236,12 +236,12 @@ module Nextbillionai
               # create, read and manage the document templates.
               #
               # Please note that the document template ID can not be assigned to following step
-              # types - `start`, `end`, `break`, `layover`.
+              # types - start, end, break, layover.
               document_template_id: nil,
               step: nil,
-              # Specify the ID of the step to be updated or deleted. Either one of `id` or
-              # `short_id` of the step can be provided. This input will be ignored when
-              # `operation: create` .
+              # Specify the ID of the step to be updated or deleted. Either one of id or
+              # short_id of the step can be provided. This input will be ignored when operation:
+              # create .
               step_id: nil
             )
             end
@@ -276,17 +276,17 @@ module Nextbillionai
 
             CREATE =
               T.let(
-                :"`create`",
+                :create,
                 Nextbillionai::Fleetify::RouteRedispatchParams::Operation::Operation::TaggedSymbol
               )
             UPDATE =
               T.let(
-                :"`update`",
+                :update,
                 Nextbillionai::Fleetify::RouteRedispatchParams::Operation::Operation::TaggedSymbol
               )
             DELETE =
               T.let(
-                :"`delete`",
+                :delete,
                 Nextbillionai::Fleetify::RouteRedispatchParams::Operation::Operation::TaggedSymbol
               )
 

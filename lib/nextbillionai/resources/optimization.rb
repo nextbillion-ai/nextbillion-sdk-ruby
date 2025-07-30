@@ -32,7 +32,7 @@ module Nextbillionai
       #
       # @param approaches [Symbol, Nextbillionai::Models::OptimizationComputeParams::Approaches] A semicolon-separated list indicating the side of the road from which to approac
       #
-      # @param destination [Symbol, Nextbillionai::Models::OptimizationComputeParams::Destination] Specify the destination coordinate of the returned route. If the input is `last`
+      # @param destination [Symbol, Nextbillionai::Models::OptimizationComputeParams::Destination] Specify the destination coordinate of the returned route. If the input is last,
       #
       # @param geometries [Symbol, Nextbillionai::Models::OptimizationComputeParams::Geometries] Sets the output format of the route geometry in the response.
       #

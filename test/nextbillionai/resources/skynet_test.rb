@@ -6,7 +6,7 @@ class Nextbillionai::Test::Resources::SkynetTest < Nextbillionai::Test::Resource
   def test_subscribe_required_params
     skip("skipped: tests are disabled for the time being")
 
-    response = @nextbillion_sdk.skynet.subscribe(action: :"`TRIP_SUBSCRIBE`")
+    response = @nextbillion_sdk.skynet.subscribe(action: :TRIP_SUBSCRIBE)
 
     assert_pattern do
       response => Nextbillionai::Models::SkynetSubscribeResponse

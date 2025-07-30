@@ -12,7 +12,7 @@ module Nextbillionai
 
       # @!attribute status
       #   A string indicating the state of the response. On successful responses, the
-      #   value will be `Ok`. Indicative error messages are returned for different errors.
+      #   value will be Ok. Indicative error messages are returned for different errors.
       #   See the [API Error Codes](#api-error-codes) section below for more information.
       #
       #   @return [String, nil]
@@ -29,7 +29,7 @@ module Nextbillionai
       # @see Nextbillionai::Models::GeofenceCreateResponse#data
       class Data < Nextbillionai::Internal::Type::BaseModel
         # @!attribute id
-        #   Unique ID of the geofence created. It will be the same as `custom_id`, if
+        #   Unique ID of the geofence created. It will be the same as custom_id, if
         #   provided. Else it will be an auto generated UUID. Please note this ID cannot be
         #   updated.
         #
@@ -42,7 +42,7 @@ module Nextbillionai
         #
         #   A data object containing the ID of the geofence created.
         #
-        #   @param id [String] Unique ID of the geofence created. It will be the same as `custom_id`, if provid
+        #   @param id [String] Unique ID of the geofence created. It will be the same as custom_id, if provided
       end
     end
   end

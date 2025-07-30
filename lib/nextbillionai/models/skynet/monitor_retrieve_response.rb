@@ -6,7 +6,7 @@ module Nextbillionai
       # @see Nextbillionai::Resources::Skynet::Monitor#retrieve
       class MonitorRetrieveResponse < Nextbillionai::Internal::Type::BaseModel
         # @!attribute data
-        #   A data object containing the details of the `monitor`.
+        #   A data object containing the details of the monitor.
         #
         #   @return [Nextbillionai::Models::Skynet::MonitorRetrieveResponse::Data, nil]
         optional :data, -> { Nextbillionai::Models::Skynet::MonitorRetrieveResponse::Data }
@@ -20,7 +20,7 @@ module Nextbillionai
 
         # @!attribute status
         #   A string indicating the state of the response. On successful responses, the
-        #   value will be `Ok`. Indicative error messages are returned for different errors.
+        #   value will be Ok. Indicative error messages are returned for different errors.
         #   See the [API Error Codes](#api-error-codes) section below for more information.
         #
         #   @return [String, nil]
@@ -30,7 +30,7 @@ module Nextbillionai
         #   Some parameter documentations has been truncated, see
         #   {Nextbillionai::Models::Skynet::MonitorRetrieveResponse} for more details.
         #
-        #   @param data [Nextbillionai::Models::Skynet::MonitorRetrieveResponse::Data] A data object containing the details of the `monitor`.
+        #   @param data [Nextbillionai::Models::Skynet::MonitorRetrieveResponse::Data] A data object containing the details of the monitor.
         #
         #   @param message [String] Displays the error message in case of a failed request. If the request is succes
         #
@@ -44,7 +44,7 @@ module Nextbillionai
           optional :monitor, -> { Nextbillionai::Skynet::SkynetMonitor }
 
           # @!method initialize(monitor: nil)
-          #   A data object containing the details of the `monitor`.
+          #   A data object containing the details of the monitor.
           #
           #   @param monitor [Nextbillionai::Models::Skynet::SkynetMonitor]
         end

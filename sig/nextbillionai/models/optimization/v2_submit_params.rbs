@@ -178,13 +178,13 @@ module Nextbillionai
             approaches: ::Array[Nextbillionai::Models::Optimization::V2SubmitParams::Locations::approach]
           }
 
-          type approach = :"`unrestricted`" | :"`curb`" | :"\"\"(empty string)"
+          type approach = :unrestricted | :curb | :"\"\"(empty string)"
 
           module Approach
             extend Nextbillionai::Internal::Type::Enum
 
-            UNRESTRICTED: :"`unrestricted`"
-            CURB: :"`curb`"
+            UNRESTRICTED: :unrestricted
+            CURB: :curb
             EMPTY_STRING: :"\"\"(empty string)"
 
             def self?.values: -> ::Array[Nextbillionai::Models::Optimization::V2SubmitParams::Locations::approach]
@@ -398,13 +398,13 @@ module Nextbillionai
                 zone_source: Nextbillionai::Models::Optimization::V2SubmitParams::Options::Grouping::RouteGrouping::zone_source
               }
 
-              type zone_source = :"`system_generated`" | :"`custom_definition`"
+              type zone_source = :system_generated | :custom_definition
 
               module ZoneSource
                 extend Nextbillionai::Internal::Type::Enum
 
-                SYSTEM_GENERATED: :"`system_generated`"
-                CUSTOM_DEFINITION: :"`custom_definition`"
+                SYSTEM_GENERATED: :system_generated
+                CUSTOM_DEFINITION: :custom_definition
 
                 def self?.values: -> ::Array[Nextbillionai::Models::Optimization::V2SubmitParams::Options::Grouping::RouteGrouping::zone_source]
               end
@@ -491,60 +491,53 @@ module Nextbillionai
                 value: Nextbillionai::Models::Optimization::V2SubmitParams::Options::Objective::Custom::value
               }
 
-              type type_ = :"`min`" | :"`min-max`"
+              type type_ = :min | :"min-max"
 
               module Type
                 extend Nextbillionai::Internal::Type::Enum
 
-                MIN: :"`min`"
-                MIN_MAX: :"`min-max`"
+                MIN: :min
+                MIN_MAX: :"min-max"
 
                 def self?.values: -> ::Array[Nextbillionai::Models::Optimization::V2SubmitParams::Options::Objective::Custom::type_]
               end
 
-              type value =
-                :"`vehicles`"
-                | :"`completion_time`"
-                | :"`travel_cost`"
-                | :"`tasks`"
+              type value = :vehicles | :completion_time | :travel_cost | :tasks
 
               module Value
                 extend Nextbillionai::Internal::Type::Enum
 
-                VEHICLES: :"`vehicles`"
-                COMPLETION_TIME: :"`completion_time`"
-                TRAVEL_COST: :"`travel_cost`"
-                TASKS: :"`tasks`"
+                VEHICLES: :vehicles
+                COMPLETION_TIME: :completion_time
+                TRAVEL_COST: :travel_cost
+                TASKS: :tasks
 
                 def self?.values: -> ::Array[Nextbillionai::Models::Optimization::V2SubmitParams::Options::Objective::Custom::value]
               end
             end
 
-            type solver_mode = :"`flexible`" | :"`fast`" | :"`internal`"
+            type solver_mode = :flexible | :fast | :internal
 
             module SolverMode
               extend Nextbillionai::Internal::Type::Enum
 
-              FLEXIBLE: :"`flexible`"
-              FAST: :"`fast`"
-              INTERNAL: :"`internal`"
+              FLEXIBLE: :flexible
+              FAST: :fast
+              INTERNAL: :internal
 
               def self?.values: -> ::Array[Nextbillionai::Models::Optimization::V2SubmitParams::Options::Objective::solver_mode]
             end
 
             type travel_cost =
-              :"`duration`"
-              | :"`distance`"
-              | :"`air_distance`"
-              | :"`customized`"
+              :duration | :distance | :air_distance | :customized
 
             module TravelCost
               extend Nextbillionai::Internal::Type::Enum
 
-              DURATION: :"`duration`"
-              DISTANCE: :"`distance`"
-              AIR_DISTANCE: :"`air_distance`"
-              CUSTOMIZED: :"`customized`"
+              DURATION: :duration
+              DISTANCE: :distance
+              AIR_DISTANCE: :air_distance
+              CUSTOMIZED: :customized
 
               def self?.values: -> ::Array[Nextbillionai::Models::Optimization::V2SubmitParams::Options::Objective::travel_cost]
             end
@@ -667,68 +660,65 @@ module Nextbillionai
             end
 
             type avoid =
-              :"`toll`"
-              | :"`highway`"
-              | :"`bbox`"
-              | :"`left_turn`"
-              | :"`right_turn`"
-              | :"`sharp_turn`"
-              | :"`uturn`"
-              | :"`service_road`"
-              | :"`ferry`"
-              | :"`none` "
+              :toll
+              | :highway
+              | :bbox
+              | :left_turn
+              | :right_turn
+              | :sharp_turn
+              | :uturn
+              | :service_road
+              | :ferry
+              | :"none "
 
             module Avoid
               extend Nextbillionai::Internal::Type::Enum
 
-              TOLL: :"`toll`"
-              HIGHWAY: :"`highway`"
-              BBOX: :"`bbox`"
-              LEFT_TURN: :"`left_turn`"
-              RIGHT_TURN: :"`right_turn`"
-              SHARP_TURN: :"`sharp_turn`"
-              UTURN: :"`uturn`"
-              SERVICE_ROAD: :"`service_road`"
-              FERRY: :"`ferry`"
-              NONE: :"`none` "
+              TOLL: :toll
+              HIGHWAY: :highway
+              BBOX: :bbox
+              LEFT_TURN: :left_turn
+              RIGHT_TURN: :right_turn
+              SHARP_TURN: :sharp_turn
+              UTURN: :uturn
+              SERVICE_ROAD: :service_road
+              FERRY: :ferry
+              NONE: :"none "
 
               def self?.values: -> ::Array[Nextbillionai::Models::Optimization::V2SubmitParams::Options::Routing::avoid]
             end
 
-            type context = :"`avgspeed`"
+            type context = :avgspeed
 
             module Context
               extend Nextbillionai::Internal::Type::Enum
 
-              AVGSPEED: :"`avgspeed`"
+              AVGSPEED: :avgspeed
 
               def self?.values: -> ::Array[Nextbillionai::Models::Optimization::V2SubmitParams::Options::Routing::context]
             end
 
             type hazmat_type =
-              :"`general`"
-              | :"`circumstantial`"
-              | :"`explosive`"
-              | :"`harmful_to_water`"
+              :general | :circumstantial | :explosive | :harmful_to_water
 
             module HazmatType
               extend Nextbillionai::Internal::Type::Enum
 
-              GENERAL: :"`general`"
-              CIRCUMSTANTIAL: :"`circumstantial`"
-              EXPLOSIVE: :"`explosive`"
-              HARMFUL_TO_WATER: :"`harmful_to_water`"
+              GENERAL: :general
+              CIRCUMSTANTIAL: :circumstantial
+              EXPLOSIVE: :explosive
+              HARMFUL_TO_WATER: :harmful_to_water
 
               def self?.values: -> ::Array[Nextbillionai::Models::Optimization::V2SubmitParams::Options::Routing::hazmat_type]
             end
 
-            type mode = :"`car`" | :"`truck`"
+            type mode = :car | :truck
 
             module Mode
               extend Nextbillionai::Internal::Type::Enum
 
-              CAR: :"`car`"
-              TRUCK: :"`truck`"
+              CAR: :car
+              TRUCK: :truck
 
               def self?.values: -> ::Array[Nextbillionai::Models::Optimization::V2SubmitParams::Options::Routing::mode]
             end
@@ -807,35 +797,31 @@ module Nextbillionai
               id: String
             }
 
-            type type_ =
-              :"`start`" | :"`end`" | :"`job`" | :"`pickup`" | :"`delivery`"
+            type type_ = :start | :end | :job | :pickup | :delivery
 
             module Type
               extend Nextbillionai::Internal::Type::Enum
 
-              START: :"`start`"
-              END_: :"`end`"
-              JOB: :"`job`"
-              PICKUP: :"`pickup`"
-              DELIVERY: :"`delivery`"
+              START: :start
+              END_: :end
+              JOB: :job
+              PICKUP: :pickup
+              DELIVERY: :delivery
 
               def self?.values: -> ::Array[Nextbillionai::Models::Optimization::V2SubmitParams::Relation::Step::type_]
             end
           end
 
           type type_ =
-            :"`in_same_route`"
-            | :"`in_sequence`"
-            | :"`in_direct_sequence`"
-            | :"`precedence`"
+            :in_same_route | :in_sequence | :in_direct_sequence | :precedence
 
           module Type
             extend Nextbillionai::Internal::Type::Enum
 
-            IN_SAME_ROUTE: :"`in_same_route`"
-            IN_SEQUENCE: :"`in_sequence`"
-            IN_DIRECT_SEQUENCE: :"`in_direct_sequence`"
-            PRECEDENCE: :"`precedence`"
+            IN_SAME_ROUTE: :in_same_route
+            IN_SEQUENCE: :in_sequence
+            IN_DIRECT_SEQUENCE: :in_direct_sequence
+            PRECEDENCE: :precedence
 
             def self?.values: -> ::Array[Nextbillionai::Models::Optimization::V2SubmitParams::Relation::type_]
           end
@@ -1026,23 +1012,17 @@ module Nextbillionai
               waiting_time: Integer
             }
 
-            type type_ =
-              :"`start`"
-              | :"`end`"
-              | :"`job`"
-              | :"`pickup`"
-              | :"`delivery`"
-              | :"`break`"
+            type type_ = :start | :end | :job | :pickup | :delivery | :break
 
             module Type
               extend Nextbillionai::Internal::Type::Enum
 
-              START: :"`start`"
-              END_: :"`end`"
-              JOB: :"`job`"
-              PICKUP: :"`pickup`"
-              DELIVERY: :"`delivery`"
-              BREAK: :"`break`"
+              START: :start
+              END_: :end
+              JOB: :job
+              PICKUP: :pickup
+              DELIVERY: :delivery
+              BREAK: :break
 
               def self?.values: -> ::Array[Nextbillionai::Models::Optimization::V2SubmitParams::Solution::Step::type_]
             end
@@ -1140,13 +1120,13 @@ module Nextbillionai
               type: Nextbillionai::Models::Optimization::V2SubmitParams::Zone::Geometry::type_
             }
 
-            type type_ = :"`Polygon`" | :"`MultiPolygon`"
+            type type_ = :Polygon | :MultiPolygon
 
             module Type
               extend Nextbillionai::Internal::Type::Enum
 
-              POLYGON: :"`Polygon`"
-              MULTI_POLYGON: :"`MultiPolygon`"
+              POLYGON: :Polygon
+              MULTI_POLYGON: :MultiPolygon
 
               def self?.values: -> ::Array[Nextbillionai::Models::Optimization::V2SubmitParams::Zone::Geometry::type_]
             end

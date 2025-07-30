@@ -25,8 +25,8 @@ module Nextbillionai
       end
       attr_writer :circle_center
 
-      # When the `type` of the geofence is `circle`, this property returns the radius of
-      # the geofence in meters (m).
+      # When the type of the geofence is circle, this property returns the radius of the
+      # geofence in meters (m).
       sig { returns(T.nilable(Float)) }
       attr_reader :circle_radius
 
@@ -54,8 +54,8 @@ module Nextbillionai
       # For a geofence based on isochrone contour determined using a specific driving
       # distance, this property returns the duration value, in meters.
       #
-      # The value would be the same as that provided for the `contours_meter` parameter
-      # at the time of creating or updating the geofence.
+      # The value would be the same as that provided for the contours_meter parameter at
+      # the time of creating or updating the geofence.
       sig { returns(T.nilable(Integer)) }
       attr_reader :ic_contours_meter
 
@@ -64,8 +64,8 @@ module Nextbillionai
 
       # For a geofence based on isochrone contour determined using a specific driving
       # duration, this property returns the duration value, in minutes. The value would
-      # be the same as the value provided for the `contours_minute` parameter at the
-      # time of creating or updating the geofence.
+      # be the same as the value provided for the contours_minute parameter at the time
+      # of creating or updating the geofence.
       sig { returns(T.nilable(Integer)) }
       attr_reader :ic_contours_minute
 
@@ -76,7 +76,7 @@ module Nextbillionai
       # of the location, in [latitude,longitude] format, which was used as the starting
       # point to identify the geofence boundary.
       #
-      # The value would be the same as that provided for the `coordinates` parameter at
+      # The value would be the same as that provided for the coordinates parameter at
       # the time of creating or updating the geofence.
       sig { returns(T.nilable(String)) }
       attr_reader :ic_coordinates
@@ -85,8 +85,8 @@ module Nextbillionai
       attr_writer :ic_coordinates
 
       # For a geofence based on isochrone contour, this property returns the denoise
-      # value which would be the same as that provided for the `denoise` parameter at
-      # the time of creating or updating the geofence.
+      # value which would be the same as that provided for the denoise parameter at the
+      # time of creating or updating the geofence.
       sig { returns(T.nilable(Float)) }
       attr_reader :ic_denoise
 
@@ -97,8 +97,8 @@ module Nextbillionai
       # time, as a UNIX epoch timestamp in seconds, which was used to determine the
       # geofence boundary after taking into account the traffic conditions at the time.
       #
-      # The value would be the same as that provided for the `departure_time` parameter
-      # at the time of creating or updating the geofence.
+      # The value would be the same as that provided for the departure_time parameter at
+      # the time of creating or updating the geofence.
       sig { returns(T.nilable(Integer)) }
       attr_reader :ic_departure_time
 
@@ -108,8 +108,8 @@ module Nextbillionai
       # For a geofence based on isochrone contour, this property returns the driving
       # mode used to determine the geofence boundary.
       #
-      # The value would be the same as that provided for the `mode` parameter at the
-      # time of creating or updating the geofence.
+      # The value would be the same as that provided for the mode parameter at the time
+      # of creating or updating the geofence.
       sig { returns(T.nilable(Float)) }
       attr_reader :ic_mode
 
@@ -130,8 +130,8 @@ module Nextbillionai
       sig { params(name: String).void }
       attr_writer :name
 
-      # An array of strings representing the `tags` associated with the geofence added
-      # at the time of creating or updating it.
+      # An array of strings representing the tags associated with the geofence added at
+      # the time of creating or updating it.
       sig { returns(T.nilable(T::Array[String])) }
       attr_reader :tags
 
@@ -178,8 +178,8 @@ module Nextbillionai
         # ID of the geofence provided/generated at the time of creating the geofence.
         id: nil,
         circle_center: nil,
-        # When the `type` of the geofence is `circle`, this property returns the radius of
-        # the geofence in meters (m).
+        # When the type of the geofence is circle, this property returns the radius of the
+        # geofence in meters (m).
         circle_radius: nil,
         # Time at which the geofence was created, expressed as a UNIX timestamp in
         # seconds.
@@ -190,44 +190,44 @@ module Nextbillionai
         # For a geofence based on isochrone contour determined using a specific driving
         # distance, this property returns the duration value, in meters.
         #
-        # The value would be the same as that provided for the `contours_meter` parameter
-        # at the time of creating or updating the geofence.
+        # The value would be the same as that provided for the contours_meter parameter at
+        # the time of creating or updating the geofence.
         ic_contours_meter: nil,
         # For a geofence based on isochrone contour determined using a specific driving
         # duration, this property returns the duration value, in minutes. The value would
-        # be the same as the value provided for the `contours_minute` parameter at the
-        # time of creating or updating the geofence.
+        # be the same as the value provided for the contours_minute parameter at the time
+        # of creating or updating the geofence.
         ic_contours_minute: nil,
         # For a geofence based on isochrone contour, this property returns the coordinates
         # of the location, in [latitude,longitude] format, which was used as the starting
         # point to identify the geofence boundary.
         #
-        # The value would be the same as that provided for the `coordinates` parameter at
+        # The value would be the same as that provided for the coordinates parameter at
         # the time of creating or updating the geofence.
         ic_coordinates: nil,
         # For a geofence based on isochrone contour, this property returns the denoise
-        # value which would be the same as that provided for the `denoise` parameter at
-        # the time of creating or updating the geofence.
+        # value which would be the same as that provided for the denoise parameter at the
+        # time of creating or updating the geofence.
         ic_denoise: nil,
         # For a geofence based on isochrone contour, this property returns the departure
         # time, as a UNIX epoch timestamp in seconds, which was used to determine the
         # geofence boundary after taking into account the traffic conditions at the time.
         #
-        # The value would be the same as that provided for the `departure_time` parameter
-        # at the time of creating or updating the geofence.
+        # The value would be the same as that provided for the departure_time parameter at
+        # the time of creating or updating the geofence.
         ic_departure_time: nil,
         # For a geofence based on isochrone contour, this property returns the driving
         # mode used to determine the geofence boundary.
         #
-        # The value would be the same as that provided for the `mode` parameter at the
-        # time of creating or updating the geofence.
+        # The value would be the same as that provided for the mode parameter at the time
+        # of creating or updating the geofence.
         ic_mode: nil,
         # Metadata of the geofence added at the time of creating or updating it.
         meta_data: nil,
         # Name of the geofence added at the time of creating or updating it.
         name: nil,
-        # An array of strings representing the `tags` associated with the geofence added
-        # at the time of creating or updating it.
+        # An array of strings representing the tags associated with the geofence added at
+        # the time of creating or updating it.
         tags: nil,
         # Type of the geofence.
         type: nil,
@@ -307,12 +307,11 @@ module Nextbillionai
           T.type_alias { T.all(Symbol, Nextbillionai::GeofenceAPI::Type) }
         OrSymbol = T.type_alias { T.any(Symbol, String) }
 
-        CIRCLE =
-          T.let(:"`circle`", Nextbillionai::GeofenceAPI::Type::TaggedSymbol)
+        CIRCLE = T.let(:circle, Nextbillionai::GeofenceAPI::Type::TaggedSymbol)
         POLYGON =
-          T.let(:"`polygon`", Nextbillionai::GeofenceAPI::Type::TaggedSymbol)
+          T.let(:polygon, Nextbillionai::GeofenceAPI::Type::TaggedSymbol)
         ISOCHRONE =
-          T.let(:"`isochrone`", Nextbillionai::GeofenceAPI::Type::TaggedSymbol)
+          T.let(:isochrone, Nextbillionai::GeofenceAPI::Type::TaggedSymbol)
 
         sig do
           override.returns(

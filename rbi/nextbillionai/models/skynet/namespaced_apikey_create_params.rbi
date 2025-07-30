@@ -20,11 +20,10 @@ module Nextbillionai
         sig { returns(String) }
         attr_accessor :key
 
-        # Specify a name for the `namespace`. If the namespace specified is unique then a
+        # Specify a name for the namespace. If the namespace specified is unique then a
         # new namespace along with a new key is created. Whereas if the specified
-        # `namespace` is not unique, a new key will be created in the existing
-        # `namespace`. Please note that a `namespace` cannot be created using another
-        # namespace key.
+        # namespace is not unique, a new key will be created in the existing namespace.
+        # Please note that a namespace cannot be created using another namespace key.
         sig { returns(String) }
         attr_accessor :namespace
 
@@ -39,11 +38,10 @@ module Nextbillionai
           # A key is a unique identifier that is required to authenticate a request to the
           # API.
           key:,
-          # Specify a name for the `namespace`. If the namespace specified is unique then a
+          # Specify a name for the namespace. If the namespace specified is unique then a
           # new namespace along with a new key is created. Whereas if the specified
-          # `namespace` is not unique, a new key will be created in the existing
-          # `namespace`. Please note that a `namespace` cannot be created using another
-          # namespace key.
+          # namespace is not unique, a new key will be created in the existing namespace.
+          # Please note that a namespace cannot be created using another namespace key.
           namespace:,
           request_options: {}
         )

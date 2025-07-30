@@ -102,13 +102,13 @@ module Nextbillionai
         request_options: Nextbillionai::RequestOptions
       }
 
-      type approaches = :"`unrestricted`" | :"`curb`"
+      type approaches = :unrestricted | :curb
 
       module Approaches
         extend Nextbillionai::Internal::Type::Enum
 
-        UNRESTRICTED: :"`unrestricted`"
-        CURB: :"`curb`"
+        UNRESTRICTED: :unrestricted
+        CURB: :curb
 
         def self?.values: -> ::Array[Nextbillionai::Models::SnapToRoadSnapParams::approaches]
       end
@@ -126,45 +126,45 @@ module Nextbillionai
         def self?.values: -> ::Array[Nextbillionai::Models::SnapToRoadSnapParams::avoid]
       end
 
-      type geometry = :"`polyline`" | :"`polyline6`" | :"`geojson`"
+      type geometry = :polyline | :polyline6 | :geojson
 
       module Geometry
         extend Nextbillionai::Internal::Type::Enum
 
-        POLYLINE: :"`polyline`"
-        POLYLINE6: :"`polyline6`"
-        GEOJSON: :"`geojson`"
+        POLYLINE: :polyline
+        POLYLINE6: :polyline6
+        GEOJSON: :geojson
 
         def self?.values: -> ::Array[Nextbillionai::Models::SnapToRoadSnapParams::geometry]
       end
 
-      type mode = :"`car`" | :"`truck`"
+      type mode = :car | :truck
 
       module Mode
         extend Nextbillionai::Internal::Type::Enum
 
-        CAR: :"`car`"
-        TRUCK: :"`truck`"
+        CAR: :car
+        TRUCK: :truck
 
         def self?.values: -> ::Array[Nextbillionai::Models::SnapToRoadSnapParams::mode]
       end
 
-      type option = :"`flexible`"
+      type option = :flexible
 
       module Option
         extend Nextbillionai::Internal::Type::Enum
 
-        FLEXIBLE: :"`flexible`"
+        FLEXIBLE: :flexible
 
         def self?.values: -> ::Array[Nextbillionai::Models::SnapToRoadSnapParams::option]
       end
 
-      type road_info = :"`max_speed`"
+      type road_info = :max_speed
 
       module RoadInfo
         extend Nextbillionai::Internal::Type::Enum
 
-        MAX_SPEED: :"`max_speed`"
+        MAX_SPEED: :max_speed
 
         def self?.values: -> ::Array[Nextbillionai::Models::SnapToRoadSnapParams::road_info]
       end

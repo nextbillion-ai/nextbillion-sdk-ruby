@@ -48,7 +48,7 @@ module Nextbillionai
         #
         # @param cluster [Symbol, Nextbillionai::Models::Skynet::TripUpdateParams::Cluster] Query param: the cluster of the region you want to use
         #
-        # @param attributes [Object] Body param: Use this field to update the `attributes` of the trip. Please note t
+        # @param attributes [Object] Body param: Use this field to update the attributes of the trip. Please note tha
         #
         # @param description [String] Body param: Use this parameter to update the custom description of the trip.
         #
@@ -178,9 +178,9 @@ module Nextbillionai
         #
         # @param cluster [Symbol, Nextbillionai::Models::Skynet::TripStartParams::Cluster] Query param: the cluster of the region you want to use
         #
-        # @param attributes [Object] Body param: `attributes` can be used to store custom information about a trip in
+        # @param attributes [Object] Body param: attributes can be used to store custom information about a trip in k
         #
-        # @param custom_id [String] Body param: Set a unique ID for the new `trip`. If not provided, an ID will be a
+        # @param custom_id [String] Body param: Set a unique ID for the new trip. If not provided, an ID will be aut
         #
         # @param description [String] Body param: Add a custom description for the trip.
         #

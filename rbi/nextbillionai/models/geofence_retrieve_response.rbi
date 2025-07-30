@@ -26,7 +26,7 @@ module Nextbillionai
       attr_writer :data
 
       # A string indicating the state of the response. On successful responses, the
-      # value will be `Ok`. Indicative error messages are returned for different errors.
+      # value will be Ok. Indicative error messages are returned for different errors.
       # See the [API Error Codes](#api-error-codes) section below for more information.
       sig { returns(T.nilable(String)) }
       attr_reader :status
@@ -43,7 +43,7 @@ module Nextbillionai
       def self.new(
         data: nil,
         # A string indicating the state of the response. On successful responses, the
-        # value will be `Ok`. Indicative error messages are returned for different errors.
+        # value will be Ok. Indicative error messages are returned for different errors.
         # See the [API Error Codes](#api-error-codes) section below for more information.
         status: nil
       )
