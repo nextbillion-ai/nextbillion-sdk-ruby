@@ -1,0 +1,165 @@
+module Nextbillionai
+  module Models
+    module Fleetify
+      module Routes
+        type step_update_params =
+          {
+            route_id: String,
+            key: String,
+            arrival: Integer,
+            position: Integer,
+            address: String,
+            completion_mode: Nextbillionai::Models::Fleetify::Routes::route_step_completion_mode,
+            document_template_id: String,
+            duration: Integer,
+            geofence_config: Nextbillionai::Fleetify::Routes::RouteStepGeofenceConfig,
+            location: ::Array[Float],
+            meta: Nextbillionai::Fleetify::Routes::StepUpdateParams::Meta,
+            type: Nextbillionai::Models::Fleetify::Routes::StepUpdateParams::type_
+          }
+          & Nextbillionai::Internal::Type::request_parameters
+
+        class StepUpdateParams < Nextbillionai::Internal::Type::BaseModel
+          extend Nextbillionai::Internal::Type::RequestParameters::Converter
+          include Nextbillionai::Internal::Type::RequestParameters
+
+          attr_accessor route_id: String
+
+          attr_accessor key: String
+
+          attr_accessor arrival: Integer
+
+          attr_accessor position: Integer
+
+          attr_reader address: String?
+
+          def address=: (String) -> String
+
+          attr_reader completion_mode: Nextbillionai::Models::Fleetify::Routes::route_step_completion_mode?
+
+          def completion_mode=: (
+            Nextbillionai::Models::Fleetify::Routes::route_step_completion_mode
+          ) -> Nextbillionai::Models::Fleetify::Routes::route_step_completion_mode
+
+          attr_reader document_template_id: String?
+
+          def document_template_id=: (String) -> String
+
+          attr_reader duration: Integer?
+
+          def duration=: (Integer) -> Integer
+
+          attr_reader geofence_config: Nextbillionai::Fleetify::Routes::RouteStepGeofenceConfig?
+
+          def geofence_config=: (
+            Nextbillionai::Fleetify::Routes::RouteStepGeofenceConfig
+          ) -> Nextbillionai::Fleetify::Routes::RouteStepGeofenceConfig
+
+          attr_reader location: ::Array[Float]?
+
+          def location=: (::Array[Float]) -> ::Array[Float]
+
+          attr_reader meta: Nextbillionai::Fleetify::Routes::StepUpdateParams::Meta?
+
+          def meta=: (
+            Nextbillionai::Fleetify::Routes::StepUpdateParams::Meta
+          ) -> Nextbillionai::Fleetify::Routes::StepUpdateParams::Meta
+
+          attr_reader type: Nextbillionai::Models::Fleetify::Routes::StepUpdateParams::type_?
+
+          def type=: (
+            Nextbillionai::Models::Fleetify::Routes::StepUpdateParams::type_
+          ) -> Nextbillionai::Models::Fleetify::Routes::StepUpdateParams::type_
+
+          def initialize: (
+            route_id: String,
+            key: String,
+            arrival: Integer,
+            position: Integer,
+            ?address: String,
+            ?completion_mode: Nextbillionai::Models::Fleetify::Routes::route_step_completion_mode,
+            ?document_template_id: String,
+            ?duration: Integer,
+            ?geofence_config: Nextbillionai::Fleetify::Routes::RouteStepGeofenceConfig,
+            ?location: ::Array[Float],
+            ?meta: Nextbillionai::Fleetify::Routes::StepUpdateParams::Meta,
+            ?type: Nextbillionai::Models::Fleetify::Routes::StepUpdateParams::type_,
+            ?request_options: Nextbillionai::request_opts
+          ) -> void
+
+          def to_hash: -> {
+            route_id: String,
+            key: String,
+            arrival: Integer,
+            position: Integer,
+            address: String,
+            completion_mode: Nextbillionai::Models::Fleetify::Routes::route_step_completion_mode,
+            document_template_id: String,
+            duration: Integer,
+            geofence_config: Nextbillionai::Fleetify::Routes::RouteStepGeofenceConfig,
+            location: ::Array[Float],
+            meta: Nextbillionai::Fleetify::Routes::StepUpdateParams::Meta,
+            type: Nextbillionai::Models::Fleetify::Routes::StepUpdateParams::type_,
+            request_options: Nextbillionai::RequestOptions
+          }
+
+          type meta =
+            {
+              customer_name: String,
+              customer_phone_number: String,
+              instructions: String
+            }
+
+          class Meta < Nextbillionai::Internal::Type::BaseModel
+            attr_reader customer_name: String?
+
+            def customer_name=: (String) -> String
+
+            attr_reader customer_phone_number: String?
+
+            def customer_phone_number=: (String) -> String
+
+            attr_reader instructions: String?
+
+            def instructions=: (String) -> String
+
+            def initialize: (
+              ?customer_name: String,
+              ?customer_phone_number: String,
+              ?instructions: String
+            ) -> void
+
+            def to_hash: -> {
+              customer_name: String,
+              customer_phone_number: String,
+              instructions: String
+            }
+          end
+
+          type type_ =
+            :"`start`"
+            | :"`job`"
+            | :"`pickup`"
+            | :"`delivery`"
+            | :"`break`"
+            | :"`layover`"
+            | :"`end`"
+
+          module Type
+            extend Nextbillionai::Internal::Type::Enum
+
+            START: :"`start`"
+            JOB: :"`job`"
+            PICKUP: :"`pickup`"
+            DELIVERY: :"`delivery`"
+            BREAK: :"`break`"
+            LAYOVER: :"`layover`"
+            END_: :"`end`"
+
+            def self?.values: -> ::Array[Nextbillionai::Models::Fleetify::Routes::StepUpdateParams::type_]
+          end
+        end
+      end
+    end
+  end
+end

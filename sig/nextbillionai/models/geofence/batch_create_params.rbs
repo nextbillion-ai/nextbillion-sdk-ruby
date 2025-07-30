@@ -1,0 +1,34 @@
+module Nextbillionai
+  module Models
+    module Geofence
+      type batch_create_params =
+        { key: String, geofences: ::Array[Nextbillionai::GeofenceEntityCreate] }
+        & Nextbillionai::Internal::Type::request_parameters
+
+      class BatchCreateParams < Nextbillionai::Internal::Type::BaseModel
+        extend Nextbillionai::Internal::Type::RequestParameters::Converter
+        include Nextbillionai::Internal::Type::RequestParameters
+
+        attr_accessor key: String
+
+        attr_reader geofences: ::Array[Nextbillionai::GeofenceEntityCreate]?
+
+        def geofences=: (
+          ::Array[Nextbillionai::GeofenceEntityCreate]
+        ) -> ::Array[Nextbillionai::GeofenceEntityCreate]
+
+        def initialize: (
+          key: String,
+          ?geofences: ::Array[Nextbillionai::GeofenceEntityCreate],
+          ?request_options: Nextbillionai::request_opts
+        ) -> void
+
+        def to_hash: -> {
+          key: String,
+          geofences: ::Array[Nextbillionai::GeofenceEntityCreate],
+          request_options: Nextbillionai::RequestOptions
+        }
+      end
+    end
+  end
+end

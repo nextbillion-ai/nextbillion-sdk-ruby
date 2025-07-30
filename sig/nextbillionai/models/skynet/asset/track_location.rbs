@@ -1,0 +1,100 @@
+module Nextbillionai
+  module Models
+    module Skynet
+      module Asset
+        type track_location =
+          {
+            accuracy: Float,
+            altitude: Float,
+            battery_level: Integer,
+            bearing: Float,
+            location: Nextbillionai::Skynet::Asset::TrackLocation::Location,
+            meta_data: top,
+            speed: Float,
+            timestamp: Integer,
+            tracking_mode: String
+          }
+
+        class TrackLocation < Nextbillionai::Internal::Type::BaseModel
+          attr_reader accuracy: Float?
+
+          def accuracy=: (Float) -> Float
+
+          attr_reader altitude: Float?
+
+          def altitude=: (Float) -> Float
+
+          attr_reader battery_level: Integer?
+
+          def battery_level=: (Integer) -> Integer
+
+          attr_reader bearing: Float?
+
+          def bearing=: (Float) -> Float
+
+          attr_reader location: Nextbillionai::Skynet::Asset::TrackLocation::Location?
+
+          def location=: (
+            Nextbillionai::Skynet::Asset::TrackLocation::Location
+          ) -> Nextbillionai::Skynet::Asset::TrackLocation::Location
+
+          attr_reader meta_data: top?
+
+          def meta_data=: (top) -> top
+
+          attr_reader speed: Float?
+
+          def speed=: (Float) -> Float
+
+          attr_reader timestamp: Integer?
+
+          def timestamp=: (Integer) -> Integer
+
+          attr_reader tracking_mode: String?
+
+          def tracking_mode=: (String) -> String
+
+          def initialize: (
+            ?accuracy: Float,
+            ?altitude: Float,
+            ?battery_level: Integer,
+            ?bearing: Float,
+            ?location: Nextbillionai::Skynet::Asset::TrackLocation::Location,
+            ?meta_data: top,
+            ?speed: Float,
+            ?timestamp: Integer,
+            ?tracking_mode: String
+          ) -> void
+
+          def to_hash: -> {
+            accuracy: Float,
+            altitude: Float,
+            battery_level: Integer,
+            bearing: Float,
+            location: Nextbillionai::Skynet::Asset::TrackLocation::Location,
+            meta_data: top,
+            speed: Float,
+            timestamp: Integer,
+            tracking_mode: String
+          }
+
+          type location = { lat: Float, lon: Float }
+
+          class Location < Nextbillionai::Internal::Type::BaseModel
+            attr_reader lat: Float?
+
+            def lat=: (Float) -> Float
+
+            attr_reader lon: Float?
+
+            def lon=: (Float) -> Float
+
+            def initialize: (?lat: Float, ?lon: Float) -> void
+
+            def to_hash: -> { lat: Float, lon: Float }
+          end
+        end
+      end
+    end
+  end
+end

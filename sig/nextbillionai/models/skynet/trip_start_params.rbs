@@ -1,0 +1,120 @@
+module Nextbillionai
+  module Models
+    module Skynet
+      type trip_start_params =
+        {
+          key: String,
+          asset_id: String,
+          cluster: Nextbillionai::Models::Skynet::TripStartParams::cluster,
+          attributes: top,
+          custom_id: String,
+          description: String,
+          meta_data: top,
+          name: String,
+          stops: ::Array[Nextbillionai::Skynet::TripStartParams::Stop]
+        }
+        & Nextbillionai::Internal::Type::request_parameters
+
+      class TripStartParams < Nextbillionai::Internal::Type::BaseModel
+        extend Nextbillionai::Internal::Type::RequestParameters::Converter
+        include Nextbillionai::Internal::Type::RequestParameters
+
+        attr_accessor key: String
+
+        attr_accessor asset_id: String
+
+        attr_reader cluster: Nextbillionai::Models::Skynet::TripStartParams::cluster?
+
+        def cluster=: (
+          Nextbillionai::Models::Skynet::TripStartParams::cluster
+        ) -> Nextbillionai::Models::Skynet::TripStartParams::cluster
+
+        attr_reader attributes: top?
+
+        def attributes=: (top) -> top
+
+        attr_reader custom_id: String?
+
+        def custom_id=: (String) -> String
+
+        attr_reader description: String?
+
+        def description=: (String) -> String
+
+        attr_reader meta_data: top?
+
+        def meta_data=: (top) -> top
+
+        attr_reader name: String?
+
+        def name=: (String) -> String
+
+        attr_reader stops: ::Array[Nextbillionai::Skynet::TripStartParams::Stop]?
+
+        def stops=: (
+          ::Array[Nextbillionai::Skynet::TripStartParams::Stop]
+        ) -> ::Array[Nextbillionai::Skynet::TripStartParams::Stop]
+
+        def initialize: (
+          key: String,
+          asset_id: String,
+          ?cluster: Nextbillionai::Models::Skynet::TripStartParams::cluster,
+          ?attributes: top,
+          ?custom_id: String,
+          ?description: String,
+          ?meta_data: top,
+          ?name: String,
+          ?stops: ::Array[Nextbillionai::Skynet::TripStartParams::Stop],
+          ?request_options: Nextbillionai::request_opts
+        ) -> void
+
+        def to_hash: -> {
+          key: String,
+          asset_id: String,
+          cluster: Nextbillionai::Models::Skynet::TripStartParams::cluster,
+          attributes: top,
+          custom_id: String,
+          description: String,
+          meta_data: top,
+          name: String,
+          stops: ::Array[Nextbillionai::Skynet::TripStartParams::Stop],
+          request_options: Nextbillionai::RequestOptions
+        }
+
+        type cluster = :america
+
+        module Cluster
+          extend Nextbillionai::Internal::Type::Enum
+
+          AMERICA: :america
+
+          def self?.values: -> ::Array[Nextbillionai::Models::Skynet::TripStartParams::cluster]
+        end
+
+        type stop = { geofence_id: String, meta_data: top, name: String }
+
+        class Stop < Nextbillionai::Internal::Type::BaseModel
+          attr_reader geofence_id: String?
+
+          def geofence_id=: (String) -> String
+
+          attr_reader meta_data: top?
+
+          def meta_data=: (top) -> top
+
+          attr_reader name: String?
+
+          def name=: (String) -> String
+
+          def initialize: (
+            ?geofence_id: String,
+            ?meta_data: top,
+            ?name: String
+          ) -> void
+
+          def to_hash: -> { geofence_id: String, meta_data: top, name: String }
+        end
+      end
+    end
+  end
+end

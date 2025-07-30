@@ -1,0 +1,118 @@
+module Nextbillionai
+  module Models
+    module Fleetify
+      type route_redispatch_params =
+        {
+          key: String,
+          operations: ::Array[Nextbillionai::Fleetify::RouteRedispatchParams::Operation],
+          distance: Float
+        }
+        & Nextbillionai::Internal::Type::request_parameters
+
+      class RouteRedispatchParams < Nextbillionai::Internal::Type::BaseModel
+        extend Nextbillionai::Internal::Type::RequestParameters::Converter
+        include Nextbillionai::Internal::Type::RequestParameters
+
+        attr_accessor key: String
+
+        attr_accessor operations: ::Array[Nextbillionai::Fleetify::RouteRedispatchParams::Operation]
+
+        attr_reader distance: Float?
+
+        def distance=: (Float) -> Float
+
+        def initialize: (
+          key: String,
+          operations: ::Array[Nextbillionai::Fleetify::RouteRedispatchParams::Operation],
+          ?distance: Float,
+          ?request_options: Nextbillionai::request_opts
+        ) -> void
+
+        def to_hash: -> {
+          key: String,
+          operations: ::Array[Nextbillionai::Fleetify::RouteRedispatchParams::Operation],
+          distance: Float,
+          request_options: Nextbillionai::RequestOptions
+        }
+
+        type operation =
+          {
+            data: Nextbillionai::Fleetify::RouteRedispatchParams::Operation::Data,
+            operation: Nextbillionai::Models::Fleetify::RouteRedispatchParams::Operation::operation
+          }
+
+        class Operation < Nextbillionai::Internal::Type::BaseModel
+          attr_accessor data: Nextbillionai::Fleetify::RouteRedispatchParams::Operation::Data
+
+          attr_accessor operation: Nextbillionai::Models::Fleetify::RouteRedispatchParams::Operation::operation
+
+          def initialize: (
+            data: Nextbillionai::Fleetify::RouteRedispatchParams::Operation::Data,
+            operation: Nextbillionai::Models::Fleetify::RouteRedispatchParams::Operation::operation
+          ) -> void
+
+          def to_hash: -> {
+            data: Nextbillionai::Fleetify::RouteRedispatchParams::Operation::Data,
+            operation: Nextbillionai::Models::Fleetify::RouteRedispatchParams::Operation::operation
+          }
+
+          type data =
+            {
+              completion_mode: Nextbillionai::Models::Fleetify::Routes::route_step_completion_mode,
+              document_template_id: String,
+              step: Nextbillionai::Fleetify::Routes::RouteStepsRequest,
+              step_id: String
+            }
+
+          class Data < Nextbillionai::Internal::Type::BaseModel
+            attr_reader completion_mode: Nextbillionai::Models::Fleetify::Routes::route_step_completion_mode?
+
+            def completion_mode=: (
+              Nextbillionai::Models::Fleetify::Routes::route_step_completion_mode
+            ) -> Nextbillionai::Models::Fleetify::Routes::route_step_completion_mode
+
+            attr_reader document_template_id: String?
+
+            def document_template_id=: (String) -> String
+
+            attr_reader step: Nextbillionai::Fleetify::Routes::RouteStepsRequest?
+
+            def step=: (
+              Nextbillionai::Fleetify::Routes::RouteStepsRequest
+            ) -> Nextbillionai::Fleetify::Routes::RouteStepsRequest
+
+            attr_reader step_id: String?
+
+            def step_id=: (String) -> String
+
+            def initialize: (
+              ?completion_mode: Nextbillionai::Models::Fleetify::Routes::route_step_completion_mode,
+              ?document_template_id: String,
+              ?step: Nextbillionai::Fleetify::Routes::RouteStepsRequest,
+              ?step_id: String
+            ) -> void
+
+            def to_hash: -> {
+              completion_mode: Nextbillionai::Models::Fleetify::Routes::route_step_completion_mode,
+              document_template_id: String,
+              step: Nextbillionai::Fleetify::Routes::RouteStepsRequest,
+              step_id: String
+            }
+          end
+
+          type operation = :"`create`" | :"`update`" | :"`delete`"
+
+          module Operation
+            extend Nextbillionai::Internal::Type::Enum
+
+            CREATE: :"`create`"
+            UPDATE: :"`update`"
+            DELETE: :"`delete`"
+
+            def self?.values: -> ::Array[Nextbillionai::Models::Fleetify::RouteRedispatchParams::Operation::operation]
+          end
+        end
+      end
+    end
+  end
+end

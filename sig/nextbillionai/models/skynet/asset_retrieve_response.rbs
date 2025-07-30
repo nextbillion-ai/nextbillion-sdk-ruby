@@ -1,0 +1,54 @@
+module Nextbillionai
+  module Models
+    module Skynet
+      type asset_retrieve_response =
+        {
+          data: Nextbillionai::Models::Skynet::AssetRetrieveResponse::Data,
+          message: String,
+          status: String
+        }
+
+      class AssetRetrieveResponse < Nextbillionai::Internal::Type::BaseModel
+        attr_reader data: Nextbillionai::Models::Skynet::AssetRetrieveResponse::Data?
+
+        def data=: (
+          Nextbillionai::Models::Skynet::AssetRetrieveResponse::Data
+        ) -> Nextbillionai::Models::Skynet::AssetRetrieveResponse::Data
+
+        attr_reader message: String?
+
+        def message=: (String) -> String
+
+        attr_reader status: String?
+
+        def status=: (String) -> String
+
+        def initialize: (
+          ?data: Nextbillionai::Models::Skynet::AssetRetrieveResponse::Data,
+          ?message: String,
+          ?status: String
+        ) -> void
+
+        def to_hash: -> {
+          data: Nextbillionai::Models::Skynet::AssetRetrieveResponse::Data,
+          message: String,
+          status: String
+        }
+
+        type data = { asset: Nextbillionai::Skynet::AssetDetails }
+
+        class Data < Nextbillionai::Internal::Type::BaseModel
+          attr_reader asset: Nextbillionai::Skynet::AssetDetails?
+
+          def asset=: (
+            Nextbillionai::Skynet::AssetDetails
+          ) -> Nextbillionai::Skynet::AssetDetails
+
+          def initialize: (?asset: Nextbillionai::Skynet::AssetDetails) -> void
+
+          def to_hash: -> { asset: Nextbillionai::Skynet::AssetDetails }
+        end
+      end
+    end
+  end
+end

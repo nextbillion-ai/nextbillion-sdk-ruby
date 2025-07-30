@@ -1,0 +1,28 @@
+module Nextbillionai
+  module Models
+    type lookup_by_id_params =
+      { id: String, key: String }
+      & Nextbillionai::Internal::Type::request_parameters
+
+    class LookupByIDParams < Nextbillionai::Internal::Type::BaseModel
+      extend Nextbillionai::Internal::Type::RequestParameters::Converter
+      include Nextbillionai::Internal::Type::RequestParameters
+
+      attr_accessor id: String
+
+      attr_accessor key: String
+
+      def initialize: (
+        id: String,
+        key: String,
+        ?request_options: Nextbillionai::request_opts
+      ) -> void
+
+      def to_hash: -> {
+        id: String,
+        key: String,
+        request_options: Nextbillionai::RequestOptions
+      }
+    end
+  end
+end

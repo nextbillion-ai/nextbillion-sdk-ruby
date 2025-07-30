@@ -1,0 +1,84 @@
+module Nextbillionai
+  module Models
+    type postalcode_retrieve_coordinates_params =
+      {
+        key: String,
+        at: Nextbillionai::PostalcodeRetrieveCoordinatesParams::At,
+        country: String,
+        format_: Nextbillionai::Models::PostalcodeRetrieveCoordinatesParams::format_,
+        postalcode: String
+      }
+      & Nextbillionai::Internal::Type::request_parameters
+
+    class PostalcodeRetrieveCoordinatesParams < Nextbillionai::Internal::Type::BaseModel
+      extend Nextbillionai::Internal::Type::RequestParameters::Converter
+      include Nextbillionai::Internal::Type::RequestParameters
+
+      attr_accessor key: String
+
+      attr_reader at: Nextbillionai::PostalcodeRetrieveCoordinatesParams::At?
+
+      def at=: (
+        Nextbillionai::PostalcodeRetrieveCoordinatesParams::At
+      ) -> Nextbillionai::PostalcodeRetrieveCoordinatesParams::At
+
+      attr_reader country: String?
+
+      def country=: (String) -> String
+
+      attr_reader format_: Nextbillionai::Models::PostalcodeRetrieveCoordinatesParams::format_?
+
+      def format_=: (
+        Nextbillionai::Models::PostalcodeRetrieveCoordinatesParams::format_
+      ) -> Nextbillionai::Models::PostalcodeRetrieveCoordinatesParams::format_
+
+      attr_reader postalcode: String?
+
+      def postalcode=: (String) -> String
+
+      def initialize: (
+        key: String,
+        ?at: Nextbillionai::PostalcodeRetrieveCoordinatesParams::At,
+        ?country: String,
+        ?format_: Nextbillionai::Models::PostalcodeRetrieveCoordinatesParams::format_,
+        ?postalcode: String,
+        ?request_options: Nextbillionai::request_opts
+      ) -> void
+
+      def to_hash: -> {
+        key: String,
+        at: Nextbillionai::PostalcodeRetrieveCoordinatesParams::At,
+        country: String,
+        format_: Nextbillionai::Models::PostalcodeRetrieveCoordinatesParams::format_,
+        postalcode: String,
+        request_options: Nextbillionai::RequestOptions
+      }
+
+      type at = { lat: Float, lng: Float }
+
+      class At < Nextbillionai::Internal::Type::BaseModel
+        attr_reader lat: Float?
+
+        def lat=: (Float) -> Float
+
+        attr_reader lng: Float?
+
+        def lng=: (Float) -> Float
+
+        def initialize: (?lat: Float, ?lng: Float) -> void
+
+        def to_hash: -> { lat: Float, lng: Float }
+      end
+
+      type format_ = :"`geojson`"
+
+      module Format
+        extend Nextbillionai::Internal::Type::Enum
+
+        GEOJSON: :"`geojson`"
+
+        def self?.values: -> ::Array[Nextbillionai::Models::PostalcodeRetrieveCoordinatesParams::format_]
+      end
+    end
+  end
+end

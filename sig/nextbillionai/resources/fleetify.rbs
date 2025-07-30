@@ -1,0 +1,11 @@
+module Nextbillionai
+  module Resources
+    class Fleetify
+      attr_reader routes: Nextbillionai::Resources::Fleetify::Routes
+
+      attr_reader document_templates: Nextbillionai::Resources::Fleetify::DocumentTemplates
+
+      def initialize: (client: Nextbillionai::Client) -> void
+    end
+  end
+end
