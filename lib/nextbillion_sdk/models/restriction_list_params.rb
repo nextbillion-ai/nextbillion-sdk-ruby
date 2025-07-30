@@ -24,7 +24,7 @@ module NextbillionSDK
 
       # @!attribute limit
       #   The number of restrictions to be returned in the response. Please note that if
-      #   the `limit` is set to a number more than the total number of available
+      #   the limit is set to a number more than the total number of available
       #   restrictions, then all restrictions would be returned together.
       #
       #   @return [Integer]
@@ -36,7 +36,7 @@ module NextbillionSDK
       #   first item returned in the result would be the item at (offset + 1) position in
       #   collection.
       #
-      #   Users can use `offset` along with `limit` to implement paginated result.
+      #   Users can use offset along with limit to implement paginated result.
       #
       #   @return [Integer]
       required :offset, Integer
@@ -70,7 +70,7 @@ module NextbillionSDK
       # @!attribute state
       #   This parameter is used to filter restrictions based on their state i.e. whether
       #   the restriction is currently enabled, disabled, or deleted. For example, users
-      #   can retrieve a list of all the deleted restrictions by setting `state=deleted`.
+      #   can retrieve a list of all the deleted restrictions by setting state=deleted.
       #
       #   @return [Symbol, NextbillionSDK::Models::RestrictionListParams::State, nil]
       optional :state, enum: -> { NextbillionSDK::RestrictionListParams::State }
@@ -125,11 +125,11 @@ module NextbillionSDK
       module Mode
         extend NextbillionSDK::Internal::Type::Enum
 
-        MODE_0W = :"`0w`"
-        MODE_2W = :"`2w`"
-        MODE_3W = :"`3w`"
-        MODE_4W = :"`4w`"
-        MODE_6W = :"`6w`"
+        MODE_0W = :"0w"
+        MODE_2W = :"2w"
+        MODE_3W = :"3w"
+        MODE_4W = :"4w"
+        MODE_6W = :"6w"
 
         # @!method self.values
         #   @return [Array<Symbol>]
@@ -139,12 +139,12 @@ module NextbillionSDK
       module RestrictionType
         extend NextbillionSDK::Internal::Type::Enum
 
-        TURN = :"`turn`"
-        PARKING = :"`parking`"
-        FIXEDSPEED = :"`fixedspeed`"
-        MAXSPEED = :"`maxspeed`"
-        CLOSURE = :"`closure`"
-        TRUCK = :"`truck`"
+        TURN = :turn
+        PARKING = :parking
+        FIXEDSPEED = :fixedspeed
+        MAXSPEED = :maxspeed
+        CLOSURE = :closure
+        TRUCK = :truck
 
         # @!method self.values
         #   @return [Array<Symbol>]
@@ -164,13 +164,13 @@ module NextbillionSDK
 
       # This parameter is used to filter restrictions based on their state i.e. whether
       # the restriction is currently enabled, disabled, or deleted. For example, users
-      # can retrieve a list of all the deleted restrictions by setting `state=deleted`.
+      # can retrieve a list of all the deleted restrictions by setting state=deleted.
       module State
         extend NextbillionSDK::Internal::Type::Enum
 
-        ENABLED = :"`enabled`"
-        DISABLED = :"`disabled`"
-        DELETED = :"`deleted`"
+        ENABLED = :enabled
+        DISABLED = :disabled
+        DELETED = :deleted
 
         # @!method self.values
         #   @return [Array<Symbol>]
@@ -186,8 +186,8 @@ module NextbillionSDK
       module Status
         extend NextbillionSDK::Internal::Type::Enum
 
-        ACTIVE = :"`active`"
-        INACTIVE = :"`inactive`"
+        ACTIVE = :active
+        INACTIVE = :inactive
 
         # @!method self.values
         #   @return [Array<Symbol>]

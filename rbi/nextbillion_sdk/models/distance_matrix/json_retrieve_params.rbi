@@ -2,7 +2,7 @@
 
 module NextbillionSDK
   module Models
-    module Distancematrix
+    module DistanceMatrix
       class JsonRetrieveParams < NextbillionSDK::Internal::Type::BaseModel
         extend NextbillionSDK::Internal::Type::RequestParameters::Converter
         include NextbillionSDK::Internal::Type::RequestParameters
@@ -10,7 +10,7 @@ module NextbillionSDK
         OrHash =
           T.type_alias do
             T.any(
-              NextbillionSDK::Distancematrix::JsonRetrieveParams,
+              NextbillionSDK::DistanceMatrix::JsonRetrieveParams,
               NextbillionSDK::Internal::AnyHash
             )
           end
@@ -45,7 +45,7 @@ module NextbillionSDK
         sig do
           returns(
             T.nilable(
-              NextbillionSDK::Distancematrix::JsonRetrieveParams::Approaches::OrSymbol
+              NextbillionSDK::DistanceMatrix::JsonRetrieveParams::Approaches::OrSymbol
             )
           )
         end
@@ -54,7 +54,7 @@ module NextbillionSDK
         sig do
           params(
             approaches:
-              NextbillionSDK::Distancematrix::JsonRetrieveParams::Approaches::OrSymbol
+              NextbillionSDK::DistanceMatrix::JsonRetrieveParams::Approaches::OrSymbol
           ).void
         end
         attr_writer :approaches
@@ -68,7 +68,7 @@ module NextbillionSDK
         sig do
           returns(
             T.nilable(
-              NextbillionSDK::Distancematrix::JsonRetrieveParams::Avoid::OrSymbol
+              NextbillionSDK::DistanceMatrix::JsonRetrieveParams::Avoid::OrSymbol
             )
           )
         end
@@ -77,7 +77,7 @@ module NextbillionSDK
         sig do
           params(
             avoid:
-              NextbillionSDK::Distancematrix::JsonRetrieveParams::Avoid::OrSymbol
+              NextbillionSDK::DistanceMatrix::JsonRetrieveParams::Avoid::OrSymbol
           ).void
         end
         attr_writer :avoid
@@ -123,7 +123,7 @@ module NextbillionSDK
         sig do
           returns(
             T.nilable(
-              NextbillionSDK::Distancematrix::JsonRetrieveParams::Mode::OrSymbol
+              NextbillionSDK::DistanceMatrix::JsonRetrieveParams::Mode::OrSymbol
             )
           )
         end
@@ -132,7 +132,7 @@ module NextbillionSDK
         sig do
           params(
             mode:
-              NextbillionSDK::Distancematrix::JsonRetrieveParams::Mode::OrSymbol
+              NextbillionSDK::DistanceMatrix::JsonRetrieveParams::Mode::OrSymbol
           ).void
         end
         attr_writer :mode
@@ -165,12 +165,12 @@ module NextbillionSDK
             key: String,
             origins: String,
             approaches:
-              NextbillionSDK::Distancematrix::JsonRetrieveParams::Approaches::OrSymbol,
+              NextbillionSDK::DistanceMatrix::JsonRetrieveParams::Approaches::OrSymbol,
             avoid:
-              NextbillionSDK::Distancematrix::JsonRetrieveParams::Avoid::OrSymbol,
+              NextbillionSDK::DistanceMatrix::JsonRetrieveParams::Avoid::OrSymbol,
             bearings: String,
             mode:
-              NextbillionSDK::Distancematrix::JsonRetrieveParams::Mode::OrSymbol,
+              NextbillionSDK::DistanceMatrix::JsonRetrieveParams::Mode::OrSymbol,
             route_failed_prompt: T::Boolean,
             request_options: NextbillionSDK::RequestOptions::OrHash
           ).returns(T.attached_class)
@@ -267,12 +267,12 @@ module NextbillionSDK
               key: String,
               origins: String,
               approaches:
-                NextbillionSDK::Distancematrix::JsonRetrieveParams::Approaches::OrSymbol,
+                NextbillionSDK::DistanceMatrix::JsonRetrieveParams::Approaches::OrSymbol,
               avoid:
-                NextbillionSDK::Distancematrix::JsonRetrieveParams::Avoid::OrSymbol,
+                NextbillionSDK::DistanceMatrix::JsonRetrieveParams::Avoid::OrSymbol,
               bearings: String,
               mode:
-                NextbillionSDK::Distancematrix::JsonRetrieveParams::Mode::OrSymbol,
+                NextbillionSDK::DistanceMatrix::JsonRetrieveParams::Mode::OrSymbol,
               route_failed_prompt: T::Boolean,
               request_options: NextbillionSDK::RequestOptions
             }
@@ -298,26 +298,26 @@ module NextbillionSDK
             T.type_alias do
               T.all(
                 Symbol,
-                NextbillionSDK::Distancematrix::JsonRetrieveParams::Approaches
+                NextbillionSDK::DistanceMatrix::JsonRetrieveParams::Approaches
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
           UNRESTRICTED =
             T.let(
-              :"`unrestricted`",
-              NextbillionSDK::Distancematrix::JsonRetrieveParams::Approaches::TaggedSymbol
+              :unrestricted,
+              NextbillionSDK::DistanceMatrix::JsonRetrieveParams::Approaches::TaggedSymbol
             )
           CURB =
             T.let(
-              :"`curb`",
-              NextbillionSDK::Distancematrix::JsonRetrieveParams::Approaches::TaggedSymbol
+              :curb,
+              NextbillionSDK::DistanceMatrix::JsonRetrieveParams::Approaches::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                NextbillionSDK::Distancematrix::JsonRetrieveParams::Approaches::TaggedSymbol
+                NextbillionSDK::DistanceMatrix::JsonRetrieveParams::Approaches::TaggedSymbol
               ]
             )
           end
@@ -338,7 +338,7 @@ module NextbillionSDK
             T.type_alias do
               T.all(
                 Symbol,
-                NextbillionSDK::Distancematrix::JsonRetrieveParams::Avoid
+                NextbillionSDK::DistanceMatrix::JsonRetrieveParams::Avoid
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -346,28 +346,28 @@ module NextbillionSDK
           TOLL =
             T.let(
               :toll,
-              NextbillionSDK::Distancematrix::JsonRetrieveParams::Avoid::TaggedSymbol
+              NextbillionSDK::DistanceMatrix::JsonRetrieveParams::Avoid::TaggedSymbol
             )
           FERRY =
             T.let(
               :ferry,
-              NextbillionSDK::Distancematrix::JsonRetrieveParams::Avoid::TaggedSymbol
+              NextbillionSDK::DistanceMatrix::JsonRetrieveParams::Avoid::TaggedSymbol
             )
           HIGHWAY =
             T.let(
               :highway,
-              NextbillionSDK::Distancematrix::JsonRetrieveParams::Avoid::TaggedSymbol
+              NextbillionSDK::DistanceMatrix::JsonRetrieveParams::Avoid::TaggedSymbol
             )
           NONE =
             T.let(
               :none,
-              NextbillionSDK::Distancematrix::JsonRetrieveParams::Avoid::TaggedSymbol
+              NextbillionSDK::DistanceMatrix::JsonRetrieveParams::Avoid::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                NextbillionSDK::Distancematrix::JsonRetrieveParams::Avoid::TaggedSymbol
+                NextbillionSDK::DistanceMatrix::JsonRetrieveParams::Avoid::TaggedSymbol
               ]
             )
           end
@@ -407,26 +407,26 @@ module NextbillionSDK
             T.type_alias do
               T.all(
                 Symbol,
-                NextbillionSDK::Distancematrix::JsonRetrieveParams::Mode
+                NextbillionSDK::DistanceMatrix::JsonRetrieveParams::Mode
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
           CAR =
             T.let(
-              :"`car`",
-              NextbillionSDK::Distancematrix::JsonRetrieveParams::Mode::TaggedSymbol
+              :car,
+              NextbillionSDK::DistanceMatrix::JsonRetrieveParams::Mode::TaggedSymbol
             )
           TRUCK =
             T.let(
-              :"`truck`",
-              NextbillionSDK::Distancematrix::JsonRetrieveParams::Mode::TaggedSymbol
+              :truck,
+              NextbillionSDK::DistanceMatrix::JsonRetrieveParams::Mode::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                NextbillionSDK::Distancematrix::JsonRetrieveParams::Mode::TaggedSymbol
+                NextbillionSDK::DistanceMatrix::JsonRetrieveParams::Mode::TaggedSymbol
               ]
             )
           end

@@ -172,13 +172,13 @@ module NextbillionSDK
               status: NextbillionSDK::Models::Fleetify::RouteRedispatchResponse::Data::Completion::status
             }
 
-            type status = :"`scheduled`" | :"`completed`"
+            type status = :scheduled | :completed
 
             module Status
               extend NextbillionSDK::Internal::Type::Enum
 
-              SCHEDULED: :"`scheduled`"
-              COMPLETED: :"`completed`"
+              SCHEDULED: :scheduled
+              COMPLETED: :completed
 
               def self?.values: -> ::Array[NextbillionSDK::Models::Fleetify::RouteRedispatchResponse::Data::Completion::status]
             end

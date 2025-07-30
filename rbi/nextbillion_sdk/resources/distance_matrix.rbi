@@ -2,8 +2,8 @@
 
 module NextbillionSDK
   module Resources
-    class Distancematrix
-      sig { returns(NextbillionSDK::Resources::Distancematrix::Json) }
+    class DistanceMatrix
+      sig { returns(NextbillionSDK::Resources::DistanceMatrix::Json) }
       attr_reader :json
 
       # @api private

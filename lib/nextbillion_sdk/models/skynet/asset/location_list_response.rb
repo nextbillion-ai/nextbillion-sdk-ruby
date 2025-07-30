@@ -20,7 +20,7 @@ module NextbillionSDK
 
           # @!attribute status
           #   A string indicating the state of the response. On successful responses, the
-          #   value will be `Ok`. Indicative error messages are returned for different errors.
+          #   value will be Ok. Indicative error messages are returned for different errors.
           #   See the [API Error Codes](#api-error-codes) section below for more information.
           #
           #   @return [String, nil]
@@ -42,17 +42,17 @@ module NextbillionSDK
             #   Distance of the path, in meters, formed by connecting all tracked locations
             #   returned.
             #
-            #   Please note that `distance` is returned only when the `mapmatch` property of
-            #   `correction` parameter is set to 1.
+            #   Please note that distance is returned only when the mapmatch property of
+            #   correction parameter is set to 1.
             #
             #   @return [Float, nil]
             optional :distance, Float
 
             # @!attribute geojson
             #   An object with geoJSON details of the route. It is returned only when the
-            #   `mapmatch` property of the `correction` parameter is set to 1 and
-            #   `geometry_type` is `geojson, otherwise it is not present in the response. The
-            #   contents of this object follow the
+            #   mapmatch property of the correction parameter is set to 1 and geometry_type is
+            #   geojson, otherwise it is not present in the response. The contents of this
+            #   object follow the
             #   [geoJSON standard](https://datatracker.ietf.org/doc/html/rfc7946).
             #
             #   @return [NextbillionSDK::Models::Skynet::Asset::LocationListResponse::Data::Geojson, nil]
@@ -60,13 +60,13 @@ module NextbillionSDK
 
             # @!attribute geometry
             #   Geometry of tracked locations in the requested format. It is returned only if
-            #   the `mapmatch` property of the ‘correction’ parameter is set to 1.
+            #   the mapmatch property of the ‘correction’ parameter is set to 1.
             #
             #   @return [Array<String>, nil]
             optional :geometry, NextbillionSDK::Internal::Type::ArrayOf[String]
 
             # @!attribute list
-            #   An array of objects with details of the tracked locations of the `asset`. Each
+            #   An array of objects with details of the tracked locations of the asset. Each
             #   object represents one tracked location.
             #
             #   @return [Array<NextbillionSDK::Models::Skynet::Asset::TrackLocation>, nil]
@@ -84,10 +84,10 @@ module NextbillionSDK
 
             # @!attribute snapped_points
             #   An array of objects with details about the snapped points for each of the
-            #   tracked locations returned for the `asset`.
+            #   tracked locations returned for the asset.
             #
-            #   Please note that this property is returned only when the `mapmatch` property of
-            #   `correction` parameter is set to 1.
+            #   Please note that this property is returned only when the mapmatch property of
+            #   correction parameter is set to 1.
             #
             #   @return [Array<NextbillionSDK::Models::Skynet::Asset::LocationListResponse::Data::SnappedPoint>, nil]
             optional :snapped_points,
@@ -100,11 +100,11 @@ module NextbillionSDK
             #
             #   @param distance [Float] Distance of the path, in meters, formed by connecting all tracked locations retu
             #
-            #   @param geojson [NextbillionSDK::Models::Skynet::Asset::LocationListResponse::Data::Geojson] An object with geoJSON details of the route. It is returned only when the `mapma
+            #   @param geojson [NextbillionSDK::Models::Skynet::Asset::LocationListResponse::Data::Geojson] An object with geoJSON details of the route. It is returned only when the mapmat
             #
             #   @param geometry [Array<String>] Geometry of tracked locations in the requested format. It is returned only if th
             #
-            #   @param list [Array<NextbillionSDK::Models::Skynet::Asset::TrackLocation>] An array of objects with details of the tracked locations of the `asset`. Each o
+            #   @param list [Array<NextbillionSDK::Models::Skynet::Asset::TrackLocation>] An array of objects with details of the tracked locations of the asset. Each obj
             #
             #   @param page [NextbillionSDK::Models::Skynet::Pagination] An object with pagination details of the search results. Use this object to impl
             #
@@ -127,9 +127,9 @@ module NextbillionSDK
 
               # @!method initialize(geometry: nil, type: nil)
               #   An object with geoJSON details of the route. It is returned only when the
-              #   `mapmatch` property of the `correction` parameter is set to 1 and
-              #   `geometry_type` is `geojson, otherwise it is not present in the response. The
-              #   contents of this object follow the
+              #   mapmatch property of the correction parameter is set to 1 and geometry_type is
+              #   geojson, otherwise it is not present in the response. The contents of this
+              #   object follow the
               #   [geoJSON standard](https://datatracker.ietf.org/doc/html/rfc7946).
               #
               #   @param geometry [NextbillionSDK::Models::Skynet::Asset::LocationListResponse::Data::Geojson::Geometry] An object with details of the geoJSON geometry of the route.

@@ -20,11 +20,11 @@ module NextbillionSDK
         sig { returns(String) }
         attr_accessor :key
 
-        # Device ID to be linked to the `asset` identified by `id`.
+        # Device ID to be linked to the asset identified by id.
         #
-        # Please note that the device needs to be linked to an `asset` before using it in
+        # Please note that the device needs to be linked to an asset before using it in
         # the _Upload locations of an Asset_ method for sending GPS information about the
-        # `asset`.
+        # asset.
         sig { returns(String) }
         attr_accessor :device_id
 
@@ -39,11 +39,11 @@ module NextbillionSDK
           # A key is a unique identifier that is required to authenticate a request to the
           # API.
           key:,
-          # Device ID to be linked to the `asset` identified by `id`.
+          # Device ID to be linked to the asset identified by id.
           #
-          # Please note that the device needs to be linked to an `asset` before using it in
+          # Please note that the device needs to be linked to an asset before using it in
           # the _Upload locations of an Asset_ method for sending GPS information about the
-          # `asset`.
+          # asset.
           device_id:,
           request_options: {}
         )

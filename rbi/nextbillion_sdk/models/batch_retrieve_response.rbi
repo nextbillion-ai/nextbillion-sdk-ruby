@@ -43,7 +43,7 @@ module NextbillionSDK
       attr_writer :responses
 
       # Returns the overall status of the API request. Its value will always be one of
-      # `success`, `failed`, and `pending`.
+      # success, failed, and pending.
       sig { returns(T.nilable(String)) }
       attr_reader :status
 
@@ -78,7 +78,7 @@ module NextbillionSDK
         # query in the input.
         responses: nil,
         # Returns the overall status of the API request. Its value will always be one of
-        # `success`, `failed`, and `pending`.
+        # success, failed, and pending.
         status: nil,
         # Returns the unique ID of the batch processing task.
         track_id: nil
@@ -109,9 +109,9 @@ module NextbillionSDK
           end
 
         # An object returning the routing solution of an individual query. The JSON format
-        # and structure of the `response` would vary depending on the routing endpoint
-        # used in each individual query. However, it will be consistent with standard
-        # response for a given routing endpoint.
+        # and structure of the response would vary depending on the routing endpoint used
+        # in each individual query. However, it will be consistent with standard response
+        # for a given routing endpoint.
         sig { returns(T.nilable(T.anything)) }
         attr_reader :response
 
@@ -133,9 +133,9 @@ module NextbillionSDK
         end
         def self.new(
           # An object returning the routing solution of an individual query. The JSON format
-          # and structure of the `response` would vary depending on the routing endpoint
-          # used in each individual query. However, it will be consistent with standard
-          # response for a given routing endpoint.
+          # and structure of the response would vary depending on the routing endpoint used
+          # in each individual query. However, it will be consistent with standard response
+          # for a given routing endpoint.
           response: nil,
           # Returns the HTTP status code for the individual routing request. See the
           # [API Errors Codes](#api-error-codes) section below for more information.

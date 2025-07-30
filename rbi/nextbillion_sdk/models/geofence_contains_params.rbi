@@ -24,9 +24,9 @@ module NextbillionSDK
       sig { returns(String) }
       attr_accessor :locations
 
-      # A `,` separated list geofence IDs against which the `locations` will be
-      # searched. If not provided, then the 'locations' will be searched against all
-      # your existing geofences.
+      # A , separated list geofence IDs against which the locations will be searched. If
+      # not provided, then the 'locations' will be searched against all your existing
+      # geofences.
       #
       # Maximum length of the string can be 256 characters.
       sig { returns(T.nilable(String)) }
@@ -35,8 +35,8 @@ module NextbillionSDK
       sig { params(geofences: String).void }
       attr_writer :geofences
 
-      # When `true`, an array with detailed information of geofences is returned. When
-      # `false`, an array containing only the IDs of the geofences is returned.
+      # When true, an array with detailed information of geofences is returned. When
+      # false, an array containing only the IDs of the geofences is returned.
       sig { returns(T.nilable(String)) }
       attr_reader :verbose
 
@@ -59,14 +59,14 @@ module NextbillionSDK
         # Pipe (|) separated coordinates, in [latitude,longitude] format, of the locations
         # to be searched against the geofences.
         locations:,
-        # A `,` separated list geofence IDs against which the `locations` will be
-        # searched. If not provided, then the 'locations' will be searched against all
-        # your existing geofences.
+        # A , separated list geofence IDs against which the locations will be searched. If
+        # not provided, then the 'locations' will be searched against all your existing
+        # geofences.
         #
         # Maximum length of the string can be 256 characters.
         geofences: nil,
-        # When `true`, an array with detailed information of geofences is returned. When
-        # `false`, an array containing only the IDs of the geofences is returned.
+        # When true, an array with detailed information of geofences is returned. When
+        # false, an array containing only the IDs of the geofences is returned.
         verbose: nil,
         request_options: {}
       )

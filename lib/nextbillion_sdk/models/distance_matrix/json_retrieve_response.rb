@@ -2,8 +2,8 @@
 
 module NextbillionSDK
   module Models
-    module Distancematrix
-      # @see NextbillionSDK::Resources::Distancematrix::Json#retrieve
+    module DistanceMatrix
+      # @see NextbillionSDK::Resources::DistanceMatrix::Json#retrieve
       class JsonRetrieveResponse < NextbillionSDK::Internal::Type::BaseModel
         # @!attribute msg
         #   Displays the error message in case of a failed request or operation. Please note
@@ -16,13 +16,13 @@ module NextbillionSDK
         # @!attribute rows
         #   Container object for a response with an array of arrays structure.
         #
-        #   @return [Array<NextbillionSDK::Models::Distancematrix::JsonRetrieveResponse::Row>, nil]
+        #   @return [Array<NextbillionSDK::Models::DistanceMatrix::JsonRetrieveResponse::Row>, nil]
         optional :rows,
-                 -> { NextbillionSDK::Internal::Type::ArrayOf[NextbillionSDK::Models::Distancematrix::JsonRetrieveResponse::Row] }
+                 -> { NextbillionSDK::Internal::Type::ArrayOf[NextbillionSDK::Models::DistanceMatrix::JsonRetrieveResponse::Row] }
 
         # @!attribute status
         #   A string indicating the state of the response. On normal responses, the value
-        #   will be `Ok`. Indicative HTTP error codes are returned for different errors. See
+        #   will be Ok. Indicative HTTP error codes are returned for different errors. See
         #   the [API Errors Codes](#api-error-codes) section below for more information.
         #
         #   @return [String, nil]
@@ -30,32 +30,32 @@ module NextbillionSDK
 
         # @!method initialize(msg: nil, rows: nil, status: nil)
         #   Some parameter documentations has been truncated, see
-        #   {NextbillionSDK::Models::Distancematrix::JsonRetrieveResponse} for more details.
+        #   {NextbillionSDK::Models::DistanceMatrix::JsonRetrieveResponse} for more details.
         #
         #   @param msg [String] Displays the error message in case of a failed request or operation. Please note
         #
-        #   @param rows [Array<NextbillionSDK::Models::Distancematrix::JsonRetrieveResponse::Row>] Container object for a response with an array of arrays structure.
+        #   @param rows [Array<NextbillionSDK::Models::DistanceMatrix::JsonRetrieveResponse::Row>] Container object for a response with an array of arrays structure.
         #
         #   @param status [String] A string indicating the state of the response. On normal responses, the value wi
 
         class Row < NextbillionSDK::Internal::Type::BaseModel
           # @!attribute elements
-          #   An array of objects. Each `elements` array corresponds to a single `origins`
-          #   coordinate and contains objects with `distance` and `duration` values for each
-          #   of the `destinations`. The details in the first `elements` array correspond to
-          #   the first `origins` point and the first object corresponds to the first
-          #   `destinations` point and so on.
+          #   An array of objects. Each elements array corresponds to a single origins
+          #   coordinate and contains objects with distance and duration values for each of
+          #   the destinations. The details in the first elements array correspond to the
+          #   first origins point and the first object corresponds to the first destinations
+          #   point and so on.
           #
-          #   @return [Array<NextbillionSDK::Models::Distancematrix::JsonRetrieveResponse::Row::Element>, nil]
+          #   @return [Array<NextbillionSDK::Models::DistanceMatrix::JsonRetrieveResponse::Row::Element>, nil]
           optional :elements,
-                   -> { NextbillionSDK::Internal::Type::ArrayOf[NextbillionSDK::Models::Distancematrix::JsonRetrieveResponse::Row::Element] }
+                   -> { NextbillionSDK::Internal::Type::ArrayOf[NextbillionSDK::Models::DistanceMatrix::JsonRetrieveResponse::Row::Element] }
 
           # @!method initialize(elements: nil)
           #   Some parameter documentations has been truncated, see
-          #   {NextbillionSDK::Models::Distancematrix::JsonRetrieveResponse::Row} for more
+          #   {NextbillionSDK::Models::DistanceMatrix::JsonRetrieveResponse::Row} for more
           #   details.
           #
-          #   @param elements [Array<NextbillionSDK::Models::Distancematrix::JsonRetrieveResponse::Row::Element>] An array of objects. Each `elements` array corresponds to a single `origins` coo
+          #   @param elements [Array<NextbillionSDK::Models::DistanceMatrix::JsonRetrieveResponse::Row::Element>] An array of objects. Each elements array corresponds to a single origins coordin
 
           class Element < NextbillionSDK::Internal::Type::BaseModel
             # @!attribute distance

@@ -2,7 +2,7 @@
 
 module NextbillionSDK
   module Models
-    module Distancematrix
+    module DistanceMatrix
       class JsonCreateParams < NextbillionSDK::Internal::Type::BaseModel
         extend NextbillionSDK::Internal::Type::RequestParameters::Converter
         include NextbillionSDK::Internal::Type::RequestParameters
@@ -10,7 +10,7 @@ module NextbillionSDK
         OrHash =
           T.type_alias do
             T.any(
-              NextbillionSDK::Distancematrix::JsonCreateParams,
+              NextbillionSDK::DistanceMatrix::JsonCreateParams,
               NextbillionSDK::Internal::AnyHash
             )
           end

@@ -6,7 +6,7 @@ module NextbillionSDK
       # @see NextbillionSDK::Resources::Skynet::NamespacedApikeys#delete
       class NamespacedApikeyDeleteResponse < NextbillionSDK::Internal::Type::BaseModel
         # @!attribute msg
-        #   Its value is `OK` in case of a successful delete operation. Indicative error
+        #   Its value is OK in case of a successful delete operation. Indicative error
         #   messages are returned otherwise, for different errors.
         #
         #   @return [String, nil]
@@ -14,7 +14,7 @@ module NextbillionSDK
 
         # @!attribute status
         #   A string indicating the state of the response. A successful delete operation ins
-        #   indicated by an HTTP code of`200`. See the
+        #   indicated by an HTTP code of200. See the
         #   [API Error Codes](https://docs.nextbillion.ai/docs/tracking/api/live-tracking-api#api-error-codes)
         #   section below for possible values in case of errors.
         #
@@ -26,7 +26,7 @@ module NextbillionSDK
         #   {NextbillionSDK::Models::Skynet::NamespacedApikeyDeleteResponse} for more
         #   details.
         #
-        #   @param msg [String] Its value is `OK` in case of a successful delete operation. Indicative error mes
+        #   @param msg [String] Its value is OK in case of a successful delete operation. Indicative error messa
         #
         #   @param status [Integer] A string indicating the state of the response. A successful delete operation ins
       end

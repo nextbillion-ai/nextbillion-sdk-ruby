@@ -13,7 +13,7 @@ module NextbillionSDK
                  NextbillionSDK::Internal::Type::ArrayOf[NextbillionSDK::Internal::Type::ArrayOf[Float]]
 
         # @!attribute type
-        #   Type of the geoJSON geometry. Will always be `Polygon`.
+        #   Type of the geoJSON geometry. Will always be Polygon.
         #
         #   @return [String, nil]
         optional :type, String
@@ -27,7 +27,7 @@ module NextbillionSDK
         #
         #   @param coordinates [Array<Array<Float>>] An array of coordinates in the [longitude, latitude] format, representing the ge
         #
-        #   @param type [String] Type of the geoJSON geometry. Will always be `Polygon`.
+        #   @param type [String] Type of the geoJSON geometry. Will always be Polygon.
       end
     end
   end

@@ -15,8 +15,8 @@ module NextbillionSDK
       required :key, String
 
       # @!attribute original_shape
-      #   Takes a route geometry as input and returns the route details. Accepts
-      #   `polyline` and `polyline6` encoded geometry as input.
+      #   Takes a route geometry as input and returns the route details. Accepts polyline
+      #   and polyline6 encoded geometry as input.
       #
       #   **Note**: Route geometries generated from sources other than
       #   [NextBillion.ai](http://NextBillion.ai) services, are not supported in this
@@ -26,9 +26,9 @@ module NextbillionSDK
       required :original_shape, String
 
       # @!attribute original_shape_type
-      #   Specify the encoding type of route geometry provided in `original_shape` input.
+      #   Specify the encoding type of route geometry provided in original_shape input.
       #   Please note that an error is returned when this parameter is not specified while
-      #   an input is added to `original_shape` parameter.
+      #   an input is added to original_shape parameter.
       #
       #   @return [Symbol, NextbillionSDK::Models::RouteReportCreateParams::OriginalShapeType]
       required :original_shape_type, enum: -> { NextbillionSDK::RouteReportCreateParams::OriginalShapeType }
@@ -39,20 +39,20 @@ module NextbillionSDK
       #
       #   @param key [String] A key is a unique identifier that is required to authenticate a request to the A
       #
-      #   @param original_shape [String] Takes a route geometry as input and returns the route details. Accepts `polyline
+      #   @param original_shape [String] Takes a route geometry as input and returns the route details. Accepts polyline
       #
-      #   @param original_shape_type [Symbol, NextbillionSDK::Models::RouteReportCreateParams::OriginalShapeType] Specify the encoding type of route geometry provided in `original_shape` input.
+      #   @param original_shape_type [Symbol, NextbillionSDK::Models::RouteReportCreateParams::OriginalShapeType] Specify the encoding type of route geometry provided in original_shape input. Pl
       #
       #   @param request_options [NextbillionSDK::RequestOptions, Hash{Symbol=>Object}]
 
-      # Specify the encoding type of route geometry provided in `original_shape` input.
+      # Specify the encoding type of route geometry provided in original_shape input.
       # Please note that an error is returned when this parameter is not specified while
-      # an input is added to `original_shape` parameter.
+      # an input is added to original_shape parameter.
       module OriginalShapeType
         extend NextbillionSDK::Internal::Type::Enum
 
-        POLYLINE = :"`polyline`"
-        POLYLINE6 = :"`polyline6`"
+        POLYLINE = :polyline
+        POLYLINE6 = :polyline6
 
         # @!method self.values
         #   @return [Array<Symbol>]

@@ -217,7 +217,7 @@ module NextbillionSDK
         # @api private
         #
         # @return [Hash{String=>String}]
-        private def auth_headers = {}
+        private def auth_query = {}
 
         # @api private
         #
@@ -266,11 +266,14 @@ module NextbillionSDK
 
           path = NextbillionSDK::Internal::Util.interpolate_path(uninterpolated_path)
 
-          query = NextbillionSDK::Internal::Util.deep_merge(req[:query].to_h, opts[:extra_query].to_h)
+          query = NextbillionSDK::Internal::Util.deep_merge(
+            auth_query,
+            req[:query].to_h,
+            opts[:extra_query].to_h
+          )
 
           headers = NextbillionSDK::Internal::Util.normalized_headers(
             @headers,
-            auth_headers,
             req[:headers].to_h,
             opts[:extra_headers].to_h
           )

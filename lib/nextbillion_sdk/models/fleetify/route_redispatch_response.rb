@@ -64,8 +64,8 @@ module NextbillionSDK
 
           # @!attribute distance
           #   Returns the total route distance, in meters, for informative display in the
-          #   driver app. It is the same as the value provided for `distance` field in the
-          #   input request.
+          #   driver app. It is the same as the value provided for distance field in the input
+          #   request.
           #
           #   @return [Integer, nil]
           optional :distance, Integer
@@ -132,7 +132,7 @@ module NextbillionSDK
           # @!attribute vehicle_id
           #   Returns the ID of the vehicle to which the route was dispatched. The vehicle ID
           #   returned here is the same as the one used in the route optimization request for
-          #   the given vehicle. An empty string is returned if the `ro_request_id` was not
+          #   the given vehicle. An empty string is returned if the ro_request_id was not
           #   provided in the input.
           #
           #   @return [String, nil]
@@ -200,8 +200,8 @@ module NextbillionSDK
             module Status
               extend NextbillionSDK::Internal::Type::Enum
 
-              SCHEDULED = :"`scheduled`"
-              COMPLETED = :"`completed`"
+              SCHEDULED = :scheduled
+              COMPLETED = :completed
 
               # @!method self.values
               #   @return [Array<Symbol>]
@@ -288,15 +288,15 @@ module NextbillionSDK
             # @!attribute document_snapshot
             #   Returns the details of the document that was used for collecting the proof of
             #   completion for the step. In case no document template ID was provided for the
-            #   given step, then a `null` value is returned. Each object represents a new field
-            #   in the document.
+            #   given step, then a null value is returned. Each object represents a new field in
+            #   the document.
             #
             #   @return [Array<Object>, nil]
             optional :document_snapshot,
                      NextbillionSDK::Internal::Type::ArrayOf[NextbillionSDK::Internal::Type::Unknown]
 
             # @!attribute duration
-            #   Returns the duration for `layover` or `break` type steps.
+            #   Returns the duration for layover or break type steps.
             #
             #   @return [Integer, nil]
             optional :duration, Integer
@@ -323,10 +323,9 @@ module NextbillionSDK
             optional :short_id, String
 
             # @!attribute type
-            #   Returns the step type. It can belong to one of the following: `start`, `job` ,
-            #   `pickup`, `delivery`, `break`, `layover` , and `end`. For any given step, it
-            #   would be the same as that specified in the input request while configuring the
-            #   step details.
+            #   Returns the step type. It can belong to one of the following: start, job ,
+            #   pickup, delivery, break, layover , and end. For any given step, it would be the
+            #   same as that specified in the input request while configuring the step details.
             #
             #   @return [String, nil]
             optional :type, String
@@ -355,7 +354,7 @@ module NextbillionSDK
             #
             #   @param document_snapshot [Array<Object>] Returns the details of the document that was used for collecting the proof of co
             #
-            #   @param duration [Integer] Returns the duration for `layover` or `break` type steps.
+            #   @param duration [Integer] Returns the duration for layover or break type steps.
             #
             #   @param location [Array<Float>] Returns the location coordinates where the step is executed.
             #
@@ -363,7 +362,7 @@ module NextbillionSDK
             #
             #   @param short_id [String] Returns a unique short ID of the step for easier referencing and displaying purp
             #
-            #   @param type [String] Returns the step type. It can belong to one of the following: `start`, `job` , `
+            #   @param type [String] Returns the step type. It can belong to one of the following: start, job , picku
             #
             #   @param updated_at [Integer] Returns the UNIX timestamp, in seconds precision, at which this step was last up
 
@@ -390,14 +389,14 @@ module NextbillionSDK
             class Meta < NextbillionSDK::Internal::Type::BaseModel
               # @!attribute customer_name
               #   Returns the customer name associated with the step. It can configured in the
-              #   input request using the `metadata` attribute of the step.
+              #   input request using the metadata attribute of the step.
               #
               #   @return [String, nil]
               optional :customer_name, String
 
               # @!attribute customer_phone_number
               #   Returns the customer's phone number associated with the step. It can configured
-              #   in the input request using the `metadata` attribute of the step.
+              #   in the input request using the metadata attribute of the step.
               #
               #   @return [String, nil]
               optional :customer_phone_number, String

@@ -39,7 +39,7 @@ module NextbillionSDK
         attr_writer :message
 
         # A string indicating the state of the response. On successful responses, the
-        # value will be `Ok`. Indicative error messages are returned for different errors.
+        # value will be Ok. Indicative error messages are returned for different errors.
         # See the [API Error Codes](#api-error-codes) section below for more information.
         sig { returns(T.nilable(String)) }
         attr_reader :status
@@ -62,7 +62,7 @@ module NextbillionSDK
           # successful, this field is not present in the response.
           message: nil,
           # A string indicating the state of the response. On successful responses, the
-          # value will be `Ok`. Indicative error messages are returned for different errors.
+          # value will be Ok. Indicative error messages are returned for different errors.
           # See the [API Error Codes](#api-error-codes) section below for more information.
           status: nil
         )
@@ -148,7 +148,7 @@ module NextbillionSDK
             sig { params(id: String).void }
             attr_writer :id
 
-            # An object with details of the `asset` properties.
+            # An object with details of the asset properties.
             sig { returns(T.nilable(NextbillionSDK::Skynet::AssetDetails)) }
             attr_reader :asset
 
@@ -165,8 +165,8 @@ module NextbillionSDK
             sig { params(asset_id: String).void }
             attr_writer :asset_id
 
-            # Returns the `attributes` provided for the trip at the time of starting or
-            # updating it.
+            # Returns the attributes provided for the trip at the time of starting or updating
+            # it.
             sig { returns(T.nilable(T.anything)) }
             attr_reader :attributes
 
@@ -329,13 +329,13 @@ module NextbillionSDK
             def self.new(
               # Returns the unique identifier of the trip.
               id: nil,
-              # An object with details of the `asset` properties.
+              # An object with details of the asset properties.
               asset: nil,
               # Returns the ID of the asset linked to the trip when the trip was started or
               # updated.
               asset_id: nil,
-              # Returns the `attributes` provided for the trip at the time of starting or
-              # updating it.
+              # Returns the attributes provided for the trip at the time of starting or updating
+              # it.
               attributes: nil,
               # Returns the time, expressed as UNIX epoch timestamp in milliseconds, when the
               # trip was created.

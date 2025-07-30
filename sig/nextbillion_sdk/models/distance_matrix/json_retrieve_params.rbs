@@ -1,0 +1,114 @@
+module NextbillionSDK
+  module Models
+    module DistanceMatrix
+      type json_retrieve_params =
+        {
+          destinations: String,
+          key: String,
+          origins: String,
+          approaches: NextbillionSDK::Models::DistanceMatrix::JsonRetrieveParams::approaches,
+          avoid: NextbillionSDK::Models::DistanceMatrix::JsonRetrieveParams::avoid,
+          bearings: String,
+          mode: NextbillionSDK::Models::DistanceMatrix::JsonRetrieveParams::mode,
+          route_failed_prompt: bool
+        }
+        & NextbillionSDK::Internal::Type::request_parameters
+
+      class JsonRetrieveParams < NextbillionSDK::Internal::Type::BaseModel
+        extend NextbillionSDK::Internal::Type::RequestParameters::Converter
+        include NextbillionSDK::Internal::Type::RequestParameters
+
+        attr_accessor destinations: String
+
+        attr_accessor key: String
+
+        attr_accessor origins: String
+
+        attr_reader approaches: NextbillionSDK::Models::DistanceMatrix::JsonRetrieveParams::approaches?
+
+        def approaches=: (
+          NextbillionSDK::Models::DistanceMatrix::JsonRetrieveParams::approaches
+        ) -> NextbillionSDK::Models::DistanceMatrix::JsonRetrieveParams::approaches
+
+        attr_reader avoid: NextbillionSDK::Models::DistanceMatrix::JsonRetrieveParams::avoid?
+
+        def avoid=: (
+          NextbillionSDK::Models::DistanceMatrix::JsonRetrieveParams::avoid
+        ) -> NextbillionSDK::Models::DistanceMatrix::JsonRetrieveParams::avoid
+
+        attr_reader bearings: String?
+
+        def bearings=: (String) -> String
+
+        attr_reader mode: NextbillionSDK::Models::DistanceMatrix::JsonRetrieveParams::mode?
+
+        def mode=: (
+          NextbillionSDK::Models::DistanceMatrix::JsonRetrieveParams::mode
+        ) -> NextbillionSDK::Models::DistanceMatrix::JsonRetrieveParams::mode
+
+        attr_reader route_failed_prompt: bool?
+
+        def route_failed_prompt=: (bool) -> bool
+
+        def initialize: (
+          destinations: String,
+          key: String,
+          origins: String,
+          ?approaches: NextbillionSDK::Models::DistanceMatrix::JsonRetrieveParams::approaches,
+          ?avoid: NextbillionSDK::Models::DistanceMatrix::JsonRetrieveParams::avoid,
+          ?bearings: String,
+          ?mode: NextbillionSDK::Models::DistanceMatrix::JsonRetrieveParams::mode,
+          ?route_failed_prompt: bool,
+          ?request_options: NextbillionSDK::request_opts
+        ) -> void
+
+        def to_hash: -> {
+          destinations: String,
+          key: String,
+          origins: String,
+          approaches: NextbillionSDK::Models::DistanceMatrix::JsonRetrieveParams::approaches,
+          avoid: NextbillionSDK::Models::DistanceMatrix::JsonRetrieveParams::avoid,
+          bearings: String,
+          mode: NextbillionSDK::Models::DistanceMatrix::JsonRetrieveParams::mode,
+          route_failed_prompt: bool,
+          request_options: NextbillionSDK::RequestOptions
+        }
+
+        type approaches = :unrestricted | :curb
+
+        module Approaches
+          extend NextbillionSDK::Internal::Type::Enum
+
+          UNRESTRICTED: :unrestricted
+          CURB: :curb
+
+          def self?.values: -> ::Array[NextbillionSDK::Models::DistanceMatrix::JsonRetrieveParams::approaches]
+        end
+
+        type avoid = :toll | :ferry | :highway | :none
+
+        module Avoid
+          extend NextbillionSDK::Internal::Type::Enum
+
+          TOLL: :toll
+          FERRY: :ferry
+          HIGHWAY: :highway
+          NONE: :none
+
+          def self?.values: -> ::Array[NextbillionSDK::Models::DistanceMatrix::JsonRetrieveParams::avoid]
+        end
+
+        type mode = :car | :truck
+
+        module Mode
+          extend NextbillionSDK::Internal::Type::Enum
+
+          CAR: :car
+          TRUCK: :truck
+
+          def self?.values: -> ::Array[NextbillionSDK::Models::DistanceMatrix::JsonRetrieveParams::mode]
+        end
+      end
+    end
+  end
+end

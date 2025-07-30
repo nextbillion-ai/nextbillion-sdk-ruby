@@ -27,8 +27,8 @@ module NextbillionSDK
         required :key_to_delete, String
 
         # @!attribute namespace
-        #   Specify the name of the `namespace` to which the \`key_to_delete\` belongs.
-        #   Please note that a namespace key cannot be deleted using another namespace key.
+        #   Specify the name of the namespace to which the \key_to_delete\ belongs. Please
+        #   note that a namespace key cannot be deleted using another namespace key.
         #
         #   @return [String]
         required :namespace, String
@@ -41,7 +41,7 @@ module NextbillionSDK
         #
         #   @param key_to_delete [String] Specify the key to be deleted.
         #
-        #   @param namespace [String] Specify the name of the `namespace` to which the \`key_to_delete\` belongs. Pl
+        #   @param namespace [String] Specify the name of the namespace to which the \key_to_delete\ belongs. Please
         #
         #   @param request_options [NextbillionSDK::RequestOptions, Hash{Symbol=>Object}]
       end

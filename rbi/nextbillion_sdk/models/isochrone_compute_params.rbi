@@ -231,12 +231,12 @@ module NextbillionSDK
 
         CAR =
           T.let(
-            :"`car`",
+            :car,
             NextbillionSDK::IsochroneComputeParams::Mode::TaggedSymbol
           )
         TRUCK =
           T.let(
-            :"`truck`",
+            :truck,
             NextbillionSDK::IsochroneComputeParams::Mode::TaggedSymbol
           )
 

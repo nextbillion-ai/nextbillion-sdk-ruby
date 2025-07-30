@@ -13,7 +13,7 @@ module NextbillionSDK
         #
         # @param key [String] A key is a unique identifier that is required to authenticate a request to the A
         #
-        # @param namespace [String] Specify a name for the `namespace`. If the namespace specified is unique then a
+        # @param namespace [String] Specify a name for the namespace. If the namespace specified is unique then a ne
         #
         # @param request_options [NextbillionSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
@@ -42,7 +42,7 @@ module NextbillionSDK
         #
         # @param key_to_delete [String] Specify the key to be deleted.
         #
-        # @param namespace [String] Specify the name of the `namespace` to which the \`key_to_delete\` belongs. Pl
+        # @param namespace [String] Specify the name of the namespace to which the \key_to_delete\ belongs. Please
         #
         # @param request_options [NextbillionSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #

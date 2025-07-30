@@ -2,12 +2,12 @@
 
 module NextbillionSDK
   module Models
-    module Distancematrix
+    module DistanceMatrix
       class JsonRetrieveResponse < NextbillionSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              NextbillionSDK::Models::Distancematrix::JsonRetrieveResponse,
+              NextbillionSDK::Models::DistanceMatrix::JsonRetrieveResponse,
               NextbillionSDK::Internal::AnyHash
             )
           end
@@ -26,7 +26,7 @@ module NextbillionSDK
           returns(
             T.nilable(
               T::Array[
-                NextbillionSDK::Models::Distancematrix::JsonRetrieveResponse::Row
+                NextbillionSDK::Models::DistanceMatrix::JsonRetrieveResponse::Row
               ]
             )
           )
@@ -37,14 +37,14 @@ module NextbillionSDK
           params(
             rows:
               T::Array[
-                NextbillionSDK::Models::Distancematrix::JsonRetrieveResponse::Row::OrHash
+                NextbillionSDK::Models::DistanceMatrix::JsonRetrieveResponse::Row::OrHash
               ]
           ).void
         end
         attr_writer :rows
 
         # A string indicating the state of the response. On normal responses, the value
-        # will be `Ok`. Indicative HTTP error codes are returned for different errors. See
+        # will be Ok. Indicative HTTP error codes are returned for different errors. See
         # the [API Errors Codes](#api-error-codes) section below for more information.
         sig { returns(T.nilable(String)) }
         attr_reader :status
@@ -57,7 +57,7 @@ module NextbillionSDK
             msg: String,
             rows:
               T::Array[
-                NextbillionSDK::Models::Distancematrix::JsonRetrieveResponse::Row::OrHash
+                NextbillionSDK::Models::DistanceMatrix::JsonRetrieveResponse::Row::OrHash
               ],
             status: String
           ).returns(T.attached_class)
@@ -70,7 +70,7 @@ module NextbillionSDK
           # Container object for a response with an array of arrays structure.
           rows: nil,
           # A string indicating the state of the response. On normal responses, the value
-          # will be `Ok`. Indicative HTTP error codes are returned for different errors. See
+          # will be Ok. Indicative HTTP error codes are returned for different errors. See
           # the [API Errors Codes](#api-error-codes) section below for more information.
           status: nil
         )
@@ -82,7 +82,7 @@ module NextbillionSDK
               msg: String,
               rows:
                 T::Array[
-                  NextbillionSDK::Models::Distancematrix::JsonRetrieveResponse::Row
+                  NextbillionSDK::Models::DistanceMatrix::JsonRetrieveResponse::Row
                 ],
               status: String
             }
@@ -95,21 +95,21 @@ module NextbillionSDK
           OrHash =
             T.type_alias do
               T.any(
-                NextbillionSDK::Models::Distancematrix::JsonRetrieveResponse::Row,
+                NextbillionSDK::Models::DistanceMatrix::JsonRetrieveResponse::Row,
                 NextbillionSDK::Internal::AnyHash
               )
             end
 
-          # An array of objects. Each `elements` array corresponds to a single `origins`
-          # coordinate and contains objects with `distance` and `duration` values for each
-          # of the `destinations`. The details in the first `elements` array correspond to
-          # the first `origins` point and the first object corresponds to the first
-          # `destinations` point and so on.
+          # An array of objects. Each elements array corresponds to a single origins
+          # coordinate and contains objects with distance and duration values for each of
+          # the destinations. The details in the first elements array correspond to the
+          # first origins point and the first object corresponds to the first destinations
+          # point and so on.
           sig do
             returns(
               T.nilable(
                 T::Array[
-                  NextbillionSDK::Models::Distancematrix::JsonRetrieveResponse::Row::Element
+                  NextbillionSDK::Models::DistanceMatrix::JsonRetrieveResponse::Row::Element
                 ]
               )
             )
@@ -120,7 +120,7 @@ module NextbillionSDK
             params(
               elements:
                 T::Array[
-                  NextbillionSDK::Models::Distancematrix::JsonRetrieveResponse::Row::Element::OrHash
+                  NextbillionSDK::Models::DistanceMatrix::JsonRetrieveResponse::Row::Element::OrHash
                 ]
             ).void
           end
@@ -130,16 +130,16 @@ module NextbillionSDK
             params(
               elements:
                 T::Array[
-                  NextbillionSDK::Models::Distancematrix::JsonRetrieveResponse::Row::Element::OrHash
+                  NextbillionSDK::Models::DistanceMatrix::JsonRetrieveResponse::Row::Element::OrHash
                 ]
             ).returns(T.attached_class)
           end
           def self.new(
-            # An array of objects. Each `elements` array corresponds to a single `origins`
-            # coordinate and contains objects with `distance` and `duration` values for each
-            # of the `destinations`. The details in the first `elements` array correspond to
-            # the first `origins` point and the first object corresponds to the first
-            # `destinations` point and so on.
+            # An array of objects. Each elements array corresponds to a single origins
+            # coordinate and contains objects with distance and duration values for each of
+            # the destinations. The details in the first elements array correspond to the
+            # first origins point and the first object corresponds to the first destinations
+            # point and so on.
             elements: nil
           )
           end
@@ -149,7 +149,7 @@ module NextbillionSDK
               {
                 elements:
                   T::Array[
-                    NextbillionSDK::Models::Distancematrix::JsonRetrieveResponse::Row::Element
+                    NextbillionSDK::Models::DistanceMatrix::JsonRetrieveResponse::Row::Element
                   ]
               }
             )
@@ -161,7 +161,7 @@ module NextbillionSDK
             OrHash =
               T.type_alias do
                 T.any(
-                  NextbillionSDK::Models::Distancematrix::JsonRetrieveResponse::Row::Element,
+                  NextbillionSDK::Models::DistanceMatrix::JsonRetrieveResponse::Row::Element,
                   NextbillionSDK::Internal::AnyHash
                 )
               end

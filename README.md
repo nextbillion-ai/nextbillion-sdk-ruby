@@ -1,6 +1,6 @@
 # Nextbillion SDK Ruby API library
 
-The Nextbillion SDK Ruby library provides convenient access to the Nextbillion SDK REST API from any Ruby 3.2.0+ application. It ships with comprehensive types & docstrings in Yard, RBS, and RBI – [see below](https://github.com/stainless-sdks/nextbillion-sdk-ruby#Sorbet) for usage with Sorbet. The standard library's `net/http` is used as the HTTP transport, with connection pooling via the `connection_pool` gem.
+The Nextbillion SDK Ruby library provides convenient access to the Nextbillion SDK REST API from any Ruby 3.2.0+ application. It ships with comprehensive types & docstrings in Yard, RBS, and RBI – [see below](https://github.com/nextbillion-ai/nextbillion-sdk-ruby#Sorbet) for usage with Sorbet. The standard library's `net/http` is used as the HTTP transport, with connection pooling via the `connection_pool` gem.
 
 It is generated with [Stainless](https://www.stainless.com/).
 
@@ -14,9 +14,13 @@ The REST API documentation can be found on [docs.nextbillion.ai](https://docs.ne
 
 To use this gem, install via Bundler by adding the following to your application's `Gemfile`:
 
+<!-- x-release-please-start-version -->
+
 ```ruby
-gem "nextbillion-sdk", "~> 0.0.1.pre.alpha.0"
+gem "nextbillion-sdk", "~> 0.1.0.pre.alpha.1"
 ```
+
+<!-- x-release-please-end -->
 
 ## Usage
 
@@ -28,13 +32,9 @@ nextbillion_sdk = NextbillionSDK::Client.new(
   api_key: ENV["NEXTBILLION_SDK_API_KEY"] # This is the default and can be omitted
 )
 
-route = nextbillion_sdk.fleetify.routes.create(
-  key: "REPLACE_ME",
-  driver_email: "REPLACE_ME",
-  steps: [{arrival: 0, location: [0], type: "`start`"}]
-)
+response = nextbillion_sdk.directions.compute_route(destination: "41.349302,2.136480", origin: "41.349302,2.136480")
 
-puts(route.data)
+puts(response.msg)
 ```
 
 ### Handling errors
@@ -43,11 +43,7 @@ When the library is unable to connect to the API, or if the API returns a non-su
 
 ```ruby
 begin
-  route = nextbillion_sdk.fleetify.routes.create(
-    key: "REPLACE_ME",
-    driver_email: "REPLACE_ME",
-    steps: [{arrival: 0, location: [0], type: "`start`"}]
-  )
+  direction = nextbillion_sdk.directions.compute_route(destination: "41.349302,2.136480", origin: "41.349302,2.136480")
 rescue NextbillionSDK::Errors::APIConnectionError => e
   puts("The server could not be reached")
   puts(e.cause)  # an underlying Exception, likely raised within `net/http`
@@ -90,10 +86,9 @@ nextbillion_sdk = NextbillionSDK::Client.new(
 )
 
 # Or, configure per-request:
-nextbillion_sdk.fleetify.routes.create(
-  key: "REPLACE_ME",
-  driver_email: "REPLACE_ME",
-  steps: [{arrival: 0, location: [0], type: "`start`"}],
+nextbillion_sdk.directions.compute_route(
+  destination: "41.349302,2.136480",
+  origin: "41.349302,2.136480",
   request_options: {max_retries: 5}
 )
 ```
@@ -109,10 +104,9 @@ nextbillion_sdk = NextbillionSDK::Client.new(
 )
 
 # Or, configure per-request:
-nextbillion_sdk.fleetify.routes.create(
-  key: "REPLACE_ME",
-  driver_email: "REPLACE_ME",
-  steps: [{arrival: 0, location: [0], type: "`start`"}],
+nextbillion_sdk.directions.compute_route(
+  destination: "41.349302,2.136480",
+  origin: "41.349302,2.136480",
   request_options: {timeout: 5}
 )
 ```
@@ -144,11 +138,10 @@ You can send undocumented parameters to any endpoint, and read undocumented resp
 Note: the `extra_` parameters of the same name overrides the documented parameters.
 
 ```ruby
-route =
-  nextbillion_sdk.fleetify.routes.create(
-    key: "REPLACE_ME",
-    driver_email: "REPLACE_ME",
-    steps: [{arrival: 0, location: [0], type: "`start`"}],
+response =
+  nextbillion_sdk.directions.compute_route(
+    destination: "41.349302,2.136480",
+    origin: "41.349302,2.136480",
     request_options: {
       extra_query: {my_query_parameter: value},
       extra_body: {my_body_parameter: value},
@@ -156,7 +149,7 @@ route =
     }
   )
 
-puts(route[:my_undocumented_property])
+puts(response[:my_undocumented_property])
 ```
 
 #### Undocumented request params
@@ -194,30 +187,21 @@ This library provides comprehensive [RBI](https://sorbet.org/docs/rbi) definitio
 You can provide typesafe request parameters like so:
 
 ```ruby
-nextbillion_sdk.fleetify.routes.create(
-  key: "REPLACE_ME",
-  driver_email: "REPLACE_ME",
-  steps: [NextbillionSDK::Fleetify::Routes::RouteStepsRequest.new(arrival: 0, location: [0], type: "`start`")]
-)
+nextbillion_sdk.directions.compute_route(destination: "41.349302,2.136480", origin: "41.349302,2.136480")
 ```
 
 Or, equivalently:
 
 ```ruby
 # Hashes work, but are not typesafe:
-nextbillion_sdk.fleetify.routes.create(
-  key: "REPLACE_ME",
-  driver_email: "REPLACE_ME",
-  steps: [{arrival: 0, location: [0], type: "`start`"}]
-)
+nextbillion_sdk.directions.compute_route(destination: "41.349302,2.136480", origin: "41.349302,2.136480")
 
 # You can also splat a full Params class:
-params = NextbillionSDK::Fleetify::RouteCreateParams.new(
-  key: "REPLACE_ME",
-  driver_email: "REPLACE_ME",
-  steps: [NextbillionSDK::Fleetify::Routes::RouteStepsRequest.new(arrival: 0, location: [0], type: "`start`")]
+params = NextbillionSDK::DirectionComputeRouteParams.new(
+  destination: "41.349302,2.136480",
+  origin: "41.349302,2.136480"
 )
-nextbillion_sdk.fleetify.routes.create(**params)
+nextbillion_sdk.directions.compute_route(**params)
 ```
 
 ### Enums
@@ -225,7 +209,7 @@ nextbillion_sdk.fleetify.routes.create(**params)
 Since this library does not depend on `sorbet-runtime`, it cannot provide [`T::Enum`](https://sorbet.org/docs/tenum) instances. Instead, we provide "tagged symbols" instead, which is always a primitive at runtime:
 
 ```ruby
-# :"`start`"
+# :start
 puts(NextbillionSDK::Fleetify::Routes::StepCreateParams::Type::START)
 
 # Revealed type: `T.all(NextbillionSDK::Fleetify::Routes::StepCreateParams::Type, Symbol)`
@@ -243,7 +227,7 @@ nextbillion_sdk.fleetify.routes.steps.create(
 
 # Literal values are also permissible:
 nextbillion_sdk.fleetify.routes.steps.create(
-  type: :"`start`",
+  type: :start,
   # …
 )
 ```
@@ -260,4 +244,4 @@ Ruby 3.2.0 or higher.
 
 ## Contributing
 
-See [the contributing documentation](https://github.com/stainless-sdks/nextbillion-sdk-ruby/tree/main/CONTRIBUTING.md).
+See [the contributing documentation](https://github.com/nextbillion-ai/nextbillion-sdk-ruby/tree/main/CONTRIBUTING.md).

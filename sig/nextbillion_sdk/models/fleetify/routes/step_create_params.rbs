@@ -93,24 +93,18 @@ module NextbillionSDK
           }
 
           type type_ =
-            :"`start`"
-            | :"`job`"
-            | :"`pickup`"
-            | :"`delivery`"
-            | :"`break`"
-            | :"`layover`"
-            | :"`end`"
+            :start | :job | :pickup | :delivery | :break | :layover | :end
 
           module Type
             extend NextbillionSDK::Internal::Type::Enum
 
-            START: :"`start`"
-            JOB: :"`job`"
-            PICKUP: :"`pickup`"
-            DELIVERY: :"`delivery`"
-            BREAK: :"`break`"
-            LAYOVER: :"`layover`"
-            END_: :"`end`"
+            START: :start
+            JOB: :job
+            PICKUP: :pickup
+            DELIVERY: :delivery
+            BREAK: :break
+            LAYOVER: :layover
+            END_: :end
 
             def self?.values: -> ::Array[NextbillionSDK::Models::Fleetify::Routes::StepCreateParams::type_]
           end

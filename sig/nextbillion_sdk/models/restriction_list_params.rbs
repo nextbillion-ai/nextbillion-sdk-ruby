@@ -96,37 +96,32 @@ module NextbillionSDK
         request_options: NextbillionSDK::RequestOptions
       }
 
-      type mode = :"`0w`" | :"`2w`" | :"`3w`" | :"`4w`" | :"`6w`"
+      type mode = :"0w" | :"2w" | :"3w" | :"4w" | :"6w"
 
       module Mode
         extend NextbillionSDK::Internal::Type::Enum
 
-        MODE_0W: :"`0w`"
-        MODE_2W: :"`2w`"
-        MODE_3W: :"`3w`"
-        MODE_4W: :"`4w`"
-        MODE_6W: :"`6w`"
+        MODE_0W: :"0w"
+        MODE_2W: :"2w"
+        MODE_3W: :"3w"
+        MODE_4W: :"4w"
+        MODE_6W: :"6w"
 
         def self?.values: -> ::Array[NextbillionSDK::Models::RestrictionListParams::mode]
       end
 
       type restriction_type =
-        :"`turn`"
-        | :"`parking`"
-        | :"`fixedspeed`"
-        | :"`maxspeed`"
-        | :"`closure`"
-        | :"`truck`"
+        :turn | :parking | :fixedspeed | :maxspeed | :closure | :truck
 
       module RestrictionType
         extend NextbillionSDK::Internal::Type::Enum
 
-        TURN: :"`turn`"
-        PARKING: :"`parking`"
-        FIXEDSPEED: :"`fixedspeed`"
-        MAXSPEED: :"`maxspeed`"
-        CLOSURE: :"`closure`"
-        TRUCK: :"`truck`"
+        TURN: :turn
+        PARKING: :parking
+        FIXEDSPEED: :fixedspeed
+        MAXSPEED: :maxspeed
+        CLOSURE: :closure
+        TRUCK: :truck
 
         def self?.values: -> ::Array[NextbillionSDK::Models::RestrictionListParams::restriction_type]
       end
@@ -142,25 +137,25 @@ module NextbillionSDK
         def self?.values: -> ::Array[NextbillionSDK::Models::RestrictionListParams::source]
       end
 
-      type state = :"`enabled`" | :"`disabled`" | :"`deleted`"
+      type state = :enabled | :disabled | :deleted
 
       module State
         extend NextbillionSDK::Internal::Type::Enum
 
-        ENABLED: :"`enabled`"
-        DISABLED: :"`disabled`"
-        DELETED: :"`deleted`"
+        ENABLED: :enabled
+        DISABLED: :disabled
+        DELETED: :deleted
 
         def self?.values: -> ::Array[NextbillionSDK::Models::RestrictionListParams::state]
       end
 
-      type status = :"`active`" | :"`inactive`"
+      type status = :active | :inactive
 
       module Status
         extend NextbillionSDK::Internal::Type::Enum
 
-        ACTIVE: :"`active`"
-        INACTIVE: :"`inactive`"
+        ACTIVE: :active
+        INACTIVE: :inactive
 
         def self?.values: -> ::Array[NextbillionSDK::Models::RestrictionListParams::status]
       end

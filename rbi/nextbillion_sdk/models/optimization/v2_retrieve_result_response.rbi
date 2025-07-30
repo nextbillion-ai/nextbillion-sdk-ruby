@@ -12,9 +12,9 @@ module NextbillionSDK
             )
           end
 
-        # Returns the `description` of the optimization job as given in the input POST
+        # Returns the description of the optimization job as given in the input POST
         # optimization request. This field will not be present in the response if no
-        # `description` was provided in the input request.
+        # description was provided in the input request.
         sig { returns(T.nilable(String)) }
         attr_reader :description
 
@@ -77,9 +77,9 @@ module NextbillionSDK
           ).returns(T.attached_class)
         end
         def self.new(
-          # Returns the `description` of the optimization job as given in the input POST
+          # Returns the description of the optimization job as given in the input POST
           # optimization request. This field will not be present in the response if no
-          # `description` was provided in the input request.
+          # description was provided in the input request.
           description: nil,
           # Returns the message in case of errors or failures, otherwise a blank string is
           # returned.
@@ -161,7 +161,7 @@ module NextbillionSDK
           # Returns all the routing profiles used in the solution. If no routing profiles
           # were provided in the input or if the vehicles tagged to profiles were not used
           # in the solution, the "default" routing properties are returned. Default routing
-          # properties are indicated by `options.routing` in the input.
+          # properties are indicated by options.routing in the input.
           sig { returns(T.nilable(T.anything)) }
           attr_reader :routing_profiles
 
@@ -245,7 +245,7 @@ module NextbillionSDK
             # Returns all the routing profiles used in the solution. If no routing profiles
             # were provided in the input or if the vehicles tagged to profiles were not used
             # in the solution, the "default" routing properties are returned. Default routing
-            # properties are indicated by `options.routing` in the input.
+            # properties are indicated by options.routing in the input.
             routing_profiles: nil,
             # An object to describe the summarized result of the optimization request. This
             # object can be useful to quickly get an overview of the important result
@@ -289,8 +289,8 @@ module NextbillionSDK
               end
 
             # Returns the capacity configuration of the vehicle that was used for this route.
-            # This field would return either the vehicle's `capacity` or one of the
-            # `alternative_capacities` provided in the input request.
+            # This field would return either the vehicle's capacity or one of the
+            # alternative_capacities provided in the input request.
             sig { returns(T.nilable(T::Array[Integer])) }
             attr_reader :adopted_capacity
 
@@ -298,7 +298,7 @@ module NextbillionSDK
             attr_writer :adopted_capacity
 
             # Returns the cost of the route. The unit of cost type depends on the value of
-            # `travel_cost` attribute in the optimization request.
+            # travel_cost attribute in the optimization request.
             sig { returns(T.nilable(Integer)) }
             attr_reader :cost
 
@@ -306,9 +306,9 @@ module NextbillionSDK
             attr_writer :cost
 
             # Returns the total quantities, for each dimension (or unit), of deliveries
-            # performed in the route. Please note that when both `shipments` and `jobs` are
+            # performed in the route. Please note that when both shipments and jobs are
             # provided, this field corresponds to the sum of quantities delivered as part of
-            # the assigned `shipments` and `jobs` on the route.
+            # the assigned shipments and jobs on the route.
             sig { returns(T.nilable(T::Array[Integer])) }
             attr_reader :delivery
 
@@ -316,7 +316,7 @@ module NextbillionSDK
             attr_writer :delivery
 
             # Return the description of the assigned vehicle. It would be the same as that
-            # provided in the `description` field of `vehicles` part of the input POST
+            # provided in the description field of vehicles part of the input POST
             # optimization request.
             sig { returns(T.nilable(String)) }
             attr_reader :description
@@ -355,9 +355,9 @@ module NextbillionSDK
             attr_writer :metadata
 
             # Returns the total quantities, for each dimension (or unit), of pickups performed
-            # in the route. Please note that when both `shipments` and `jobs` are provided,
-            # this field corresponds to the sum of quantities picked-up as part of the
-            # assigned `shipments` and `jobs` on the route.
+            # in the route. Please note that when both shipments and jobs are provided, this
+            # field corresponds to the sum of quantities picked-up as part of the assigned
+            # shipments and jobs on the route.
             sig { returns(T.nilable(T::Array[Integer])) }
             attr_reader :pickup
 
@@ -476,19 +476,19 @@ module NextbillionSDK
             end
             def self.new(
               # Returns the capacity configuration of the vehicle that was used for this route.
-              # This field would return either the vehicle's `capacity` or one of the
-              # `alternative_capacities` provided in the input request.
+              # This field would return either the vehicle's capacity or one of the
+              # alternative_capacities provided in the input request.
               adopted_capacity: nil,
               # Returns the cost of the route. The unit of cost type depends on the value of
-              # `travel_cost` attribute in the optimization request.
+              # travel_cost attribute in the optimization request.
               cost: nil,
               # Returns the total quantities, for each dimension (or unit), of deliveries
-              # performed in the route. Please note that when both `shipments` and `jobs` are
+              # performed in the route. Please note that when both shipments and jobs are
               # provided, this field corresponds to the sum of quantities delivered as part of
-              # the assigned `shipments` and `jobs` on the route.
+              # the assigned shipments and jobs on the route.
               delivery: nil,
               # Return the description of the assigned vehicle. It would be the same as that
-              # provided in the `description` field of `vehicles` part of the input POST
+              # provided in the description field of vehicles part of the input POST
               # optimization request.
               description: nil,
               # Returns the total distance of the route, in meters.
@@ -502,9 +502,9 @@ module NextbillionSDK
               # provided with any metadata.
               metadata: nil,
               # Returns the total quantities, for each dimension (or unit), of pickups performed
-              # in the route. Please note that when both `shipments` and `jobs` are provided,
-              # this field corresponds to the sum of quantities picked-up as part of the
-              # assigned `shipments` and `jobs` on the route.
+              # in the route. Please note that when both shipments and jobs are provided, this
+              # field corresponds to the sum of quantities picked-up as part of the assigned
+              # shipments and jobs on the route.
               pickup: nil,
               # Returns the sum of priorities of all tasks on the route.
               priority: nil,
@@ -574,8 +574,8 @@ module NextbillionSDK
                 end
 
               # Returns the ID of the task. The ID returned here are the same values that were
-              # provided for the given task in the `jobs` or the `shipments` objects of the
-              # input POST optimization request.
+              # provided for the given task in the jobs or the shipments objects of the input
+              # POST optimization request.
               #
               # **Note:** Since both integer and string value types are supported for job IDs,
               # the value type returned for this field will depend on the value type provided in
@@ -586,9 +586,9 @@ module NextbillionSDK
               sig { params(id: String).void }
               attr_writer :id
 
-              # Returns the time at which the vehicle arrives at the `step` location. If
-              # `time_windows` is provided for the task it will be returned as an UNIX timestamp
-              # expressed in seconds. When `time_windows` is not provided, it is returned as the
+              # Returns the time at which the vehicle arrives at the step location. If
+              # time_windows is provided for the task it will be returned as an UNIX timestamp
+              # expressed in seconds. When time_windows is not provided, it is returned as the
               # total duration, in seconds, elapsed since the start of the route.
               #
               # Please note it includes all the other durations as well (setup, service,
@@ -604,8 +604,8 @@ module NextbillionSDK
               # which the vehicle commenced its journey. Conversely, for "end" steps, the field
               # will hold the ID of the depot where the vehicle concluded its trip.
               #
-              # Please note that `start_depot_ids` or `end_depot_ids` input for the vehicle must
-              # be configured to get this field in the response for respective step types in a
+              # Please note that start_depot_ids or end_depot_ids input for the vehicle must be
+              # configured to get this field in the response for respective step types in a
               # route.
               sig { returns(T.nilable(String)) }
               attr_reader :depot
@@ -614,7 +614,7 @@ module NextbillionSDK
               attr_writer :depot
 
               # Returns the description of this step. The description returned here are the same
-              # values that were provided for the given task in the `jobs` or the `shipments`
+              # values that were provided for the given task in the jobs or the shipments
               # objects of the input POST optimization request.
               sig { returns(T.nilable(String)) }
               attr_reader :description
@@ -626,8 +626,8 @@ module NextbillionSDK
               # until the current step.
               #
               # Please note that the value of this parameter accumulates with each step. In case
-              # , the `travel_cost: air_distance`, then the distance here represents straight
-              # line distance.
+              # , the travel_cost: air_distance, then the distance here represents straight line
+              # distance.
               sig { returns(T.nilable(Integer)) }
               attr_reader :distance
 
@@ -635,7 +635,7 @@ module NextbillionSDK
               attr_writer :distance
 
               # Returns the total drive time, in seconds, from the start of the route up until
-              # the start of the `step`. Please note that this value does not include any other
+              # the start of the step. Please note that this value does not include any other
               # category of durations (service, wait, setup) and the value of this parameter
               # accumulates with each step.
               sig { returns(T.nilable(Integer)) }
@@ -666,18 +666,18 @@ module NextbillionSDK
               # Returns the location coordinates of the step in the \[latitude, longitude\]
               # format.
               #
-              # The index of this location is also returned by the `location_index` parameter.
+              # The index of this location is also returned by the location_index parameter.
               sig { returns(T.nilable(T::Array[Float])) }
               attr_reader :location
 
               sig { params(location: T::Array[Float]).void }
               attr_writer :location
 
-              # Returns the index (in the `location` array) of the location coordinates where
-              # the step is performed. The index will always be in the range of \[0, length of
-              # `location` array).
+              # Returns the index (in the location array) of the location coordinates where the
+              # step is performed. The index will always be in the range of \[0, length of
+              # location array).
               #
-              # Actual coordinates are also returned by the `location` parameter.
+              # Actual coordinates are also returned by the location parameter.
               sig { returns(T.nilable(Integer)) }
               attr_reader :location_index
 
@@ -704,10 +704,9 @@ module NextbillionSDK
               attr_writer :projected_location
 
               # When a vehicle is configured to make multiple runs to the depot (via
-              # `max_depot_runs`), this field returns the iteration to which the step belongs
-              # to. Each run will begin with a "start" step from the depot's location and
-              # conclude with an "end" step at either the last task's or the configured end
-              # location.
+              # max_depot_runs), this field returns the iteration to which the step belongs to.
+              # Each run will begin with a "start" step from the depot's location and conclude
+              # with an "end" step at either the last task's or the configured end location.
               sig { returns(T.nilable(Integer)) }
               attr_reader :run
 
@@ -715,11 +714,11 @@ module NextbillionSDK
               attr_writer :run
 
               # Returns the service time, in seconds, for the task when the step type is not
-              # `start` or `end`.
+              # start or end.
               #
-              # When the step type is `start` or `end` , the field also returns the service
-              # time, in seconds, spent at the depot when if the vehicle is starting or
-              # completing the trip at one of the depots.
+              # When the step type is start or end , the field also returns the service time, in
+              # seconds, spent at the depot when if the vehicle is starting or completing the
+              # trip at one of the depots.
               sig { returns(T.nilable(Integer)) }
               attr_reader :service
 
@@ -743,8 +742,8 @@ module NextbillionSDK
               attr_writer :snapped_location
 
               # Returns the type of the step. Its value will always be one of the following:
-              # `start`, `job`, `pickup`, `delivery`, `end`. In case the type is `start` or
-              # `end`, `steps` object will not have the `id` field.
+              # start, job, pickup, delivery, end. In case the type is start or end, steps
+              # object will not have the id field.
               sig { returns(T.nilable(String)) }
               attr_reader :type
 
@@ -784,16 +783,16 @@ module NextbillionSDK
               end
               def self.new(
                 # Returns the ID of the task. The ID returned here are the same values that were
-                # provided for the given task in the `jobs` or the `shipments` objects of the
-                # input POST optimization request.
+                # provided for the given task in the jobs or the shipments objects of the input
+                # POST optimization request.
                 #
                 # **Note:** Since both integer and string value types are supported for job IDs,
                 # the value type returned for this field will depend on the value type provided in
                 # the input request.
                 id: nil,
-                # Returns the time at which the vehicle arrives at the `step` location. If
-                # `time_windows` is provided for the task it will be returned as an UNIX timestamp
-                # expressed in seconds. When `time_windows` is not provided, it is returned as the
+                # Returns the time at which the vehicle arrives at the step location. If
+                # time_windows is provided for the task it will be returned as an UNIX timestamp
+                # expressed in seconds. When time_windows is not provided, it is returned as the
                 # total duration, in seconds, elapsed since the start of the route.
                 #
                 # Please note it includes all the other durations as well (setup, service,
@@ -804,23 +803,23 @@ module NextbillionSDK
                 # which the vehicle commenced its journey. Conversely, for "end" steps, the field
                 # will hold the ID of the depot where the vehicle concluded its trip.
                 #
-                # Please note that `start_depot_ids` or `end_depot_ids` input for the vehicle must
-                # be configured to get this field in the response for respective step types in a
+                # Please note that start_depot_ids or end_depot_ids input for the vehicle must be
+                # configured to get this field in the response for respective step types in a
                 # route.
                 depot: nil,
                 # Returns the description of this step. The description returned here are the same
-                # values that were provided for the given task in the `jobs` or the `shipments`
+                # values that were provided for the given task in the jobs or the shipments
                 # objects of the input POST optimization request.
                 description: nil,
                 # Returns the distance covered, in meters, from the start of the route and up
                 # until the current step.
                 #
                 # Please note that the value of this parameter accumulates with each step. In case
-                # , the `travel_cost: air_distance`, then the distance here represents straight
-                # line distance.
+                # , the travel_cost: air_distance, then the distance here represents straight line
+                # distance.
                 distance: nil,
                 # Returns the total drive time, in seconds, from the start of the route up until
-                # the start of the `step`. Please note that this value does not include any other
+                # the start of the step. Please note that this value does not include any other
                 # category of durations (service, wait, setup) and the value of this parameter
                 # accumulates with each step.
                 duration: nil,
@@ -836,13 +835,13 @@ module NextbillionSDK
                 # Returns the location coordinates of the step in the \[latitude, longitude\]
                 # format.
                 #
-                # The index of this location is also returned by the `location_index` parameter.
+                # The index of this location is also returned by the location_index parameter.
                 location: nil,
-                # Returns the index (in the `location` array) of the location coordinates where
-                # the step is performed. The index will always be in the range of \[0, length of
-                # `location` array).
+                # Returns the index (in the location array) of the location coordinates where the
+                # step is performed. The index will always be in the range of \[0, length of
+                # location array).
                 #
-                # Actual coordinates are also returned by the `location` parameter.
+                # Actual coordinates are also returned by the location parameter.
                 location_index: nil,
                 # Returns the custom information that was provided when the given task (job /
                 # pickup / delivery) was configured. This field would not be present for the tasks
@@ -854,17 +853,16 @@ module NextbillionSDK
                 # common stop for all grouped tasks.
                 projected_location: nil,
                 # When a vehicle is configured to make multiple runs to the depot (via
-                # `max_depot_runs`), this field returns the iteration to which the step belongs
-                # to. Each run will begin with a "start" step from the depot's location and
-                # conclude with an "end" step at either the last task's or the configured end
-                # location.
+                # max_depot_runs), this field returns the iteration to which the step belongs to.
+                # Each run will begin with a "start" step from the depot's location and conclude
+                # with an "end" step at either the last task's or the configured end location.
                 run: nil,
                 # Returns the service time, in seconds, for the task when the step type is not
-                # `start` or `end`.
+                # start or end.
                 #
-                # When the step type is `start` or `end` , the field also returns the service
-                # time, in seconds, spent at the depot when if the vehicle is starting or
-                # completing the trip at one of the depots.
+                # When the step type is start or end , the field also returns the service time, in
+                # seconds, spent at the depot when if the vehicle is starting or completing the
+                # trip at one of the depots.
                 service: nil,
                 # Returns the setup time, in seconds, for the task.
                 setup: nil,
@@ -873,8 +871,8 @@ module NextbillionSDK
                 # custom duration or distance matrix were used for cost calculations.
                 snapped_location: nil,
                 # Returns the type of the step. Its value will always be one of the following:
-                # `start`, `job`, `pickup`, `delivery`, `end`. In case the type is `start` or
-                # `end`, `steps` object will not have the `id` field.
+                # start, job, pickup, delivery, end. In case the type is start or end, steps
+                # object will not have the id field.
                 type: nil,
                 # Returns the wait time of the vehicle at this step, in seconds.
                 waiting_time: nil
@@ -920,7 +918,7 @@ module NextbillionSDK
               end
 
             # Returns the total cost of all the routes returned in the solution. The unit of
-            # cost type depends on the value of `travel_cost` attribute in the optimization
+            # cost type depends on the value of travel_cost attribute in the optimization
             # request.
             sig { returns(T.nilable(Integer)) }
             attr_reader :cost
@@ -930,11 +928,11 @@ module NextbillionSDK
 
             # Returns the sum of all quantities that were delivered in the optimized solution.
             # If quantities of different dimensions were delivered, then a matching number of
-            # elements is returned in the `delivery` array.
+            # elements is returned in the delivery array.
             #
-            # Please note that when both `shipments` and `jobs` are provided, this field
+            # Please note that when both shipments and jobs are provided, this field
             # corresponds to the sum of quantities delivered as part of all the assigned
-            # `shipments` and `jobs` .
+            # shipments and jobs .
             sig { returns(T.nilable(T::Array[Integer])) }
             attr_reader :delivery
 
@@ -968,11 +966,11 @@ module NextbillionSDK
 
             # Returns the sum of all quantities that were picked-up in the optimized solution.
             # If quantities of different dimensions were picked-up, then a matching number of
-            # elements is returned in the `pickup` array.
+            # elements is returned in the pickup array.
             #
-            # Please note that when both `shipments` and `jobs` are provided, this field
+            # Please note that when both shipments and jobs are provided, this field
             # corresponds to the sum of quantities picked-up as part of all the assigned
-            # `shipments` and `jobs` .
+            # shipments and jobs .
             sig { returns(T.nilable(T::Array[Integer])) }
             attr_reader :pickup
 
@@ -988,7 +986,7 @@ module NextbillionSDK
 
             # Returns the revenue earned by completing all the assigned tasks. Overall profit
             # earned by following the suggested route plan can be inferred by subtracting the
-            # `cost` of the solution from the reported `revenue`.
+            # cost of the solution from the reported revenue.
             sig { returns(T.nilable(Integer)) }
             attr_reader :revenue
 
@@ -1065,16 +1063,16 @@ module NextbillionSDK
             end
             def self.new(
               # Returns the total cost of all the routes returned in the solution. The unit of
-              # cost type depends on the value of `travel_cost` attribute in the optimization
+              # cost type depends on the value of travel_cost attribute in the optimization
               # request.
               cost: nil,
               # Returns the sum of all quantities that were delivered in the optimized solution.
               # If quantities of different dimensions were delivered, then a matching number of
-              # elements is returned in the `delivery` array.
+              # elements is returned in the delivery array.
               #
-              # Please note that when both `shipments` and `jobs` are provided, this field
+              # Please note that when both shipments and jobs are provided, this field
               # corresponds to the sum of quantities delivered as part of all the assigned
-              # `shipments` and `jobs` .
+              # shipments and jobs .
               delivery: nil,
               # Returns the total distance of all routes, in meters. It is equal to the sum of
               # distances of individual routes.
@@ -1088,17 +1086,17 @@ module NextbillionSDK
               num_late_visits: nil,
               # Returns the sum of all quantities that were picked-up in the optimized solution.
               # If quantities of different dimensions were picked-up, then a matching number of
-              # elements is returned in the `pickup` array.
+              # elements is returned in the pickup array.
               #
-              # Please note that when both `shipments` and `jobs` are provided, this field
+              # Please note that when both shipments and jobs are provided, this field
               # corresponds to the sum of quantities picked-up as part of all the assigned
-              # `shipments` and `jobs` .
+              # shipments and jobs .
               pickup: nil,
               # Returns the sum of priorities of all tasks that were assigned.
               priority: nil,
               # Returns the revenue earned by completing all the assigned tasks. Overall profit
               # earned by following the suggested route plan can be inferred by subtracting the
-              # `cost` of the solution from the reported `revenue`.
+              # cost of the solution from the reported revenue.
               revenue: nil,
               # Returns the total number of routes in the solution.
               routes: nil,
@@ -1154,8 +1152,8 @@ module NextbillionSDK
               end
 
             # Returns the ID of the unassigned task. The ID returned is the same as that
-            # provided for the given task in the `jobs` or the `shipments` part in the input
-            # POST optimization request.
+            # provided for the given task in the jobs or the shipments part in the input POST
+            # optimization request.
             #
             # **Note:** Since both integer and string value types are supported for task IDs,
             # the value type returned for this field will depend on the value type provided in
@@ -1175,8 +1173,8 @@ module NextbillionSDK
             attr_writer :location
 
             # Returns the cost of outsourcing the task. This is the same value as provided in
-            # the input. The field is present only if a `outsourcing_cost` was provided for
-            # the unassigned task.
+            # the input. The field is present only if a outsourcing_cost was provided for the
+            # unassigned task.
             sig { returns(T.nilable(Integer)) }
             attr_reader :outsourcing_cost
 
@@ -1187,20 +1185,19 @@ module NextbillionSDK
             # optimization service can capture the following causes of tasks remaining
             # unassigned, among others:
             #
-            # - unmatched `skills` of the tasks
-            # - insufficient `capacity` of vehicle to accommodate the tasks
-            # - `time_window` requirements of the tasks or the vehicles
-            # - violation of vehicle’s `max_activity_waiting_time` constraint
-            # - violation of vehicle’s `max_tasks` or `max_stops` constraints
-            # - violation of vehicle’s `max_distance` or `max_travel_time` constraints
+            # - unmatched skills of the tasks
+            # - insufficient capacity of vehicle to accommodate the tasks
+            # - time_window requirements of the tasks or the vehicles
+            # - violation of vehicle’s max_activity_waiting_time constraint
+            # - violation of vehicle’s max_tasks or max_stops constraints
+            # - violation of vehicle’s max_distance or max_travel_time constraints
             # - task unassigned due to zone constraints
             # - task unassigned due to depot constraints
             # - task unassigned due to load type incompatibility constraints
             # - task unassigned due to max time in vehicle constraint
             # - task unassigned as it is unprofitable
             # - task unassigned due to low outsourcing cost
-            # - task unassigned due to infeasible conditions specified in `relations`
-            #   attribute
+            # - task unassigned due to infeasible conditions specified in relations attribute
             sig { returns(T.nilable(String)) }
             attr_reader :reason
 
@@ -1208,7 +1205,7 @@ module NextbillionSDK
             attr_writer :reason
 
             # Returns the type of the task that was unassigned. Will always belong to one of
-            # `job`, `pickup`, or `delivery`.
+            # job, pickup, or delivery.
             sig { returns(T.nilable(String)) }
             attr_reader :type
 
@@ -1226,8 +1223,8 @@ module NextbillionSDK
             end
             def self.new(
               # Returns the ID of the unassigned task. The ID returned is the same as that
-              # provided for the given task in the `jobs` or the `shipments` part in the input
-              # POST optimization request.
+              # provided for the given task in the jobs or the shipments part in the input POST
+              # optimization request.
               #
               # **Note:** Since both integer and string value types are supported for task IDs,
               # the value type returned for this field will depend on the value type provided in
@@ -1237,30 +1234,29 @@ module NextbillionSDK
               # format.
               location: nil,
               # Returns the cost of outsourcing the task. This is the same value as provided in
-              # the input. The field is present only if a `outsourcing_cost` was provided for
-              # the unassigned task.
+              # the input. The field is present only if a outsourcing_cost was provided for the
+              # unassigned task.
               outsourcing_cost: nil,
               # Returns the most likely reason due to which the task remained unassigned. The
               # optimization service can capture the following causes of tasks remaining
               # unassigned, among others:
               #
-              # - unmatched `skills` of the tasks
-              # - insufficient `capacity` of vehicle to accommodate the tasks
-              # - `time_window` requirements of the tasks or the vehicles
-              # - violation of vehicle’s `max_activity_waiting_time` constraint
-              # - violation of vehicle’s `max_tasks` or `max_stops` constraints
-              # - violation of vehicle’s `max_distance` or `max_travel_time` constraints
+              # - unmatched skills of the tasks
+              # - insufficient capacity of vehicle to accommodate the tasks
+              # - time_window requirements of the tasks or the vehicles
+              # - violation of vehicle’s max_activity_waiting_time constraint
+              # - violation of vehicle’s max_tasks or max_stops constraints
+              # - violation of vehicle’s max_distance or max_travel_time constraints
               # - task unassigned due to zone constraints
               # - task unassigned due to depot constraints
               # - task unassigned due to load type incompatibility constraints
               # - task unassigned due to max time in vehicle constraint
               # - task unassigned as it is unprofitable
               # - task unassigned due to low outsourcing cost
-              # - task unassigned due to infeasible conditions specified in `relations`
-              #   attribute
+              # - task unassigned due to infeasible conditions specified in relations attribute
               reason: nil,
               # Returns the type of the task that was unassigned. Will always belong to one of
-              # `job`, `pickup`, or `delivery`.
+              # job, pickup, or delivery.
               type: nil
             )
             end
@@ -1297,12 +1293,12 @@ module NextbillionSDK
 
           OK =
             T.let(
-              :"`Ok`",
+              :Ok,
               NextbillionSDK::Models::Optimization::V2RetrieveResultResponse::Status::TaggedSymbol
             )
           ERROR =
             T.let(
-              :"`Error`",
+              :Error,
               NextbillionSDK::Models::Optimization::V2RetrieveResultResponse::Status::TaggedSymbol
             )
 

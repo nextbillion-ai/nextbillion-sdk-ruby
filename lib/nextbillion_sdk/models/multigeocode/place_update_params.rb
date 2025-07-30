@@ -81,7 +81,7 @@ module NextbillionSDK
           optional :source, String
 
           # @!attribute status
-          #   Set this to either `enable` or `disable` to allow the place to be retrieved by a
+          #   Set this to either enable or disable to allow the place to be retrieved by a
           #   search API or block it respectively.
           #
           #   @return [Symbol, NextbillionSDK::Models::Multigeocode::PlaceUpdateParams::DataSource::Status, nil]
@@ -99,9 +99,9 @@ module NextbillionSDK
           #
           #   @param source [String] 1. Move the place to a new dataset by setting the value to a unique dataset name
           #
-          #   @param status [Symbol, NextbillionSDK::Models::Multigeocode::PlaceUpdateParams::DataSource::Status] Set this to either `enable` or `disable` to allow the place to be retrieved by a
+          #   @param status [Symbol, NextbillionSDK::Models::Multigeocode::PlaceUpdateParams::DataSource::Status] Set this to either enable or disable to allow the place to be retrieved by a sea
 
-          # Set this to either `enable` or `disable` to allow the place to be retrieved by a
+          # Set this to either enable or disable to allow the place to be retrieved by a
           # search API or block it respectively.
           #
           # @see NextbillionSDK::Models::Multigeocode::PlaceUpdateParams::DataSource#status

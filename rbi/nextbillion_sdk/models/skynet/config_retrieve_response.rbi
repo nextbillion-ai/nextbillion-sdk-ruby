@@ -12,7 +12,7 @@ module NextbillionSDK
             )
           end
 
-        # A data object containing the `config` response.
+        # A data object containing the config response.
         sig do
           returns(
             T.nilable(
@@ -39,7 +39,7 @@ module NextbillionSDK
         attr_writer :message
 
         # A string indicating the state of the response. On successful responses, the
-        # value will be `Ok`. Indicative error messages are returned for different errors.
+        # value will be Ok. Indicative error messages are returned for different errors.
         # See the [API Error Codes](#api-error-codes) section below for more information.
         sig { returns(T.nilable(String)) }
         attr_reader :status
@@ -56,13 +56,13 @@ module NextbillionSDK
           ).returns(T.attached_class)
         end
         def self.new(
-          # A data object containing the `config` response.
+          # A data object containing the config response.
           data: nil,
           # Displays the error message in case of a failed request. If the request is
           # successful, this field is not present in the response.
           message: nil,
           # A string indicating the state of the response. On successful responses, the
-          # value will be `Ok`. Indicative error messages are returned for different errors.
+          # value will be Ok. Indicative error messages are returned for different errors.
           # See the [API Error Codes](#api-error-codes) section below for more information.
           status: nil
         )
@@ -107,7 +107,7 @@ module NextbillionSDK
           end
           attr_writer :config
 
-          # A data object containing the `config` response.
+          # A data object containing the config response.
           sig do
             params(
               config:

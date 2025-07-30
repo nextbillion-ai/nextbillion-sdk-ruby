@@ -6,7 +6,7 @@ class NextbillionSDK::Test::Resources::Skynet::MonitorTest < NextbillionSDK::Tes
   def test_create_required_params
     skip("skipped: tests are disabled for the time being")
 
-    response = @nextbillion_sdk.skynet.monitor.create(key: "key=API_KEY", tags: ["string"], type: :"`enter`")
+    response = @nextbillion_sdk.skynet.monitor.create(key: "key=API_KEY", tags: ["string"], type: :enter)
 
     assert_pattern do
       response => NextbillionSDK::Models::Skynet::MonitorCreateResponse

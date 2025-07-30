@@ -47,7 +47,7 @@ module NextbillionSDK
         # @see NextbillionSDK::Models::Skynet::NamespacedApikeyCreateResponse#result
         class Result < NextbillionSDK::Internal::Type::BaseModel
           # @!attribute apikey
-          #   Returns the unique `key` created for the specified namespace.
+          #   Returns the unique key created for the specified namespace.
           #
           #   @return [String, nil]
           optional :apikey, String
@@ -67,7 +67,7 @@ module NextbillionSDK
           optional :expires_at, Integer
 
           # @!attribute namespace
-          #   Returns the name of the `namespace` for which the key is created.
+          #   Returns the name of the namespace for which the key is created.
           #
           #   @return [String, nil]
           optional :namespace, String
@@ -85,13 +85,13 @@ module NextbillionSDK
           #
           #   An object to return the details about the namespace key created.
           #
-          #   @param apikey [String] Returns the unique `key` created for the specified namespace.
+          #   @param apikey [String] Returns the unique key created for the specified namespace.
           #
           #   @param created_at [Integer] Returns the time, expressed as UNIX epoch timestamp in seconds, when the namespa
           #
           #   @param expires_at [Integer] Returns the time, expressed as UNIX epoch timestamp in seconds, when the namespa
           #
-          #   @param namespace [String] Returns the name of the `namespace` for which the key is created.
+          #   @param namespace [String] Returns the name of the namespace for which the key is created.
           #
           #   @param sub_id [String] An internal subscription ID.
         end

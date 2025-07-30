@@ -20,7 +20,7 @@ module NextbillionSDK
         sig { returns(String) }
         attr_accessor :key
 
-        # The `locations` object is used to define all the locations that will be used
+        # The locations object is used to define all the locations that will be used
         # during the optimization process. Read more about this attribute in the
         # [Location Object](#location-object) section.
         sig { returns(NextbillionSDK::Optimization::V2SubmitParams::Locations) }
@@ -34,18 +34,18 @@ module NextbillionSDK
         end
         attr_writer :locations
 
-        # The `vehicles` attribute describes the characteristics and constraints of the
+        # The vehicles attribute describes the characteristics and constraints of the
         # vehicles that will be used for fulfilling the tasks. Read more about this
         # attribute in the [Vehicle Object](#vehicle-object) section.
         sig { returns(T::Array[NextbillionSDK::Optimization::Vehicle]) }
         attr_accessor :vehicles
 
         # An array of arrays to denote the user-defined costs of traveling between each
-        # pair of geographic coordinates mentioned in the `location` array. The number of
+        # pair of geographic coordinates mentioned in the location array. The number of
         # arrays should be equal to the number of coordinate points mentioned in the
-        # `location` array and each array should contain the same number of elements as
-        # well. Please note that `cost_matrix` is effective only when
-        # `travel_cost=customized`. Read more about this attribute in the
+        # location array and each array should contain the same number of elements as
+        # well. Please note that cost_matrix is effective only when
+        # travel_cost=customized. Read more about this attribute in the
         # [Custom Cost Matrix](#custom-cost-matrix) section.
         sig { returns(T.nilable(T::Array[T::Array[Integer]])) }
         attr_reader :cost_matrix
@@ -53,9 +53,9 @@ module NextbillionSDK
         sig { params(cost_matrix: T::Array[T::Array[Integer]]).void }
         attr_writer :cost_matrix
 
-        # `depots` object is used to collect the details of a depot. Depots can be used as
-        # a starting point and/or ending point for the routes and vehicles. They also can
-        # be used to fulfil pickup and delivery type`jobs` . The loads which are to be
+        # depots object is used to collect the details of a depot. Depots can be used as a
+        # starting point and/or ending point for the routes and vehicles. They also can be
+        # used to fulfil pickup and delivery typejobs . The loads which are to be
         # delivered at task locations will be picked from depots and loads picked-up from
         # task locations will be delivered back to the depots. A depot can be configured
         # using the following fields:
@@ -87,20 +87,20 @@ module NextbillionSDK
         attr_writer :description
 
         # An array of arrays to denote the user-defined distances, in meters, for
-        # travelling between each pair of geographic coordinates mentioned in the
-        # `location` array. When this input is provided, actual distances between the
-        # locations will be ignored in favor of the values provided in this input for any
-        # distance calculations during the optimization process. The values provided here
-        # will also be used for cost calculations when `travel_cost` is “distance”.
+        # travelling between each pair of geographic coordinates mentioned in the location
+        # array. When this input is provided, actual distances between the locations will
+        # be ignored in favor of the values provided in this input for any distance
+        # calculations during the optimization process. The values provided here will also
+        # be used for cost calculations when travel_cost is “distance”.
         #
         # The number of arrays in the input should be equal to the number of coordinate
-        # points mentioned in the `location` array and each array, in turn, should contain
+        # points mentioned in the location array and each array, in turn, should contain
         # the same number of elements as well.
         #
         # **Note:**
         #
-        # - `duration_matrix` is mandatory when using`distance_matrix`.
-        # - When using `distance_matrix` route geometry will not be available in the
+        # - duration_matrix is mandatory when usingdistance_matrix.
+        # - When using distance_matrix route geometry will not be available in the
         #   optimized solution.
         sig { returns(T.nilable(T::Array[T::Array[Integer]])) }
         attr_reader :distance_matrix
@@ -109,24 +109,24 @@ module NextbillionSDK
         attr_writer :distance_matrix
 
         # An array of arrays to denote the user-defined durations, in seconds, for
-        # travelling between each pair of geographic coordinates mentioned in the
-        # `location` array. When this input is provided, actual durations between the
-        # locations will be ignored in favor of the values provided in the matrix for any
-        # ETA calculations during the optimization process. The values provided in the
-        # matrix will also be used for cost calculations when `travel_cost` is “duration”.
+        # travelling between each pair of geographic coordinates mentioned in the location
+        # array. When this input is provided, actual durations between the locations will
+        # be ignored in favor of the values provided in the matrix for any ETA
+        # calculations during the optimization process. The values provided in the matrix
+        # will also be used for cost calculations when travel_cost is “duration”.
         #
         # The number of arrays in the input should be equal to the number of coordinate
-        # points mentioned in the `location` array and each array, in turn, should contain
+        # points mentioned in the location array and each array, in turn, should contain
         # the same number of elements as well.
         #
-        # Please note that, unlike `distance_matrix`, `duration_matrix` can be used
+        # Please note that, unlike distance_matrix, duration_matrix can be used
         # independently in following cases:
         #
-        # - when `travel_cost` is “duration”
-        # - when `travel_cost` is “customized” and a `cost_matrix` is provided
+        # - when travel_cost is “duration”
+        # - when travel_cost is “customized” and a cost_matrix is provided
         #
         # Also, the route geometry will not be available in the optimized solution when
-        # using `duration_matrix`.
+        # using duration_matrix.
         sig { returns(T.nilable(T::Array[T::Array[Integer]])) }
         attr_reader :duration_matrix
 
@@ -141,13 +141,13 @@ module NextbillionSDK
         sig { params(existing_solution_id: String).void }
         attr_writer :existing_solution_id
 
-        # `jobs` object is used to collect the details of a particular job or task that
+        # jobs object is used to collect the details of a particular job or task that
         # needs to be completed as part of the optimization process. Each job can have
-        # either a `pickup` or `delivery` step, but not both. Read more about this
-        # attribute in the [Job Object](#job-object) section.
+        # either a pickup or delivery step, but not both. Read more about this attribute
+        # in the [Job Object](#job-object) section.
         #
-        # Please note that either the `jobs` or the `shipments` attribute should be
-        # specified to build a valid request.
+        # Please note that either the jobs or the shipments attribute should be specified
+        # to build a valid request.
         sig { returns(T.nilable(T::Array[NextbillionSDK::Optimization::Job])) }
         attr_reader :jobs
 
@@ -174,13 +174,12 @@ module NextbillionSDK
         end
         attr_writer :options
 
-        # `relations` attribute is an array of individual relation objects. `type`
-        # parameter and `steps` object are mandatory when using this attribute.
+        # relations attribute is an array of individual relation objects. type parameter
+        # and steps object are mandatory when using this attribute.
         #
         # Please note:
         #
-        # - The soft constraints are **not** effective when using the `relations`
-        #   attribute.
+        # - The soft constraints are **not** effective when using the relations attribute.
         # - In case a given relation can't be satisfied, the optimizer will flag all the
         #   tasks involved in that "relation" as unassigned.
         #
@@ -205,13 +204,13 @@ module NextbillionSDK
         end
         attr_writer :relations
 
-        # The `shipments` object is used to collect the details of shipments that need to
-        # be completed as part of the optimization process.
+        # The shipments object is used to collect the details of shipments that need to be
+        # completed as part of the optimization process.
         #
         # Each shipment should have a pickup and the corresponding delivery step.
         #
-        # Please note that either the `jobs` or the `shipments` attribute should be
-        # specified to build a valid request.
+        # Please note that either the jobs or the shipments attribute should be specified
+        # to build a valid request.
         sig do
           returns(T.nilable(T::Array[NextbillionSDK::Optimization::Shipment]))
         end
@@ -226,9 +225,9 @@ module NextbillionSDK
 
         # This attribute is related to the re-optimization feature. It allows for the
         # previous optimization result to be provided in case new orders are received and
-        # the solution needs to be re-planned. The `solution` attribute should contain the
-        # same routes as the previous optimization result. `solution` attribute is an
-        # array of objects with each object corresponding to one route.
+        # the solution needs to be re-planned. The solution attribute should contain the
+        # same routes as the previous optimization result. solution attribute is an array
+        # of objects with each object corresponding to one route.
         sig do
           returns(
             T.nilable(
@@ -248,10 +247,10 @@ module NextbillionSDK
         end
         attr_writer :solution
 
-        # `unassigned` attribute is related to the re-optimization feature. This attribute
+        # unassigned attribute is related to the re-optimization feature. This attribute
         # should contain the tasks that were not assigned during an earlier optimization
-        # process. Please note that the `unassigned` part in request should be consistent
-        # with the `unassigned` part in the previous optimization result.
+        # process. Please note that the unassigned part in request should be consistent
+        # with the unassigned part in the previous optimization result.
         #
         # Users can reduce the number of unassigned tasks in the re-optimized solution, by
         # following strategies such as:
@@ -287,8 +286,8 @@ module NextbillionSDK
         #
         # Please note that
         #
-        # - Each zone should have a geometry specified either through`geometry` or through
-        #   the `geofence_id` parameter.
+        # - Each zone should have a geometry specified either throughgeometry or through
+        #   the geofence_id parameter.
         # - When zone IDs are not provided for individual tasks (jobs or shipments) then
         #   the API will automatically allocate zones based on the task’s geolocation and
         #   the geometries of the zones provided here. Otherwise, if the zone IDs are
@@ -353,25 +352,25 @@ module NextbillionSDK
           # A key is a unique identifier that is required to authenticate a request to the
           # API.
           key:,
-          # The `locations` object is used to define all the locations that will be used
+          # The locations object is used to define all the locations that will be used
           # during the optimization process. Read more about this attribute in the
           # [Location Object](#location-object) section.
           locations:,
-          # The `vehicles` attribute describes the characteristics and constraints of the
+          # The vehicles attribute describes the characteristics and constraints of the
           # vehicles that will be used for fulfilling the tasks. Read more about this
           # attribute in the [Vehicle Object](#vehicle-object) section.
           vehicles:,
           # An array of arrays to denote the user-defined costs of traveling between each
-          # pair of geographic coordinates mentioned in the `location` array. The number of
+          # pair of geographic coordinates mentioned in the location array. The number of
           # arrays should be equal to the number of coordinate points mentioned in the
-          # `location` array and each array should contain the same number of elements as
-          # well. Please note that `cost_matrix` is effective only when
-          # `travel_cost=customized`. Read more about this attribute in the
+          # location array and each array should contain the same number of elements as
+          # well. Please note that cost_matrix is effective only when
+          # travel_cost=customized. Read more about this attribute in the
           # [Custom Cost Matrix](#custom-cost-matrix) section.
           cost_matrix: nil,
-          # `depots` object is used to collect the details of a depot. Depots can be used as
-          # a starting point and/or ending point for the routes and vehicles. They also can
-          # be used to fulfil pickup and delivery type`jobs` . The loads which are to be
+          # depots object is used to collect the details of a depot. Depots can be used as a
+          # starting point and/or ending point for the routes and vehicles. They also can be
+          # used to fulfil pickup and delivery typejobs . The loads which are to be
           # delivered at task locations will be picked from depots and loads picked-up from
           # task locations will be delivered back to the depots. A depot can be configured
           # using the following fields:
@@ -380,88 +379,87 @@ module NextbillionSDK
           # returned as is in the response.
           description: nil,
           # An array of arrays to denote the user-defined distances, in meters, for
-          # travelling between each pair of geographic coordinates mentioned in the
-          # `location` array. When this input is provided, actual distances between the
-          # locations will be ignored in favor of the values provided in this input for any
-          # distance calculations during the optimization process. The values provided here
-          # will also be used for cost calculations when `travel_cost` is “distance”.
+          # travelling between each pair of geographic coordinates mentioned in the location
+          # array. When this input is provided, actual distances between the locations will
+          # be ignored in favor of the values provided in this input for any distance
+          # calculations during the optimization process. The values provided here will also
+          # be used for cost calculations when travel_cost is “distance”.
           #
           # The number of arrays in the input should be equal to the number of coordinate
-          # points mentioned in the `location` array and each array, in turn, should contain
+          # points mentioned in the location array and each array, in turn, should contain
           # the same number of elements as well.
           #
           # **Note:**
           #
-          # - `duration_matrix` is mandatory when using`distance_matrix`.
-          # - When using `distance_matrix` route geometry will not be available in the
+          # - duration_matrix is mandatory when usingdistance_matrix.
+          # - When using distance_matrix route geometry will not be available in the
           #   optimized solution.
           distance_matrix: nil,
           # An array of arrays to denote the user-defined durations, in seconds, for
-          # travelling between each pair of geographic coordinates mentioned in the
-          # `location` array. When this input is provided, actual durations between the
-          # locations will be ignored in favor of the values provided in the matrix for any
-          # ETA calculations during the optimization process. The values provided in the
-          # matrix will also be used for cost calculations when `travel_cost` is “duration”.
+          # travelling between each pair of geographic coordinates mentioned in the location
+          # array. When this input is provided, actual durations between the locations will
+          # be ignored in favor of the values provided in the matrix for any ETA
+          # calculations during the optimization process. The values provided in the matrix
+          # will also be used for cost calculations when travel_cost is “duration”.
           #
           # The number of arrays in the input should be equal to the number of coordinate
-          # points mentioned in the `location` array and each array, in turn, should contain
+          # points mentioned in the location array and each array, in turn, should contain
           # the same number of elements as well.
           #
-          # Please note that, unlike `distance_matrix`, `duration_matrix` can be used
+          # Please note that, unlike distance_matrix, duration_matrix can be used
           # independently in following cases:
           #
-          # - when `travel_cost` is “duration”
-          # - when `travel_cost` is “customized” and a `cost_matrix` is provided
+          # - when travel_cost is “duration”
+          # - when travel_cost is “customized” and a cost_matrix is provided
           #
           # Also, the route geometry will not be available in the optimized solution when
-          # using `duration_matrix`.
+          # using duration_matrix.
           duration_matrix: nil,
           # The previous optimization request id used to retrieve solution for
           # reoptimization
           existing_solution_id: nil,
-          # `jobs` object is used to collect the details of a particular job or task that
+          # jobs object is used to collect the details of a particular job or task that
           # needs to be completed as part of the optimization process. Each job can have
-          # either a `pickup` or `delivery` step, but not both. Read more about this
-          # attribute in the [Job Object](#job-object) section.
+          # either a pickup or delivery step, but not both. Read more about this attribute
+          # in the [Job Object](#job-object) section.
           #
-          # Please note that either the `jobs` or the `shipments` attribute should be
-          # specified to build a valid request.
+          # Please note that either the jobs or the shipments attribute should be specified
+          # to build a valid request.
           jobs: nil,
           # It represents the set of options that can be used to configure optimization
           # algorithms so that the solver provides a solution that meets the desired
           # business objectives.
           options: nil,
-          # `relations` attribute is an array of individual relation objects. `type`
-          # parameter and `steps` object are mandatory when using this attribute.
+          # relations attribute is an array of individual relation objects. type parameter
+          # and steps object are mandatory when using this attribute.
           #
           # Please note:
           #
-          # - The soft constraints are **not** effective when using the `relations`
-          #   attribute.
+          # - The soft constraints are **not** effective when using the relations attribute.
           # - In case a given relation can't be satisfied, the optimizer will flag all the
           #   tasks involved in that "relation" as unassigned.
           #
           # Read more about this attribute in the [Relations Object](#relations-object)
           # section.
           relations: nil,
-          # The `shipments` object is used to collect the details of shipments that need to
-          # be completed as part of the optimization process.
+          # The shipments object is used to collect the details of shipments that need to be
+          # completed as part of the optimization process.
           #
           # Each shipment should have a pickup and the corresponding delivery step.
           #
-          # Please note that either the `jobs` or the `shipments` attribute should be
-          # specified to build a valid request.
+          # Please note that either the jobs or the shipments attribute should be specified
+          # to build a valid request.
           shipments: nil,
           # This attribute is related to the re-optimization feature. It allows for the
           # previous optimization result to be provided in case new orders are received and
-          # the solution needs to be re-planned. The `solution` attribute should contain the
-          # same routes as the previous optimization result. `solution` attribute is an
-          # array of objects with each object corresponding to one route.
+          # the solution needs to be re-planned. The solution attribute should contain the
+          # same routes as the previous optimization result. solution attribute is an array
+          # of objects with each object corresponding to one route.
           solution: nil,
-          # `unassigned` attribute is related to the re-optimization feature. This attribute
+          # unassigned attribute is related to the re-optimization feature. This attribute
           # should contain the tasks that were not assigned during an earlier optimization
-          # process. Please note that the `unassigned` part in request should be consistent
-          # with the `unassigned` part in the previous optimization result.
+          # process. Please note that the unassigned part in request should be consistent
+          # with the unassigned part in the previous optimization result.
           #
           # Users can reduce the number of unassigned tasks in the re-optimized solution, by
           # following strategies such as:
@@ -483,8 +481,8 @@ module NextbillionSDK
           #
           # Please note that
           #
-          # - Each zone should have a geometry specified either through`geometry` or through
-          #   the `geofence_id` parameter.
+          # - Each zone should have a geometry specified either throughgeometry or through
+          #   the geofence_id parameter.
           # - When zone IDs are not provided for individual tasks (jobs or shipments) then
           #   the API will automatically allocate zones based on the task’s geolocation and
           #   the geometries of the zones provided here. Otherwise, if the zone IDs are
@@ -547,9 +545,9 @@ module NextbillionSDK
           # of the location while configuring all such tasks.
           #
           # Please use this array to determine the index of a location when setting the
-          # `location_index` parameter in `jobs`, `shipments`, `vehicles` or other parts of
-          # the request. The length of this array determines the valid values for
-          # `location_index` parameter.
+          # location_index parameter in jobs, shipments, vehicles or other parts of the
+          # request. The length of this array determines the valid values for location_index
+          # parameter.
           sig { returns(T::Array[String]) }
           attr_accessor :location
 
@@ -586,7 +584,7 @@ module NextbillionSDK
           end
           attr_writer :approaches
 
-          # The `locations` object is used to define all the locations that will be used
+          # The locations object is used to define all the locations that will be used
           # during the optimization process. Read more about this attribute in the
           # [Location Object](#location-object) section.
           sig do
@@ -607,9 +605,9 @@ module NextbillionSDK
             # of the location while configuring all such tasks.
             #
             # Please use this array to determine the index of a location when setting the
-            # `location_index` parameter in `jobs`, `shipments`, `vehicles` or other parts of
-            # the request. The length of this array determines the valid values for
-            # `location_index` parameter.
+            # location_index parameter in jobs, shipments, vehicles or other parts of the
+            # request. The length of this array determines the valid values for location_index
+            # parameter.
             location:,
             # A unique ID for the set of locations. It should be a positive integer.
             id: nil,
@@ -651,12 +649,12 @@ module NextbillionSDK
 
             UNRESTRICTED =
               T.let(
-                :"`unrestricted`",
+                :unrestricted,
                 NextbillionSDK::Optimization::V2SubmitParams::Locations::Approach::TaggedSymbol
               )
             CURB =
               T.let(
-                :"`curb`",
+                :curb,
                 NextbillionSDK::Optimization::V2SubmitParams::Locations::Approach::TaggedSymbol
               )
             EMPTY_STRING =
@@ -690,12 +688,12 @@ module NextbillionSDK
           sig { returns(String) }
           attr_accessor :id
 
-          # Specify the index of coordinates (in the `location` array) denoting the depot’s
-          # location. The valid range of values is \[0, length of `location` array). If the
-          # location index exceeds the count of input locations in the `location` array, the
+          # Specify the index of coordinates (in the location array) denoting the depot’s
+          # location. The valid range of values is \[0, length of location array). If the
+          # location index exceeds the count of input locations in the location array, the
           # API will report an error.
           #
-          # Please note the `location_index` is mandatory when using the `depots` object.
+          # Please note the location_index is mandatory when using the depots object.
           sig { returns(Integer) }
           attr_accessor :location_index
 
@@ -724,9 +722,9 @@ module NextbillionSDK
           #   overlap with each other.
           # - Time windows should always be specified in the format of \[start_timestamp,
           #   end_timestamp\].
-          # - Depot's time-windows are ineffective used when `max_activity_waiting_time` is
+          # - Depot's time-windows are ineffective used when max_activity_waiting_time is
           #   specified in the input.
-          # - Using `relations` along with depot time-window is not allowed and the service
+          # - Using relations along with depot time-window is not allowed and the service
           #   will return an error.
           sig { returns(T.nilable(T::Array[T::Array[Integer]])) }
           attr_reader :time_windows
@@ -746,12 +744,12 @@ module NextbillionSDK
           def self.new(
             # Provide an unique ID for the depot. The IDs are case sensitive.
             id:,
-            # Specify the index of coordinates (in the `location` array) denoting the depot’s
-            # location. The valid range of values is \[0, length of `location` array). If the
-            # location index exceeds the count of input locations in the `location` array, the
+            # Specify the index of coordinates (in the location array) denoting the depot’s
+            # location. The valid range of values is \[0, length of location array). If the
+            # location index exceeds the count of input locations in the location array, the
             # API will report an error.
             #
-            # Please note the `location_index` is mandatory when using the `depots` object.
+            # Please note the location_index is mandatory when using the depots object.
             location_index:,
             # Add a custom description for the depot.
             description: nil,
@@ -768,9 +766,9 @@ module NextbillionSDK
             #   overlap with each other.
             # - Time windows should always be specified in the format of \[start_timestamp,
             #   end_timestamp\].
-            # - Depot's time-windows are ineffective used when `max_activity_waiting_time` is
+            # - Depot's time-windows are ineffective used when max_activity_waiting_time is
             #   specified in the input.
-            # - Using `relations` along with depot time-window is not allowed and the service
+            # - Using relations along with depot time-window is not allowed and the service
             #   will return an error.
             time_windows: nil
           )
@@ -808,10 +806,9 @@ module NextbillionSDK
           # Whereas the hard constraints are the constraints that will not be violated by
           # the solver. Users can use multiple constraints together.
           #
-          # Please note that soft constraints are ineffective when using `relations`
-          # attribute in a request. The hard constraint, `max_activity_waiting_time`, is
-          # effective only when relation type is `in_same_route` and ineffective for all
-          # other types.
+          # Please note that soft constraints are ineffective when using relations attribute
+          # in a request. The hard constraint, max_activity_waiting_time, is effective only
+          # when relation type is in_same_route and ineffective for all other types.
           sig do
             returns(
               T.nilable(
@@ -831,8 +828,8 @@ module NextbillionSDK
 
           # Set grouping rules for the tasks and routes.
           #
-          # - Use `order_grouping` to group nearby tasks
-          # - Use `route_grouping` to control route sequencing.
+          # - Use order_grouping to group nearby tasks
+          # - Use route_grouping to control route sequencing.
           sig do
             returns(
               T.nilable(
@@ -911,15 +908,14 @@ module NextbillionSDK
             # Whereas the hard constraints are the constraints that will not be violated by
             # the solver. Users can use multiple constraints together.
             #
-            # Please note that soft constraints are ineffective when using `relations`
-            # attribute in a request. The hard constraint, `max_activity_waiting_time`, is
-            # effective only when relation type is `in_same_route` and ineffective for all
-            # other types.
+            # Please note that soft constraints are ineffective when using relations attribute
+            # in a request. The hard constraint, max_activity_waiting_time, is effective only
+            # when relation type is in_same_route and ineffective for all other types.
             constraint: nil,
             # Set grouping rules for the tasks and routes.
             #
-            # - Use `order_grouping` to group nearby tasks
-            # - Use `route_grouping` to control route sequencing.
+            # - Use order_grouping to group nearby tasks
+            # - Use route_grouping to control route sequencing.
             grouping: nil,
             # This attribute is used to configure the objective of the optimization job.
             objective: nil,
@@ -956,14 +952,14 @@ module NextbillionSDK
               end
 
             # This is a hard constraint which specifies the maximum waiting time, in seconds,
-            # for each `step`. It ensures that the vehicles do not have unreasonable wait
-            # times between jobs or shipments. This feature is useful for use cases where
-            # avoiding long wait times between jobs or shipments is a primary concern.
+            # for each step. It ensures that the vehicles do not have unreasonable wait times
+            # between jobs or shipments. This feature is useful for use cases where avoiding
+            # long wait times between jobs or shipments is a primary concern.
             #
             # Please note that the waiting time constraint applies to all tasks in the
             # optimization request, ensuring that no single task exceeds the specified maximum
-            # waiting time. When being used together with `relations` attribute, this
-            # parameter is effective only for `in_same_route` relation type.
+            # waiting time. When being used together with relations attribute, this parameter
+            # is effective only for in_same_route relation type.
             sig { returns(T.nilable(Integer)) }
             attr_reader :max_activity_waiting_time
 
@@ -972,7 +968,7 @@ module NextbillionSDK
 
             # This is a soft constraint for vehicle overtime. Overtime is defined as the time
             # that a vehicle spends to complete a set of jobs after its time window has ended.
-            # `max_vehicle_overtime` attribute specifies the maximum amount of overtime a
+            # max_vehicle_overtime attribute specifies the maximum amount of overtime a
             # vehicle can have, in seconds. If a vehicle’s overtime exceeds this value, it
             # will be considered a violation of this constraint.
             #
@@ -990,7 +986,7 @@ module NextbillionSDK
             #
             # Please note that this constraint applies to all tasks in the optimization
             # request. In case lateness duration needs to be applied for individual tasks,
-            # please use the `max_visit_lateness` parameter under `jobs` and `shipments`
+            # please use the max_visit_lateness parameter under jobs and shipments
             sig { returns(T.nilable(Integer)) }
             attr_reader :max_visit_lateness
 
@@ -1005,10 +1001,9 @@ module NextbillionSDK
             # Whereas the hard constraints are the constraints that will not be violated by
             # the solver. Users can use multiple constraints together.
             #
-            # Please note that soft constraints are ineffective when using `relations`
-            # attribute in a request. The hard constraint, `max_activity_waiting_time`, is
-            # effective only when relation type is `in_same_route` and ineffective for all
-            # other types.
+            # Please note that soft constraints are ineffective when using relations attribute
+            # in a request. The hard constraint, max_activity_waiting_time, is effective only
+            # when relation type is in_same_route and ineffective for all other types.
             sig do
               params(
                 max_activity_waiting_time: Integer,
@@ -1018,18 +1013,18 @@ module NextbillionSDK
             end
             def self.new(
               # This is a hard constraint which specifies the maximum waiting time, in seconds,
-              # for each `step`. It ensures that the vehicles do not have unreasonable wait
-              # times between jobs or shipments. This feature is useful for use cases where
-              # avoiding long wait times between jobs or shipments is a primary concern.
+              # for each step. It ensures that the vehicles do not have unreasonable wait times
+              # between jobs or shipments. This feature is useful for use cases where avoiding
+              # long wait times between jobs or shipments is a primary concern.
               #
               # Please note that the waiting time constraint applies to all tasks in the
               # optimization request, ensuring that no single task exceeds the specified maximum
-              # waiting time. When being used together with `relations` attribute, this
-              # parameter is effective only for `in_same_route` relation type.
+              # waiting time. When being used together with relations attribute, this parameter
+              # is effective only for in_same_route relation type.
               max_activity_waiting_time: nil,
               # This is a soft constraint for vehicle overtime. Overtime is defined as the time
               # that a vehicle spends to complete a set of jobs after its time window has ended.
-              # `max_vehicle_overtime` attribute specifies the maximum amount of overtime a
+              # max_vehicle_overtime attribute specifies the maximum amount of overtime a
               # vehicle can have, in seconds. If a vehicle’s overtime exceeds this value, it
               # will be considered a violation of this constraint.
               #
@@ -1042,7 +1037,7 @@ module NextbillionSDK
               #
               # Please note that this constraint applies to all tasks in the optimization
               # request. In case lateness duration needs to be applied for individual tasks,
-              # please use the `max_visit_lateness` parameter under `jobs` and `shipments`
+              # please use the max_visit_lateness parameter under jobs and shipments
               max_visit_lateness: nil
             )
             end
@@ -1142,8 +1137,8 @@ module NextbillionSDK
 
             # Set grouping rules for the tasks and routes.
             #
-            # - Use `order_grouping` to group nearby tasks
-            # - Use `route_grouping` to control route sequencing.
+            # - Use order_grouping to group nearby tasks
+            # - Use route_grouping to control route sequencing.
             sig do
               params(
                 order_grouping:
@@ -1215,7 +1210,7 @@ module NextbillionSDK
                 end
 
               # Specify the straight line distance, in meters, which will be used to identify
-              # the tasks that should be grouped together. The default value is `null`.
+              # the tasks that should be grouped together. The default value is null.
               sig { returns(T.nilable(Float)) }
               attr_reader :grouping_diameter
 
@@ -1235,7 +1230,7 @@ module NextbillionSDK
               sig { params(grouping_diameter: Float).returns(T.attached_class) }
               def self.new(
                 # Specify the straight line distance, in meters, which will be used to identify
-                # the tasks that should be grouped together. The default value is `null`.
+                # the tasks that should be grouped together. The default value is null.
                 grouping_diameter: nil
               )
               end
@@ -1271,7 +1266,7 @@ module NextbillionSDK
               attr_writer :penalty_factor
 
               # Specify the diameter of the zone, routes within which will be prioritised before
-              # routes falling in other zones. Please note that `zone_diameter` is the straight
+              # routes falling in other zones. Please note that zone_diameter is the straight
               # line distance, in meters.
               sig { returns(T.nilable(Float)) }
               attr_reader :zone_diameter
@@ -1283,10 +1278,10 @@ module NextbillionSDK
               # value is “system_generated”.
               #
               # - system_generated - Routing zone boundaries are created automatically by the
-              #   optimizer based on the `zone_diameter` provided.
+              #   optimizer based on the zone_diameter provided.
               # - custom_definition - Custom routing zone boundaries should be provided by the
-              #   user in input using the `zones` attribute. An error would be returned if the
-              #   `zones` attribute is null or missing in the input request.
+              #   user in input using the zones attribute. An error would be returned if the
+              #   zones attribute is null or missing in the input request.
               sig do
                 returns(
                   T.nilable(
@@ -1328,17 +1323,17 @@ module NextbillionSDK
                 # lower penalty factor, like 1.0, may have several zone violations.
                 penalty_factor: nil,
                 # Specify the diameter of the zone, routes within which will be prioritised before
-                # routes falling in other zones. Please note that `zone_diameter` is the straight
+                # routes falling in other zones. Please note that zone_diameter is the straight
                 # line distance, in meters.
                 zone_diameter: nil,
                 # Specify the source for creating boundaries of the routing zones. The default
                 # value is “system_generated”.
                 #
                 # - system_generated - Routing zone boundaries are created automatically by the
-                #   optimizer based on the `zone_diameter` provided.
+                #   optimizer based on the zone_diameter provided.
                 # - custom_definition - Custom routing zone boundaries should be provided by the
-                #   user in input using the `zones` attribute. An error would be returned if the
-                #   `zones` attribute is null or missing in the input request.
+                #   user in input using the zones attribute. An error would be returned if the
+                #   zones attribute is null or missing in the input request.
                 zone_source: nil
               )
               end
@@ -1360,10 +1355,10 @@ module NextbillionSDK
               # value is “system_generated”.
               #
               # - system_generated - Routing zone boundaries are created automatically by the
-              #   optimizer based on the `zone_diameter` provided.
+              #   optimizer based on the zone_diameter provided.
               # - custom_definition - Custom routing zone boundaries should be provided by the
-              #   user in input using the `zones` attribute. An error would be returned if the
-              #   `zones` attribute is null or missing in the input request.
+              #   user in input using the zones attribute. An error would be returned if the
+              #   zones attribute is null or missing in the input request.
               module ZoneSource
                 extend NextbillionSDK::Internal::Type::Enum
 
@@ -1378,12 +1373,12 @@ module NextbillionSDK
 
                 SYSTEM_GENERATED =
                   T.let(
-                    :"`system_generated`",
+                    :system_generated,
                     NextbillionSDK::Optimization::V2SubmitParams::Options::Grouping::RouteGrouping::ZoneSource::TaggedSymbol
                   )
                 CUSTOM_DEFINITION =
                   T.let(
-                    :"`custom_definition`",
+                    :custom_definition,
                     NextbillionSDK::Optimization::V2SubmitParams::Options::Grouping::RouteGrouping::ZoneSource::TaggedSymbol
                   )
 
@@ -1410,18 +1405,18 @@ module NextbillionSDK
               end
 
             # Choose where the optimizer should schedule the driver’s wait time. When set to
-            # `true` the driver waits at the location of the task until its time window allows
-            # him to start the task. When set to `false` the driver waits at the location of
-            # the previous task and starts driving only at such a time that makes him arrive
-            # at the next task location in time to start the task as soon as he reaches.
+            # true the driver waits at the location of the task until its time window allows
+            # him to start the task. When set to false the driver waits at the location of the
+            # previous task and starts driving only at such a time that makes him arrive at
+            # the next task location in time to start the task as soon as he reaches.
             sig { returns(T.nilable(T::Boolean)) }
             attr_reader :allow_early_arrival
 
             sig { params(allow_early_arrival: T::Boolean).void }
             attr_writer :allow_early_arrival
 
-            # The `custom` parameter is used to define special objectives apart from the
-            # simpler travel cost minimization objectives.
+            # The custom parameter is used to define special objectives apart from the simpler
+            # travel cost minimization objectives.
             sig do
               returns(
                 T.nilable(
@@ -1486,21 +1481,21 @@ module NextbillionSDK
             sig { params(solving_time_limit: Integer).void }
             attr_writer :solving_time_limit
 
-            # The `travel_cost` parameter specifies the type of cost used by the solver to
+            # The travel_cost parameter specifies the type of cost used by the solver to
             # determine the routes.
             #
-            # If the `travel_cost` parameter is set to `distance`, the solver will minimize
-            # the total distance traveled by vehicles while determining a solution. This
-            # objective would be useful in cases where the primary objective is to reduce fuel
+            # If the travel_cost parameter is set to distance, the solver will minimize the
+            # total distance traveled by vehicles while determining a solution. This objective
+            # would be useful in cases where the primary objective is to reduce fuel
             # consumption or travel expenses.
             #
-            # If the `travel_cost` parameter is set to `duration`, the solver will minimize
-            # the total time taken by the vehicles to complete all tasks while determining a
+            # If the travel_cost parameter is set to duration, the solver will minimize the
+            # total time taken by the vehicles to complete all tasks while determining a
             # solution. This objective would be useful in cases where the primary objective is
             # to minimize completion time or maximize the number of orders fulfilled within a
             # given time window.
             #
-            # If the `travel_cost` parameter is set to `air_distance`, the solver will try to
+            # If the travel_cost parameter is set to air_distance, the solver will try to
             # calculate the distance,in meters, between two points using the great-circle
             # distance formula (i.e., the shortest distance between two points on a sphere)
             # instead of the actual road distance. This would be useful in cases where the
@@ -1508,8 +1503,8 @@ module NextbillionSDK
             # significantly longer than the actual straight-line distance. For example, in
             # Drone Delivery services.
             #
-            # If the `travel_cost` is set to `customized` the solver would use the custom cost
-            # values provided by the user (in `cost_matrix` attribute) and prefer a solution
+            # If the travel_cost is set to customized the solver would use the custom cost
+            # values provided by the user (in cost_matrix attribute) and prefer a solution
             # with lower overall cost. This enables the user to have greater control over the
             # routes preferred by the solver and hence the sequence in which the jobs are
             # completed.
@@ -1546,13 +1541,13 @@ module NextbillionSDK
             end
             def self.new(
               # Choose where the optimizer should schedule the driver’s wait time. When set to
-              # `true` the driver waits at the location of the task until its time window allows
-              # him to start the task. When set to `false` the driver waits at the location of
-              # the previous task and starts driving only at such a time that makes him arrive
-              # at the next task location in time to start the task as soon as he reaches.
+              # true the driver waits at the location of the task until its time window allows
+              # him to start the task. When set to false the driver waits at the location of the
+              # previous task and starts driving only at such a time that makes him arrive at
+              # the next task location in time to start the task as soon as he reaches.
               allow_early_arrival: nil,
-              # The `custom` parameter is used to define special objectives apart from the
-              # simpler travel cost minimization objectives.
+              # The custom parameter is used to define special objectives apart from the simpler
+              # travel cost minimization objectives.
               custom: nil,
               # Specify whether to minimize the number of depots used in optimization routes.
               minimise_num_depots: nil,
@@ -1575,21 +1570,21 @@ module NextbillionSDK
               # - It is recommended to specify a duration of at least 5-7 minutes in case the
               #   input problem contains a large set of tasks or vehicles.
               solving_time_limit: nil,
-              # The `travel_cost` parameter specifies the type of cost used by the solver to
+              # The travel_cost parameter specifies the type of cost used by the solver to
               # determine the routes.
               #
-              # If the `travel_cost` parameter is set to `distance`, the solver will minimize
-              # the total distance traveled by vehicles while determining a solution. This
-              # objective would be useful in cases where the primary objective is to reduce fuel
+              # If the travel_cost parameter is set to distance, the solver will minimize the
+              # total distance traveled by vehicles while determining a solution. This objective
+              # would be useful in cases where the primary objective is to reduce fuel
               # consumption or travel expenses.
               #
-              # If the `travel_cost` parameter is set to `duration`, the solver will minimize
-              # the total time taken by the vehicles to complete all tasks while determining a
+              # If the travel_cost parameter is set to duration, the solver will minimize the
+              # total time taken by the vehicles to complete all tasks while determining a
               # solution. This objective would be useful in cases where the primary objective is
               # to minimize completion time or maximize the number of orders fulfilled within a
               # given time window.
               #
-              # If the `travel_cost` parameter is set to `air_distance`, the solver will try to
+              # If the travel_cost parameter is set to air_distance, the solver will try to
               # calculate the distance,in meters, between two points using the great-circle
               # distance formula (i.e., the shortest distance between two points on a sphere)
               # instead of the actual road distance. This would be useful in cases where the
@@ -1597,8 +1592,8 @@ module NextbillionSDK
               # significantly longer than the actual straight-line distance. For example, in
               # Drone Delivery services.
               #
-              # If the `travel_cost` is set to `customized` the solver would use the custom cost
-              # values provided by the user (in `cost_matrix` attribute) and prefer a solution
+              # If the travel_cost is set to customized the solver would use the custom cost
+              # values provided by the user (in cost_matrix attribute) and prefer a solution
               # with lower overall cost. This enables the user to have greater control over the
               # routes preferred by the solver and hence the sequence in which the jobs are
               # completed.
@@ -1633,15 +1628,15 @@ module NextbillionSDK
                   )
                 end
 
-              # The `type` parameter accepts two inputs:
+              # The type parameter accepts two inputs:
               #
-              # - `min`: This type of customized objective will minimize the metric provided in
-              #   the `value` parameter.
-              # - `min-max`: This type of customized objective will approximate an even
-              #   distribution of the metric provided in the `value` parameter, among all the
+              # - min: This type of customized objective will minimize the metric provided in
+              #   the value parameter.
+              # - min-max: This type of customized objective will approximate an even
+              #   distribution of the metric provided in the value parameter, among all the
               #   routes in solution.
               #
-              # Please note that `type` is mandatory only when using `custom` attribute.
+              # Please note that type is mandatory only when using custom attribute.
               sig do
                 returns(
                   NextbillionSDK::Optimization::V2SubmitParams::Options::Objective::Custom::Type::OrSymbol
@@ -1649,23 +1644,23 @@ module NextbillionSDK
               end
               attr_accessor :type
 
-              # The `value` parameter accepts four inputs, two of them are valid for `min` type
-              # and other two are valid for `min-max` type custom objective. Let’s look at the
-              # values for `min` type objective:
+              # The value parameter accepts four inputs, two of them are valid for min type and
+              # other two are valid for min-max type custom objective. Let’s look at the values
+              # for min type objective:
               #
-              # - `vehicles`: Solver will minimize the number of vehicles used in the solution.
-              # - `completion_time`: Solver will minimize the total time taken to complete all
+              # - vehicles: Solver will minimize the number of vehicles used in the solution.
+              # - completion_time: Solver will minimize the total time taken to complete all
               #   tasks.
               #
-              # The next set of values are acceptable when `type` is set to `min-max`.
+              # The next set of values are acceptable when type is set to min-max.
               #
-              # - `tasks`: Solver will evenly distribute the tasks on each route.
-              # - `travel_cost`: Solver will assign tasks such that the traveling cost of each
+              # - tasks: Solver will evenly distribute the tasks on each route.
+              # - travel_cost: Solver will assign tasks such that the traveling cost of each
               #   route is within a close range of other routes. The travel cost metric
-              #   considered here is the one set using `objective.travel_cost` .
+              #   considered here is the one set using objective.travel_cost .
               #
-              # Please note that `value` is mandatory only when using `custom` attribute. The
-              # above values provide flexibility to tune the optimization algorithm to fulfill
+              # Please note that value is mandatory only when using custom attribute. The above
+              # values provide flexibility to tune the optimization algorithm to fulfill
               # practical objectives beyond the relatively simpler time or distance minimization
               # approaches.
               sig do
@@ -1675,8 +1670,8 @@ module NextbillionSDK
               end
               attr_accessor :value
 
-              # The `custom` parameter is used to define special objectives apart from the
-              # simpler travel cost minimization objectives.
+              # The custom parameter is used to define special objectives apart from the simpler
+              # travel cost minimization objectives.
               sig do
                 params(
                   type:
@@ -1686,33 +1681,33 @@ module NextbillionSDK
                 ).returns(T.attached_class)
               end
               def self.new(
-                # The `type` parameter accepts two inputs:
+                # The type parameter accepts two inputs:
                 #
-                # - `min`: This type of customized objective will minimize the metric provided in
-                #   the `value` parameter.
-                # - `min-max`: This type of customized objective will approximate an even
-                #   distribution of the metric provided in the `value` parameter, among all the
+                # - min: This type of customized objective will minimize the metric provided in
+                #   the value parameter.
+                # - min-max: This type of customized objective will approximate an even
+                #   distribution of the metric provided in the value parameter, among all the
                 #   routes in solution.
                 #
-                # Please note that `type` is mandatory only when using `custom` attribute.
+                # Please note that type is mandatory only when using custom attribute.
                 type:,
-                # The `value` parameter accepts four inputs, two of them are valid for `min` type
-                # and other two are valid for `min-max` type custom objective. Let’s look at the
-                # values for `min` type objective:
+                # The value parameter accepts four inputs, two of them are valid for min type and
+                # other two are valid for min-max type custom objective. Let’s look at the values
+                # for min type objective:
                 #
-                # - `vehicles`: Solver will minimize the number of vehicles used in the solution.
-                # - `completion_time`: Solver will minimize the total time taken to complete all
+                # - vehicles: Solver will minimize the number of vehicles used in the solution.
+                # - completion_time: Solver will minimize the total time taken to complete all
                 #   tasks.
                 #
-                # The next set of values are acceptable when `type` is set to `min-max`.
+                # The next set of values are acceptable when type is set to min-max.
                 #
-                # - `tasks`: Solver will evenly distribute the tasks on each route.
-                # - `travel_cost`: Solver will assign tasks such that the traveling cost of each
+                # - tasks: Solver will evenly distribute the tasks on each route.
+                # - travel_cost: Solver will assign tasks such that the traveling cost of each
                 #   route is within a close range of other routes. The travel cost metric
-                #   considered here is the one set using `objective.travel_cost` .
+                #   considered here is the one set using objective.travel_cost .
                 #
-                # Please note that `value` is mandatory only when using `custom` attribute. The
-                # above values provide flexibility to tune the optimization algorithm to fulfill
+                # Please note that value is mandatory only when using custom attribute. The above
+                # values provide flexibility to tune the optimization algorithm to fulfill
                 # practical objectives beyond the relatively simpler time or distance minimization
                 # approaches.
                 value:
@@ -1732,15 +1727,15 @@ module NextbillionSDK
               def to_hash
               end
 
-              # The `type` parameter accepts two inputs:
+              # The type parameter accepts two inputs:
               #
-              # - `min`: This type of customized objective will minimize the metric provided in
-              #   the `value` parameter.
-              # - `min-max`: This type of customized objective will approximate an even
-              #   distribution of the metric provided in the `value` parameter, among all the
+              # - min: This type of customized objective will minimize the metric provided in
+              #   the value parameter.
+              # - min-max: This type of customized objective will approximate an even
+              #   distribution of the metric provided in the value parameter, among all the
               #   routes in solution.
               #
-              # Please note that `type` is mandatory only when using `custom` attribute.
+              # Please note that type is mandatory only when using custom attribute.
               module Type
                 extend NextbillionSDK::Internal::Type::Enum
 
@@ -1755,12 +1750,12 @@ module NextbillionSDK
 
                 MIN =
                   T.let(
-                    :"`min`",
+                    :min,
                     NextbillionSDK::Optimization::V2SubmitParams::Options::Objective::Custom::Type::TaggedSymbol
                   )
                 MIN_MAX =
                   T.let(
-                    :"`min-max`",
+                    :"min-max",
                     NextbillionSDK::Optimization::V2SubmitParams::Options::Objective::Custom::Type::TaggedSymbol
                   )
 
@@ -1775,23 +1770,23 @@ module NextbillionSDK
                 end
               end
 
-              # The `value` parameter accepts four inputs, two of them are valid for `min` type
-              # and other two are valid for `min-max` type custom objective. Let’s look at the
-              # values for `min` type objective:
+              # The value parameter accepts four inputs, two of them are valid for min type and
+              # other two are valid for min-max type custom objective. Let’s look at the values
+              # for min type objective:
               #
-              # - `vehicles`: Solver will minimize the number of vehicles used in the solution.
-              # - `completion_time`: Solver will minimize the total time taken to complete all
+              # - vehicles: Solver will minimize the number of vehicles used in the solution.
+              # - completion_time: Solver will minimize the total time taken to complete all
               #   tasks.
               #
-              # The next set of values are acceptable when `type` is set to `min-max`.
+              # The next set of values are acceptable when type is set to min-max.
               #
-              # - `tasks`: Solver will evenly distribute the tasks on each route.
-              # - `travel_cost`: Solver will assign tasks such that the traveling cost of each
+              # - tasks: Solver will evenly distribute the tasks on each route.
+              # - travel_cost: Solver will assign tasks such that the traveling cost of each
               #   route is within a close range of other routes. The travel cost metric
-              #   considered here is the one set using `objective.travel_cost` .
+              #   considered here is the one set using objective.travel_cost .
               #
-              # Please note that `value` is mandatory only when using `custom` attribute. The
-              # above values provide flexibility to tune the optimization algorithm to fulfill
+              # Please note that value is mandatory only when using custom attribute. The above
+              # values provide flexibility to tune the optimization algorithm to fulfill
               # practical objectives beyond the relatively simpler time or distance minimization
               # approaches.
               module Value
@@ -1808,22 +1803,22 @@ module NextbillionSDK
 
                 VEHICLES =
                   T.let(
-                    :"`vehicles`",
+                    :vehicles,
                     NextbillionSDK::Optimization::V2SubmitParams::Options::Objective::Custom::Value::TaggedSymbol
                   )
                 COMPLETION_TIME =
                   T.let(
-                    :"`completion_time`",
+                    :completion_time,
                     NextbillionSDK::Optimization::V2SubmitParams::Options::Objective::Custom::Value::TaggedSymbol
                   )
                 TRAVEL_COST =
                   T.let(
-                    :"`travel_cost`",
+                    :travel_cost,
                     NextbillionSDK::Optimization::V2SubmitParams::Options::Objective::Custom::Value::TaggedSymbol
                   )
                 TASKS =
                   T.let(
-                    :"`tasks`",
+                    :tasks,
                     NextbillionSDK::Optimization::V2SubmitParams::Options::Objective::Custom::Value::TaggedSymbol
                   )
 
@@ -1860,17 +1855,17 @@ module NextbillionSDK
 
               FLEXIBLE =
                 T.let(
-                  :"`flexible`",
+                  :flexible,
                   NextbillionSDK::Optimization::V2SubmitParams::Options::Objective::SolverMode::TaggedSymbol
                 )
               FAST =
                 T.let(
-                  :"`fast`",
+                  :fast,
                   NextbillionSDK::Optimization::V2SubmitParams::Options::Objective::SolverMode::TaggedSymbol
                 )
               INTERNAL =
                 T.let(
-                  :"`internal`",
+                  :internal,
                   NextbillionSDK::Optimization::V2SubmitParams::Options::Objective::SolverMode::TaggedSymbol
                 )
 
@@ -1885,21 +1880,21 @@ module NextbillionSDK
               end
             end
 
-            # The `travel_cost` parameter specifies the type of cost used by the solver to
+            # The travel_cost parameter specifies the type of cost used by the solver to
             # determine the routes.
             #
-            # If the `travel_cost` parameter is set to `distance`, the solver will minimize
-            # the total distance traveled by vehicles while determining a solution. This
-            # objective would be useful in cases where the primary objective is to reduce fuel
+            # If the travel_cost parameter is set to distance, the solver will minimize the
+            # total distance traveled by vehicles while determining a solution. This objective
+            # would be useful in cases where the primary objective is to reduce fuel
             # consumption or travel expenses.
             #
-            # If the `travel_cost` parameter is set to `duration`, the solver will minimize
-            # the total time taken by the vehicles to complete all tasks while determining a
+            # If the travel_cost parameter is set to duration, the solver will minimize the
+            # total time taken by the vehicles to complete all tasks while determining a
             # solution. This objective would be useful in cases where the primary objective is
             # to minimize completion time or maximize the number of orders fulfilled within a
             # given time window.
             #
-            # If the `travel_cost` parameter is set to `air_distance`, the solver will try to
+            # If the travel_cost parameter is set to air_distance, the solver will try to
             # calculate the distance,in meters, between two points using the great-circle
             # distance formula (i.e., the shortest distance between two points on a sphere)
             # instead of the actual road distance. This would be useful in cases where the
@@ -1907,8 +1902,8 @@ module NextbillionSDK
             # significantly longer than the actual straight-line distance. For example, in
             # Drone Delivery services.
             #
-            # If the `travel_cost` is set to `customized` the solver would use the custom cost
-            # values provided by the user (in `cost_matrix` attribute) and prefer a solution
+            # If the travel_cost is set to customized the solver would use the custom cost
+            # values provided by the user (in cost_matrix attribute) and prefer a solution
             # with lower overall cost. This enables the user to have greater control over the
             # routes preferred by the solver and hence the sequence in which the jobs are
             # completed.
@@ -1926,22 +1921,22 @@ module NextbillionSDK
 
               DURATION =
                 T.let(
-                  :"`duration`",
+                  :duration,
                   NextbillionSDK::Optimization::V2SubmitParams::Options::Objective::TravelCost::TaggedSymbol
                 )
               DISTANCE =
                 T.let(
-                  :"`distance`",
+                  :distance,
                   NextbillionSDK::Optimization::V2SubmitParams::Options::Objective::TravelCost::TaggedSymbol
                 )
               AIR_DISTANCE =
                 T.let(
-                  :"`air_distance`",
+                  :air_distance,
                   NextbillionSDK::Optimization::V2SubmitParams::Options::Objective::TravelCost::TaggedSymbol
                 )
               CUSTOMIZED =
                 T.let(
-                  :"`customized`",
+                  :customized,
                   NextbillionSDK::Optimization::V2SubmitParams::Options::Objective::TravelCost::TaggedSymbol
                 )
 
@@ -1992,16 +1987,16 @@ module NextbillionSDK
             # Please note that:
             #
             # - The values are case-sensitive.
-            # - When using `avoid:bbox` feature, users need to specify the boundaries of the
+            # - When using avoid:bbox feature, users need to specify the boundaries of the
             #   bounding box to be avoided. Multiple bounding boxes can be provided
             #   simultaneously. Please note that bounding box is a hard filter and if it
             #   blocks all possible routes between given locations, a 4xx error is returned.
             #   Mention the bounding box boundaries in the following format: bbox:
             #   min_latitude,min_longitude,max_latitude,max_longitude.
-            # - When using `avoid=sharp_turn`, the range of allowed turn angles is \[120,240\]
+            # - When using avoid=sharp_turn, the range of allowed turn angles is \[120,240\]
             #   in the clockwise direction from the current road. Any roads with turn angles
             #   outside the range will be avoided.
-            # - If `none` is provided along with other values, an error is returned as a valid
+            # - If none is provided along with other values, an error is returned as a valid
             #   route is not feasible.
             sig do
               returns(
@@ -2025,7 +2020,7 @@ module NextbillionSDK
             attr_writer :avoid
 
             # Use this parameter to apply a single speed value for all ETA and drive time
-            # calculations. In case, the `travel_cost` is set to duration then setting this
+            # calculations. In case, the travel_cost is set to duration then setting this
             # parameter also impacts the cost of the solution.
             sig do
               returns(
@@ -2047,7 +2042,7 @@ module NextbillionSDK
             # Specify if crossing an international border is allowed for operations near
             # border areas. When set to false, the API will prohibit any routes crossing
             # international borders. When set to true, the service will return routes which
-            # cross the borders between countries, if required for the given set `locations`
+            # cross the borders between countries, if required for the given set locations
             #
             # This feature is available in North America region only. Please get in touch with
             # [support@nextbillion.ai](mailto:support@nextbillion.ai) to enquire/enable other
@@ -2066,7 +2061,7 @@ module NextbillionSDK
             # mins.
             #
             # If the users want to regenerate the result set, they can set this parameter to
-            # `true` and optimizer will not use the cached results.
+            # true and optimizer will not use the cached results.
             #
             # This feature is helpful in expediting the optimization process and generate
             # results quickly. It also helps users to quickly simulate route plans for
@@ -2079,9 +2074,9 @@ module NextbillionSDK
 
             # Specify the type of hazardous material being carried and the service will avoid
             # roads which are not suitable for the type of goods specified. Provide multiple
-            # values separated by a comma `,` .
+            # values separated by a comma , .
             #
-            # Please note that this parameter is effective only when `mode=truck`.
+            # Please note that this parameter is effective only when mode=truck.
             sig do
               returns(
                 T.nilable(
@@ -2121,24 +2116,24 @@ module NextbillionSDK
             end
             attr_writer :mode
 
-            # Defines all the vehicle profiles. `profiles` is implemented as a dictionary of
+            # Defines all the vehicle profiles. profiles is implemented as a dictionary of
             # objects where each profile name is the unique key and the associated value is an
             # object describing the routing properties of that profile. All routing properties
-            # available in `options.routing` can be added as values for a given profile.
+            # available in options.routing can be added as values for a given profile.
             #
             # Please note:
             #
-            # - The routing properties configured using `options.routing` (and not part of any
-            #   \`profiles\`) are considered as default route settings i.e. they are applied
-            #   to vehicles which are not associated with any profile.
-            # - The default route settings are independent from those defined for any
-            #   `profiles` . Consequently, for vehicles which are tagged to a given profile,
-            #   only the routing properties configured for the given profile will apply.
+            # - The routing properties configured using options.routing (and not part of any
+            #   \profiles\) are considered as default route settings i.e. they are applied to
+            #   vehicles which are not associated with any profile.
+            # - The default route settings are independent from those defined for any profiles
+            #   . Consequently, for vehicles which are tagged to a given profile, only the
+            #   routing properties configured for the given profile will apply.
             # - If the "mode" is not specified for any profile, by default it is considered to
-            #   be `car` .
+            #   be car .
             # - "default" is a reserved keyword and can not be used as the name for any custom
             #   profile.
-            # - `profiles` can't be nested in other profiles.
+            # - profiles can't be nested in other profiles.
             # - The number of profiles, including default route settings, are limited to
             #
             #   - 15, if 0 < number of location <= 100
@@ -2170,7 +2165,7 @@ module NextbillionSDK
             # goods) of the truck, in tonnes. When used, the optimizer will use only those
             # routes which are legally allowed to carry the load specified per axle.
             #
-            # Please note this parameter is effective only when `mode=truck`.
+            # Please note this parameter is effective only when mode=truck.
             sig { returns(T.nilable(Float)) }
             attr_reader :truck_axle_load
 
@@ -2179,7 +2174,7 @@ module NextbillionSDK
 
             # Specify the truck dimensions, in centimeters, in the format of
             # “height,width,length”. Please note that this parameter is effective only when
-            # `mode=truck`.
+            # mode=truck.
             sig { returns(T.nilable(String)) }
             attr_reader :truck_size
 
@@ -2187,7 +2182,7 @@ module NextbillionSDK
             attr_writer :truck_size
 
             # Specify the truck weight including the trailers and shipped goods, in kilograms.
-            # Please note that this parameter is effective only when `mode=truck`.
+            # Please note that this parameter is effective only when mode=truck.
             sig { returns(T.nilable(Integer)) }
             attr_reader :truck_weight
 
@@ -2230,26 +2225,26 @@ module NextbillionSDK
               # Please note that:
               #
               # - The values are case-sensitive.
-              # - When using `avoid:bbox` feature, users need to specify the boundaries of the
+              # - When using avoid:bbox feature, users need to specify the boundaries of the
               #   bounding box to be avoided. Multiple bounding boxes can be provided
               #   simultaneously. Please note that bounding box is a hard filter and if it
               #   blocks all possible routes between given locations, a 4xx error is returned.
               #   Mention the bounding box boundaries in the following format: bbox:
               #   min_latitude,min_longitude,max_latitude,max_longitude.
-              # - When using `avoid=sharp_turn`, the range of allowed turn angles is \[120,240\]
+              # - When using avoid=sharp_turn, the range of allowed turn angles is \[120,240\]
               #   in the clockwise direction from the current road. Any roads with turn angles
               #   outside the range will be avoided.
-              # - If `none` is provided along with other values, an error is returned as a valid
+              # - If none is provided along with other values, an error is returned as a valid
               #   route is not feasible.
               avoid: nil,
               # Use this parameter to apply a single speed value for all ETA and drive time
-              # calculations. In case, the `travel_cost` is set to duration then setting this
+              # calculations. In case, the travel_cost is set to duration then setting this
               # parameter also impacts the cost of the solution.
               context: nil,
               # Specify if crossing an international border is allowed for operations near
               # border areas. When set to false, the API will prohibit any routes crossing
               # international borders. When set to true, the service will return routes which
-              # cross the borders between countries, if required for the given set `locations`
+              # cross the borders between countries, if required for the given set locations
               #
               # This feature is available in North America region only. Please get in touch with
               # [support@nextbillion.ai](mailto:support@nextbillion.ai) to enquire/enable other
@@ -2263,7 +2258,7 @@ module NextbillionSDK
               # mins.
               #
               # If the users want to regenerate the result set, they can set this parameter to
-              # `true` and optimizer will not use the cached results.
+              # true and optimizer will not use the cached results.
               #
               # This feature is helpful in expediting the optimization process and generate
               # results quickly. It also helps users to quickly simulate route plans for
@@ -2271,30 +2266,30 @@ module NextbillionSDK
               disable_cache: nil,
               # Specify the type of hazardous material being carried and the service will avoid
               # roads which are not suitable for the type of goods specified. Provide multiple
-              # values separated by a comma `,` .
+              # values separated by a comma , .
               #
-              # Please note that this parameter is effective only when `mode=truck`.
+              # Please note that this parameter is effective only when mode=truck.
               hazmat_type: nil,
               # Define the traveling mode to be used for determining the optimized routes.
               mode: nil,
-              # Defines all the vehicle profiles. `profiles` is implemented as a dictionary of
+              # Defines all the vehicle profiles. profiles is implemented as a dictionary of
               # objects where each profile name is the unique key and the associated value is an
               # object describing the routing properties of that profile. All routing properties
-              # available in `options.routing` can be added as values for a given profile.
+              # available in options.routing can be added as values for a given profile.
               #
               # Please note:
               #
-              # - The routing properties configured using `options.routing` (and not part of any
-              #   \`profiles\`) are considered as default route settings i.e. they are applied
-              #   to vehicles which are not associated with any profile.
-              # - The default route settings are independent from those defined for any
-              #   `profiles` . Consequently, for vehicles which are tagged to a given profile,
-              #   only the routing properties configured for the given profile will apply.
+              # - The routing properties configured using options.routing (and not part of any
+              #   \profiles\) are considered as default route settings i.e. they are applied to
+              #   vehicles which are not associated with any profile.
+              # - The default route settings are independent from those defined for any profiles
+              #   . Consequently, for vehicles which are tagged to a given profile, only the
+              #   routing properties configured for the given profile will apply.
               # - If the "mode" is not specified for any profile, by default it is considered to
-              #   be `car` .
+              #   be car .
               # - "default" is a reserved keyword and can not be used as the name for any custom
               #   profile.
-              # - `profiles` can't be nested in other profiles.
+              # - profiles can't be nested in other profiles.
               # - The number of profiles, including default route settings, are limited to
               #
               #   - 15, if 0 < number of location <= 100
@@ -2316,14 +2311,14 @@ module NextbillionSDK
               # goods) of the truck, in tonnes. When used, the optimizer will use only those
               # routes which are legally allowed to carry the load specified per axle.
               #
-              # Please note this parameter is effective only when `mode=truck`.
+              # Please note this parameter is effective only when mode=truck.
               truck_axle_load: nil,
               # Specify the truck dimensions, in centimeters, in the format of
               # “height,width,length”. Please note that this parameter is effective only when
-              # `mode=truck`.
+              # mode=truck.
               truck_size: nil,
               # Specify the truck weight including the trailers and shipped goods, in kilograms.
-              # Please note that this parameter is effective only when `mode=truck`.
+              # Please note that this parameter is effective only when mode=truck.
               truck_weight: nil
             )
             end
@@ -2408,52 +2403,52 @@ module NextbillionSDK
 
               TOLL =
                 T.let(
-                  :"`toll`",
+                  :toll,
                   NextbillionSDK::Optimization::V2SubmitParams::Options::Routing::Avoid::TaggedSymbol
                 )
               HIGHWAY =
                 T.let(
-                  :"`highway`",
+                  :highway,
                   NextbillionSDK::Optimization::V2SubmitParams::Options::Routing::Avoid::TaggedSymbol
                 )
               BBOX =
                 T.let(
-                  :"`bbox`",
+                  :bbox,
                   NextbillionSDK::Optimization::V2SubmitParams::Options::Routing::Avoid::TaggedSymbol
                 )
               LEFT_TURN =
                 T.let(
-                  :"`left_turn`",
+                  :left_turn,
                   NextbillionSDK::Optimization::V2SubmitParams::Options::Routing::Avoid::TaggedSymbol
                 )
               RIGHT_TURN =
                 T.let(
-                  :"`right_turn`",
+                  :right_turn,
                   NextbillionSDK::Optimization::V2SubmitParams::Options::Routing::Avoid::TaggedSymbol
                 )
               SHARP_TURN =
                 T.let(
-                  :"`sharp_turn`",
+                  :sharp_turn,
                   NextbillionSDK::Optimization::V2SubmitParams::Options::Routing::Avoid::TaggedSymbol
                 )
               UTURN =
                 T.let(
-                  :"`uturn`",
+                  :uturn,
                   NextbillionSDK::Optimization::V2SubmitParams::Options::Routing::Avoid::TaggedSymbol
                 )
               SERVICE_ROAD =
                 T.let(
-                  :"`service_road`",
+                  :service_road,
                   NextbillionSDK::Optimization::V2SubmitParams::Options::Routing::Avoid::TaggedSymbol
                 )
               FERRY =
                 T.let(
-                  :"`ferry`",
+                  :ferry,
                   NextbillionSDK::Optimization::V2SubmitParams::Options::Routing::Avoid::TaggedSymbol
                 )
               NONE =
                 T.let(
-                  :"`none` ",
+                  :"none ",
                   NextbillionSDK::Optimization::V2SubmitParams::Options::Routing::Avoid::TaggedSymbol
                 )
 
@@ -2469,7 +2464,7 @@ module NextbillionSDK
             end
 
             # Use this parameter to apply a single speed value for all ETA and drive time
-            # calculations. In case, the `travel_cost` is set to duration then setting this
+            # calculations. In case, the travel_cost is set to duration then setting this
             # parameter also impacts the cost of the solution.
             module Context
               extend NextbillionSDK::Internal::Type::Enum
@@ -2485,7 +2480,7 @@ module NextbillionSDK
 
               AVGSPEED =
                 T.let(
-                  :"`avgspeed`",
+                  :avgspeed,
                   NextbillionSDK::Optimization::V2SubmitParams::Options::Routing::Context::TaggedSymbol
                 )
 
@@ -2514,22 +2509,22 @@ module NextbillionSDK
 
               GENERAL =
                 T.let(
-                  :"`general`",
+                  :general,
                   NextbillionSDK::Optimization::V2SubmitParams::Options::Routing::HazmatType::TaggedSymbol
                 )
               CIRCUMSTANTIAL =
                 T.let(
-                  :"`circumstantial`",
+                  :circumstantial,
                   NextbillionSDK::Optimization::V2SubmitParams::Options::Routing::HazmatType::TaggedSymbol
                 )
               EXPLOSIVE =
                 T.let(
-                  :"`explosive`",
+                  :explosive,
                   NextbillionSDK::Optimization::V2SubmitParams::Options::Routing::HazmatType::TaggedSymbol
                 )
               HARMFUL_TO_WATER =
                 T.let(
-                  :"`harmful_to_water`",
+                  :harmful_to_water,
                   NextbillionSDK::Optimization::V2SubmitParams::Options::Routing::HazmatType::TaggedSymbol
                 )
 
@@ -2559,12 +2554,12 @@ module NextbillionSDK
 
               CAR =
                 T.let(
-                  :"`car`",
+                  :car,
                   NextbillionSDK::Optimization::V2SubmitParams::Options::Routing::Mode::TaggedSymbol
                 )
               TRUCK =
                 T.let(
-                  :"`truck`",
+                  :truck,
                   NextbillionSDK::Optimization::V2SubmitParams::Options::Routing::Mode::TaggedSymbol
                 )
 
@@ -2590,9 +2585,9 @@ module NextbillionSDK
               )
             end
 
-          # The `steps` property specifies the tasks or steps that are part of the relation
-          # and must be carried out in a manner defined in the `type` parameter. Please note
-          # you can add any number of steps here, except when relation type is `precedence`
+          # The steps property specifies the tasks or steps that are part of the relation
+          # and must be carried out in a manner defined in the type parameter. Please note
+          # you can add any number of steps here, except when relation type is precedence
           # where only 2 tasks can be added.
           sig do
             returns(
@@ -2605,25 +2600,24 @@ module NextbillionSDK
 
           # Specifies the type of relation constraint. The following types are supported:
           #
-          # - `in_same_route`: Ensures that all `steps` are covered in the same route in
+          # - in_same_route: Ensures that all steps are covered in the same route in
           #   solution.
-          # - `in_sequence`: Ensures that all steps are in the same route and their sequence
-          #   matches the order specified in the `steps` field. Insertion of new steps
-          #   between the `steps` specified, is allowed.
-          # - `in_direct_sequence`: Similar to `in_sequence`, but insertion of new `steps`
-          #   is not allowed in the final route.
-          # - `precedence`: Restricts the travel time between the first step and second
-          #   step. If the precedence requirement cannot be satisfied, then the task
-          #   specified at the second step will not be assigned. Only 2 steps can be
-          #   specified in a single `precedence` type relations. Please use multiple
-          #   `precedence` relations to apply restrictions on more than 2 tasks.
+          # - in_sequence: Ensures that all steps are in the same route and their sequence
+          #   matches the order specified in the steps field. Insertion of new steps between
+          #   the steps specified, is allowed.
+          # - in_direct_sequence: Similar to in_sequence, but insertion of new steps is not
+          #   allowed in the final route.
+          # - precedence: Restricts the travel time between the first step and second step.
+          #   If the precedence requirement cannot be satisfied, then the task specified at
+          #   the second step will not be assigned. Only 2 steps can be specified in a
+          #   single precedence type relations. Please use multiple precedence relations to
+          #   apply restrictions on more than 2 tasks.
           #
-          # If the `vehicle` field is specified in the relations input, all steps will be
+          # If the vehicle field is specified in the relations input, all steps will be
           # served by that particular vehicle. Otherwise, the route can be allocated to any
           # feasible vehicle.
           #
-          # Please note that the `type` field is mandatory when using the `relations`
-          # object.
+          # Please note that the type field is mandatory when using the relations object.
           sig do
             returns(
               NextbillionSDK::Optimization::V2SubmitParams::Relation::Type::OrSymbol
@@ -2631,42 +2625,40 @@ module NextbillionSDK
           end
           attr_accessor :type
 
-          # **Deprecated! Please use the** `vehicle` **parameter to specify the vehicle
-          # ID.**
+          # **Deprecated! Please use the** vehicle **parameter to specify the vehicle ID.**
           #
           # Specifies the ID of the vehicle that would fulfil the steps. ID should be
-          # consistent with input IDs provided in the `vehicles` object.
+          # consistent with input IDs provided in the vehicles object.
           sig { returns(T.nilable(Integer)) }
           attr_reader :id
 
           sig { params(id: Integer).void }
           attr_writer :id
 
-          # This attribute is effective only when `precedence` type relation is used.
-          # `max_duration` restricts the travel time of the vehicle to go from location of
-          # first task to the location of second task specified in `steps` object. The unit
+          # This attribute is effective only when precedence type relation is used.
+          # max_duration restricts the travel time of the vehicle to go from location of
+          # first task to the location of second task specified in steps object. The unit
           # for this parameter is seconds. It accepts values greater than 0 only.
           #
-          # Please note that `max_duration` is a hard constraint. Hence, if aggressive
+          # Please note that max_duration is a hard constraint. Hence, if aggressive
           # durations are provided such that the second task cannot be reached within the
-          # specified `max_duration`, it might be done before the first task (usually in
-          # case of `jobs`) or remain un-assigned (usually in case of `shipments`).
+          # specified max_duration, it might be done before the first task (usually in case
+          # of jobs) or remain un-assigned (usually in case of shipments).
           sig { returns(T.nilable(Integer)) }
           attr_reader :max_duration
 
           sig { params(max_duration: Integer).void }
           attr_writer :max_duration
 
-          # This attribute is effective only when `precedence` type relation is used. Use
-          # `min_duration` to enforce a minimum time-gap between the two tasks specified in
-          # `steps` object. When specified, the second task will get completed after a gap
-          # of `min_duration` with respect to the first task. The unit for this parameter is
+          # This attribute is effective only when precedence type relation is used. Use
+          # min_duration to enforce a minimum time-gap between the two tasks specified in
+          # steps object. When specified, the second task will get completed after a gap of
+          # min_duration with respect to the first task. The unit for this parameter is
           # seconds.
           #
-          # Please note that `min_duration` is implemented as a soft constraint and it can
-          # be violated in presence of other relation types. The optimizer will tend to
-          # provide solutions where `min_duration` is not violated, but it is not
-          # guaranteed.
+          # Please note that min_duration is implemented as a soft constraint and it can be
+          # violated in presence of other relation types. The optimizer will tend to provide
+          # solutions where min_duration is not violated, but it is not guaranteed.
           sig { returns(T.nilable(Integer)) }
           attr_reader :min_duration
 
@@ -2675,7 +2667,7 @@ module NextbillionSDK
 
           # Specifies the ID of the vehicle that would fulfill the steps. Providing the same
           # vehicle ID to multiple ‘relations’ is prohibited. The vehicle ID provided here
-          # should be consistent with ID provided in the `vehicles` attribute.
+          # should be consistent with ID provided in the vehicles attribute.
           sig { returns(T.nilable(String)) }
           attr_reader :vehicle
 
@@ -2697,63 +2689,60 @@ module NextbillionSDK
             ).returns(T.attached_class)
           end
           def self.new(
-            # The `steps` property specifies the tasks or steps that are part of the relation
-            # and must be carried out in a manner defined in the `type` parameter. Please note
-            # you can add any number of steps here, except when relation type is `precedence`
+            # The steps property specifies the tasks or steps that are part of the relation
+            # and must be carried out in a manner defined in the type parameter. Please note
+            # you can add any number of steps here, except when relation type is precedence
             # where only 2 tasks can be added.
             steps:,
             # Specifies the type of relation constraint. The following types are supported:
             #
-            # - `in_same_route`: Ensures that all `steps` are covered in the same route in
+            # - in_same_route: Ensures that all steps are covered in the same route in
             #   solution.
-            # - `in_sequence`: Ensures that all steps are in the same route and their sequence
-            #   matches the order specified in the `steps` field. Insertion of new steps
-            #   between the `steps` specified, is allowed.
-            # - `in_direct_sequence`: Similar to `in_sequence`, but insertion of new `steps`
-            #   is not allowed in the final route.
-            # - `precedence`: Restricts the travel time between the first step and second
-            #   step. If the precedence requirement cannot be satisfied, then the task
-            #   specified at the second step will not be assigned. Only 2 steps can be
-            #   specified in a single `precedence` type relations. Please use multiple
-            #   `precedence` relations to apply restrictions on more than 2 tasks.
+            # - in_sequence: Ensures that all steps are in the same route and their sequence
+            #   matches the order specified in the steps field. Insertion of new steps between
+            #   the steps specified, is allowed.
+            # - in_direct_sequence: Similar to in_sequence, but insertion of new steps is not
+            #   allowed in the final route.
+            # - precedence: Restricts the travel time between the first step and second step.
+            #   If the precedence requirement cannot be satisfied, then the task specified at
+            #   the second step will not be assigned. Only 2 steps can be specified in a
+            #   single precedence type relations. Please use multiple precedence relations to
+            #   apply restrictions on more than 2 tasks.
             #
-            # If the `vehicle` field is specified in the relations input, all steps will be
+            # If the vehicle field is specified in the relations input, all steps will be
             # served by that particular vehicle. Otherwise, the route can be allocated to any
             # feasible vehicle.
             #
-            # Please note that the `type` field is mandatory when using the `relations`
-            # object.
+            # Please note that the type field is mandatory when using the relations object.
             type:,
-            # **Deprecated! Please use the** `vehicle` **parameter to specify the vehicle
-            # ID.**
+            # **Deprecated! Please use the** vehicle **parameter to specify the vehicle ID.**
             #
             # Specifies the ID of the vehicle that would fulfil the steps. ID should be
-            # consistent with input IDs provided in the `vehicles` object.
+            # consistent with input IDs provided in the vehicles object.
             id: nil,
-            # This attribute is effective only when `precedence` type relation is used.
-            # `max_duration` restricts the travel time of the vehicle to go from location of
-            # first task to the location of second task specified in `steps` object. The unit
+            # This attribute is effective only when precedence type relation is used.
+            # max_duration restricts the travel time of the vehicle to go from location of
+            # first task to the location of second task specified in steps object. The unit
             # for this parameter is seconds. It accepts values greater than 0 only.
             #
-            # Please note that `max_duration` is a hard constraint. Hence, if aggressive
+            # Please note that max_duration is a hard constraint. Hence, if aggressive
             # durations are provided such that the second task cannot be reached within the
-            # specified `max_duration`, it might be done before the first task (usually in
-            # case of `jobs`) or remain un-assigned (usually in case of `shipments`).
+            # specified max_duration, it might be done before the first task (usually in case
+            # of jobs) or remain un-assigned (usually in case of shipments).
             max_duration: nil,
-            # This attribute is effective only when `precedence` type relation is used. Use
-            # `min_duration` to enforce a minimum time-gap between the two tasks specified in
-            # `steps` object. When specified, the second task will get completed after a gap
-            # of `min_duration` with respect to the first task. The unit for this parameter is
+            # This attribute is effective only when precedence type relation is used. Use
+            # min_duration to enforce a minimum time-gap between the two tasks specified in
+            # steps object. When specified, the second task will get completed after a gap of
+            # min_duration with respect to the first task. The unit for this parameter is
             # seconds.
             #
-            # Please note that `min_duration` is implemented as a soft constraint and it can
-            # be violated in presence of other relation types. The optimizer will tend to
-            # provide solutions where `min_duration` is not violated, but it is not
-            # guaranteed.
+            # Please note that min_duration is implemented as a soft constraint and it can be
+            # violated in presence of other relation types. The optimizer will tend to provide
+            # solutions where min_duration is not violated, but it is not guaranteed.
             min_duration: nil,
             # Specifies the ID of the vehicle that would fulfill the steps. Providing the same
             # vehicle ID to multiple ‘relations’ is prohibited. The vehicle ID provided here
-            # should be consistent with ID provided in the `vehicles` attribute.
+            # should be consistent with ID provided in the vehicles attribute.
             vehicle: nil
           )
           end
@@ -2786,10 +2775,10 @@ module NextbillionSDK
                 )
               end
 
-            # Specifies the type of the step. The `start` and `end` step types have to be the
+            # Specifies the type of the step. The start and end step types have to be the
             # first and last steps, respectively, in a relation.
             #
-            # Please note that the `type` is mandatory when using the `relations` object.
+            # Please note that the type is mandatory when using the relations object.
             sig do
               returns(
                 NextbillionSDK::Optimization::V2SubmitParams::Relation::Step::Type::OrSymbol
@@ -2798,8 +2787,8 @@ module NextbillionSDK
             attr_accessor :type
 
             # This represents the ID of the task and should be consistent with the input IDs
-            # provided in the `jobs` or `shipments` objects for a given step. The `id` is
-            # required for all steps other than `start` and `end`.
+            # provided in the jobs or shipments objects for a given step. The id is required
+            # for all steps other than start and end.
             sig { returns(T.nilable(String)) }
             attr_reader :id
 
@@ -2814,14 +2803,14 @@ module NextbillionSDK
               ).returns(T.attached_class)
             end
             def self.new(
-              # Specifies the type of the step. The `start` and `end` step types have to be the
+              # Specifies the type of the step. The start and end step types have to be the
               # first and last steps, respectively, in a relation.
               #
-              # Please note that the `type` is mandatory when using the `relations` object.
+              # Please note that the type is mandatory when using the relations object.
               type:,
               # This represents the ID of the task and should be consistent with the input IDs
-              # provided in the `jobs` or `shipments` objects for a given step. The `id` is
-              # required for all steps other than `start` and `end`.
+              # provided in the jobs or shipments objects for a given step. The id is required
+              # for all steps other than start and end.
               id: nil
             )
             end
@@ -2838,10 +2827,10 @@ module NextbillionSDK
             def to_hash
             end
 
-            # Specifies the type of the step. The `start` and `end` step types have to be the
+            # Specifies the type of the step. The start and end step types have to be the
             # first and last steps, respectively, in a relation.
             #
-            # Please note that the `type` is mandatory when using the `relations` object.
+            # Please note that the type is mandatory when using the relations object.
             module Type
               extend NextbillionSDK::Internal::Type::Enum
 
@@ -2856,27 +2845,27 @@ module NextbillionSDK
 
               START =
                 T.let(
-                  :"`start`",
+                  :start,
                   NextbillionSDK::Optimization::V2SubmitParams::Relation::Step::Type::TaggedSymbol
                 )
               END_ =
                 T.let(
-                  :"`end`",
+                  :end,
                   NextbillionSDK::Optimization::V2SubmitParams::Relation::Step::Type::TaggedSymbol
                 )
               JOB =
                 T.let(
-                  :"`job`",
+                  :job,
                   NextbillionSDK::Optimization::V2SubmitParams::Relation::Step::Type::TaggedSymbol
                 )
               PICKUP =
                 T.let(
-                  :"`pickup`",
+                  :pickup,
                   NextbillionSDK::Optimization::V2SubmitParams::Relation::Step::Type::TaggedSymbol
                 )
               DELIVERY =
                 T.let(
-                  :"`delivery`",
+                  :delivery,
                   NextbillionSDK::Optimization::V2SubmitParams::Relation::Step::Type::TaggedSymbol
                 )
 
@@ -2894,25 +2883,24 @@ module NextbillionSDK
 
           # Specifies the type of relation constraint. The following types are supported:
           #
-          # - `in_same_route`: Ensures that all `steps` are covered in the same route in
+          # - in_same_route: Ensures that all steps are covered in the same route in
           #   solution.
-          # - `in_sequence`: Ensures that all steps are in the same route and their sequence
-          #   matches the order specified in the `steps` field. Insertion of new steps
-          #   between the `steps` specified, is allowed.
-          # - `in_direct_sequence`: Similar to `in_sequence`, but insertion of new `steps`
-          #   is not allowed in the final route.
-          # - `precedence`: Restricts the travel time between the first step and second
-          #   step. If the precedence requirement cannot be satisfied, then the task
-          #   specified at the second step will not be assigned. Only 2 steps can be
-          #   specified in a single `precedence` type relations. Please use multiple
-          #   `precedence` relations to apply restrictions on more than 2 tasks.
+          # - in_sequence: Ensures that all steps are in the same route and their sequence
+          #   matches the order specified in the steps field. Insertion of new steps between
+          #   the steps specified, is allowed.
+          # - in_direct_sequence: Similar to in_sequence, but insertion of new steps is not
+          #   allowed in the final route.
+          # - precedence: Restricts the travel time between the first step and second step.
+          #   If the precedence requirement cannot be satisfied, then the task specified at
+          #   the second step will not be assigned. Only 2 steps can be specified in a
+          #   single precedence type relations. Please use multiple precedence relations to
+          #   apply restrictions on more than 2 tasks.
           #
-          # If the `vehicle` field is specified in the relations input, all steps will be
+          # If the vehicle field is specified in the relations input, all steps will be
           # served by that particular vehicle. Otherwise, the route can be allocated to any
           # feasible vehicle.
           #
-          # Please note that the `type` field is mandatory when using the `relations`
-          # object.
+          # Please note that the type field is mandatory when using the relations object.
           module Type
             extend NextbillionSDK::Internal::Type::Enum
 
@@ -2927,22 +2915,22 @@ module NextbillionSDK
 
             IN_SAME_ROUTE =
               T.let(
-                :"`in_same_route`",
+                :in_same_route,
                 NextbillionSDK::Optimization::V2SubmitParams::Relation::Type::TaggedSymbol
               )
             IN_SEQUENCE =
               T.let(
-                :"`in_sequence`",
+                :in_sequence,
                 NextbillionSDK::Optimization::V2SubmitParams::Relation::Type::TaggedSymbol
               )
             IN_DIRECT_SEQUENCE =
               T.let(
-                :"`in_direct_sequence`",
+                :in_direct_sequence,
                 NextbillionSDK::Optimization::V2SubmitParams::Relation::Type::TaggedSymbol
               )
             PRECEDENCE =
               T.let(
-                :"`precedence`",
+                :precedence,
                 NextbillionSDK::Optimization::V2SubmitParams::Relation::Type::TaggedSymbol
               )
 
@@ -2982,8 +2970,8 @@ module NextbillionSDK
           attr_accessor :steps
 
           # Specify the ID of the vehicle that was assigned to the route. This field is
-          # mandatory when using the `solution` attribute and providing an empty string
-          # would result in error. The IDs are case-sensitive.
+          # mandatory when using the solution attribute and providing an empty string would
+          # result in error. The IDs are case-sensitive.
           #
           # **Note:** Since the vehicles can be configured using either a string or an
           # integer ID, please ensure that the same value type is provided for this field as
@@ -3090,8 +3078,8 @@ module NextbillionSDK
             # Describe the steps in this route.
             steps:,
             # Specify the ID of the vehicle that was assigned to the route. This field is
-            # mandatory when using the `solution` attribute and providing an empty string
-            # would result in error. The IDs are case-sensitive.
+            # mandatory when using the solution attribute and providing an empty string would
+            # result in error. The IDs are case-sensitive.
             #
             # **Note:** Since the vehicles can be configured using either a string or an
             # integer ID, please ensure that the same value type is provided for this field as
@@ -3157,11 +3145,11 @@ module NextbillionSDK
                 )
               end
 
-            # The ID of the step. This field is mandatory for all steps except for `start` and
-            # `end` type.
+            # The ID of the step. This field is mandatory for all steps except for start and
+            # end type.
             #
-            # Please note that the ID provided here must also be present in either the `jobs`
-            # or the `shipments` objects.
+            # Please note that the ID provided here must also be present in either the jobs or
+            # the shipments objects.
             #
             # **Note:** We have modified the data type of this field. The latest change is
             # backward compatible and both integer and string type IDs are valid for this
@@ -3170,12 +3158,12 @@ module NextbillionSDK
             sig { returns(String) }
             attr_accessor :id
 
-            # Specify the time at which the vehicle arrives at the `step` location. If
-            # `time_windows` is provided, then `arrival` will be an UNIX timestamp expressed
-            # in seconds. Otherwise, it will be the total duration, in seconds, elapsed since
-            # the start of the route.
+            # Specify the time at which the vehicle arrives at the step location. If
+            # time_windows is provided, then arrival will be an UNIX timestamp expressed in
+            # seconds. Otherwise, it will be the total duration, in seconds, elapsed since the
+            # start of the route.
             #
-            # Please note that arrival is mandatory when using the `solution` object.
+            # Please note that arrival is mandatory when using the solution object.
             sig { returns(Integer) }
             attr_accessor :arrival
 
@@ -3198,7 +3186,7 @@ module NextbillionSDK
             # the current step.
             #
             # Please note that the value of this parameter accumulates with each step. In case
-            # , the `travel_cost: air_distance`, then the distance here should be the straight
+            # , the travel_cost: air_distance, then the distance here should be the straight
             # line distance.
             sig { returns(T.nilable(Integer)) }
             attr_reader :distance
@@ -3207,8 +3195,8 @@ module NextbillionSDK
             attr_writer :distance
 
             # Specify the drive time, in seconds, from the start of the route up until the
-            # start of the `step`. Please note that the value of this parameter accumulates
-            # with each step.
+            # start of the step. Please note that the value of this parameter accumulates with
+            # each step.
             sig { returns(T.nilable(Integer)) }
             attr_reader :duration
 
@@ -3224,22 +3212,21 @@ module NextbillionSDK
             attr_writer :load_
 
             # Specify the location coordinates of the step in the \[latitude, longitude\]
-            # format. Alternatively, `location_index` property can also be used to specify the
+            # format. Alternatively, location_index property can also be used to specify the
             # location of the step.
             #
-            # Please note that either `location` or `location_index` is mandatory.
+            # Please note that either location or location_index is mandatory.
             sig { returns(T.nilable(T::Array[Float])) }
             attr_reader :location
 
             sig { params(location: T::Array[Float]).void }
             attr_writer :location
 
-            # Specify the index (in the `location` array) of the location coordinates where
-            # the step is performed. The valid range of values is \[0, length of `location`
-            # array). Alternatively, `location` property can also be used to specify the
-            # location.
+            # Specify the index (in the location array) of the location coordinates where the
+            # step is performed. The valid range of values is \[0, length of location array).
+            # Alternatively, location property can also be used to specify the location.
             #
-            # Please note that either `location` or `location_index` is mandatory.
+            # Please note that either location or location_index is mandatory.
             sig { returns(T.nilable(Integer)) }
             attr_reader :location_index
 
@@ -3286,23 +3273,23 @@ module NextbillionSDK
               ).returns(T.attached_class)
             end
             def self.new(
-              # The ID of the step. This field is mandatory for all steps except for `start` and
-              # `end` type.
+              # The ID of the step. This field is mandatory for all steps except for start and
+              # end type.
               #
-              # Please note that the ID provided here must also be present in either the `jobs`
-              # or the `shipments` objects.
+              # Please note that the ID provided here must also be present in either the jobs or
+              # the shipments objects.
               #
               # **Note:** We have modified the data type of this field. The latest change is
               # backward compatible and both integer and string type IDs are valid for this
               # field, as long as they match the IDs of the jobs or shipments already
               # configured.
               id:,
-              # Specify the time at which the vehicle arrives at the `step` location. If
-              # `time_windows` is provided, then `arrival` will be an UNIX timestamp expressed
-              # in seconds. Otherwise, it will be the total duration, in seconds, elapsed since
-              # the start of the route.
+              # Specify the time at which the vehicle arrives at the step location. If
+              # time_windows is provided, then arrival will be an UNIX timestamp expressed in
+              # seconds. Otherwise, it will be the total duration, in seconds, elapsed since the
+              # start of the route.
               #
-              # Please note that arrival is mandatory when using the `solution` object.
+              # Please note that arrival is mandatory when using the solution object.
               arrival:,
               # Specify the type of the step.
               type:,
@@ -3312,28 +3299,27 @@ module NextbillionSDK
               # the current step.
               #
               # Please note that the value of this parameter accumulates with each step. In case
-              # , the `travel_cost: air_distance`, then the distance here should be the straight
+              # , the travel_cost: air_distance, then the distance here should be the straight
               # line distance.
               distance: nil,
               # Specify the drive time, in seconds, from the start of the route up until the
-              # start of the `step`. Please note that the value of this parameter accumulates
-              # with each step.
+              # start of the step. Please note that the value of this parameter accumulates with
+              # each step.
               duration: nil,
               # Specify the load on the vehicle after completing this step. In case of multiple
               # dimensions, please specify the load for each type.
               load_: nil,
               # Specify the location coordinates of the step in the \[latitude, longitude\]
-              # format. Alternatively, `location_index` property can also be used to specify the
+              # format. Alternatively, location_index property can also be used to specify the
               # location of the step.
               #
-              # Please note that either `location` or `location_index` is mandatory.
+              # Please note that either location or location_index is mandatory.
               location: nil,
-              # Specify the index (in the `location` array) of the location coordinates where
-              # the step is performed. The valid range of values is \[0, length of `location`
-              # array). Alternatively, `location` property can also be used to specify the
-              # location.
+              # Specify the index (in the location array) of the location coordinates where the
+              # step is performed. The valid range of values is \[0, length of location array).
+              # Alternatively, location property can also be used to specify the location.
               #
-              # Please note that either `location` or `location_index` is mandatory.
+              # Please note that either location or location_index is mandatory.
               location_index: nil,
               # Specify the service time, in seconds, at this step.
               service: nil,
@@ -3381,32 +3367,32 @@ module NextbillionSDK
 
               START =
                 T.let(
-                  :"`start`",
+                  :start,
                   NextbillionSDK::Optimization::V2SubmitParams::Solution::Step::Type::TaggedSymbol
                 )
               END_ =
                 T.let(
-                  :"`end`",
+                  :end,
                   NextbillionSDK::Optimization::V2SubmitParams::Solution::Step::Type::TaggedSymbol
                 )
               JOB =
                 T.let(
-                  :"`job`",
+                  :job,
                   NextbillionSDK::Optimization::V2SubmitParams::Solution::Step::Type::TaggedSymbol
                 )
               PICKUP =
                 T.let(
-                  :"`pickup`",
+                  :pickup,
                   NextbillionSDK::Optimization::V2SubmitParams::Solution::Step::Type::TaggedSymbol
                 )
               DELIVERY =
                 T.let(
-                  :"`delivery`",
+                  :delivery,
                   NextbillionSDK::Optimization::V2SubmitParams::Solution::Step::Type::TaggedSymbol
                 )
               BREAK =
                 T.let(
-                  :"`break`",
+                  :break,
                   NextbillionSDK::Optimization::V2SubmitParams::Solution::Step::Type::TaggedSymbol
                 )
 
@@ -3433,7 +3419,7 @@ module NextbillionSDK
             end
 
           # Specify the unassigned job IDs from the previous optimization result. Please
-          # note the IDs should also be present in the `jobs` part of the input.
+          # note the IDs should also be present in the jobs part of the input.
           #
           # **Note:** We have modified the data type of this field. However, the latest
           # change is backward compatible and both integer and string type job IDs are valid
@@ -3459,10 +3445,10 @@ module NextbillionSDK
           sig { params(shipments: T::Array[T::Array[String]]).void }
           attr_writer :shipments
 
-          # `unassigned` attribute is related to the re-optimization feature. This attribute
+          # unassigned attribute is related to the re-optimization feature. This attribute
           # should contain the tasks that were not assigned during an earlier optimization
-          # process. Please note that the `unassigned` part in request should be consistent
-          # with the `unassigned` part in the previous optimization result.
+          # process. Please note that the unassigned part in request should be consistent
+          # with the unassigned part in the previous optimization result.
           #
           # Users can reduce the number of unassigned tasks in the re-optimized solution, by
           # following strategies such as:
@@ -3482,7 +3468,7 @@ module NextbillionSDK
           end
           def self.new(
             # Specify the unassigned job IDs from the previous optimization result. Please
-            # note the IDs should also be present in the `jobs` part of the input.
+            # note the IDs should also be present in the jobs part of the input.
             #
             # **Note:** We have modified the data type of this field. However, the latest
             # change is backward compatible and both integer and string type job IDs are valid
@@ -3526,7 +3512,7 @@ module NextbillionSDK
           # Provide the ID of a pre-created geofence using the
           # [Geofence API](https://docs.nextbillion.ai/docs/tracking/api/geofence).
           #
-          # Please note that one of `geometry` or `geofence_id` should be provided.
+          # Please note that one of geometry or geofence_id should be provided.
           sig { returns(T.nilable(String)) }
           attr_reader :geofence_id
 
@@ -3537,7 +3523,7 @@ module NextbillionSDK
           # with details of the geographic boundaries of the zone. Only “Polygon” and
           # “MultiPolygon” geoJSON types are supported.
           #
-          # Please note that one of `geometry` or `geofence_id` should be provided.
+          # Please note that one of geometry or geofence_id should be provided.
           sig do
             returns(
               T.nilable(
@@ -3569,13 +3555,13 @@ module NextbillionSDK
             # Provide the ID of a pre-created geofence using the
             # [Geofence API](https://docs.nextbillion.ai/docs/tracking/api/geofence).
             #
-            # Please note that one of `geometry` or `geofence_id` should be provided.
+            # Please note that one of geometry or geofence_id should be provided.
             geofence_id: nil,
             # It is a [geoJSON object](https://datatracker.ietf.org/doc/html/rfc7946#page-9)
             # with details of the geographic boundaries of the zone. Only “Polygon” and
             # “MultiPolygon” geoJSON types are supported.
             #
-            # Please note that one of `geometry` or `geofence_id` should be provided.
+            # Please note that one of geometry or geofence_id should be provided.
             geometry: nil
           )
           end
@@ -3617,7 +3603,7 @@ module NextbillionSDK
             sig { params(description: String).void }
             attr_writer :description
 
-            # Type of the geoJSON geometry. Should always be `Polygon` or `MultiPolygon`.
+            # Type of the geoJSON geometry. Should always be Polygon or MultiPolygon.
             sig do
               returns(
                 T.nilable(
@@ -3639,7 +3625,7 @@ module NextbillionSDK
             # with details of the geographic boundaries of the zone. Only “Polygon” and
             # “MultiPolygon” geoJSON types are supported.
             #
-            # Please note that one of `geometry` or `geofence_id` should be provided.
+            # Please note that one of geometry or geofence_id should be provided.
             sig do
               params(
                 coordinates: T::Array[T::Array[Float]],
@@ -3654,7 +3640,7 @@ module NextbillionSDK
               coordinates: nil,
               # Provide a description to identify the zone
               description: nil,
-              # Type of the geoJSON geometry. Should always be `Polygon` or `MultiPolygon`.
+              # Type of the geoJSON geometry. Should always be Polygon or MultiPolygon.
               type: nil
             )
             end
@@ -3672,7 +3658,7 @@ module NextbillionSDK
             def to_hash
             end
 
-            # Type of the geoJSON geometry. Should always be `Polygon` or `MultiPolygon`.
+            # Type of the geoJSON geometry. Should always be Polygon or MultiPolygon.
             module Type
               extend NextbillionSDK::Internal::Type::Enum
 
@@ -3687,12 +3673,12 @@ module NextbillionSDK
 
               POLYGON =
                 T.let(
-                  :"`Polygon`",
+                  :Polygon,
                   NextbillionSDK::Optimization::V2SubmitParams::Zone::Geometry::Type::TaggedSymbol
                 )
               MULTI_POLYGON =
                 T.let(
-                  :"`MultiPolygon`",
+                  :MultiPolygon,
                   NextbillionSDK::Optimization::V2SubmitParams::Zone::Geometry::Type::TaggedSymbol
                 )
 

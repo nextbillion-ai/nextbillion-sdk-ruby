@@ -6,7 +6,7 @@ module NextbillionSDK
       module Asset
       end
 
-      module Distancematrix
+      module DistanceMatrix
       end
 
       module Fleetify

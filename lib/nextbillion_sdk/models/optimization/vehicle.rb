@@ -19,12 +19,11 @@ module NextbillionSDK
 
         # @!attribute attributes
         #   Specify custom attributes for the vehicle. Each attribute should be created as a
-        #   `key:value` pair. These attributes can be used in the
-        #   `orders.vehicle_preferences` input to refine the search of vehicles for each
-        #   order.
+        #   key:value pair. These attributes can be used in the orders.vehicle_preferences
+        #   input to refine the search of vehicles for each order.
         #
-        #   The maximum number of key:value pairs that can be specified under `attributes`
-        #   for a given vehicle, is limited to 30.
+        #   The maximum number of key:value pairs that can be specified under attributes for
+        #   a given vehicle, is limited to 30.
         #
         #   @return [Object, nil]
         optional :attributes, NextbillionSDK::Internal::Type::Unknown
@@ -32,8 +31,8 @@ module NextbillionSDK
         # @!attribute priority
         #   Specify the priority for this vehicle. A higher value indicates a higher
         #   priority. When specified, it will override any priority score deduced from
-        #   `vehicle_attribute_priority_mappings` for this vehicle. Valid values are \[1,
-        #   10\] and default is 0.
+        #   vehicle_attribute_priority_mappings for this vehicle. Valid values are \[1, 10\]
+        #   and default is 0.
         #
         #   @return [Integer, nil]
         optional :priority, Integer

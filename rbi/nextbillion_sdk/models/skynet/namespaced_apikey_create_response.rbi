@@ -99,7 +99,7 @@ module NextbillionSDK
               )
             end
 
-          # Returns the unique `key` created for the specified namespace.
+          # Returns the unique key created for the specified namespace.
           sig { returns(T.nilable(String)) }
           attr_reader :apikey
 
@@ -122,7 +122,7 @@ module NextbillionSDK
           sig { params(expires_at: Integer).void }
           attr_writer :expires_at
 
-          # Returns the name of the `namespace` for which the key is created.
+          # Returns the name of the namespace for which the key is created.
           sig { returns(T.nilable(String)) }
           attr_reader :namespace
 
@@ -147,7 +147,7 @@ module NextbillionSDK
             ).returns(T.attached_class)
           end
           def self.new(
-            # Returns the unique `key` created for the specified namespace.
+            # Returns the unique key created for the specified namespace.
             apikey: nil,
             # Returns the time, expressed as UNIX epoch timestamp in seconds, when the
             # namespace key was created.
@@ -155,7 +155,7 @@ module NextbillionSDK
             # Returns the time, expressed as UNIX epoch timestamp in seconds, when the
             # namespace key will expire.
             expires_at: nil,
-            # Returns the name of the `namespace` for which the key is created.
+            # Returns the name of the namespace for which the key is created.
             namespace: nil,
             # An internal subscription ID.
             sub_id: nil

@@ -20,7 +20,7 @@ module NextbillionSDK
 
         # @!attribute status
         #   A string indicating the state of the response. On successful responses, the
-        #   value will be `Ok`. Indicative error messages are returned for different errors.
+        #   value will be Ok. Indicative error messages are returned for different errors.
         #   See the [API Error Codes](#api-error-codes) section below for more information.
         #
         #   @return [String, nil]
@@ -65,8 +65,8 @@ module NextbillionSDK
             optional :asset_id, String
 
             # @!attribute attributes
-            #   Returns the `attributes` provided for the trip at the time of starting or
-            #   updating it.
+            #   Returns the attributes provided for the trip at the time of starting or updating
+            #   it.
             #
             #   @return [Object, nil]
             optional :attributes, NextbillionSDK::Internal::Type::Unknown
@@ -159,7 +159,7 @@ module NextbillionSDK
             #
             #   @param asset_id [String] Returns the ID of the asset linked to the trip when the trip was started or upda
             #
-            #   @param attributes [Object] Returns the `attributes` provided for the trip at the time of starting or updati
+            #   @param attributes [Object] Returns the attributes provided for the trip at the time of starting or updating
             #
             #   @param created_at [Integer] Returns the time, expressed as UNIX epoch timestamp in milliseconds, when the tr
             #

@@ -44,9 +44,8 @@ module NextbillionSDK
         end
         attr_writer :cluster
 
-        # Use this field to update the `attributes` of the trip. Please note that when
-        # updating the `attributes` field, previously added information will be
-        # overwritten.
+        # Use this field to update the attributes of the trip. Please note that when
+        # updating the attributes field, previously added information will be overwritten.
         sig { returns(T.nilable(T.anything)) }
         attr_reader :attributes
 
@@ -63,7 +62,7 @@ module NextbillionSDK
         # Use this JSON object to update additional details about the trip. This property
         # is used to add any custom information / context about the trip.
         #
-        # Please note that updating the `meta_data` field will overwrite the previously
+        # Please note that updating the meta_data field will overwrite the previously
         # added information.
         sig { returns(T.nilable(T.anything)) }
         attr_reader :meta_data
@@ -124,16 +123,15 @@ module NextbillionSDK
           asset_id:,
           # the cluster of the region you want to use
           cluster: nil,
-          # Use this field to update the `attributes` of the trip. Please note that when
-          # updating the `attributes` field, previously added information will be
-          # overwritten.
+          # Use this field to update the attributes of the trip. Please note that when
+          # updating the attributes field, previously added information will be overwritten.
           attributes: nil,
           # Use this parameter to update the custom description of the trip.
           description: nil,
           # Use this JSON object to update additional details about the trip. This property
           # is used to add any custom information / context about the trip.
           #
-          # Please note that updating the `meta_data` field will overwrite the previously
+          # Please note that updating the meta_data field will overwrite the previously
           # added information.
           meta_data: nil,
           # Use this property to update the name of the trip.
@@ -220,7 +218,7 @@ module NextbillionSDK
           # Use this JSON object to update additional details about the stop. This property
           # is used to add any custom information / context about the stop.
           #
-          # Please note that updating the `meta_data` field will overwrite the previously
+          # Please note that updating the meta_data field will overwrite the previously
           # added information.
           sig { returns(T.nilable(T.anything)) }
           attr_reader :meta_data
@@ -255,7 +253,7 @@ module NextbillionSDK
             # Use this JSON object to update additional details about the stop. This property
             # is used to add any custom information / context about the stop.
             #
-            # Please note that updating the `meta_data` field will overwrite the previously
+            # Please note that updating the meta_data field will overwrite the previously
             # added information.
             meta_data: nil,
             # Use this filed to update the name of the stop.

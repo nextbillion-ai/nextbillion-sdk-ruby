@@ -100,25 +100,25 @@ module NextbillionSDK
           request_options: NextbillionSDK::RequestOptions
         }
 
-        type sort_by = :"`distance`" | :"`duration`" | :"`straight_distance`"
+        type sort_by = :distance | :duration | :straight_distance
 
         module SortBy
           extend NextbillionSDK::Internal::Type::Enum
 
-          DISTANCE: :"`distance`"
-          DURATION: :"`duration`"
-          STRAIGHT_DISTANCE: :"`straight_distance`"
+          DISTANCE: :distance
+          DURATION: :duration
+          STRAIGHT_DISTANCE: :straight_distance
 
           def self?.values: -> ::Array[NextbillionSDK::Models::Skynet::SearchAroundParams::sort_by]
         end
 
-        type sort_driving_mode = :"`car`" | :"`truck`"
+        type sort_driving_mode = :car | :truck
 
         module SortDrivingMode
           extend NextbillionSDK::Internal::Type::Enum
 
-          CAR: :"`car`"
-          TRUCK: :"`truck`"
+          CAR: :car
+          TRUCK: :truck
 
           def self?.values: -> ::Array[NextbillionSDK::Models::Skynet::SearchAroundParams::sort_driving_mode]
         end

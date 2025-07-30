@@ -38,7 +38,7 @@ module NextbillionSDK
         end
         attr_writer :cluster
 
-        # Denotes page number. Use this along with the `ps` parameter to implement
+        # Denotes page number. Use this along with the ps parameter to implement
         # pagination for your searched results. This parameter does not have a maximum
         # limit but would return an empty response in case a higher value is provided when
         # the result-set itself is smaller.
@@ -48,29 +48,29 @@ module NextbillionSDK
         sig { params(pn: Integer).void }
         attr_writer :pn
 
-        # Denotes number of search results per page. Use this along with the `pn`
-        # parameter to implement pagination for your searched results.
+        # Denotes number of search results per page. Use this along with the pn parameter
+        # to implement pagination for your searched results.
         sig { returns(T.nilable(Integer)) }
         attr_reader :ps
 
         sig { params(ps: Integer).void }
         attr_writer :ps
 
-        # Provide a single field to sort the results by. Only `updated_at` or `created_at`
+        # Provide a single field to sort the results by. Only updated_at or created_at
         # fields can be selected for ordering the results.
         #
-        # By default, the result is sorted by `created_at` field in the descending order.
-        # Allowed values for specifying the order are `asc` for ascending order and `desc`
-        # for descending order.
+        # By default, the result is sorted by created_at field in the descending order.
+        # Allowed values for specifying the order are asc for ascending order and desc for
+        # descending order.
         sig { returns(T.nilable(String)) }
         attr_reader :sort
 
         sig { params(sort: String).void }
         attr_writer :sort
 
-        # `tags` can be used to filter the monitors. Only those monitors which have all
-        # the `tags` provided here, will be included in the search result. In case
-        # multiple `tags` need to be specified, use `,` to separate them.
+        # tags can be used to filter the monitors. Only those monitors which have all the
+        # tags provided here, will be included in the search result. In case multiple tags
+        # need to be specified, use , to separate them.
         sig { returns(T.nilable(String)) }
         attr_reader :tags
 
@@ -95,24 +95,24 @@ module NextbillionSDK
           key:,
           # the cluster of the region you want to use
           cluster: nil,
-          # Denotes page number. Use this along with the `ps` parameter to implement
+          # Denotes page number. Use this along with the ps parameter to implement
           # pagination for your searched results. This parameter does not have a maximum
           # limit but would return an empty response in case a higher value is provided when
           # the result-set itself is smaller.
           pn: nil,
-          # Denotes number of search results per page. Use this along with the `pn`
-          # parameter to implement pagination for your searched results.
+          # Denotes number of search results per page. Use this along with the pn parameter
+          # to implement pagination for your searched results.
           ps: nil,
-          # Provide a single field to sort the results by. Only `updated_at` or `created_at`
+          # Provide a single field to sort the results by. Only updated_at or created_at
           # fields can be selected for ordering the results.
           #
-          # By default, the result is sorted by `created_at` field in the descending order.
-          # Allowed values for specifying the order are `asc` for ascending order and `desc`
-          # for descending order.
+          # By default, the result is sorted by created_at field in the descending order.
+          # Allowed values for specifying the order are asc for ascending order and desc for
+          # descending order.
           sort: nil,
-          # `tags` can be used to filter the monitors. Only those monitors which have all
-          # the `tags` provided here, will be included in the search result. In case
-          # multiple `tags` need to be specified, use `,` to separate them.
+          # tags can be used to filter the monitors. Only those monitors which have all the
+          # tags provided here, will be included in the search result. In case multiple tags
+          # need to be specified, use , to separate them.
           tags: nil,
           request_options: {}
         )

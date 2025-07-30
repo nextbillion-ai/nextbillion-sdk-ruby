@@ -14,7 +14,7 @@ module NextbillionSDK
       #
       # @param original_shape [String] Body param: Takes a route geometry as input and returns the route details. Accep
       #
-      # @param original_shape_type [Symbol, NextbillionSDK::Models::RouteReportCreateParams::OriginalShapeType] Body param: Specify the encoding type of route geometry provided in `original_sh
+      # @param original_shape_type [Symbol, NextbillionSDK::Models::RouteReportCreateParams::OriginalShapeType] Body param: Specify the encoding type of route geometry provided in original_sha
       #
       # @param request_options [NextbillionSDK::RequestOptions, Hash{Symbol=>Object}, nil]
       #

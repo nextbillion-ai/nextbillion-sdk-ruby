@@ -12,23 +12,23 @@ module NextbillionSDK
           #
           # @overload list(id, key:, cluster: nil, correction: nil, end_time: nil, geometry_type: nil, pn: nil, ps: nil, start_time: nil, request_options: {})
           #
-          # @param id [String] ID of the `asset` for which the location track information needs to be retrieved
+          # @param id [String] ID of the asset for which the location track information needs to be retrieved.
           #
           # @param key [String] A key is a unique identifier that is required to authenticate a request to the A
           #
           # @param cluster [Symbol, NextbillionSDK::Models::Skynet::Asset::LocationListParams::Cluster] the cluster of the region you want to use
           #
-          # @param correction [String] Describe the geometry characteristics through a `,` separated list of properties
+          # @param correction [String] Describe the geometry characteristics through a , separated list of properties.
           #
-          # @param end_time [Integer] Time until which the tracked locations of the `asset` need to be retrieved.
+          # @param end_time [Integer] Time until which the tracked locations of the asset need to be retrieved.
           #
           # @param geometry_type [Symbol, NextbillionSDK::Models::Skynet::Asset::LocationListParams::GeometryType] Set the geometry format to encode the path linking the tracked locations of the
           #
-          # @param pn [Integer] Denotes page number. Use this along with the `ps` parameter to implement paginat
+          # @param pn [Integer] Denotes page number. Use this along with the ps parameter to implement paginatio
           #
-          # @param ps [Integer] Denotes number of search results per page. Use this along with the `pn` paramete
+          # @param ps [Integer] Denotes number of search results per page. Use this along with the pn parameter
           #
-          # @param start_time [Integer] Time after which the tracked locations of the `asset` need to be retrieved.
+          # @param start_time [Integer] Time after which the tracked locations of the asset need to be retrieved.
           #
           # @param request_options [NextbillionSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
@@ -53,7 +53,7 @@ module NextbillionSDK
           #
           # @overload get_last(id, key:, cluster: nil, request_options: {})
           #
-          # @param id [String] ID of the `asset` whose last location is to be retrieved. This is the same ID th
+          # @param id [String] ID of the asset whose last location is to be retrieved. This is the same ID that
           #
           # @param key [String] A key is a unique identifier that is required to authenticate a request to the A
           #

@@ -59,7 +59,7 @@ module NextbillionSDK
 
         # @!attribute map_view
         #   The bounding box enclosing the geometric shape (area or line) that an individual
-        #   result covers. `place` typed results have no `mapView`.
+        #   result covers. place typed results have no mapView.
         #
         #   @return [NextbillionSDK::Models::MapView, nil]
         optional :map_view, -> { NextbillionSDK::MapView }, api_name: :mapView
@@ -110,14 +110,14 @@ module NextbillionSDK
         class Scoring < NextbillionSDK::Internal::Type::BaseModel
           # @!attribute field_score
           #   A breakdown of how closely individual field of the result matched with the
-          #   provided query `q`.
+          #   provided query q.
           #
           #   @return [Object, nil]
           optional :field_score, NextbillionSDK::Internal::Type::Unknown, api_name: :fieldScore
 
           # @!attribute query_score
           #   A score, out of 1, indicating how closely the result matches with the provided
-          #   query `q` .
+          #   query q .
           #
           #   @return [Float, nil]
           optional :query_score, Float, api_name: :queryScore

@@ -15,7 +15,7 @@ module NextbillionSDK
     # Default max retry delay in seconds.
     DEFAULT_MAX_RETRY_DELAY = 8.0
 
-    # @return [String, nil]
+    # @return [String]
     attr_reader :api_key
 
     # @return [NextbillionSDK::Resources::Fleetify]
@@ -51,8 +51,8 @@ module NextbillionSDK
     # @return [NextbillionSDK::Resources::RestrictionsItems]
     attr_reader :restrictions_items
 
-    # @return [NextbillionSDK::Resources::Distancematrix]
-    attr_reader :distancematrix
+    # @return [NextbillionSDK::Resources::DistanceMatrix]
+    attr_reader :distance_matrix
 
     # @return [NextbillionSDK::Resources::Autocomplete]
     attr_reader :autocomplete
@@ -96,10 +96,8 @@ module NextbillionSDK
     # @api private
     #
     # @return [Hash{String=>String}]
-    private def auth_headers
-      return {} if @api_key.nil?
-
-      {"authorization" => "Bearer #{@api_key}"}
+    private def auth_query
+      {"key" => @api_key}
     end
 
     # Creates and returns a new client for interacting with the API.
@@ -126,7 +124,11 @@ module NextbillionSDK
     )
       base_url ||= "https://api.nextbillion.io"
 
-      @api_key = api_key&.to_s
+      if api_key.nil?
+        raise ArgumentError.new("api_key is required, and can be set via environ: \"NEXTBILLION_SDK_API_KEY\"")
+      end
+
+      @api_key = api_key.to_s
 
       super(
         base_url: base_url,
@@ -147,7 +149,7 @@ module NextbillionSDK
       @isochrone = NextbillionSDK::Resources::Isochrone.new(client: self)
       @restrictions = NextbillionSDK::Resources::Restrictions.new(client: self)
       @restrictions_items = NextbillionSDK::Resources::RestrictionsItems.new(client: self)
-      @distancematrix = NextbillionSDK::Resources::Distancematrix.new(client: self)
+      @distance_matrix = NextbillionSDK::Resources::DistanceMatrix.new(client: self)
       @autocomplete = NextbillionSDK::Resources::Autocomplete.new(client: self)
       @navigation = NextbillionSDK::Resources::Navigation.new(client: self)
       @map = NextbillionSDK::Resources::Map.new(client: self)

@@ -1,6 +1,6 @@
 module NextbillionSDK
   module Models
-    module Distancematrix
+    module DistanceMatrix
       type json_create_params =
         {  } & NextbillionSDK::Internal::Type::request_parameters
 

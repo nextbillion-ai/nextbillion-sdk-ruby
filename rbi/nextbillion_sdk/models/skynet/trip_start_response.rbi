@@ -36,7 +36,7 @@ module NextbillionSDK
         attr_writer :message
 
         # A string indicating the state of the response. On successful responses, the
-        # value will be `Ok`. Indicative error messages are returned for different errors.
+        # value will be Ok. Indicative error messages are returned for different errors.
         # See the [API Error Codes](#api-error-codes) section below for more information.
         sig { returns(T.nilable(String)) }
         attr_reader :status
@@ -58,7 +58,7 @@ module NextbillionSDK
           # successful, this field is not present in the response.
           message: nil,
           # A string indicating the state of the response. On successful responses, the
-          # value will be `Ok`. Indicative error messages are returned for different errors.
+          # value will be Ok. Indicative error messages are returned for different errors.
           # See the [API Error Codes](#api-error-codes) section below for more information.
           status: nil
         )
@@ -85,7 +85,7 @@ module NextbillionSDK
               )
             end
 
-          # Returns the ID of the newly created trip. It will be same as the `custom_id` if
+          # Returns the ID of the newly created trip. It will be same as the custom_id if
           # that input was provided in the input request. Use this ID to manage this trip
           # using other available Trip methods.
           sig { returns(T.nilable(String)) }
@@ -96,7 +96,7 @@ module NextbillionSDK
 
           sig { params(id: String).returns(T.attached_class) }
           def self.new(
-            # Returns the ID of the newly created trip. It will be same as the `custom_id` if
+            # Returns the ID of the newly created trip. It will be same as the custom_id if
             # that input was provided in the input request. Use this ID to manage this trip
             # using other available Trip methods.
             id: nil

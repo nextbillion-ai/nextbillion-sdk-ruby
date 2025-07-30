@@ -43,11 +43,11 @@ module NextbillionSDK
       # @!attribute geofence
       #   An array of coordinates denoting the boundary of an area in which the
       #   restrictions are to be applied. The format in which coordinates should be listed
-      #   is defined by the `latlon` field.
+      #   is defined by the latlon field.
       #
-      #   Geofences can be used to create all restriction types, except for a `turn` type
-      #   restriction. Please note that `segments` is not required when using `geofence`
-      #   to create restrictions.
+      #   Geofences can be used to create all restriction types, except for a turn type
+      #   restriction. Please note that segments is not required when using geofence to
+      #   create restrictions.
       #
       #   @return [Array<Array<Float>>, nil]
       optional :geofence,
@@ -57,9 +57,9 @@ module NextbillionSDK
       #   Specify the maximum truck height, in centimeter, that will be allowed under the
       #   restriction. A value of 0 indicates no limit.
       #
-      #   Please note this parameter is effective only when `restriction_type` is `truck`.
-      #   At least one of truck parameters - `weight`, `height`, `width` and `truck` -
-      #   needs to be provided when restriction type is `truck`.
+      #   Please note this parameter is effective only when restriction_type is truck. At
+      #   least one of truck parameters - weight, height, width and truck - needs to be
+      #   provided when restriction type is truck.
       #
       #   @return [Integer, nil]
       optional :height, Integer
@@ -68,9 +68,9 @@ module NextbillionSDK
       #   Specify the maximum truck length, in centimeter, that will be allowed under the
       #   restriction. A value of 0 indicates no limit.
       #
-      #   Please note this parameter is effective only when `restriction_type` is `truck`.
-      #   At least one of truck parameters - `weight`, `height`, `width` and `truck` -
-      #   needs to be provided when restriction type is `truck`.
+      #   Please note this parameter is effective only when restriction_type is truck. At
+      #   least one of truck parameters - weight, height, width and truck - needs to be
+      #   provided when restriction type is truck.
       #
       #   @return [Integer, nil]
       optional :length, Integer
@@ -100,8 +100,7 @@ module NextbillionSDK
       #   An array of objects to collect the details of the segments of a road on which
       #   the restriction has to be applied. Each object corresponds to a new segment.
       #
-      #   Please note that `segments` is mandatory for all `restrtiction_type` except
-      #   `turn`.
+      #   Please note that segments is mandatory for all restrtiction_type except turn.
       #
       #   @return [Array<NextbillionSDK::Models::RichGroupRequest::Segment>, nil]
       optional :segments,
@@ -109,16 +108,16 @@ module NextbillionSDK
 
       # @!attribute speed
       #   Provide the the fixed speed of the segment where the restriction needs to be
-      #   applied. Please note that this parameter is mandatory when the `restrictionType`
-      #   is `fixedspeed`.
+      #   applied. Please note that this parameter is mandatory when the restrictionType
+      #   is fixedspeed.
       #
       #   @return [Float, nil]
       optional :speed, Float
 
       # @!attribute speed_limit
       #   Provide the the maximum speed of the segment where the restriction needs to be
-      #   applied. Please note that this parameter is mandatory when the `restrictionType`
-      #   is `maxspeed`.
+      #   applied. Please note that this parameter is mandatory when the restrictionType
+      #   is maxspeed.
       #
       #   @return [Float, nil]
       optional :speed_limit, Float
@@ -133,7 +132,7 @@ module NextbillionSDK
       # @!attribute tracks
       #   Specify a sequence of coordinates (track) where the restriction is to be
       #   applied. The coordinates will be snapped to nearest road. Please note when using
-      #   `tracks`, `segments` and `turns` are not required.
+      #   tracks, segments and turns are not required.
       #
       #   @return [Array<Array<Float>>, nil]
       optional :tracks,
@@ -143,7 +142,7 @@ module NextbillionSDK
       #   An array of objects to collect the details of the turns of a road on which the
       #   restriction has to be applied. Each object corresponds to a new turn.
       #
-      #   Please note that `turns` is mandatory for when `restrtiction_type=turn`.
+      #   Please note that turns is mandatory for when restrtiction_type=turn.
       #
       #   @return [Array<NextbillionSDK::Models::RichGroupRequest::Turn>, nil]
       optional :turns, -> { NextbillionSDK::Internal::Type::ArrayOf[NextbillionSDK::RichGroupRequest::Turn] }
@@ -152,9 +151,9 @@ module NextbillionSDK
       #   Specify the maximum truck weight, in kilograms, that the restriction will allow.
       #   A value of 0 indicates no limit.
       #
-      #   Please note this parameter is effective only when `restriction_type` is `truck`.
-      #   At least one of truck parameters - `weight`, `height`, `width` and `truck` -
-      #   needs to be provided for is `truck` restriction type.
+      #   Please note this parameter is effective only when restriction_type is truck. At
+      #   least one of truck parameters - weight, height, width and truck - needs to be
+      #   provided for is truck restriction type.
       #
       #   @return [Integer, nil]
       optional :weight, Integer
@@ -163,9 +162,9 @@ module NextbillionSDK
       #   Specify the maximum truck width, in centimeter, that will be allowed under the
       #   restriction. A value of 0 indicates no limit.
       #
-      #   Please note this parameter is effective only when `restriction_type` is `truck`.
-      #   At least one of truck parameters - `weight`, `height`, `width` and `truck` -
-      #   needs to be provided when restriction type is `truck`.
+      #   Please note this parameter is effective only when restriction_type is truck. At
+      #   least one of truck parameters - weight, height, width and truck - needs to be
+      #   provided when restriction type is truck.
       #
       #   @return [Integer, nil]
       optional :width, Integer
@@ -217,9 +216,9 @@ module NextbillionSDK
       module Direction
         extend NextbillionSDK::Internal::Type::Enum
 
-        FORWARD = :"`forward`"
-        BACKWARD = :"`backward`"
-        BOTH = :"`both`"
+        FORWARD = :forward
+        BACKWARD = :backward
+        BOTH = :both
 
         # @!method self.values
         #   @return [Array<Symbol>]
@@ -271,8 +270,8 @@ module NextbillionSDK
         optional :to, Integer
 
         # @!attribute via
-        #   An integer value that represents the ID of a node connecting `from` and `to`
-        #   nodes of the turn.
+        #   An integer value that represents the ID of a node connecting from and to nodes
+        #   of the turn.
         #
         #   @return [Integer, nil]
         optional :via, Integer
@@ -285,7 +284,7 @@ module NextbillionSDK
         #
         #   @param to [Integer] An integer value that represents the ID of the ending node of the turn.
         #
-        #   @param via [Integer] An integer value that represents the ID of a node connecting `from` and `to` nod
+        #   @param via [Integer] An integer value that represents the ID of a node connecting from and to nodes o
       end
     end
   end

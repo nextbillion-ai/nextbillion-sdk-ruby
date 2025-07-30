@@ -25,7 +25,7 @@ module NextbillionSDK
         #
         # @param polygon [NextbillionSDK::Models::GeofenceEntityCreate::Polygon] Provide the details to create a custom polygon type of geofence. Please note tha
         #
-        # @param tags [Array<String>] An array of strings to associate multiple tags to the geofence. `tags` can be us
+        # @param tags [Array<String>] An array of strings to associate multiple tags to the geofence. tags can be used
         #
         # @param request_options [NextbillionSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #

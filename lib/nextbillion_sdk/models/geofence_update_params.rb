@@ -16,44 +16,43 @@ module NextbillionSDK
 
       # @!attribute circle
       #   Use this object to update details of a circular geofence. Please note that this
-      #   object is mandatory only when `type` is `circle`. When the `type` is not
-      #   `circle`, the properties of this object will be ignored while creating the
-      #   geofence.
+      #   object is mandatory only when type is circle. When the type is not circle, the
+      #   properties of this object will be ignored while creating the geofence.
       #
       #   @return [NextbillionSDK::Models::GeofenceUpdateParams::Circle, nil]
       optional :circle, -> { NextbillionSDK::GeofenceUpdateParams::Circle }
 
       # @!attribute isochrone
       #   Use this object to update details of an isochrone based geofence. Please note
-      #   that this object is mandatory only when `type` is `isochrone`. When the `type`
-      #   is not `isochrone`, the properties of this object will be ignored while creating
-      #   the geofence.
+      #   that this object is mandatory only when type is isochrone. When the type is not
+      #   isochrone, the properties of this object will be ignored while creating the
+      #   geofence.
       #
       #   @return [NextbillionSDK::Models::GeofenceUpdateParams::Isochrone, nil]
       optional :isochrone, -> { NextbillionSDK::GeofenceUpdateParams::Isochrone }
 
       # @!attribute meta_data
-      #   Updated the `meta_data` associated with a geofence. Use this field to define
+      #   Updated the meta_data associated with a geofence. Use this field to define
       #   custom attributes that provide more context and information about the geofence
       #   being updated like country, group ID etc.
       #
-      #   The data being added should be in valid JSON object format (i.e. `key` and
-      #   `value` pairs). Max size allowed for the object is 65kb.
+      #   The data being added should be in valid JSON object format (i.e. key and value
+      #   pairs). Max size allowed for the object is 65kb.
       #
       #   @return [Object, nil]
       optional :meta_data, NextbillionSDK::Internal::Type::Unknown
 
       # @!attribute name
-      #   Use this parameter to update the `name` of a geofence. Users can assign
-      #   meaningful custom names to their geofences.
+      #   Use this parameter to update the name of a geofence. Users can assign meaningful
+      #   custom names to their geofences.
       #
       #   @return [String, nil]
       optional :name, String
 
       # @!attribute polygon
       #   Use this object to update details of a custom polygon geofence. Please note that
-      #   this object is mandatory only when `type` is `polygon`. When the `type` is not
-      #   `polygon`, the properties of this object will be ignored while creating the
+      #   this object is mandatory only when type is polygon. When the type is not
+      #   polygon, the properties of this object will be ignored while creating the
       #   geofence.
       #
       #   Self-intersecting polygons or polygons containing other polygons are invalid and
@@ -65,19 +64,19 @@ module NextbillionSDK
       optional :polygon, -> { NextbillionSDK::GeofenceUpdateParams::Polygon }
 
       # @!attribute tags
-      #   Use this parameter to add/modify one or multiple `tags` of a geofence. `tags`
-      #   can be used to search or filter geofences (using `Get Geofence List` method).
+      #   Use this parameter to add/modify one or multiple tags of a geofence. tags can be
+      #   used to search or filter geofences (using Get Geofence List method).
       #
-      #   Valid values for updating `tags` consist of alphanumeric characters (A-Z, a-z,
+      #   Valid values for updating tags consist of alphanumeric characters (A-Z, a-z,
       #   0-9) along with the underscore ('\_') and hyphen ('-') symbols.
       #
       #   @return [Array<String>, nil]
       optional :tags, NextbillionSDK::Internal::Type::ArrayOf[String]
 
       # @!attribute type
-      #   Use this parameter to update the `type` of a geofence. Please note that you will
-      #   need to provide required details for creating a geofence of the new `type`.
-      #   Check other parameters of this method to know more.
+      #   Use this parameter to update the type of a geofence. Please note that you will
+      #   need to provide required details for creating a geofence of the new type. Check
+      #   other parameters of this method to know more.
       #
       #   @return [Symbol, NextbillionSDK::Models::GeofenceUpdateParams::Type, nil]
       optional :type, enum: -> { NextbillionSDK::GeofenceUpdateParams::Type }
@@ -92,15 +91,15 @@ module NextbillionSDK
       #
       #   @param isochrone [NextbillionSDK::Models::GeofenceUpdateParams::Isochrone] Use this object to update details of an isochrone based geofence. Please note th
       #
-      #   @param meta_data [Object] Updated the `meta_data` associated with a geofence. Use this field to define cus
+      #   @param meta_data [Object] Updated the meta_data associated with a geofence. Use this field to define custo
       #
-      #   @param name [String] Use this parameter to update the `name` of a geofence. Users can assign meaningf
+      #   @param name [String] Use this parameter to update the name of a geofence. Users can assign meaningful
       #
       #   @param polygon [NextbillionSDK::Models::GeofenceUpdateParams::Polygon] Use this object to update details of a custom polygon geofence. Please note that
       #
-      #   @param tags [Array<String>] Use this parameter to add/modify one or multiple `tags` of a geofence. `tags` ca
+      #   @param tags [Array<String>] Use this parameter to add/modify one or multiple tags of a geofence. tags can be
       #
-      #   @param type [Symbol, NextbillionSDK::Models::GeofenceUpdateParams::Type] Use this parameter to update the `type` of a geofence. Please note that you will
+      #   @param type [Symbol, NextbillionSDK::Models::GeofenceUpdateParams::Type] Use this parameter to update the type of a geofence. Please note that you will n
       #
       #   @param request_options [NextbillionSDK::RequestOptions, Hash{Symbol=>Object}]
 
@@ -124,9 +123,8 @@ module NextbillionSDK
         #   {NextbillionSDK::Models::GeofenceUpdateParams::Circle} for more details.
         #
         #   Use this object to update details of a circular geofence. Please note that this
-        #   object is mandatory only when `type` is `circle`. When the `type` is not
-        #   `circle`, the properties of this object will be ignored while creating the
-        #   geofence.
+        #   object is mandatory only when type is circle. When the type is not circle, the
+        #   properties of this object will be ignored while creating the geofence.
         #
         #   @param center [NextbillionSDK::Models::GeofenceUpdateParams::Circle::Center] Use this parameter to update the coordinate of the location which will act as th
         #
@@ -135,13 +133,13 @@ module NextbillionSDK
         # @see NextbillionSDK::Models::GeofenceUpdateParams::Circle#center
         class Center < NextbillionSDK::Internal::Type::BaseModel
           # @!attribute lat
-          #   Latitude of the `center` location.
+          #   Latitude of the center location.
           #
           #   @return [Float, nil]
           optional :lat, Float
 
           # @!attribute lon
-          #   Longitude of the `center` location.
+          #   Longitude of the center location.
           #
           #   @return [Float, nil]
           optional :lon, Float
@@ -150,9 +148,9 @@ module NextbillionSDK
           #   Use this parameter to update the coordinate of the location which will act as
           #   the center of a circular geofence.
           #
-          #   @param lat [Float] Latitude of the `center` location.
+          #   @param lat [Float] Latitude of the center location.
           #
-          #   @param lon [Float] Longitude of the `center` location.
+          #   @param lon [Float] Longitude of the center location.
         end
       end
 
@@ -161,12 +159,12 @@ module NextbillionSDK
         #   Use this parameter to update the distance, in meters, for which an isochrone
         #   polygon needs to be determined. When provided, the API would create a geofence
         #   representing the area that can be reached after driving the given number of
-        #   meters starting from the point specified in `coordinates`.
+        #   meters starting from the point specified in coordinates.
         #
         #   The maximum distance that can be specified is 60000 meters (60km).
         #
-        #   At least one of `contours_meter` or `contours_minute` is mandatory when `type`
-        #   is `isochrone`.
+        #   At least one of contours_meter or contours_minute is mandatory when type is
+        #   isochrone.
         #
         #   @return [Integer, nil]
         optional :contours_meter, Integer
@@ -175,12 +173,12 @@ module NextbillionSDK
         #   Use this parameter to update the duration, in minutes, for which an isochrone
         #   polygon needs to be determined. When provided, the API would create a geofence
         #   representing the area that can be reached after driving for the given number of
-        #   minutes starting from the point specified in `coordinates`.
+        #   minutes starting from the point specified in coordinates.
         #
         #   The maximum duration that can be specified is 40 minutes.
         #
-        #   At least one of `contours_meter` or `contours_minute` is mandatory when `type`
-        #   is `isochrone`.
+        #   At least one of contours_meter or contours_minute is mandatory when type is
+        #   isochrone.
         #
         #   @return [Integer, nil]
         optional :contours_minute, Integer
@@ -205,13 +203,13 @@ module NextbillionSDK
         optional :denoise, Float
 
         # @!attribute departure_time
-        #   Use this parameter to update the `departure_time`, expressed as UNIX epoch
+        #   Use this parameter to update the departure_time, expressed as UNIX epoch
         #   timestamp in seconds. The isochrone boundary will be determined based on the
         #   typical traffic conditions at the given time.
         #
         #   If no input is provided for this parameter then, the traffic conditions at the
         #   time of making the request are considered by default. Please note that because
-        #   of this behavior the geofence boundaries may change even if the `departure_time`
+        #   of this behavior the geofence boundaries may change even if the departure_time
         #   was not specifically provided at the time of updating the geofence.
         #
         #   @return [Integer, nil]
@@ -219,9 +217,9 @@ module NextbillionSDK
 
         # @!attribute mode
         #   Use this parameter to update the driving mode that the service should use to
-        #   determine the isochrone line. For example, if you use `car`, the API will return
+        #   determine the isochrone line. For example, if you use car, the API will return
         #   an isochrone polygon that a car can cover within the specified time or after
-        #   driving the specified distance. Using `truck` will return an isochrone that a
+        #   driving the specified distance. Using truck will return an isochrone that a
         #   truck can reach after taking into account appropriate truck routing
         #   restrictions.
         #
@@ -233,9 +231,9 @@ module NextbillionSDK
         #   {NextbillionSDK::Models::GeofenceUpdateParams::Isochrone} for more details.
         #
         #   Use this object to update details of an isochrone based geofence. Please note
-        #   that this object is mandatory only when `type` is `isochrone`. When the `type`
-        #   is not `isochrone`, the properties of this object will be ignored while creating
-        #   the geofence.
+        #   that this object is mandatory only when type is isochrone. When the type is not
+        #   isochrone, the properties of this object will be ignored while creating the
+        #   geofence.
         #
         #   @param contours_meter [Integer] Use this parameter to update the distance, in meters, for which an isochrone pol
         #
@@ -245,14 +243,14 @@ module NextbillionSDK
         #
         #   @param denoise [Float] A floating point value from 0.0 to 1.0 that can be used to remove smaller contou
         #
-        #   @param departure_time [Integer] Use this parameter to update the `departure_time`, expressed as UNIX epoch times
+        #   @param departure_time [Integer] Use this parameter to update the departure_time, expressed as UNIX epoch timesta
         #
         #   @param mode [String] Use this parameter to update the driving mode that the service should use to det
       end
 
       class Polygon < NextbillionSDK::Internal::Type::BaseModel
         # @!attribute geojson
-        #   An object to collect geoJSON details of the `polygon` geofence. The contents of
+        #   An object to collect geoJSON details of the polygon geofence. The contents of
         #   this object follow the
         #   [geoJSON standard](https://datatracker.ietf.org/doc/html/rfc7946).
         #
@@ -264,8 +262,8 @@ module NextbillionSDK
         #   {NextbillionSDK::Models::GeofenceUpdateParams::Polygon} for more details.
         #
         #   Use this object to update details of a custom polygon geofence. Please note that
-        #   this object is mandatory only when `type` is `polygon`. When the `type` is not
-        #   `polygon`, the properties of this object will be ignored while creating the
+        #   this object is mandatory only when type is polygon. When the type is not
+        #   polygon, the properties of this object will be ignored while creating the
         #   geofence.
         #
         #   Self-intersecting polygons or polygons containing other polygons are invalid and
@@ -273,7 +271,7 @@ module NextbillionSDK
         #
         #   Area of the polygon should be less than 2000 km<sup>2</sup>.
         #
-        #   @param geojson [NextbillionSDK::Models::GeofenceUpdateParams::Polygon::Geojson] An object to collect geoJSON details of the `polygon` geofence. The contents of
+        #   @param geojson [NextbillionSDK::Models::GeofenceUpdateParams::Polygon::Geojson] An object to collect geoJSON details of the polygon geofence. The contents of th
 
         # @see NextbillionSDK::Models::GeofenceUpdateParams::Polygon#geojson
         class Geojson < NextbillionSDK::Internal::Type::BaseModel
@@ -286,7 +284,7 @@ module NextbillionSDK
                    NextbillionSDK::Internal::Type::ArrayOf[NextbillionSDK::Internal::Type::ArrayOf[Float]]
 
           # @!attribute type
-          #   Type of the geoJSON geometry. Should always be `Polygon`.
+          #   Type of the geoJSON geometry. Should always be Polygon.
           #
           #   @return [String, nil]
           optional :type, String
@@ -296,25 +294,25 @@ module NextbillionSDK
           #   {NextbillionSDK::Models::GeofenceUpdateParams::Polygon::Geojson} for more
           #   details.
           #
-          #   An object to collect geoJSON details of the `polygon` geofence. The contents of
+          #   An object to collect geoJSON details of the polygon geofence. The contents of
           #   this object follow the
           #   [geoJSON standard](https://datatracker.ietf.org/doc/html/rfc7946).
           #
           #   @param geometry [Array<Array<Float>>] An array of coordinates in the [longitude, latitude] format, representing the ge
           #
-          #   @param type [String] Type of the geoJSON geometry. Should always be `Polygon`.
+          #   @param type [String] Type of the geoJSON geometry. Should always be Polygon.
         end
       end
 
-      # Use this parameter to update the `type` of a geofence. Please note that you will
-      # need to provide required details for creating a geofence of the new `type`.
-      # Check other parameters of this method to know more.
+      # Use this parameter to update the type of a geofence. Please note that you will
+      # need to provide required details for creating a geofence of the new type. Check
+      # other parameters of this method to know more.
       module Type
         extend NextbillionSDK::Internal::Type::Enum
 
-        CIRCLE = :"`circle`"
-        POLYGON = :"`polygon`"
-        ISOCHRONE = :"`isochrone`"
+        CIRCLE = :circle
+        POLYGON = :polygon
+        ISOCHRONE = :isochrone
 
         # @!method self.values
         #   @return [Array<Symbol>]

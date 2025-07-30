@@ -22,7 +22,7 @@ module NextbillionSDK
         optional :cluster, enum: -> { NextbillionSDK::Skynet::MonitorListParams::Cluster }
 
         # @!attribute pn
-        #   Denotes page number. Use this along with the `ps` parameter to implement
+        #   Denotes page number. Use this along with the ps parameter to implement
         #   pagination for your searched results. This parameter does not have a maximum
         #   limit but would return an empty response in case a higher value is provided when
         #   the result-set itself is smaller.
@@ -31,27 +31,27 @@ module NextbillionSDK
         optional :pn, Integer
 
         # @!attribute ps
-        #   Denotes number of search results per page. Use this along with the `pn`
-        #   parameter to implement pagination for your searched results.
+        #   Denotes number of search results per page. Use this along with the pn parameter
+        #   to implement pagination for your searched results.
         #
         #   @return [Integer, nil]
         optional :ps, Integer
 
         # @!attribute sort
-        #   Provide a single field to sort the results by. Only `updated_at` or `created_at`
+        #   Provide a single field to sort the results by. Only updated_at or created_at
         #   fields can be selected for ordering the results.
         #
-        #   By default, the result is sorted by `created_at` field in the descending order.
-        #   Allowed values for specifying the order are `asc` for ascending order and `desc`
-        #   for descending order.
+        #   By default, the result is sorted by created_at field in the descending order.
+        #   Allowed values for specifying the order are asc for ascending order and desc for
+        #   descending order.
         #
         #   @return [String, nil]
         optional :sort, String
 
         # @!attribute tags
-        #   `tags` can be used to filter the monitors. Only those monitors which have all
-        #   the `tags` provided here, will be included in the search result. In case
-        #   multiple `tags` need to be specified, use `,` to separate them.
+        #   tags can be used to filter the monitors. Only those monitors which have all the
+        #   tags provided here, will be included in the search result. In case multiple tags
+        #   need to be specified, use , to separate them.
         #
         #   @return [String, nil]
         optional :tags, String
@@ -64,13 +64,13 @@ module NextbillionSDK
         #
         #   @param cluster [Symbol, NextbillionSDK::Models::Skynet::MonitorListParams::Cluster] the cluster of the region you want to use
         #
-        #   @param pn [Integer] Denotes page number. Use this along with the `ps` parameter to implement paginat
+        #   @param pn [Integer] Denotes page number. Use this along with the ps parameter to implement paginatio
         #
-        #   @param ps [Integer] Denotes number of search results per page. Use this along with the `pn` paramete
+        #   @param ps [Integer] Denotes number of search results per page. Use this along with the pn parameter
         #
-        #   @param sort [String] Provide a single field to sort the results by. Only `updated_at` or `created_at`
+        #   @param sort [String] Provide a single field to sort the results by. Only updated_at or created_at fie
         #
-        #   @param tags [String] `tags` can be used to filter the monitors. Only those monitors which have all th
+        #   @param tags [String] tags can be used to filter the monitors. Only those monitors which have all the
         #
         #   @param request_options [NextbillionSDK::RequestOptions, Hash{Symbol=>Object}]
 
