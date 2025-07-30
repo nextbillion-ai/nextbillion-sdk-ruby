@@ -578,7 +578,6 @@ module NextbillionSDK
             STRICT = :strict
             PARALLEL = :parallel
             FIXED_BOTTOM = :fixed_bottom
-            Unknown0 = :"\" \""
 
             # @!method self.values
             #   @return [Array<Symbol>]
