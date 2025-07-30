@@ -295,7 +295,7 @@ module NextbillionSDK
             width: Float
           }
 
-          type alignment = :strict | :parallel | :fixed_bottom | :"\" \""
+          type alignment = :strict | :parallel | :fixed_bottom
 
           module Alignment
             extend NextbillionSDK::Internal::Type::Enum
@@ -303,7 +303,6 @@ module NextbillionSDK
             STRICT: :strict
             PARALLEL: :parallel
             FIXED_BOTTOM: :fixed_bottom
-            Unknown0: :"\" \""
 
             def self?.values: -> ::Array[NextbillionSDK::Models::Optimization::Shipment::Volume::alignment]
           end

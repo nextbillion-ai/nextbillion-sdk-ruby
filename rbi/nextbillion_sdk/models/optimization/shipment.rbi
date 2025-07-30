@@ -1012,11 +1012,6 @@ module NextbillionSDK
                 :fixed_bottom,
                 NextbillionSDK::Optimization::Shipment::Volume::Alignment::TaggedSymbol
               )
-            Unknown0 =
-              T.let(
-                :"\" \"",
-                NextbillionSDK::Optimization::Shipment::Volume::Alignment::TaggedSymbol
-              )
 
             sig do
               override.returns(
