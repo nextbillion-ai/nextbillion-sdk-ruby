@@ -12,8 +12,8 @@ module NextbillionSDK
             )
           end
 
-        # Specify the label or the name of the field. The `label` specified here can be
-        # used as field name when rendering the document in the Driver app.
+        # Specify the label or the name of the field. The label specified here can be used
+        # as field name when rendering the document in the Driver app.
         sig { returns(String) }
         attr_accessor :label
 
@@ -26,8 +26,8 @@ module NextbillionSDK
         end
         attr_accessor :type
 
-        # An object to define additional information required for `single_choice` or
-        # `multi_choices` type document items.
+        # An object to define additional information required for single_choice or
+        # multi_choices type document items.
         sig do
           returns(
             T.nilable(
@@ -45,7 +45,7 @@ module NextbillionSDK
         end
         attr_writer :meta
 
-        # Specify the name of the document field. A field's`name` can be used for internal
+        # Specify the name of the document field. A field'sname can be used for internal
         # references to the document field.
         sig { returns(T.nilable(String)) }
         attr_reader :name
@@ -62,7 +62,7 @@ module NextbillionSDK
 
         # Specify the validation rules for the field. This can be used to enforce data
         # quality and integrity checks. For example, if the field is a number type,
-        # `validation` can define constraints like minimum / maximum number values.
+        # validation can define constraints like minimum / maximum number values.
         sig do
           returns(
             T.nilable(
@@ -97,23 +97,23 @@ module NextbillionSDK
           ).returns(T.attached_class)
         end
         def self.new(
-          # Specify the label or the name of the field. The `label` specified here can be
-          # used as field name when rendering the document in the Driver app.
+          # Specify the label or the name of the field. The label specified here can be used
+          # as field name when rendering the document in the Driver app.
           label:,
           # Specify the data type of the field. It corresponds to the type of information
           # that the driver needs to collect.
           type:,
-          # An object to define additional information required for `single_choice` or
-          # `multi_choices` type document items.
+          # An object to define additional information required for single_choice or
+          # multi_choices type document items.
           meta: nil,
-          # Specify the name of the document field. A field's`name` can be used for internal
+          # Specify the name of the document field. A field'sname can be used for internal
           # references to the document field.
           name: nil,
           # Specify if it is mandatory to fill the field. Default value is false.
           required: nil,
           # Specify the validation rules for the field. This can be used to enforce data
           # quality and integrity checks. For example, if the field is a number type,
-          # `validation` can define constraints like minimum / maximum number values.
+          # validation can define constraints like minimum / maximum number values.
           validation: nil
         )
         end
@@ -152,42 +152,42 @@ module NextbillionSDK
 
           STRING =
             T.let(
-              :"`string`",
+              :string,
               NextbillionSDK::Fleetify::DocumentTemplateContentRequest::Type::TaggedSymbol
             )
           NUMBER =
             T.let(
-              :"`number`",
+              :number,
               NextbillionSDK::Fleetify::DocumentTemplateContentRequest::Type::TaggedSymbol
             )
           DATE_TIME =
             T.let(
-              :"`date_time`",
+              :date_time,
               NextbillionSDK::Fleetify::DocumentTemplateContentRequest::Type::TaggedSymbol
             )
           PHOTOS =
             T.let(
-              :"`photos`",
+              :photos,
               NextbillionSDK::Fleetify::DocumentTemplateContentRequest::Type::TaggedSymbol
             )
           MULTI_CHOICES =
             T.let(
-              :"`multi_choices`",
+              :multi_choices,
               NextbillionSDK::Fleetify::DocumentTemplateContentRequest::Type::TaggedSymbol
             )
           SIGNATURE =
             T.let(
-              :"`signature`",
+              :signature,
               NextbillionSDK::Fleetify::DocumentTemplateContentRequest::Type::TaggedSymbol
             )
           BARCODE =
             T.let(
-              :"`barcode`",
+              :barcode,
               NextbillionSDK::Fleetify::DocumentTemplateContentRequest::Type::TaggedSymbol
             )
           SINGLE_CHOICE =
             T.let(
-              :"`single_choice`",
+              :single_choice,
               NextbillionSDK::Fleetify::DocumentTemplateContentRequest::Type::TaggedSymbol
             )
 
@@ -211,8 +211,8 @@ module NextbillionSDK
               )
             end
 
-          # An array of objects to define options for a `multi_choices` or `single_choice`
-          # type document field. Each object represents one option.
+          # An array of objects to define options for a multi_choices or single_choice type
+          # document field. Each object represents one option.
           sig do
             returns(
               T::Array[
@@ -222,8 +222,8 @@ module NextbillionSDK
           end
           attr_accessor :options
 
-          # An object to define additional information required for `single_choice` or
-          # `multi_choices` type document items.
+          # An object to define additional information required for single_choice or
+          # multi_choices type document items.
           sig do
             params(
               options:
@@ -233,8 +233,8 @@ module NextbillionSDK
             ).returns(T.attached_class)
           end
           def self.new(
-            # An array of objects to define options for a `multi_choices` or `single_choice`
-            # type document field. Each object represents one option.
+            # An array of objects to define options for a multi_choices or single_choice type
+            # document field. Each object represents one option.
             options:
           )
           end
@@ -297,34 +297,34 @@ module NextbillionSDK
               )
             end
 
-          # Specifies the maximum allowed value for `number` type document field. Input
-          # values must be less than or equal to this threshold.
+          # Specifies the maximum allowed value for number type document field. Input values
+          # must be less than or equal to this threshold.
           sig { returns(T.nilable(Integer)) }
           attr_reader :max
 
           sig { params(max: Integer).void }
           attr_writer :max
 
-          # Specifies the maximum number of items for `multi_choices`, `photos` type
-          # document fields. The number of provided input items must be less than or equal
-          # to this threshold.
+          # Specifies the maximum number of items for multi_choices, photos type document
+          # fields. The number of provided input items must be less than or equal to this
+          # threshold.
           sig { returns(T.nilable(Integer)) }
           attr_reader :max_items
 
           sig { params(max_items: Integer).void }
           attr_writer :max_items
 
-          # Specifies the minimum allowed value for `number` type document field. Input
-          # values must be greater than or equal to this threshold.
+          # Specifies the minimum allowed value for number type document field. Input values
+          # must be greater than or equal to this threshold.
           sig { returns(T.nilable(Integer)) }
           attr_reader :min
 
           sig { params(min: Integer).void }
           attr_writer :min
 
-          # Specifies the minimum number of items for `multi_choices`, `photos` type
-          # document fields. The number of provided input items must be greater than or
-          # equal to this threshold.
+          # Specifies the minimum number of items for multi_choices, photos type document
+          # fields. The number of provided input items must be greater than or equal to this
+          # threshold.
           sig { returns(T.nilable(Integer)) }
           attr_reader :min_items
 
@@ -333,7 +333,7 @@ module NextbillionSDK
 
           # Specify the validation rules for the field. This can be used to enforce data
           # quality and integrity checks. For example, if the field is a number type,
-          # `validation` can define constraints like minimum / maximum number values.
+          # validation can define constraints like minimum / maximum number values.
           sig do
             params(
               max: Integer,
@@ -343,19 +343,19 @@ module NextbillionSDK
             ).returns(T.attached_class)
           end
           def self.new(
-            # Specifies the maximum allowed value for `number` type document field. Input
-            # values must be less than or equal to this threshold.
+            # Specifies the maximum allowed value for number type document field. Input values
+            # must be less than or equal to this threshold.
             max: nil,
-            # Specifies the maximum number of items for `multi_choices`, `photos` type
-            # document fields. The number of provided input items must be less than or equal
-            # to this threshold.
+            # Specifies the maximum number of items for multi_choices, photos type document
+            # fields. The number of provided input items must be less than or equal to this
+            # threshold.
             max_items: nil,
-            # Specifies the minimum allowed value for `number` type document field. Input
-            # values must be greater than or equal to this threshold.
+            # Specifies the minimum allowed value for number type document field. Input values
+            # must be greater than or equal to this threshold.
             min: nil,
-            # Specifies the minimum number of items for `multi_choices`, `photos` type
-            # document fields. The number of provided input items must be greater than or
-            # equal to this threshold.
+            # Specifies the minimum number of items for multi_choices, photos type document
+            # fields. The number of provided input items must be greater than or equal to this
+            # threshold.
             min_items: nil
           )
           end

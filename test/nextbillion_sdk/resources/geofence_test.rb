@@ -6,7 +6,7 @@ class NextbillionSDK::Test::Resources::GeofenceTest < NextbillionSDK::Test::Reso
   def test_create_required_params
     skip("skipped: tests are disabled for the time being")
 
-    response = @nextbillion_sdk.geofence.create(key: "key=API_KEY", type: :"`circle`")
+    response = @nextbillion_sdk.geofence.create(key: "key=API_KEY", type: :circle)
 
     assert_pattern do
       response => NextbillionSDK::Models::GeofenceCreateResponse

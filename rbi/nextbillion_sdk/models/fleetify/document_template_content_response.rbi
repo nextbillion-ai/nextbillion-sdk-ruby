@@ -19,8 +19,8 @@ module NextbillionSDK
         sig { params(label: String).void }
         attr_writer :label
 
-        # Returns the options configured for `single_choice` or `multi_choices` type
-        # document items.
+        # Returns the options configured for single_choice or multi_choices type document
+        # items.
         sig do
           returns(
             T.nilable(
@@ -53,16 +53,16 @@ module NextbillionSDK
         attr_writer :required
 
         # Returns the data type of the document field. It will always belong to one of
-        # `string`, `number`, `date_time`, `photos`, `multi_choices`, `signature`,
-        # `barcode`, and `single_choice.`
+        # string, number, date_time, photos, multi_choices, signature, barcode, and
+        # single_choice.
         sig { returns(T.nilable(String)) }
         attr_reader :type
 
         sig { params(type: String).void }
         attr_writer :type
 
-        # Returns the validation rules for `number` , `multi_choices` , and `photos`
-        # document field types.
+        # Returns the validation rules for number , multi_choices , and photos document
+        # field types.
         sig do
           returns(
             T.nilable(
@@ -98,19 +98,19 @@ module NextbillionSDK
         def self.new(
           # Returns the label of the document field.
           label: nil,
-          # Returns the options configured for `single_choice` or `multi_choices` type
-          # document items.
+          # Returns the options configured for single_choice or multi_choices type document
+          # items.
           meta: nil,
           # Returns the name of the document field.
           name: nil,
           # Indicates if the document field is mandatory or not.
           required: nil,
           # Returns the data type of the document field. It will always belong to one of
-          # `string`, `number`, `date_time`, `photos`, `multi_choices`, `signature`,
-          # `barcode`, and `single_choice.`
+          # string, number, date_time, photos, multi_choices, signature, barcode, and
+          # single_choice.
           type: nil,
-          # Returns the validation rules for `number` , `multi_choices` , and `photos`
-          # document field types.
+          # Returns the validation rules for number , multi_choices , and photos document
+          # field types.
           validation: nil
         )
         end
@@ -141,7 +141,7 @@ module NextbillionSDK
               )
             end
 
-          # An array of objects returning the options for `multi_choices` or `single_choice`
+          # An array of objects returning the options for multi_choices or single_choice
           # type document field. Each object represents one configured option.
           sig do
             returns(
@@ -164,8 +164,8 @@ module NextbillionSDK
           end
           attr_writer :options
 
-          # Returns the options configured for `single_choice` or `multi_choices` type
-          # document items.
+          # Returns the options configured for single_choice or multi_choices type document
+          # items.
           sig do
             params(
               options:
@@ -175,7 +175,7 @@ module NextbillionSDK
             ).returns(T.attached_class)
           end
           def self.new(
-            # An array of objects returning the options for `multi_choices` or `single_choice`
+            # An array of objects returning the options for multi_choices or single_choice
             # type document field. Each object represents one configured option.
             options: nil
           )
@@ -245,16 +245,16 @@ module NextbillionSDK
               )
             end
 
-          # Returns the maximum allowed value for `number` type document item, as specified
-          # at the time of configuring the field. This parameter is not present in the
-          # response if it was not provided in the input.
+          # Returns the maximum allowed value for number type document item, as specified at
+          # the time of configuring the field. This parameter is not present in the response
+          # if it was not provided in the input.
           sig { returns(T.nilable(Integer)) }
           attr_reader :max
 
           sig { params(max: Integer).void }
           attr_writer :max
 
-          # Returns the maximum number of items required for `multi_choices`, `photos` type
+          # Returns the maximum number of items required for multi_choices, photos type
           # document items. This parameter will not be present in the response if it was not
           # provided in the input.
           sig { returns(T.nilable(String)) }
@@ -263,16 +263,16 @@ module NextbillionSDK
           sig { params(max_items: String).void }
           attr_writer :max_items
 
-          # Returns the minimum allowed value for `number` type document item, as specified
-          # at the time of configuring the field. This parameter is not present in the
-          # response if it was not provided in the input.
+          # Returns the minimum allowed value for number type document item, as specified at
+          # the time of configuring the field. This parameter is not present in the response
+          # if it was not provided in the input.
           sig { returns(T.nilable(Integer)) }
           attr_reader :min
 
           sig { params(min: Integer).void }
           attr_writer :min
 
-          # Returns the minimum number of items required for `multi_choices`, `photos` type
+          # Returns the minimum number of items required for multi_choices, photos type
           # document items. This parameter will not be present in the response if it was not
           # provided in the input.
           sig { returns(T.nilable(String)) }
@@ -281,8 +281,8 @@ module NextbillionSDK
           sig { params(min_items: String).void }
           attr_writer :min_items
 
-          # Returns the validation rules for `number` , `multi_choices` , and `photos`
-          # document field types.
+          # Returns the validation rules for number , multi_choices , and photos document
+          # field types.
           sig do
             params(
               max: Integer,
@@ -292,19 +292,19 @@ module NextbillionSDK
             ).returns(T.attached_class)
           end
           def self.new(
-            # Returns the maximum allowed value for `number` type document item, as specified
-            # at the time of configuring the field. This parameter is not present in the
-            # response if it was not provided in the input.
+            # Returns the maximum allowed value for number type document item, as specified at
+            # the time of configuring the field. This parameter is not present in the response
+            # if it was not provided in the input.
             max: nil,
-            # Returns the maximum number of items required for `multi_choices`, `photos` type
+            # Returns the maximum number of items required for multi_choices, photos type
             # document items. This parameter will not be present in the response if it was not
             # provided in the input.
             max_items: nil,
-            # Returns the minimum allowed value for `number` type document item, as specified
-            # at the time of configuring the field. This parameter is not present in the
-            # response if it was not provided in the input.
+            # Returns the minimum allowed value for number type document item, as specified at
+            # the time of configuring the field. This parameter is not present in the response
+            # if it was not provided in the input.
             min: nil,
-            # Returns the minimum number of items required for `multi_choices`, `photos` type
+            # Returns the minimum number of items required for multi_choices, photos type
             # document items. This parameter will not be present in the response if it was not
             # provided in the input.
             min_items: nil

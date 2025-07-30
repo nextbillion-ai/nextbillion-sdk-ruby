@@ -11,7 +11,7 @@ module NextbillionSDK
       optional :id, Float
 
       # @!attribute state
-      #   Returns the state of the restriction. It would always be `deleted`.
+      #   Returns the state of the restriction. It would always be deleted.
       #
       #   @return [String, nil]
       optional :state, String
@@ -19,7 +19,7 @@ module NextbillionSDK
       # @!method initialize(id: nil, state: nil)
       #   @param id [Float] It is the unique ID of the restriction.
       #
-      #   @param state [String] Returns the state of the restriction. It would always be `deleted`.
+      #   @param state [String] Returns the state of the restriction. It would always be deleted.
     end
   end
 end

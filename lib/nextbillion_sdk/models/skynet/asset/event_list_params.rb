@@ -23,24 +23,23 @@ module NextbillionSDK
           optional :cluster, enum: -> { NextbillionSDK::Skynet::Asset::EventListParams::Cluster }
 
           # @!attribute end_time
-          #   Time before which the events triggered by the `asset` need to be retrieved.
+          #   Time before which the events triggered by the asset need to be retrieved.
           #
           #   @return [Integer, nil]
           optional :end_time, Integer
 
           # @!attribute monitor_id
-          #   Filter the events by `monitor_id`. When provided, only the events triggered by
-          #   the `monitor` will be returned in response.
+          #   Filter the events by monitor_id. When provided, only the events triggered by the
+          #   monitor will be returned in response.
           #
-          #   Please note that if the `attributes` of the asset identified by `id` and those
-          #   of the `monitor` do not match, then no events might be returned for this
-          #   `monitor_id`.
+          #   Please note that if the attributes of the asset identified by id and those of
+          #   the monitor do not match, then no events might be returned for this monitor_id.
           #
           #   @return [String, nil]
           optional :monitor_id, String
 
           # @!attribute pn
-          #   Denotes page number. Use this along with the `ps` parameter to implement
+          #   Denotes page number. Use this along with the ps parameter to implement
           #   pagination for your searched results. This parameter does not have a maximum
           #   limit but would return an empty response in case a higher value is provided when
           #   the result-set itself is smaller.
@@ -49,14 +48,14 @@ module NextbillionSDK
           optional :pn, Integer
 
           # @!attribute ps
-          #   Denotes number of search results per page. Use this along with the `pn`
-          #   parameter to implement pagination for your searched results.
+          #   Denotes number of search results per page. Use this along with the pn parameter
+          #   to implement pagination for your searched results.
           #
           #   @return [Integer, nil]
           optional :ps, Integer
 
           # @!attribute start_time
-          #   Time after which the events triggered by the `asset` need to be retrieved.
+          #   Time after which the events triggered by the asset need to be retrieved.
           #
           #   @return [Integer, nil]
           optional :start_time, Integer
@@ -69,15 +68,15 @@ module NextbillionSDK
           #
           #   @param cluster [Symbol, NextbillionSDK::Models::Skynet::Asset::EventListParams::Cluster] the cluster of the region you want to use
           #
-          #   @param end_time [Integer] Time before which the events triggered by the `asset` need to be retrieved.
+          #   @param end_time [Integer] Time before which the events triggered by the asset need to be retrieved.
           #
-          #   @param monitor_id [String] Filter the events by `monitor_id`. When provided, only the events triggered by t
+          #   @param monitor_id [String] Filter the events by monitor_id. When provided, only the events triggered by the
           #
-          #   @param pn [Integer] Denotes page number. Use this along with the `ps` parameter to implement paginat
+          #   @param pn [Integer] Denotes page number. Use this along with the ps parameter to implement paginatio
           #
-          #   @param ps [Integer] Denotes number of search results per page. Use this along with the `pn` paramete
+          #   @param ps [Integer] Denotes number of search results per page. Use this along with the pn parameter
           #
-          #   @param start_time [Integer] Time after which the events triggered by the `asset` need to be retrieved.
+          #   @param start_time [Integer] Time after which the events triggered by the asset need to be retrieved.
           #
           #   @param request_options [NextbillionSDK::RequestOptions, Hash{Symbol=>Object}]
 

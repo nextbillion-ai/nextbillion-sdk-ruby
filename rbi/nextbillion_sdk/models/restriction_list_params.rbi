@@ -26,7 +26,7 @@ module NextbillionSDK
       attr_accessor :key
 
       # The number of restrictions to be returned in the response. Please note that if
-      # the `limit` is set to a number more than the total number of available
+      # the limit is set to a number more than the total number of available
       # restrictions, then all restrictions would be returned together.
       sig { returns(Integer) }
       attr_accessor :limit
@@ -36,7 +36,7 @@ module NextbillionSDK
       # first item returned in the result would be the item at (offset + 1) position in
       # collection.
       #
-      # Users can use `offset` along with `limit` to implement paginated result.
+      # Users can use offset along with limit to implement paginated result.
       sig { returns(Integer) }
       attr_accessor :offset
 
@@ -97,7 +97,7 @@ module NextbillionSDK
 
       # This parameter is used to filter restrictions based on their state i.e. whether
       # the restriction is currently enabled, disabled, or deleted. For example, users
-      # can retrieve a list of all the deleted restrictions by setting `state=deleted`.
+      # can retrieve a list of all the deleted restrictions by setting state=deleted.
       sig do
         returns(
           T.nilable(NextbillionSDK::RestrictionListParams::State::OrSymbol)
@@ -166,7 +166,7 @@ module NextbillionSDK
         # API.
         key:,
         # The number of restrictions to be returned in the response. Please note that if
-        # the `limit` is set to a number more than the total number of available
+        # the limit is set to a number more than the total number of available
         # restrictions, then all restrictions would be returned together.
         limit:,
         # An integer value indicating the number of items in the collection that need to
@@ -174,7 +174,7 @@ module NextbillionSDK
         # first item returned in the result would be the item at (offset + 1) position in
         # collection.
         #
-        # Users can use `offset` along with `limit` to implement paginated result.
+        # Users can use offset along with limit to implement paginated result.
         offset:,
         # Specify the modes of travel that the restriction pertains to.
         mode: nil,
@@ -188,7 +188,7 @@ module NextbillionSDK
         source: nil,
         # This parameter is used to filter restrictions based on their state i.e. whether
         # the restriction is currently enabled, disabled, or deleted. For example, users
-        # can retrieve a list of all the deleted restrictions by setting `state=deleted`.
+        # can retrieve a list of all the deleted restrictions by setting state=deleted.
         state: nil,
         # Restrictions can be active or inactive at a given time by virtue of their
         # nature. For example, maximum speed limits can be active on the roads leading to
@@ -238,27 +238,27 @@ module NextbillionSDK
 
         MODE_0W =
           T.let(
-            :"`0w`",
+            :"0w",
             NextbillionSDK::RestrictionListParams::Mode::TaggedSymbol
           )
         MODE_2W =
           T.let(
-            :"`2w`",
+            :"2w",
             NextbillionSDK::RestrictionListParams::Mode::TaggedSymbol
           )
         MODE_3W =
           T.let(
-            :"`3w`",
+            :"3w",
             NextbillionSDK::RestrictionListParams::Mode::TaggedSymbol
           )
         MODE_4W =
           T.let(
-            :"`4w`",
+            :"4w",
             NextbillionSDK::RestrictionListParams::Mode::TaggedSymbol
           )
         MODE_6W =
           T.let(
-            :"`6w`",
+            :"6w",
             NextbillionSDK::RestrictionListParams::Mode::TaggedSymbol
           )
 
@@ -286,32 +286,32 @@ module NextbillionSDK
 
         TURN =
           T.let(
-            :"`turn`",
+            :turn,
             NextbillionSDK::RestrictionListParams::RestrictionType::TaggedSymbol
           )
         PARKING =
           T.let(
-            :"`parking`",
+            :parking,
             NextbillionSDK::RestrictionListParams::RestrictionType::TaggedSymbol
           )
         FIXEDSPEED =
           T.let(
-            :"`fixedspeed`",
+            :fixedspeed,
             NextbillionSDK::RestrictionListParams::RestrictionType::TaggedSymbol
           )
         MAXSPEED =
           T.let(
-            :"`maxspeed`",
+            :maxspeed,
             NextbillionSDK::RestrictionListParams::RestrictionType::TaggedSymbol
           )
         CLOSURE =
           T.let(
-            :"`closure`",
+            :closure,
             NextbillionSDK::RestrictionListParams::RestrictionType::TaggedSymbol
           )
         TRUCK =
           T.let(
-            :"`truck`",
+            :truck,
             NextbillionSDK::RestrictionListParams::RestrictionType::TaggedSymbol
           )
 
@@ -361,7 +361,7 @@ module NextbillionSDK
 
       # This parameter is used to filter restrictions based on their state i.e. whether
       # the restriction is currently enabled, disabled, or deleted. For example, users
-      # can retrieve a list of all the deleted restrictions by setting `state=deleted`.
+      # can retrieve a list of all the deleted restrictions by setting state=deleted.
       module State
         extend NextbillionSDK::Internal::Type::Enum
 
@@ -373,17 +373,17 @@ module NextbillionSDK
 
         ENABLED =
           T.let(
-            :"`enabled`",
+            :enabled,
             NextbillionSDK::RestrictionListParams::State::TaggedSymbol
           )
         DISABLED =
           T.let(
-            :"`disabled`",
+            :disabled,
             NextbillionSDK::RestrictionListParams::State::TaggedSymbol
           )
         DELETED =
           T.let(
-            :"`deleted`",
+            :deleted,
             NextbillionSDK::RestrictionListParams::State::TaggedSymbol
           )
 
@@ -414,12 +414,12 @@ module NextbillionSDK
 
         ACTIVE =
           T.let(
-            :"`active`",
+            :active,
             NextbillionSDK::RestrictionListParams::Status::TaggedSymbol
           )
         INACTIVE =
           T.let(
-            :"`inactive`",
+            :inactive,
             NextbillionSDK::RestrictionListParams::Status::TaggedSymbol
           )
 

@@ -69,10 +69,10 @@ module NextbillionSDK
             #   Specify the mode of completion to be used for the step. Currently, following
             #   values are allowed:
             #
-            #   - `manual`: Steps must be marked as completed manually through the Driver App.
-            #   - `geofence`: Steps are marked as completed automatically based on the entry
+            #   - manual: Steps must be marked as completed manually through the Driver App.
+            #   - geofence: Steps are marked as completed automatically based on the entry
             #     conditions and geofence specified.
-            #   - `geofence_manual_fallback`: Steps will be marked as completed automatically
+            #   - geofence_manual_fallback: Steps will be marked as completed automatically
             #     based on geofence and entry condition configurations but there will also be a
             #     provision for manually updating the status in case, geofence detection fails.
             #
@@ -87,7 +87,7 @@ module NextbillionSDK
             #   create, read and manage the document templates.
             #
             #   Please note that the document template ID can not be assigned to following step
-            #   types - `start`, `end`, `break`, `layover`.
+            #   types - start, end, break, layover.
             #
             #   @return [String, nil]
             optional :document_template_id, String
@@ -98,9 +98,9 @@ module NextbillionSDK
             optional :step, -> { NextbillionSDK::Fleetify::Routes::RouteStepsRequest }
 
             # @!attribute step_id
-            #   Specify the ID of the step to be updated or deleted. Either one of `id` or
-            #   `short_id` of the step can be provided. This input will be ignored when
-            #   `operation: create` .
+            #   Specify the ID of the step to be updated or deleted. Either one of id or
+            #   short_id of the step can be provided. This input will be ignored when operation:
+            #   create .
             #
             #   @return [String, nil]
             optional :step_id, String
@@ -116,7 +116,7 @@ module NextbillionSDK
             #
             #   @param step [NextbillionSDK::Models::Fleetify::Routes::RouteStepsRequest]
             #
-            #   @param step_id [String] Specify the ID of the step to be updated or deleted. Either one of `id` or `shor
+            #   @param step_id [String] Specify the ID of the step to be updated or deleted. Either one of id or short_i
           end
 
           # Specify the type of operation to be performed for the step.
@@ -125,9 +125,9 @@ module NextbillionSDK
           module Operation
             extend NextbillionSDK::Internal::Type::Enum
 
-            CREATE = :"`create`"
-            UPDATE = :"`update`"
-            DELETE = :"`delete`"
+            CREATE = :create
+            UPDATE = :update
+            DELETE = :delete
 
             # @!method self.values
             #   @return [Array<Symbol>]

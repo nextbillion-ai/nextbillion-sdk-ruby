@@ -28,7 +28,7 @@ module NextbillionSDK
       class Meta < NextbillionSDK::Internal::Type::BaseModel
         # @!attribute limit
         #   An integer value indicating the maximum number of items retrieved per "page".
-        #   This is the same number as provided for the `limit` parameter in input.
+        #   This is the same number as provided for the limit parameter in input.
         #
         #   @return [Integer, nil]
         optional :limit, Integer

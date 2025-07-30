@@ -19,8 +19,8 @@ module NextbillionSDK
       sig { returns(String) }
       attr_accessor :key
 
-      # Takes a route geometry as input and returns the route details. Accepts
-      # `polyline` and `polyline6` encoded geometry as input.
+      # Takes a route geometry as input and returns the route details. Accepts polyline
+      # and polyline6 encoded geometry as input.
       #
       # **Note**: Route geometries generated from sources other than
       # [NextBillion.ai](http://NextBillion.ai) services, are not supported in this
@@ -28,9 +28,9 @@ module NextbillionSDK
       sig { returns(String) }
       attr_accessor :original_shape
 
-      # Specify the encoding type of route geometry provided in `original_shape` input.
+      # Specify the encoding type of route geometry provided in original_shape input.
       # Please note that an error is returned when this parameter is not specified while
-      # an input is added to `original_shape` parameter.
+      # an input is added to original_shape parameter.
       sig do
         returns(
           NextbillionSDK::RouteReportCreateParams::OriginalShapeType::OrSymbol
@@ -51,16 +51,16 @@ module NextbillionSDK
         # A key is a unique identifier that is required to authenticate a request to the
         # API.
         key:,
-        # Takes a route geometry as input and returns the route details. Accepts
-        # `polyline` and `polyline6` encoded geometry as input.
+        # Takes a route geometry as input and returns the route details. Accepts polyline
+        # and polyline6 encoded geometry as input.
         #
         # **Note**: Route geometries generated from sources other than
         # [NextBillion.ai](http://NextBillion.ai) services, are not supported in this
         # version.
         original_shape:,
-        # Specify the encoding type of route geometry provided in `original_shape` input.
+        # Specify the encoding type of route geometry provided in original_shape input.
         # Please note that an error is returned when this parameter is not specified while
-        # an input is added to `original_shape` parameter.
+        # an input is added to original_shape parameter.
         original_shape_type:,
         request_options: {}
       )
@@ -80,9 +80,9 @@ module NextbillionSDK
       def to_hash
       end
 
-      # Specify the encoding type of route geometry provided in `original_shape` input.
+      # Specify the encoding type of route geometry provided in original_shape input.
       # Please note that an error is returned when this parameter is not specified while
-      # an input is added to `original_shape` parameter.
+      # an input is added to original_shape parameter.
       module OriginalShapeType
         extend NextbillionSDK::Internal::Type::Enum
 
@@ -97,12 +97,12 @@ module NextbillionSDK
 
         POLYLINE =
           T.let(
-            :"`polyline`",
+            :polyline,
             NextbillionSDK::RouteReportCreateParams::OriginalShapeType::TaggedSymbol
           )
         POLYLINE6 =
           T.let(
-            :"`polyline6`",
+            :polyline6,
             NextbillionSDK::RouteReportCreateParams::OriginalShapeType::TaggedSymbol
           )
 

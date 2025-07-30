@@ -20,15 +20,14 @@ module NextbillionSDK
         sig { returns(String) }
         attr_accessor :key
 
-        # ID of the device used to upload the tracking information of the `asset`.
+        # ID of the device used to upload the tracking information of the asset.
         #
-        # Please note that the `device_id` used here must already be linked to the
-        # `asset`. Use the _Bind Device to Asset_ method to link a device with your
-        # `asset`.
+        # Please note that the device_id used here must already be linked to the asset.
+        # Use the _Bind Device to Asset_ method to link a device with your asset.
         sig { returns(String) }
         attr_accessor :device_id
 
-        # An array of objects to collect the location tracking information for an `asset`.
+        # An array of objects to collect the location tracking information for an asset.
         # Each object must correspond to details of only one location.
         sig { returns(NextbillionSDK::Skynet::AssetTrackParams::Locations) }
         attr_reader :locations
@@ -73,13 +72,12 @@ module NextbillionSDK
           # A key is a unique identifier that is required to authenticate a request to the
           # API.
           key:,
-          # ID of the device used to upload the tracking information of the `asset`.
+          # ID of the device used to upload the tracking information of the asset.
           #
-          # Please note that the `device_id` used here must already be linked to the
-          # `asset`. Use the _Bind Device to Asset_ method to link a device with your
-          # `asset`.
+          # Please note that the device_id used here must already be linked to the asset.
+          # Use the _Bind Device to Asset_ method to link a device with your asset.
           device_id:,
-          # An array of objects to collect the location tracking information for an `asset`.
+          # An array of objects to collect the location tracking information for an asset.
           # Each object must correspond to details of only one location.
           locations:,
           # the cluster of the region you want to use
@@ -143,7 +141,7 @@ module NextbillionSDK
           sig { params(accuracy: Float).void }
           attr_writer :accuracy
 
-          # Use this parameter to provide the altitude, in meters, of the `asset` at the
+          # Use this parameter to provide the altitude, in meters, of the asset at the
           # tracked location.
           sig { returns(T.nilable(Float)) }
           attr_reader :altitude
@@ -160,7 +158,7 @@ module NextbillionSDK
           sig { params(battery_level: Integer).void }
           attr_writer :battery_level
 
-          # Use this parameter to provide the heading of the `asset`, in radians, calculated
+          # Use this parameter to provide the heading of the asset, in radians, calculated
           # from true north in clockwise direction. This should always be in the range of
           # [0, 360).
           sig { returns(T.nilable(Float)) }
@@ -170,17 +168,17 @@ module NextbillionSDK
           attr_writer :bearing
 
           # Use this object to add any custom data about the location that is being
-          # uploaded. Recommended to use the `key`:`value` format for adding the desired
+          # uploaded. Recommended to use the key:value format for adding the desired
           # information.
           #
-          # Please note that the maximum size of `meta_data` object should not exceed 65Kb.
+          # Please note that the maximum size of meta_data object should not exceed 65Kb.
           sig { returns(T.nilable(T.anything)) }
           attr_reader :meta_data
 
           sig { params(meta_data: T.anything).void }
           attr_writer :meta_data
 
-          # Use this parameter to provide the speed of the `asset`, in meters per second, at
+          # Use this parameter to provide the speed of the asset, in meters per second, at
           # the tracked location.
           sig { returns(T.nilable(Float)) }
           attr_reader :speed
@@ -195,7 +193,7 @@ module NextbillionSDK
           sig { params(tracking_mode: String).void }
           attr_writer :tracking_mode
 
-          # An array of objects to collect the location tracking information for an `asset`.
+          # An array of objects to collect the location tracking information for an asset.
           # Each object must correspond to details of only one location.
           sig do
             params(
@@ -222,24 +220,24 @@ module NextbillionSDK
             # Use this parameter to provide the accuracy of the GPS information at the tracked
             # location. It is the estimated horizontal accuracy radius, in meters.
             accuracy: nil,
-            # Use this parameter to provide the altitude, in meters, of the `asset` at the
+            # Use this parameter to provide the altitude, in meters, of the asset at the
             # tracked location.
             altitude: nil,
             # Use this parameter to provide the battery level of the GPS device, as a
             # percentage, when the location is tracked. It should have a minimum value of 0
             # and a maximum value of 100.
             battery_level: nil,
-            # Use this parameter to provide the heading of the `asset`, in radians, calculated
+            # Use this parameter to provide the heading of the asset, in radians, calculated
             # from true north in clockwise direction. This should always be in the range of
             # [0, 360).
             bearing: nil,
             # Use this object to add any custom data about the location that is being
-            # uploaded. Recommended to use the `key`:`value` format for adding the desired
+            # uploaded. Recommended to use the key:value format for adding the desired
             # information.
             #
-            # Please note that the maximum size of `meta_data` object should not exceed 65Kb.
+            # Please note that the maximum size of meta_data object should not exceed 65Kb.
             meta_data: nil,
-            # Use this parameter to provide the speed of the `asset`, in meters per second, at
+            # Use this parameter to provide the speed of the asset, in meters per second, at
             # the tracked location.
             speed: nil,
             # NB tracking mode.
@@ -275,11 +273,11 @@ module NextbillionSDK
                 )
               end
 
-            # Latitude of the tracked location of the `asset`.
+            # Latitude of the tracked location of the asset.
             sig { returns(Float) }
             attr_accessor :lat
 
-            # Longitude of the tracked location of the `asset`.
+            # Longitude of the tracked location of the asset.
             sig { returns(Float) }
             attr_accessor :lon
 
@@ -287,9 +285,9 @@ module NextbillionSDK
             # this field is mandatory when uploading locations for an asset.
             sig { params(lat: Float, lon: Float).returns(T.attached_class) }
             def self.new(
-              # Latitude of the tracked location of the `asset`.
+              # Latitude of the tracked location of the asset.
               lat:,
-              # Longitude of the tracked location of the `asset`.
+              # Longitude of the tracked location of the asset.
               lon:
             )
             end

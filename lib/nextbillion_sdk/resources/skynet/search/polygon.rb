@@ -16,16 +16,16 @@ module NextbillionSDK
           #
           # @param polygon [NextbillionSDK::Models::Skynet::Search::PolygonCreateParams::Polygon] Body param: An object to collect geoJSON details of a custom polygon. Please ens
           #
-          # @param filter [String] Body param: \*\*`tags` parameter will be deprecated soon! Please use the
-          # `include\_
+          # @param filter [String] Body param: \*\*tags parameter will be deprecated soon! Please use the
+          # include_any
           #
-          # @param match_filter [NextbillionSDK::Models::Skynet::Search::PolygonCreateParams::MatchFilter] Body param: An object to define the `attributes` which will be used to filter th
+          # @param match_filter [NextbillionSDK::Models::Skynet::Search::PolygonCreateParams::MatchFilter] Body param: An object to define the attributes which will be used to filter the
           #
           # @param max_search_limit [Boolean] Body param: if ture, can get 16x bigger limitation in search.
           #
-          # @param pn [Integer] Body param: Denotes page number. Use this along with the `ps` parameter to imple
+          # @param pn [Integer] Body param: Denotes page number. Use this along with the ps parameter to impleme
           #
-          # @param ps [Integer] Body param: Denotes number of search results per page. Use this along with the `
+          # @param ps [Integer] Body param: Denotes number of search results per page. Use this along with the p
           #
           # @param sort [NextbillionSDK::Models::Skynet::Search::PolygonCreateParams::Sort] Body param:
           #
@@ -58,8 +58,8 @@ module NextbillionSDK
           #
           # @param polygon [String] Define a custom polygon enclosing the area to be searched. It should be a pipe (
           #
-          # @param filter [String] \*\*`tags` parameter will be deprecated soon! Please use the
-          # `include_any_of_attri
+          # @param filter [String] \*\*tags parameter will be deprecated soon! Please use the
+          # include_any_of_attribut
           #
           # @param include_all_of_attributes [String] Use this parameter to filter the assets found inside the specified area by their
           #
@@ -67,9 +67,9 @@ module NextbillionSDK
           #
           # @param max_search_limit [Boolean] When true, the maximum limit is 20Km for around search API and 48000 Km2 for oth
           #
-          # @param pn [Integer] Denotes page number. Use this along with the `ps` parameter to implement paginat
+          # @param pn [Integer] Denotes page number. Use this along with the ps parameter to implement paginatio
           #
-          # @param ps [Integer] Denotes number of search results per page. Use this along with the `pn` paramete
+          # @param ps [Integer] Denotes number of search results per page. Use this along with the pn parameter
           #
           # @param sort_by [Symbol, NextbillionSDK::Models::Skynet::Search::PolygonGetParams::SortBy] Specify the metric to sort the assets returned in the search result. The valid v
           #

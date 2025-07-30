@@ -132,13 +132,13 @@ module NextbillionSDK
         request_options: NextbillionSDK::RequestOptions
       }
 
-      type approaches = :"`unrestricted`" | :"`curb`"
+      type approaches = :unrestricted | :curb
 
       module Approaches
         extend NextbillionSDK::Internal::Type::Enum
 
-        UNRESTRICTED: :"`unrestricted`"
-        CURB: :"`curb`"
+        UNRESTRICTED: :unrestricted
+        CURB: :curb
 
         def self?.values: -> ::Array[NextbillionSDK::Models::NavigationRetrieveRouteParams::approaches]
       end
@@ -156,25 +156,25 @@ module NextbillionSDK
         def self?.values: -> ::Array[NextbillionSDK::Models::NavigationRetrieveRouteParams::avoid]
       end
 
-      type geometry = :"`polyline`" | :"`polyline6`" | :"`geojson`"
+      type geometry = :polyline | :polyline6 | :geojson
 
       module Geometry
         extend NextbillionSDK::Internal::Type::Enum
 
-        POLYLINE: :"`polyline`"
-        POLYLINE6: :"`polyline6`"
-        GEOJSON: :"`geojson`"
+        POLYLINE: :polyline
+        POLYLINE6: :polyline6
+        GEOJSON: :geojson
 
         def self?.values: -> ::Array[NextbillionSDK::Models::NavigationRetrieveRouteParams::geometry]
       end
 
-      type mode = :"`car`" | :"`truck`"
+      type mode = :car | :truck
 
       module Mode
         extend NextbillionSDK::Internal::Type::Enum
 
-        CAR: :"`car`"
-        TRUCK: :"`truck`"
+        CAR: :car
+        TRUCK: :truck
 
         def self?.values: -> ::Array[NextbillionSDK::Models::NavigationRetrieveRouteParams::mode]
       end
@@ -190,14 +190,14 @@ module NextbillionSDK
         def self?.values: -> ::Array[NextbillionSDK::Models::NavigationRetrieveRouteParams::original_shape_type]
       end
 
-      type overview = :"`full`" | :"`simplified`" | :"`false`"
+      type overview = :full | :simplified | :false
 
       module Overview
         extend NextbillionSDK::Internal::Type::Enum
 
-        FULL: :"`full`"
-        SIMPLIFIED: :"`simplified`"
-        FALSE: :"`false`"
+        FULL: :full
+        SIMPLIFIED: :simplified
+        FALSE: :false
 
         def self?.values: -> ::Array[NextbillionSDK::Models::NavigationRetrieveRouteParams::overview]
       end

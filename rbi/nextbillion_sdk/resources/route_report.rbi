@@ -18,16 +18,15 @@ module NextbillionSDK
         # request to the API.
         key:,
         # Body param: Takes a route geometry as input and returns the route details.
-        # Accepts `polyline` and `polyline6` encoded geometry as input.
+        # Accepts polyline and polyline6 encoded geometry as input.
         #
         # **Note**: Route geometries generated from sources other than
         # [NextBillion.ai](http://NextBillion.ai) services, are not supported in this
         # version.
         original_shape:,
         # Body param: Specify the encoding type of route geometry provided in
-        # `original_shape` input. Please note that an error is returned when this
-        # parameter is not specified while an input is added to `original_shape`
-        # parameter.
+        # original_shape input. Please note that an error is returned when this parameter
+        # is not specified while an input is added to original_shape parameter.
         original_shape_type:,
         request_options: {}
       )

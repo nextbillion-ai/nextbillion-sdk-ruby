@@ -49,7 +49,7 @@ module NextbillionSDK
           # create, read and manage document templates.
           #
           # Please note that the document template ID assigned to a route does not apply to
-          # following step types - `start`, `end`, `break`, `layover`.
+          # following step types - start, end, break, layover.
           document_template_id: nil,
           # Body param: Specify the Route Optimization request ID. When this ID is provided,
           # all other fields will be ignored (including the required fields) and the route
@@ -57,9 +57,9 @@ module NextbillionSDK
           #
           # Please note that:
           #
-          # - The driver's email ID must be provided in input `vehicle.metadata` as
-          #   `user_email` such that the route optimization result must contain a valid
-          #   driver email, step's arrival time, etc., to make a successful dispatch.
+          # - The driver's email ID must be provided in input vehicle.metadata as user_email
+          #   such that the route optimization result must contain a valid driver email,
+          #   step's arrival time, etc., to make a successful dispatch.
           # - Document Template for collecting proof of delivery or completion can not be
           #   specified when using this field to dispatch a route.
           # - In case of an error at any part among the routes, the API will immediately
@@ -67,9 +67,9 @@ module NextbillionSDK
           # - On a successful dispatch, the API returns the last route, if there are many,
           #   in the response payload.
           ro_request_id: nil,
-          # Body param: The `routing` object allows defining the routing characteristics
-          # that should be used to generate a route when the Driver uses the in-app
-          # navigation. Only `car` mode is supported currently.
+          # Body param: The routing object allows defining the routing characteristics that
+          # should be used to generate a route when the Driver uses the in-app navigation.
+          # Only car mode is supported currently.
           routing: nil,
           request_options: {}
         )
@@ -90,7 +90,7 @@ module NextbillionSDK
         end
         def redispatch(
           # Path param: Provide the ID of a previously dispatched route which needs to be
-          # modified. Both the `id` and `short_id` of the route are a valid input.
+          # modified. Both the id and short_id of the route are a valid input.
           route_id,
           # Query param: A key is a unique identifier that is required to authenticate a
           # request to the API.

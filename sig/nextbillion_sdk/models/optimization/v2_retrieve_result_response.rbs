@@ -539,13 +539,13 @@ module NextbillionSDK
           end
         end
 
-        type status = :"`Ok`" | :"`Error`"
+        type status = :Ok | :Error
 
         module Status
           extend NextbillionSDK::Internal::Type::Enum
 
-          OK: :"`Ok`"
-          ERROR: :"`Error`"
+          OK: :Ok
+          ERROR: :Error
 
           def self?.values: -> ::Array[NextbillionSDK::Models::Optimization::V2RetrieveResultResponse::status]
         end

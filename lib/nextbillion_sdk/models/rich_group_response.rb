@@ -95,14 +95,14 @@ module NextbillionSDK
 
       # @!attribute speed
       #   Returns the fixed speed of segments. This field is not present in the response
-      #   if the restriction type is not `fixedspeed`
+      #   if the restriction type is not fixedspeed
       #
       #   @return [Float, nil]
       optional :speed, Float
 
       # @!attribute speed_limit
       #   Returns the maximum speed of segments. This field is not present in the response
-      #   if the restriction type is not `maxspeed`
+      #   if the restriction type is not maxspeed
       #
       #   @return [Float, nil]
       optional :speed_limit, Float
@@ -123,11 +123,10 @@ module NextbillionSDK
       # @!attribute status
       #   Returns the status of the restriction at the time of making the request i.e.
       #   whether the restriction is in force or not. It will have one of the following
-      #   values: `active` or `inactive`.
+      #   values: active or inactive.
       #
       #   Please note that this field can not be directly influenced by the users. It will
-      #   always be calculated using the `start_time`, `end_time` and `repeat_on`
-      #   parameters.
+      #   always be calculated using the start_time, end_time and repeat_on parameters.
       #
       #   @return [Symbol, NextbillionSDK::Models::RichGroupResponse::Status, nil]
       optional :status, enum: -> { NextbillionSDK::RichGroupResponse::Status }
@@ -230,11 +229,10 @@ module NextbillionSDK
 
       # Returns the status of the restriction at the time of making the request i.e.
       # whether the restriction is in force or not. It will have one of the following
-      # values: `active` or `inactive`.
+      # values: active or inactive.
       #
       # Please note that this field can not be directly influenced by the users. It will
-      # always be calculated using the `start_time`, `end_time` and `repeat_on`
-      # parameters.
+      # always be calculated using the start_time, end_time and repeat_on parameters.
       #
       # @see NextbillionSDK::Models::RichGroupResponse#status
       module Status

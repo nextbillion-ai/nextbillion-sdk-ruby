@@ -141,14 +141,14 @@ module NextbillionSDK
         width: Integer
       }
 
-      type direction = :"`forward`" | :"`backward`" | :"`both`"
+      type direction = :forward | :backward | :both
 
       module Direction
         extend NextbillionSDK::Internal::Type::Enum
 
-        FORWARD: :"`forward`"
-        BACKWARD: :"`backward`"
-        BOTH: :"`both`"
+        FORWARD: :forward
+        BACKWARD: :backward
+        BOTH: :both
 
         def self?.values: -> ::Array[NextbillionSDK::Models::RichGroupRequest::direction]
       end

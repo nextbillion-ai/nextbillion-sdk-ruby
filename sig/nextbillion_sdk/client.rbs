@@ -56,9 +56,9 @@ module NextbillionSDK
 
     attr_reader postalcode: NextbillionSDK::Resources::Postalcode
 
-    attr_reader lookup: NextbillionSDK::Resources::Lookup
-
     attr_reader areas: NextbillionSDK::Resources::Areas
+
+    attr_reader lookup: NextbillionSDK::Resources::Lookup
 
     private def auth_query: -> ::Hash[String, String]
 

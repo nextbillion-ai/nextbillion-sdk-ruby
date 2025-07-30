@@ -18,7 +18,7 @@ module NextbillionSDK
         optional :page, Integer
 
         # @!attribute size
-        #   An integer value indicating the maximum number of items retrieved per `page`.
+        #   An integer value indicating the maximum number of items retrieved per page.
         #
         #   @return [Integer, nil]
         optional :size, Integer
@@ -41,7 +41,7 @@ module NextbillionSDK
         #
         #   @param page [Integer] An integer value indicating the current page number (starting at 0).
         #
-        #   @param size [Integer] An integer value indicating the maximum number of items retrieved per `page`.
+        #   @param size [Integer] An integer value indicating the maximum number of items retrieved per page.
         #
         #   @param total [Integer] An integer value indicating the total number of items available in the data set.
       end

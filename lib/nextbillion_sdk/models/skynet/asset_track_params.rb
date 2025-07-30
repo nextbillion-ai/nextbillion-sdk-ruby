@@ -16,17 +16,16 @@ module NextbillionSDK
         required :key, String
 
         # @!attribute device_id
-        #   ID of the device used to upload the tracking information of the `asset`.
+        #   ID of the device used to upload the tracking information of the asset.
         #
-        #   Please note that the `device_id` used here must already be linked to the
-        #   `asset`. Use the _Bind Device to Asset_ method to link a device with your
-        #   `asset`.
+        #   Please note that the device_id used here must already be linked to the asset.
+        #   Use the _Bind Device to Asset_ method to link a device with your asset.
         #
         #   @return [String]
         required :device_id, String
 
         # @!attribute locations
-        #   An array of objects to collect the location tracking information for an `asset`.
+        #   An array of objects to collect the location tracking information for an asset.
         #   Each object must correspond to details of only one location.
         #
         #   @return [NextbillionSDK::Models::Skynet::AssetTrackParams::Locations]
@@ -44,9 +43,9 @@ module NextbillionSDK
         #
         #   @param key [String] A key is a unique identifier that is required to authenticate a request to the A
         #
-        #   @param device_id [String] ID of the device used to upload the tracking information of the `asset`.
+        #   @param device_id [String] ID of the device used to upload the tracking information of the asset.
         #
-        #   @param locations [NextbillionSDK::Models::Skynet::AssetTrackParams::Locations] An array of objects to collect the location tracking information for an `asset`.
+        #   @param locations [NextbillionSDK::Models::Skynet::AssetTrackParams::Locations] An array of objects to collect the location tracking information for an asset. E
         #
         #   @param cluster [Symbol, NextbillionSDK::Models::Skynet::AssetTrackParams::Cluster] the cluster of the region you want to use
         #
@@ -76,7 +75,7 @@ module NextbillionSDK
           optional :accuracy, Float
 
           # @!attribute altitude
-          #   Use this parameter to provide the altitude, in meters, of the `asset` at the
+          #   Use this parameter to provide the altitude, in meters, of the asset at the
           #   tracked location.
           #
           #   @return [Float, nil]
@@ -91,7 +90,7 @@ module NextbillionSDK
           optional :battery_level, Integer
 
           # @!attribute bearing
-          #   Use this parameter to provide the heading of the `asset`, in radians, calculated
+          #   Use this parameter to provide the heading of the asset, in radians, calculated
           #   from true north in clockwise direction. This should always be in the range of
           #   [0, 360).
           #
@@ -100,16 +99,16 @@ module NextbillionSDK
 
           # @!attribute meta_data
           #   Use this object to add any custom data about the location that is being
-          #   uploaded. Recommended to use the `key`:`value` format for adding the desired
+          #   uploaded. Recommended to use the key:value format for adding the desired
           #   information.
           #
-          #   Please note that the maximum size of `meta_data` object should not exceed 65Kb.
+          #   Please note that the maximum size of meta_data object should not exceed 65Kb.
           #
           #   @return [Object, nil]
           optional :meta_data, NextbillionSDK::Internal::Type::Unknown
 
           # @!attribute speed
-          #   Use this parameter to provide the speed of the `asset`, in meters per second, at
+          #   Use this parameter to provide the speed of the asset, in meters per second, at
           #   the tracked location.
           #
           #   @return [Float, nil]
@@ -125,7 +124,7 @@ module NextbillionSDK
           #   Some parameter documentations has been truncated, see
           #   {NextbillionSDK::Models::Skynet::AssetTrackParams::Locations} for more details.
           #
-          #   An array of objects to collect the location tracking information for an `asset`.
+          #   An array of objects to collect the location tracking information for an asset.
           #   Each object must correspond to details of only one location.
           #
           #   @param location [NextbillionSDK::Models::Skynet::AssetTrackParams::Locations::Location] An object to collect the coordinate details of the tracked location. Please note
@@ -134,28 +133,28 @@ module NextbillionSDK
           #
           #   @param accuracy [Float] Use this parameter to provide the accuracy of the GPS information at the tracked
           #
-          #   @param altitude [Float] Use this parameter to provide the altitude, in meters, of the `asset` at the tra
+          #   @param altitude [Float] Use this parameter to provide the altitude, in meters, of the asset at the track
           #
           #   @param battery_level [Integer] Use this parameter to provide the battery level of the GPS device, as a percenta
           #
-          #   @param bearing [Float] Use this parameter to provide the heading of the `asset`, in radians, calculated
+          #   @param bearing [Float] Use this parameter to provide the heading of the asset, in radians, calculated f
           #
           #   @param meta_data [Object] Use this object to add any custom data about the location that is being uploaded
           #
-          #   @param speed [Float] Use this parameter to provide the speed of the `asset`, in meters per second, at
+          #   @param speed [Float] Use this parameter to provide the speed of the asset, in meters per second, at t
           #
           #   @param tracking_mode [String] NB tracking mode.
 
           # @see NextbillionSDK::Models::Skynet::AssetTrackParams::Locations#location
           class Location < NextbillionSDK::Internal::Type::BaseModel
             # @!attribute lat
-            #   Latitude of the tracked location of the `asset`.
+            #   Latitude of the tracked location of the asset.
             #
             #   @return [Float]
             required :lat, Float
 
             # @!attribute lon
-            #   Longitude of the tracked location of the `asset`.
+            #   Longitude of the tracked location of the asset.
             #
             #   @return [Float]
             required :lon, Float
@@ -164,9 +163,9 @@ module NextbillionSDK
             #   An object to collect the coordinate details of the tracked location. Please note
             #   this field is mandatory when uploading locations for an asset.
             #
-            #   @param lat [Float] Latitude of the tracked location of the `asset`.
+            #   @param lat [Float] Latitude of the tracked location of the asset.
             #
-            #   @param lon [Float] Longitude of the tracked location of the `asset`.
+            #   @param lon [Float] Longitude of the tracked location of the asset.
           end
         end
 

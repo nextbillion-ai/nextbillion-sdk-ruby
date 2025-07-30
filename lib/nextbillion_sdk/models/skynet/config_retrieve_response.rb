@@ -6,7 +6,7 @@ module NextbillionSDK
       # @see NextbillionSDK::Resources::Skynet::Config#retrieve
       class ConfigRetrieveResponse < NextbillionSDK::Internal::Type::BaseModel
         # @!attribute data
-        #   A data object containing the `config` response.
+        #   A data object containing the config response.
         #
         #   @return [NextbillionSDK::Models::Skynet::ConfigRetrieveResponse::Data, nil]
         optional :data, -> { NextbillionSDK::Models::Skynet::ConfigRetrieveResponse::Data }
@@ -20,7 +20,7 @@ module NextbillionSDK
 
         # @!attribute status
         #   A string indicating the state of the response. On successful responses, the
-        #   value will be `Ok`. Indicative error messages are returned for different errors.
+        #   value will be Ok. Indicative error messages are returned for different errors.
         #   See the [API Error Codes](#api-error-codes) section below for more information.
         #
         #   @return [String, nil]
@@ -30,7 +30,7 @@ module NextbillionSDK
         #   Some parameter documentations has been truncated, see
         #   {NextbillionSDK::Models::Skynet::ConfigRetrieveResponse} for more details.
         #
-        #   @param data [NextbillionSDK::Models::Skynet::ConfigRetrieveResponse::Data] A data object containing the `config` response.
+        #   @param data [NextbillionSDK::Models::Skynet::ConfigRetrieveResponse::Data] A data object containing the config response.
         #
         #   @param message [String] Displays the error message in case of a failed request. If the request is succes
         #
@@ -44,7 +44,7 @@ module NextbillionSDK
           optional :config, -> { NextbillionSDK::Models::Skynet::ConfigRetrieveResponse::Data::Config }
 
           # @!method initialize(config: nil)
-          #   A data object containing the `config` response.
+          #   A data object containing the config response.
           #
           #   @param config [NextbillionSDK::Models::Skynet::ConfigRetrieveResponse::Data::Config]
 

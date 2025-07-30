@@ -12,7 +12,7 @@ module NextbillionSDK
             )
           end
 
-        # Its value is `OK` in case of a successful delete operation. Indicative error
+        # Its value is OK in case of a successful delete operation. Indicative error
         # messages are returned otherwise, for different errors.
         sig { returns(T.nilable(String)) }
         attr_reader :msg
@@ -21,7 +21,7 @@ module NextbillionSDK
         attr_writer :msg
 
         # A string indicating the state of the response. A successful delete operation ins
-        # indicated by an HTTP code of`200`. See the
+        # indicated by an HTTP code of200. See the
         # [API Error Codes](https://docs.nextbillion.ai/docs/tracking/api/live-tracking-api#api-error-codes)
         # section below for possible values in case of errors.
         sig { returns(T.nilable(Integer)) }
@@ -32,11 +32,11 @@ module NextbillionSDK
 
         sig { params(msg: String, status: Integer).returns(T.attached_class) }
         def self.new(
-          # Its value is `OK` in case of a successful delete operation. Indicative error
+          # Its value is OK in case of a successful delete operation. Indicative error
           # messages are returned otherwise, for different errors.
           msg: nil,
           # A string indicating the state of the response. A successful delete operation ins
-          # indicated by an HTTP code of`200`. See the
+          # indicated by an HTTP code of200. See the
           # [API Error Codes](https://docs.nextbillion.ai/docs/tracking/api/live-tracking-api#api-error-codes)
           # section below for possible values in case of errors.
           status: nil

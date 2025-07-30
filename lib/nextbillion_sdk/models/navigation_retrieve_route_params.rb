@@ -220,8 +220,8 @@ module NextbillionSDK
       module Approaches
         extend NextbillionSDK::Internal::Type::Enum
 
-        UNRESTRICTED = :"`unrestricted`"
-        CURB = :"`curb`"
+        UNRESTRICTED = :unrestricted
+        CURB = :curb
 
         # @!method self.values
         #   @return [Array<Symbol>]
@@ -253,9 +253,9 @@ module NextbillionSDK
       module Geometry
         extend NextbillionSDK::Internal::Type::Enum
 
-        POLYLINE = :"`polyline`"
-        POLYLINE6 = :"`polyline6`"
-        GEOJSON = :"`geojson`"
+        POLYLINE = :polyline
+        POLYLINE6 = :polyline6
+        GEOJSON = :geojson
 
         # @!method self.values
         #   @return [Array<Symbol>]
@@ -288,8 +288,8 @@ module NextbillionSDK
       module Mode
         extend NextbillionSDK::Internal::Type::Enum
 
-        CAR = :"`car`"
-        TRUCK = :"`truck`"
+        CAR = :car
+        TRUCK = :truck
 
         # @!method self.values
         #   @return [Array<Symbol>]
@@ -316,9 +316,9 @@ module NextbillionSDK
       module Overview
         extend NextbillionSDK::Internal::Type::Enum
 
-        FULL = :"`full`"
-        SIMPLIFIED = :"`simplified`"
-        FALSE = :"`false`"
+        FULL = :full
+        SIMPLIFIED = :simplified
+        FALSE = :false
 
         # @!method self.values
         #   @return [Array<Symbol>]

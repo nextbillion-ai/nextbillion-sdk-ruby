@@ -26,9 +26,9 @@ module NextbillionSDK
       attr_accessor :key
 
       # A semicolon-separated list indicating the side of the road from which to
-      # approach waypoints in a requested route. If provided, the number of `approaches`
-      # must be the same as the number of `coordinates`. However, you can skip a
-      # coordinate and show its position in the list with the `;` separator.
+      # approach waypoints in a requested route. If provided, the number of approaches
+      # must be the same as the number of coordinates. However, you can skip a
+      # coordinate and show its position in the list with the ; separator.
       sig do
         returns(
           T.nilable(
@@ -46,8 +46,8 @@ module NextbillionSDK
       end
       attr_writer :approaches
 
-      # Specify the destination coordinate of the returned route. If the input is
-      # `last`, the last coordinate will be the destination.
+      # Specify the destination coordinate of the returned route. If the input is last,
+      # the last coordinate will be the destination.
       sig do
         returns(
           T.nilable(
@@ -67,10 +67,9 @@ module NextbillionSDK
 
       # Sets the output format of the route geometry in the response.
       #
-      # On providing `polyline` and `polyline6` as input, respective encoded geometry is
-      # returned. However, when `geojson` is provided as the input value, `polyline`
-      # encoded geometry is returned in the response along with a geojson details of the
-      # route.
+      # On providing polyline and polyline6 as input, respective encoded geometry is
+      # returned. However, when geojson is provided as the input value, polyline encoded
+      # geometry is returned in the response along with a geojson details of the route.
       sig do
         returns(
           T.nilable(
@@ -182,19 +181,18 @@ module NextbillionSDK
         # API.
         key:,
         # A semicolon-separated list indicating the side of the road from which to
-        # approach waypoints in a requested route. If provided, the number of `approaches`
-        # must be the same as the number of `coordinates`. However, you can skip a
-        # coordinate and show its position in the list with the `;` separator.
+        # approach waypoints in a requested route. If provided, the number of approaches
+        # must be the same as the number of coordinates. However, you can skip a
+        # coordinate and show its position in the list with the ; separator.
         approaches: nil,
-        # Specify the destination coordinate of the returned route. If the input is
-        # `last`, the last coordinate will be the destination.
+        # Specify the destination coordinate of the returned route. If the input is last,
+        # the last coordinate will be the destination.
         destination: nil,
         # Sets the output format of the route geometry in the response.
         #
-        # On providing `polyline` and `polyline6` as input, respective encoded geometry is
-        # returned. However, when `geojson` is provided as the input value, `polyline`
-        # encoded geometry is returned in the response along with a geojson details of the
-        # route.
+        # On providing polyline and polyline6 as input, respective encoded geometry is
+        # returned. However, when geojson is provided as the input value, polyline encoded
+        # geometry is returned in the response along with a geojson details of the route.
         geometries: nil,
         # Set which driving mode the service should use to determine a route. For example,
         # if you use "car", the API will return a route that a car can take. Using "truck"
@@ -255,9 +253,9 @@ module NextbillionSDK
       end
 
       # A semicolon-separated list indicating the side of the road from which to
-      # approach waypoints in a requested route. If provided, the number of `approaches`
-      # must be the same as the number of `coordinates`. However, you can skip a
-      # coordinate and show its position in the list with the `;` separator.
+      # approach waypoints in a requested route. If provided, the number of approaches
+      # must be the same as the number of coordinates. However, you can skip a
+      # coordinate and show its position in the list with the ; separator.
       module Approaches
         extend NextbillionSDK::Internal::Type::Enum
 
@@ -269,12 +267,12 @@ module NextbillionSDK
 
         UNRESTRICTED =
           T.let(
-            :"`unrestricted`",
+            :unrestricted,
             NextbillionSDK::OptimizationComputeParams::Approaches::TaggedSymbol
           )
         CURB =
           T.let(
-            :"`curb`",
+            :curb,
             NextbillionSDK::OptimizationComputeParams::Approaches::TaggedSymbol
           )
 
@@ -289,8 +287,8 @@ module NextbillionSDK
         end
       end
 
-      # Specify the destination coordinate of the returned route. If the input is
-      # `last`, the last coordinate will be the destination.
+      # Specify the destination coordinate of the returned route. If the input is last,
+      # the last coordinate will be the destination.
       module Destination
         extend NextbillionSDK::Internal::Type::Enum
 
@@ -305,12 +303,12 @@ module NextbillionSDK
 
         ANY =
           T.let(
-            :"`any`",
+            :any,
             NextbillionSDK::OptimizationComputeParams::Destination::TaggedSymbol
           )
         LAST =
           T.let(
-            :"`last`",
+            :last,
             NextbillionSDK::OptimizationComputeParams::Destination::TaggedSymbol
           )
 
@@ -327,10 +325,9 @@ module NextbillionSDK
 
       # Sets the output format of the route geometry in the response.
       #
-      # On providing `polyline` and `polyline6` as input, respective encoded geometry is
-      # returned. However, when `geojson` is provided as the input value, `polyline`
-      # encoded geometry is returned in the response along with a geojson details of the
-      # route.
+      # On providing polyline and polyline6 as input, respective encoded geometry is
+      # returned. However, when geojson is provided as the input value, polyline encoded
+      # geometry is returned in the response along with a geojson details of the route.
       module Geometries
         extend NextbillionSDK::Internal::Type::Enum
 
@@ -342,17 +339,17 @@ module NextbillionSDK
 
         POLYLINE =
           T.let(
-            :"`polyline`",
+            :polyline,
             NextbillionSDK::OptimizationComputeParams::Geometries::TaggedSymbol
           )
         POLYLINE6 =
           T.let(
-            :"`polyline6`",
+            :polyline6,
             NextbillionSDK::OptimizationComputeParams::Geometries::TaggedSymbol
           )
         GEOJSON =
           T.let(
-            :"`geojson`",
+            :geojson,
             NextbillionSDK::OptimizationComputeParams::Geometries::TaggedSymbol
           )
 
@@ -402,12 +399,12 @@ module NextbillionSDK
 
         CAR =
           T.let(
-            :"`car`",
+            :car,
             NextbillionSDK::OptimizationComputeParams::Mode::TaggedSymbol
           )
         TRUCK =
           T.let(
-            :"`truck`",
+            :truck,
             NextbillionSDK::OptimizationComputeParams::Mode::TaggedSymbol
           )
 
@@ -435,12 +432,12 @@ module NextbillionSDK
 
         ANY =
           T.let(
-            :"`any`",
+            :any,
             NextbillionSDK::OptimizationComputeParams::Source::TaggedSymbol
           )
         FIRST =
           T.let(
-            :"`first`",
+            :first,
             NextbillionSDK::OptimizationComputeParams::Source::TaggedSymbol
           )
 

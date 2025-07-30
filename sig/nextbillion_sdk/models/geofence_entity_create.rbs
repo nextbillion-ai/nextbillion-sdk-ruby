@@ -71,14 +71,14 @@ module NextbillionSDK
         tags: ::Array[String]
       }
 
-      type type_ = :"`circle`" | :"`polygon`" | :"`isochrone`"
+      type type_ = :circle | :polygon | :isochrone
 
       module Type
         extend NextbillionSDK::Internal::Type::Enum
 
-        CIRCLE: :"`circle`"
-        POLYGON: :"`polygon`"
-        ISOCHRONE: :"`isochrone`"
+        CIRCLE: :circle
+        POLYGON: :polygon
+        ISOCHRONE: :isochrone
 
         def self?.values: -> ::Array[NextbillionSDK::Models::GeofenceEntityCreate::type_]
       end
@@ -170,13 +170,13 @@ module NextbillionSDK
           mode: NextbillionSDK::Models::GeofenceEntityCreate::Isochrone::mode
         }
 
-        type mode = :"`car`" | :"`truck`"
+        type mode = :car | :truck
 
         module Mode
           extend NextbillionSDK::Internal::Type::Enum
 
-          CAR: :"`car`"
-          TRUCK: :"`truck`"
+          CAR: :car
+          TRUCK: :truck
 
           def self?.values: -> ::Array[NextbillionSDK::Models::GeofenceEntityCreate::Isochrone::mode]
         end

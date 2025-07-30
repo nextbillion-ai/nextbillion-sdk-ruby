@@ -100,14 +100,14 @@ module NextbillionSDK
             }
           end
 
-          type operation = :"`create`" | :"`update`" | :"`delete`"
+          type operation = :create | :update | :delete
 
           module Operation
             extend NextbillionSDK::Internal::Type::Enum
 
-            CREATE: :"`create`"
-            UPDATE: :"`update`"
-            DELETE: :"`delete`"
+            CREATE: :create
+            UPDATE: :update
+            DELETE: :delete
 
             def self?.values: -> ::Array[NextbillionSDK::Models::Fleetify::RouteRedispatchParams::Operation::operation]
           end

@@ -155,8 +155,8 @@ module NextbillionSDK
         module Approaches
           extend NextbillionSDK::Internal::Type::Enum
 
-          UNRESTRICTED = :"`unrestricted`"
-          CURB = :"`curb`"
+          UNRESTRICTED = :unrestricted
+          CURB = :curb
 
           # @!method self.values
           #   @return [Array<Symbol>]
@@ -208,8 +208,8 @@ module NextbillionSDK
         module Mode
           extend NextbillionSDK::Internal::Type::Enum
 
-          CAR = :"`car`"
-          TRUCK = :"`truck`"
+          CAR = :car
+          TRUCK = :truck
 
           # @!method self.values
           #   @return [Array<Symbol>]

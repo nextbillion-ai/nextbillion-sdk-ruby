@@ -19,8 +19,8 @@ module NextbillionSDK
       attr_writer :distance
 
       # A GeoJSON object with details of the snapped path. This object is returned when
-      # the `geometry` field is set to `geojson` in the input request, otherwise it is
-      # not present in the response. The contents of this object follow the
+      # the geometry field is set to geojson in the input request, otherwise it is not
+      # present in the response. The contents of this object follow the
       # [geoJSON standard](https://datatracker.ietf.org/doc/html/rfc7946).
       sig do
         returns(
@@ -38,7 +38,7 @@ module NextbillionSDK
       attr_writer :geojson
 
       # An array of strings containing the encoded geometries of snapped paths in
-      # `polyline` or `polyline6` format.
+      # polyline or polyline6 format.
       sig { returns(T.nilable(T::Array[String])) }
       attr_reader :geometry
 
@@ -71,8 +71,8 @@ module NextbillionSDK
       end
       attr_writer :road_info
 
-      # An array of objects. Each object provides the details of a `path` coordinate
-      # point snapped to the nearest road.
+      # An array of objects. Each object provides the details of a path coordinate point
+      # snapped to the nearest road.
       sig do
         returns(
           T.nilable(
@@ -95,7 +95,7 @@ module NextbillionSDK
       attr_writer :snapped_points
 
       # A string indicating the state of the response. On normal responses, the value
-      # will be `Ok`. Indicative HTTP error codes are returned for different errors. See
+      # will be Ok. Indicative HTTP error codes are returned for different errors. See
       # the [API Errors Codes](#api-error-codes) section below for more information.
       sig { returns(T.nilable(String)) }
       attr_reader :status
@@ -124,12 +124,12 @@ module NextbillionSDK
         # The total distance of the snapped path in meters.
         distance: nil,
         # A GeoJSON object with details of the snapped path. This object is returned when
-        # the `geometry` field is set to `geojson` in the input request, otherwise it is
-        # not present in the response. The contents of this object follow the
+        # the geometry field is set to geojson in the input request, otherwise it is not
+        # present in the response. The contents of this object follow the
         # [geoJSON standard](https://datatracker.ietf.org/doc/html/rfc7946).
         geojson: nil,
         # An array of strings containing the encoded geometries of snapped paths in
-        # `polyline` or `polyline6` format.
+        # polyline or polyline6 format.
         geometry: nil,
         # Displays the error message in case of a failed request or operation. Please note
         # that this parameter is not returned in the response in case of a successful
@@ -138,11 +138,11 @@ module NextbillionSDK
         # An object containing the maximum speed information for each road segment present
         # in the route.
         road_info: nil,
-        # An array of objects. Each object provides the details of a `path` coordinate
-        # point snapped to the nearest road.
+        # An array of objects. Each object provides the details of a path coordinate point
+        # snapped to the nearest road.
         snapped_points: nil,
         # A string indicating the state of the response. On normal responses, the value
-        # will be `Ok`. Indicative HTTP error codes are returned for different errors. See
+        # will be Ok. Indicative HTTP error codes are returned for different errors. See
         # the [API Errors Codes](#api-error-codes) section below for more information.
         status: nil
       )
@@ -209,8 +209,8 @@ module NextbillionSDK
         attr_writer :type
 
         # A GeoJSON object with details of the snapped path. This object is returned when
-        # the `geometry` field is set to `geojson` in the input request, otherwise it is
-        # not present in the response. The contents of this object follow the
+        # the geometry field is set to geojson in the input request, otherwise it is not
+        # present in the response. The contents of this object follow the
         # [geoJSON standard](https://datatracker.ietf.org/doc/html/rfc7946).
         sig do
           params(
@@ -361,24 +361,24 @@ module NextbillionSDK
               )
             end
 
-          # `length` refers to a sequence of 'n' consecutive vertices in the route geometry
-          # starting from the `offset`, forming a continuous section of route where the
-          # maximum speed is the same and is indicated in `value`.
+          # length refers to a sequence of 'n' consecutive vertices in the route geometry
+          # starting from the offset, forming a continuous section of route where the
+          # maximum speed is the same and is indicated in value.
           sig { returns(T.nilable(Integer)) }
           attr_reader :length
 
           sig { params(length: Integer).void }
           attr_writer :length
 
-          # `offset` is the index value of the vertex of route geometry, which is the
-          # starting point of the segment.
+          # offset is the index value of the vertex of route geometry, which is the starting
+          # point of the segment.
           sig { returns(T.nilable(Integer)) }
           attr_reader :offset
 
           sig { params(offset: Integer).void }
           attr_writer :offset
 
-          # `value` denotes the maximum speed of this segment, in kilometers per hour.
+          # value denotes the maximum speed of this segment, in kilometers per hour.
           #
           # - A value of "-1" indicates that the speed is unlimited for this road segment.
           # - A value of "0" indicates that there is no information about the maximum speed
@@ -395,14 +395,14 @@ module NextbillionSDK
             )
           end
           def self.new(
-            # `length` refers to a sequence of 'n' consecutive vertices in the route geometry
-            # starting from the `offset`, forming a continuous section of route where the
-            # maximum speed is the same and is indicated in `value`.
+            # length refers to a sequence of 'n' consecutive vertices in the route geometry
+            # starting from the offset, forming a continuous section of route where the
+            # maximum speed is the same and is indicated in value.
             length: nil,
-            # `offset` is the index value of the vertex of route geometry, which is the
-            # starting point of the segment.
+            # offset is the index value of the vertex of route geometry, which is the starting
+            # point of the segment.
             offset: nil,
-            # `value` denotes the maximum speed of this segment, in kilometers per hour.
+            # value denotes the maximum speed of this segment, in kilometers per hour.
             #
             # - A value of "-1" indicates that the speed is unlimited for this road segment.
             # - A value of "0" indicates that there is no information about the maximum speed
@@ -429,9 +429,9 @@ module NextbillionSDK
           end
 
         # The bearing, calculated as the angle from true north in clockwise direction, of
-        # the route leading to the next snapped point from the current `snapped_point`, in
-        # radians. In case of the last `snapped_point` of the route, the bearing indicates
-        # the direction of the route to the previous `snapped_location`.
+        # the route leading to the next snapped point from the current snapped_point, in
+        # radians. In case of the last snapped_point of the route, the bearing indicates
+        # the direction of the route to the previous snapped_location.
         sig { returns(Float) }
         attr_accessor :bearing
 
@@ -459,7 +459,7 @@ module NextbillionSDK
         sig { returns(String) }
         attr_accessor :name
 
-        # The index of the input `path` coordinate point to which this snapped point
+        # The index of the input path coordinate point to which this snapped point
         # corresponds to.
         sig { returns(Integer) }
         attr_accessor :original_index
@@ -476,9 +476,9 @@ module NextbillionSDK
         end
         def self.new(
           # The bearing, calculated as the angle from true north in clockwise direction, of
-          # the route leading to the next snapped point from the current `snapped_point`, in
-          # radians. In case of the last `snapped_point` of the route, the bearing indicates
-          # the direction of the route to the previous `snapped_location`.
+          # the route leading to the next snapped point from the current snapped_point, in
+          # radians. In case of the last snapped_point of the route, the bearing indicates
+          # the direction of the route to the previous snapped_location.
           bearing:,
           # The distance of the snapped point from the original input coordinate in meters.
           distance:,
@@ -486,7 +486,7 @@ module NextbillionSDK
           location:,
           # The name of the street or road that the input coordinate snapped to.
           name:,
-          # The index of the input `path` coordinate point to which this snapped point
+          # The index of the input path coordinate point to which this snapped point
           # corresponds to.
           original_index:
         )

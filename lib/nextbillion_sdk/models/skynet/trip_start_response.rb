@@ -19,7 +19,7 @@ module NextbillionSDK
 
         # @!attribute status
         #   A string indicating the state of the response. On successful responses, the
-        #   value will be `Ok`. Indicative error messages are returned for different errors.
+        #   value will be Ok. Indicative error messages are returned for different errors.
         #   See the [API Error Codes](#api-error-codes) section below for more information.
         #
         #   @return [String, nil]
@@ -38,7 +38,7 @@ module NextbillionSDK
         # @see NextbillionSDK::Models::Skynet::TripStartResponse#data
         class Data < NextbillionSDK::Internal::Type::BaseModel
           # @!attribute id
-          #   Returns the ID of the newly created trip. It will be same as the `custom_id` if
+          #   Returns the ID of the newly created trip. It will be same as the custom_id if
           #   that input was provided in the input request. Use this ID to manage this trip
           #   using other available Trip methods.
           #
@@ -49,7 +49,7 @@ module NextbillionSDK
           #   Some parameter documentations has been truncated, see
           #   {NextbillionSDK::Models::Skynet::TripStartResponse::Data} for more details.
           #
-          #   @param id [String] Returns the ID of the newly created trip. It will be same as the `custom_id` if
+          #   @param id [String] Returns the ID of the newly created trip. It will be same as the custom_id if th
         end
       end
     end

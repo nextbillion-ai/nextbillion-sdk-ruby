@@ -16,15 +16,15 @@ module NextbillionSDK
 
       # @!attribute at
       #   Location coordinates that you want to get the postal code of. If not providing
-      #   `postalcode` in the request, `at` becomes mandatory. Please note that only 1
-      #   point can be requested. [See this example](#note).
+      #   postalcode in the request, at becomes mandatory. Please note that only 1 point
+      #   can be requested. [See this example](#note).
       #
       #   @return [NextbillionSDK::Models::PostalcodeRetrieveCoordinatesParams::At, nil]
       optional :at, -> { NextbillionSDK::PostalcodeRetrieveCoordinatesParams::At }
 
       # @!attribute country
       #   Country containing the postal code or the location. It is mandatory if
-      #   `postalcode` is provided in the request. [See this example](#note).
+      #   postalcode is provided in the request. [See this example](#note).
       #
       #   Please check the [API Query Limits](#api-query-limits) section below for a list
       #   of the countries covered by the Geocode Postcode API. Users can provide either
@@ -37,7 +37,7 @@ module NextbillionSDK
 
       # @!attribute format_
       #   Specify the format in which the boundary details of the post code will be
-      #   returned. When specified, the boundary details will be returned in the `geojson`
+      #   returned. When specified, the boundary details will be returned in the geojson
       #   format. When not specified, the boundary details are returned in general format.
       #
       #   @return [Symbol, NextbillionSDK::Models::PostalcodeRetrieveCoordinatesParams::Format, nil]
@@ -47,7 +47,7 @@ module NextbillionSDK
 
       # @!attribute postalcode
       #   Provide the postal code for which the information is needed. At least one of
-      #   (`postalcode` + `country`) or `at` needs to be provided. Please note that only 1
+      #   (postalcode + country) or at needs to be provided. Please note that only 1
       #   postal code can be requested. [See this example](#note).
       #
       #   @return [String, nil]
@@ -59,13 +59,13 @@ module NextbillionSDK
       #
       #   @param key [String] A key is a unique identifier that is required to authenticate a request to the A
       #
-      #   @param at [NextbillionSDK::Models::PostalcodeRetrieveCoordinatesParams::At] Location coordinates that you want to get the postal code of. If not providing `
+      #   @param at [NextbillionSDK::Models::PostalcodeRetrieveCoordinatesParams::At] Location coordinates that you want to get the postal code of. If not providing p
       #
-      #   @param country [String] Country containing the postal code or the location. It is mandatory if `postalco
+      #   @param country [String] Country containing the postal code or the location. It is mandatory if postalcod
       #
       #   @param format_ [Symbol, NextbillionSDK::Models::PostalcodeRetrieveCoordinatesParams::Format] Specify the format in which the boundary details of the post code will be return
       #
-      #   @param postalcode [String] Provide the postal code for which the information is needed. At least one of (`p
+      #   @param postalcode [String] Provide the postal code for which the information is needed. At least one of (po
       #
       #   @param request_options [NextbillionSDK::RequestOptions, Hash{Symbol=>Object}]
 
@@ -84,8 +84,8 @@ module NextbillionSDK
 
         # @!method initialize(lat: nil, lng: nil)
         #   Location coordinates that you want to get the postal code of. If not providing
-        #   `postalcode` in the request, `at` becomes mandatory. Please note that only 1
-        #   point can be requested. [See this example](#note).
+        #   postalcode in the request, at becomes mandatory. Please note that only 1 point
+        #   can be requested. [See this example](#note).
         #
         #   @param lat [Float] Latitude of the location.
         #
@@ -93,12 +93,12 @@ module NextbillionSDK
       end
 
       # Specify the format in which the boundary details of the post code will be
-      # returned. When specified, the boundary details will be returned in the `geojson`
+      # returned. When specified, the boundary details will be returned in the geojson
       # format. When not specified, the boundary details are returned in general format.
       module Format
         extend NextbillionSDK::Internal::Type::Enum
 
-        GEOJSON = :"`geojson`"
+        GEOJSON = :geojson
 
         # @!method self.values
         #   @return [Array<Symbol>]

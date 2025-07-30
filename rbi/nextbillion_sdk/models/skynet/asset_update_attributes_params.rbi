@@ -20,20 +20,19 @@ module NextbillionSDK
         sig { returns(String) }
         attr_accessor :key
 
-        # `attributes` can be used to add any useful information or context to your assets
+        # attributes can be used to add any useful information or context to your assets
         # like the vehicle type, shift timing etc. These attributes can also be used to
         # filter assets in **Search**, **Monitor**, and _Get Asset List_ queries.
         #
-        # Provide the attributes to be added or updated, in `key`:`value` format. If an
-        # existing `key` is provided in the input, then the `value` will be modified as
-        # per the input value. If a new `key` is provided in the input, then the `key`
-        # would be added to the existing set. The contents of any `value` field are
-        # neither altered nor removed unless specifically referred to by its `key` in the
-        # input request.
+        # Provide the attributes to be added or updated, in key:value format. If an
+        # existing key is provided in the input, then the value will be modified as per
+        # the input value. If a new key is provided in the input, then the key would be
+        # added to the existing set. The contents of any value field are neither altered
+        # nor removed unless specifically referred to by its key in the input request.
         #
-        # Please note that the maximum number of `key`:`value` pairs that can be added to
-        # an `attributes` object is 100. Also, the overall size of `attributes` object
-        # should not exceed 65kb.
+        # Please note that the maximum number of key:value pairs that can be added to an
+        # attributes object is 100. Also, the overall size of attributes object should not
+        # exceed 65kb.
         sig { returns(T.anything) }
         attr_accessor :attributes
 
@@ -48,20 +47,19 @@ module NextbillionSDK
           # A key is a unique identifier that is required to authenticate a request to the
           # API.
           key:,
-          # `attributes` can be used to add any useful information or context to your assets
+          # attributes can be used to add any useful information or context to your assets
           # like the vehicle type, shift timing etc. These attributes can also be used to
           # filter assets in **Search**, **Monitor**, and _Get Asset List_ queries.
           #
-          # Provide the attributes to be added or updated, in `key`:`value` format. If an
-          # existing `key` is provided in the input, then the `value` will be modified as
-          # per the input value. If a new `key` is provided in the input, then the `key`
-          # would be added to the existing set. The contents of any `value` field are
-          # neither altered nor removed unless specifically referred to by its `key` in the
-          # input request.
+          # Provide the attributes to be added or updated, in key:value format. If an
+          # existing key is provided in the input, then the value will be modified as per
+          # the input value. If a new key is provided in the input, then the key would be
+          # added to the existing set. The contents of any value field are neither altered
+          # nor removed unless specifically referred to by its key in the input request.
           #
-          # Please note that the maximum number of `key`:`value` pairs that can be added to
-          # an `attributes` object is 100. Also, the overall size of `attributes` object
-          # should not exceed 65kb.
+          # Please note that the maximum number of key:value pairs that can be added to an
+          # attributes object is 100. Also, the overall size of attributes object should not
+          # exceed 65kb.
           attributes:,
           request_options: {}
         )

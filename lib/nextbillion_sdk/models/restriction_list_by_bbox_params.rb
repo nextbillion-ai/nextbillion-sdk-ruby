@@ -67,7 +67,7 @@ module NextbillionSDK
       # @!attribute state
       #   This parameter is used to filter restrictions based on their state i.e. whether
       #   the restriction is currently enabled, disabled, or deleted. For example, users
-      #   can retrieve a list of all the deleted restrictions by setting `state=deleted`.
+      #   can retrieve a list of all the deleted restrictions by setting state=deleted.
       #
       #   @return [Symbol, NextbillionSDK::Models::RestrictionListByBboxParams::State, nil]
       optional :state, enum: -> { NextbillionSDK::RestrictionListByBboxParams::State }
@@ -85,7 +85,7 @@ module NextbillionSDK
       optional :status, enum: -> { NextbillionSDK::RestrictionListByBboxParams::Status }
 
       # @!attribute transform
-      #   This is internal parameter with a default value as `false`.
+      #   This is internal parameter with a default value as false.
       #
       #   @return [Boolean, nil]
       optional :transform, NextbillionSDK::Internal::Type::Boolean
@@ -114,7 +114,7 @@ module NextbillionSDK
       #
       #   @param status [Symbol, NextbillionSDK::Models::RestrictionListByBboxParams::Status] Restrictions can be active or inactive at a given time by virtue of their nature
       #
-      #   @param transform [Boolean] This is internal parameter with a default value as `false`.
+      #   @param transform [Boolean] This is internal parameter with a default value as false.
       #
       #   @param request_options [NextbillionSDK::RequestOptions, Hash{Symbol=>Object}]
 
@@ -164,13 +164,13 @@ module NextbillionSDK
 
       # This parameter is used to filter restrictions based on their state i.e. whether
       # the restriction is currently enabled, disabled, or deleted. For example, users
-      # can retrieve a list of all the deleted restrictions by setting `state=deleted`.
+      # can retrieve a list of all the deleted restrictions by setting state=deleted.
       module State
         extend NextbillionSDK::Internal::Type::Enum
 
-        ENABLED = :"`enabled`"
-        DISABLED = :"`disabled`"
-        DELETED = :"`deleted`"
+        ENABLED = :enabled
+        DISABLED = :disabled
+        DELETED = :deleted
 
         # @!method self.values
         #   @return [Array<Symbol>]
@@ -186,8 +186,8 @@ module NextbillionSDK
       module Status
         extend NextbillionSDK::Internal::Type::Enum
 
-        ACTIVE = :"`active`"
-        INACTIVE = :"`inactive`"
+        ACTIVE = :active
+        INACTIVE = :inactive
 
         # @!method self.values
         #   @return [Array<Symbol>]

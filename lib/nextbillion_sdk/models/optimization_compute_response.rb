@@ -6,7 +6,7 @@ module NextbillionSDK
     class OptimizationComputeResponse < NextbillionSDK::Internal::Type::BaseModel
       # @!attribute code
       #   A string indicating the state of the response. This is a separate code than the
-      #   HTTP status code. On normal valid responses, the value will be `Ok`.
+      #   HTTP status code. On normal valid responses, the value will be Ok.
       #
       #   @return [String, nil]
       optional :code, String
@@ -85,7 +85,7 @@ module NextbillionSDK
         optional :geojson, -> { NextbillionSDK::Models::OptimizationComputeResponse::Trip::Geojson }
 
         # @!attribute geometry
-        #   `polyline` or `polyline6` format of route geometry.
+        #   polyline or polyline6 format of route geometry.
         #
         #   @return [String, nil]
         optional :geometry, String
@@ -103,20 +103,20 @@ module NextbillionSDK
         #
         #   @param geojson [NextbillionSDK::Models::OptimizationComputeResponse::Trip::Geojson] The GeoJSON representation of the route.
         #
-        #   @param geometry [String] `polyline` or `polyline6` format of route geometry.
+        #   @param geometry [String] polyline or polyline6 format of route geometry.
         #
         #   @param legs [Array<NextbillionSDK::Models::OptimizationComputeResponse::Trip::Leg>]
 
         # @see NextbillionSDK::Models::OptimizationComputeResponse::Trip#geojson
         class Geojson < NextbillionSDK::Internal::Type::BaseModel
           # @!attribute geometry
-          #   The encoded geometry of the geojson in the `trip`.
+          #   The encoded geometry of the geojson in the trip.
           #
           #   @return [String, nil]
           optional :geometry, String
 
           # @!attribute properties
-          #   Additional properties associated with the `trip`.
+          #   Additional properties associated with the trip.
           #
           #   @return [String, nil]
           optional :properties, String
@@ -130,9 +130,9 @@ module NextbillionSDK
           # @!method initialize(geometry: nil, properties: nil, type: nil)
           #   The GeoJSON representation of the route.
           #
-          #   @param geometry [String] The encoded geometry of the geojson in the `trip`.
+          #   @param geometry [String] The encoded geometry of the geojson in the trip.
           #
-          #   @param properties [String] Additional properties associated with the `trip`.
+          #   @param properties [String] Additional properties associated with the trip.
           #
           #   @param type [Symbol, NextbillionSDK::Models::OptimizationComputeResponse::Trip::Geojson::Type] The type of the GeoJSON object.
 
@@ -179,7 +179,7 @@ module NextbillionSDK
                    -> { NextbillionSDK::Internal::Type::ArrayOf[NextbillionSDK::Models::OptimizationComputeResponse::Trip::Leg::Step] }
 
           # @!attribute summary
-          #   Summary of the `leg` object.
+          #   Summary of the leg object.
           #
           #   @return [String, nil]
           optional :summary, String
@@ -191,52 +191,52 @@ module NextbillionSDK
           #
           #   @param steps [Array<NextbillionSDK::Models::OptimizationComputeResponse::Trip::Leg::Step>] An array of step objects.
           #
-          #   @param summary [String] Summary of the `leg` object.
+          #   @param summary [String] Summary of the leg object.
 
           class Step < NextbillionSDK::Internal::Type::BaseModel
             # @!attribute distance
-            #   Distance of the `step` object in meters.
+            #   Distance of the step object in meters.
             #
             #   @return [Float, nil]
             optional :distance, Float
 
             # @!attribute duration
-            #   Duration of the `step` object in seconds.
+            #   Duration of the step object in seconds.
             #
             #   @return [Float, nil]
             optional :duration, Float
 
             # @!attribute geojson
-            #   The GeoJSON representation of the `step`.
+            #   The GeoJSON representation of the step.
             #
             #   @return [NextbillionSDK::Models::OptimizationComputeResponse::Trip::Leg::Step::Geojson, nil]
             optional :geojson, -> { NextbillionSDK::Models::OptimizationComputeResponse::Trip::Leg::Step::Geojson }
 
             # @!attribute geometry
-            #   Encoded geometry of the `step` in the selected format.
+            #   Encoded geometry of the step in the selected format.
             #
             #   @return [String, nil]
             optional :geometry, String
 
             # @!method initialize(distance: nil, duration: nil, geojson: nil, geometry: nil)
-            #   @param distance [Float] Distance of the `step` object in meters.
+            #   @param distance [Float] Distance of the step object in meters.
             #
-            #   @param duration [Float] Duration of the `step` object in seconds.
+            #   @param duration [Float] Duration of the step object in seconds.
             #
-            #   @param geojson [NextbillionSDK::Models::OptimizationComputeResponse::Trip::Leg::Step::Geojson] The GeoJSON representation of the `step`.
+            #   @param geojson [NextbillionSDK::Models::OptimizationComputeResponse::Trip::Leg::Step::Geojson] The GeoJSON representation of the step.
             #
-            #   @param geometry [String] Encoded geometry of the `step` in the selected format.
+            #   @param geometry [String] Encoded geometry of the step in the selected format.
 
             # @see NextbillionSDK::Models::OptimizationComputeResponse::Trip::Leg::Step#geojson
             class Geojson < NextbillionSDK::Internal::Type::BaseModel
               # @!attribute geometry
-              #   The encoded geometry of the geojson in the `step`.
+              #   The encoded geometry of the geojson in the step.
               #
               #   @return [String, nil]
               optional :geometry, String
 
               # @!attribute properties
-              #   Additional properties associated with the `step`.
+              #   Additional properties associated with the step.
               #
               #   @return [String, nil]
               optional :properties, String
@@ -249,11 +249,11 @@ module NextbillionSDK
                        enum: -> { NextbillionSDK::Models::OptimizationComputeResponse::Trip::Leg::Step::Geojson::Type }
 
               # @!method initialize(geometry: nil, properties: nil, type: nil)
-              #   The GeoJSON representation of the `step`.
+              #   The GeoJSON representation of the step.
               #
-              #   @param geometry [String] The encoded geometry of the geojson in the `step`.
+              #   @param geometry [String] The encoded geometry of the geojson in the step.
               #
-              #   @param properties [String] Additional properties associated with the `step`.
+              #   @param properties [String] Additional properties associated with the step.
               #
               #   @param type [Symbol, NextbillionSDK::Models::OptimizationComputeResponse::Trip::Leg::Step::Geojson::Type] The type of the GeoJSON object.
 

@@ -13,7 +13,7 @@ class NextbillionSDK::Test::Resources::Fleetify::Routes::StepsTest < Nextbillion
         arrival: 0,
         location: [0],
         position: 0,
-        type: :"`start`"
+        type: :start
       )
 
     assert_pattern do

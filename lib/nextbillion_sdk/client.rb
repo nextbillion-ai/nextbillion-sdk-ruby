@@ -87,11 +87,11 @@ module NextbillionSDK
     # @return [NextbillionSDK::Resources::Postalcode]
     attr_reader :postalcode
 
-    # @return [NextbillionSDK::Resources::Lookup]
-    attr_reader :lookup
-
     # @return [NextbillionSDK::Resources::Areas]
     attr_reader :areas
+
+    # @return [NextbillionSDK::Resources::Lookup]
+    attr_reader :lookup
 
     # @api private
     #
@@ -161,8 +161,8 @@ module NextbillionSDK
       @route_report = NextbillionSDK::Resources::RouteReport.new(client: self)
       @snap_to_roads = NextbillionSDK::Resources::SnapToRoads.new(client: self)
       @postalcode = NextbillionSDK::Resources::Postalcode.new(client: self)
-      @lookup = NextbillionSDK::Resources::Lookup.new(client: self)
       @areas = NextbillionSDK::Resources::Areas.new(client: self)
+      @lookup = NextbillionSDK::Resources::Lookup.new(client: self)
     end
   end
 end

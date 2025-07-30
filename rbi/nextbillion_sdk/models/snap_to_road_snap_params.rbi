@@ -301,12 +301,12 @@ module NextbillionSDK
 
         UNRESTRICTED =
           T.let(
-            :"`unrestricted`",
+            :unrestricted,
             NextbillionSDK::SnapToRoadSnapParams::Approaches::TaggedSymbol
           )
         CURB =
           T.let(
-            :"`curb`",
+            :curb,
             NextbillionSDK::SnapToRoadSnapParams::Approaches::TaggedSymbol
           )
 
@@ -382,17 +382,17 @@ module NextbillionSDK
 
         POLYLINE =
           T.let(
-            :"`polyline`",
+            :polyline,
             NextbillionSDK::SnapToRoadSnapParams::Geometry::TaggedSymbol
           )
         POLYLINE6 =
           T.let(
-            :"`polyline6`",
+            :polyline6,
             NextbillionSDK::SnapToRoadSnapParams::Geometry::TaggedSymbol
           )
         GEOJSON =
           T.let(
-            :"`geojson`",
+            :geojson,
             NextbillionSDK::SnapToRoadSnapParams::Geometry::TaggedSymbol
           )
 
@@ -428,13 +428,10 @@ module NextbillionSDK
         OrSymbol = T.type_alias { T.any(Symbol, String) }
 
         CAR =
-          T.let(
-            :"`car`",
-            NextbillionSDK::SnapToRoadSnapParams::Mode::TaggedSymbol
-          )
+          T.let(:car, NextbillionSDK::SnapToRoadSnapParams::Mode::TaggedSymbol)
         TRUCK =
           T.let(
-            :"`truck`",
+            :truck,
             NextbillionSDK::SnapToRoadSnapParams::Mode::TaggedSymbol
           )
 
@@ -464,7 +461,7 @@ module NextbillionSDK
 
         FLEXIBLE =
           T.let(
-            :"`flexible`",
+            :flexible,
             NextbillionSDK::SnapToRoadSnapParams::Option::TaggedSymbol
           )
 
@@ -490,7 +487,7 @@ module NextbillionSDK
 
         MAX_SPEED =
           T.let(
-            :"`max_speed`",
+            :max_speed,
             NextbillionSDK::SnapToRoadSnapParams::RoadInfo::TaggedSymbol
           )
 

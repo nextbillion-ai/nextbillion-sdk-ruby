@@ -15,8 +15,8 @@ module NextbillionSDK
       optional :circle_center, -> { NextbillionSDK::GeofenceAPI::CircleCenter }
 
       # @!attribute circle_radius
-      #   When the `type` of the geofence is `circle`, this property returns the radius of
-      #   the geofence in meters (m).
+      #   When the type of the geofence is circle, this property returns the radius of the
+      #   geofence in meters (m).
       #
       #   @return [Float, nil]
       optional :circle_radius, Float
@@ -39,8 +39,8 @@ module NextbillionSDK
       #   For a geofence based on isochrone contour determined using a specific driving
       #   distance, this property returns the duration value, in meters.
       #
-      #   The value would be the same as that provided for the `contours_meter` parameter
-      #   at the time of creating or updating the geofence.
+      #   The value would be the same as that provided for the contours_meter parameter at
+      #   the time of creating or updating the geofence.
       #
       #   @return [Integer, nil]
       optional :ic_contours_meter, Integer
@@ -48,8 +48,8 @@ module NextbillionSDK
       # @!attribute ic_contours_minute
       #   For a geofence based on isochrone contour determined using a specific driving
       #   duration, this property returns the duration value, in minutes. The value would
-      #   be the same as the value provided for the `contours_minute` parameter at the
-      #   time of creating or updating the geofence.
+      #   be the same as the value provided for the contours_minute parameter at the time
+      #   of creating or updating the geofence.
       #
       #   @return [Integer, nil]
       optional :ic_contours_minute, Integer
@@ -59,7 +59,7 @@ module NextbillionSDK
       #   of the location, in [latitude,longitude] format, which was used as the starting
       #   point to identify the geofence boundary.
       #
-      #   The value would be the same as that provided for the `coordinates` parameter at
+      #   The value would be the same as that provided for the coordinates parameter at
       #   the time of creating or updating the geofence.
       #
       #   @return [String, nil]
@@ -67,8 +67,8 @@ module NextbillionSDK
 
       # @!attribute ic_denoise
       #   For a geofence based on isochrone contour, this property returns the denoise
-      #   value which would be the same as that provided for the `denoise` parameter at
-      #   the time of creating or updating the geofence.
+      #   value which would be the same as that provided for the denoise parameter at the
+      #   time of creating or updating the geofence.
       #
       #   @return [Float, nil]
       optional :ic_denoise, Float
@@ -78,8 +78,8 @@ module NextbillionSDK
       #   time, as a UNIX epoch timestamp in seconds, which was used to determine the
       #   geofence boundary after taking into account the traffic conditions at the time.
       #
-      #   The value would be the same as that provided for the `departure_time` parameter
-      #   at the time of creating or updating the geofence.
+      #   The value would be the same as that provided for the departure_time parameter at
+      #   the time of creating or updating the geofence.
       #
       #   @return [Integer, nil]
       optional :ic_departure_time, Integer
@@ -88,8 +88,8 @@ module NextbillionSDK
       #   For a geofence based on isochrone contour, this property returns the driving
       #   mode used to determine the geofence boundary.
       #
-      #   The value would be the same as that provided for the `mode` parameter at the
-      #   time of creating or updating the geofence.
+      #   The value would be the same as that provided for the mode parameter at the time
+      #   of creating or updating the geofence.
       #
       #   @return [Float, nil]
       optional :ic_mode, Float
@@ -107,8 +107,8 @@ module NextbillionSDK
       optional :name, String
 
       # @!attribute tags
-      #   An array of strings representing the `tags` associated with the geofence added
-      #   at the time of creating or updating it.
+      #   An array of strings representing the tags associated with the geofence added at
+      #   the time of creating or updating it.
       #
       #   @return [Array<String>, nil]
       optional :tags, NextbillionSDK::Internal::Type::ArrayOf[String]
@@ -136,7 +136,7 @@ module NextbillionSDK
       #
       #   @param circle_center [NextbillionSDK::Models::GeofenceAPI::CircleCenter]
       #
-      #   @param circle_radius [Float] When the `type` of the geofence is `circle`, this property returns the radius of
+      #   @param circle_radius [Float] When the type of the geofence is circle, this property returns the radius of the
       #
       #   @param created_at [Integer] Time at which the geofence was created, expressed as a UNIX timestamp in seconds
       #
@@ -158,7 +158,7 @@ module NextbillionSDK
       #
       #   @param name [String] Name of the geofence added at the time of creating or updating it.
       #
-      #   @param tags [Array<String>] An array of strings representing the `tags` associated with the geofence added a
+      #   @param tags [Array<String>] An array of strings representing the tags associated with the geofence added at
       #
       #   @param type [Symbol, NextbillionSDK::Models::GeofenceAPI::Type] Type of the geofence.
       #
@@ -190,9 +190,9 @@ module NextbillionSDK
       module Type
         extend NextbillionSDK::Internal::Type::Enum
 
-        CIRCLE = :"`circle`"
-        POLYGON = :"`polygon`"
-        ISOCHRONE = :"`isochrone`"
+        CIRCLE = :circle
+        POLYGON = :polygon
+        ISOCHRONE = :isochrone
 
         # @!method self.values
         #   @return [Array<Symbol>]

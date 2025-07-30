@@ -182,89 +182,86 @@ module NextbillionSDK
       end
 
       type avoid =
-        :"`toll`"
-        | :"`ferry`"
-        | :"`highway`"
-        | :"`sharp_turn`"
-        | :"`service_road`"
-        | :"`bbox`"
-        | :"`left_turn`"
-        | :"`right_turn`"
-        | :"`none`"
+        :toll
+        | :ferry
+        | :highway
+        | :sharp_turn
+        | :service_road
+        | :bbox
+        | :left_turn
+        | :right_turn
+        | :none
 
       module Avoid
         extend NextbillionSDK::Internal::Type::Enum
 
-        TOLL: :"`toll`"
-        FERRY: :"`ferry`"
-        HIGHWAY: :"`highway`"
-        SHARP_TURN: :"`sharp_turn`"
-        SERVICE_ROAD: :"`service_road`"
-        BBOX: :"`bbox`"
-        LEFT_TURN: :"`left_turn`"
-        RIGHT_TURN: :"`right_turn`"
-        NONE: :"`none`"
+        TOLL: :toll
+        FERRY: :ferry
+        HIGHWAY: :highway
+        SHARP_TURN: :sharp_turn
+        SERVICE_ROAD: :service_road
+        BBOX: :bbox
+        LEFT_TURN: :left_turn
+        RIGHT_TURN: :right_turn
+        NONE: :none
 
         def self?.values: -> ::Array[NextbillionSDK::Models::MdmCreateDistanceMatrixParams::avoid]
       end
 
-      type destinations_approach = :"`unrestricted`" | :"`curb`"
+      type destinations_approach = :unrestricted | :curb
 
       module DestinationsApproach
         extend NextbillionSDK::Internal::Type::Enum
 
-        UNRESTRICTED: :"`unrestricted`"
-        CURB: :"`curb`"
+        UNRESTRICTED: :unrestricted
+        CURB: :curb
 
         def self?.values: -> ::Array[NextbillionSDK::Models::MdmCreateDistanceMatrixParams::destinations_approach]
       end
 
       type hazmat_type =
-        :"`general`"
-        | :"`circumstantial`"
-        | :"`explosive`"
-        | :"`harmful_to_water`"
+        :general | :circumstantial | :explosive | :harmful_to_water
 
       module HazmatType
         extend NextbillionSDK::Internal::Type::Enum
 
-        GENERAL: :"`general`"
-        CIRCUMSTANTIAL: :"`circumstantial`"
-        EXPLOSIVE: :"`explosive`"
-        HARMFUL_TO_WATER: :"`harmful_to_water`"
+        GENERAL: :general
+        CIRCUMSTANTIAL: :circumstantial
+        EXPLOSIVE: :explosive
+        HARMFUL_TO_WATER: :harmful_to_water
 
         def self?.values: -> ::Array[NextbillionSDK::Models::MdmCreateDistanceMatrixParams::hazmat_type]
       end
 
-      type mode = :"`car`" | :"`truck`"
+      type mode = :car | :truck
 
       module Mode
         extend NextbillionSDK::Internal::Type::Enum
 
-        CAR: :"`car`"
-        TRUCK: :"`truck`"
+        CAR: :car
+        TRUCK: :truck
 
         def self?.values: -> ::Array[NextbillionSDK::Models::MdmCreateDistanceMatrixParams::mode]
       end
 
-      type origins_approach = :"`unrestricted`" | :"`curb`"
+      type origins_approach = :unrestricted | :curb
 
       module OriginsApproach
         extend NextbillionSDK::Internal::Type::Enum
 
-        UNRESTRICTED: :"`unrestricted`"
-        CURB: :"`curb`"
+        UNRESTRICTED: :unrestricted
+        CURB: :curb
 
         def self?.values: -> ::Array[NextbillionSDK::Models::MdmCreateDistanceMatrixParams::origins_approach]
       end
 
-      type route_type = :"`fastest`" | :"`shortest`"
+      type route_type = :fastest | :shortest
 
       module RouteType
         extend NextbillionSDK::Internal::Type::Enum
 
-        FASTEST: :"`fastest`"
-        SHORTEST: :"`shortest`"
+        FASTEST: :fastest
+        SHORTEST: :shortest
 
         def self?.values: -> ::Array[NextbillionSDK::Models::MdmCreateDistanceMatrixParams::route_type]
       end
