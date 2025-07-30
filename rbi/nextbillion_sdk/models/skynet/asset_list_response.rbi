@@ -37,7 +37,7 @@ module NextbillionSDK
         attr_writer :message
 
         # A string indicating the state of the response. On successful responses, the
-        # value will be `Ok`. Indicative error messages are returned for different errors.
+        # value will be Ok. Indicative error messages are returned for different errors.
         # See the [API Error Codes](#api-error-codes) section below for more information.
         sig { returns(T.nilable(String)) }
         attr_reader :status
@@ -60,7 +60,7 @@ module NextbillionSDK
           # successful, this field is not present in the response.
           message: nil,
           # A string indicating the state of the response. On successful responses, the
-          # value will be `Ok`. Indicative error messages are returned for different errors.
+          # value will be Ok. Indicative error messages are returned for different errors.
           # See the [API Error Codes](#api-error-codes) section below for more information.
           status: nil
         )
@@ -87,7 +87,7 @@ module NextbillionSDK
               )
             end
 
-          # An array of objects, with each object representing one `asset`.
+          # An array of objects, with each object representing one asset.
           sig do
             returns(T.nilable(T::Array[NextbillionSDK::Skynet::AssetDetails]))
           end
@@ -116,7 +116,7 @@ module NextbillionSDK
             ).returns(T.attached_class)
           end
           def self.new(
-            # An array of objects, with each object representing one `asset`.
+            # An array of objects, with each object representing one asset.
             list: nil,
             # An object with pagination details of the search results. Use this object to
             # implement pagination in your application.

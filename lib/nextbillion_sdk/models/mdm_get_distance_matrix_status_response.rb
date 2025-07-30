@@ -52,9 +52,9 @@ module NextbillionSDK
       module Code
         extend NextbillionSDK::Internal::Type::Enum
 
-        OK = :"`Ok`"
-        PROCESSING = :"`Processing`"
-        FAILED = :"`Failed`"
+        OK = :Ok
+        PROCESSING = :Processing
+        FAILED = :Failed
 
         # @!method self.values
         #   @return [Array<Symbol>]

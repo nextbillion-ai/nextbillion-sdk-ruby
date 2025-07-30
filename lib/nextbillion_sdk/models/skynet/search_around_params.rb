@@ -29,12 +29,12 @@ module NextbillionSDK
         required :radius, Float
 
         # @!attribute filter
-        #   **`tags` parameter will be deprecated soon! Please use the
-        #   `include_any_of_attributes` or `include_all_of_attributes` parameters to match
+        #   **tags parameter will be deprecated soon! Please use the
+        #   include_any_of_attributes or include_all_of_attributes parameters to match
         #   assets based on their labels or markers.**
         #
         #   Use this parameter to filter the assets found inside the specified area by their
-        #   `tags`. Multiple `tags` can be separated using commas (`,`).
+        #   tags. Multiple tags can be separated using commas (,).
         #
         #   Please note the tags are case sensitive.
         #
@@ -43,24 +43,24 @@ module NextbillionSDK
 
         # @!attribute include_all_of_attributes
         #   Use this parameter to filter the assets found inside the specified area by their
-        #   `attributes`. Only the assets having all the `attributes` that are added to this
-        #   parameter, will be returned in the search results. Multiple `attributes` can be
-        #   separated using pipes (`|`).
+        #   attributes. Only the assets having all the attributes that are added to this
+        #   parameter, will be returned in the search results. Multiple attributes can be
+        #   separated using pipes (|).
         #
         #   Please note the attributes are case sensitive. Also, this parameter can not be
-        #   used in conjunction with `include_any_of_attributes` parameter.
+        #   used in conjunction with include_any_of_attributes parameter.
         #
         #   @return [String, nil]
         optional :include_all_of_attributes, String
 
         # @!attribute include_any_of_attributes
         #   Use this parameter to filter the assets found inside the specified area by their
-        #   `attributes`. Assets having at least one of the `attributes` added to this
-        #   parameter, will be returned in the search results. Multiple `attributes` can be
-        #   separated using pipes (`|`).
+        #   attributes. Assets having at least one of the attributes added to this
+        #   parameter, will be returned in the search results. Multiple attributes can be
+        #   separated using pipes (|).
         #
         #   Please note the attributes are case sensitive. Also, this parameter can not be
-        #   used in conjunction with `include_all_of_attributes` parameter.
+        #   used in conjunction with include_all_of_attributes parameter.
         #
         #   @return [String, nil]
         optional :include_any_of_attributes, String
@@ -73,7 +73,7 @@ module NextbillionSDK
         optional :max_search_limit, NextbillionSDK::Internal::Type::Boolean
 
         # @!attribute pn
-        #   Denotes page number. Use this along with the `ps` parameter to implement
+        #   Denotes page number. Use this along with the ps parameter to implement
         #   pagination for your searched results. This parameter does not have a maximum
         #   limit but would return an empty response in case a higher value is provided when
         #   the result-set itself is smaller.
@@ -82,8 +82,8 @@ module NextbillionSDK
         optional :pn, Integer
 
         # @!attribute ps
-        #   Denotes number of search results per page. Use this along with the `pn`
-        #   parameter to implement pagination for your searched results.
+        #   Denotes number of search results per page. Use this along with the pn parameter
+        #   to implement pagination for your searched results.
         #
         #   @return [Integer, nil]
         optional :ps, Integer
@@ -93,11 +93,10 @@ module NextbillionSDK
         #   values are:
         #
         #   - **distance** : Sorts the assets by driving distance to the given
-        #     `sort_destination` .
-        #   - **duration** : Sorts the assets by travel time to the given `sort_destination`
-        #     .
+        #     sort_destination .
+        #   - **duration** : Sorts the assets by travel time to the given sort_destination .
         #   - **straight_distance** : Sort the assets by straight-line distance to the given
-        #     `sort-destination` .
+        #     sort-destination .
         #
         #   @return [Symbol, NextbillionSDK::Models::Skynet::SearchAroundParams::SortBy, nil]
         optional :sort_by, enum: -> { NextbillionSDK::Skynet::SearchAroundParams::SortBy }
@@ -106,9 +105,9 @@ module NextbillionSDK
         #   Specifies the location coordinates of the point which acts as destination for
         #   sorting the assets in the search results. The service will sort each asset based
         #   on the driving distance or travel time to this destination, from its current
-        #   location. Use the `sort_by` parameter to configure the metric that should be
-        #   used for sorting the assets. Please note that `sort_destination` is required
-        #   when `sort_by` is provided.
+        #   location. Use the sort_by parameter to configure the metric that should be used
+        #   for sorting the assets. Please note that sort_destination is required when
+        #   sort_by is provided.
         #
         #   @return [String, nil]
         optional :sort_destination, String
@@ -130,8 +129,8 @@ module NextbillionSDK
         #
         #   @param radius [Float] Radius, in meters, of the circular area to be searched.
         #
-        #   @param filter [String] \*\*`tags` parameter will be deprecated soon! Please use the
-        #   `include_any_of_attri
+        #   @param filter [String] \*\*tags parameter will be deprecated soon! Please use the
+        #   include_any_of_attribut
         #
         #   @param include_all_of_attributes [String] Use this parameter to filter the assets found inside the specified area by their
         #
@@ -139,9 +138,9 @@ module NextbillionSDK
         #
         #   @param max_search_limit [Boolean] When true, the maximum limit is 20Km for around search API and 48000 Km2 for oth
         #
-        #   @param pn [Integer] Denotes page number. Use this along with the `ps` parameter to implement paginat
+        #   @param pn [Integer] Denotes page number. Use this along with the ps parameter to implement paginatio
         #
-        #   @param ps [Integer] Denotes number of search results per page. Use this along with the `pn` paramete
+        #   @param ps [Integer] Denotes number of search results per page. Use this along with the pn parameter
         #
         #   @param sort_by [Symbol, NextbillionSDK::Models::Skynet::SearchAroundParams::SortBy] Specify the metric to sort the assets returned in the search result. The valid v
         #
@@ -155,17 +154,16 @@ module NextbillionSDK
         # values are:
         #
         # - **distance** : Sorts the assets by driving distance to the given
-        #   `sort_destination` .
-        # - **duration** : Sorts the assets by travel time to the given `sort_destination`
-        #   .
+        #   sort_destination .
+        # - **duration** : Sorts the assets by travel time to the given sort_destination .
         # - **straight_distance** : Sort the assets by straight-line distance to the given
-        #   `sort-destination` .
+        #   sort-destination .
         module SortBy
           extend NextbillionSDK::Internal::Type::Enum
 
-          DISTANCE = :"`distance`"
-          DURATION = :"`duration`"
-          STRAIGHT_DISTANCE = :"`straight_distance`"
+          DISTANCE = :distance
+          DURATION = :duration
+          STRAIGHT_DISTANCE = :straight_distance
 
           # @!method self.values
           #   @return [Array<Symbol>]
@@ -176,8 +174,8 @@ module NextbillionSDK
         module SortDrivingMode
           extend NextbillionSDK::Internal::Type::Enum
 
-          CAR = :"`car`"
-          TRUCK = :"`truck`"
+          CAR = :car
+          TRUCK = :truck
 
           # @!method self.values
           #   @return [Array<Symbol>]

@@ -102,13 +102,13 @@ module NextbillionSDK
         request_options: NextbillionSDK::RequestOptions
       }
 
-      type approaches = :"`unrestricted`" | :"`curb`"
+      type approaches = :unrestricted | :curb
 
       module Approaches
         extend NextbillionSDK::Internal::Type::Enum
 
-        UNRESTRICTED: :"`unrestricted`"
-        CURB: :"`curb`"
+        UNRESTRICTED: :unrestricted
+        CURB: :curb
 
         def self?.values: -> ::Array[NextbillionSDK::Models::SnapToRoadSnapParams::approaches]
       end
@@ -126,45 +126,45 @@ module NextbillionSDK
         def self?.values: -> ::Array[NextbillionSDK::Models::SnapToRoadSnapParams::avoid]
       end
 
-      type geometry = :"`polyline`" | :"`polyline6`" | :"`geojson`"
+      type geometry = :polyline | :polyline6 | :geojson
 
       module Geometry
         extend NextbillionSDK::Internal::Type::Enum
 
-        POLYLINE: :"`polyline`"
-        POLYLINE6: :"`polyline6`"
-        GEOJSON: :"`geojson`"
+        POLYLINE: :polyline
+        POLYLINE6: :polyline6
+        GEOJSON: :geojson
 
         def self?.values: -> ::Array[NextbillionSDK::Models::SnapToRoadSnapParams::geometry]
       end
 
-      type mode = :"`car`" | :"`truck`"
+      type mode = :car | :truck
 
       module Mode
         extend NextbillionSDK::Internal::Type::Enum
 
-        CAR: :"`car`"
-        TRUCK: :"`truck`"
+        CAR: :car
+        TRUCK: :truck
 
         def self?.values: -> ::Array[NextbillionSDK::Models::SnapToRoadSnapParams::mode]
       end
 
-      type option = :"`flexible`"
+      type option = :flexible
 
       module Option
         extend NextbillionSDK::Internal::Type::Enum
 
-        FLEXIBLE: :"`flexible`"
+        FLEXIBLE: :flexible
 
         def self?.values: -> ::Array[NextbillionSDK::Models::SnapToRoadSnapParams::option]
       end
 
-      type road_info = :"`max_speed`"
+      type road_info = :max_speed
 
       module RoadInfo
         extend NextbillionSDK::Internal::Type::Enum
 
-        MAX_SPEED: :"`max_speed`"
+        MAX_SPEED: :max_speed
 
         def self?.values: -> ::Array[NextbillionSDK::Models::SnapToRoadSnapParams::road_info]
       end

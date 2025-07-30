@@ -12,7 +12,7 @@ module NextbillionSDK
         end
 
       # A string indicating the state of the response. On successful responses, the
-      # value will be `Ok`. Indicative error messages/codes are returned in case of
+      # value will be Ok. Indicative error messages/codes are returned in case of
       # errors. See the [API Error Codes](#api-error-codes) section below for more
       # information.
       sig { returns(T.nilable(String)) }
@@ -55,7 +55,7 @@ module NextbillionSDK
       end
       def self.new(
         # A string indicating the state of the response. On successful responses, the
-        # value will be `Ok`. Indicative error messages/codes are returned in case of
+        # value will be Ok. Indicative error messages/codes are returned in case of
         # errors. See the [API Error Codes](#api-error-codes) section below for more
         # information.
         code: nil,

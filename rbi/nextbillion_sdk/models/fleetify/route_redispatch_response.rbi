@@ -129,8 +129,8 @@ module NextbillionSDK
           attr_writer :created_at
 
           # Returns the total route distance, in meters, for informative display in the
-          # driver app. It is the same as the value provided for `distance` field in the
-          # input request.
+          # driver app. It is the same as the value provided for distance field in the input
+          # request.
           sig { returns(T.nilable(Integer)) }
           attr_reader :distance
 
@@ -231,7 +231,7 @@ module NextbillionSDK
 
           # Returns the ID of the vehicle to which the route was dispatched. The vehicle ID
           # returned here is the same as the one used in the route optimization request for
-          # the given vehicle. An empty string is returned if the `ro_request_id` was not
+          # the given vehicle. An empty string is returned if the ro_request_id was not
           # provided in the input.
           sig { returns(T.nilable(String)) }
           attr_reader :vehicle_id
@@ -273,8 +273,8 @@ module NextbillionSDK
             # request was created.
             created_at: nil,
             # Returns the total route distance, in meters, for informative display in the
-            # driver app. It is the same as the value provided for `distance` field in the
-            # input request.
+            # driver app. It is the same as the value provided for distance field in the input
+            # request.
             distance: nil,
             # Returns the details of the document that was specified in the input for
             # collecting the proof-of-completion for all steps in the dispatched routes. Each
@@ -304,7 +304,7 @@ module NextbillionSDK
             updated_at: nil,
             # Returns the ID of the vehicle to which the route was dispatched. The vehicle ID
             # returned here is the same as the one used in the route optimization request for
-            # the given vehicle. An empty string is returned if the `ro_request_id` was not
+            # the given vehicle. An empty string is returned if the ro_request_id was not
             # provided in the input.
             vehicle_id: nil
           )
@@ -405,12 +405,12 @@ module NextbillionSDK
 
               SCHEDULED =
                 T.let(
-                  :"`scheduled`",
+                  :scheduled,
                   NextbillionSDK::Models::Fleetify::RouteRedispatchResponse::Data::Completion::Status::TaggedSymbol
                 )
               COMPLETED =
                 T.let(
-                  :"`completed`",
+                  :completed,
                   NextbillionSDK::Models::Fleetify::RouteRedispatchResponse::Data::Completion::Status::TaggedSymbol
                 )
 
@@ -549,15 +549,15 @@ module NextbillionSDK
 
             # Returns the details of the document that was used for collecting the proof of
             # completion for the step. In case no document template ID was provided for the
-            # given step, then a `null` value is returned. Each object represents a new field
-            # in the document.
+            # given step, then a null value is returned. Each object represents a new field in
+            # the document.
             sig { returns(T.nilable(T::Array[T.anything])) }
             attr_reader :document_snapshot
 
             sig { params(document_snapshot: T::Array[T.anything]).void }
             attr_writer :document_snapshot
 
-            # Returns the duration for `layover` or `break` type steps.
+            # Returns the duration for layover or break type steps.
             sig { returns(T.nilable(Integer)) }
             attr_reader :duration
 
@@ -599,10 +599,9 @@ module NextbillionSDK
             sig { params(short_id: String).void }
             attr_writer :short_id
 
-            # Returns the step type. It can belong to one of the following: `start`, `job` ,
-            # `pickup`, `delivery`, `break`, `layover` , and `end`. For any given step, it
-            # would be the same as that specified in the input request while configuring the
-            # step details.
+            # Returns the step type. It can belong to one of the following: start, job ,
+            # pickup, delivery, break, layover , and end. For any given step, it would be the
+            # same as that specified in the input request while configuring the step details.
             sig { returns(T.nilable(String)) }
             attr_reader :type
 
@@ -655,10 +654,10 @@ module NextbillionSDK
               created_at: nil,
               # Returns the details of the document that was used for collecting the proof of
               # completion for the step. In case no document template ID was provided for the
-              # given step, then a `null` value is returned. Each object represents a new field
-              # in the document.
+              # given step, then a null value is returned. Each object represents a new field in
+              # the document.
               document_snapshot: nil,
-              # Returns the duration for `layover` or `break` type steps.
+              # Returns the duration for layover or break type steps.
               duration: nil,
               # Returns the location coordinates where the step is executed.
               location: nil,
@@ -669,10 +668,9 @@ module NextbillionSDK
               # Returns a unique short ID of the step for easier referencing and displaying
               # purposes.
               short_id: nil,
-              # Returns the step type. It can belong to one of the following: `start`, `job` ,
-              # `pickup`, `delivery`, `break`, `layover` , and `end`. For any given step, it
-              # would be the same as that specified in the input request while configuring the
-              # step details.
+              # Returns the step type. It can belong to one of the following: start, job ,
+              # pickup, delivery, break, layover , and end. For any given step, it would be the
+              # same as that specified in the input request while configuring the step details.
               type: nil,
               # Returns the UNIX timestamp, in seconds precision, at which this step was last
               # updated.
@@ -744,7 +742,7 @@ module NextbillionSDK
                 end
 
               # Returns the customer name associated with the step. It can configured in the
-              # input request using the `metadata` attribute of the step.
+              # input request using the metadata attribute of the step.
               sig { returns(T.nilable(String)) }
               attr_reader :customer_name
 
@@ -752,7 +750,7 @@ module NextbillionSDK
               attr_writer :customer_name
 
               # Returns the customer's phone number associated with the step. It can configured
-              # in the input request using the `metadata` attribute of the step.
+              # in the input request using the metadata attribute of the step.
               sig { returns(T.nilable(String)) }
               attr_reader :customer_phone_number
 
@@ -780,10 +778,10 @@ module NextbillionSDK
               end
               def self.new(
                 # Returns the customer name associated with the step. It can configured in the
-                # input request using the `metadata` attribute of the step.
+                # input request using the metadata attribute of the step.
                 customer_name: nil,
                 # Returns the customer's phone number associated with the step. It can configured
-                # in the input request using the `metadata` attribute of the step.
+                # in the input request using the metadata attribute of the step.
                 customer_phone_number: nil,
                 # Returns the custom instructions to carry out while performing the task. These
                 # instructions can be provided at the time of configuring the step details in the

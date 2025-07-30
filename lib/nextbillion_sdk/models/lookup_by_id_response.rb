@@ -52,7 +52,7 @@ module NextbillionSDK
 
         # @!attribute map_view
         #   The bounding box enclosing the geometric shape (area or line) that an individual
-        #   result covers. `place` typed results have no `mapView`.
+        #   result covers. place typed results have no mapView.
         #
         #   @return [NextbillionSDK::Models::MapView, nil]
         optional :map_view, -> { NextbillionSDK::MapView }, api_name: :mapView

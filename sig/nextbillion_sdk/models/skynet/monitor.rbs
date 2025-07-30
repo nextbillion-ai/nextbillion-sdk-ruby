@@ -201,21 +201,16 @@ module NextbillionSDK
           }
         end
 
-        type type_ =
-          :"`enter`"
-          | :"`exit`"
-          | :"`enter_and_exit`"
-          | :"`speeding`"
-          | :"`idle`"
+        type type_ = :enter | :exit | :enter_and_exit | :speeding | :idle
 
         module Type
           extend NextbillionSDK::Internal::Type::Enum
 
-          ENTER: :"`enter`"
-          EXIT: :"`exit`"
-          ENTER_AND_EXIT: :"`enter_and_exit`"
-          SPEEDING: :"`speeding`"
-          IDLE: :"`idle`"
+          ENTER: :enter
+          EXIT: :exit
+          ENTER_AND_EXIT: :enter_and_exit
+          SPEEDING: :speeding
+          IDLE: :idle
 
           def self?.values: -> ::Array[NextbillionSDK::Models::Skynet::SkynetMonitor::type_]
         end

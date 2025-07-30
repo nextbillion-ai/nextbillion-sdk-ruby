@@ -22,7 +22,7 @@ module NextbillionSDK
 
       # @!attribute status
       #   A string indicating the state of the response. On normal responses, the value
-      #   will be `Ok`. Indicative HTTP error codes are returned for different errors. See
+      #   will be Ok. Indicative HTTP error codes are returned for different errors. See
       #   the [API Errors Codes](#api-error-codes) section below for more information.
       #
       #   @return [String, nil]
@@ -79,16 +79,16 @@ module NextbillionSDK
         optional :geojson, -> { NextbillionSDK::Models::NavigationRetrieveRouteResponse::Route::Geojson }
 
         # @!attribute geometry
-        #   Encoded geometry of the returned route as per the selected format in `geometry`
-        #   and specified `overview` verbosity. Please note the `overview` will always be
-        #   `full` when `original_shape` parameter is used in the input request.
+        #   Encoded geometry of the returned route as per the selected format in geometry
+        #   and specified overview verbosity. Please note the overview will always be full
+        #   when original_shape parameter is used in the input request.
         #
         #   @return [String, nil]
         optional :geometry, String
 
         # @!attribute legs
-        #   An array of objects returning the details about each `leg` of the route.
-        #   `waypoints` split the route into legs.
+        #   An array of objects returning the details about each leg of the route. waypoints
+        #   split the route into legs.
         #
         #   @return [Array<NextbillionSDK::Models::NavigationRetrieveRouteResponse::Route::Leg>, nil]
         optional :legs,
@@ -140,9 +140,9 @@ module NextbillionSDK
         #
         #   @param geojson [NextbillionSDK::Models::NavigationRetrieveRouteResponse::Route::Geojson] The GeoJSON representation of the route.
         #
-        #   @param geometry [String] Encoded geometry of the returned route as per the selected format in `geometry`
+        #   @param geometry [String] Encoded geometry of the returned route as per the selected format in geometry an
         #
-        #   @param legs [Array<NextbillionSDK::Models::NavigationRetrieveRouteResponse::Route::Leg>] An array of objects returning the details about each `leg` of the route. `waypoi
+        #   @param legs [Array<NextbillionSDK::Models::NavigationRetrieveRouteResponse::Route::Leg>] An array of objects returning the details about each leg of the route. waypoints
         #
         #   @param predicted_duration [Float] The predicted duration of the route based on real-time traffic conditions.
         #
@@ -157,13 +157,13 @@ module NextbillionSDK
         # @see NextbillionSDK::Models::NavigationRetrieveRouteResponse::Route#end_location
         class EndLocation < NextbillionSDK::Internal::Type::BaseModel
           # @!attribute latitude
-          #   Latitude of the `end_location`.
+          #   Latitude of the end_location.
           #
           #   @return [Float, nil]
           optional :latitude, Float
 
           # @!attribute longitude
-          #   Longitude of the `end_location`.
+          #   Longitude of the end_location.
           #
           #   @return [Float, nil]
           optional :longitude, Float
@@ -171,9 +171,9 @@ module NextbillionSDK
           # @!method initialize(latitude: nil, longitude: nil)
           #   Location coordinates of the point where the route ends.
           #
-          #   @param latitude [Float] Latitude of the `end_location`.
+          #   @param latitude [Float] Latitude of the end_location.
           #
-          #   @param longitude [Float] Longitude of the `end_location`.
+          #   @param longitude [Float] Longitude of the end_location.
         end
 
         # @see NextbillionSDK::Models::NavigationRetrieveRouteResponse::Route#geojson
@@ -241,7 +241,7 @@ module NextbillionSDK
                    -> { NextbillionSDK::Models::NavigationRetrieveRouteResponse::Route::Leg::EndLocation }
 
           # @!attribute raw_duration
-          #   The raw estimated duration of the `leg` in seconds.
+          #   The raw estimated duration of the leg in seconds.
           #
           #   @return [Object, nil]
           optional :raw_duration, NextbillionSDK::Internal::Type::Unknown
@@ -267,7 +267,7 @@ module NextbillionSDK
           #
           #   @param end_location [NextbillionSDK::Models::NavigationRetrieveRouteResponse::Route::Leg::EndLocation] Location coordinates of the point where the leg ends.
           #
-          #   @param raw_duration [Object] The raw estimated duration of the `leg` in seconds.
+          #   @param raw_duration [Object] The raw estimated duration of the leg in seconds.
           #
           #   @param start_location [NextbillionSDK::Models::NavigationRetrieveRouteResponse::Route::Leg::StartLocation] Location coordinates of the point where the leg starts.
           #
@@ -302,13 +302,13 @@ module NextbillionSDK
           # @see NextbillionSDK::Models::NavigationRetrieveRouteResponse::Route::Leg#end_location
           class EndLocation < NextbillionSDK::Internal::Type::BaseModel
             # @!attribute latitude
-            #   Latitude of `end_location` of the `leg`.
+            #   Latitude of end_location of the leg.
             #
             #   @return [Float, nil]
             optional :latitude, Float
 
             # @!attribute longitude
-            #   Longitude of `end_location` of the `leg`.
+            #   Longitude of end_location of the leg.
             #
             #   @return [Float, nil]
             optional :longitude, Float
@@ -316,21 +316,21 @@ module NextbillionSDK
             # @!method initialize(latitude: nil, longitude: nil)
             #   Location coordinates of the point where the leg ends.
             #
-            #   @param latitude [Float] Latitude of `end_location` of the `leg`.
+            #   @param latitude [Float] Latitude of end_location of the leg.
             #
-            #   @param longitude [Float] Longitude of `end_location` of the `leg`.
+            #   @param longitude [Float] Longitude of end_location of the leg.
           end
 
           # @see NextbillionSDK::Models::NavigationRetrieveRouteResponse::Route::Leg#start_location
           class StartLocation < NextbillionSDK::Internal::Type::BaseModel
             # @!attribute latitude
-            #   Latitude of `start_location` of the `leg`.
+            #   Latitude of start_location of the leg.
             #
             #   @return [Float, nil]
             optional :latitude, Float
 
             # @!attribute longitude
-            #   Longitude of `start_location` of the `leg`.
+            #   Longitude of start_location of the leg.
             #
             #   @return [Float, nil]
             optional :longitude, Float
@@ -338,9 +338,9 @@ module NextbillionSDK
             # @!method initialize(latitude: nil, longitude: nil)
             #   Location coordinates of the point where the leg starts.
             #
-            #   @param latitude [Float] Latitude of `start_location` of the `leg`.
+            #   @param latitude [Float] Latitude of start_location of the leg.
             #
-            #   @param longitude [Float] Longitude of `start_location` of the `leg`.
+            #   @param longitude [Float] Longitude of start_location of the leg.
           end
 
           class Step < NextbillionSDK::Internal::Type::BaseModel
@@ -366,50 +366,50 @@ module NextbillionSDK
                      -> { NextbillionSDK::Models::NavigationRetrieveRouteResponse::Route::Leg::Step::Duration }
 
             # @!attribute end_location
-            #   Location coordinates of the point where the `step` ends.
+            #   Location coordinates of the point where the step ends.
             #
             #   @return [NextbillionSDK::Models::NavigationRetrieveRouteResponse::Route::Leg::Step::EndLocation, nil]
             optional :end_location,
                      -> { NextbillionSDK::Models::NavigationRetrieveRouteResponse::Route::Leg::Step::EndLocation }
 
             # @!attribute geojson
-            #   The GeoJSON representation of the `step`.
+            #   The GeoJSON representation of the step.
             #
             #   @return [NextbillionSDK::Models::NavigationRetrieveRouteResponse::Route::Leg::Step::Geojson, nil]
             optional :geojson,
                      -> { NextbillionSDK::Models::NavigationRetrieveRouteResponse::Route::Leg::Step::Geojson }
 
             # @!attribute geometry
-            #   Encoded geometry of the `step` in the selected format.
+            #   Encoded geometry of the step in the selected format.
             #
             #   @return [String, nil]
             optional :geometry, String
 
             # @!attribute intersections
             #   An array of objects representing intersections (or cross-way) that the route
-            #   passes by along the `step`. For every `step`, the very first `intersection`
-            #   corresponds to the location of the `maneuver`. All intersections until the next
-            #   `maneuver` are listed in this object.
+            #   passes by along the step. For every step, the very first intersection
+            #   corresponds to the location of the maneuver. All intersections until the next
+            #   maneuver are listed in this object.
             #
             #   @return [Array<NextbillionSDK::Models::NavigationRetrieveRouteResponse::Route::Leg::Step::Intersection>, nil]
             optional :intersections,
                      -> { NextbillionSDK::Internal::Type::ArrayOf[NextbillionSDK::Models::NavigationRetrieveRouteResponse::Route::Leg::Step::Intersection] }
 
             # @!attribute maneuver
-            #   An object with maneuver details for the `step`.
+            #   An object with maneuver details for the step.
             #
             #   @return [NextbillionSDK::Models::NavigationRetrieveRouteResponse::Route::Leg::Step::Maneuver, nil]
             optional :maneuver,
                      -> { NextbillionSDK::Models::NavigationRetrieveRouteResponse::Route::Leg::Step::Maneuver }
 
             # @!attribute name
-            #   The name of the `step`.
+            #   The name of the step.
             #
             #   @return [String, nil]
             optional :name, String
 
             # @!attribute reference
-            #   A reference for the `step`.
+            #   A reference for the step.
             #
             #   @return [String, nil]
             optional :reference, String
@@ -422,7 +422,7 @@ module NextbillionSDK
                      -> { NextbillionSDK::Models::NavigationRetrieveRouteResponse::Route::Leg::Step::RoadShieldType }
 
             # @!attribute start_location
-            #   Location coordinates of the point where the `step` starts.
+            #   Location coordinates of the point where the step starts.
             #
             #   @return [NextbillionSDK::Models::NavigationRetrieveRouteResponse::Route::Leg::Step::StartLocation, nil]
             optional :start_location,
@@ -439,23 +439,23 @@ module NextbillionSDK
             #
             #   @param duration [NextbillionSDK::Models::NavigationRetrieveRouteResponse::Route::Leg::Step::Duration] An object containing step duration value, in seconds.
             #
-            #   @param end_location [NextbillionSDK::Models::NavigationRetrieveRouteResponse::Route::Leg::Step::EndLocation] Location coordinates of the point where the `step` ends.
+            #   @param end_location [NextbillionSDK::Models::NavigationRetrieveRouteResponse::Route::Leg::Step::EndLocation] Location coordinates of the point where the step ends.
             #
-            #   @param geojson [NextbillionSDK::Models::NavigationRetrieveRouteResponse::Route::Leg::Step::Geojson] The GeoJSON representation of the `step`.
+            #   @param geojson [NextbillionSDK::Models::NavigationRetrieveRouteResponse::Route::Leg::Step::Geojson] The GeoJSON representation of the step.
             #
-            #   @param geometry [String] Encoded geometry of the `step` in the selected format.
+            #   @param geometry [String] Encoded geometry of the step in the selected format.
             #
             #   @param intersections [Array<NextbillionSDK::Models::NavigationRetrieveRouteResponse::Route::Leg::Step::Intersection>] An array of objects representing intersections (or cross-way) that the route pas
             #
-            #   @param maneuver [NextbillionSDK::Models::NavigationRetrieveRouteResponse::Route::Leg::Step::Maneuver] An object with maneuver details for the `step`.
+            #   @param maneuver [NextbillionSDK::Models::NavigationRetrieveRouteResponse::Route::Leg::Step::Maneuver] An object with maneuver details for the step.
             #
-            #   @param name [String] The name of the `step`.
+            #   @param name [String] The name of the step.
             #
-            #   @param reference [String] A reference for the `step`.
+            #   @param reference [String] A reference for the step.
             #
             #   @param road_shield_type [NextbillionSDK::Models::NavigationRetrieveRouteResponse::Route::Leg::Step::RoadShieldType] An object containing road shield information.
             #
-            #   @param start_location [NextbillionSDK::Models::NavigationRetrieveRouteResponse::Route::Leg::Step::StartLocation] Location coordinates of the point where the `step` starts.
+            #   @param start_location [NextbillionSDK::Models::NavigationRetrieveRouteResponse::Route::Leg::Step::StartLocation] Location coordinates of the point where the step starts.
 
             # @see NextbillionSDK::Models::NavigationRetrieveRouteResponse::Route::Leg::Step#distance
             class Distance < NextbillionSDK::Internal::Type::BaseModel
@@ -486,23 +486,23 @@ module NextbillionSDK
             # @see NextbillionSDK::Models::NavigationRetrieveRouteResponse::Route::Leg::Step#end_location
             class EndLocation < NextbillionSDK::Internal::Type::BaseModel
               # @!attribute latitude
-              #   Latitude of the `end_location` of the `step`.
+              #   Latitude of the end_location of the step.
               #
               #   @return [Float, nil]
               optional :latitude, Float
 
               # @!attribute longitude
-              #   Longitude of the `end_location` of the `step`.
+              #   Longitude of the end_location of the step.
               #
               #   @return [Float, nil]
               optional :longitude, Float
 
               # @!method initialize(latitude: nil, longitude: nil)
-              #   Location coordinates of the point where the `step` ends.
+              #   Location coordinates of the point where the step ends.
               #
-              #   @param latitude [Float] Latitude of the `end_location` of the `step`.
+              #   @param latitude [Float] Latitude of the end_location of the step.
               #
-              #   @param longitude [Float] Longitude of the `end_location` of the `step`.
+              #   @param longitude [Float] Longitude of the end_location of the step.
             end
 
             # @see NextbillionSDK::Models::NavigationRetrieveRouteResponse::Route::Leg::Step#geojson
@@ -518,7 +518,7 @@ module NextbillionSDK
               optional :type, String
 
               # @!method initialize(geometry: nil, type: nil)
-              #   The GeoJSON representation of the `step`.
+              #   The GeoJSON representation of the step.
               #
               #   @param geometry [String]
               #   @param type [String]
@@ -527,7 +527,7 @@ module NextbillionSDK
             class Intersection < NextbillionSDK::Internal::Type::BaseModel
               # @!attribute bearings
               #   A list of bearing values (e.g. [0,90,180,270]) that are available at the
-              #   intersection. The `bearings` describe all available roads at the intersection.
+              #   intersection. The bearings describe all available roads at the intersection.
               #
               #   @return [Array<Integer>, nil]
               optional :bearings, NextbillionSDK::Internal::Type::ArrayOf[Integer]
@@ -541,8 +541,8 @@ module NextbillionSDK
               optional :classes, NextbillionSDK::Internal::Type::ArrayOf[String]
 
               # @!attribute entry
-              #   A value of `true` indicates that the respective road could be entered on a valid
-              #   route. `false` indicates that the turn onto the respective road would violate a
+              #   A value of true indicates that the respective road could be entered on a valid
+              #   route. false indicates that the turn onto the respective road would violate a
               #   restriction. Each entry value corresponds to the bearing angle at the same
               #   index.
               #
@@ -551,21 +551,21 @@ module NextbillionSDK
                        NextbillionSDK::Internal::Type::ArrayOf[NextbillionSDK::Internal::Type::Boolean]
 
               # @!attribute intersection_in
-              #   The number of incoming roads or paths at the `intersection`.
+              #   The number of incoming roads or paths at the intersection.
               #
               #   @return [Integer, nil]
               optional :intersection_in, Integer
 
               # @!attribute intersection_out
-              #   The number of outgoing roads or paths from the `intersection`.
+              #   The number of outgoing roads or paths from the intersection.
               #
               #   @return [Integer, nil]
               optional :intersection_out, Integer
 
               # @!attribute lanes
               #   An array of lane objects representing the lanes available at the intersection.
-              #   If no lane information is available for an `intersection`, the `lanes` property
-              #   will not be present.
+              #   If no lane information is available for an intersection, the lanes property will
+              #   not be present.
               #
               #   @return [Array<NextbillionSDK::Models::NavigationRetrieveRouteResponse::Route::Leg::Step::Intersection::Lane>, nil]
               optional :lanes,
@@ -587,11 +587,11 @@ module NextbillionSDK
               #
               #   @param classes [Array<String>] An array of strings representing the classes or types of roads or paths at the i
               #
-              #   @param entry [Array<Boolean>] A value of `true` indicates that the respective road could be entered on a valid
+              #   @param entry [Array<Boolean>] A value of true indicates that the respective road could be entered on a valid r
               #
-              #   @param intersection_in [Integer] The number of incoming roads or paths at the `intersection`.
+              #   @param intersection_in [Integer] The number of incoming roads or paths at the intersection.
               #
-              #   @param intersection_out [Integer] The number of outgoing roads or paths from the `intersection`.
+              #   @param intersection_out [Integer] The number of outgoing roads or paths from the intersection.
               #
               #   @param lanes [Array<NextbillionSDK::Models::NavigationRetrieveRouteResponse::Route::Leg::Step::Intersection::Lane>] An array of lane objects representing the lanes available at the intersection. I
               #
@@ -628,19 +628,19 @@ module NextbillionSDK
               # @see NextbillionSDK::Models::NavigationRetrieveRouteResponse::Route::Leg::Step::Intersection#location
               class Location < NextbillionSDK::Internal::Type::BaseModel
                 # @!attribute latitude
-                #   The latitude coordinate of the `intersection`.
+                #   The latitude coordinate of the intersection.
                 #
                 #   @return [Float, nil]
                 optional :latitude, Float
 
                 # @!attribute longitude
-                #   The longitude coordinate of the `intersection`.
+                #   The longitude coordinate of the intersection.
                 #
                 #   @return [Float, nil]
                 optional :longitude, Float
 
                 # @!attribute name
-                #   The name or description of the `intersection`.
+                #   The name or description of the intersection.
                 #
                 #   @return [String, nil]
                 optional :name, String
@@ -648,11 +648,11 @@ module NextbillionSDK
                 # @!method initialize(latitude: nil, longitude: nil, name: nil)
                 #   A [longitude, latitude] pair describing the location of the intersection.
                 #
-                #   @param latitude [Float] The latitude coordinate of the `intersection`.
+                #   @param latitude [Float] The latitude coordinate of the intersection.
                 #
-                #   @param longitude [Float] The longitude coordinate of the `intersection`.
+                #   @param longitude [Float] The longitude coordinate of the intersection.
                 #
-                #   @param name [String] The name or description of the `intersection`.
+                #   @param name [String] The name or description of the intersection.
               end
             end
 
@@ -660,20 +660,20 @@ module NextbillionSDK
             class Maneuver < NextbillionSDK::Internal::Type::BaseModel
               # @!attribute bearing_after
               #   The clockwise angle from true north to the direction of travel immediately after
-              #   the `maneuver`. Range of values is between 0-359.
+              #   the maneuver. Range of values is between 0-359.
               #
               #   @return [Float, nil]
               optional :bearing_after, Float
 
               # @!attribute bearing_before
               #   The clockwise angle from true north to the direction of travel immediately
-              #   before the `maneuver`. Range of values is between 0-359.
+              #   before the maneuver. Range of values is between 0-359.
               #
               #   @return [Float, nil]
               optional :bearing_before, Float
 
               # @!attribute coordinate
-              #   A coordinate pair describing the location of the `maneuver`.
+              #   A coordinate pair describing the location of the maneuver.
               #
               #   @return [NextbillionSDK::Models::NavigationRetrieveRouteResponse::Route::Leg::Step::Maneuver::Coordinate, nil]
               optional :coordinate,
@@ -688,7 +688,7 @@ module NextbillionSDK
               optional :instruction, String
 
               # @!attribute maneuver_type
-              #   A string indicating the type of `maneuver`.
+              #   A string indicating the type of maneuver.
               #
               #   @return [String, nil]
               optional :maneuver_type, String
@@ -709,10 +709,10 @@ module NextbillionSDK
               optional :roundabout_count, Integer
 
               # @!attribute voice_instruction
-              #   An array of voice instruction objects associated with the `maneuver`. Each
-              #   object provides additional details about the voice instruction, including the
-              #   distance along the geometry where the instruction applies, the instruction text,
-              #   and the unit of measurement.
+              #   An array of voice instruction objects associated with the maneuver. Each object
+              #   provides additional details about the voice instruction, including the distance
+              #   along the geometry where the instruction applies, the instruction text, and the
+              #   unit of measurement.
               #
               #   @return [Array<NextbillionSDK::Models::NavigationRetrieveRouteResponse::Route::Leg::Step::Maneuver::VoiceInstruction>, nil]
               optional :voice_instruction,
@@ -723,34 +723,34 @@ module NextbillionSDK
               #   {NextbillionSDK::Models::NavigationRetrieveRouteResponse::Route::Leg::Step::Maneuver}
               #   for more details.
               #
-              #   An object with maneuver details for the `step`.
+              #   An object with maneuver details for the step.
               #
               #   @param bearing_after [Float] The clockwise angle from true north to the direction of travel immediately after
               #
               #   @param bearing_before [Float] The clockwise angle from true north to the direction of travel immediately befor
               #
-              #   @param coordinate [NextbillionSDK::Models::NavigationRetrieveRouteResponse::Route::Leg::Step::Maneuver::Coordinate] A coordinate pair describing the location of the `maneuver`.
+              #   @param coordinate [NextbillionSDK::Models::NavigationRetrieveRouteResponse::Route::Leg::Step::Maneuver::Coordinate] A coordinate pair describing the location of the maneuver.
               #
               #   @param instruction [String] A text instruction describing the maneuver to be performed. It provides guidance
               #
-              #   @param maneuver_type [String] A string indicating the type of `maneuver`.
+              #   @param maneuver_type [String] A string indicating the type of maneuver.
               #
               #   @param muted [Boolean] A boolean value indicating whether the voice instruction for the maneuver should
               #
               #   @param roundabout_count [Integer] The number of roundabouts encountered so far during the route. This parameter is
               #
-              #   @param voice_instruction [Array<NextbillionSDK::Models::NavigationRetrieveRouteResponse::Route::Leg::Step::Maneuver::VoiceInstruction>] An array of voice instruction objects associated with the `maneuver`. Each objec
+              #   @param voice_instruction [Array<NextbillionSDK::Models::NavigationRetrieveRouteResponse::Route::Leg::Step::Maneuver::VoiceInstruction>] An array of voice instruction objects associated with the maneuver. Each object
 
               # @see NextbillionSDK::Models::NavigationRetrieveRouteResponse::Route::Leg::Step::Maneuver#coordinate
               class Coordinate < NextbillionSDK::Internal::Type::BaseModel
                 # @!attribute latitude
-                #   The latitude coordinate of the `maneuver`.
+                #   The latitude coordinate of the maneuver.
                 #
                 #   @return [Float, nil]
                 optional :latitude, Float
 
                 # @!attribute longitude
-                #   The longitude coordinate of the `maneuver`.
+                #   The longitude coordinate of the maneuver.
                 #
                 #   @return [Float, nil]
                 optional :longitude, Float
@@ -762,11 +762,11 @@ module NextbillionSDK
                 optional :name, String
 
                 # @!method initialize(latitude: nil, longitude: nil, name: nil)
-                #   A coordinate pair describing the location of the `maneuver`.
+                #   A coordinate pair describing the location of the maneuver.
                 #
-                #   @param latitude [Float] The latitude coordinate of the `maneuver`.
+                #   @param latitude [Float] The latitude coordinate of the maneuver.
                 #
-                #   @param longitude [Float] The longitude coordinate of the `maneuver`.
+                #   @param longitude [Float] The longitude coordinate of the maneuver.
                 #
                 #   @param name [String] The name or description of the maneuver location.
               end
@@ -778,13 +778,13 @@ module NextbillionSDK
                 optional :distance_along_geometry, Integer
 
                 # @!attribute instruction
-                #   The guidance instructions for the upcoming `maneuver`
+                #   The guidance instructions for the upcoming maneuver
                 #
                 #   @return [String, nil]
                 optional :instruction, String
 
                 # @!attribute unit
-                #   Unit of the `distance_along_geometry` metric
+                #   Unit of the distance_along_geometry metric
                 #
                 #   @return [String, nil]
                 optional :unit, String
@@ -792,9 +792,9 @@ module NextbillionSDK
                 # @!method initialize(distance_along_geometry: nil, instruction: nil, unit: nil)
                 #   @param distance_along_geometry [Integer]
                 #
-                #   @param instruction [String] The guidance instructions for the upcoming `maneuver`
+                #   @param instruction [String] The guidance instructions for the upcoming maneuver
                 #
-                #   @param unit [String] Unit of the `distance_along_geometry` metric
+                #   @param unit [String] Unit of the distance_along_geometry metric
               end
             end
 
@@ -828,23 +828,23 @@ module NextbillionSDK
             # @see NextbillionSDK::Models::NavigationRetrieveRouteResponse::Route::Leg::Step#start_location
             class StartLocation < NextbillionSDK::Internal::Type::BaseModel
               # @!attribute latitude
-              #   Latitude of `start_location` of the `step`.
+              #   Latitude of start_location of the step.
               #
               #   @return [Float, nil]
               optional :latitude, Float
 
               # @!attribute longitude
-              #   Longitude of `start_location` of the `step`.
+              #   Longitude of start_location of the step.
               #
               #   @return [Float, nil]
               optional :longitude, Float
 
               # @!method initialize(latitude: nil, longitude: nil)
-              #   Location coordinates of the point where the `step` starts.
+              #   Location coordinates of the point where the step starts.
               #
-              #   @param latitude [Float] Latitude of `start_location` of the `step`.
+              #   @param latitude [Float] Latitude of start_location of the step.
               #
-              #   @param longitude [Float] Longitude of `start_location` of the `step`.
+              #   @param longitude [Float] Longitude of start_location of the step.
             end
           end
         end
@@ -852,13 +852,13 @@ module NextbillionSDK
         # @see NextbillionSDK::Models::NavigationRetrieveRouteResponse::Route#start_location
         class StartLocation < NextbillionSDK::Internal::Type::BaseModel
           # @!attribute latitude
-          #   Latitude of the`start_location`.
+          #   Latitude of thestart_location.
           #
           #   @return [Float, nil]
           optional :latitude, Float
 
           # @!attribute longitude
-          #   Longitude of the `start_location`.
+          #   Longitude of the start_location.
           #
           #   @return [Float, nil]
           optional :longitude, Float
@@ -866,9 +866,9 @@ module NextbillionSDK
           # @!method initialize(latitude: nil, longitude: nil)
           #   Location coordinates of the point where the route starts.
           #
-          #   @param latitude [Float] Latitude of the`start_location`.
+          #   @param latitude [Float] Latitude of thestart_location.
           #
-          #   @param longitude [Float] Longitude of the `start_location`.
+          #   @param longitude [Float] Longitude of the start_location.
         end
       end
     end

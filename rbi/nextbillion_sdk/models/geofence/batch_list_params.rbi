@@ -15,7 +15,7 @@ module NextbillionSDK
             )
           end
 
-        # Comma(`,`) separated list of IDs of the geofences to be searched.
+        # Comma(,) separated list of IDs of the geofences to be searched.
         sig { returns(String) }
         attr_accessor :ids
 
@@ -32,7 +32,7 @@ module NextbillionSDK
           ).returns(T.attached_class)
         end
         def self.new(
-          # Comma(`,`) separated list of IDs of the geofences to be searched.
+          # Comma(,) separated list of IDs of the geofences to be searched.
           ids:,
           # A key is a unique identifier that is required to authenticate a request to the
           # API.

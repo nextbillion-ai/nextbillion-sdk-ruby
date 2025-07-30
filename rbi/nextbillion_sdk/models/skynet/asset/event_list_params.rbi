@@ -39,26 +39,25 @@ module NextbillionSDK
           end
           attr_writer :cluster
 
-          # Time before which the events triggered by the `asset` need to be retrieved.
+          # Time before which the events triggered by the asset need to be retrieved.
           sig { returns(T.nilable(Integer)) }
           attr_reader :end_time
 
           sig { params(end_time: Integer).void }
           attr_writer :end_time
 
-          # Filter the events by `monitor_id`. When provided, only the events triggered by
-          # the `monitor` will be returned in response.
+          # Filter the events by monitor_id. When provided, only the events triggered by the
+          # monitor will be returned in response.
           #
-          # Please note that if the `attributes` of the asset identified by `id` and those
-          # of the `monitor` do not match, then no events might be returned for this
-          # `monitor_id`.
+          # Please note that if the attributes of the asset identified by id and those of
+          # the monitor do not match, then no events might be returned for this monitor_id.
           sig { returns(T.nilable(String)) }
           attr_reader :monitor_id
 
           sig { params(monitor_id: String).void }
           attr_writer :monitor_id
 
-          # Denotes page number. Use this along with the `ps` parameter to implement
+          # Denotes page number. Use this along with the ps parameter to implement
           # pagination for your searched results. This parameter does not have a maximum
           # limit but would return an empty response in case a higher value is provided when
           # the result-set itself is smaller.
@@ -68,15 +67,15 @@ module NextbillionSDK
           sig { params(pn: Integer).void }
           attr_writer :pn
 
-          # Denotes number of search results per page. Use this along with the `pn`
-          # parameter to implement pagination for your searched results.
+          # Denotes number of search results per page. Use this along with the pn parameter
+          # to implement pagination for your searched results.
           sig { returns(T.nilable(Integer)) }
           attr_reader :ps
 
           sig { params(ps: Integer).void }
           attr_writer :ps
 
-          # Time after which the events triggered by the `asset` need to be retrieved.
+          # Time after which the events triggered by the asset need to be retrieved.
           sig { returns(T.nilable(Integer)) }
           attr_reader :start_time
 
@@ -102,24 +101,23 @@ module NextbillionSDK
             key:,
             # the cluster of the region you want to use
             cluster: nil,
-            # Time before which the events triggered by the `asset` need to be retrieved.
+            # Time before which the events triggered by the asset need to be retrieved.
             end_time: nil,
-            # Filter the events by `monitor_id`. When provided, only the events triggered by
-            # the `monitor` will be returned in response.
+            # Filter the events by monitor_id. When provided, only the events triggered by the
+            # monitor will be returned in response.
             #
-            # Please note that if the `attributes` of the asset identified by `id` and those
-            # of the `monitor` do not match, then no events might be returned for this
-            # `monitor_id`.
+            # Please note that if the attributes of the asset identified by id and those of
+            # the monitor do not match, then no events might be returned for this monitor_id.
             monitor_id: nil,
-            # Denotes page number. Use this along with the `ps` parameter to implement
+            # Denotes page number. Use this along with the ps parameter to implement
             # pagination for your searched results. This parameter does not have a maximum
             # limit but would return an empty response in case a higher value is provided when
             # the result-set itself is smaller.
             pn: nil,
-            # Denotes number of search results per page. Use this along with the `pn`
-            # parameter to implement pagination for your searched results.
+            # Denotes number of search results per page. Use this along with the pn parameter
+            # to implement pagination for your searched results.
             ps: nil,
-            # Time after which the events triggered by the `asset` need to be retrieved.
+            # Time after which the events triggered by the asset need to be retrieved.
             start_time: nil,
             request_options: {}
           )

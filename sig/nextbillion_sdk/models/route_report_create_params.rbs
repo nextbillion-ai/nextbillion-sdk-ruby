@@ -32,13 +32,13 @@ module NextbillionSDK
         request_options: NextbillionSDK::RequestOptions
       }
 
-      type original_shape_type = :"`polyline`" | :"`polyline6`"
+      type original_shape_type = :polyline | :polyline6
 
       module OriginalShapeType
         extend NextbillionSDK::Internal::Type::Enum
 
-        POLYLINE: :"`polyline`"
-        POLYLINE6: :"`polyline6`"
+        POLYLINE: :polyline
+        POLYLINE6: :polyline6
 
         def self?.values: -> ::Array[NextbillionSDK::Models::RouteReportCreateParams::original_shape_type]
       end

@@ -42,24 +42,24 @@ module NextbillionSDK
         end
         attr_writer :cluster
 
-        # `attributes` can be used to store custom information about a trip in
-        # `key`:`value` format. Use `attributes` to add any useful information or context
-        # to your trips like the driver name, destination etc.
+        # attributes can be used to store custom information about a trip in key:value
+        # format. Use attributes to add any useful information or context to your trips
+        # like the driver name, destination etc.
         #
-        # Please note that the maximum number of `key`:`value` pairs that can be added to
-        # an `attributes` object is 100. Also, the overall size of `attributes` object
-        # should not exceed 65kb.
+        # Please note that the maximum number of key:value pairs that can be added to an
+        # attributes object is 100. Also, the overall size of attributes object should not
+        # exceed 65kb.
         sig { returns(T.nilable(T.anything)) }
         attr_reader :attributes
 
         sig { params(attributes: T.anything).void }
         attr_writer :attributes
 
-        # Set a unique ID for the new `trip`. If not provided, an ID will be automatically
-        # generated in UUID format. A valid `custom_id` can contain letters, numbers, “-”,
-        # & “\_” only.
+        # Set a unique ID for the new trip. If not provided, an ID will be automatically
+        # generated in UUID format. A valid custom_id can contain letters, numbers, “-”, &
+        # “\_” only.
         #
-        # Please note that the ID of a `trip` can not be changed once it is created.
+        # Please note that the ID of a trip can not be changed once it is created.
         sig { returns(T.nilable(String)) }
         attr_reader :custom_id
 
@@ -131,19 +131,19 @@ module NextbillionSDK
           asset_id:,
           # the cluster of the region you want to use
           cluster: nil,
-          # `attributes` can be used to store custom information about a trip in
-          # `key`:`value` format. Use `attributes` to add any useful information or context
-          # to your trips like the driver name, destination etc.
+          # attributes can be used to store custom information about a trip in key:value
+          # format. Use attributes to add any useful information or context to your trips
+          # like the driver name, destination etc.
           #
-          # Please note that the maximum number of `key`:`value` pairs that can be added to
-          # an `attributes` object is 100. Also, the overall size of `attributes` object
-          # should not exceed 65kb.
+          # Please note that the maximum number of key:value pairs that can be added to an
+          # attributes object is 100. Also, the overall size of attributes object should not
+          # exceed 65kb.
           attributes: nil,
-          # Set a unique ID for the new `trip`. If not provided, an ID will be automatically
-          # generated in UUID format. A valid `custom_id` can contain letters, numbers, “-”,
-          # & “\_” only.
+          # Set a unique ID for the new trip. If not provided, an ID will be automatically
+          # generated in UUID format. A valid custom_id can contain letters, numbers, “-”, &
+          # “\_” only.
           #
-          # Please note that the ID of a `trip` can not be changed once it is created.
+          # Please note that the ID of a trip can not be changed once it is created.
           custom_id: nil,
           # Add a custom description for the trip.
           description: nil,

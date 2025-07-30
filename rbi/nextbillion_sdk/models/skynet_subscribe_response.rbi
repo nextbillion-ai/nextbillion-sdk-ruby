@@ -18,7 +18,7 @@ module NextbillionSDK
       sig { params(id: String).void }
       attr_writer :id
 
-      # Returns the error message when `status: error`. Otherwise, response doesn't
+      # Returns the error message when status: error. Otherwise, response doesn't
       # contain this field.
       sig { returns(T.nilable(String)) }
       attr_reader :error
@@ -52,7 +52,7 @@ module NextbillionSDK
       def self.new(
         # Subscription ID as provided in the input action message.
         id: nil,
-        # Returns the error message when `status: error`. Otherwise, response doesn't
+        # Returns the error message when status: error. Otherwise, response doesn't
         # contain this field.
         error: nil,
         # Status of the action. It can have only two values - "success" or "error".

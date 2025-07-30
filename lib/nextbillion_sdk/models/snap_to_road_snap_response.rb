@@ -12,8 +12,8 @@ module NextbillionSDK
 
       # @!attribute geojson
       #   A GeoJSON object with details of the snapped path. This object is returned when
-      #   the `geometry` field is set to `geojson` in the input request, otherwise it is
-      #   not present in the response. The contents of this object follow the
+      #   the geometry field is set to geojson in the input request, otherwise it is not
+      #   present in the response. The contents of this object follow the
       #   [geoJSON standard](https://datatracker.ietf.org/doc/html/rfc7946).
       #
       #   @return [NextbillionSDK::Models::SnapToRoadSnapResponse::Geojson, nil]
@@ -21,7 +21,7 @@ module NextbillionSDK
 
       # @!attribute geometry
       #   An array of strings containing the encoded geometries of snapped paths in
-      #   `polyline` or `polyline6` format.
+      #   polyline or polyline6 format.
       #
       #   @return [Array<String>, nil]
       optional :geometry, NextbillionSDK::Internal::Type::ArrayOf[String]
@@ -42,8 +42,8 @@ module NextbillionSDK
       optional :road_info, -> { NextbillionSDK::Models::SnapToRoadSnapResponse::RoadInfo }
 
       # @!attribute snapped_points
-      #   An array of objects. Each object provides the details of a `path` coordinate
-      #   point snapped to the nearest road.
+      #   An array of objects. Each object provides the details of a path coordinate point
+      #   snapped to the nearest road.
       #
       #   @return [Array<NextbillionSDK::Models::SnapToRoadSnapResponse::SnappedPoint>, nil]
       optional :snapped_points,
@@ -52,7 +52,7 @@ module NextbillionSDK
 
       # @!attribute status
       #   A string indicating the state of the response. On normal responses, the value
-      #   will be `Ok`. Indicative HTTP error codes are returned for different errors. See
+      #   will be Ok. Indicative HTTP error codes are returned for different errors. See
       #   the [API Errors Codes](#api-error-codes) section below for more information.
       #
       #   @return [String, nil]
@@ -68,13 +68,13 @@ module NextbillionSDK
       #
       #   @param geojson [NextbillionSDK::Models::SnapToRoadSnapResponse::Geojson] A GeoJSON object with details of the snapped path. This object is returned when
       #
-      #   @param geometry [Array<String>] An array of strings containing the encoded geometries of snapped paths in `polyl
+      #   @param geometry [Array<String>] An array of strings containing the encoded geometries of snapped paths in polyli
       #
       #   @param msg [String] Displays the error message in case of a failed request or operation. Please note
       #
       #   @param road_info [NextbillionSDK::Models::SnapToRoadSnapResponse::RoadInfo] An object containing the maximum speed information for each road segment present
       #
-      #   @param snapped_points [Array<NextbillionSDK::Models::SnapToRoadSnapResponse::SnappedPoint>] An array of objects. Each object provides the details of a `path` coordinate poi
+      #   @param snapped_points [Array<NextbillionSDK::Models::SnapToRoadSnapResponse::SnappedPoint>] An array of objects. Each object provides the details of a path coordinate point
       #
       #   @param status [String] A string indicating the state of the response. On normal responses, the value wi
 
@@ -100,8 +100,8 @@ module NextbillionSDK
 
         # @!method initialize(geometry: nil, properties: nil, type: nil)
         #   A GeoJSON object with details of the snapped path. This object is returned when
-        #   the `geometry` field is set to `geojson` in the input request, otherwise it is
-        #   not present in the response. The contents of this object follow the
+        #   the geometry field is set to geojson in the input request, otherwise it is not
+        #   present in the response. The contents of this object follow the
         #   [geoJSON standard](https://datatracker.ietf.org/doc/html/rfc7946).
         #
         #   @param geometry [NextbillionSDK::Models::SnapToRoadSnapResponse::Geojson::Geometry] An object with details of the geoJSON geometry of the snapped path.
@@ -159,22 +159,22 @@ module NextbillionSDK
 
         class MaxSpeed < NextbillionSDK::Internal::Type::BaseModel
           # @!attribute length
-          #   `length` refers to a sequence of 'n' consecutive vertices in the route geometry
-          #   starting from the `offset`, forming a continuous section of route where the
-          #   maximum speed is the same and is indicated in `value`.
+          #   length refers to a sequence of 'n' consecutive vertices in the route geometry
+          #   starting from the offset, forming a continuous section of route where the
+          #   maximum speed is the same and is indicated in value.
           #
           #   @return [Integer, nil]
           optional :length, Integer
 
           # @!attribute offset
-          #   `offset` is the index value of the vertex of route geometry, which is the
-          #   starting point of the segment.
+          #   offset is the index value of the vertex of route geometry, which is the starting
+          #   point of the segment.
           #
           #   @return [Integer, nil]
           optional :offset, Integer
 
           # @!attribute value
-          #   `value` denotes the maximum speed of this segment, in kilometers per hour.
+          #   value denotes the maximum speed of this segment, in kilometers per hour.
           #
           #   - A value of "-1" indicates that the speed is unlimited for this road segment.
           #   - A value of "0" indicates that there is no information about the maximum speed
@@ -188,20 +188,20 @@ module NextbillionSDK
           #   {NextbillionSDK::Models::SnapToRoadSnapResponse::RoadInfo::MaxSpeed} for more
           #   details.
           #
-          #   @param length [Integer] `length` refers to a sequence of 'n' consecutive vertices in the route geometry
+          #   @param length [Integer] length refers to a sequence of 'n' consecutive vertices in the route geometry st
           #
-          #   @param offset [Integer] `offset` is the index value of the vertex of route geometry, which is the starti
+          #   @param offset [Integer] offset is the index value of the vertex of route geometry, which is the starting
           #
-          #   @param value [Float] `value` denotes the maximum speed of this segment, in kilometers per hour.
+          #   @param value [Float] value denotes the maximum speed of this segment, in kilometers per hour.
         end
       end
 
       class SnappedPoint < NextbillionSDK::Internal::Type::BaseModel
         # @!attribute bearing
         #   The bearing, calculated as the angle from true north in clockwise direction, of
-        #   the route leading to the next snapped point from the current `snapped_point`, in
-        #   radians. In case of the last `snapped_point` of the route, the bearing indicates
-        #   the direction of the route to the previous `snapped_location`.
+        #   the route leading to the next snapped point from the current snapped_point, in
+        #   radians. In case of the last snapped_point of the route, the bearing indicates
+        #   the direction of the route to the previous snapped_location.
         #
         #   @return [Float]
         required :bearing, Float
@@ -225,7 +225,7 @@ module NextbillionSDK
         required :name, String
 
         # @!attribute original_index
-        #   The index of the input `path` coordinate point to which this snapped point
+        #   The index of the input path coordinate point to which this snapped point
         #   corresponds to.
         #
         #   @return [Integer]
@@ -243,7 +243,7 @@ module NextbillionSDK
         #
         #   @param name [String] The name of the street or road that the input coordinate snapped to.
         #
-        #   @param original_index [Integer] The index of the input `path` coordinate point to which this snapped point corre
+        #   @param original_index [Integer] The index of the input path coordinate point to which this snapped point corresp
 
         # @see NextbillionSDK::Models::SnapToRoadSnapResponse::SnappedPoint#location
         class Location < NextbillionSDK::Internal::Type::BaseModel

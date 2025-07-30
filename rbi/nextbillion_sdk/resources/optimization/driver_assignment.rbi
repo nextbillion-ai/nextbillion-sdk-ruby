@@ -28,14 +28,14 @@ module NextbillionSDK
           # request to the API.
           key:,
           # Body param: Specify the filtering criterion for the vehicles with respect to
-          # each order's location. `filter` is a mandatory input for all requests.
+          # each order's location. filter is a mandatory input for all requests.
           filter:,
           # Body param: Collects the details of open orders to be fulfilled. Each object
-          # represents one order. All requests must include `orders` as a mandatory input. A
+          # represents one order. All requests must include orders as a mandatory input. A
           # maximum of 200 orders is allowed per request.
           orders:,
           # Body param: Collects the details of vehicles available to fulfill the orders.
-          # Each object represents one vehicle. All requests must include `vehicles` as a
+          # Each object represents one vehicle. All requests must include vehicles as a
           # mandatory input. A maximum of 100 vehicles is allowed per request.
           vehicles:,
           # Body param: Configure the assignment constraints and response settings.

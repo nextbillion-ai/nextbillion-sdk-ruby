@@ -131,67 +131,64 @@ module NextbillionSDK
             truck_weight: Integer
           }
 
-          type approaches = :"`unrestricted`" | :"`curb`"
+          type approaches = :unrestricted | :curb
 
           module Approaches
             extend NextbillionSDK::Internal::Type::Enum
 
-            UNRESTRICTED: :"`unrestricted`"
-            CURB: :"`curb`"
+            UNRESTRICTED: :unrestricted
+            CURB: :curb
 
             def self?.values: -> ::Array[NextbillionSDK::Models::Fleetify::RouteCreateParams::Routing::approaches]
           end
 
           type avoid =
-            :"`toll`"
-            | :"`highway`"
-            | :"`ferry`"
-            | :"`sharp_turn`"
-            | :"`uturn`"
-            | :"`left_turn`"
-            | :"`right_turn`"
-            | :"`service_road`"
-            | :"`none`"
+            :toll
+            | :highway
+            | :ferry
+            | :sharp_turn
+            | :uturn
+            | :left_turn
+            | :right_turn
+            | :service_road
+            | :none
 
           module Avoid
             extend NextbillionSDK::Internal::Type::Enum
 
-            TOLL: :"`toll`"
-            HIGHWAY: :"`highway`"
-            FERRY: :"`ferry`"
-            SHARP_TURN: :"`sharp_turn`"
-            UTURN: :"`uturn`"
-            LEFT_TURN: :"`left_turn`"
-            RIGHT_TURN: :"`right_turn`"
-            SERVICE_ROAD: :"`service_road`"
-            NONE: :"`none`"
+            TOLL: :toll
+            HIGHWAY: :highway
+            FERRY: :ferry
+            SHARP_TURN: :sharp_turn
+            UTURN: :uturn
+            LEFT_TURN: :left_turn
+            RIGHT_TURN: :right_turn
+            SERVICE_ROAD: :service_road
+            NONE: :none
 
             def self?.values: -> ::Array[NextbillionSDK::Models::Fleetify::RouteCreateParams::Routing::avoid]
           end
 
           type hazmat_type =
-            :"`general`"
-            | :"`circumstantial`"
-            | :"`explosive`"
-            | :"`harmful_to_water`"
+            :general | :circumstantial | :explosive | :harmful_to_water
 
           module HazmatType
             extend NextbillionSDK::Internal::Type::Enum
 
-            GENERAL: :"`general`"
-            CIRCUMSTANTIAL: :"`circumstantial`"
-            EXPLOSIVE: :"`explosive`"
-            HARMFUL_TO_WATER: :"`harmful_to_water`"
+            GENERAL: :general
+            CIRCUMSTANTIAL: :circumstantial
+            EXPLOSIVE: :explosive
+            HARMFUL_TO_WATER: :harmful_to_water
 
             def self?.values: -> ::Array[NextbillionSDK::Models::Fleetify::RouteCreateParams::Routing::hazmat_type]
           end
 
-          type mode = :"`car`"
+          type mode = :car
 
           module Mode
             extend NextbillionSDK::Internal::Type::Enum
 
-            CAR: :"`car`"
+            CAR: :car
 
             def self?.values: -> ::Array[NextbillionSDK::Models::Fleetify::RouteCreateParams::Routing::mode]
           end

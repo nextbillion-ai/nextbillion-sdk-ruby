@@ -39,25 +39,24 @@ module NextbillionSDK
           end
           attr_writer :cluster
 
-          # Describe the geometry characteristics through a `,` separated list of
-          # properties.
+          # Describe the geometry characteristics through a , separated list of properties.
           #
-          # Setting `mapmatch` to 1 returns the geometry of the tracked points, snapped to
-          # the nearest road.
+          # Setting mapmatch to 1 returns the geometry of the tracked points, snapped to the
+          # nearest road.
           #
-          # Setting `interpolate` to 1 smoothens the snapped geometry by adding more points,
-          # as needed. Please note, `mapmatch` should be set to 1 for `interpolate` to be
+          # Setting interpolate to 1 smoothens the snapped geometry by adding more points,
+          # as needed. Please note, mapmatch should be set to 1 for interpolate to be
           # effective.
           #
-          # `mode` is used to set the transport mode for which the snapped route will be
-          # determined. Allowed values for `mode` are `car` and `truck`.
+          # mode is used to set the transport mode for which the snapped route will be
+          # determined. Allowed values for mode are car and truck.
           sig { returns(T.nilable(String)) }
           attr_reader :correction
 
           sig { params(correction: String).void }
           attr_writer :correction
 
-          # Time until which the tracked locations of the `asset` need to be retrieved.
+          # Time until which the tracked locations of the asset need to be retrieved.
           sig { returns(T.nilable(Integer)) }
           attr_reader :end_time
 
@@ -65,10 +64,10 @@ module NextbillionSDK
           attr_writer :end_time
 
           # Set the geometry format to encode the path linking the tracked locations of the
-          # `asset`.
+          # asset.
           #
-          # Please note that `geometry_type` is effective only when `mapmatch` property of
-          # `correction` parameter is set to 1.
+          # Please note that geometry_type is effective only when mapmatch property of
+          # correction parameter is set to 1.
           sig do
             returns(
               T.nilable(
@@ -86,7 +85,7 @@ module NextbillionSDK
           end
           attr_writer :geometry_type
 
-          # Denotes page number. Use this along with the `ps` parameter to implement
+          # Denotes page number. Use this along with the ps parameter to implement
           # pagination for your searched results. This parameter does not have a maximum
           # limit but would return an empty response in case a higher value is provided when
           # the result-set itself is smaller.
@@ -96,15 +95,15 @@ module NextbillionSDK
           sig { params(pn: Integer).void }
           attr_writer :pn
 
-          # Denotes number of search results per page. Use this along with the `pn`
-          # parameter to implement pagination for your searched results.
+          # Denotes number of search results per page. Use this along with the pn parameter
+          # to implement pagination for your searched results.
           sig { returns(T.nilable(Integer)) }
           attr_reader :ps
 
           sig { params(ps: Integer).void }
           attr_writer :ps
 
-          # Time after which the tracked locations of the `asset` need to be retrieved.
+          # Time after which the tracked locations of the asset need to be retrieved.
           sig { returns(T.nilable(Integer)) }
           attr_reader :start_time
 
@@ -132,36 +131,35 @@ module NextbillionSDK
             key:,
             # the cluster of the region you want to use
             cluster: nil,
-            # Describe the geometry characteristics through a `,` separated list of
-            # properties.
+            # Describe the geometry characteristics through a , separated list of properties.
             #
-            # Setting `mapmatch` to 1 returns the geometry of the tracked points, snapped to
-            # the nearest road.
+            # Setting mapmatch to 1 returns the geometry of the tracked points, snapped to the
+            # nearest road.
             #
-            # Setting `interpolate` to 1 smoothens the snapped geometry by adding more points,
-            # as needed. Please note, `mapmatch` should be set to 1 for `interpolate` to be
+            # Setting interpolate to 1 smoothens the snapped geometry by adding more points,
+            # as needed. Please note, mapmatch should be set to 1 for interpolate to be
             # effective.
             #
-            # `mode` is used to set the transport mode for which the snapped route will be
-            # determined. Allowed values for `mode` are `car` and `truck`.
+            # mode is used to set the transport mode for which the snapped route will be
+            # determined. Allowed values for mode are car and truck.
             correction: nil,
-            # Time until which the tracked locations of the `asset` need to be retrieved.
+            # Time until which the tracked locations of the asset need to be retrieved.
             end_time: nil,
             # Set the geometry format to encode the path linking the tracked locations of the
-            # `asset`.
+            # asset.
             #
-            # Please note that `geometry_type` is effective only when `mapmatch` property of
-            # `correction` parameter is set to 1.
+            # Please note that geometry_type is effective only when mapmatch property of
+            # correction parameter is set to 1.
             geometry_type: nil,
-            # Denotes page number. Use this along with the `ps` parameter to implement
+            # Denotes page number. Use this along with the ps parameter to implement
             # pagination for your searched results. This parameter does not have a maximum
             # limit but would return an empty response in case a higher value is provided when
             # the result-set itself is smaller.
             pn: nil,
-            # Denotes number of search results per page. Use this along with the `pn`
-            # parameter to implement pagination for your searched results.
+            # Denotes number of search results per page. Use this along with the pn parameter
+            # to implement pagination for your searched results.
             ps: nil,
-            # Time after which the tracked locations of the `asset` need to be retrieved.
+            # Time after which the tracked locations of the asset need to be retrieved.
             start_time: nil,
             request_options: {}
           )
@@ -218,10 +216,10 @@ module NextbillionSDK
           end
 
           # Set the geometry format to encode the path linking the tracked locations of the
-          # `asset`.
+          # asset.
           #
-          # Please note that `geometry_type` is effective only when `mapmatch` property of
-          # `correction` parameter is set to 1.
+          # Please note that geometry_type is effective only when mapmatch property of
+          # correction parameter is set to 1.
           module GeometryType
             extend NextbillionSDK::Internal::Type::Enum
 
@@ -236,17 +234,17 @@ module NextbillionSDK
 
             POLYLINE =
               T.let(
-                :"`polyline`",
+                :polyline,
                 NextbillionSDK::Skynet::Asset::LocationListParams::GeometryType::TaggedSymbol
               )
             POLYLINE6 =
               T.let(
-                :"`polyline6`",
+                :polyline6,
                 NextbillionSDK::Skynet::Asset::LocationListParams::GeometryType::TaggedSymbol
               )
             GEOJSON =
               T.let(
-                :"`geojson`",
+                :geojson,
                 NextbillionSDK::Skynet::Asset::LocationListParams::GeometryType::TaggedSymbol
               )
 

@@ -40,7 +40,7 @@ module NextbillionSDK
       attr_writer :route
 
       # A string indicating the state of the response. On normal responses, the value
-      # will be `Ok`. Indicative HTTP error codes are returned for different errors. See
+      # will be Ok. Indicative HTTP error codes are returned for different errors. See
       # the [API Errors Codes](#api-error-codes) section below for more information.
       sig { returns(T.nilable(String)) }
       attr_reader :status
@@ -65,7 +65,7 @@ module NextbillionSDK
         # objects if more than one routes are present in the response.
         route: nil,
         # A string indicating the state of the response. On normal responses, the value
-        # will be `Ok`. Indicative HTTP error codes are returned for different errors. See
+        # will be Ok. Indicative HTTP error codes are returned for different errors. See
         # the [API Errors Codes](#api-error-codes) section below for more information.
         status: nil
       )
@@ -107,8 +107,8 @@ module NextbillionSDK
         attr_writer :duration
 
         # Location coordinates of the point where the route ends. It is the same as the
-        # `destination` in the input request. Returned only when `steps` is true in the
-        # input request.
+        # destination in the input request. Returned only when steps is true in the input
+        # request.
         sig do
           returns(
             T.nilable(
@@ -127,7 +127,7 @@ module NextbillionSDK
         attr_writer :end_location
 
         # An object with geoJSON details of the route. This object is returned when the
-        # `geometry` field is set to `geojson` in the input request, otherwise it is not
+        # geometry field is set to geojson in the input request, otherwise it is not
         # present in the response. The contents of this object follow the
         # [geoJSON standard](https://datatracker.ietf.org/doc/html/rfc7946).
         sig do
@@ -148,15 +148,15 @@ module NextbillionSDK
         attr_writer :geojson
 
         # Encoded geometry of the returned route in the selected format and specified
-        # `overview` verbosity. This parameter is configured in the input request.
+        # overview verbosity. This parameter is configured in the input request.
         sig { returns(T.nilable(String)) }
         attr_reader :geometry
 
         sig { params(geometry: String).void }
         attr_writer :geometry
 
-        # An array of objects returning the details about each `leg` of the route.
-        # `waypoints` split the route into legs.
+        # An array of objects returning the details about each leg of the route. waypoints
+        # split the route into legs.
         sig do
           returns(
             T.nilable(
@@ -179,7 +179,7 @@ module NextbillionSDK
         attr_writer :legs
 
         # Location coordinates of the point where the route starts. It is the same as the
-        # `origin` in the input request. Returned only when `steps` is true in the input
+        # origin in the input request. Returned only when steps is true in the input
         # request.
         sig do
           returns(
@@ -223,22 +223,22 @@ module NextbillionSDK
           # The duration, in seconds, of the complete trip.
           duration: nil,
           # Location coordinates of the point where the route ends. It is the same as the
-          # `destination` in the input request. Returned only when `steps` is true in the
-          # input request.
+          # destination in the input request. Returned only when steps is true in the input
+          # request.
           end_location: nil,
           # An object with geoJSON details of the route. This object is returned when the
-          # `geometry` field is set to `geojson` in the input request, otherwise it is not
+          # geometry field is set to geojson in the input request, otherwise it is not
           # present in the response. The contents of this object follow the
           # [geoJSON standard](https://datatracker.ietf.org/doc/html/rfc7946).
           geojson: nil,
           # Encoded geometry of the returned route in the selected format and specified
-          # `overview` verbosity. This parameter is configured in the input request.
+          # overview verbosity. This parameter is configured in the input request.
           geometry: nil,
-          # An array of objects returning the details about each `leg` of the route.
-          # `waypoints` split the route into legs.
+          # An array of objects returning the details about each leg of the route. waypoints
+          # split the route into legs.
           legs: nil,
           # Location coordinates of the point where the route starts. It is the same as the
-          # `origin` in the input request. Returned only when `steps` is true in the input
+          # origin in the input request. Returned only when steps is true in the input
           # request.
           start_location: nil
         )
@@ -275,14 +275,14 @@ module NextbillionSDK
               )
             end
 
-          # latitude of the `start_location`.
+          # latitude of the start_location.
           sig { returns(T.nilable(Float)) }
           attr_reader :latitude
 
           sig { params(latitude: Float).void }
           attr_writer :latitude
 
-          # longitude of the `start_location`.
+          # longitude of the start_location.
           sig { returns(T.nilable(Float)) }
           attr_reader :longitude
 
@@ -290,15 +290,15 @@ module NextbillionSDK
           attr_writer :longitude
 
           # Location coordinates of the point where the route ends. It is the same as the
-          # `destination` in the input request. Returned only when `steps` is true in the
-          # input request.
+          # destination in the input request. Returned only when steps is true in the input
+          # request.
           sig do
             params(latitude: Float, longitude: Float).returns(T.attached_class)
           end
           def self.new(
-            # latitude of the `start_location`.
+            # latitude of the start_location.
             latitude: nil,
-            # longitude of the `start_location`.
+            # longitude of the start_location.
             longitude: nil
           )
           end
@@ -350,7 +350,7 @@ module NextbillionSDK
           attr_writer :type
 
           # An object with geoJSON details of the route. This object is returned when the
-          # `geometry` field is set to `geojson` in the input request, otherwise it is not
+          # geometry field is set to geojson in the input request, otherwise it is not
           # present in the response. The contents of this object follow the
           # [geoJSON standard](https://datatracker.ietf.org/doc/html/rfc7946).
           sig do
@@ -476,7 +476,7 @@ module NextbillionSDK
           end
           attr_writer :duration
 
-          # Location coordinates of the point where the leg ends. Returned only when `steps`
+          # Location coordinates of the point where the leg ends. Returned only when steps
           # is true in the input request.
           sig do
             returns(
@@ -495,8 +495,8 @@ module NextbillionSDK
           end
           attr_writer :end_location
 
-          # Location coordinates of the point where the leg starts. Returned only when
-          # `steps` is true in the input request.
+          # Location coordinates of the point where the leg starts. Returned only when steps
+          # is true in the input request.
           sig do
             returns(
               T.nilable(
@@ -514,9 +514,9 @@ module NextbillionSDK
           end
           attr_writer :start_location
 
-          # An array of objects with details of each step of the `legs`. Returned only when
-          # `steps` is `true` in the input request. An empty array is returned when `steps`
-          # is `false` in the input request.
+          # An array of objects with details of each step of the legs. Returned only when
+          # steps is true in the input request. An empty array is returned when steps is
+          # false in the input request.
           sig do
             returns(
               T.nilable(
@@ -559,15 +559,15 @@ module NextbillionSDK
             distance: nil,
             # An object containing leg duration value, in seconds.
             duration: nil,
-            # Location coordinates of the point where the leg ends. Returned only when `steps`
+            # Location coordinates of the point where the leg ends. Returned only when steps
             # is true in the input request.
             end_location: nil,
-            # Location coordinates of the point where the leg starts. Returned only when
-            # `steps` is true in the input request.
+            # Location coordinates of the point where the leg starts. Returned only when steps
+            # is true in the input request.
             start_location: nil,
-            # An array of objects with details of each step of the `legs`. Returned only when
-            # `steps` is `true` in the input request. An empty array is returned when `steps`
-            # is `false` in the input request.
+            # An array of objects with details of each step of the legs. Returned only when
+            # steps is true in the input request. An empty array is returned when steps is
+            # false in the input request.
             steps: nil
           )
           end
@@ -652,21 +652,21 @@ module NextbillionSDK
                 )
               end
 
-            # Latitude of the `end_location` of the `leg`.
+            # Latitude of the end_location of the leg.
             sig { returns(T.nilable(Float)) }
             attr_reader :latitude
 
             sig { params(latitude: Float).void }
             attr_writer :latitude
 
-            # Longitude of the `end_location` of the `leg`.
+            # Longitude of the end_location of the leg.
             sig { returns(T.nilable(Float)) }
             attr_reader :longitude
 
             sig { params(longitude: Float).void }
             attr_writer :longitude
 
-            # Location coordinates of the point where the leg ends. Returned only when `steps`
+            # Location coordinates of the point where the leg ends. Returned only when steps
             # is true in the input request.
             sig do
               params(latitude: Float, longitude: Float).returns(
@@ -674,9 +674,9 @@ module NextbillionSDK
               )
             end
             def self.new(
-              # Latitude of the `end_location` of the `leg`.
+              # Latitude of the end_location of the leg.
               latitude: nil,
-              # Longitude of the `end_location` of the `leg`.
+              # Longitude of the end_location of the leg.
               longitude: nil
             )
             end
@@ -695,31 +695,31 @@ module NextbillionSDK
                 )
               end
 
-            # Latitude of the `start_location` of the `leg`.
+            # Latitude of the start_location of the leg.
             sig { returns(T.nilable(Float)) }
             attr_reader :latitude
 
             sig { params(latitude: Float).void }
             attr_writer :latitude
 
-            # Longitude of the `start_location` of the `leg`.
+            # Longitude of the start_location of the leg.
             sig { returns(T.nilable(Float)) }
             attr_reader :longitude
 
             sig { params(longitude: Float).void }
             attr_writer :longitude
 
-            # Location coordinates of the point where the leg starts. Returned only when
-            # `steps` is true in the input request.
+            # Location coordinates of the point where the leg starts. Returned only when steps
+            # is true in the input request.
             sig do
               params(latitude: Float, longitude: Float).returns(
                 T.attached_class
               )
             end
             def self.new(
-              # Latitude of the `start_location` of the `leg`.
+              # Latitude of the start_location of the leg.
               latitude: nil,
-              # Longitude of the `start_location` of the `leg`.
+              # Longitude of the start_location of the leg.
               longitude: nil
             )
             end
@@ -774,7 +774,7 @@ module NextbillionSDK
             end
             attr_writer :duration
 
-            # Location coordinates of the point where the `step` ends.
+            # Location coordinates of the point where the step ends.
             sig do
               returns(
                 T.nilable(
@@ -792,8 +792,8 @@ module NextbillionSDK
             end
             attr_writer :end_location
 
-            # An object with geoJSON details of the `step`.This object is returned when the
-            # `geometry` field is set to `geojson` in the input request, otherwise it is not
+            # An object with geoJSON details of the step.This object is returned when the
+            # geometry field is set to geojson in the input request, otherwise it is not
             # present in the response. The contents of this object follow the
             # [geoJSON standard](https://datatracker.ietf.org/doc/html/rfc7946).
             sig do
@@ -813,14 +813,14 @@ module NextbillionSDK
             end
             attr_writer :geojson
 
-            # Encoded geometry of the `step` in the selected format.
+            # Encoded geometry of the step in the selected format.
             sig { returns(T.nilable(String)) }
             attr_reader :geometry
 
             sig { params(geometry: String).void }
             attr_writer :geometry
 
-            # An object with maneuver details for the `step`.
+            # An object with maneuver details for the step.
             sig do
               returns(
                 T.nilable(
@@ -838,7 +838,7 @@ module NextbillionSDK
             end
             attr_writer :maneuver
 
-            # Location coordinates of the point where the `step` starts.
+            # Location coordinates of the point where the step starts.
             sig do
               returns(
                 T.nilable(
@@ -878,18 +878,18 @@ module NextbillionSDK
               distance: nil,
               # An object containing step duration value, in seconds.
               duration: nil,
-              # Location coordinates of the point where the `step` ends.
+              # Location coordinates of the point where the step ends.
               end_location: nil,
-              # An object with geoJSON details of the `step`.This object is returned when the
-              # `geometry` field is set to `geojson` in the input request, otherwise it is not
+              # An object with geoJSON details of the step.This object is returned when the
+              # geometry field is set to geojson in the input request, otherwise it is not
               # present in the response. The contents of this object follow the
               # [geoJSON standard](https://datatracker.ietf.org/doc/html/rfc7946).
               geojson: nil,
-              # Encoded geometry of the `step` in the selected format.
+              # Encoded geometry of the step in the selected format.
               geometry: nil,
-              # An object with maneuver details for the `step`.
+              # An object with maneuver details for the step.
               maneuver: nil,
-              # Location coordinates of the point where the `step` starts.
+              # Location coordinates of the point where the step starts.
               start_location: nil
             )
             end
@@ -975,30 +975,30 @@ module NextbillionSDK
                   )
                 end
 
-              # Latitude of the `end_location` of the `step`.
+              # Latitude of the end_location of the step.
               sig { returns(T.nilable(Float)) }
               attr_reader :latitude
 
               sig { params(latitude: Float).void }
               attr_writer :latitude
 
-              # Longitude of the `end_location` of the `step`.
+              # Longitude of the end_location of the step.
               sig { returns(T.nilable(Float)) }
               attr_reader :longitude
 
               sig { params(longitude: Float).void }
               attr_writer :longitude
 
-              # Location coordinates of the point where the `step` ends.
+              # Location coordinates of the point where the step ends.
               sig do
                 params(latitude: Float, longitude: Float).returns(
                   T.attached_class
                 )
               end
               def self.new(
-                # Latitude of the `end_location` of the `step`.
+                # Latitude of the end_location of the step.
                 latitude: nil,
-                # Longitude of the `end_location` of the `step`.
+                # Longitude of the end_location of the step.
                 longitude: nil
               )
               end
@@ -1017,7 +1017,7 @@ module NextbillionSDK
                   )
                 end
 
-              # An object with details of the geoJSON geometry of the `step`.
+              # An object with details of the geoJSON geometry of the step.
               sig do
                 returns(
                   T.nilable(
@@ -1049,8 +1049,8 @@ module NextbillionSDK
               sig { params(type: String).void }
               attr_writer :type
 
-              # An object with geoJSON details of the `step`.This object is returned when the
-              # `geometry` field is set to `geojson` in the input request, otherwise it is not
+              # An object with geoJSON details of the step.This object is returned when the
+              # geometry field is set to geojson in the input request, otherwise it is not
               # present in the response. The contents of this object follow the
               # [geoJSON standard](https://datatracker.ietf.org/doc/html/rfc7946).
               sig do
@@ -1062,7 +1062,7 @@ module NextbillionSDK
                 ).returns(T.attached_class)
               end
               def self.new(
-                # An object with details of the geoJSON geometry of the `step`.
+                # An object with details of the geoJSON geometry of the step.
                 geometry: nil,
                 # Property associated with the geoJSON shape.
                 properties: nil,
@@ -1094,7 +1094,7 @@ module NextbillionSDK
                   end
 
                 # An array of coordinates in the [longitude, latitude] format, representing the
-                # `step` geometry.
+                # step geometry.
                 sig { returns(T.nilable(T::Array[Float])) }
                 attr_reader :coordinates
 
@@ -1108,7 +1108,7 @@ module NextbillionSDK
                 sig { params(type: String).void }
                 attr_writer :type
 
-                # An object with details of the geoJSON geometry of the `step`.
+                # An object with details of the geoJSON geometry of the step.
                 sig do
                   params(coordinates: T::Array[Float], type: String).returns(
                     T.attached_class
@@ -1116,7 +1116,7 @@ module NextbillionSDK
                 end
                 def self.new(
                   # An array of coordinates in the [longitude, latitude] format, representing the
-                  # `step` geometry.
+                  # step geometry.
                   coordinates: nil,
                   # Type of the geoJSON geometry.
                   type: nil
@@ -1143,7 +1143,7 @@ module NextbillionSDK
                 end
 
               # The clockwise angle from true north to the direction of travel immediately after
-              # the `maneuver`. Range of values is between 0-359.
+              # the maneuver. Range of values is between 0-359.
               sig { returns(T.nilable(Integer)) }
               attr_reader :bearing_after
 
@@ -1151,14 +1151,14 @@ module NextbillionSDK
               attr_writer :bearing_after
 
               # The clockwise angle from true north to the direction of travel immediately
-              # before the `maneuver`. Range of values is between 0-359.
+              # before the maneuver. Range of values is between 0-359.
               sig { returns(T.nilable(Integer)) }
               attr_reader :bearing_before
 
               sig { params(bearing_before: Integer).void }
               attr_writer :bearing_before
 
-              # A coordinate pair describing the location of the `maneuver`.
+              # A coordinate pair describing the location of the maneuver.
               sig do
                 returns(
                   T.nilable(
@@ -1176,21 +1176,21 @@ module NextbillionSDK
               end
               attr_writer :coordinate
 
-              # A string indicating the type of `maneuver`.
+              # A string indicating the type of maneuver.
               sig { returns(T.nilable(String)) }
               attr_reader :maneuver_type
 
               sig { params(maneuver_type: String).void }
               attr_writer :maneuver_type
 
-              # Modifier associated with `maneuver_type`.
+              # Modifier associated with maneuver_type.
               sig { returns(T.nilable(String)) }
               attr_reader :modifier
 
               sig { params(modifier: String).void }
               attr_writer :modifier
 
-              # An object with maneuver details for the `step`.
+              # An object with maneuver details for the step.
               sig do
                 params(
                   bearing_after: Integer,
@@ -1203,16 +1203,16 @@ module NextbillionSDK
               end
               def self.new(
                 # The clockwise angle from true north to the direction of travel immediately after
-                # the `maneuver`. Range of values is between 0-359.
+                # the maneuver. Range of values is between 0-359.
                 bearing_after: nil,
                 # The clockwise angle from true north to the direction of travel immediately
-                # before the `maneuver`. Range of values is between 0-359.
+                # before the maneuver. Range of values is between 0-359.
                 bearing_before: nil,
-                # A coordinate pair describing the location of the `maneuver`.
+                # A coordinate pair describing the location of the maneuver.
                 coordinate: nil,
-                # A string indicating the type of `maneuver`.
+                # A string indicating the type of maneuver.
                 maneuver_type: nil,
-                # Modifier associated with `maneuver_type`.
+                # Modifier associated with maneuver_type.
                 modifier: nil
               )
               end
@@ -1241,30 +1241,30 @@ module NextbillionSDK
                     )
                   end
 
-                # Latitude of the `maneuver` location.
+                # Latitude of the maneuver location.
                 sig { returns(T.nilable(Float)) }
                 attr_reader :latitude
 
                 sig { params(latitude: Float).void }
                 attr_writer :latitude
 
-                # Longitude of the `maneuver` location.
+                # Longitude of the maneuver location.
                 sig { returns(T.nilable(Float)) }
                 attr_reader :longitude
 
                 sig { params(longitude: Float).void }
                 attr_writer :longitude
 
-                # A coordinate pair describing the location of the `maneuver`.
+                # A coordinate pair describing the location of the maneuver.
                 sig do
                   params(latitude: Float, longitude: Float).returns(
                     T.attached_class
                   )
                 end
                 def self.new(
-                  # Latitude of the `maneuver` location.
+                  # Latitude of the maneuver location.
                   latitude: nil,
-                  # Longitude of the `maneuver` location.
+                  # Longitude of the maneuver location.
                   longitude: nil
                 )
                 end
@@ -1284,30 +1284,30 @@ module NextbillionSDK
                   )
                 end
 
-              # Latitude of the `start_location` of the `step`.
+              # Latitude of the start_location of the step.
               sig { returns(T.nilable(Float)) }
               attr_reader :latitude
 
               sig { params(latitude: Float).void }
               attr_writer :latitude
 
-              # Longitude of the `start_location` of the `step`.
+              # Longitude of the start_location of the step.
               sig { returns(T.nilable(Float)) }
               attr_reader :longitude
 
               sig { params(longitude: Float).void }
               attr_writer :longitude
 
-              # Location coordinates of the point where the `step` starts.
+              # Location coordinates of the point where the step starts.
               sig do
                 params(latitude: Float, longitude: Float).returns(
                   T.attached_class
                 )
               end
               def self.new(
-                # Latitude of the `start_location` of the `step`.
+                # Latitude of the start_location of the step.
                 latitude: nil,
-                # Longitude of the `start_location` of the `step`.
+                # Longitude of the start_location of the step.
                 longitude: nil
               )
               end
@@ -1328,14 +1328,14 @@ module NextbillionSDK
               )
             end
 
-          # Latitude of the `start_location`.
+          # Latitude of the start_location.
           sig { returns(T.nilable(Float)) }
           attr_reader :latitude
 
           sig { params(latitude: Float).void }
           attr_writer :latitude
 
-          # Longitude of the `start_location`.
+          # Longitude of the start_location.
           sig { returns(T.nilable(Float)) }
           attr_reader :longitude
 
@@ -1343,15 +1343,15 @@ module NextbillionSDK
           attr_writer :longitude
 
           # Location coordinates of the point where the route starts. It is the same as the
-          # `origin` in the input request. Returned only when `steps` is true in the input
+          # origin in the input request. Returned only when steps is true in the input
           # request.
           sig do
             params(latitude: Float, longitude: Float).returns(T.attached_class)
           end
           def self.new(
-            # Latitude of the `start_location`.
+            # Latitude of the start_location.
             latitude: nil,
-            # Longitude of the `start_location`.
+            # Longitude of the start_location.
             longitude: nil
           )
           end

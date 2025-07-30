@@ -110,17 +110,17 @@ module NextbillionSDK
 
         TRIP_SUBSCRIBE =
           T.let(
-            :"`TRIP_SUBSCRIBE`",
+            :TRIP_SUBSCRIBE,
             NextbillionSDK::SkynetSubscribeParams::Action::TaggedSymbol
           )
         TRIP_UNSUBSCRIBE =
           T.let(
-            :"`TRIP_UNSUBSCRIBE`",
+            :TRIP_UNSUBSCRIBE,
             NextbillionSDK::SkynetSubscribeParams::Action::TaggedSymbol
           )
         HEARTBEAT =
           T.let(
-            :"`HEARTBEAT`",
+            :HEARTBEAT,
             NextbillionSDK::SkynetSubscribeParams::Action::TaggedSymbol
           )
 
@@ -147,7 +147,7 @@ module NextbillionSDK
         # Specify the ID of an active trip that needs to be subscribed. The ID of a trip
         # is returned in the response when _Start A Trip_ request is acknowledged.
         #
-        # This attribute is mandatory when `action` is set to either "TRIP_SUBSCRIBE" or
+        # This attribute is mandatory when action is set to either "TRIP_SUBSCRIBE" or
         # "TRIP_UNSUBSCRIBE"
         sig { returns(String) }
         attr_accessor :id
@@ -157,7 +157,7 @@ module NextbillionSDK
           # Specify the ID of an active trip that needs to be subscribed. The ID of a trip
           # is returned in the response when _Start A Trip_ request is acknowledged.
           #
-          # This attribute is mandatory when `action` is set to either "TRIP_SUBSCRIBE" or
+          # This attribute is mandatory when action is set to either "TRIP_SUBSCRIBE" or
           # "TRIP_UNSUBSCRIBE"
           id:
         )

@@ -20,7 +20,7 @@ module NextbillionSDK
 
         # @!attribute status
         #   A string indicating the state of the response. On successful responses, the
-        #   value will be `Ok`. Indicative error messages are returned for different errors.
+        #   value will be Ok. Indicative error messages are returned for different errors.
         #   See the [API Error Codes](#api-error-codes) section below for more information.
         #
         #   @return [String, nil]
@@ -40,7 +40,7 @@ module NextbillionSDK
         class Data < NextbillionSDK::Internal::Type::BaseModel
           # @!attribute list
           #   An array of objects listing all the monitors. Each object represents one
-          #   `monitor`.
+          #   monitor.
           #
           #   @return [Array<NextbillionSDK::Models::Skynet::SkynetMonitor>, nil]
           optional :list,
@@ -61,7 +61,7 @@ module NextbillionSDK
           #
           #   A data object containing the result.
           #
-          #   @param list [Array<NextbillionSDK::Models::Skynet::SkynetMonitor>] An array of objects listing all the monitors. Each object represents one `monito
+          #   @param list [Array<NextbillionSDK::Models::Skynet::SkynetMonitor>] An array of objects listing all the monitors. Each object represents one monitor
           #
           #   @param page [NextbillionSDK::Models::Skynet::Pagination] An object with pagination details of the search results. Use this object to impl
         end

@@ -57,8 +57,8 @@ module NextbillionSDK
           asset_id:,
           # Query param: the cluster of the region you want to use
           cluster: nil,
-          # Body param: Use this field to update the `attributes` of the trip. Please note
-          # that when updating the `attributes` field, previously added information will be
+          # Body param: Use this field to update the attributes of the trip. Please note
+          # that when updating the attributes field, previously added information will be
           # overwritten.
           attributes: nil,
           # Body param: Use this parameter to update the custom description of the trip.
@@ -66,7 +66,7 @@ module NextbillionSDK
           # Body param: Use this JSON object to update additional details about the trip.
           # This property is used to add any custom information / context about the trip.
           #
-          # Please note that updating the `meta_data` field will overwrite the previously
+          # Please note that updating the meta_data field will overwrite the previously
           # added information.
           meta_data: nil,
           # Body param: Use this property to update the name of the trip.
@@ -172,19 +172,19 @@ module NextbillionSDK
           asset_id:,
           # Query param: the cluster of the region you want to use
           cluster: nil,
-          # Body param: `attributes` can be used to store custom information about a trip in
-          # `key`:`value` format. Use `attributes` to add any useful information or context
-          # to your trips like the driver name, destination etc.
+          # Body param: attributes can be used to store custom information about a trip in
+          # key:value format. Use attributes to add any useful information or context to
+          # your trips like the driver name, destination etc.
           #
-          # Please note that the maximum number of `key`:`value` pairs that can be added to
-          # an `attributes` object is 100. Also, the overall size of `attributes` object
-          # should not exceed 65kb.
+          # Please note that the maximum number of key:value pairs that can be added to an
+          # attributes object is 100. Also, the overall size of attributes object should not
+          # exceed 65kb.
           attributes: nil,
-          # Body param: Set a unique ID for the new `trip`. If not provided, an ID will be
-          # automatically generated in UUID format. A valid `custom_id` can contain letters,
+          # Body param: Set a unique ID for the new trip. If not provided, an ID will be
+          # automatically generated in UUID format. A valid custom_id can contain letters,
           # numbers, “-”, & “\_” only.
           #
-          # Please note that the ID of a `trip` can not be changed once it is created.
+          # Please note that the ID of a trip can not be changed once it is created.
           custom_id: nil,
           # Body param: Add a custom description for the trip.
           description: nil,

@@ -12,21 +12,21 @@ module NextbillionSDK
           #
           # @overload list(id, key:, cluster: nil, end_time: nil, monitor_id: nil, pn: nil, ps: nil, start_time: nil, request_options: {})
           #
-          # @param id [String] ID of the `asset` whose event history needs to be fetched. This is the same ID t
+          # @param id [String] ID of the asset whose event history needs to be fetched. This is the same ID tha
           #
           # @param key [String] A key is a unique identifier that is required to authenticate a request to the A
           #
           # @param cluster [Symbol, NextbillionSDK::Models::Skynet::Asset::EventListParams::Cluster] the cluster of the region you want to use
           #
-          # @param end_time [Integer] Time before which the events triggered by the `asset` need to be retrieved.
+          # @param end_time [Integer] Time before which the events triggered by the asset need to be retrieved.
           #
-          # @param monitor_id [String] Filter the events by `monitor_id`. When provided, only the events triggered by t
+          # @param monitor_id [String] Filter the events by monitor_id. When provided, only the events triggered by the
           #
-          # @param pn [Integer] Denotes page number. Use this along with the `ps` parameter to implement paginat
+          # @param pn [Integer] Denotes page number. Use this along with the ps parameter to implement paginatio
           #
-          # @param ps [Integer] Denotes number of search results per page. Use this along with the `pn` paramete
+          # @param ps [Integer] Denotes number of search results per page. Use this along with the pn parameter
           #
-          # @param start_time [Integer] Time after which the events triggered by the `asset` need to be retrieved.
+          # @param start_time [Integer] Time after which the events triggered by the asset need to be retrieved.
           #
           # @param request_options [NextbillionSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #

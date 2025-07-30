@@ -19,7 +19,7 @@ module NextbillionSDK
       sig { returns(String) }
       attr_accessor :key
 
-      # Use this field to specify the new `state` of the restriction. Please note that
+      # Use this field to specify the new state of the restriction. Please note that
       # this method cannot update the state of restrictions that are currently in
       # 'deleted' state.
       sig do
@@ -38,7 +38,7 @@ module NextbillionSDK
         # A key is a unique identifier that is required to authenticate a request to the
         # API.
         key:,
-        # Use this field to specify the new `state` of the restriction. Please note that
+        # Use this field to specify the new state of the restriction. Please note that
         # this method cannot update the state of restrictions that are currently in
         # 'deleted' state.
         state:,
@@ -58,7 +58,7 @@ module NextbillionSDK
       def to_hash
       end
 
-      # Use this field to specify the new `state` of the restriction. Please note that
+      # Use this field to specify the new state of the restriction. Please note that
       # this method cannot update the state of restrictions that are currently in
       # 'deleted' state.
       module State
@@ -72,17 +72,17 @@ module NextbillionSDK
 
         ENABLED =
           T.let(
-            :"`enabled`",
+            :enabled,
             NextbillionSDK::RestrictionSetStateParams::State::TaggedSymbol
           )
         DISABLED =
           T.let(
-            :"`disabled`",
+            :disabled,
             NextbillionSDK::RestrictionSetStateParams::State::TaggedSymbol
           )
         DELETED =
           T.let(
-            :"`deleted`",
+            :deleted,
             NextbillionSDK::RestrictionSetStateParams::State::TaggedSymbol
           )
 

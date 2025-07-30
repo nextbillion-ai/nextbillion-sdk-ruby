@@ -12,7 +12,7 @@ module NextbillionSDK
             )
           end
 
-        # An object containing the ID of the `asset` created.
+        # An object containing the ID of the asset created.
         sig do
           returns(
             T.nilable(NextbillionSDK::Models::Skynet::AssetCreateResponse::Data)
@@ -37,7 +37,7 @@ module NextbillionSDK
         attr_writer :message
 
         # A string indicating the state of the response. On successful responses, the
-        # value will be `Ok`. Indicative error messages are returned for different errors.
+        # value will be Ok. Indicative error messages are returned for different errors.
         # See the [API Error Codes](#api-error-codes) section below for more information.
         sig { returns(T.nilable(String)) }
         attr_reader :status
@@ -54,13 +54,13 @@ module NextbillionSDK
           ).returns(T.attached_class)
         end
         def self.new(
-          # An object containing the ID of the `asset` created.
+          # An object containing the ID of the asset created.
           data: nil,
           # Displays the error message in case of a failed request. If the request is
           # successful, this field is not present in the response.
           message: nil,
           # A string indicating the state of the response. On successful responses, the
-          # value will be `Ok`. Indicative error messages are returned for different errors.
+          # value will be Ok. Indicative error messages are returned for different errors.
           # See the [API Error Codes](#api-error-codes) section below for more information.
           status: nil
         )
@@ -87,7 +87,7 @@ module NextbillionSDK
               )
             end
 
-          # Unique ID of the asset created. It will be the same as `custom_id`, if provided.
+          # Unique ID of the asset created. It will be the same as custom_id, if provided.
           # Else it will be an auto generated UUID. Please note this ID cannot be updated.
           sig { returns(T.nilable(String)) }
           attr_reader :id
@@ -95,10 +95,10 @@ module NextbillionSDK
           sig { params(id: String).void }
           attr_writer :id
 
-          # An object containing the ID of the `asset` created.
+          # An object containing the ID of the asset created.
           sig { params(id: String).returns(T.attached_class) }
           def self.new(
-            # Unique ID of the asset created. It will be the same as `custom_id`, if provided.
+            # Unique ID of the asset created. It will be the same as custom_id, if provided.
             # Else it will be an auto generated UUID. Please note this ID cannot be updated.
             id: nil
           )

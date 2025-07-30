@@ -21,7 +21,7 @@ module NextbillionSDK
         attr_accessor :key
 
         # Specify the filtering criterion for the vehicles with respect to each order's
-        # location. `filter` is a mandatory input for all requests.
+        # location. filter is a mandatory input for all requests.
         sig do
           returns(
             NextbillionSDK::Optimization::DriverAssignmentAssignParams::Filter
@@ -38,7 +38,7 @@ module NextbillionSDK
         attr_writer :filter
 
         # Collects the details of open orders to be fulfilled. Each object represents one
-        # order. All requests must include `orders` as a mandatory input. A maximum of 200
+        # order. All requests must include orders as a mandatory input. A maximum of 200
         # orders is allowed per request.
         sig do
           returns(
@@ -50,8 +50,8 @@ module NextbillionSDK
         attr_accessor :orders
 
         # Collects the details of vehicles available to fulfill the orders. Each object
-        # represents one vehicle. All requests must include `vehicles` as a mandatory
-        # input. A maximum of 100 vehicles is allowed per request.
+        # represents one vehicle. All requests must include vehicles as a mandatory input.
+        # A maximum of 100 vehicles is allowed per request.
         sig { returns(T::Array[NextbillionSDK::Optimization::Vehicle]) }
         attr_accessor :vehicles
 
@@ -93,15 +93,15 @@ module NextbillionSDK
           # API.
           key:,
           # Specify the filtering criterion for the vehicles with respect to each order's
-          # location. `filter` is a mandatory input for all requests.
+          # location. filter is a mandatory input for all requests.
           filter:,
           # Collects the details of open orders to be fulfilled. Each object represents one
-          # order. All requests must include `orders` as a mandatory input. A maximum of 200
+          # order. All requests must include orders as a mandatory input. A maximum of 200
           # orders is allowed per request.
           orders:,
           # Collects the details of vehicles available to fulfill the orders. Each object
-          # represents one vehicle. All requests must include `vehicles` as a mandatory
-          # input. A maximum of 100 vehicles is allowed per request.
+          # represents one vehicle. All requests must include vehicles as a mandatory input.
+          # A maximum of 100 vehicles is allowed per request.
           vehicles:,
           # Configure the assignment constraints and response settings.
           options: nil,
@@ -138,7 +138,7 @@ module NextbillionSDK
               )
             end
 
-          # Defines a `driving_distance` filter, in meters. If a vehicle needs to drive
+          # Defines a driving_distance filter, in meters. If a vehicle needs to drive
           # further than this distance to reach a pickup location, it will not be assigned
           # to that order. Valid range of values for this filter is \[1, 10000\].
           sig { returns(T.nilable(Float)) }
@@ -150,7 +150,7 @@ module NextbillionSDK
           # Specify a duration, in seconds, which will be used to filter out ineligible
           # vehicles for each order. Any vehicle which would take more time than specified
           # here, to reach the pickup location of a given order, will be ruled out for
-          # assignment for that particular order. Valid values for `pickup_eta` are \[1,
+          # assignment for that particular order. Valid values for pickup_eta are \[1,
           # 3600\].
           sig { returns(T.nilable(Integer)) }
           attr_reader :pickup_eta
@@ -160,7 +160,7 @@ module NextbillionSDK
 
           # Specify a radius, in meters, which will be used to filter out ineligible
           # vehicles for each order. The pickup location of an order will act as the center
-          # of the circle when identifying eligible vehicles. Valid values for `radius` are
+          # of the circle when identifying eligible vehicles. Valid values for radius are
           # \[1, 10000\].
           sig { returns(T.nilable(Float)) }
           attr_reader :radius
@@ -169,7 +169,7 @@ module NextbillionSDK
           attr_writer :radius
 
           # Specify the filtering criterion for the vehicles with respect to each order's
-          # location. `filter` is a mandatory input for all requests.
+          # location. filter is a mandatory input for all requests.
           sig do
             params(
               driving_distance: Float,
@@ -178,19 +178,19 @@ module NextbillionSDK
             ).returns(T.attached_class)
           end
           def self.new(
-            # Defines a `driving_distance` filter, in meters. If a vehicle needs to drive
+            # Defines a driving_distance filter, in meters. If a vehicle needs to drive
             # further than this distance to reach a pickup location, it will not be assigned
             # to that order. Valid range of values for this filter is \[1, 10000\].
             driving_distance: nil,
             # Specify a duration, in seconds, which will be used to filter out ineligible
             # vehicles for each order. Any vehicle which would take more time than specified
             # here, to reach the pickup location of a given order, will be ruled out for
-            # assignment for that particular order. Valid values for `pickup_eta` are \[1,
+            # assignment for that particular order. Valid values for pickup_eta are \[1,
             # 3600\].
             pickup_eta: nil,
             # Specify a radius, in meters, which will be used to filter out ineligible
             # vehicles for each order. The pickup location of an order will act as the center
-            # of the circle when identifying eligible vehicles. Valid values for `radius` are
+            # of the circle when identifying eligible vehicles. Valid values for radius are
             # \[1, 10000\].
             radius: nil
           )
@@ -236,12 +236,12 @@ module NextbillionSDK
           attr_writer :pickup
 
           # Specify custom attributes for the orders. Each attribute should be created as a
-          # `key:value` pair. The **keys** provided can be used in
-          # `options.order_attribute_priority_mappings` to assign a custom priority for this
+          # key:value pair. The **keys** provided can be used in
+          # options.order_attribute_priority_mappings to assign a custom priority for this
           # order based on its attributes.
           #
-          # The maximum number of key:value pairs that can be specified under `attributes`
-          # for a given order, is limited to 30.
+          # The maximum number of key:value pairs that can be specified under attributes for
+          # a given order, is limited to 30.
           sig { returns(T.nilable(T.anything)) }
           attr_reader :attributes
 
@@ -254,7 +254,7 @@ module NextbillionSDK
           # Please note
           #
           # - The last location provided is treated as the destination of the trip.
-          # - `dropoffs` is mandatory when `dropoff_details` is set to **true**.
+          # - dropoffs is mandatory when dropoff_details is set to **true**.
           sig do
             returns(
               T.nilable(
@@ -278,8 +278,8 @@ module NextbillionSDK
 
           # Specify the priority for this order. A higher value indicates a higher priority.
           # When specified, it will override any priority score deduced from
-          # `order_attribute_priority_mappings` for this order. Valid values are \[1, 10\]
-          # and default is 0.
+          # order_attribute_priority_mappings for this order. Valid values are \[1, 10\] and
+          # default is 0.
           sig { returns(T.nilable(Integer)) }
           attr_reader :priority
 
@@ -301,16 +301,16 @@ module NextbillionSDK
           # condition—meaning all specified criteria must be met individually for a vehicle
           # to be considered.
           #
-          # For example, if `required_all_of_attributes`, `required_any_of_attributes`, and
-          # `exclude_all_of_attributes` are all provided, an eligible vehicle must satisfy
-          # the following to be considered for assignments:
+          # For example, if required_all_of_attributes, required_any_of_attributes, and
+          # exclude_all_of_attributes are all provided, an eligible vehicle must satisfy the
+          # following to be considered for assignments:
           #
-          # 1.  Meet all conditions specified in `required_all_of_attributes`.
-          # 2.  Meet at least one of the conditions listed in `required_any_of_attributes`.
-          # 3.  Not meet any conditions mentioned in `exclude_all_of_attributes`.
+          # 1.  Meet all conditions specified in required_all_of_attributes.
+          # 2.  Meet at least one of the conditions listed in required_any_of_attributes.
+          # 3.  Not meet any conditions mentioned in exclude_all_of_attributes.
           #
-          # Consequently, a vehicle which does not have any `attributes` defined can't be
-          # assigned to an order which has `vehicle_preferences` configured.
+          # Consequently, a vehicle which does not have any attributes defined can't be
+          # assigned to an order which has vehicle_preferences configured.
           sig do
             returns(
               T.nilable(
@@ -351,12 +351,12 @@ module NextbillionSDK
             # is mandatory for each order.
             pickup:,
             # Specify custom attributes for the orders. Each attribute should be created as a
-            # `key:value` pair. The **keys** provided can be used in
-            # `options.order_attribute_priority_mappings` to assign a custom priority for this
+            # key:value pair. The **keys** provided can be used in
+            # options.order_attribute_priority_mappings to assign a custom priority for this
             # order based on its attributes.
             #
-            # The maximum number of key:value pairs that can be specified under `attributes`
-            # for a given order, is limited to 30.
+            # The maximum number of key:value pairs that can be specified under attributes for
+            # a given order, is limited to 30.
             attributes: nil,
             # Use this parameter to specify the location coordinates of the destination of the
             # trip or the intermediate stops to be completed before it.
@@ -364,12 +364,12 @@ module NextbillionSDK
             # Please note
             #
             # - The last location provided is treated as the destination of the trip.
-            # - `dropoffs` is mandatory when `dropoff_details` is set to **true**.
+            # - dropoffs is mandatory when dropoff_details is set to **true**.
             dropoffs: nil,
             # Specify the priority for this order. A higher value indicates a higher priority.
             # When specified, it will override any priority score deduced from
-            # `order_attribute_priority_mappings` for this order. Valid values are \[1, 10\]
-            # and default is 0.
+            # order_attribute_priority_mappings for this order. Valid values are \[1, 10\] and
+            # default is 0.
             priority: nil,
             # Specify the service time, in seconds, for the order. Service time is the
             # duration that the driver is likely to wait at the pickup location after
@@ -381,16 +381,16 @@ module NextbillionSDK
             # condition—meaning all specified criteria must be met individually for a vehicle
             # to be considered.
             #
-            # For example, if `required_all_of_attributes`, `required_any_of_attributes`, and
-            # `exclude_all_of_attributes` are all provided, an eligible vehicle must satisfy
-            # the following to be considered for assignments:
+            # For example, if required_all_of_attributes, required_any_of_attributes, and
+            # exclude_all_of_attributes are all provided, an eligible vehicle must satisfy the
+            # following to be considered for assignments:
             #
-            # 1.  Meet all conditions specified in `required_all_of_attributes`.
-            # 2.  Meet at least one of the conditions listed in `required_any_of_attributes`.
-            # 3.  Not meet any conditions mentioned in `exclude_all_of_attributes`.
+            # 1.  Meet all conditions specified in required_all_of_attributes.
+            # 2.  Meet at least one of the conditions listed in required_any_of_attributes.
+            # 3.  Not meet any conditions mentioned in exclude_all_of_attributes.
             #
-            # Consequently, a vehicle which does not have any `attributes` defined can't be
-            # assigned to an order which has `vehicle_preferences` configured.
+            # Consequently, a vehicle which does not have any attributes defined can't be
+            # assigned to an order which has vehicle_preferences configured.
             vehicle_preferences: nil
           )
           end
@@ -581,16 +581,16 @@ module NextbillionSDK
             # condition—meaning all specified criteria must be met individually for a vehicle
             # to be considered.
             #
-            # For example, if `required_all_of_attributes`, `required_any_of_attributes`, and
-            # `exclude_all_of_attributes` are all provided, an eligible vehicle must satisfy
-            # the following to be considered for assignments:
+            # For example, if required_all_of_attributes, required_any_of_attributes, and
+            # exclude_all_of_attributes are all provided, an eligible vehicle must satisfy the
+            # following to be considered for assignments:
             #
-            # 1.  Meet all conditions specified in `required_all_of_attributes`.
-            # 2.  Meet at least one of the conditions listed in `required_any_of_attributes`.
-            # 3.  Not meet any conditions mentioned in `exclude_all_of_attributes`.
+            # 1.  Meet all conditions specified in required_all_of_attributes.
+            # 2.  Meet at least one of the conditions listed in required_any_of_attributes.
+            # 3.  Not meet any conditions mentioned in exclude_all_of_attributes.
             #
-            # Consequently, a vehicle which does not have any `attributes` defined can't be
-            # assigned to an order which has `vehicle_preferences` configured.
+            # Consequently, a vehicle which does not have any attributes defined can't be
+            # assigned to an order which has vehicle_preferences configured.
             sig do
               params(
                 exclude_all_of_attributes:
@@ -656,15 +656,15 @@ module NextbillionSDK
                   )
                 end
 
-              # Specify the name of the attribute. The `attribute` is compared to the keys (of
-              # each `key:value` pair) in `vehicles.attributes` during evaluation.
+              # Specify the name of the attribute. The attribute is compared to the keys (of
+              # each key:value pair) in vehicles.attributes during evaluation.
               sig { returns(String) }
               attr_accessor :attribute
 
-              # Specify the operator to denote the relation between `attribute` and the `value`
-              # specified above. The `attribute` , `operator` and `value` together constitute
-              # the condition that a vehicle must meet to be eligible for assignment. Currently,
-              # we support following operators currently:
+              # Specify the operator to denote the relation between attribute and the value
+              # specified above. The attribute , operator and value together constitute the
+              # condition that a vehicle must meet to be eligible for assignment. Currently, we
+              # support following operators currently:
               #
               # - Equal to (==)
               # - Less than (<)
@@ -673,15 +673,15 @@ module NextbillionSDK
               # - Greater than equal to (>=)
               # - Contains (contains)
               #
-              # Please note that when using "contains" operator only one `value` can be
-              # specified and the corresponding `attribute` must contain multiple values when
-              # defined for a vehicle.
+              # Please note that when using "contains" operator only one value can be specified
+              # and the corresponding attribute must contain multiple values when defined for a
+              # vehicle.
               sig { returns(String) }
               attr_accessor :operator
 
-              # Specify the desired value of the attribute to be applied for this order. `value`
-              # provided here is compared to the values (of each `key:value` pair) in
-              # `vehicles.attributes` during evaluation.
+              # Specify the desired value of the attribute to be applied for this order. value
+              # provided here is compared to the values (of each key:value pair) in
+              # vehicles.attributes during evaluation.
               sig { returns(String) }
               attr_accessor :value
 
@@ -693,13 +693,13 @@ module NextbillionSDK
                 ).returns(T.attached_class)
               end
               def self.new(
-                # Specify the name of the attribute. The `attribute` is compared to the keys (of
-                # each `key:value` pair) in `vehicles.attributes` during evaluation.
+                # Specify the name of the attribute. The attribute is compared to the keys (of
+                # each key:value pair) in vehicles.attributes during evaluation.
                 attribute:,
-                # Specify the operator to denote the relation between `attribute` and the `value`
-                # specified above. The `attribute` , `operator` and `value` together constitute
-                # the condition that a vehicle must meet to be eligible for assignment. Currently,
-                # we support following operators currently:
+                # Specify the operator to denote the relation between attribute and the value
+                # specified above. The attribute , operator and value together constitute the
+                # condition that a vehicle must meet to be eligible for assignment. Currently, we
+                # support following operators currently:
                 #
                 # - Equal to (==)
                 # - Less than (<)
@@ -708,13 +708,13 @@ module NextbillionSDK
                 # - Greater than equal to (>=)
                 # - Contains (contains)
                 #
-                # Please note that when using "contains" operator only one `value` can be
-                # specified and the corresponding `attribute` must contain multiple values when
-                # defined for a vehicle.
+                # Please note that when using "contains" operator only one value can be specified
+                # and the corresponding attribute must contain multiple values when defined for a
+                # vehicle.
                 operator:,
-                # Specify the desired value of the attribute to be applied for this order. `value`
-                # provided here is compared to the values (of each `key:value` pair) in
-                # `vehicles.attributes` during evaluation.
+                # Specify the desired value of the attribute to be applied for this order. value
+                # provided here is compared to the values (of each key:value pair) in
+                # vehicles.attributes during evaluation.
                 value:
               )
               end
@@ -737,15 +737,15 @@ module NextbillionSDK
                   )
                 end
 
-              # Specify the name of the attribute. The `attribute` is compared to the keys (of
-              # each `key:value` pair) in `vehicles.attributes` during evaluation.
+              # Specify the name of the attribute. The attribute is compared to the keys (of
+              # each key:value pair) in vehicles.attributes during evaluation.
               sig { returns(String) }
               attr_accessor :attribute
 
-              # Specify the operator to denote the relation between `attribute` and the `value`
-              # specified above. The `attribute` , `operator` and `value` together constitute
-              # the condition that a vehicle must meet to be eligible for assignment. Currently,
-              # we support following operators currently:
+              # Specify the operator to denote the relation between attribute and the value
+              # specified above. The attribute , operator and value together constitute the
+              # condition that a vehicle must meet to be eligible for assignment. Currently, we
+              # support following operators currently:
               #
               # - Equal to (==)
               # - Less than (<)
@@ -754,15 +754,15 @@ module NextbillionSDK
               # - Greater than equal to (>=)
               # - Contains (contains)
               #
-              # Please note that when using "contains" operator only one `value` can be
-              # specified and the corresponding `attribute` must contain multiple values when
-              # defined for a vehicle.
+              # Please note that when using "contains" operator only one value can be specified
+              # and the corresponding attribute must contain multiple values when defined for a
+              # vehicle.
               sig { returns(String) }
               attr_accessor :operator
 
-              # Specify the desired value of the attribute to be applied for this order. `value`
-              # provided here is compared to the values (of each `key:value` pair) in
-              # `vehicles.attributes` during evaluation.
+              # Specify the desired value of the attribute to be applied for this order. value
+              # provided here is compared to the values (of each key:value pair) in
+              # vehicles.attributes during evaluation.
               sig { returns(String) }
               attr_accessor :value
 
@@ -774,13 +774,13 @@ module NextbillionSDK
                 ).returns(T.attached_class)
               end
               def self.new(
-                # Specify the name of the attribute. The `attribute` is compared to the keys (of
-                # each `key:value` pair) in `vehicles.attributes` during evaluation.
+                # Specify the name of the attribute. The attribute is compared to the keys (of
+                # each key:value pair) in vehicles.attributes during evaluation.
                 attribute:,
-                # Specify the operator to denote the relation between `attribute` and the `value`
-                # specified above. The `attribute` , `operator` and `value` together constitute
-                # the condition that a vehicle must meet to be eligible for assignment. Currently,
-                # we support following operators currently:
+                # Specify the operator to denote the relation between attribute and the value
+                # specified above. The attribute , operator and value together constitute the
+                # condition that a vehicle must meet to be eligible for assignment. Currently, we
+                # support following operators currently:
                 #
                 # - Equal to (==)
                 # - Less than (<)
@@ -789,13 +789,13 @@ module NextbillionSDK
                 # - Greater than equal to (>=)
                 # - Contains (contains)
                 #
-                # Please note that when using "contains" operator only one `value` can be
-                # specified and the corresponding `attribute` must contain multiple values when
-                # defined for a vehicle.
+                # Please note that when using "contains" operator only one value can be specified
+                # and the corresponding attribute must contain multiple values when defined for a
+                # vehicle.
                 operator:,
-                # Specify the desired value of the attribute to be applied for this order. `value`
-                # provided here is compared to the values (of each `key:value` pair) in
-                # `vehicles.attributes` during evaluation.
+                # Specify the desired value of the attribute to be applied for this order. value
+                # provided here is compared to the values (of each key:value pair) in
+                # vehicles.attributes during evaluation.
                 value:
               )
               end
@@ -818,15 +818,15 @@ module NextbillionSDK
                   )
                 end
 
-              # Specify the name of the attribute. The `attribute` is compared to the keys (of
-              # each `key:value` pair) in `vehicles.attributes` during evaluation.
+              # Specify the name of the attribute. The attribute is compared to the keys (of
+              # each key:value pair) in vehicles.attributes during evaluation.
               sig { returns(String) }
               attr_accessor :attribute
 
-              # Specify the operator to denote the relation between `attribute` and the `value`
-              # specified above. The `attribute` , `operator` and `value` together constitute
-              # the condition that a vehicle must meet to be eligible for assignment. Currently,
-              # we support following operators currently:
+              # Specify the operator to denote the relation between attribute and the value
+              # specified above. The attribute , operator and value together constitute the
+              # condition that a vehicle must meet to be eligible for assignment. Currently, we
+              # support following operators currently:
               #
               # - Equal to (==)
               # - Less than (<)
@@ -835,15 +835,15 @@ module NextbillionSDK
               # - Greater than equal to (>=)
               # - Contains (contains)
               #
-              # Please note that when using "contains" operator only one `value` can be
-              # specified and the corresponding `attribute` must contain multiple values when
-              # defined for a vehicle.
+              # Please note that when using "contains" operator only one value can be specified
+              # and the corresponding attribute must contain multiple values when defined for a
+              # vehicle.
               sig { returns(String) }
               attr_accessor :operator
 
-              # Specify the desired value of the attribute to be applied for this order. `value`
-              # provided here is compared to the values (of each `key:value` pair) in
-              # `vehicles.attributes` during evaluation.
+              # Specify the desired value of the attribute to be applied for this order. value
+              # provided here is compared to the values (of each key:value pair) in
+              # vehicles.attributes during evaluation.
               sig { returns(String) }
               attr_accessor :value
 
@@ -855,13 +855,13 @@ module NextbillionSDK
                 ).returns(T.attached_class)
               end
               def self.new(
-                # Specify the name of the attribute. The `attribute` is compared to the keys (of
-                # each `key:value` pair) in `vehicles.attributes` during evaluation.
+                # Specify the name of the attribute. The attribute is compared to the keys (of
+                # each key:value pair) in vehicles.attributes during evaluation.
                 attribute:,
-                # Specify the operator to denote the relation between `attribute` and the `value`
-                # specified above. The `attribute` , `operator` and `value` together constitute
-                # the condition that a vehicle must meet to be eligible for assignment. Currently,
-                # we support following operators currently:
+                # Specify the operator to denote the relation between attribute and the value
+                # specified above. The attribute , operator and value together constitute the
+                # condition that a vehicle must meet to be eligible for assignment. Currently, we
+                # support following operators currently:
                 #
                 # - Equal to (==)
                 # - Less than (<)
@@ -870,13 +870,13 @@ module NextbillionSDK
                 # - Greater than equal to (>=)
                 # - Contains (contains)
                 #
-                # Please note that when using "contains" operator only one `value` can be
-                # specified and the corresponding `attribute` must contain multiple values when
-                # defined for a vehicle.
+                # Please note that when using "contains" operator only one value can be specified
+                # and the corresponding attribute must contain multiple values when defined for a
+                # vehicle.
                 operator:,
-                # Specify the desired value of the attribute to be applied for this order. `value`
-                # provided here is compared to the values (of each `key:value` pair) in
-                # `vehicles.attributes` during evaluation.
+                # Specify the desired value of the attribute to be applied for this order. value
+                # provided here is compared to the values (of each key:value pair) in
+                # vehicles.attributes during evaluation.
                 value:
               )
               end
@@ -909,7 +909,7 @@ module NextbillionSDK
           # - It is not necessary that the service will return the specified number of
           #   alternate assignments for each order. The number of alternate assignments
           #   returned will depend on the number of vehicles provided in the input.
-          # - Order which could not be assigned to any vehicles due to their `filter` or
+          # - Order which could not be assigned to any vehicles due to their filter or
           #   attribute matching criteria will not be eligible for alternate assignments as
           #   well.
           sig { returns(T.nilable(Integer)) }
@@ -1021,7 +1021,7 @@ module NextbillionSDK
             # - It is not necessary that the service will return the specified number of
             #   alternate assignments for each order. The number of alternate assignments
             #   returned will depend on the number of vehicles provided in the input.
-            # - Order which could not be assigned to any vehicles due to their `filter` or
+            # - Order which could not be assigned to any vehicles due to their filter or
             #   attribute matching criteria will not be eligible for alternate assignments as
             #   well.
             alternate_assignments: nil,
@@ -1074,15 +1074,15 @@ module NextbillionSDK
                 )
               end
 
-            # Specify the name of the attribute. The `attribute` is compared to the keys (of
-            # each `key:value` pair) in `orders.attributes` during evaluation.
+            # Specify the name of the attribute. The attribute is compared to the keys (of
+            # each key:value pair) in orders.attributes during evaluation.
             sig { returns(String) }
             attr_accessor :attribute
 
-            # Specify the operator to denote the relation between `attribute` and the `value`
-            # specified above. The `attribute` , `operator` and `value` together constitute
-            # the condition that an order must meet to assume the specified priority. We
-            # support the following operators currently:
+            # Specify the operator to denote the relation between attribute and the value
+            # specified above. The attribute , operator and value together constitute the
+            # condition that an order must meet to assume the specified priority. We support
+            # the following operators currently:
             #
             # - Equal to (==)
             # - Less than (<)
@@ -1091,9 +1091,9 @@ module NextbillionSDK
             # - Greater than equal to (>=)
             # - Contains (contains)
             #
-            # Please note that when using "contains" operator only one `value` can be
-            # specified and the corresponding `attribute` must contain multiple values when
-            # defined for an order.
+            # Please note that when using "contains" operator only one value can be specified
+            # and the corresponding attribute must contain multiple values when defined for an
+            # order.
             sig { returns(String) }
             attr_accessor :operator
 
@@ -1103,9 +1103,9 @@ module NextbillionSDK
             sig { returns(String) }
             attr_accessor :priority
 
-            # Specify the desired value of the attribute to be applied for this order. `value`
-            # provided here is compared to the values (of each `key:value` pair) in
-            # `orders.attributes` during evaluation.
+            # Specify the desired value of the attribute to be applied for this order. value
+            # provided here is compared to the values (of each key:value pair) in
+            # orders.attributes during evaluation.
             sig { returns(String) }
             attr_accessor :value
 
@@ -1118,13 +1118,13 @@ module NextbillionSDK
               ).returns(T.attached_class)
             end
             def self.new(
-              # Specify the name of the attribute. The `attribute` is compared to the keys (of
-              # each `key:value` pair) in `orders.attributes` during evaluation.
+              # Specify the name of the attribute. The attribute is compared to the keys (of
+              # each key:value pair) in orders.attributes during evaluation.
               attribute:,
-              # Specify the operator to denote the relation between `attribute` and the `value`
-              # specified above. The `attribute` , `operator` and `value` together constitute
-              # the condition that an order must meet to assume the specified priority. We
-              # support the following operators currently:
+              # Specify the operator to denote the relation between attribute and the value
+              # specified above. The attribute , operator and value together constitute the
+              # condition that an order must meet to assume the specified priority. We support
+              # the following operators currently:
               #
               # - Equal to (==)
               # - Less than (<)
@@ -1133,17 +1133,17 @@ module NextbillionSDK
               # - Greater than equal to (>=)
               # - Contains (contains)
               #
-              # Please note that when using "contains" operator only one `value` can be
-              # specified and the corresponding `attribute` must contain multiple values when
-              # defined for an order.
+              # Please note that when using "contains" operator only one value can be specified
+              # and the corresponding attribute must contain multiple values when defined for an
+              # order.
               operator:,
               # Specify the priority score that should be assigned when an order qualifies the
               # criteria specified above. A higher value indicates a higher priority. Valid
               # values are \[1,10\].
               priority:,
-              # Specify the desired value of the attribute to be applied for this order. `value`
-              # provided here is compared to the values (of each `key:value` pair) in
-              # `orders.attributes` during evaluation.
+              # Specify the desired value of the attribute to be applied for this order. value
+              # provided here is compared to the values (of each key:value pair) in
+              # orders.attributes during evaluation.
               value:
             )
             end
@@ -1212,15 +1212,15 @@ module NextbillionSDK
                 )
               end
 
-            # Specify the name of the attribute. The `attribute` is compared to the keys (of
-            # each `key:value` pair) in `vehicles.attributes` during evaluation.
+            # Specify the name of the attribute. The attribute is compared to the keys (of
+            # each key:value pair) in vehicles.attributes during evaluation.
             sig { returns(String) }
             attr_accessor :attribute
 
-            # Specify the operator to denote the relation between `attribute` and the `value`
-            # specified above. The `attribute` , `operator` and `value` together constitute
-            # the condition that a vehicle must meet to assume the specified priority. We
-            # support the following operators currently:
+            # Specify the operator to denote the relation between attribute and the value
+            # specified above. The attribute , operator and value together constitute the
+            # condition that a vehicle must meet to assume the specified priority. We support
+            # the following operators currently:
             #
             # - Equal to (==)
             # - Less than (<)
@@ -1229,9 +1229,9 @@ module NextbillionSDK
             # - Greater than equal to (>=)
             # - Contains (contains)
             #
-            # Please note that when using "contains" operator only one `value` can be
-            # specified and the corresponding `attribute` must contain multiple values when
-            # defined for a vehicle.
+            # Please note that when using "contains" operator only one value can be specified
+            # and the corresponding attribute must contain multiple values when defined for a
+            # vehicle.
             sig { returns(String) }
             attr_accessor :operator
 
@@ -1241,9 +1241,9 @@ module NextbillionSDK
             sig { returns(String) }
             attr_accessor :priority
 
-            # Specify the desired value of the attribute to be applied for this vehicle.
-            # `value` provided here is compared to the values (of each `key:value` pair) in
-            # `vehicles.attributes` during evaluation.
+            # Specify the desired value of the attribute to be applied for this vehicle. value
+            # provided here is compared to the values (of each key:value pair) in
+            # vehicles.attributes during evaluation.
             sig { returns(String) }
             attr_accessor :value
 
@@ -1256,13 +1256,13 @@ module NextbillionSDK
               ).returns(T.attached_class)
             end
             def self.new(
-              # Specify the name of the attribute. The `attribute` is compared to the keys (of
-              # each `key:value` pair) in `vehicles.attributes` during evaluation.
+              # Specify the name of the attribute. The attribute is compared to the keys (of
+              # each key:value pair) in vehicles.attributes during evaluation.
               attribute:,
-              # Specify the operator to denote the relation between `attribute` and the `value`
-              # specified above. The `attribute` , `operator` and `value` together constitute
-              # the condition that a vehicle must meet to assume the specified priority. We
-              # support the following operators currently:
+              # Specify the operator to denote the relation between attribute and the value
+              # specified above. The attribute , operator and value together constitute the
+              # condition that a vehicle must meet to assume the specified priority. We support
+              # the following operators currently:
               #
               # - Equal to (==)
               # - Less than (<)
@@ -1271,17 +1271,17 @@ module NextbillionSDK
               # - Greater than equal to (>=)
               # - Contains (contains)
               #
-              # Please note that when using "contains" operator only one `value` can be
-              # specified and the corresponding `attribute` must contain multiple values when
-              # defined for a vehicle.
+              # Please note that when using "contains" operator only one value can be specified
+              # and the corresponding attribute must contain multiple values when defined for a
+              # vehicle.
               operator:,
               # Specify the priority score that should be assigned when a vehicle qualifies the
               # criteria specified above. A higher value indicates a higher priority. Valid
               # values are \[1,10\].
               priority:,
-              # Specify the desired value of the attribute to be applied for this vehicle.
-              # `value` provided here is compared to the values (of each `key:value` pair) in
-              # `vehicles.attributes` during evaluation.
+              # Specify the desired value of the attribute to be applied for this vehicle. value
+              # provided here is compared to the values (of each key:value pair) in
+              # vehicles.attributes during evaluation.
               value:
             )
             end

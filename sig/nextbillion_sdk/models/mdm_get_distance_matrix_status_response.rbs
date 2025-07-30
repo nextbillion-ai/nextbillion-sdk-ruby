@@ -41,14 +41,14 @@ module NextbillionSDK
         status: String
       }
 
-      type code = :"`Ok`" | :"`Processing`" | :"`Failed`"
+      type code = :Ok | :Processing | :Failed
 
       module Code
         extend NextbillionSDK::Internal::Type::Enum
 
-        OK: :"`Ok`"
-        PROCESSING: :"`Processing`"
-        FAILED: :"`Failed`"
+        OK: :Ok
+        PROCESSING: :Processing
+        FAILED: :Failed
 
         def self?.values: -> ::Array[NextbillionSDK::Models::MdmGetDistanceMatrixStatusResponse::code]
       end

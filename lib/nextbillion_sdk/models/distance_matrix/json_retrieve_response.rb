@@ -22,7 +22,7 @@ module NextbillionSDK
 
         # @!attribute status
         #   A string indicating the state of the response. On normal responses, the value
-        #   will be `Ok`. Indicative HTTP error codes are returned for different errors. See
+        #   will be Ok. Indicative HTTP error codes are returned for different errors. See
         #   the [API Errors Codes](#api-error-codes) section below for more information.
         #
         #   @return [String, nil]
@@ -40,11 +40,11 @@ module NextbillionSDK
 
         class Row < NextbillionSDK::Internal::Type::BaseModel
           # @!attribute elements
-          #   An array of objects. Each `elements` array corresponds to a single `origins`
-          #   coordinate and contains objects with `distance` and `duration` values for each
-          #   of the `destinations`. The details in the first `elements` array correspond to
-          #   the first `origins` point and the first object corresponds to the first
-          #   `destinations` point and so on.
+          #   An array of objects. Each elements array corresponds to a single origins
+          #   coordinate and contains objects with distance and duration values for each of
+          #   the destinations. The details in the first elements array correspond to the
+          #   first origins point and the first object corresponds to the first destinations
+          #   point and so on.
           #
           #   @return [Array<NextbillionSDK::Models::DistanceMatrix::JsonRetrieveResponse::Row::Element>, nil]
           optional :elements,
@@ -55,7 +55,7 @@ module NextbillionSDK
           #   {NextbillionSDK::Models::DistanceMatrix::JsonRetrieveResponse::Row} for more
           #   details.
           #
-          #   @param elements [Array<NextbillionSDK::Models::DistanceMatrix::JsonRetrieveResponse::Row::Element>] An array of objects. Each `elements` array corresponds to a single `origins` coo
+          #   @param elements [Array<NextbillionSDK::Models::DistanceMatrix::JsonRetrieveResponse::Row::Element>] An array of objects. Each elements array corresponds to a single origins coordin
 
           class Element < NextbillionSDK::Internal::Type::BaseModel
             # @!attribute distance

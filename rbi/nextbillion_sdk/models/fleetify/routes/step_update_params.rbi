@@ -50,10 +50,10 @@ module NextbillionSDK
           # Specify the mode of completion to be used for the step. Currently, following
           # values are allowed:
           #
-          # - `manual`: Steps must be marked as completed manually through the Driver App.
-          # - `geofence`: Steps are marked as completed automatically based on the entry
+          # - manual: Steps must be marked as completed manually through the Driver App.
+          # - geofence: Steps are marked as completed automatically based on the entry
           #   conditions and geofence specified.
-          # - `geofence_manual_fallback`: Steps will be marked as completed automatically
+          # - geofence_manual_fallback: Steps will be marked as completed automatically
           #   based on geofence and entry condition configurations but there will also be a
           #   provision for manually updating the status in case, geofence detection fails.
           sig do
@@ -82,8 +82,8 @@ module NextbillionSDK
           sig { params(document_template_id: String).void }
           attr_writer :document_template_id
 
-          # Specify the duration of the `layover` or `break` type steps, in seconds. Please
-          # note it is mandatory when step type is either "layover" or "break".
+          # Specify the duration of the layover or break type steps, in seconds. Please note
+          # it is mandatory when step type is either "layover" or "break".
           sig { returns(T.nilable(Integer)) }
           attr_reader :duration
 
@@ -92,7 +92,7 @@ module NextbillionSDK
 
           # Specify the configurations of the geofence which will be used to detect presence
           # of the driver and complete the tasks automatically. Please note that this
-          # attribute is required when `completion_mode` is either "geofence" or
+          # attribute is required when completion_mode is either "geofence" or
           # "geofence_manual_fallback".
           sig do
             returns(
@@ -112,7 +112,7 @@ module NextbillionSDK
           attr_writer :geofence_config
 
           # Specify the location coordinates where the steps should be performed in
-          # `[latitude, longitude]`.
+          # [latitude, longitude].
           sig { returns(T.nilable(T::Array[Float])) }
           attr_reader :location
 
@@ -140,9 +140,9 @@ module NextbillionSDK
           end
           attr_writer :meta
 
-          # Specify the step type. It can belong to one of the following: `start`, `job` ,
-          # `pickup`, `delivery`, `end`. A `duration` is mandatory when the step type is
-          # either `layover` or a `break`.
+          # Specify the step type. It can belong to one of the following: start, job ,
+          # pickup, delivery, end. A duration is mandatory when the step type is either
+          # layover or a break.
           sig do
             returns(
               T.nilable(
@@ -203,10 +203,10 @@ module NextbillionSDK
             # Specify the mode of completion to be used for the step. Currently, following
             # values are allowed:
             #
-            # - `manual`: Steps must be marked as completed manually through the Driver App.
-            # - `geofence`: Steps are marked as completed automatically based on the entry
+            # - manual: Steps must be marked as completed manually through the Driver App.
+            # - geofence: Steps are marked as completed automatically based on the entry
             #   conditions and geofence specified.
-            # - `geofence_manual_fallback`: Steps will be marked as completed automatically
+            # - geofence_manual_fallback: Steps will be marked as completed automatically
             #   based on geofence and entry condition configurations but there will also be a
             #   provision for manually updating the status in case, geofence detection fails.
             completion_mode: nil,
@@ -214,25 +214,25 @@ module NextbillionSDK
             # completion for the step. If an empty string "" is provided, the current document
             # template associated to the step will be removed.
             document_template_id: nil,
-            # Specify the duration of the `layover` or `break` type steps, in seconds. Please
-            # note it is mandatory when step type is either "layover" or "break".
+            # Specify the duration of the layover or break type steps, in seconds. Please note
+            # it is mandatory when step type is either "layover" or "break".
             duration: nil,
             # Specify the configurations of the geofence which will be used to detect presence
             # of the driver and complete the tasks automatically. Please note that this
-            # attribute is required when `completion_mode` is either "geofence" or
+            # attribute is required when completion_mode is either "geofence" or
             # "geofence_manual_fallback".
             geofence_config: nil,
             # Specify the location coordinates where the steps should be performed in
-            # `[latitude, longitude]`.
+            # [latitude, longitude].
             location: nil,
             # An object to specify any additional details about the task to be associated with
             # the step in the response. The information provided here will be available on the
             # Driver's app under step details. This attribute can be used to provide context
             # about or instructions to the driver for performing the task
             meta: nil,
-            # Specify the step type. It can belong to one of the following: `start`, `job` ,
-            # `pickup`, `delivery`, `end`. A `duration` is mandatory when the step type is
-            # either `layover` or a `break`.
+            # Specify the step type. It can belong to one of the following: start, job ,
+            # pickup, delivery, end. A duration is mandatory when the step type is either
+            # layover or a break.
             type: nil,
             request_options: {}
           )
@@ -327,9 +327,9 @@ module NextbillionSDK
             end
           end
 
-          # Specify the step type. It can belong to one of the following: `start`, `job` ,
-          # `pickup`, `delivery`, `end`. A `duration` is mandatory when the step type is
-          # either `layover` or a `break`.
+          # Specify the step type. It can belong to one of the following: start, job ,
+          # pickup, delivery, end. A duration is mandatory when the step type is either
+          # layover or a break.
           module Type
             extend NextbillionSDK::Internal::Type::Enum
 
@@ -344,37 +344,37 @@ module NextbillionSDK
 
             START =
               T.let(
-                :"`start`",
+                :start,
                 NextbillionSDK::Fleetify::Routes::StepUpdateParams::Type::TaggedSymbol
               )
             JOB =
               T.let(
-                :"`job`",
+                :job,
                 NextbillionSDK::Fleetify::Routes::StepUpdateParams::Type::TaggedSymbol
               )
             PICKUP =
               T.let(
-                :"`pickup`",
+                :pickup,
                 NextbillionSDK::Fleetify::Routes::StepUpdateParams::Type::TaggedSymbol
               )
             DELIVERY =
               T.let(
-                :"`delivery`",
+                :delivery,
                 NextbillionSDK::Fleetify::Routes::StepUpdateParams::Type::TaggedSymbol
               )
             BREAK =
               T.let(
-                :"`break`",
+                :break,
                 NextbillionSDK::Fleetify::Routes::StepUpdateParams::Type::TaggedSymbol
               )
             LAYOVER =
               T.let(
-                :"`layover`",
+                :layover,
                 NextbillionSDK::Fleetify::Routes::StepUpdateParams::Type::TaggedSymbol
               )
             END_ =
               T.let(
-                :"`end`",
+                :end,
                 NextbillionSDK::Fleetify::Routes::StepUpdateParams::Type::TaggedSymbol
               )
 

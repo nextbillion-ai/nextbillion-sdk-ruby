@@ -24,7 +24,7 @@ module NextbillionSDK
       # @see NextbillionSDK::Models::PostalcodeRetrieveCoordinatesResponse#places
       class Places < NextbillionSDK::Internal::Type::BaseModel
         # @!attribute address
-        #   Returns the address of the `postalcode` returned.
+        #   Returns the address of the postalcode returned.
         #
         #   @return [String, nil]
         optional :address, String
@@ -34,11 +34,11 @@ module NextbillionSDK
         #   will not be returned in case the boundary information of the postal code
         #   provided is not available (only for selected countries).
         #
-        #   Please note the contents of this object will change based on the `format` field
-        #   in the input. When the `format` field is not present in the input this object
-        #   would contain `multipolygon` - `polygon` - `points` objects depending on the
-        #   boundary of the given postal code. When the `format` field is present in the
-        #   input, then the contents of this object would match the
+        #   Please note the contents of this object will change based on the format field in
+        #   the input. When the format field is not present in the input this object would
+        #   contain multipolygon - polygon - points objects depending on the boundary of the
+        #   given postal code. When the format field is present in the input, then the
+        #   contents of this object would match the
         #   [geojson format and standard](https://datatracker.ietf.org/doc/html/rfc7946).
         #
         #   @return [NextbillionSDK::Models::PostalcodeRetrieveCoordinatesResponse::Places::Boundary, nil]
@@ -53,15 +53,15 @@ module NextbillionSDK
 
         # @!attribute country_code
         #   Returns the [alpha-3 ISO code](https://www.iban.com/country-codes) of the
-        #   country containing the `postalcode` returned.
+        #   country containing the postalcode returned.
         #
         #   @return [String, nil]
         optional :country_code, String, api_name: :countryCode
 
         # @!attribute distance
         #   This property is returned only when the API is requested to fetch the postal
-        #   code containing the location coordinate provided in the `at` input parameter.
-        #   `distance` denotes the straight line distance, in meters, from the requested
+        #   code containing the location coordinate provided in the at input parameter.
+        #   distance denotes the straight line distance, in meters, from the requested
         #   location coordinate to the postal code centroid.
         #
         #   @return [Float, nil]
@@ -109,7 +109,7 @@ module NextbillionSDK
         #
         #   An object that contains details about the place that was provided in the input.
         #
-        #   @param address [String] Returns the address of the `postalcode` returned.
+        #   @param address [String] Returns the address of the postalcode returned.
         #
         #   @param boundary [NextbillionSDK::Models::PostalcodeRetrieveCoordinatesResponse::Places::Boundary] An object containing the boundary details of the postal code area. This object w
         #
@@ -133,8 +133,8 @@ module NextbillionSDK
         class Boundary < NextbillionSDK::Internal::Type::BaseModel
           # @!attribute geometry
           #   An object with geoJSON details of the boundary. This object is returned when the
-          #   `format` field is set to `geojson` in the input request, otherwise it is not
-          #   present in the response. The contents of this object follow the
+          #   format field is set to geojson in the input request, otherwise it is not present
+          #   in the response. The contents of this object follow the
           #   [geoJSON standard](https://datatracker.ietf.org/doc/html/rfc7946).
           #
           #   @return [NextbillionSDK::Models::PostalcodeRetrieveCoordinatesResponse::Places::Boundary::Geometry, nil]
@@ -144,11 +144,10 @@ module NextbillionSDK
           # @!attribute multipolygon
           #   An array of objects containing information about all the polygons forming the
           #   postal code area. In case, the postal code area is formed by multiple polygons
-          #   not containing each other, a matching count of `polygon` objects will be
-          #   returned.
+          #   not containing each other, a matching count of polygon objects will be returned.
           #
-          #   Please note that this object is returned only when `format` field is not
-          #   specified in the input, otherwise it is not present in the response.
+          #   Please note that this object is returned only when format field is not specified
+          #   in the input, otherwise it is not present in the response.
           #
           #   @return [Array<NextbillionSDK::Models::PostalcodeRetrieveCoordinatesResponse::Places::Boundary::Multipolygon>, nil]
           optional :multipolygon,
@@ -161,8 +160,8 @@ module NextbillionSDK
           optional :properties, String
 
           # @!attribute type
-          #   Type of the geoJSON object. This parameter is returned when the `format` field
-          #   is set to `geojson` in the input request, otherwise it is not present in the
+          #   Type of the geoJSON object. This parameter is returned when the format field is
+          #   set to geojson in the input request, otherwise it is not present in the
           #   response. The contents of this object follow the
           #   [geoJSON standard](https://datatracker.ietf.org/doc/html/rfc7946).
           #
@@ -178,11 +177,11 @@ module NextbillionSDK
           #   will not be returned in case the boundary information of the postal code
           #   provided is not available (only for selected countries).
           #
-          #   Please note the contents of this object will change based on the `format` field
-          #   in the input. When the `format` field is not present in the input this object
-          #   would contain `multipolygon` - `polygon` - `points` objects depending on the
-          #   boundary of the given postal code. When the `format` field is present in the
-          #   input, then the contents of this object would match the
+          #   Please note the contents of this object will change based on the format field in
+          #   the input. When the format field is not present in the input this object would
+          #   contain multipolygon - polygon - points objects depending on the boundary of the
+          #   given postal code. When the format field is present in the input, then the
+          #   contents of this object would match the
           #   [geojson format and standard](https://datatracker.ietf.org/doc/html/rfc7946).
           #
           #   @param geometry [NextbillionSDK::Models::PostalcodeRetrieveCoordinatesResponse::Places::Boundary::Geometry] An object with geoJSON details of the boundary. This object is returned when the
@@ -191,7 +190,7 @@ module NextbillionSDK
           #
           #   @param properties [String] Property associated with the geoJSON shape.
           #
-          #   @param type [String] Type of the geoJSON object. This parameter is returned when the `format` field i
+          #   @param type [String] Type of the geoJSON object. This parameter is returned when the format field is
 
           # @see NextbillionSDK::Models::PostalcodeRetrieveCoordinatesResponse::Places::Boundary#geometry
           class Geometry < NextbillionSDK::Internal::Type::BaseModel
@@ -215,8 +214,8 @@ module NextbillionSDK
             #   for more details.
             #
             #   An object with geoJSON details of the boundary. This object is returned when the
-            #   `format` field is set to `geojson` in the input request, otherwise it is not
-            #   present in the response. The contents of this object follow the
+            #   format field is set to geojson in the input request, otherwise it is not present
+            #   in the response. The contents of this object follow the
             #   [geoJSON standard](https://datatracker.ietf.org/doc/html/rfc7946).
             #
             #   @param coordinates [Array<Array<Array<Float>>>] An array of coordinates in the [longitude, latitude] format, representing the co
@@ -228,8 +227,7 @@ module NextbillionSDK
             # @!attribute polygon
             #   An object containing the details of a single polygon that is a part of the
             #   postal code area. In case the postal code area contains other polygon(s), the
-            #   details of such polygon(s) would be returned through an array of `points`
-            #   object.
+            #   details of such polygon(s) would be returned through an array of points object.
             #
             #   @return [Array<NextbillionSDK::Models::PostalcodeRetrieveCoordinatesResponse::Places::Boundary::Multipolygon::Polygon>, nil]
             optional :polygon,
@@ -244,7 +242,7 @@ module NextbillionSDK
 
             class Polygon < NextbillionSDK::Internal::Type::BaseModel
               # @!attribute points
-              #   Represents an array of geographic coordinates that define a `polygon` boundary.
+              #   Represents an array of geographic coordinates that define a polygon boundary.
               #
               #   @return [Array<NextbillionSDK::Models::PostalcodeRetrieveCoordinatesResponse::Places::Boundary::Multipolygon::Polygon::Point>, nil]
               optional :points,
@@ -255,7 +253,7 @@ module NextbillionSDK
                        end
 
               # @!method initialize(points: nil)
-              #   @param points [Array<NextbillionSDK::Models::PostalcodeRetrieveCoordinatesResponse::Places::Boundary::Multipolygon::Polygon::Point>] Represents an array of geographic coordinates that define a `polygon` boundary.
+              #   @param points [Array<NextbillionSDK::Models::PostalcodeRetrieveCoordinatesResponse::Places::Boundary::Multipolygon::Polygon::Point>] Represents an array of geographic coordinates that define a polygon boundary.
 
               class Point < NextbillionSDK::Internal::Type::BaseModel
                 # @!attribute lat

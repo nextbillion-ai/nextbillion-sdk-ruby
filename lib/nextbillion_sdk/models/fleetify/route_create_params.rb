@@ -52,7 +52,7 @@ module NextbillionSDK
         #   create, read and manage document templates.
         #
         #   Please note that the document template ID assigned to a route does not apply to
-        #   following step types - `start`, `end`, `break`, `layover`.
+        #   following step types - start, end, break, layover.
         #
         #   @return [String, nil]
         optional :document_template_id, String
@@ -64,9 +64,9 @@ module NextbillionSDK
         #
         #   Please note that:
         #
-        #   - The driver's email ID must be provided in input `vehicle.metadata` as
-        #     `user_email` such that the route optimization result must contain a valid
-        #     driver email, step's arrival time, etc., to make a successful dispatch.
+        #   - The driver's email ID must be provided in input vehicle.metadata as user_email
+        #     such that the route optimization result must contain a valid driver email,
+        #     step's arrival time, etc., to make a successful dispatch.
         #   - Document Template for collecting proof of delivery or completion can not be
         #     specified when using this field to dispatch a route.
         #   - In case of an error at any part among the routes, the API will immediately
@@ -78,8 +78,8 @@ module NextbillionSDK
         optional :ro_request_id, String
 
         # @!attribute routing
-        #   The `routing` object allows defining the routing characteristics that should be
-        #   used to generate a route when the Driver uses the in-app navigation. Only `car`
+        #   The routing object allows defining the routing characteristics that should be
+        #   used to generate a route when the Driver uses the in-app navigation. Only car
         #   mode is supported currently.
         #
         #   @return [NextbillionSDK::Models::Fleetify::RouteCreateParams::Routing, nil]
@@ -101,24 +101,24 @@ module NextbillionSDK
         #
         #   @param ro_request_id [String] Specify the Route Optimization request ID. When this ID is provided, all other f
         #
-        #   @param routing [NextbillionSDK::Models::Fleetify::RouteCreateParams::Routing] The `routing` object allows defining the routing characteristics that should be
+        #   @param routing [NextbillionSDK::Models::Fleetify::RouteCreateParams::Routing] The routing object allows defining the routing characteristics that should be us
         #
         #   @param request_options [NextbillionSDK::RequestOptions, Hash{Symbol=>Object}]
 
         class Routing < NextbillionSDK::Internal::Type::BaseModel
           # @!attribute approaches
           #   Specify the side of the road from which the route should approach the step
-          #   location. When set to `unrestricted` a route can arrive at the step location
-          #   from either side of the road and when set to `curb` the route will arrive at the
-          #   step location only from the driving side of the region. Use a semi-colon `;` to
-          #   specify approach configurations for multiple steps.
+          #   location. When set to unrestricted a route can arrive at the step location from
+          #   either side of the road and when set to curb the route will arrive at the step
+          #   location only from the driving side of the region. Use a semi-colon ; to specify
+          #   approach configurations for multiple steps.
           #
           #   @return [Symbol, NextbillionSDK::Models::Fleetify::RouteCreateParams::Routing::Approaches, nil]
           optional :approaches, enum: -> { NextbillionSDK::Fleetify::RouteCreateParams::Routing::Approaches }
 
           # @!attribute avoid
           #   Setting this will ensure the generated route avoids the object(s) specified in
-          #   the input. Multiple values should be separated by a pipe (|). If `none` is
+          #   the input. Multiple values should be separated by a pipe (|). If none is
           #   provided along with other values, an error is returned as a valid route is not
           #   feasible.
           #
@@ -128,9 +128,9 @@ module NextbillionSDK
           # @!attribute hazmat_type
           #   Specify the type of hazardous material being carried and the dispatch service
           #   will avoid roads which are not suitable for the type of goods specified.
-          #   Multiple values can be separated using a pipe operator `|` .
+          #   Multiple values can be separated using a pipe operator | .
           #
-          #   Please note that this parameter is effective only when `mode=truck`.
+          #   Please note that this parameter is effective only when mode=truck.
           #
           #   @return [Symbol, NextbillionSDK::Models::Fleetify::RouteCreateParams::Routing::HazmatType, nil]
           optional :hazmat_type, enum: -> { NextbillionSDK::Fleetify::RouteCreateParams::Routing::HazmatType }
@@ -146,7 +146,7 @@ module NextbillionSDK
           #   goods) of the truck, in tonnes. When specified, the dispatched route uses only
           #   those roads which can be used by a truck to carry the specified load per axle.
           #
-          #   Please note this parameter is effective only when `mode=truck`.
+          #   Please note this parameter is effective only when mode=truck.
           #
           #   @return [Integer, nil]
           optional :truck_axle_load, Integer
@@ -156,8 +156,8 @@ module NextbillionSDK
           #   <height, width, length>. When specified, the dispatched route uses only those
           #   roads which allow trucks with specified dimensions.
           #
-          #   Please note this parameter is effective only when `mode=truck`. Also, the
-          #   maximum dimensions that can be specified are as follows:
+          #   Please note this parameter is effective only when mode=truck. Also, the maximum
+          #   dimensions that can be specified are as follows:
           #
           #   Height = 1000 cm
           #   Width = 5000 cm
@@ -171,8 +171,8 @@ module NextbillionSDK
           #   kilograms (kg). When specified, the dispatched route uses only those roads which
           #   allow trucks with specified weight.
           #
-          #   Please note this parameter is effective only when `mode=truck`. Also, the
-          #   maximum weight that can be specified for a truck is 100,000 kgs.
+          #   Please note this parameter is effective only when mode=truck. Also, the maximum
+          #   weight that can be specified for a truck is 100,000 kgs.
           #
           #   @return [Integer, nil]
           optional :truck_weight, Integer
@@ -181,8 +181,8 @@ module NextbillionSDK
           #   Some parameter documentations has been truncated, see
           #   {NextbillionSDK::Models::Fleetify::RouteCreateParams::Routing} for more details.
           #
-          #   The `routing` object allows defining the routing characteristics that should be
-          #   used to generate a route when the Driver uses the in-app navigation. Only `car`
+          #   The routing object allows defining the routing characteristics that should be
+          #   used to generate a route when the Driver uses the in-app navigation. Only car
           #   mode is supported currently.
           #
           #   @param approaches [Symbol, NextbillionSDK::Models::Fleetify::RouteCreateParams::Routing::Approaches] Specify the side of the road from which the route should approach the step locat
@@ -200,24 +200,24 @@ module NextbillionSDK
           #   @param truck_weight [Integer] Specify the weight of the truck, including trailers and shipped goods, in kilogr
 
           # Specify the side of the road from which the route should approach the step
-          # location. When set to `unrestricted` a route can arrive at the step location
-          # from either side of the road and when set to `curb` the route will arrive at the
-          # step location only from the driving side of the region. Use a semi-colon `;` to
-          # specify approach configurations for multiple steps.
+          # location. When set to unrestricted a route can arrive at the step location from
+          # either side of the road and when set to curb the route will arrive at the step
+          # location only from the driving side of the region. Use a semi-colon ; to specify
+          # approach configurations for multiple steps.
           #
           # @see NextbillionSDK::Models::Fleetify::RouteCreateParams::Routing#approaches
           module Approaches
             extend NextbillionSDK::Internal::Type::Enum
 
-            UNRESTRICTED = :"`unrestricted`"
-            CURB = :"`curb`"
+            UNRESTRICTED = :unrestricted
+            CURB = :curb
 
             # @!method self.values
             #   @return [Array<Symbol>]
           end
 
           # Setting this will ensure the generated route avoids the object(s) specified in
-          # the input. Multiple values should be separated by a pipe (|). If `none` is
+          # the input. Multiple values should be separated by a pipe (|). If none is
           # provided along with other values, an error is returned as a valid route is not
           # feasible.
           #
@@ -225,15 +225,15 @@ module NextbillionSDK
           module Avoid
             extend NextbillionSDK::Internal::Type::Enum
 
-            TOLL = :"`toll`"
-            HIGHWAY = :"`highway`"
-            FERRY = :"`ferry`"
-            SHARP_TURN = :"`sharp_turn`"
-            UTURN = :"`uturn`"
-            LEFT_TURN = :"`left_turn`"
-            RIGHT_TURN = :"`right_turn`"
-            SERVICE_ROAD = :"`service_road`"
-            NONE = :"`none`"
+            TOLL = :toll
+            HIGHWAY = :highway
+            FERRY = :ferry
+            SHARP_TURN = :sharp_turn
+            UTURN = :uturn
+            LEFT_TURN = :left_turn
+            RIGHT_TURN = :right_turn
+            SERVICE_ROAD = :service_road
+            NONE = :none
 
             # @!method self.values
             #   @return [Array<Symbol>]
@@ -241,18 +241,18 @@ module NextbillionSDK
 
           # Specify the type of hazardous material being carried and the dispatch service
           # will avoid roads which are not suitable for the type of goods specified.
-          # Multiple values can be separated using a pipe operator `|` .
+          # Multiple values can be separated using a pipe operator | .
           #
-          # Please note that this parameter is effective only when `mode=truck`.
+          # Please note that this parameter is effective only when mode=truck.
           #
           # @see NextbillionSDK::Models::Fleetify::RouteCreateParams::Routing#hazmat_type
           module HazmatType
             extend NextbillionSDK::Internal::Type::Enum
 
-            GENERAL = :"`general`"
-            CIRCUMSTANTIAL = :"`circumstantial`"
-            EXPLOSIVE = :"`explosive`"
-            HARMFUL_TO_WATER = :"`harmful_to_water`"
+            GENERAL = :general
+            CIRCUMSTANTIAL = :circumstantial
+            EXPLOSIVE = :explosive
+            HARMFUL_TO_WATER = :harmful_to_water
 
             # @!method self.values
             #   @return [Array<Symbol>]
@@ -264,7 +264,7 @@ module NextbillionSDK
           module Mode
             extend NextbillionSDK::Internal::Type::Enum
 
-            CAR = :"`car`"
+            CAR = :car
 
             # @!method self.values
             #   @return [Array<Symbol>]

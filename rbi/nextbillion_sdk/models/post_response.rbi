@@ -24,7 +24,7 @@ module NextbillionSDK
       attr_writer :message
 
       # A string indicating the state of the response. On successful responses, the
-      # value will be `Ok`. Indicative error messages/codes are returned in case of
+      # value will be Ok. Indicative error messages/codes are returned in case of
       # errors. See the [API Error Codes](#api-error-codes) section below for more
       # information.
       sig { returns(T.nilable(String)) }
@@ -55,7 +55,7 @@ module NextbillionSDK
         # Displays an acknowledgement message once the job is submitted.
         message: nil,
         # A string indicating the state of the response. On successful responses, the
-        # value will be `Ok`. Indicative error messages/codes are returned in case of
+        # value will be Ok. Indicative error messages/codes are returned in case of
         # errors. See the [API Error Codes](#api-error-codes) section below for more
         # information.
         status: nil,

@@ -20,7 +20,7 @@ module NextbillionSDK
         sig { params(coordinates: T::Array[T::Array[Float]]).void }
         attr_writer :coordinates
 
-        # Type of the geoJSON geometry. Will always be `Polygon`.
+        # Type of the geoJSON geometry. Will always be Polygon.
         sig { returns(T.nilable(String)) }
         attr_reader :type
 
@@ -38,7 +38,7 @@ module NextbillionSDK
           # An array of coordinates in the [longitude, latitude] format, representing the
           # geofence boundary.
           coordinates: nil,
-          # Type of the geoJSON geometry. Will always be `Polygon`.
+          # Type of the geoJSON geometry. Will always be Polygon.
           type: nil
         )
         end

@@ -82,11 +82,11 @@ module NextbillionSDK
     sig { returns(NextbillionSDK::Resources::Postalcode) }
     attr_reader :postalcode
 
-    sig { returns(NextbillionSDK::Resources::Lookup) }
-    attr_reader :lookup
-
     sig { returns(NextbillionSDK::Resources::Areas) }
     attr_reader :areas
+
+    sig { returns(NextbillionSDK::Resources::Lookup) }
+    attr_reader :lookup
 
     # @api private
     sig { override.returns(T::Hash[String, String]) }

@@ -81,13 +81,13 @@ module NextbillionSDK
         request_options: NextbillionSDK::RequestOptions
       }
 
-      type mode = :"`car`" | :"`truck`"
+      type mode = :car | :truck
 
       module Mode
         extend NextbillionSDK::Internal::Type::Enum
 
-        CAR: :"`car`"
-        TRUCK: :"`truck`"
+        CAR: :car
+        TRUCK: :truck
 
         def self?.values: -> ::Array[NextbillionSDK::Models::IsochroneComputeParams::mode]
       end

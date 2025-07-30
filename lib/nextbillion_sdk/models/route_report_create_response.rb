@@ -38,7 +38,7 @@ module NextbillionSDK
 
       # @!attribute status
       #   A string indicating the state of the response. On normal responses, the value
-      #   will be `Ok`. Indicative HTTP error codes are returned for different errors. See
+      #   will be Ok. Indicative HTTP error codes are returned for different errors. See
       #   the
       #   [**API Errors Codes**](https://app.reapi.com/ws/hmx8aL45B5jjrJa8/p/vNNilNksLVz675pI/s/ealJmVGjTQv4x5Wi/edit/path/VYzo7gOlRsQQZo0U#api-error-codes)
       #   section below for more information.
@@ -122,8 +122,8 @@ module NextbillionSDK
 
             # @!attribute length
             #   Represents a sequence of ‘n’ consecutive vertices in the route geometry starting
-            #   from the `offset`, forming a continuous section of route with a distance
-            #   indicated in `distance`field.
+            #   from the offset, forming a continuous section of route with a distance indicated
+            #   in distancefield.
             #
             #   @return [Integer, nil]
             optional :length, Integer
@@ -164,8 +164,8 @@ module NextbillionSDK
 
             # @!attribute length
             #   Represents a sequence of ‘n’ consecutive vertices in the route geometry starting
-            #   from the `offset`, forming a continuous section of route with a distance
-            #   indicated in `distance`field.
+            #   from the offset, forming a continuous section of route with a distance indicated
+            #   in distancefield.
             #
             #   @return [Integer, nil]
             optional :length, Integer
@@ -201,15 +201,15 @@ module NextbillionSDK
         # @see NextbillionSDK::Models::RouteReportCreateResponse::Mileage#summary
         class Summary < NextbillionSDK::Internal::Type::BaseModel
           # @!attribute country
-          #   A break up of country-wise distances that the route covers in `key:value` pair
+          #   A break up of country-wise distances that the route covers in key:value pair
           #   format.
           #
           #   @return [Object, nil]
           optional :country, NextbillionSDK::Internal::Type::Unknown
 
           # @!attribute state
-          #   A break up of state-wise distances that the route covers specified in
-          #   `key:value` pair format.
+          #   A break up of state-wise distances that the route covers specified in key:value
+          #   pair format.
           #
           #   @return [Object, nil]
           optional :state, NextbillionSDK::Internal::Type::Unknown
@@ -222,9 +222,9 @@ module NextbillionSDK
           #   Returns a summary of distances that the route covers in different states and
           #   countries.
           #
-          #   @param country [Object] A break up of country-wise distances that the route covers in `key:value` pair f
+          #   @param country [Object] A break up of country-wise distances that the route covers in key:value pair for
           #
-          #   @param state [Object] A break up of state-wise distances that the route covers specified in `key:value
+          #   @param state [Object] A break up of state-wise distances that the route covers specified in key:value
         end
       end
 
@@ -290,8 +290,8 @@ module NextbillionSDK
 
             # @!attribute length
             #   Represents a sequence of ‘n’ consecutive vertices in the route geometry starting
-            #   from the `offset`, forming a continuous section of route where the maximum speed
-            #   is same and is indicated in `value`.
+            #   from the offset, forming a continuous section of route where the maximum speed
+            #   is same and is indicated in value.
             #
             #   @return [Integer, nil]
             optional :length, Integer
@@ -335,8 +335,8 @@ module NextbillionSDK
 
             # @!attribute length
             #   Represents a sequence of ‘n’ consecutive vertices in the route geometry starting
-            #   from the `offset`, forming a continuous section of route with a distance
-            #   indicated in `distance`field.
+            #   from the offset, forming a continuous section of route with a distance indicated
+            #   in distancefield.
             #
             #   @return [Integer, nil]
             optional :length, Integer
@@ -410,14 +410,14 @@ module NextbillionSDK
           # @!attribute road_class
           #   An object with details about the different types of road classes that the route
           #   goes through. Distance traversed on a given road class is also returned. The
-          #   contents of this object follow the `key:value` pair format.
+          #   contents of this object follow the key:value pair format.
           #
           #   @return [Object, nil]
           optional :road_class, NextbillionSDK::Internal::Type::Unknown
 
           # @!attribute toll_distance
           #   Returns the total distance travelled on toll roads. This field is present in the
-          #   response only when the `has_toll` property is true.
+          #   response only when the has_toll property is true.
           #
           #   @return [Float, nil]
           optional :toll_distance, Float

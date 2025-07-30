@@ -46,19 +46,18 @@ module NextbillionSDK
         # API.
         key:,
         # A semicolon-separated list indicating the side of the road from which to
-        # approach waypoints in a requested route. If provided, the number of `approaches`
-        # must be the same as the number of `coordinates`. However, you can skip a
-        # coordinate and show its position in the list with the `;` separator.
+        # approach waypoints in a requested route. If provided, the number of approaches
+        # must be the same as the number of coordinates. However, you can skip a
+        # coordinate and show its position in the list with the ; separator.
         approaches: nil,
-        # Specify the destination coordinate of the returned route. If the input is
-        # `last`, the last coordinate will be the destination.
+        # Specify the destination coordinate of the returned route. If the input is last,
+        # the last coordinate will be the destination.
         destination: nil,
         # Sets the output format of the route geometry in the response.
         #
-        # On providing `polyline` and `polyline6` as input, respective encoded geometry is
-        # returned. However, when `geojson` is provided as the input value, `polyline`
-        # encoded geometry is returned in the response along with a geojson details of the
-        # route.
+        # On providing polyline and polyline6 as input, respective encoded geometry is
+        # returned. However, when geojson is provided as the input value, polyline encoded
+        # geometry is returned in the response along with a geojson details of the route.
         geometries: nil,
         # Set which driving mode the service should use to determine a route. For example,
         # if you use "car", the API will return a route that a car can take. Using "truck"
@@ -133,7 +132,7 @@ module NextbillionSDK
         #
         # As a best practice:
         #
-        # 1.  Don't provide the `locations` input when re-optimizing, if the original set
+        # 1.  Don't provide the locations input when re-optimizing, if the original set
         #     contains all the required location coordinates.
         # 2.  If any new location coordinates are required for re-optimization, copy the
         #     full, original location list and update it in the following manner before

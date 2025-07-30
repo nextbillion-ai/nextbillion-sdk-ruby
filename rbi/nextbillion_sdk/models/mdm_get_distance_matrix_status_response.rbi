@@ -112,17 +112,17 @@ module NextbillionSDK
 
         OK =
           T.let(
-            :"`Ok`",
+            :Ok,
             NextbillionSDK::Models::MdmGetDistanceMatrixStatusResponse::Code::TaggedSymbol
           )
         PROCESSING =
           T.let(
-            :"`Processing`",
+            :Processing,
             NextbillionSDK::Models::MdmGetDistanceMatrixStatusResponse::Code::TaggedSymbol
           )
         FAILED =
           T.let(
-            :"`Failed`",
+            :Failed,
             NextbillionSDK::Models::MdmGetDistanceMatrixStatusResponse::Code::TaggedSymbol
           )
 
