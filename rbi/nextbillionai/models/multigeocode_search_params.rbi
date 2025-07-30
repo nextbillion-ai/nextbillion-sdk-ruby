@@ -68,7 +68,7 @@ module Nextbillionai
       # location.
       #
       # Note: Supports 'meter' (m) and 'kilometer' (km) units. If no radius is given,
-      # the search method returns as many results as specified in `limit`.
+      # the search method returns as many results as specified in limit.
       sig { returns(T.nilable(String)) }
       attr_reader :radius
 
@@ -136,7 +136,7 @@ module Nextbillionai
         # location.
         #
         # Note: Supports 'meter' (m) and 'kilometer' (km) units. If no radius is given,
-        # the search method returns as many results as specified in `limit`.
+        # the search method returns as many results as specified in limit.
         radius: nil,
         # Specifies the state of the search place.
         state: nil,

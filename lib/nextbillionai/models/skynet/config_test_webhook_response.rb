@@ -7,7 +7,7 @@ module Nextbillionai
       class ConfigTestWebhookResponse < Nextbillionai::Internal::Type::BaseModel
         # @!attribute status
         #   A string indicating the state of the response. Please note this value will
-        #   always be `Ok`.
+        #   always be Ok.
         #
         #   The sample event information will be received on the webhook, if they were
         #   successfully configured. If no event information is received by the webhook,

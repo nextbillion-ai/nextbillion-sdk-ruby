@@ -159,7 +159,7 @@ class Nextbillionai::Test::Resources::RestrictionsTest < Nextbillionai::Test::Re
   def test_set_state_required_params
     skip("skipped: tests are disabled for the time being")
 
-    response = @nextbillion_sdk.restrictions.set_state(0, key: "key=API_KEY", state: :"`enabled`")
+    response = @nextbillion_sdk.restrictions.set_state(0, key: "key=API_KEY", state: :enabled)
 
     assert_pattern do
       response => Nextbillionai::RichGroupResponse

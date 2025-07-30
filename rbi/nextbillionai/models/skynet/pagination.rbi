@@ -27,7 +27,7 @@ module Nextbillionai
         sig { params(page: Integer).void }
         attr_writer :page
 
-        # An integer value indicating the maximum number of items retrieved per `page`.
+        # An integer value indicating the maximum number of items retrieved per page.
         sig { returns(T.nilable(Integer)) }
         attr_reader :size
 
@@ -58,7 +58,7 @@ module Nextbillionai
           hasmore: nil,
           # An integer value indicating the current page number (starting at 0).
           page: nil,
-          # An integer value indicating the maximum number of items retrieved per `page`.
+          # An integer value indicating the maximum number of items retrieved per page.
           size: nil,
           # An integer value indicating the total number of items available in the data set.
           # This parameter can be used to calculate the total number of pages available.

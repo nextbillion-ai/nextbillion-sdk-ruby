@@ -25,7 +25,7 @@ module Nextbillionai
       attr_writer :data
 
       # A string indicating the state of the response. On successful responses, the
-      # value will be `Ok`. Indicative error messages are returned for different errors.
+      # value will be Ok. Indicative error messages are returned for different errors.
       # See the [API Error Codes](#api-error-codes) section below for more information.
       sig { returns(T.nilable(String)) }
       attr_reader :status
@@ -43,7 +43,7 @@ module Nextbillionai
         # A data object containing the ID of the geofence created.
         data: nil,
         # A string indicating the state of the response. On successful responses, the
-        # value will be `Ok`. Indicative error messages are returned for different errors.
+        # value will be Ok. Indicative error messages are returned for different errors.
         # See the [API Error Codes](#api-error-codes) section below for more information.
         status: nil
       )
@@ -69,7 +69,7 @@ module Nextbillionai
             )
           end
 
-        # Unique ID of the geofence created. It will be the same as `custom_id`, if
+        # Unique ID of the geofence created. It will be the same as custom_id, if
         # provided. Else it will be an auto generated UUID. Please note this ID cannot be
         # updated.
         sig { returns(T.nilable(String)) }
@@ -81,7 +81,7 @@ module Nextbillionai
         # A data object containing the ID of the geofence created.
         sig { params(id: String).returns(T.attached_class) }
         def self.new(
-          # Unique ID of the geofence created. It will be the same as `custom_id`, if
+          # Unique ID of the geofence created. It will be the same as custom_id, if
           # provided. Else it will be an auto generated UUID. Please note this ID cannot be
           # updated.
           id: nil

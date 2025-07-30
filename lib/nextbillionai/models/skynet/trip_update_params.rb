@@ -31,9 +31,8 @@ module Nextbillionai
         optional :cluster, enum: -> { Nextbillionai::Skynet::TripUpdateParams::Cluster }
 
         # @!attribute attributes
-        #   Use this field to update the `attributes` of the trip. Please note that when
-        #   updating the `attributes` field, previously added information will be
-        #   overwritten.
+        #   Use this field to update the attributes of the trip. Please note that when
+        #   updating the attributes field, previously added information will be overwritten.
         #
         #   @return [Object, nil]
         optional :attributes, Nextbillionai::Internal::Type::Unknown
@@ -48,7 +47,7 @@ module Nextbillionai
         #   Use this JSON object to update additional details about the trip. This property
         #   is used to add any custom information / context about the trip.
         #
-        #   Please note that updating the `meta_data` field will overwrite the previously
+        #   Please note that updating the meta_data field will overwrite the previously
         #   added information.
         #
         #   @return [Object, nil]
@@ -81,7 +80,7 @@ module Nextbillionai
         #
         #   @param cluster [Symbol, Nextbillionai::Models::Skynet::TripUpdateParams::Cluster] the cluster of the region you want to use
         #
-        #   @param attributes [Object] Use this field to update the `attributes` of the trip. Please note that when upd
+        #   @param attributes [Object] Use this field to update the attributes of the trip. Please note that when updat
         #
         #   @param description [String] Use this parameter to update the custom description of the trip.
         #
@@ -121,7 +120,7 @@ module Nextbillionai
           #   Use this JSON object to update additional details about the stop. This property
           #   is used to add any custom information / context about the stop.
           #
-          #   Please note that updating the `meta_data` field will overwrite the previously
+          #   Please note that updating the meta_data field will overwrite the previously
           #   added information.
           #
           #   @return [Object, nil]

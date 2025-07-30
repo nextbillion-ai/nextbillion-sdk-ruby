@@ -43,8 +43,8 @@ module Nextbillionai
 
           # @!attribute distance
           #   Returns the total route distance, in meters, for informative display in the
-          #   driver app. It is the same as the value provided for `distance` field in the
-          #   input request.
+          #   driver app. It is the same as the value provided for distance field in the input
+          #   request.
           #
           #   @return [Integer, nil]
           optional :distance, Integer
@@ -116,7 +116,7 @@ module Nextbillionai
           # @!attribute vehicle_id
           #   Returns the ID of the vehicle to which the route was dispatched. The vehicle ID
           #   returned here is the same as the one used in the route optimization request for
-          #   the given vehicle. An empty string is returned if the `ro_request_id` was not
+          #   the given vehicle. An empty string is returned if the ro_request_id was not
           #   provided in the input.
           #
           #   @return [String, nil]

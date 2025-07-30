@@ -26,7 +26,7 @@ module Nextbillionai
         #
         # @param ro_request_id [String] Body param: Specify the Route Optimization request ID. When this ID is provided,
         #
-        # @param routing [Nextbillionai::Models::Fleetify::RouteCreateParams::Routing] Body param: The `routing` object allows defining the routing characteristics tha
+        # @param routing [Nextbillionai::Models::Fleetify::RouteCreateParams::Routing] Body param: The routing object allows defining the routing characteristics that
         #
         # @param request_options [Nextbillionai::RequestOptions, Hash{Symbol=>Object}, nil]
         #

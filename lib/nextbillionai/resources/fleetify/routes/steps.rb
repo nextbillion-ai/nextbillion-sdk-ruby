@@ -22,7 +22,7 @@ module Nextbillionai
           #
           # @param position [Integer] Body param: Indicates the index at which to insert the step, starting from 0 up
           #
-          # @param type [Symbol, Nextbillionai::Models::Fleetify::Routes::StepCreateParams::Type] Body param: Specify the step type. It can belong to one of the following: `start
+          # @param type [Symbol, Nextbillionai::Models::Fleetify::Routes::StepCreateParams::Type] Body param: Specify the step type. It can belong to one of the following: start,
           #
           # @param address [String] Body param: Specify the postal address for the step.
           #
@@ -30,7 +30,7 @@ module Nextbillionai
           #
           # @param document_template_id [String] Body param: Specify the ID of the document template to be used for collecting pr
           #
-          # @param duration [Integer] Body param: Specify the duration of the `layover` or `break` type steps, in seco
+          # @param duration [Integer] Body param: Specify the duration of the layover or break type steps, in seconds.
           #
           # @param geofence_config [Nextbillionai::Models::Fleetify::Routes::RouteStepGeofenceConfig] Body param: Specify the configurations of the geofence which will be used to det
           #
@@ -77,7 +77,7 @@ module Nextbillionai
           #
           # @param document_template_id [String] Body param: Update the ID of the document template to be used for collecting pro
           #
-          # @param duration [Integer] Body param: Specify the duration of the `layover` or `break` type steps, in seco
+          # @param duration [Integer] Body param: Specify the duration of the layover or break type steps, in seconds.
           #
           # @param geofence_config [Nextbillionai::Models::Fleetify::Routes::RouteStepGeofenceConfig] Body param: Specify the configurations of the geofence which will be used to det
           #
@@ -85,7 +85,7 @@ module Nextbillionai
           #
           # @param meta [Nextbillionai::Models::Fleetify::Routes::StepUpdateParams::Meta] Body param: An object to specify any additional details about the task to be ass
           #
-          # @param type [Symbol, Nextbillionai::Models::Fleetify::Routes::StepUpdateParams::Type] Body param: Specify the step type. It can belong to one of the following: `start
+          # @param type [Symbol, Nextbillionai::Models::Fleetify::Routes::StepUpdateParams::Type] Body param: Specify the step type. It can belong to one of the following: start,
           #
           # @param request_options [Nextbillionai::RequestOptions, Hash{Symbol=>Object}, nil]
           #
@@ -149,9 +149,9 @@ module Nextbillionai
           # completed route step.
           #
           # When all steps are completed, the encapsulating route’s status will change to
-          # `completed` automatically.
+          # completed automatically.
           #
-          # Either `Session Token` must be provided to authenticate the request.
+          # Either Session Token must be provided to authenticate the request.
           #
           # @overload complete(step_id, route_id:, key:, document: nil, mode: nil, status: nil, request_options: {})
           #
@@ -163,9 +163,9 @@ module Nextbillionai
           #
           # @param document [Object] Body param: A key-value map storing form submission data, where keys correspond
           #
-          # @param mode [String] Body param: Sets the status of the route step. Currently only `completed` is sup
+          # @param mode [String] Body param: Sets the status of the route step. Currently only completed is suppo
           #
-          # @param status [String] Body param: Sets the status of the route step. Currently only `completed` is sup
+          # @param status [String] Body param: Sets the status of the route step. Currently only completed is suppo
           #
           # @param request_options [Nextbillionai::RequestOptions, Hash{Symbol=>Object}, nil]
           #

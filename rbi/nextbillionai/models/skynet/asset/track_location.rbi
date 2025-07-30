@@ -23,8 +23,8 @@ module Nextbillionai
           attr_writer :accuracy
 
           # If available in the GPS information, this property returns the altitude of the
-          # `asset` at the tracked location. It is represented as height, in meters, above
-          # the WGS84 reference ellipsoid.
+          # asset at the tracked location. It is represented as height, in meters, above the
+          # WGS84 reference ellipsoid.
           sig { returns(T.nilable(Float)) }
           attr_reader :altitude
 
@@ -40,9 +40,8 @@ module Nextbillionai
           attr_writer :battery_level
 
           # If available in the GPS information, this property returns the heading of the
-          # `asset` calculated from true north in clockwise direction at the tracked
-          # location. Please note that the bearing is not affected by the device
-          # orientation.
+          # asset calculated from true north in clockwise direction at the tracked location.
+          # Please note that the bearing is not affected by the device orientation.
           #
           # The bearing will always be in the range of [0, 360).
           sig { returns(T.nilable(Float)) }
@@ -76,7 +75,7 @@ module Nextbillionai
           attr_writer :meta_data
 
           # If available in the GPS information, this property returns the speed of the
-          # `asset`, in meters per second, at the tracked location.
+          # asset, in meters per second, at the tracked location.
           sig { returns(T.nilable(Float)) }
           attr_reader :speed
 
@@ -120,16 +119,15 @@ module Nextbillionai
             # radius, in meters, at the 68th percentile confidence level.
             accuracy: nil,
             # If available in the GPS information, this property returns the altitude of the
-            # `asset` at the tracked location. It is represented as height, in meters, above
-            # the WGS84 reference ellipsoid.
+            # asset at the tracked location. It is represented as height, in meters, above the
+            # WGS84 reference ellipsoid.
             altitude: nil,
             # Returns the battery level of the GPS device, as a percentage, when the location
             # was tracked. It has a minimum value of 0 and a maximum value of 100.
             battery_level: nil,
             # If available in the GPS information, this property returns the heading of the
-            # `asset` calculated from true north in clockwise direction at the tracked
-            # location. Please note that the bearing is not affected by the device
-            # orientation.
+            # asset calculated from true north in clockwise direction at the tracked location.
+            # Please note that the bearing is not affected by the device orientation.
             #
             # The bearing will always be in the range of [0, 360).
             bearing: nil,
@@ -139,7 +137,7 @@ module Nextbillionai
             # was uploaded.
             meta_data: nil,
             # If available in the GPS information, this property returns the speed of the
-            # `asset`, in meters per second, at the tracked location.
+            # asset, in meters per second, at the tracked location.
             speed: nil,
             # A UNIX epoch timestamp in milliseconds, representing the time at which the
             # location was tracked.
@@ -176,14 +174,14 @@ module Nextbillionai
                 )
               end
 
-            # Latitude of the tracked location of the `asset`.
+            # Latitude of the tracked location of the asset.
             sig { returns(T.nilable(Float)) }
             attr_reader :lat
 
             sig { params(lat: Float).void }
             attr_writer :lat
 
-            # Longitude of the tracked location of the `asset`.
+            # Longitude of the tracked location of the asset.
             sig { returns(T.nilable(Float)) }
             attr_reader :lon
 
@@ -193,9 +191,9 @@ module Nextbillionai
             # An object with the coordinates of the last tracked location.
             sig { params(lat: Float, lon: Float).returns(T.attached_class) }
             def self.new(
-              # Latitude of the tracked location of the `asset`.
+              # Latitude of the tracked location of the asset.
               lat: nil,
-              # Longitude of the tracked location of the `asset`.
+              # Longitude of the tracked location of the asset.
               lon: nil
             )
             end

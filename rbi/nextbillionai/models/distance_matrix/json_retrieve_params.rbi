@@ -305,12 +305,12 @@ module Nextbillionai
 
           UNRESTRICTED =
             T.let(
-              :"`unrestricted`",
+              :unrestricted,
               Nextbillionai::DistanceMatrix::JsonRetrieveParams::Approaches::TaggedSymbol
             )
           CURB =
             T.let(
-              :"`curb`",
+              :curb,
               Nextbillionai::DistanceMatrix::JsonRetrieveParams::Approaches::TaggedSymbol
             )
 
@@ -414,12 +414,12 @@ module Nextbillionai
 
           CAR =
             T.let(
-              :"`car`",
+              :car,
               Nextbillionai::DistanceMatrix::JsonRetrieveParams::Mode::TaggedSymbol
             )
           TRUCK =
             T.let(
-              :"`truck`",
+              :truck,
               Nextbillionai::DistanceMatrix::JsonRetrieveParams::Mode::TaggedSymbol
             )
 

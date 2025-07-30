@@ -133,7 +133,7 @@ module Nextbillionai
       attr_writer :restriction_type
 
       # Returns the fixed speed of segments. This field is not present in the response
-      # if the restriction type is not `fixedspeed`
+      # if the restriction type is not fixedspeed
       sig { returns(T.nilable(Float)) }
       attr_reader :speed
 
@@ -141,7 +141,7 @@ module Nextbillionai
       attr_writer :speed
 
       # Returns the maximum speed of segments. This field is not present in the response
-      # if the restriction type is not `maxspeed`
+      # if the restriction type is not maxspeed
       sig { returns(T.nilable(Float)) }
       attr_reader :speed_limit
 
@@ -171,11 +171,10 @@ module Nextbillionai
 
       # Returns the status of the restriction at the time of making the request i.e.
       # whether the restriction is in force or not. It will have one of the following
-      # values: `active` or `inactive`.
+      # values: active or inactive.
       #
       # Please note that this field can not be directly influenced by the users. It will
-      # always be calculated using the `start_time`, `end_time` and `repeat_on`
-      # parameters.
+      # always be calculated using the start_time, end_time and repeat_on parameters.
       sig do
         returns(
           T.nilable(Nextbillionai::RichGroupResponse::Status::TaggedSymbol)
@@ -258,10 +257,10 @@ module Nextbillionai
         # creating or updating the restriction.
         restriction_type: nil,
         # Returns the fixed speed of segments. This field is not present in the response
-        # if the restriction type is not `fixedspeed`
+        # if the restriction type is not fixedspeed
         speed: nil,
         # Returns the maximum speed of segments. This field is not present in the response
-        # if the restriction type is not `maxspeed`
+        # if the restriction type is not maxspeed
         speed_limit: nil,
         # The time when the restriction starts to be in-effect. It is a UNIX timestamp.
         start_time: nil,
@@ -270,11 +269,10 @@ module Nextbillionai
         state: nil,
         # Returns the status of the restriction at the time of making the request i.e.
         # whether the restriction is in force or not. It will have one of the following
-        # values: `active` or `inactive`.
+        # values: active or inactive.
         #
         # Please note that this field can not be directly influenced by the users. It will
-        # always be calculated using the `start_time`, `end_time` and `repeat_on`
-        # parameters.
+        # always be calculated using the start_time, end_time and repeat_on parameters.
         status: nil,
         # The timestamp at which the restriction was updated.
         update_at: nil
@@ -432,11 +430,10 @@ module Nextbillionai
 
       # Returns the status of the restriction at the time of making the request i.e.
       # whether the restriction is in force or not. It will have one of the following
-      # values: `active` or `inactive`.
+      # values: active or inactive.
       #
       # Please note that this field can not be directly influenced by the users. It will
-      # always be calculated using the `start_time`, `end_time` and `repeat_on`
-      # parameters.
+      # always be calculated using the start_time, end_time and repeat_on parameters.
       module Status
         extend Nextbillionai::Internal::Type::Enum
 

@@ -15,8 +15,8 @@ module Nextbillionai
 
           # @!attribute altitude
           #   If available in the GPS information, this property returns the altitude of the
-          #   `asset` at the tracked location. It is represented as height, in meters, above
-          #   the WGS84 reference ellipsoid.
+          #   asset at the tracked location. It is represented as height, in meters, above the
+          #   WGS84 reference ellipsoid.
           #
           #   @return [Float, nil]
           optional :altitude, Float
@@ -30,9 +30,8 @@ module Nextbillionai
 
           # @!attribute bearing
           #   If available in the GPS information, this property returns the heading of the
-          #   `asset` calculated from true north in clockwise direction at the tracked
-          #   location. Please note that the bearing is not affected by the device
-          #   orientation.
+          #   asset calculated from true north in clockwise direction at the tracked location.
+          #   Please note that the bearing is not affected by the device orientation.
           #
           #   The bearing will always be in the range of [0, 360).
           #
@@ -54,7 +53,7 @@ module Nextbillionai
 
           # @!attribute speed
           #   If available in the GPS information, this property returns the speed of the
-          #   `asset`, in meters per second, at the tracked location.
+          #   asset, in meters per second, at the tracked location.
           #
           #   @return [Float, nil]
           optional :speed, Float
@@ -81,17 +80,17 @@ module Nextbillionai
           #
           #   @param accuracy [Float] If available, this property returns the accuracy of the GPS information received
           #
-          #   @param altitude [Float] If available in the GPS information, this property returns the altitude of the `
+          #   @param altitude [Float] If available in the GPS information, this property returns the altitude of the a
           #
           #   @param battery_level [Integer] Returns the battery level of the GPS device, as a percentage, when the location
           #
-          #   @param bearing [Float] If available in the GPS information, this property returns the heading of the `a
+          #   @param bearing [Float] If available in the GPS information, this property returns the heading of the as
           #
           #   @param location [Nextbillionai::Models::Skynet::Asset::TrackLocation::Location] An object with the coordinates of the last tracked location.
           #
           #   @param meta_data [Object] Specifies the custom data about the location that was added when the location wa
           #
-          #   @param speed [Float] If available in the GPS information, this property returns the speed of the `ass
+          #   @param speed [Float] If available in the GPS information, this property returns the speed of the asse
           #
           #   @param timestamp [Integer] A UNIX epoch timestamp in milliseconds, representing the time at which the locat
           #
@@ -100,13 +99,13 @@ module Nextbillionai
           # @see Nextbillionai::Models::Skynet::Asset::TrackLocation#location
           class Location < Nextbillionai::Internal::Type::BaseModel
             # @!attribute lat
-            #   Latitude of the tracked location of the `asset`.
+            #   Latitude of the tracked location of the asset.
             #
             #   @return [Float, nil]
             optional :lat, Float
 
             # @!attribute lon
-            #   Longitude of the tracked location of the `asset`.
+            #   Longitude of the tracked location of the asset.
             #
             #   @return [Float, nil]
             optional :lon, Float
@@ -114,9 +113,9 @@ module Nextbillionai
             # @!method initialize(lat: nil, lon: nil)
             #   An object with the coordinates of the last tracked location.
             #
-            #   @param lat [Float] Latitude of the tracked location of the `asset`.
+            #   @param lat [Float] Latitude of the tracked location of the asset.
             #
-            #   @param lon [Float] Longitude of the tracked location of the `asset`.
+            #   @param lon [Float] Longitude of the tracked location of the asset.
           end
         end
       end

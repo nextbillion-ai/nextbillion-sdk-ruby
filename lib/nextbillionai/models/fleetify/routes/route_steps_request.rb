@@ -20,15 +20,15 @@ module Nextbillionai
 
           # @!attribute location
           #   Specify the location coordinates where the steps should be performed in
-          #   `[latitude, longitude]`.
+          #   [latitude, longitude].
           #
           #   @return [Array<Float>]
           required :location, Nextbillionai::Internal::Type::ArrayOf[Float]
 
           # @!attribute type
-          #   Specify the step type. It can belong to one of the following: `start`, `job` ,
-          #   `pickup`, `delivery`, `end`. A `duration` is mandatory when the step type is
-          #   either `layover` or a `break`.
+          #   Specify the step type. It can belong to one of the following: start, job ,
+          #   pickup, delivery, end. A duration is mandatory when the step type is either
+          #   layover or a break.
           #
           #   @return [Symbol, Nextbillionai::Models::Fleetify::Routes::RouteStepsRequest::Type]
           required :type, enum: -> { Nextbillionai::Fleetify::Routes::RouteStepsRequest::Type }
@@ -43,10 +43,10 @@ module Nextbillionai
           #   Specify the mode of completion to be used for the step. Currently, following
           #   values are allowed:
           #
-          #   - `manual`: Steps must be marked as completed manually through the Driver App.
-          #   - `geofence`: Steps are marked as completed automatically based on the entry
+          #   - manual: Steps must be marked as completed manually through the Driver App.
+          #   - geofence: Steps are marked as completed automatically based on the entry
           #     conditions and geofence specified.
-          #   - `geofence_manual_fallback`: Steps will be marked as completed automatically
+          #   - geofence_manual_fallback: Steps will be marked as completed automatically
           #     based on geofence and entry condition configurations but there will also be a
           #     provision for manually updating the status in case, geofence detection fails.
           #
@@ -61,14 +61,14 @@ module Nextbillionai
           #   create, read and manage the document templates.
           #
           #   Please note that the document template ID can not be assigned to following step
-          #   types - `start`, `end`, `break`, `layover`.
+          #   types - start, end, break, layover.
           #
           #   @return [String, nil]
           optional :document_template_id, String
 
           # @!attribute duration
-          #   Specify the duration of the `layover` or `break` type steps, in seconds. Please
-          #   note it is mandatory when step type is either "layover" or "break".
+          #   Specify the duration of the layover or break type steps, in seconds. Please note
+          #   it is mandatory when step type is either "layover" or "break".
           #
           #   @return [Integer, nil]
           optional :duration, Integer
@@ -76,7 +76,7 @@ module Nextbillionai
           # @!attribute geofence_config
           #   Specify the configurations of the geofence which will be used to detect presence
           #   of the driver and complete the tasks automatically. Please note that this
-          #   attribute is required when `completion_mode` is either "geofence" or
+          #   attribute is required when completion_mode is either "geofence" or
           #   "geofence_manual_fallback".
           #
           #   @return [Nextbillionai::Models::Fleetify::Routes::RouteStepGeofenceConfig, nil]
@@ -97,9 +97,9 @@ module Nextbillionai
           #
           #   @param arrival [Integer] Specify the scheduled arrival time of the driver, as an UNIX timestamp in second
           #
-          #   @param location [Array<Float>] Specify the location coordinates where the steps should be performed in `[latitu
+          #   @param location [Array<Float>] Specify the location coordinates where the steps should be performed in [latitud
           #
-          #   @param type [Symbol, Nextbillionai::Models::Fleetify::Routes::RouteStepsRequest::Type] Specify the step type. It can belong to one of the following: `start`, `job` , `
+          #   @param type [Symbol, Nextbillionai::Models::Fleetify::Routes::RouteStepsRequest::Type] Specify the step type. It can belong to one of the following: start, job , picku
           #
           #   @param address [String] Specify the postal address for the step.
           #
@@ -107,27 +107,27 @@ module Nextbillionai
           #
           #   @param document_template_id [String] Specify the ID of the document template to be used for collecting proof of compl
           #
-          #   @param duration [Integer] Specify the duration of the `layover` or `break` type steps, in seconds. Please
+          #   @param duration [Integer] Specify the duration of the layover or break type steps, in seconds. Please note
           #
           #   @param geofence_config [Nextbillionai::Models::Fleetify::Routes::RouteStepGeofenceConfig] Specify the configurations of the geofence which will be used to detect presence
           #
           #   @param meta [Nextbillionai::Models::Fleetify::Routes::RouteStepsRequest::Meta] An object to specify any additional details about the task to be associated with
 
-          # Specify the step type. It can belong to one of the following: `start`, `job` ,
-          # `pickup`, `delivery`, `end`. A `duration` is mandatory when the step type is
-          # either `layover` or a `break`.
+          # Specify the step type. It can belong to one of the following: start, job ,
+          # pickup, delivery, end. A duration is mandatory when the step type is either
+          # layover or a break.
           #
           # @see Nextbillionai::Models::Fleetify::Routes::RouteStepsRequest#type
           module Type
             extend Nextbillionai::Internal::Type::Enum
 
-            START = :"`start`"
-            JOB = :"`job`"
-            PICKUP = :"`pickup`"
-            DELIVERY = :"`delivery`"
-            BREAK = :"`break`"
-            LAYOVER = :"`layover`"
-            END_ = :"`end`"
+            START = :start
+            JOB = :job
+            PICKUP = :pickup
+            DELIVERY = :delivery
+            BREAK = :break
+            LAYOVER = :layover
+            END_ = :end
 
             # @!method self.values
             #   @return [Array<Symbol>]

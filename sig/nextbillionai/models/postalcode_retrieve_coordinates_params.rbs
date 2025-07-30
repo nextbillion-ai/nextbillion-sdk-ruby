@@ -70,12 +70,12 @@ module Nextbillionai
         def to_hash: -> { lat: Float, lng: Float }
       end
 
-      type format_ = :"`geojson`"
+      type format_ = :geojson
 
       module Format
         extend Nextbillionai::Internal::Type::Enum
 
-        GEOJSON: :"`geojson`"
+        GEOJSON: :geojson
 
         def self?.values: -> ::Array[Nextbillionai::Models::PostalcodeRetrieveCoordinatesParams::format_]
       end

@@ -19,7 +19,7 @@ module Nextbillionai
           # @!attribute polygon
           #   An object to collect geoJSON details of a custom polygon. Please ensure that:
           #
-          #   - the `polygon` provided is enclosed. This can be achieved by making the last
+          #   - the polygon provided is enclosed. This can be achieved by making the last
           #     location coordinate in the list equal to the first location coordinate of the
           #     list.
           #
@@ -35,12 +35,12 @@ module Nextbillionai
           required :polygon, -> { Nextbillionai::Skynet::Search::PolygonCreateParams::Polygon }
 
           # @!attribute filter
-          #   **`tags` parameter will be deprecated soon! Please use the
-          #   `include_any_of_attributes` or `include_all_of_attributes` parameters to match
+          #   **tags parameter will be deprecated soon! Please use the
+          #   include_any_of_attributes or include_all_of_attributes parameters to match
           #   assets based on their labels or markers.**
           #
           #   Use this parameter to filter the assets found inside the specified area by their
-          #   `tag`. Multiple `tag` can be separated using comma (`,`).
+          #   tag. Multiple tag can be separated using comma (,).
           #
           #   Please note the tags are case sensitive.
           #
@@ -48,8 +48,8 @@ module Nextbillionai
           optional :filter, String
 
           # @!attribute match_filter
-          #   An object to define the `attributes` which will be used to filter the assets
-          #   found within the `polygon`.
+          #   An object to define the attributes which will be used to filter the assets found
+          #   within the polygon.
           #
           #   @return [Nextbillionai::Models::Skynet::Search::PolygonCreateParams::MatchFilter, nil]
           optional :match_filter, -> { Nextbillionai::Skynet::Search::PolygonCreateParams::MatchFilter }
@@ -61,7 +61,7 @@ module Nextbillionai
           optional :max_search_limit, Nextbillionai::Internal::Type::Boolean
 
           # @!attribute pn
-          #   Denotes page number. Use this along with the `ps` parameter to implement
+          #   Denotes page number. Use this along with the ps parameter to implement
           #   pagination for your searched results. This parameter does not have a maximum
           #   limit but would return an empty response in case a higher value is provided when
           #   the result-set itself is smaller.
@@ -70,10 +70,9 @@ module Nextbillionai
           optional :pn, Integer
 
           # @!attribute ps
-          #   Denotes number of search results per page. Use this along with the `pn`
-          #   parameter to implement pagination for your searched results. Please note that
-          #   `ps` has a default value of 20 and accepts integers only in the range of [1,
-          #   100].
+          #   Denotes number of search results per page. Use this along with the pn parameter
+          #   to implement pagination for your searched results. Please note that ps has a
+          #   default value of 20 and accepts integers only in the range of [1, 100].
           #
           #   @return [Integer, nil]
           optional :ps, Integer
@@ -91,16 +90,16 @@ module Nextbillionai
           #
           #   @param polygon [Nextbillionai::Models::Skynet::Search::PolygonCreateParams::Polygon] An object to collect geoJSON details of a custom polygon. Please ensure that:
           #
-          #   @param filter [String] \*\*`tags` parameter will be deprecated soon! Please use the
-          #   `include_any_of_attri
+          #   @param filter [String] \*\*tags parameter will be deprecated soon! Please use the
+          #   include_any_of_attribut
           #
-          #   @param match_filter [Nextbillionai::Models::Skynet::Search::PolygonCreateParams::MatchFilter] An object to define the `attributes` which will be used to filter the assets fou
+          #   @param match_filter [Nextbillionai::Models::Skynet::Search::PolygonCreateParams::MatchFilter] An object to define the attributes which will be used to filter the assets found
           #
           #   @param max_search_limit [Boolean] if ture, can get 16x bigger limitation in search.
           #
-          #   @param pn [Integer] Denotes page number. Use this along with the `ps` parameter to implement paginat
+          #   @param pn [Integer] Denotes page number. Use this along with the ps parameter to implement paginatio
           #
-          #   @param ps [Integer] Denotes number of search results per page. Use this along with the `pn` paramete
+          #   @param ps [Integer] Denotes number of search results per page. Use this along with the pn parameter
           #
           #   @param sort [Nextbillionai::Models::Skynet::Search::PolygonCreateParams::Sort]
           #
@@ -115,7 +114,7 @@ module Nextbillionai
             required :coordinates, Nextbillionai::Internal::Type::ArrayOf[Float]
 
             # @!attribute type
-            #   Type of the geoJSON geometry. Should always be `polygon`.
+            #   Type of the geoJSON geometry. Should always be polygon.
             #
             #   @return [String]
             required :type, String
@@ -127,7 +126,7 @@ module Nextbillionai
             #
             #   An object to collect geoJSON details of a custom polygon. Please ensure that:
             #
-            #   - the `polygon` provided is enclosed. This can be achieved by making the last
+            #   - the polygon provided is enclosed. This can be achieved by making the last
             #     location coordinate in the list equal to the first location coordinate of the
             #     list.
             #
@@ -141,30 +140,30 @@ module Nextbillionai
             #
             #   @param coordinates [Array<Float>] An array of coordinates in the [longitude, latitude] format, representing the po
             #
-            #   @param type [String] Type of the geoJSON geometry. Should always be `polygon`.
+            #   @param type [String] Type of the geoJSON geometry. Should always be polygon.
           end
 
           class MatchFilter < Nextbillionai::Internal::Type::BaseModel
             # @!attribute include_all_of_attributes
             #   Use this parameter to filter the assets found inside the specified area by their
-            #   `attributes`. Only the assets having all the `attributes` that are added to this
-            #   parameter, will be returned in the search results. Multiple `attributes` can be
-            #   separated using commas (`,`).
+            #   attributes. Only the assets having all the attributes that are added to this
+            #   parameter, will be returned in the search results. Multiple attributes can be
+            #   separated using commas (,).
             #
             #   Please note the attributes are case sensitive. Also, this parameter can not be
-            #   used in conjunction with `include_any_of_attributes` parameter.
+            #   used in conjunction with include_any_of_attributes parameter.
             #
             #   @return [String, nil]
             optional :include_all_of_attributes, String
 
             # @!attribute include_any_of_attributes
             #   Use this parameter to filter the assets found inside the specified area by their
-            #   `attributes`. Assets having at least one of the `attributes` added to this
-            #   parameter, will be returned in the search results. Multiple `attributes` can be
-            #   separated using commas (`,`).
+            #   attributes. Assets having at least one of the attributes added to this
+            #   parameter, will be returned in the search results. Multiple attributes can be
+            #   separated using commas (,).
             #
             #   Please note the attributes are case sensitive. Also, this parameter can not be
-            #   used in conjunction with `include_all_of_attributes` parameter.
+            #   used in conjunction with include_all_of_attributes parameter.
             #
             #   @return [String, nil]
             optional :include_any_of_attributes, String
@@ -174,8 +173,8 @@ module Nextbillionai
             #   {Nextbillionai::Models::Skynet::Search::PolygonCreateParams::MatchFilter} for
             #   more details.
             #
-            #   An object to define the `attributes` which will be used to filter the assets
-            #   found within the `polygon`.
+            #   An object to define the attributes which will be used to filter the assets found
+            #   within the polygon.
             #
             #   @param include_all_of_attributes [String] Use this parameter to filter the assets found inside the specified area by their
             #
@@ -188,11 +187,10 @@ module Nextbillionai
             #   values are:
             #
             #   - **distance** : Sorts the assets by driving distance to the given
-            #     `sort_destination` .
-            #   - **duration** : Sorts the assets by travel time to the given `sort_destination`
-            #     .
+            #     sort_destination .
+            #   - **duration** : Sorts the assets by travel time to the given sort_destination .
             #   - **straight_distance** : Sort the assets by straight-line distance to the given
-            #     `sort-destination` .
+            #     sort-destination .
             #
             #   @return [Symbol, Nextbillionai::Models::Skynet::Search::PolygonCreateParams::Sort::SortBy, nil]
             optional :sort_by, enum: -> { Nextbillionai::Skynet::Search::PolygonCreateParams::Sort::SortBy }
@@ -201,9 +199,9 @@ module Nextbillionai
             #   Specifies the location coordinates of the point which acts as destination for
             #   sorting the assets in the search results. The service will sort each asset based
             #   on the driving distance or travel time to this destination, from its current
-            #   location. Use the `sort_by` parameter to configure the metric that should be
-            #   used for sorting the assets. Please note that `sort_destination` is required
-            #   when `sort_by` is provided.
+            #   location. Use the sort_by parameter to configure the metric that should be used
+            #   for sorting the assets. Please note that sort_destination is required when
+            #   sort_by is provided.
             #
             #   @return [Nextbillionai::Models::Skynet::Search::PolygonCreateParams::Sort::SortDestination, nil]
             optional :sort_destination,
@@ -232,19 +230,18 @@ module Nextbillionai
             # values are:
             #
             # - **distance** : Sorts the assets by driving distance to the given
-            #   `sort_destination` .
-            # - **duration** : Sorts the assets by travel time to the given `sort_destination`
-            #   .
+            #   sort_destination .
+            # - **duration** : Sorts the assets by travel time to the given sort_destination .
             # - **straight_distance** : Sort the assets by straight-line distance to the given
-            #   `sort-destination` .
+            #   sort-destination .
             #
             # @see Nextbillionai::Models::Skynet::Search::PolygonCreateParams::Sort#sort_by
             module SortBy
               extend Nextbillionai::Internal::Type::Enum
 
-              DISTANCE = :"`distance`"
-              DURATION = :"`duration`"
-              STRAIGHT_DISTANCE = :"`straight_distance`"
+              DISTANCE = :distance
+              DURATION = :duration
+              STRAIGHT_DISTANCE = :straight_distance
 
               # @!method self.values
               #   @return [Array<Symbol>]
@@ -268,9 +265,9 @@ module Nextbillionai
               #   Specifies the location coordinates of the point which acts as destination for
               #   sorting the assets in the search results. The service will sort each asset based
               #   on the driving distance or travel time to this destination, from its current
-              #   location. Use the `sort_by` parameter to configure the metric that should be
-              #   used for sorting the assets. Please note that `sort_destination` is required
-              #   when `sort_by` is provided.
+              #   location. Use the sort_by parameter to configure the metric that should be used
+              #   for sorting the assets. Please note that sort_destination is required when
+              #   sort_by is provided.
               #
               #   @param lat [Float] Latitude of the destination location
               #
@@ -284,8 +281,8 @@ module Nextbillionai
             module SortDrivingMode
               extend Nextbillionai::Internal::Type::Enum
 
-              CAR = :"`car`"
-              TRUCK = :"`truck`"
+              CAR = :car
+              TRUCK = :truck
 
               # @!method self.values
               #   @return [Array<Symbol>]

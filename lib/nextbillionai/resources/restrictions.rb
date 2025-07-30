@@ -265,7 +265,7 @@ module Nextbillionai
       #
       # @param status [Symbol, Nextbillionai::Models::RestrictionListByBboxParams::Status] Restrictions can be active or inactive at a given time by virtue of their nature
       #
-      # @param transform [Boolean] This is internal parameter with a default value as `false`.
+      # @param transform [Boolean] This is internal parameter with a default value as false.
       #
       # @param request_options [Nextbillionai::RequestOptions, Hash{Symbol=>Object}, nil]
       #
@@ -294,7 +294,7 @@ module Nextbillionai
       #
       # @param key [String] Query param: A key is a unique identifier that is required to authenticate a req
       #
-      # @param state [Symbol, Nextbillionai::Models::RestrictionSetStateParams::State] Body param: Use this field to specify the new `state` of the restriction. Please
+      # @param state [Symbol, Nextbillionai::Models::RestrictionSetStateParams::State] Body param: Use this field to specify the new state of the restriction. Please n
       #
       # @param request_options [Nextbillionai::RequestOptions, Hash{Symbol=>Object}, nil]
       #

@@ -44,7 +44,7 @@ module Nextbillionai
       attr_writer :routes
 
       # A string indicating the state of the response. On normal responses, the value
-      # will be `Ok`. Indicative HTTP error codes are returned for different errors. See
+      # will be Ok. Indicative HTTP error codes are returned for different errors. See
       # the [API Errors Codes](#api-error-codes) section below for more information.
       sig { returns(T.nilable(String)) }
       attr_reader :status
@@ -79,7 +79,7 @@ module Nextbillionai
         # location to the destination. Each object represents one route.
         routes: nil,
         # A string indicating the state of the response. On normal responses, the value
-        # will be `Ok`. Indicative HTTP error codes are returned for different errors. See
+        # will be Ok. Indicative HTTP error codes are returned for different errors. See
         # the [API Errors Codes](#api-error-codes) section below for more information.
         status: nil,
         # warning when facing unexpected behaviour
@@ -170,17 +170,17 @@ module Nextbillionai
         end
         attr_writer :geojson
 
-        # Encoded geometry of the returned route as per the selected format in `geometry`
-        # and specified `overview` verbosity. Please note the `overview` will always be
-        # `full` when `original_shape` parameter is used in the input request.
+        # Encoded geometry of the returned route as per the selected format in geometry
+        # and specified overview verbosity. Please note the overview will always be full
+        # when original_shape parameter is used in the input request.
         sig { returns(T.nilable(String)) }
         attr_reader :geometry
 
         sig { params(geometry: String).void }
         attr_writer :geometry
 
-        # An array of objects returning the details about each `leg` of the route.
-        # `waypoints` split the route into legs.
+        # An array of objects returning the details about each leg of the route. waypoints
+        # split the route into legs.
         sig do
           returns(
             T.nilable(
@@ -282,12 +282,12 @@ module Nextbillionai
           end_location: nil,
           # The GeoJSON representation of the route.
           geojson: nil,
-          # Encoded geometry of the returned route as per the selected format in `geometry`
-          # and specified `overview` verbosity. Please note the `overview` will always be
-          # `full` when `original_shape` parameter is used in the input request.
+          # Encoded geometry of the returned route as per the selected format in geometry
+          # and specified overview verbosity. Please note the overview will always be full
+          # when original_shape parameter is used in the input request.
           geometry: nil,
-          # An array of objects returning the details about each `leg` of the route.
-          # `waypoints` split the route into legs.
+          # An array of objects returning the details about each leg of the route. waypoints
+          # split the route into legs.
           legs: nil,
           # The predicted duration of the route based on real-time traffic conditions.
           predicted_duration: nil,
@@ -338,14 +338,14 @@ module Nextbillionai
               )
             end
 
-          # Latitude of the `end_location`.
+          # Latitude of the end_location.
           sig { returns(T.nilable(Float)) }
           attr_reader :latitude
 
           sig { params(latitude: Float).void }
           attr_writer :latitude
 
-          # Longitude of the `end_location`.
+          # Longitude of the end_location.
           sig { returns(T.nilable(Float)) }
           attr_reader :longitude
 
@@ -357,9 +357,9 @@ module Nextbillionai
             params(latitude: Float, longitude: Float).returns(T.attached_class)
           end
           def self.new(
-            # Latitude of the `end_location`.
+            # Latitude of the end_location.
             latitude: nil,
-            # Longitude of the `end_location`.
+            # Longitude of the end_location.
             longitude: nil
           )
           end
@@ -570,7 +570,7 @@ module Nextbillionai
           end
           attr_writer :end_location
 
-          # The raw estimated duration of the `leg` in seconds.
+          # The raw estimated duration of the leg in seconds.
           sig { returns(T.nilable(T.anything)) }
           attr_reader :raw_duration
 
@@ -641,7 +641,7 @@ module Nextbillionai
             duration: nil,
             # Location coordinates of the point where the leg ends.
             end_location: nil,
-            # The raw estimated duration of the `leg` in seconds.
+            # The raw estimated duration of the leg in seconds.
             raw_duration: nil,
             # Location coordinates of the point where the leg starts.
             start_location: nil,
@@ -731,14 +731,14 @@ module Nextbillionai
                 )
               end
 
-            # Latitude of `end_location` of the `leg`.
+            # Latitude of end_location of the leg.
             sig { returns(T.nilable(Float)) }
             attr_reader :latitude
 
             sig { params(latitude: Float).void }
             attr_writer :latitude
 
-            # Longitude of `end_location` of the `leg`.
+            # Longitude of end_location of the leg.
             sig { returns(T.nilable(Float)) }
             attr_reader :longitude
 
@@ -752,9 +752,9 @@ module Nextbillionai
               )
             end
             def self.new(
-              # Latitude of `end_location` of the `leg`.
+              # Latitude of end_location of the leg.
               latitude: nil,
-              # Longitude of `end_location` of the `leg`.
+              # Longitude of end_location of the leg.
               longitude: nil
             )
             end
@@ -773,14 +773,14 @@ module Nextbillionai
                 )
               end
 
-            # Latitude of `start_location` of the `leg`.
+            # Latitude of start_location of the leg.
             sig { returns(T.nilable(Float)) }
             attr_reader :latitude
 
             sig { params(latitude: Float).void }
             attr_writer :latitude
 
-            # Longitude of `start_location` of the `leg`.
+            # Longitude of start_location of the leg.
             sig { returns(T.nilable(Float)) }
             attr_reader :longitude
 
@@ -794,9 +794,9 @@ module Nextbillionai
               )
             end
             def self.new(
-              # Latitude of `start_location` of the `leg`.
+              # Latitude of start_location of the leg.
               latitude: nil,
-              # Longitude of `start_location` of the `leg`.
+              # Longitude of start_location of the leg.
               longitude: nil
             )
             end
@@ -859,7 +859,7 @@ module Nextbillionai
             end
             attr_writer :duration
 
-            # Location coordinates of the point where the `step` ends.
+            # Location coordinates of the point where the step ends.
             sig do
               returns(
                 T.nilable(
@@ -877,7 +877,7 @@ module Nextbillionai
             end
             attr_writer :end_location
 
-            # The GeoJSON representation of the `step`.
+            # The GeoJSON representation of the step.
             sig do
               returns(
                 T.nilable(
@@ -895,7 +895,7 @@ module Nextbillionai
             end
             attr_writer :geojson
 
-            # Encoded geometry of the `step` in the selected format.
+            # Encoded geometry of the step in the selected format.
             sig { returns(T.nilable(String)) }
             attr_reader :geometry
 
@@ -903,9 +903,9 @@ module Nextbillionai
             attr_writer :geometry
 
             # An array of objects representing intersections (or cross-way) that the route
-            # passes by along the `step`. For every `step`, the very first `intersection`
-            # corresponds to the location of the `maneuver`. All intersections until the next
-            # `maneuver` are listed in this object.
+            # passes by along the step. For every step, the very first intersection
+            # corresponds to the location of the maneuver. All intersections until the next
+            # maneuver are listed in this object.
             sig do
               returns(
                 T.nilable(
@@ -927,7 +927,7 @@ module Nextbillionai
             end
             attr_writer :intersections
 
-            # An object with maneuver details for the `step`.
+            # An object with maneuver details for the step.
             sig do
               returns(
                 T.nilable(
@@ -945,14 +945,14 @@ module Nextbillionai
             end
             attr_writer :maneuver
 
-            # The name of the `step`.
+            # The name of the step.
             sig { returns(T.nilable(String)) }
             attr_reader :name
 
             sig { params(name: String).void }
             attr_writer :name
 
-            # A reference for the `step`.
+            # A reference for the step.
             sig { returns(T.nilable(String)) }
             attr_reader :reference
 
@@ -977,7 +977,7 @@ module Nextbillionai
             end
             attr_writer :road_shield_type
 
-            # Location coordinates of the point where the `step` starts.
+            # Location coordinates of the point where the step starts.
             sig do
               returns(
                 T.nilable(
@@ -1029,26 +1029,26 @@ module Nextbillionai
               driving_side: nil,
               # An object containing step duration value, in seconds.
               duration: nil,
-              # Location coordinates of the point where the `step` ends.
+              # Location coordinates of the point where the step ends.
               end_location: nil,
-              # The GeoJSON representation of the `step`.
+              # The GeoJSON representation of the step.
               geojson: nil,
-              # Encoded geometry of the `step` in the selected format.
+              # Encoded geometry of the step in the selected format.
               geometry: nil,
               # An array of objects representing intersections (or cross-way) that the route
-              # passes by along the `step`. For every `step`, the very first `intersection`
-              # corresponds to the location of the `maneuver`. All intersections until the next
-              # `maneuver` are listed in this object.
+              # passes by along the step. For every step, the very first intersection
+              # corresponds to the location of the maneuver. All intersections until the next
+              # maneuver are listed in this object.
               intersections: nil,
-              # An object with maneuver details for the `step`.
+              # An object with maneuver details for the step.
               maneuver: nil,
-              # The name of the `step`.
+              # The name of the step.
               name: nil,
-              # A reference for the `step`.
+              # A reference for the step.
               reference: nil,
               # An object containing road shield information.
               road_shield_type: nil,
-              # Location coordinates of the point where the `step` starts.
+              # Location coordinates of the point where the step starts.
               start_location: nil
             )
             end
@@ -1143,30 +1143,30 @@ module Nextbillionai
                   )
                 end
 
-              # Latitude of the `end_location` of the `step`.
+              # Latitude of the end_location of the step.
               sig { returns(T.nilable(Float)) }
               attr_reader :latitude
 
               sig { params(latitude: Float).void }
               attr_writer :latitude
 
-              # Longitude of the `end_location` of the `step`.
+              # Longitude of the end_location of the step.
               sig { returns(T.nilable(Float)) }
               attr_reader :longitude
 
               sig { params(longitude: Float).void }
               attr_writer :longitude
 
-              # Location coordinates of the point where the `step` ends.
+              # Location coordinates of the point where the step ends.
               sig do
                 params(latitude: Float, longitude: Float).returns(
                   T.attached_class
                 )
               end
               def self.new(
-                # Latitude of the `end_location` of the `step`.
+                # Latitude of the end_location of the step.
                 latitude: nil,
-                # Longitude of the `end_location` of the `step`.
+                # Longitude of the end_location of the step.
                 longitude: nil
               )
               end
@@ -1197,7 +1197,7 @@ module Nextbillionai
               sig { params(type: String).void }
               attr_writer :type
 
-              # The GeoJSON representation of the `step`.
+              # The GeoJSON representation of the step.
               sig do
                 params(geometry: String, type: String).returns(T.attached_class)
               end
@@ -1219,7 +1219,7 @@ module Nextbillionai
                 end
 
               # A list of bearing values (e.g. [0,90,180,270]) that are available at the
-              # intersection. The `bearings` describe all available roads at the intersection.
+              # intersection. The bearings describe all available roads at the intersection.
               sig { returns(T.nilable(T::Array[Integer])) }
               attr_reader :bearings
 
@@ -1235,8 +1235,8 @@ module Nextbillionai
               sig { params(classes: T::Array[String]).void }
               attr_writer :classes
 
-              # A value of `true` indicates that the respective road could be entered on a valid
-              # route. `false` indicates that the turn onto the respective road would violate a
+              # A value of true indicates that the respective road could be entered on a valid
+              # route. false indicates that the turn onto the respective road would violate a
               # restriction. Each entry value corresponds to the bearing angle at the same
               # index.
               sig { returns(T.nilable(T::Array[T::Boolean])) }
@@ -1245,14 +1245,14 @@ module Nextbillionai
               sig { params(entry: T::Array[T::Boolean]).void }
               attr_writer :entry
 
-              # The number of incoming roads or paths at the `intersection`.
+              # The number of incoming roads or paths at the intersection.
               sig { returns(T.nilable(Integer)) }
               attr_reader :intersection_in
 
               sig { params(intersection_in: Integer).void }
               attr_writer :intersection_in
 
-              # The number of outgoing roads or paths from the `intersection`.
+              # The number of outgoing roads or paths from the intersection.
               sig { returns(T.nilable(Integer)) }
               attr_reader :intersection_out
 
@@ -1260,8 +1260,8 @@ module Nextbillionai
               attr_writer :intersection_out
 
               # An array of lane objects representing the lanes available at the intersection.
-              # If no lane information is available for an `intersection`, the `lanes` property
-              # will not be present.
+              # If no lane information is available for an intersection, the lanes property will
+              # not be present.
               sig do
                 returns(
                   T.nilable(
@@ -1318,24 +1318,24 @@ module Nextbillionai
               end
               def self.new(
                 # A list of bearing values (e.g. [0,90,180,270]) that are available at the
-                # intersection. The `bearings` describe all available roads at the intersection.
+                # intersection. The bearings describe all available roads at the intersection.
                 bearings: nil,
                 # An array of strings representing the classes or types of roads or paths at the
                 # intersection. The classes can indicate the road hierarchy, such as a motorway,
                 # primary road, secondary road, etc.
                 classes: nil,
-                # A value of `true` indicates that the respective road could be entered on a valid
-                # route. `false` indicates that the turn onto the respective road would violate a
+                # A value of true indicates that the respective road could be entered on a valid
+                # route. false indicates that the turn onto the respective road would violate a
                 # restriction. Each entry value corresponds to the bearing angle at the same
                 # index.
                 entry: nil,
-                # The number of incoming roads or paths at the `intersection`.
+                # The number of incoming roads or paths at the intersection.
                 intersection_in: nil,
-                # The number of outgoing roads or paths from the `intersection`.
+                # The number of outgoing roads or paths from the intersection.
                 intersection_out: nil,
                 # An array of lane objects representing the lanes available at the intersection.
-                # If no lane information is available for an `intersection`, the `lanes` property
-                # will not be present.
+                # If no lane information is available for an intersection, the lanes property will
+                # not be present.
                 lanes: nil,
                 # A [longitude, latitude] pair describing the location of the intersection.
                 location: nil
@@ -1427,21 +1427,21 @@ module Nextbillionai
                     )
                   end
 
-                # The latitude coordinate of the `intersection`.
+                # The latitude coordinate of the intersection.
                 sig { returns(T.nilable(Float)) }
                 attr_reader :latitude
 
                 sig { params(latitude: Float).void }
                 attr_writer :latitude
 
-                # The longitude coordinate of the `intersection`.
+                # The longitude coordinate of the intersection.
                 sig { returns(T.nilable(Float)) }
                 attr_reader :longitude
 
                 sig { params(longitude: Float).void }
                 attr_writer :longitude
 
-                # The name or description of the `intersection`.
+                # The name or description of the intersection.
                 sig { returns(T.nilable(String)) }
                 attr_reader :name
 
@@ -1457,11 +1457,11 @@ module Nextbillionai
                   ).returns(T.attached_class)
                 end
                 def self.new(
-                  # The latitude coordinate of the `intersection`.
+                  # The latitude coordinate of the intersection.
                   latitude: nil,
-                  # The longitude coordinate of the `intersection`.
+                  # The longitude coordinate of the intersection.
                   longitude: nil,
-                  # The name or description of the `intersection`.
+                  # The name or description of the intersection.
                   name: nil
                 )
                 end
@@ -1486,7 +1486,7 @@ module Nextbillionai
                 end
 
               # The clockwise angle from true north to the direction of travel immediately after
-              # the `maneuver`. Range of values is between 0-359.
+              # the maneuver. Range of values is between 0-359.
               sig { returns(T.nilable(Float)) }
               attr_reader :bearing_after
 
@@ -1494,14 +1494,14 @@ module Nextbillionai
               attr_writer :bearing_after
 
               # The clockwise angle from true north to the direction of travel immediately
-              # before the `maneuver`. Range of values is between 0-359.
+              # before the maneuver. Range of values is between 0-359.
               sig { returns(T.nilable(Float)) }
               attr_reader :bearing_before
 
               sig { params(bearing_before: Float).void }
               attr_writer :bearing_before
 
-              # A coordinate pair describing the location of the `maneuver`.
+              # A coordinate pair describing the location of the maneuver.
               sig do
                 returns(
                   T.nilable(
@@ -1528,7 +1528,7 @@ module Nextbillionai
               sig { params(instruction: String).void }
               attr_writer :instruction
 
-              # A string indicating the type of `maneuver`.
+              # A string indicating the type of maneuver.
               sig { returns(T.nilable(String)) }
               attr_reader :maneuver_type
 
@@ -1552,10 +1552,10 @@ module Nextbillionai
               sig { params(roundabout_count: Integer).void }
               attr_writer :roundabout_count
 
-              # An array of voice instruction objects associated with the `maneuver`. Each
-              # object provides additional details about the voice instruction, including the
-              # distance along the geometry where the instruction applies, the instruction text,
-              # and the unit of measurement.
+              # An array of voice instruction objects associated with the maneuver. Each object
+              # provides additional details about the voice instruction, including the distance
+              # along the geometry where the instruction applies, the instruction text, and the
+              # unit of measurement.
               sig do
                 returns(
                   T.nilable(
@@ -1577,7 +1577,7 @@ module Nextbillionai
               end
               attr_writer :voice_instruction
 
-              # An object with maneuver details for the `step`.
+              # An object with maneuver details for the step.
               sig do
                 params(
                   bearing_after: Float,
@@ -1596,18 +1596,18 @@ module Nextbillionai
               end
               def self.new(
                 # The clockwise angle from true north to the direction of travel immediately after
-                # the `maneuver`. Range of values is between 0-359.
+                # the maneuver. Range of values is between 0-359.
                 bearing_after: nil,
                 # The clockwise angle from true north to the direction of travel immediately
-                # before the `maneuver`. Range of values is between 0-359.
+                # before the maneuver. Range of values is between 0-359.
                 bearing_before: nil,
-                # A coordinate pair describing the location of the `maneuver`.
+                # A coordinate pair describing the location of the maneuver.
                 coordinate: nil,
                 # A text instruction describing the maneuver to be performed. It provides guidance
                 # on the action to take at the maneuver location, such as "Turn left," "Go
                 # straight," "Exit the roundabout," etc.
                 instruction: nil,
-                # A string indicating the type of `maneuver`.
+                # A string indicating the type of maneuver.
                 maneuver_type: nil,
                 # A boolean value indicating whether the voice instruction for the maneuver should
                 # be muted or not.
@@ -1616,10 +1616,10 @@ module Nextbillionai
                 # specific to roundabout maneuvers and indicates the count of roundabouts before
                 # the current one.
                 roundabout_count: nil,
-                # An array of voice instruction objects associated with the `maneuver`. Each
-                # object provides additional details about the voice instruction, including the
-                # distance along the geometry where the instruction applies, the instruction text,
-                # and the unit of measurement.
+                # An array of voice instruction objects associated with the maneuver. Each object
+                # provides additional details about the voice instruction, including the distance
+                # along the geometry where the instruction applies, the instruction text, and the
+                # unit of measurement.
                 voice_instruction: nil
               )
               end
@@ -1654,14 +1654,14 @@ module Nextbillionai
                     )
                   end
 
-                # The latitude coordinate of the `maneuver`.
+                # The latitude coordinate of the maneuver.
                 sig { returns(T.nilable(Float)) }
                 attr_reader :latitude
 
                 sig { params(latitude: Float).void }
                 attr_writer :latitude
 
-                # The longitude coordinate of the `maneuver`.
+                # The longitude coordinate of the maneuver.
                 sig { returns(T.nilable(Float)) }
                 attr_reader :longitude
 
@@ -1675,7 +1675,7 @@ module Nextbillionai
                 sig { params(name: String).void }
                 attr_writer :name
 
-                # A coordinate pair describing the location of the `maneuver`.
+                # A coordinate pair describing the location of the maneuver.
                 sig do
                   params(
                     latitude: Float,
@@ -1684,9 +1684,9 @@ module Nextbillionai
                   ).returns(T.attached_class)
                 end
                 def self.new(
-                  # The latitude coordinate of the `maneuver`.
+                  # The latitude coordinate of the maneuver.
                   latitude: nil,
-                  # The longitude coordinate of the `maneuver`.
+                  # The longitude coordinate of the maneuver.
                   longitude: nil,
                   # The name or description of the maneuver location.
                   name: nil
@@ -1717,14 +1717,14 @@ module Nextbillionai
                 sig { params(distance_along_geometry: Integer).void }
                 attr_writer :distance_along_geometry
 
-                # The guidance instructions for the upcoming `maneuver`
+                # The guidance instructions for the upcoming maneuver
                 sig { returns(T.nilable(String)) }
                 attr_reader :instruction
 
                 sig { params(instruction: String).void }
                 attr_writer :instruction
 
-                # Unit of the `distance_along_geometry` metric
+                # Unit of the distance_along_geometry metric
                 sig { returns(T.nilable(String)) }
                 attr_reader :unit
 
@@ -1740,9 +1740,9 @@ module Nextbillionai
                 end
                 def self.new(
                   distance_along_geometry: nil,
-                  # The guidance instructions for the upcoming `maneuver`
+                  # The guidance instructions for the upcoming maneuver
                   instruction: nil,
-                  # Unit of the `distance_along_geometry` metric
+                  # Unit of the distance_along_geometry metric
                   unit: nil
                 )
                 end
@@ -1814,30 +1814,30 @@ module Nextbillionai
                   )
                 end
 
-              # Latitude of `start_location` of the `step`.
+              # Latitude of start_location of the step.
               sig { returns(T.nilable(Float)) }
               attr_reader :latitude
 
               sig { params(latitude: Float).void }
               attr_writer :latitude
 
-              # Longitude of `start_location` of the `step`.
+              # Longitude of start_location of the step.
               sig { returns(T.nilable(Float)) }
               attr_reader :longitude
 
               sig { params(longitude: Float).void }
               attr_writer :longitude
 
-              # Location coordinates of the point where the `step` starts.
+              # Location coordinates of the point where the step starts.
               sig do
                 params(latitude: Float, longitude: Float).returns(
                   T.attached_class
                 )
               end
               def self.new(
-                # Latitude of `start_location` of the `step`.
+                # Latitude of start_location of the step.
                 latitude: nil,
-                # Longitude of `start_location` of the `step`.
+                # Longitude of start_location of the step.
                 longitude: nil
               )
               end
@@ -1858,14 +1858,14 @@ module Nextbillionai
               )
             end
 
-          # Latitude of the`start_location`.
+          # Latitude of thestart_location.
           sig { returns(T.nilable(Float)) }
           attr_reader :latitude
 
           sig { params(latitude: Float).void }
           attr_writer :latitude
 
-          # Longitude of the `start_location`.
+          # Longitude of the start_location.
           sig { returns(T.nilable(Float)) }
           attr_reader :longitude
 
@@ -1877,9 +1877,9 @@ module Nextbillionai
             params(latitude: Float, longitude: Float).returns(T.attached_class)
           end
           def self.new(
-            # Latitude of the`start_location`.
+            # Latitude of thestart_location.
             latitude: nil,
-            # Longitude of the `start_location`.
+            # Longitude of the start_location.
             longitude: nil
           )
           end

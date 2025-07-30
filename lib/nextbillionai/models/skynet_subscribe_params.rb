@@ -61,9 +61,9 @@ module Nextbillionai
       module Action
         extend Nextbillionai::Internal::Type::Enum
 
-        TRIP_SUBSCRIBE = :"`TRIP_SUBSCRIBE`"
-        TRIP_UNSUBSCRIBE = :"`TRIP_UNSUBSCRIBE`"
-        HEARTBEAT = :"`HEARTBEAT`"
+        TRIP_SUBSCRIBE = :TRIP_SUBSCRIBE
+        TRIP_UNSUBSCRIBE = :TRIP_UNSUBSCRIBE
+        HEARTBEAT = :HEARTBEAT
 
         # @!method self.values
         #   @return [Array<Symbol>]
@@ -74,7 +74,7 @@ module Nextbillionai
         #   Specify the ID of an active trip that needs to be subscribed. The ID of a trip
         #   is returned in the response when _Start A Trip_ request is acknowledged.
         #
-        #   This attribute is mandatory when `action` is set to either "TRIP_SUBSCRIBE" or
+        #   This attribute is mandatory when action is set to either "TRIP_SUBSCRIBE" or
         #   "TRIP_UNSUBSCRIBE"
         #
         #   @return [String]

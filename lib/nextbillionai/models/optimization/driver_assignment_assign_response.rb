@@ -43,7 +43,7 @@ module Nextbillionai
           # @!attribute alternate_assignments
           #   An array of objects containing the details of the potential, alternate vehicle
           #   assignments for the orders in the input. This attribute will not be returned in
-          #   the response if the `alternate_assignments` was not provided in the input. Each
+          #   the response if the alternate_assignments was not provided in the input. Each
           #   object represents alternate assignments for a single order.
           #
           #   @return [Array<Nextbillionai::Models::Optimization::DriverAssignmentAssignResponse::Result::AlternateAssignment>, nil]
@@ -51,8 +51,8 @@ module Nextbillionai
                    -> { Nextbillionai::Internal::Type::ArrayOf[Nextbillionai::Models::Optimization::DriverAssignmentAssignResponse::Result::AlternateAssignment] }
 
           # @!attribute available_vehicles
-          #   A collection of vehicles IDs that were not assigned to any orders. A `null`
-          #   value is returned if there are no vehicles without an order assignment.
+          #   A collection of vehicles IDs that were not assigned to any orders. A null value
+          #   is returned if there are no vehicles without an order assignment.
           #
           #   @return [Array<String>, nil]
           optional :available_vehicles, Nextbillionai::Internal::Type::ArrayOf[String]
@@ -67,8 +67,8 @@ module Nextbillionai
 
           # @!attribute unassigned_orders
           #   A collection of objects listing the details of orders which remained unassigned.
-          #   Each object represents a single order. A `null` value is returned if there are
-          #   no unassigned orders.
+          #   Each object represents a single order. A null value is returned if there are no
+          #   unassigned orders.
           #
           #   @return [Array<Nextbillionai::Models::Optimization::DriverAssignmentAssignResponse::Result::UnassignedOrder>, nil]
           optional :unassigned_orders,
@@ -83,7 +83,7 @@ module Nextbillionai
           #
           #   @param alternate_assignments [Array<Nextbillionai::Models::Optimization::DriverAssignmentAssignResponse::Result::AlternateAssignment>] An array of objects containing the details of the potential, alternate vehicle a
           #
-          #   @param available_vehicles [Array<String>] A collection of vehicles IDs that were not assigned to any orders. A `null` valu
+          #   @param available_vehicles [Array<String>] A collection of vehicles IDs that were not assigned to any orders. A null value
           #
           #   @param trips [Array<Nextbillionai::Models::Optimization::DriverAssignmentAssignResponse::Result::Trip>] An collection of objects returning the trip details for each vehicle which was a
           #
@@ -195,16 +195,16 @@ module Nextbillionai
               class Steps < Nextbillionai::Internal::Type::BaseModel
                 # @!attribute distance
                 #   Returns the driving distance, in meters, to the step's location from previous
-                #   step's location. For the first step of a trip, `distance` indicates the driving
-                #   distance from `vehicle_current_location` to the step's location.
+                #   step's location. For the first step of a trip, distance indicates the driving
+                #   distance from vehicle_current_location to the step's location.
                 #
                 #   @return [Integer, nil]
                 optional :distance, Integer
 
                 # @!attribute eta
                 #   Returns the driving duration, in seconds, to the step's location from previous
-                #   step's location. For the first step of a trip, `eta` indicates the driving
-                #   duration from `vehicle_current_location` to the step's location.
+                #   step's location. For the first step of a trip, eta indicates the driving
+                #   duration from vehicle_current_location to the step's location.
                 #
                 #   @return [Integer, nil]
                 optional :eta, Integer
@@ -227,9 +227,9 @@ module Nextbillionai
                 #
                 #   - **pickup:** Indicates the pickup step for an order
                 #   - **dropoff:** Indicates the dropoff step for an order. It is returned only if
-                #     `dropoff_details` was **true** in the input request.
+                #     dropoff_details was **true** in the input request.
                 #   - **ongoing:** Indicates a step that the vehicle needs to complete on its
-                #     current trip. This is returned in the response only when `remaining_waypoints`
+                #     current trip. This is returned in the response only when remaining_waypoints
                 #     input was provided for the given vehicle.
                 #   - **intermediate_waypoint:** Indicates an intermediate stop that the vehicle
                 #     needs to complete in case multiple dropoffs are provided in the input.
@@ -260,9 +260,9 @@ module Nextbillionai
                 #
                 # - **pickup:** Indicates the pickup step for an order
                 # - **dropoff:** Indicates the dropoff step for an order. It is returned only if
-                #   `dropoff_details` was **true** in the input request.
+                #   dropoff_details was **true** in the input request.
                 # - **ongoing:** Indicates a step that the vehicle needs to complete on its
-                #   current trip. This is returned in the response only when `remaining_waypoints`
+                #   current trip. This is returned in the response only when remaining_waypoints
                 #   input was provided for the given vehicle.
                 # - **intermediate_waypoint:** Indicates an intermediate stop that the vehicle
                 #   needs to complete in case multiple dropoffs are provided in the input.

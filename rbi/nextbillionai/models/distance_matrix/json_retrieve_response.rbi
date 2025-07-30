@@ -44,7 +44,7 @@ module Nextbillionai
         attr_writer :rows
 
         # A string indicating the state of the response. On normal responses, the value
-        # will be `Ok`. Indicative HTTP error codes are returned for different errors. See
+        # will be Ok. Indicative HTTP error codes are returned for different errors. See
         # the [API Errors Codes](#api-error-codes) section below for more information.
         sig { returns(T.nilable(String)) }
         attr_reader :status
@@ -70,7 +70,7 @@ module Nextbillionai
           # Container object for a response with an array of arrays structure.
           rows: nil,
           # A string indicating the state of the response. On normal responses, the value
-          # will be `Ok`. Indicative HTTP error codes are returned for different errors. See
+          # will be Ok. Indicative HTTP error codes are returned for different errors. See
           # the [API Errors Codes](#api-error-codes) section below for more information.
           status: nil
         )
@@ -100,11 +100,11 @@ module Nextbillionai
               )
             end
 
-          # An array of objects. Each `elements` array corresponds to a single `origins`
-          # coordinate and contains objects with `distance` and `duration` values for each
-          # of the `destinations`. The details in the first `elements` array correspond to
-          # the first `origins` point and the first object corresponds to the first
-          # `destinations` point and so on.
+          # An array of objects. Each elements array corresponds to a single origins
+          # coordinate and contains objects with distance and duration values for each of
+          # the destinations. The details in the first elements array correspond to the
+          # first origins point and the first object corresponds to the first destinations
+          # point and so on.
           sig do
             returns(
               T.nilable(
@@ -135,11 +135,11 @@ module Nextbillionai
             ).returns(T.attached_class)
           end
           def self.new(
-            # An array of objects. Each `elements` array corresponds to a single `origins`
-            # coordinate and contains objects with `distance` and `duration` values for each
-            # of the `destinations`. The details in the first `elements` array correspond to
-            # the first `origins` point and the first object corresponds to the first
-            # `destinations` point and so on.
+            # An array of objects. Each elements array corresponds to a single origins
+            # coordinate and contains objects with distance and duration values for each of
+            # the destinations. The details in the first elements array correspond to the
+            # first origins point and the first object corresponds to the first destinations
+            # point and so on.
             elements: nil
           )
           end

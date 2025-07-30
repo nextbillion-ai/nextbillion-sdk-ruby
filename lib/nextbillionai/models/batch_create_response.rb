@@ -14,8 +14,8 @@ module Nextbillionai
 
       # @!attribute status
       #   Returns the overall status of the API request. Its value will belong to one of
-      #   `success`, `failed`, and `pending`. It can also contain HTTP error codes in case
-      #   of a failed request or operation.
+      #   success, failed, and pending. It can also contain HTTP error codes in case of a
+      #   failed request or operation.
       #
       #   @return [String, nil]
       optional :status, String
@@ -33,7 +33,7 @@ module Nextbillionai
       #
       #   @param msg [String] Displays the error message in case of a failed request or operation. Please note
       #
-      #   @param status [String] Returns the overall status of the API request. Its value will belong to one of `
+      #   @param status [String] Returns the overall status of the API request. Its value will belong to one of s
       #
       #   @param track_id [String] Returns the unique ID of the batch processing task. Use this ID using the GET re
     end

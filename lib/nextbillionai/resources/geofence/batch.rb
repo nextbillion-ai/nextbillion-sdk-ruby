@@ -40,7 +40,7 @@ module Nextbillionai
         #
         # @overload list(ids:, key:, request_options: {})
         #
-        # @param ids [String] Comma(`,`) separated list of IDs of the geofences to be searched.
+        # @param ids [String] Comma(,) separated list of IDs of the geofences to be searched.
         #
         # @param key [String] A key is a unique identifier that is required to authenticate a request to the A
         #

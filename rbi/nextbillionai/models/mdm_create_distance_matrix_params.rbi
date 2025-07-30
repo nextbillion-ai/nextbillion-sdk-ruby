@@ -26,7 +26,7 @@ module Nextbillionai
       end
       attr_accessor :option
 
-      # `origins` are the starting point of your route. Ensure that origins are routable
+      # origins are the starting point of your route. Ensure that origins are routable
       # land locations. Multiple origins should be separated by a pipe symbol (|).
       #
       # **Format:** latitude_1,longitude_1|latitude_2,longitude_2|…
@@ -35,9 +35,9 @@ module Nextbillionai
 
       # Specify a spliter to split the matrix by. It accepts 2 values:
       #
-      # - `od_number_spliter`:
+      # - od_number_spliter:
       #
-      # - `straight_distance_spliter`:
+      # - straight_distance_spliter:
       #
       # Please note it is an internal, debug field only.
       #
@@ -79,16 +79,16 @@ module Nextbillionai
       attr_writer :area
 
       # Setting this will ensure the route avoids the object(s) specified as input.
-      # Multiple values should be separated by a pipe (|). If `none` is provided along
+      # Multiple values should be separated by a pipe (|). If none is provided along
       # with other values, an error is returned as a valid route is not feasible.
       #
       # - **Note:**
       #
-      #   - This parameter is effective only when `route_type=fastest`.
+      #   - This parameter is effective only when route_type=fastest.
       #   - When this parameter is not provided in the input, ferries are set to be
-      #     avoided by default. When `avoid` input is provided, only the mentioned
-      #     objects are avoided.
-      #   - When using `avoid=bbox` users also need to specify the boundaries of the
+      #     avoided by default. When avoid input is provided, only the mentioned objects
+      #     are avoided.
+      #   - When using avoid=bbox users also need to specify the boundaries of the
       #     bounding box to be avoid. Multiple bounding boxes can be specified
       #     simultaneously. Please note that bounding box is a hard filter and if it
       #     blocks all possible routes between given locations, a 4xx error is returned.
@@ -97,7 +97,7 @@ module Nextbillionai
       #     - **Example:** avoid=bbox: 34.0635,-118.2547, 34.0679,-118.2478 | bbox:
       #       34.0521,-118.2342, 34.0478,-118.2437
       #
-      #   - When using `avoid=sharp_turn`, default range of permissible turn angles is
+      #   - When using avoid=sharp_turn, default range of permissible turn angles is
       #     \[120,240\].
       sig do
         returns(
@@ -118,8 +118,8 @@ module Nextbillionai
       # Specify if crossing an international border is expected for operations near
       # border areas. When set to false, the API will prohibit routes going back & forth
       # between countries. Consequently, routes within the same country will be
-      # preferred if they are feasible for the given set of `destination` or `waypoints`
-      # . When set to true, the routes will be allowed to go back & forth between
+      # preferred if they are feasible for the given set of destination or waypoints .
+      # When set to true, the routes will be allowed to go back & forth between
       # countries as needed.
       #
       # This feature is available in North America region only. Please get in touch with
@@ -132,27 +132,26 @@ module Nextbillionai
       attr_writer :cross_border
 
       # This is a number in UNIX epoch timestamp in seconds format that can be used to
-      # provide the departure time. The response will return the `distance` and
-      # `duration` of the route based on typical traffic for at the given start time.If
-      # no input is provided for this parameter then the traffic conditions at the time
-      # of making the request are considered.
+      # provide the departure time. The response will return the distance and duration
+      # of the route based on typical traffic for at the given start time.If no input is
+      # provided for this parameter then the traffic conditions at the time of making
+      # the request are considered.
       #
-      # Please note that when `route_type` is set to `shortest` then the
-      # `departure_time` will be ineffective as the service will return the result for
-      # the shortest path possible irrespective of the traffic conditions.
+      # Please note that when route_type is set to shortest then the departure_time will
+      # be ineffective as the service will return the result for the shortest path
+      # possible irrespective of the traffic conditions.
       sig { returns(T.nilable(Integer)) }
       attr_reader :departure_time
 
       sig { params(departure_time: Integer).void }
       attr_writer :departure_time
 
-      # `destinations` are the ending coordinates of your route. Ensure that
-      # destinations are routable land locations. Multiple destinations should be
-      # separated by a pipe symbol (|).
+      # destinations are the ending coordinates of your route. Ensure that destinations
+      # are routable land locations. Multiple destinations should be separated by a pipe
+      # symbol (|).
       #
-      # In case `destinations` are not provided or if it is left empty, then the input
-      # value of `origins` will be copied to `destinations` to create the OD matrix
-      # pairs.
+      # In case destinations are not provided or if it is left empty, then the input
+      # value of origins will be copied to destinations to create the OD matrix pairs.
       #
       # **Format:** latitude_1,longitude_1|latitude_2,longitude_2|…
       sig { returns(T.nilable(String)) }
@@ -161,8 +160,8 @@ module Nextbillionai
       sig { params(destinations: String).void }
       attr_writer :destinations
 
-      # Specify the side of the road from which to approach `destinations` points.
-      # Please note that the given approach will be applied to all the `destinations`.
+      # Specify the side of the road from which to approach destinations points. Please
+      # note that the given approach will be applied to all the destinations.
       sig do
         returns(
           T.nilable(
@@ -182,9 +181,9 @@ module Nextbillionai
 
       # Specify the type of hazardous material being carried and the service will avoid
       # roads which are not suitable for the type of goods specified. Multiple values
-      # can be separated using a pipe operator `|` .
+      # can be separated using a pipe operator | .
       #
-      # Please note that this parameter is effective only when `mode=truck`.
+      # Please note that this parameter is effective only when mode=truck.
       sig do
         returns(
           T.nilable(
@@ -204,9 +203,9 @@ module Nextbillionai
 
       # Set which driving mode the service should use to determine a route.
       #
-      # For example, if you use `car`, the API will return a route that a car can take.
-      # Using `truck` will return a route a truck can use, taking into account
-      # appropriate truck routing restrictions.
+      # For example, if you use car, the API will return a route that a car can take.
+      # Using truck will return a route a truck can use, taking into account appropriate
+      # truck routing restrictions.
       sig do
         returns(
           T.nilable(
@@ -223,9 +222,8 @@ module Nextbillionai
       end
       attr_writer :mode
 
-      # Specify the side of the road from which to approach `origins` points. Please
-      # note that the given approach will be applied to all the points provided as
-      # `origins`.
+      # Specify the side of the road from which to approach origins points. Please note
+      # that the given approach will be applied to all the points provided as origins.
       sig do
         returns(
           T.nilable(
@@ -243,8 +241,8 @@ module Nextbillionai
       end
       attr_writer :origins_approach
 
-      # Set the route type that needs to be returned. Please note that `route_type` is
-      # effective only when `option=flexible`.
+      # Set the route type that needs to be returned. Please note that route_type is
+      # effective only when option=flexible.
       sig do
         returns(
           T.nilable(
@@ -266,7 +264,7 @@ module Nextbillionai
       # goods) of the truck, in tonnes. When used, the service will return routes which
       # are legally allowed to carry the load specified per axle.
       #
-      # Please note this parameter is effective only when `mode=truck`.
+      # Please note this parameter is effective only when mode=truck.
       sig { returns(T.nilable(Float)) }
       attr_reader :truck_axle_load
 
@@ -274,8 +272,8 @@ module Nextbillionai
       attr_writer :truck_axle_load
 
       # This defines the dimensions of a truck in centimeters (cm) in the format of
-      # "height,width,length". This parameter is effective only when `mode=truck` and
-      # `option=flexible`. Maximum dimensions are as follows:
+      # "height,width,length". This parameter is effective only when mode=truck and
+      # option=flexible. Maximum dimensions are as follows:
       #
       # Height = 1000 cm Width = 5000 cm Length = 5000 cm
       sig { returns(T.nilable(String)) }
@@ -285,8 +283,8 @@ module Nextbillionai
       attr_writer :truck_size
 
       # This parameter defines the weight of the truck including trailers and shipped
-      # goods in kilograms (kg). This parameter is effective only when `mode=truck` and
-      # `option=flexible`.
+      # goods in kilograms (kg). This parameter is effective only when mode=truck and
+      # option=flexible.
       sig { returns(T.nilable(Integer)) }
       attr_reader :truck_weight
 
@@ -328,16 +326,16 @@ module Nextbillionai
         # Use this option to switch to truck-specific routing or time based routing or if
         # you want to choose between the fastest and shortest route types.
         option:,
-        # `origins` are the starting point of your route. Ensure that origins are routable
+        # origins are the starting point of your route. Ensure that origins are routable
         # land locations. Multiple origins should be separated by a pipe symbol (|).
         #
         # **Format:** latitude_1,longitude_1|latitude_2,longitude_2|…
         origins:,
         # Specify a spliter to split the matrix by. It accepts 2 values:
         #
-        # - `od_number_spliter`:
+        # - od_number_spliter:
         #
-        # - `straight_distance_spliter`:
+        # - straight_distance_spliter:
         #
         # Please note it is an internal, debug field only.
         #
@@ -348,16 +346,16 @@ module Nextbillionai
         # _the input coordinates area._
         area: nil,
         # Setting this will ensure the route avoids the object(s) specified as input.
-        # Multiple values should be separated by a pipe (|). If `none` is provided along
+        # Multiple values should be separated by a pipe (|). If none is provided along
         # with other values, an error is returned as a valid route is not feasible.
         #
         # - **Note:**
         #
-        #   - This parameter is effective only when `route_type=fastest`.
+        #   - This parameter is effective only when route_type=fastest.
         #   - When this parameter is not provided in the input, ferries are set to be
-        #     avoided by default. When `avoid` input is provided, only the mentioned
-        #     objects are avoided.
-        #   - When using `avoid=bbox` users also need to specify the boundaries of the
+        #     avoided by default. When avoid input is provided, only the mentioned objects
+        #     are avoided.
+        #   - When using avoid=bbox users also need to specify the boundaries of the
         #     bounding box to be avoid. Multiple bounding boxes can be specified
         #     simultaneously. Please note that bounding box is a hard filter and if it
         #     blocks all possible routes between given locations, a 4xx error is returned.
@@ -366,14 +364,14 @@ module Nextbillionai
         #     - **Example:** avoid=bbox: 34.0635,-118.2547, 34.0679,-118.2478 | bbox:
         #       34.0521,-118.2342, 34.0478,-118.2437
         #
-        #   - When using `avoid=sharp_turn`, default range of permissible turn angles is
+        #   - When using avoid=sharp_turn, default range of permissible turn angles is
         #     \[120,240\].
         avoid: nil,
         # Specify if crossing an international border is expected for operations near
         # border areas. When set to false, the API will prohibit routes going back & forth
         # between countries. Consequently, routes within the same country will be
-        # preferred if they are feasible for the given set of `destination` or `waypoints`
-        # . When set to true, the routes will be allowed to go back & forth between
+        # preferred if they are feasible for the given set of destination or waypoints .
+        # When set to true, the routes will be allowed to go back & forth between
         # countries as needed.
         #
         # This feature is available in North America region only. Please get in touch with
@@ -381,62 +379,60 @@ module Nextbillionai
         # areas.
         cross_border: nil,
         # This is a number in UNIX epoch timestamp in seconds format that can be used to
-        # provide the departure time. The response will return the `distance` and
-        # `duration` of the route based on typical traffic for at the given start time.If
-        # no input is provided for this parameter then the traffic conditions at the time
-        # of making the request are considered.
+        # provide the departure time. The response will return the distance and duration
+        # of the route based on typical traffic for at the given start time.If no input is
+        # provided for this parameter then the traffic conditions at the time of making
+        # the request are considered.
         #
-        # Please note that when `route_type` is set to `shortest` then the
-        # `departure_time` will be ineffective as the service will return the result for
-        # the shortest path possible irrespective of the traffic conditions.
+        # Please note that when route_type is set to shortest then the departure_time will
+        # be ineffective as the service will return the result for the shortest path
+        # possible irrespective of the traffic conditions.
         departure_time: nil,
-        # `destinations` are the ending coordinates of your route. Ensure that
-        # destinations are routable land locations. Multiple destinations should be
-        # separated by a pipe symbol (|).
+        # destinations are the ending coordinates of your route. Ensure that destinations
+        # are routable land locations. Multiple destinations should be separated by a pipe
+        # symbol (|).
         #
-        # In case `destinations` are not provided or if it is left empty, then the input
-        # value of `origins` will be copied to `destinations` to create the OD matrix
-        # pairs.
+        # In case destinations are not provided or if it is left empty, then the input
+        # value of origins will be copied to destinations to create the OD matrix pairs.
         #
         # **Format:** latitude_1,longitude_1|latitude_2,longitude_2|…
         destinations: nil,
-        # Specify the side of the road from which to approach `destinations` points.
-        # Please note that the given approach will be applied to all the `destinations`.
+        # Specify the side of the road from which to approach destinations points. Please
+        # note that the given approach will be applied to all the destinations.
         destinations_approach: nil,
         # Specify the type of hazardous material being carried and the service will avoid
         # roads which are not suitable for the type of goods specified. Multiple values
-        # can be separated using a pipe operator `|` .
+        # can be separated using a pipe operator | .
         #
-        # Please note that this parameter is effective only when `mode=truck`.
+        # Please note that this parameter is effective only when mode=truck.
         hazmat_type: nil,
         # Set which driving mode the service should use to determine a route.
         #
-        # For example, if you use `car`, the API will return a route that a car can take.
-        # Using `truck` will return a route a truck can use, taking into account
-        # appropriate truck routing restrictions.
+        # For example, if you use car, the API will return a route that a car can take.
+        # Using truck will return a route a truck can use, taking into account appropriate
+        # truck routing restrictions.
         mode: nil,
-        # Specify the side of the road from which to approach `origins` points. Please
-        # note that the given approach will be applied to all the points provided as
-        # `origins`.
+        # Specify the side of the road from which to approach origins points. Please note
+        # that the given approach will be applied to all the points provided as origins.
         origins_approach: nil,
-        # Set the route type that needs to be returned. Please note that `route_type` is
-        # effective only when `option=flexible`.
+        # Set the route type that needs to be returned. Please note that route_type is
+        # effective only when option=flexible.
         route_type: nil,
         # Specify the total load per axle (including the weight of trailers and shipped
         # goods) of the truck, in tonnes. When used, the service will return routes which
         # are legally allowed to carry the load specified per axle.
         #
-        # Please note this parameter is effective only when `mode=truck`.
+        # Please note this parameter is effective only when mode=truck.
         truck_axle_load: nil,
         # This defines the dimensions of a truck in centimeters (cm) in the format of
-        # "height,width,length". This parameter is effective only when `mode=truck` and
-        # `option=flexible`. Maximum dimensions are as follows:
+        # "height,width,length". This parameter is effective only when mode=truck and
+        # option=flexible. Maximum dimensions are as follows:
         #
         # Height = 1000 cm Width = 5000 cm Length = 5000 cm
         truck_size: nil,
         # This parameter defines the weight of the truck including trailers and shipped
-        # goods in kilograms (kg). This parameter is effective only when `mode=truck` and
-        # `option=flexible`.
+        # goods in kilograms (kg). This parameter is effective only when mode=truck and
+        # option=flexible.
         truck_weight: nil,
         request_options: {}
       )
@@ -506,9 +502,9 @@ module Nextbillionai
 
       # Specify a spliter to split the matrix by. It accepts 2 values:
       #
-      # - `od_number_spliter`:
+      # - od_number_spliter:
       #
-      # - `straight_distance_spliter`:
+      # - straight_distance_spliter:
       #
       # Please note it is an internal, debug field only.
       #
@@ -589,16 +585,16 @@ module Nextbillionai
       end
 
       # Setting this will ensure the route avoids the object(s) specified as input.
-      # Multiple values should be separated by a pipe (|). If `none` is provided along
+      # Multiple values should be separated by a pipe (|). If none is provided along
       # with other values, an error is returned as a valid route is not feasible.
       #
       # - **Note:**
       #
-      #   - This parameter is effective only when `route_type=fastest`.
+      #   - This parameter is effective only when route_type=fastest.
       #   - When this parameter is not provided in the input, ferries are set to be
-      #     avoided by default. When `avoid` input is provided, only the mentioned
-      #     objects are avoided.
-      #   - When using `avoid=bbox` users also need to specify the boundaries of the
+      #     avoided by default. When avoid input is provided, only the mentioned objects
+      #     are avoided.
+      #   - When using avoid=bbox users also need to specify the boundaries of the
       #     bounding box to be avoid. Multiple bounding boxes can be specified
       #     simultaneously. Please note that bounding box is a hard filter and if it
       #     blocks all possible routes between given locations, a 4xx error is returned.
@@ -607,7 +603,7 @@ module Nextbillionai
       #     - **Example:** avoid=bbox: 34.0635,-118.2547, 34.0679,-118.2478 | bbox:
       #       34.0521,-118.2342, 34.0478,-118.2437
       #
-      #   - When using `avoid=sharp_turn`, default range of permissible turn angles is
+      #   - When using avoid=sharp_turn, default range of permissible turn angles is
       #     \[120,240\].
       module Avoid
         extend Nextbillionai::Internal::Type::Enum
@@ -620,47 +616,47 @@ module Nextbillionai
 
         TOLL =
           T.let(
-            :"`toll`",
+            :toll,
             Nextbillionai::MdmCreateDistanceMatrixParams::Avoid::TaggedSymbol
           )
         FERRY =
           T.let(
-            :"`ferry`",
+            :ferry,
             Nextbillionai::MdmCreateDistanceMatrixParams::Avoid::TaggedSymbol
           )
         HIGHWAY =
           T.let(
-            :"`highway`",
+            :highway,
             Nextbillionai::MdmCreateDistanceMatrixParams::Avoid::TaggedSymbol
           )
         SHARP_TURN =
           T.let(
-            :"`sharp_turn`",
+            :sharp_turn,
             Nextbillionai::MdmCreateDistanceMatrixParams::Avoid::TaggedSymbol
           )
         SERVICE_ROAD =
           T.let(
-            :"`service_road`",
+            :service_road,
             Nextbillionai::MdmCreateDistanceMatrixParams::Avoid::TaggedSymbol
           )
         BBOX =
           T.let(
-            :"`bbox`",
+            :bbox,
             Nextbillionai::MdmCreateDistanceMatrixParams::Avoid::TaggedSymbol
           )
         LEFT_TURN =
           T.let(
-            :"`left_turn`",
+            :left_turn,
             Nextbillionai::MdmCreateDistanceMatrixParams::Avoid::TaggedSymbol
           )
         RIGHT_TURN =
           T.let(
-            :"`right_turn`",
+            :right_turn,
             Nextbillionai::MdmCreateDistanceMatrixParams::Avoid::TaggedSymbol
           )
         NONE =
           T.let(
-            :"`none`",
+            :none,
             Nextbillionai::MdmCreateDistanceMatrixParams::Avoid::TaggedSymbol
           )
 
@@ -675,8 +671,8 @@ module Nextbillionai
         end
       end
 
-      # Specify the side of the road from which to approach `destinations` points.
-      # Please note that the given approach will be applied to all the `destinations`.
+      # Specify the side of the road from which to approach destinations points. Please
+      # note that the given approach will be applied to all the destinations.
       module DestinationsApproach
         extend Nextbillionai::Internal::Type::Enum
 
@@ -691,12 +687,12 @@ module Nextbillionai
 
         UNRESTRICTED =
           T.let(
-            :"`unrestricted`",
+            :unrestricted,
             Nextbillionai::MdmCreateDistanceMatrixParams::DestinationsApproach::TaggedSymbol
           )
         CURB =
           T.let(
-            :"`curb`",
+            :curb,
             Nextbillionai::MdmCreateDistanceMatrixParams::DestinationsApproach::TaggedSymbol
           )
 
@@ -713,9 +709,9 @@ module Nextbillionai
 
       # Specify the type of hazardous material being carried and the service will avoid
       # roads which are not suitable for the type of goods specified. Multiple values
-      # can be separated using a pipe operator `|` .
+      # can be separated using a pipe operator | .
       #
-      # Please note that this parameter is effective only when `mode=truck`.
+      # Please note that this parameter is effective only when mode=truck.
       module HazmatType
         extend Nextbillionai::Internal::Type::Enum
 
@@ -730,22 +726,22 @@ module Nextbillionai
 
         GENERAL =
           T.let(
-            :"`general`",
+            :general,
             Nextbillionai::MdmCreateDistanceMatrixParams::HazmatType::TaggedSymbol
           )
         CIRCUMSTANTIAL =
           T.let(
-            :"`circumstantial`",
+            :circumstantial,
             Nextbillionai::MdmCreateDistanceMatrixParams::HazmatType::TaggedSymbol
           )
         EXPLOSIVE =
           T.let(
-            :"`explosive`",
+            :explosive,
             Nextbillionai::MdmCreateDistanceMatrixParams::HazmatType::TaggedSymbol
           )
         HARMFUL_TO_WATER =
           T.let(
-            :"`harmful_to_water`",
+            :harmful_to_water,
             Nextbillionai::MdmCreateDistanceMatrixParams::HazmatType::TaggedSymbol
           )
 
@@ -762,9 +758,9 @@ module Nextbillionai
 
       # Set which driving mode the service should use to determine a route.
       #
-      # For example, if you use `car`, the API will return a route that a car can take.
-      # Using `truck` will return a route a truck can use, taking into account
-      # appropriate truck routing restrictions.
+      # For example, if you use car, the API will return a route that a car can take.
+      # Using truck will return a route a truck can use, taking into account appropriate
+      # truck routing restrictions.
       module Mode
         extend Nextbillionai::Internal::Type::Enum
 
@@ -776,12 +772,12 @@ module Nextbillionai
 
         CAR =
           T.let(
-            :"`car`",
+            :car,
             Nextbillionai::MdmCreateDistanceMatrixParams::Mode::TaggedSymbol
           )
         TRUCK =
           T.let(
-            :"`truck`",
+            :truck,
             Nextbillionai::MdmCreateDistanceMatrixParams::Mode::TaggedSymbol
           )
 
@@ -796,9 +792,8 @@ module Nextbillionai
         end
       end
 
-      # Specify the side of the road from which to approach `origins` points. Please
-      # note that the given approach will be applied to all the points provided as
-      # `origins`.
+      # Specify the side of the road from which to approach origins points. Please note
+      # that the given approach will be applied to all the points provided as origins.
       module OriginsApproach
         extend Nextbillionai::Internal::Type::Enum
 
@@ -813,12 +808,12 @@ module Nextbillionai
 
         UNRESTRICTED =
           T.let(
-            :"`unrestricted`",
+            :unrestricted,
             Nextbillionai::MdmCreateDistanceMatrixParams::OriginsApproach::TaggedSymbol
           )
         CURB =
           T.let(
-            :"`curb`",
+            :curb,
             Nextbillionai::MdmCreateDistanceMatrixParams::OriginsApproach::TaggedSymbol
           )
 
@@ -833,8 +828,8 @@ module Nextbillionai
         end
       end
 
-      # Set the route type that needs to be returned. Please note that `route_type` is
-      # effective only when `option=flexible`.
+      # Set the route type that needs to be returned. Please note that route_type is
+      # effective only when option=flexible.
       module RouteType
         extend Nextbillionai::Internal::Type::Enum
 
@@ -849,12 +844,12 @@ module Nextbillionai
 
         FASTEST =
           T.let(
-            :"`fastest`",
+            :fastest,
             Nextbillionai::MdmCreateDistanceMatrixParams::RouteType::TaggedSymbol
           )
         SHORTEST =
           T.let(
-            :"`shortest`",
+            :shortest,
             Nextbillionai::MdmCreateDistanceMatrixParams::RouteType::TaggedSymbol
           )
 

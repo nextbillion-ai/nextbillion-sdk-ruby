@@ -6,7 +6,7 @@ class Nextbillionai::Test::Resources::Geofence::ConsoleTest < Nextbillionai::Tes
   def test_preview_required_params
     skip("skipped: tests are disabled for the time being")
 
-    response = @nextbillion_sdk.geofence.console.preview(type: :"`circle`")
+    response = @nextbillion_sdk.geofence.console.preview(type: :circle)
 
     assert_pattern do
       response => Nextbillionai::Models::Geofence::ConsolePreviewResponse

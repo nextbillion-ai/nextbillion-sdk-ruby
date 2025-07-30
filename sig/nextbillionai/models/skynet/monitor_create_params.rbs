@@ -113,21 +113,16 @@ module Nextbillionai
           request_options: Nextbillionai::RequestOptions
         }
 
-        type type_ =
-          :"`enter`"
-          | :"`exit`"
-          | :"`enter_and_exit`"
-          | :"`speeding`"
-          | :"`idle`"
+        type type_ = :enter | :exit | :enter_and_exit | :speeding | :idle
 
         module Type
           extend Nextbillionai::Internal::Type::Enum
 
-          ENTER: :"`enter`"
-          EXIT: :"`exit`"
-          ENTER_AND_EXIT: :"`enter_and_exit`"
-          SPEEDING: :"`speeding`"
-          IDLE: :"`idle`"
+          ENTER: :enter
+          EXIT: :exit
+          ENTER_AND_EXIT: :enter_and_exit
+          SPEEDING: :speeding
+          IDLE: :idle
 
           def self?.values: -> ::Array[Nextbillionai::Models::Skynet::MonitorCreateParams::type_]
         end

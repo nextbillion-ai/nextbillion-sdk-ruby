@@ -29,12 +29,12 @@ module Nextbillionai
         sig { returns(Float) }
         attr_accessor :radius
 
-        # **`tags` parameter will be deprecated soon! Please use the
-        # `include_any_of_attributes` or `include_all_of_attributes` parameters to match
+        # **tags parameter will be deprecated soon! Please use the
+        # include_any_of_attributes or include_all_of_attributes parameters to match
         # assets based on their labels or markers.**
         #
         # Use this parameter to filter the assets found inside the specified area by their
-        # `tags`. Multiple `tags` can be separated using commas (`,`).
+        # tags. Multiple tags can be separated using commas (,).
         #
         # Please note the tags are case sensitive.
         sig { returns(T.nilable(String)) }
@@ -44,12 +44,12 @@ module Nextbillionai
         attr_writer :filter
 
         # Use this parameter to filter the assets found inside the specified area by their
-        # `attributes`. Only the assets having all the `attributes` that are added to this
-        # parameter, will be returned in the search results. Multiple `attributes` can be
-        # separated using pipes (`|`).
+        # attributes. Only the assets having all the attributes that are added to this
+        # parameter, will be returned in the search results. Multiple attributes can be
+        # separated using pipes (|).
         #
         # Please note the attributes are case sensitive. Also, this parameter can not be
-        # used in conjunction with `include_any_of_attributes` parameter.
+        # used in conjunction with include_any_of_attributes parameter.
         sig { returns(T.nilable(String)) }
         attr_reader :include_all_of_attributes
 
@@ -57,12 +57,12 @@ module Nextbillionai
         attr_writer :include_all_of_attributes
 
         # Use this parameter to filter the assets found inside the specified area by their
-        # `attributes`. Assets having at least one of the `attributes` added to this
-        # parameter, will be returned in the search results. Multiple `attributes` can be
-        # separated using pipes (`|`).
+        # attributes. Assets having at least one of the attributes added to this
+        # parameter, will be returned in the search results. Multiple attributes can be
+        # separated using pipes (|).
         #
         # Please note the attributes are case sensitive. Also, this parameter can not be
-        # used in conjunction with `include_all_of_attributes` parameter.
+        # used in conjunction with include_all_of_attributes parameter.
         sig { returns(T.nilable(String)) }
         attr_reader :include_any_of_attributes
 
@@ -77,7 +77,7 @@ module Nextbillionai
         sig { params(max_search_limit: T::Boolean).void }
         attr_writer :max_search_limit
 
-        # Denotes page number. Use this along with the `ps` parameter to implement
+        # Denotes page number. Use this along with the ps parameter to implement
         # pagination for your searched results. This parameter does not have a maximum
         # limit but would return an empty response in case a higher value is provided when
         # the result-set itself is smaller.
@@ -87,8 +87,8 @@ module Nextbillionai
         sig { params(pn: Integer).void }
         attr_writer :pn
 
-        # Denotes number of search results per page. Use this along with the `pn`
-        # parameter to implement pagination for your searched results.
+        # Denotes number of search results per page. Use this along with the pn parameter
+        # to implement pagination for your searched results.
         sig { returns(T.nilable(Integer)) }
         attr_reader :ps
 
@@ -99,11 +99,10 @@ module Nextbillionai
         # values are:
         #
         # - **distance** : Sorts the assets by driving distance to the given
-        #   `sort_destination` .
-        # - **duration** : Sorts the assets by travel time to the given `sort_destination`
-        #   .
+        #   sort_destination .
+        # - **duration** : Sorts the assets by travel time to the given sort_destination .
         # - **straight_distance** : Sort the assets by straight-line distance to the given
-        #   `sort-destination` .
+        #   sort-destination .
         sig do
           returns(
             T.nilable(
@@ -123,9 +122,9 @@ module Nextbillionai
         # Specifies the location coordinates of the point which acts as destination for
         # sorting the assets in the search results. The service will sort each asset based
         # on the driving distance or travel time to this destination, from its current
-        # location. Use the `sort_by` parameter to configure the metric that should be
-        # used for sorting the assets. Please note that `sort_destination` is required
-        # when `sort_by` is provided.
+        # location. Use the sort_by parameter to configure the metric that should be used
+        # for sorting the assets. Please note that sort_destination is required when
+        # sort_by is provided.
         sig { returns(T.nilable(String)) }
         attr_reader :sort_destination
 
@@ -179,58 +178,57 @@ module Nextbillionai
           key:,
           # Radius, in meters, of the circular area to be searched.
           radius:,
-          # **`tags` parameter will be deprecated soon! Please use the
-          # `include_any_of_attributes` or `include_all_of_attributes` parameters to match
+          # **tags parameter will be deprecated soon! Please use the
+          # include_any_of_attributes or include_all_of_attributes parameters to match
           # assets based on their labels or markers.**
           #
           # Use this parameter to filter the assets found inside the specified area by their
-          # `tags`. Multiple `tags` can be separated using commas (`,`).
+          # tags. Multiple tags can be separated using commas (,).
           #
           # Please note the tags are case sensitive.
           filter: nil,
           # Use this parameter to filter the assets found inside the specified area by their
-          # `attributes`. Only the assets having all the `attributes` that are added to this
-          # parameter, will be returned in the search results. Multiple `attributes` can be
-          # separated using pipes (`|`).
+          # attributes. Only the assets having all the attributes that are added to this
+          # parameter, will be returned in the search results. Multiple attributes can be
+          # separated using pipes (|).
           #
           # Please note the attributes are case sensitive. Also, this parameter can not be
-          # used in conjunction with `include_any_of_attributes` parameter.
+          # used in conjunction with include_any_of_attributes parameter.
           include_all_of_attributes: nil,
           # Use this parameter to filter the assets found inside the specified area by their
-          # `attributes`. Assets having at least one of the `attributes` added to this
-          # parameter, will be returned in the search results. Multiple `attributes` can be
-          # separated using pipes (`|`).
+          # attributes. Assets having at least one of the attributes added to this
+          # parameter, will be returned in the search results. Multiple attributes can be
+          # separated using pipes (|).
           #
           # Please note the attributes are case sensitive. Also, this parameter can not be
-          # used in conjunction with `include_all_of_attributes` parameter.
+          # used in conjunction with include_all_of_attributes parameter.
           include_any_of_attributes: nil,
           # When true, the maximum limit is 20Km for around search API and 48000 Km2 for
           # other search methods.
           max_search_limit: nil,
-          # Denotes page number. Use this along with the `ps` parameter to implement
+          # Denotes page number. Use this along with the ps parameter to implement
           # pagination for your searched results. This parameter does not have a maximum
           # limit but would return an empty response in case a higher value is provided when
           # the result-set itself is smaller.
           pn: nil,
-          # Denotes number of search results per page. Use this along with the `pn`
-          # parameter to implement pagination for your searched results.
+          # Denotes number of search results per page. Use this along with the pn parameter
+          # to implement pagination for your searched results.
           ps: nil,
           # Specify the metric to sort the assets returned in the search result. The valid
           # values are:
           #
           # - **distance** : Sorts the assets by driving distance to the given
-          #   `sort_destination` .
-          # - **duration** : Sorts the assets by travel time to the given `sort_destination`
-          #   .
+          #   sort_destination .
+          # - **duration** : Sorts the assets by travel time to the given sort_destination .
           # - **straight_distance** : Sort the assets by straight-line distance to the given
-          #   `sort-destination` .
+          #   sort-destination .
           sort_by: nil,
           # Specifies the location coordinates of the point which acts as destination for
           # sorting the assets in the search results. The service will sort each asset based
           # on the driving distance or travel time to this destination, from its current
-          # location. Use the `sort_by` parameter to configure the metric that should be
-          # used for sorting the assets. Please note that `sort_destination` is required
-          # when `sort_by` is provided.
+          # location. Use the sort_by parameter to configure the metric that should be used
+          # for sorting the assets. Please note that sort_destination is required when
+          # sort_by is provided.
           sort_destination: nil,
           # Specifies the driving mode to be used for determining travel duration or driving
           # distance for sorting the assets in search result.
@@ -267,11 +265,10 @@ module Nextbillionai
         # values are:
         #
         # - **distance** : Sorts the assets by driving distance to the given
-        #   `sort_destination` .
-        # - **duration** : Sorts the assets by travel time to the given `sort_destination`
-        #   .
+        #   sort_destination .
+        # - **duration** : Sorts the assets by travel time to the given sort_destination .
         # - **straight_distance** : Sort the assets by straight-line distance to the given
-        #   `sort-destination` .
+        #   sort-destination .
         module SortBy
           extend Nextbillionai::Internal::Type::Enum
 
@@ -283,17 +280,17 @@ module Nextbillionai
 
           DISTANCE =
             T.let(
-              :"`distance`",
+              :distance,
               Nextbillionai::Skynet::SearchAroundParams::SortBy::TaggedSymbol
             )
           DURATION =
             T.let(
-              :"`duration`",
+              :duration,
               Nextbillionai::Skynet::SearchAroundParams::SortBy::TaggedSymbol
             )
           STRAIGHT_DISTANCE =
             T.let(
-              :"`straight_distance`",
+              :straight_distance,
               Nextbillionai::Skynet::SearchAroundParams::SortBy::TaggedSymbol
             )
 
@@ -324,12 +321,12 @@ module Nextbillionai
 
           CAR =
             T.let(
-              :"`car`",
+              :car,
               Nextbillionai::Skynet::SearchAroundParams::SortDrivingMode::TaggedSymbol
             )
           TRUCK =
             T.let(
-              :"`truck`",
+              :truck,
               Nextbillionai::Skynet::SearchAroundParams::SortDrivingMode::TaggedSymbol
             )
 

@@ -60,7 +60,7 @@ module Nextbillionai
           attr_writer :completion
 
           # Represents the timestamp of the creation in seconds since the Unix epoch.
-          # Example: `1738743999`.
+          # Example: 1738743999.
           sig { returns(T.nilable(Integer)) }
           attr_reader :created_at
 
@@ -69,15 +69,15 @@ module Nextbillionai
 
           # Returns the details of the document that was used for collecting the proof of
           # completion for the step. In case no document template ID was provided for the
-          # given step, then a `null` value is returned. Each object represents a new field
-          # in the document.
+          # given step, then a null value is returned. Each object represents a new field in
+          # the document.
           sig { returns(T.nilable(T::Array[T.anything])) }
           attr_reader :document_snapshot
 
           sig { params(document_snapshot: T::Array[T.anything]).void }
           attr_writer :document_snapshot
 
-          # Returns the duration for `layover` or `break` type steps.
+          # Returns the duration for layover or break type steps.
           sig { returns(T.nilable(Integer)) }
           attr_reader :duration
 
@@ -119,10 +119,9 @@ module Nextbillionai
           sig { params(short_id: String).void }
           attr_writer :short_id
 
-          # Returns the step type. It can belong to one of the following: `start`, `job` ,
-          # `pickup`, `delivery`, `break`, `layover` , and `end`. For any given step, it
-          # would be the same as that specified in the input request while configuring the
-          # step details.
+          # Returns the step type. It can belong to one of the following: start, job ,
+          # pickup, delivery, break, layover , and end. For any given step, it would be the
+          # same as that specified in the input request while configuring the step details.
           sig { returns(T.nilable(String)) }
           attr_reader :type
 
@@ -130,7 +129,7 @@ module Nextbillionai
           attr_writer :type
 
           # Represents the timestamp of the last update in seconds since the Unix epoch.
-          # Example: `1738743999`.
+          # Example: 1738743999.
           sig { returns(T.nilable(Integer)) }
           attr_reader :updated_at
 
@@ -170,14 +169,14 @@ module Nextbillionai
             arrival: nil,
             completion: nil,
             # Represents the timestamp of the creation in seconds since the Unix epoch.
-            # Example: `1738743999`.
+            # Example: 1738743999.
             created_at: nil,
             # Returns the details of the document that was used for collecting the proof of
             # completion for the step. In case no document template ID was provided for the
-            # given step, then a `null` value is returned. Each object represents a new field
-            # in the document.
+            # given step, then a null value is returned. Each object represents a new field in
+            # the document.
             document_snapshot: nil,
-            # Returns the duration for `layover` or `break` type steps.
+            # Returns the duration for layover or break type steps.
             duration: nil,
             # Returns the location coordinates where the step is executed.
             location: nil,
@@ -188,13 +187,12 @@ module Nextbillionai
             # Returns a unique short ID of the step for easier referencing and displaying
             # purposes.
             short_id: nil,
-            # Returns the step type. It can belong to one of the following: `start`, `job` ,
-            # `pickup`, `delivery`, `break`, `layover` , and `end`. For any given step, it
-            # would be the same as that specified in the input request while configuring the
-            # step details.
+            # Returns the step type. It can belong to one of the following: start, job ,
+            # pickup, delivery, break, layover , and end. For any given step, it would be the
+            # same as that specified in the input request while configuring the step details.
             type: nil,
             # Represents the timestamp of the last update in seconds since the Unix epoch.
-            # Example: `1738743999`.
+            # Example: 1738743999.
             updated_at: nil
           )
           end
@@ -231,7 +229,7 @@ module Nextbillionai
               end
 
             # Represents the timestamp of the completion in seconds since the Unix epoch.
-            # Example: `1738743999`.
+            # Example: 1738743999.
             sig { returns(T.nilable(Integer)) }
             attr_reader :completed_at
 
@@ -241,10 +239,10 @@ module Nextbillionai
             # Specify the mode of completion to be used for the step. Currently, following
             # values are allowed:
             #
-            # - `manual`: Steps must be marked as completed manually through the Driver App.
-            # - `geofence`: Steps are marked as completed automatically based on the entry
+            # - manual: Steps must be marked as completed manually through the Driver App.
+            # - geofence: Steps are marked as completed automatically based on the entry
             #   conditions and geofence specified.
-            # - `geofence_manual_fallback`: Steps will be marked as completed automatically
+            # - geofence_manual_fallback: Steps will be marked as completed automatically
             #   based on geofence and entry condition configurations but there will also be a
             #   provision for manually updating the status in case, geofence detection fails.
             sig do
@@ -267,10 +265,10 @@ module Nextbillionai
             # Specify the mode of completion to be used for the step. Currently, following
             # values are allowed:
             #
-            # - `manual`: Steps must be marked as completed manually through the Driver App.
-            # - `geofence`: Steps are marked as completed automatically based on the entry
+            # - manual: Steps must be marked as completed manually through the Driver App.
+            # - geofence: Steps are marked as completed automatically based on the entry
             #   conditions and geofence specified.
-            # - `geofence_manual_fallback`: Steps will be marked as completed automatically
+            # - geofence_manual_fallback: Steps will be marked as completed automatically
             #   based on geofence and entry condition configurations but there will also be a
             #   provision for manually updating the status in case, geofence detection fails.
             sig do
@@ -300,7 +298,7 @@ module Nextbillionai
             attr_writer :document
 
             # Represents the timestamp of the last doc modification in seconds since the Unix
-            # epoch. Example: `1738743999`.
+            # epoch. Example: 1738743999.
             sig { returns(T.nilable(Integer)) }
             attr_reader :document_modified_at
 
@@ -309,7 +307,7 @@ module Nextbillionai
 
             # Specify the configurations of the geofence which will be used to detect presence
             # of the driver and complete the tasks automatically. Please note that this
-            # attribute is required when `completion_mode` is either "geofence" or
+            # attribute is required when completion_mode is either "geofence" or
             # "geofence_manual_fallback".
             sig do
               returns(
@@ -363,25 +361,25 @@ module Nextbillionai
             end
             def self.new(
               # Represents the timestamp of the completion in seconds since the Unix epoch.
-              # Example: `1738743999`.
+              # Example: 1738743999.
               completed_at: nil,
               # Specify the mode of completion to be used for the step. Currently, following
               # values are allowed:
               #
-              # - `manual`: Steps must be marked as completed manually through the Driver App.
-              # - `geofence`: Steps are marked as completed automatically based on the entry
+              # - manual: Steps must be marked as completed manually through the Driver App.
+              # - geofence: Steps are marked as completed automatically based on the entry
               #   conditions and geofence specified.
-              # - `geofence_manual_fallback`: Steps will be marked as completed automatically
+              # - geofence_manual_fallback: Steps will be marked as completed automatically
               #   based on geofence and entry condition configurations but there will also be a
               #   provision for manually updating the status in case, geofence detection fails.
               completed_by_mode: nil,
               # Specify the mode of completion to be used for the step. Currently, following
               # values are allowed:
               #
-              # - `manual`: Steps must be marked as completed manually through the Driver App.
-              # - `geofence`: Steps are marked as completed automatically based on the entry
+              # - manual: Steps must be marked as completed manually through the Driver App.
+              # - geofence: Steps are marked as completed automatically based on the entry
               #   conditions and geofence specified.
-              # - `geofence_manual_fallback`: Steps will be marked as completed automatically
+              # - geofence_manual_fallback: Steps will be marked as completed automatically
               #   based on geofence and entry condition configurations but there will also be a
               #   provision for manually updating the status in case, geofence detection fails.
               completion_mode: nil,
@@ -390,11 +388,11 @@ module Nextbillionai
               # item.
               document: nil,
               # Represents the timestamp of the last doc modification in seconds since the Unix
-              # epoch. Example: `1738743999`.
+              # epoch. Example: 1738743999.
               document_modified_at: nil,
               # Specify the configurations of the geofence which will be used to detect presence
               # of the driver and complete the tasks automatically. Please note that this
-              # attribute is required when `completion_mode` is either "geofence" or
+              # attribute is required when completion_mode is either "geofence" or
               # "geofence_manual_fallback".
               geofence_config: nil,
               # Status of the step.
@@ -473,7 +471,7 @@ module Nextbillionai
               end
 
             # Returns the customer name associated with the step. It can configured in the
-            # input request using the `metadata` attribute of the step.
+            # input request using the metadata attribute of the step.
             sig { returns(T.nilable(String)) }
             attr_reader :customer_name
 
@@ -481,7 +479,7 @@ module Nextbillionai
             attr_writer :customer_name
 
             # Returns the customer's phone number associated with the step. It can configured
-            # in the input request using the `metadata` attribute of the step.
+            # in the input request using the metadata attribute of the step.
             sig { returns(T.nilable(String)) }
             attr_reader :customer_phone_number
 
@@ -509,10 +507,10 @@ module Nextbillionai
             end
             def self.new(
               # Returns the customer name associated with the step. It can configured in the
-              # input request using the `metadata` attribute of the step.
+              # input request using the metadata attribute of the step.
               customer_name: nil,
               # Returns the customer's phone number associated with the step. It can configured
-              # in the input request using the `metadata` attribute of the step.
+              # in the input request using the metadata attribute of the step.
               customer_phone_number: nil,
               # Returns the custom instructions to carry out while performing the task. These
               # instructions can be provided at the time of configuring the step details in the

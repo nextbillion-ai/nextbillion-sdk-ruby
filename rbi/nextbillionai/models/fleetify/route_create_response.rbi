@@ -90,8 +90,8 @@ module Nextbillionai
           attr_writer :created_at
 
           # Returns the total route distance, in meters, for informative display in the
-          # driver app. It is the same as the value provided for `distance` field in the
-          # input request.
+          # driver app. It is the same as the value provided for distance field in the input
+          # request.
           sig { returns(T.nilable(Integer)) }
           attr_reader :distance
 
@@ -196,7 +196,7 @@ module Nextbillionai
 
           # Returns the ID of the vehicle to which the route was dispatched. The vehicle ID
           # returned here is the same as the one used in the route optimization request for
-          # the given vehicle. An empty string is returned if the `ro_request_id` was not
+          # the given vehicle. An empty string is returned if the ro_request_id was not
           # provided in the input.
           sig { returns(T.nilable(String)) }
           attr_reader :vehicle_id
@@ -233,8 +233,8 @@ module Nextbillionai
             # request was created.
             created_at: nil,
             # Returns the total route distance, in meters, for informative display in the
-            # driver app. It is the same as the value provided for `distance` field in the
-            # input request.
+            # driver app. It is the same as the value provided for distance field in the input
+            # request.
             distance: nil,
             # Returns the details of the document that was specified in the input for
             # collecting the proof-of-completion for all steps in the dispatched routes. Each
@@ -266,7 +266,7 @@ module Nextbillionai
             updated_at: nil,
             # Returns the ID of the vehicle to which the route was dispatched. The vehicle ID
             # returned here is the same as the one used in the route optimization request for
-            # the given vehicle. An empty string is returned if the `ro_request_id` was not
+            # the given vehicle. An empty string is returned if the ro_request_id was not
             # provided in the input.
             vehicle_id: nil
           )

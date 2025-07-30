@@ -5,8 +5,8 @@ module Nextbillionai
     module Fleetify
       class DocumentTemplateContentRequest < Nextbillionai::Internal::Type::BaseModel
         # @!attribute label
-        #   Specify the label or the name of the field. The `label` specified here can be
-        #   used as field name when rendering the document in the Driver app.
+        #   Specify the label or the name of the field. The label specified here can be used
+        #   as field name when rendering the document in the Driver app.
         #
         #   @return [String]
         required :label, String
@@ -19,14 +19,14 @@ module Nextbillionai
         required :type, enum: -> { Nextbillionai::Fleetify::DocumentTemplateContentRequest::Type }
 
         # @!attribute meta
-        #   An object to define additional information required for `single_choice` or
-        #   `multi_choices` type document items.
+        #   An object to define additional information required for single_choice or
+        #   multi_choices type document items.
         #
         #   @return [Nextbillionai::Models::Fleetify::DocumentTemplateContentRequest::Meta, nil]
         optional :meta, -> { Nextbillionai::Fleetify::DocumentTemplateContentRequest::Meta }
 
         # @!attribute name
-        #   Specify the name of the document field. A field's`name` can be used for internal
+        #   Specify the name of the document field. A field'sname can be used for internal
         #   references to the document field.
         #
         #   @return [String, nil]
@@ -41,7 +41,7 @@ module Nextbillionai
         # @!attribute validation
         #   Specify the validation rules for the field. This can be used to enforce data
         #   quality and integrity checks. For example, if the field is a number type,
-        #   `validation` can define constraints like minimum / maximum number values.
+        #   validation can define constraints like minimum / maximum number values.
         #
         #   @return [Nextbillionai::Models::Fleetify::DocumentTemplateContentRequest::Validation, nil]
         optional :validation, -> { Nextbillionai::Fleetify::DocumentTemplateContentRequest::Validation }
@@ -55,13 +55,13 @@ module Nextbillionai
         #   rules - for collecting required information after successfully executing a route
         #   step.
         #
-        #   @param label [String] Specify the label or the name of the field. The `label` specified here can be us
+        #   @param label [String] Specify the label or the name of the field. The label specified here can be used
         #
         #   @param type [Symbol, Nextbillionai::Models::Fleetify::DocumentTemplateContentRequest::Type] Specify the data type of the field. It corresponds to the type of information th
         #
-        #   @param meta [Nextbillionai::Models::Fleetify::DocumentTemplateContentRequest::Meta] An object to define additional information required for `single_choice` or `mult
+        #   @param meta [Nextbillionai::Models::Fleetify::DocumentTemplateContentRequest::Meta] An object to define additional information required for single_choice or multi_c
         #
-        #   @param name [String] Specify the name of the document field. A field's`name` can be used for internal
+        #   @param name [String] Specify the name of the document field. A field'sname can be used for internal r
         #
         #   @param required [Boolean] Specify if it is mandatory to fill the field. Default value is false.
         #
@@ -74,14 +74,14 @@ module Nextbillionai
         module Type
           extend Nextbillionai::Internal::Type::Enum
 
-          STRING = :"`string`"
-          NUMBER = :"`number`"
-          DATE_TIME = :"`date_time`"
-          PHOTOS = :"`photos`"
-          MULTI_CHOICES = :"`multi_choices`"
-          SIGNATURE = :"`signature`"
-          BARCODE = :"`barcode`"
-          SINGLE_CHOICE = :"`single_choice`"
+          STRING = :string
+          NUMBER = :number
+          DATE_TIME = :date_time
+          PHOTOS = :photos
+          MULTI_CHOICES = :multi_choices
+          SIGNATURE = :signature
+          BARCODE = :barcode
+          SINGLE_CHOICE = :single_choice
 
           # @!method self.values
           #   @return [Array<Symbol>]
@@ -90,8 +90,8 @@ module Nextbillionai
         # @see Nextbillionai::Models::Fleetify::DocumentTemplateContentRequest#meta
         class Meta < Nextbillionai::Internal::Type::BaseModel
           # @!attribute options
-          #   An array of objects to define options for a `multi_choices` or `single_choice`
-          #   type document field. Each object represents one option.
+          #   An array of objects to define options for a multi_choices or single_choice type
+          #   document field. Each object represents one option.
           #
           #   @return [Array<Nextbillionai::Models::Fleetify::DocumentTemplateContentRequest::Meta::Option>]
           required :options,
@@ -104,10 +104,10 @@ module Nextbillionai
           #   {Nextbillionai::Models::Fleetify::DocumentTemplateContentRequest::Meta} for more
           #   details.
           #
-          #   An object to define additional information required for `single_choice` or
-          #   `multi_choices` type document items.
+          #   An object to define additional information required for single_choice or
+          #   multi_choices type document items.
           #
-          #   @param options [Array<Nextbillionai::Models::Fleetify::DocumentTemplateContentRequest::Meta::Option>] An array of objects to define options for a `multi_choices` or `single_choice` t
+          #   @param options [Array<Nextbillionai::Models::Fleetify::DocumentTemplateContentRequest::Meta::Option>] An array of objects to define options for a multi_choices or single_choice type
 
           class Option < Nextbillionai::Internal::Type::BaseModel
             # @!attribute label
@@ -137,31 +137,31 @@ module Nextbillionai
         # @see Nextbillionai::Models::Fleetify::DocumentTemplateContentRequest#validation
         class Validation < Nextbillionai::Internal::Type::BaseModel
           # @!attribute max
-          #   Specifies the maximum allowed value for `number` type document field. Input
-          #   values must be less than or equal to this threshold.
+          #   Specifies the maximum allowed value for number type document field. Input values
+          #   must be less than or equal to this threshold.
           #
           #   @return [Integer, nil]
           optional :max, Integer
 
           # @!attribute max_items
-          #   Specifies the maximum number of items for `multi_choices`, `photos` type
-          #   document fields. The number of provided input items must be less than or equal
-          #   to this threshold.
+          #   Specifies the maximum number of items for multi_choices, photos type document
+          #   fields. The number of provided input items must be less than or equal to this
+          #   threshold.
           #
           #   @return [Integer, nil]
           optional :max_items, Integer
 
           # @!attribute min
-          #   Specifies the minimum allowed value for `number` type document field. Input
-          #   values must be greater than or equal to this threshold.
+          #   Specifies the minimum allowed value for number type document field. Input values
+          #   must be greater than or equal to this threshold.
           #
           #   @return [Integer, nil]
           optional :min, Integer
 
           # @!attribute min_items
-          #   Specifies the minimum number of items for `multi_choices`, `photos` type
-          #   document fields. The number of provided input items must be greater than or
-          #   equal to this threshold.
+          #   Specifies the minimum number of items for multi_choices, photos type document
+          #   fields. The number of provided input items must be greater than or equal to this
+          #   threshold.
           #
           #   @return [Integer, nil]
           optional :min_items, Integer
@@ -173,15 +173,15 @@ module Nextbillionai
           #
           #   Specify the validation rules for the field. This can be used to enforce data
           #   quality and integrity checks. For example, if the field is a number type,
-          #   `validation` can define constraints like minimum / maximum number values.
+          #   validation can define constraints like minimum / maximum number values.
           #
-          #   @param max [Integer] Specifies the maximum allowed value for `number` type document field. Input valu
+          #   @param max [Integer] Specifies the maximum allowed value for number type document field. Input values
           #
-          #   @param max_items [Integer] Specifies the maximum number of items for `multi_choices`, `photos` type documen
+          #   @param max_items [Integer] Specifies the maximum number of items for multi_choices, photos type document fi
           #
-          #   @param min [Integer] Specifies the minimum allowed value for `number` type document field. Input valu
+          #   @param min [Integer] Specifies the minimum allowed value for number type document field. Input values
           #
-          #   @param min_items [Integer] Specifies the minimum number of items for `multi_choices`, `photos` type documen
+          #   @param min_items [Integer] Specifies the minimum number of items for multi_choices, photos type document fi
         end
       end
     end

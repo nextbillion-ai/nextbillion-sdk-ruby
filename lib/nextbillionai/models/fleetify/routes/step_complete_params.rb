@@ -30,19 +30,19 @@ module Nextbillionai
           optional :document, Nextbillionai::Internal::Type::Unknown
 
           # @!attribute mode
-          #   Sets the status of the route step. Currently only `completed` is supported.
+          #   Sets the status of the route step. Currently only completed is supported.
           #
-          #   Note: once marked `completed`, a step cannot transition to other statuses. You
-          #   can only update the document afterwards.
+          #   Note: once marked completed, a step cannot transition to other statuses. You can
+          #   only update the document afterwards.
           #
           #   @return [String, nil]
           optional :mode, String
 
           # @!attribute status
-          #   Sets the status of the route step. Currently only `completed` is supported.
+          #   Sets the status of the route step. Currently only completed is supported.
           #
-          #   Note: once marked `completed`, a step cannot transition to other statuses. You
-          #   can only update the document afterwards.
+          #   Note: once marked completed, a step cannot transition to other statuses. You can
+          #   only update the document afterwards.
           #
           #   @return [String, nil]
           optional :status, String
@@ -57,9 +57,9 @@ module Nextbillionai
           #
           #   @param document [Object] A key-value map storing form submission data, where keys correspond to field lab
           #
-          #   @param mode [String] Sets the status of the route step. Currently only `completed` is supported.
+          #   @param mode [String] Sets the status of the route step. Currently only completed is supported.
           #
-          #   @param status [String] Sets the status of the route step. Currently only `completed` is supported.
+          #   @param status [String] Sets the status of the route step. Currently only completed is supported.
           #
           #   @param request_options [Nextbillionai::RequestOptions, Hash{Symbol=>Object}]
         end

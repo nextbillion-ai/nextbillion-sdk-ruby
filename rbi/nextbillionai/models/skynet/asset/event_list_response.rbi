@@ -14,7 +14,7 @@ module Nextbillionai
             end
 
           # An object containing the information about the event history for the requested
-          # `asset`.
+          # asset.
           sig do
             returns(
               T.nilable(
@@ -41,7 +41,7 @@ module Nextbillionai
           attr_writer :message
 
           # A string indicating the state of the response. On successful responses, the
-          # value will be `Ok`. Indicative error messages are returned for different errors.
+          # value will be Ok. Indicative error messages are returned for different errors.
           # See the [API Error Codes](#api-error-codes) section below for more information.
           sig { returns(T.nilable(String)) }
           attr_reader :status
@@ -59,13 +59,13 @@ module Nextbillionai
           end
           def self.new(
             # An object containing the information about the event history for the requested
-            # `asset`.
+            # asset.
             data: nil,
             # Displays the error message in case of a failed request. If the request is
             # successful, this field is not present in the response.
             message: nil,
             # A string indicating the state of the response. On successful responses, the
-            # value will be `Ok`. Indicative error messages are returned for different errors.
+            # value will be Ok. Indicative error messages are returned for different errors.
             # See the [API Error Codes](#api-error-codes) section below for more information.
             status: nil
           )
@@ -124,7 +124,7 @@ module Nextbillionai
             attr_writer :page
 
             # An object containing the information about the event history for the requested
-            # `asset`.
+            # asset.
             sig do
               params(
                 list:
@@ -166,23 +166,23 @@ module Nextbillionai
                   )
                 end
 
-              # ID of the `asset`. This is the same ID that was generated/provided at the time
-              # of creating the `asset`.
+              # ID of the asset. This is the same ID that was generated/provided at the time of
+              # creating the asset.
               sig { returns(T.nilable(String)) }
               attr_reader :asset_id
 
               sig { params(asset_id: String).void }
               attr_writer :asset_id
 
-              # Nature of the event triggered by the `asset`. It can have following values:
+              # Nature of the event triggered by the asset. It can have following values:
               #
-              # - `enter`: When the `asset` enters a specific geofence
+              # - enter: When the asset enters a specific geofence
               #
-              # - `exit`: When the `asset` moves out of a specific geofence.
+              # - exit: When the asset moves out of a specific geofence.
               #
-              # - `speeding`: When the `asset` exceeds the certain speed limit.
+              # - speeding: When the asset exceeds the certain speed limit.
               #
-              # - `idle`: When the `asset` exhibits idle or no activity.
+              # - idle: When the asset exhibits idle or no activity.
               sig do
                 returns(
                   T.nilable(
@@ -201,42 +201,42 @@ module Nextbillionai
               attr_writer :event_type
 
               # Additional information about the event. Currently, this object returns the speed
-              # limit that was used to generate the over-speeding events, for a `speeding` type
+              # limit that was used to generate the over-speeding events, for a speeding type
               # event.
               #
-              # It is worth highlighting that, when the `use_admin_speed_limit` is `true`, the
-              # speed limit value will be obtained from the underlying road information.
-              # Whereas, if the `use_admin_speed_limit` is `false`, the speed limit will be
-              # equal to the `customer_speed_limit` value provided by the user when creating or
-              # updating the `monitor`.
+              # It is worth highlighting that, when the use_admin_speed_limit is true, the speed
+              # limit value will be obtained from the underlying road information. Whereas, if
+              # the use_admin_speed_limit is false, the speed limit will be equal to the
+              # customer_speed_limit value provided by the user when creating or updating the
+              # monitor.
               sig { returns(T.nilable(T.anything)) }
               attr_reader :extra
 
               sig { params(extra: T.anything).void }
               attr_writer :extra
 
-              # ID of the `geofence` associated with the event.
+              # ID of the geofence associated with the event.
               sig { returns(T.nilable(String)) }
               attr_reader :geofence_id
 
               sig { params(geofence_id: String).void }
               attr_writer :geofence_id
 
-              # ID of the `monitor` associated with the event.
+              # ID of the monitor associated with the event.
               sig { returns(T.nilable(String)) }
               attr_reader :monitor_id
 
               sig { params(monitor_id: String).void }
               attr_writer :monitor_id
 
-              # Tags associated with the `monitor`.
+              # Tags associated with the monitor.
               sig { returns(T.nilable(T::Array[String])) }
               attr_reader :monitor_tags
 
               sig { params(monitor_tags: T::Array[String]).void }
               attr_writer :monitor_tags
 
-              # An object with details of the `asset` at the last tracked location before the
+              # An object with details of the asset at the last tracked location before the
               # event was triggered.
               sig do
                 returns(
@@ -263,7 +263,7 @@ module Nextbillionai
               sig { params(timestamp: Integer).void }
               attr_writer :timestamp
 
-              # An object with details of the `asset` at the location where the event was
+              # An object with details of the asset at the location where the event was
               # triggered.
               sig do
                 returns(
@@ -308,42 +308,42 @@ module Nextbillionai
                 ).returns(T.attached_class)
               end
               def self.new(
-                # ID of the `asset`. This is the same ID that was generated/provided at the time
-                # of creating the `asset`.
+                # ID of the asset. This is the same ID that was generated/provided at the time of
+                # creating the asset.
                 asset_id: nil,
-                # Nature of the event triggered by the `asset`. It can have following values:
+                # Nature of the event triggered by the asset. It can have following values:
                 #
-                # - `enter`: When the `asset` enters a specific geofence
+                # - enter: When the asset enters a specific geofence
                 #
-                # - `exit`: When the `asset` moves out of a specific geofence.
+                # - exit: When the asset moves out of a specific geofence.
                 #
-                # - `speeding`: When the `asset` exceeds the certain speed limit.
+                # - speeding: When the asset exceeds the certain speed limit.
                 #
-                # - `idle`: When the `asset` exhibits idle or no activity.
+                # - idle: When the asset exhibits idle or no activity.
                 event_type: nil,
                 # Additional information about the event. Currently, this object returns the speed
-                # limit that was used to generate the over-speeding events, for a `speeding` type
+                # limit that was used to generate the over-speeding events, for a speeding type
                 # event.
                 #
-                # It is worth highlighting that, when the `use_admin_speed_limit` is `true`, the
-                # speed limit value will be obtained from the underlying road information.
-                # Whereas, if the `use_admin_speed_limit` is `false`, the speed limit will be
-                # equal to the `customer_speed_limit` value provided by the user when creating or
-                # updating the `monitor`.
+                # It is worth highlighting that, when the use_admin_speed_limit is true, the speed
+                # limit value will be obtained from the underlying road information. Whereas, if
+                # the use_admin_speed_limit is false, the speed limit will be equal to the
+                # customer_speed_limit value provided by the user when creating or updating the
+                # monitor.
                 extra: nil,
-                # ID of the `geofence` associated with the event.
+                # ID of the geofence associated with the event.
                 geofence_id: nil,
-                # ID of the `monitor` associated with the event.
+                # ID of the monitor associated with the event.
                 monitor_id: nil,
-                # Tags associated with the `monitor`.
+                # Tags associated with the monitor.
                 monitor_tags: nil,
-                # An object with details of the `asset` at the last tracked location before the
+                # An object with details of the asset at the last tracked location before the
                 # event was triggered.
                 prev_location: nil,
                 # A UNIX epoch timestamp in milliseconds representing the time at which the event
                 # was added/created.
                 timestamp: nil,
-                # An object with details of the `asset` at the location where the event was
+                # An object with details of the asset at the location where the event was
                 # triggered.
                 triggered_location: nil,
                 # A UNIX epoch timestamp in milliseconds representing the time at which the event
@@ -374,15 +374,15 @@ module Nextbillionai
               def to_hash
               end
 
-              # Nature of the event triggered by the `asset`. It can have following values:
+              # Nature of the event triggered by the asset. It can have following values:
               #
-              # - `enter`: When the `asset` enters a specific geofence
+              # - enter: When the asset enters a specific geofence
               #
-              # - `exit`: When the `asset` moves out of a specific geofence.
+              # - exit: When the asset moves out of a specific geofence.
               #
-              # - `speeding`: When the `asset` exceeds the certain speed limit.
+              # - speeding: When the asset exceeds the certain speed limit.
               #
-              # - `idle`: When the `asset` exhibits idle or no activity.
+              # - idle: When the asset exhibits idle or no activity.
               module EventType
                 extend Nextbillionai::Internal::Type::Enum
 
@@ -397,22 +397,22 @@ module Nextbillionai
 
                 ENTER =
                   T.let(
-                    :"`enter`",
+                    :enter,
                     Nextbillionai::Models::Skynet::Asset::EventListResponse::Data::List::EventType::TaggedSymbol
                   )
                 EXIT =
                   T.let(
-                    :"`exit`",
+                    :exit,
                     Nextbillionai::Models::Skynet::Asset::EventListResponse::Data::List::EventType::TaggedSymbol
                   )
                 SPEEDING =
                   T.let(
-                    :"`speeding`",
+                    :speeding,
                     Nextbillionai::Models::Skynet::Asset::EventListResponse::Data::List::EventType::TaggedSymbol
                   )
                 IDLE =
                   T.let(
-                    :"`idle`",
+                    :idle,
                     Nextbillionai::Models::Skynet::Asset::EventListResponse::Data::List::EventType::TaggedSymbol
                   )
 
@@ -436,15 +436,15 @@ module Nextbillionai
                     )
                   end
 
-                # If available, this property returns the heading of the `asset` from true north
-                # in clockwise direction, at the `prev_location` tracked for the `asset`.
+                # If available, this property returns the heading of the asset from true north in
+                # clockwise direction, at the prev_location tracked for the asset.
                 sig { returns(T.nilable(Float)) }
                 attr_reader :bearing
 
                 sig { params(bearing: Float).void }
                 attr_writer :bearing
 
-                # `prev_location` information of the `asset`.
+                # prev_location information of the asset.
                 sig do
                   returns(
                     T.nilable(
@@ -469,23 +469,23 @@ module Nextbillionai
                 sig { params(meta_data: T.anything).void }
                 attr_writer :meta_data
 
-                # If available, this property returns the speed of the `asset`, in meters per
-                # second, at the `prev_location` of the `asset`.
+                # If available, this property returns the speed of the asset, in meters per
+                # second, at the prev_location of the asset.
                 sig { returns(T.nilable(Float)) }
                 attr_reader :speed
 
                 sig { params(speed: Float).void }
                 attr_writer :speed
 
-                # A UNIX epoch timestamp in milliseconds representing the time at which the
-                # `asset` was at the `prev_location`.
+                # A UNIX epoch timestamp in milliseconds representing the time at which the asset
+                # was at the prev_location.
                 sig { returns(T.nilable(Integer)) }
                 attr_reader :timestamp
 
                 sig { params(timestamp: Integer).void }
                 attr_writer :timestamp
 
-                # An object with details of the `asset` at the last tracked location before the
+                # An object with details of the asset at the last tracked location before the
                 # event was triggered.
                 sig do
                   params(
@@ -498,18 +498,18 @@ module Nextbillionai
                   ).returns(T.attached_class)
                 end
                 def self.new(
-                  # If available, this property returns the heading of the `asset` from true north
-                  # in clockwise direction, at the `prev_location` tracked for the `asset`.
+                  # If available, this property returns the heading of the asset from true north in
+                  # clockwise direction, at the prev_location tracked for the asset.
                   bearing: nil,
-                  # `prev_location` information of the `asset`.
+                  # prev_location information of the asset.
                   location: nil,
                   # Returns the custom data added during the location information upload.
                   meta_data: nil,
-                  # If available, this property returns the speed of the `asset`, in meters per
-                  # second, at the `prev_location` of the `asset`.
+                  # If available, this property returns the speed of the asset, in meters per
+                  # second, at the prev_location of the asset.
                   speed: nil,
-                  # A UNIX epoch timestamp in milliseconds representing the time at which the
-                  # `asset` was at the `prev_location`.
+                  # A UNIX epoch timestamp in milliseconds representing the time at which the asset
+                  # was at the prev_location.
                   timestamp: nil
                 )
                 end
@@ -538,28 +538,28 @@ module Nextbillionai
                       )
                     end
 
-                  # Latitude of the `prev_location` tracked for the `asset`.
+                  # Latitude of the prev_location tracked for the asset.
                   sig { returns(T.nilable(Float)) }
                   attr_reader :lat
 
                   sig { params(lat: Float).void }
                   attr_writer :lat
 
-                  # Longitude of the `prev_location` tracked for the `asset`.
+                  # Longitude of the prev_location tracked for the asset.
                   sig { returns(T.nilable(Float)) }
                   attr_reader :lon
 
                   sig { params(lon: Float).void }
                   attr_writer :lon
 
-                  # `prev_location` information of the `asset`.
+                  # prev_location information of the asset.
                   sig do
                     params(lat: Float, lon: Float).returns(T.attached_class)
                   end
                   def self.new(
-                    # Latitude of the `prev_location` tracked for the `asset`.
+                    # Latitude of the prev_location tracked for the asset.
                     lat: nil,
-                    # Longitude of the `prev_location` tracked for the `asset`.
+                    # Longitude of the prev_location tracked for the asset.
                     lon: nil
                   )
                   end
@@ -579,8 +579,8 @@ module Nextbillionai
                     )
                   end
 
-                # If available, this property returns the heading of the `asset` from true north
-                # in clockwise direction, when the event was triggered.
+                # If available, this property returns the heading of the asset from true north in
+                # clockwise direction, when the event was triggered.
                 sig { returns(T.nilable(Float)) }
                 attr_reader :bearing
 
@@ -612,7 +612,7 @@ module Nextbillionai
                 sig { params(meta_data: T.anything).void }
                 attr_writer :meta_data
 
-                # If available, this property returns the speed of the `asset`, in meters per
+                # If available, this property returns the speed of the asset, in meters per
                 # second, when the event was triggered.
                 sig { returns(T.nilable(Float)) }
                 attr_reader :speed
@@ -620,15 +620,15 @@ module Nextbillionai
                 sig { params(speed: Float).void }
                 attr_writer :speed
 
-                # A UNIX epoch timestamp in milliseconds representing the time at which the
-                # `asset` was at the `triggered_location`.
+                # A UNIX epoch timestamp in milliseconds representing the time at which the asset
+                # was at the triggered_location.
                 sig { returns(T.nilable(Integer)) }
                 attr_reader :timestamp
 
                 sig { params(timestamp: Integer).void }
                 attr_writer :timestamp
 
-                # An object with details of the `asset` at the location where the event was
+                # An object with details of the asset at the location where the event was
                 # triggered.
                 sig do
                   params(
@@ -641,18 +641,18 @@ module Nextbillionai
                   ).returns(T.attached_class)
                 end
                 def self.new(
-                  # If available, this property returns the heading of the `asset` from true north
-                  # in clockwise direction, when the event was triggered.
+                  # If available, this property returns the heading of the asset from true north in
+                  # clockwise direction, when the event was triggered.
                   bearing: nil,
                   # An object with information about the location at which the event was triggered.
                   location: nil,
                   # Returns the custom data added during the location information upload.
                   meta_data: nil,
-                  # If available, this property returns the speed of the `asset`, in meters per
+                  # If available, this property returns the speed of the asset, in meters per
                   # second, when the event was triggered.
                   speed: nil,
-                  # A UNIX epoch timestamp in milliseconds representing the time at which the
-                  # `asset` was at the `triggered_location`.
+                  # A UNIX epoch timestamp in milliseconds representing the time at which the asset
+                  # was at the triggered_location.
                   timestamp: nil
                 )
                 end
@@ -681,14 +681,14 @@ module Nextbillionai
                       )
                     end
 
-                  # Latitude of the `triggered_location` of the event.
+                  # Latitude of the triggered_location of the event.
                   sig { returns(T.nilable(Float)) }
                   attr_reader :lat
 
                   sig { params(lat: Float).void }
                   attr_writer :lat
 
-                  # Longitude of the `triggered_location` of the event.
+                  # Longitude of the triggered_location of the event.
                   sig { returns(T.nilable(Float)) }
                   attr_reader :lon
 
@@ -700,9 +700,9 @@ module Nextbillionai
                     params(lat: Float, lon: Float).returns(T.attached_class)
                   end
                   def self.new(
-                    # Latitude of the `triggered_location` of the event.
+                    # Latitude of the triggered_location of the event.
                     lat: nil,
-                    # Longitude of the `triggered_location` of the event.
+                    # Longitude of the triggered_location of the event.
                     lon: nil
                   )
                   end

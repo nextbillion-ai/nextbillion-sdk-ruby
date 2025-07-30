@@ -143,7 +143,7 @@ module Nextbillionai
           sig { params(source: String).void }
           attr_writer :source
 
-          # Set this to either `enable` or `disable` to allow the place to be retrieved by a
+          # Set this to either enable or disable to allow the place to be retrieved by a
           # search API or block it respectively.
           sig do
             returns(
@@ -184,7 +184,7 @@ module Nextbillionai
             # 2. Update the place in an existing dataset by setting the name to the current
             #    value.
             source: nil,
-            # Set this to either `enable` or `disable` to allow the place to be retrieved by a
+            # Set this to either enable or disable to allow the place to be retrieved by a
             # search API or block it respectively.
             status: nil
           )
@@ -203,7 +203,7 @@ module Nextbillionai
           def to_hash
           end
 
-          # Set this to either `enable` or `disable` to allow the place to be retrieved by a
+          # Set this to either enable or disable to allow the place to be retrieved by a
           # search API or block it respectively.
           module Status
             extend Nextbillionai::Internal::Type::Enum

@@ -20,8 +20,8 @@ module Nextbillionai
         #
         # @param radius [Float] Radius, in meters, of the circular area to be searched.
         #
-        # @param filter [String] \*\*`tags` parameter will be deprecated soon! Please use the
-        # `include_any_of_attri
+        # @param filter [String] \*\*tags parameter will be deprecated soon! Please use the
+        # include_any_of_attribut
         #
         # @param include_all_of_attributes [String] Use this parameter to filter the assets found inside the specified area by their
         #
@@ -29,9 +29,9 @@ module Nextbillionai
         #
         # @param max_search_limit [Boolean] When true, the maximum limit is 20Km for around search API and 48000 Km2 for oth
         #
-        # @param pn [Integer] Denotes page number. Use this along with the `ps` parameter to implement paginat
+        # @param pn [Integer] Denotes page number. Use this along with the ps parameter to implement paginatio
         #
-        # @param ps [Integer] Denotes number of search results per page. Use this along with the `pn` paramete
+        # @param ps [Integer] Denotes number of search results per page. Use this along with the pn parameter
         #
         # @param sort_by [Symbol, Nextbillionai::Models::Skynet::SearchAroundParams::SortBy] Specify the metric to sort the assets returned in the search result. The valid v
         #
@@ -66,8 +66,8 @@ module Nextbillionai
         #
         # @param key [String] A key is a unique identifier that is required to authenticate a request to the A
         #
-        # @param filter [String] \*\*`tags` parameter will be deprecated soon! Please use the
-        # `include_any_of_attri
+        # @param filter [String] \*\*tags parameter will be deprecated soon! Please use the
+        # include_any_of_attribut
         #
         # @param include_all_of_attributes [String] Use this parameter to filter the assets found inside the specified area by their
         #
@@ -75,9 +75,9 @@ module Nextbillionai
         #
         # @param max_search_limit [Boolean] When true, the maximum limit is 20Km for around search API and 48000 Km2 for oth
         #
-        # @param pn [Integer] Denotes page number. Use this along with the `ps` parameter to implement paginat
+        # @param pn [Integer] Denotes page number. Use this along with the ps parameter to implement paginatio
         #
-        # @param ps [Integer] Denotes number of search results per page. Use this along with the `pn` paramete
+        # @param ps [Integer] Denotes number of search results per page. Use this along with the pn parameter
         #
         # @param sort_by [Symbol, Nextbillionai::Models::Skynet::SearchBoundParams::SortBy] Specify the metric to sort the assets returned in the search result. The valid v
         #

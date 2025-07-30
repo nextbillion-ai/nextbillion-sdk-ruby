@@ -20,8 +20,8 @@ module Nextbillionai
       attr_accessor :key
 
       # Location coordinates that you want to get the postal code of. If not providing
-      # `postalcode` in the request, `at` becomes mandatory. Please note that only 1
-      # point can be requested. [See this example](#note).
+      # postalcode in the request, at becomes mandatory. Please note that only 1 point
+      # can be requested. [See this example](#note).
       sig do
         returns(
           T.nilable(Nextbillionai::PostalcodeRetrieveCoordinatesParams::At)
@@ -37,7 +37,7 @@ module Nextbillionai
       attr_writer :at
 
       # Country containing the postal code or the location. It is mandatory if
-      # `postalcode` is provided in the request. [See this example](#note).
+      # postalcode is provided in the request. [See this example](#note).
       #
       # Please check the [API Query Limits](#api-query-limits) section below for a list
       # of the countries covered by the Geocode Postcode API. Users can provide either
@@ -51,7 +51,7 @@ module Nextbillionai
       attr_writer :country
 
       # Specify the format in which the boundary details of the post code will be
-      # returned. When specified, the boundary details will be returned in the `geojson`
+      # returned. When specified, the boundary details will be returned in the geojson
       # format. When not specified, the boundary details are returned in general format.
       sig do
         returns(
@@ -71,7 +71,7 @@ module Nextbillionai
       attr_writer :format_
 
       # Provide the postal code for which the information is needed. At least one of
-      # (`postalcode` + `country`) or `at` needs to be provided. Please note that only 1
+      # (postalcode + country) or at needs to be provided. Please note that only 1
       # postal code can be requested. [See this example](#note).
       sig { returns(T.nilable(String)) }
       attr_reader :postalcode
@@ -95,11 +95,11 @@ module Nextbillionai
         # API.
         key:,
         # Location coordinates that you want to get the postal code of. If not providing
-        # `postalcode` in the request, `at` becomes mandatory. Please note that only 1
-        # point can be requested. [See this example](#note).
+        # postalcode in the request, at becomes mandatory. Please note that only 1 point
+        # can be requested. [See this example](#note).
         at: nil,
         # Country containing the postal code or the location. It is mandatory if
-        # `postalcode` is provided in the request. [See this example](#note).
+        # postalcode is provided in the request. [See this example](#note).
         #
         # Please check the [API Query Limits](#api-query-limits) section below for a list
         # of the countries covered by the Geocode Postcode API. Users can provide either
@@ -108,11 +108,11 @@ module Nextbillionai
         # covered by the API as input for this parameter.
         country: nil,
         # Specify the format in which the boundary details of the post code will be
-        # returned. When specified, the boundary details will be returned in the `geojson`
+        # returned. When specified, the boundary details will be returned in the geojson
         # format. When not specified, the boundary details are returned in general format.
         format_: nil,
         # Provide the postal code for which the information is needed. At least one of
-        # (`postalcode` + `country`) or `at` needs to be provided. Please note that only 1
+        # (postalcode + country) or at needs to be provided. Please note that only 1
         # postal code can be requested. [See this example](#note).
         postalcode: nil,
         request_options: {}
@@ -159,8 +159,8 @@ module Nextbillionai
         attr_writer :lng
 
         # Location coordinates that you want to get the postal code of. If not providing
-        # `postalcode` in the request, `at` becomes mandatory. Please note that only 1
-        # point can be requested. [See this example](#note).
+        # postalcode in the request, at becomes mandatory. Please note that only 1 point
+        # can be requested. [See this example](#note).
         sig { params(lat: Float, lng: Float).returns(T.attached_class) }
         def self.new(
           # Latitude of the location.
@@ -176,7 +176,7 @@ module Nextbillionai
       end
 
       # Specify the format in which the boundary details of the post code will be
-      # returned. When specified, the boundary details will be returned in the `geojson`
+      # returned. When specified, the boundary details will be returned in the geojson
       # format. When not specified, the boundary details are returned in general format.
       module Format
         extend Nextbillionai::Internal::Type::Enum
@@ -192,7 +192,7 @@ module Nextbillionai
 
         GEOJSON =
           T.let(
-            :"`geojson`",
+            :geojson,
             Nextbillionai::PostalcodeRetrieveCoordinatesParams::Format::TaggedSymbol
           )
 

@@ -8,7 +8,7 @@ module Nextbillionai
         class LocationGetLastResponse < Nextbillionai::Internal::Type::BaseModel
           # @!attribute data
           #   An object containing the information about the last tracked location of the
-          #   requested `asset`.
+          #   requested asset.
           #
           #   @return [Nextbillionai::Models::Skynet::Asset::LocationGetLastResponse::Data, nil]
           optional :data, -> { Nextbillionai::Models::Skynet::Asset::LocationGetLastResponse::Data }
@@ -22,7 +22,7 @@ module Nextbillionai
 
           # @!attribute status
           #   A string indicating the state of the response. On successful responses, the
-          #   value will be `Ok`. Indicative error messages are returned for different errors.
+          #   value will be Ok. Indicative error messages are returned for different errors.
           #   See the [API Error Codes](#api-error-codes) section below for more information.
           #
           #   @return [String, nil]
@@ -54,7 +54,7 @@ module Nextbillionai
             #   details.
             #
             #   An object containing the information about the last tracked location of the
-            #   requested `asset`.
+            #   requested asset.
             #
             #   @param location [Nextbillionai::Models::Skynet::Asset::TrackLocation] An object with details of the tracked location. Please note that if there are no
           end

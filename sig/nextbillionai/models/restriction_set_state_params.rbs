@@ -27,14 +27,14 @@ module Nextbillionai
         request_options: Nextbillionai::RequestOptions
       }
 
-      type state = :"`enabled`" | :"`disabled`" | :"`deleted`"
+      type state = :enabled | :disabled | :deleted
 
       module State
         extend Nextbillionai::Internal::Type::Enum
 
-        ENABLED: :"`enabled`"
-        DISABLED: :"`disabled`"
-        DELETED: :"`deleted`"
+        ENABLED: :enabled
+        DISABLED: :disabled
+        DELETED: :deleted
 
         def self?.values: -> ::Array[Nextbillionai::Models::RestrictionSetStateParams::state]
       end

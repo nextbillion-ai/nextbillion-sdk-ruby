@@ -228,13 +228,10 @@ module Nextbillionai
         OrSymbol = T.type_alias { T.any(Symbol, String) }
 
         CAR =
-          T.let(
-            :"`car`",
-            Nextbillionai::IsochroneComputeParams::Mode::TaggedSymbol
-          )
+          T.let(:car, Nextbillionai::IsochroneComputeParams::Mode::TaggedSymbol)
         TRUCK =
           T.let(
-            :"`truck`",
+            :truck,
             Nextbillionai::IsochroneComputeParams::Mode::TaggedSymbol
           )
 

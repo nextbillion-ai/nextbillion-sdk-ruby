@@ -20,11 +20,11 @@ module Nextbillionai
         # request to the API.
         key:,
         # Body param: Location coordinates that you want to get the postal code of. If not
-        # providing `postalcode` in the request, `at` becomes mandatory. Please note that
-        # only 1 point can be requested. [See this example](#note).
+        # providing postalcode in the request, at becomes mandatory. Please note that only
+        # 1 point can be requested. [See this example](#note).
         at: nil,
         # Body param: Country containing the postal code or the location. It is mandatory
-        # if `postalcode` is provided in the request. [See this example](#note).
+        # if postalcode is provided in the request. [See this example](#note).
         #
         # Please check the [API Query Limits](#api-query-limits) section below for a list
         # of the countries covered by the Geocode Postcode API. Users can provide either
@@ -34,12 +34,12 @@ module Nextbillionai
         country: nil,
         # Body param: Specify the format in which the boundary details of the post code
         # will be returned. When specified, the boundary details will be returned in the
-        # `geojson` format. When not specified, the boundary details are returned in
-        # general format.
+        # geojson format. When not specified, the boundary details are returned in general
+        # format.
         format_: nil,
         # Body param: Provide the postal code for which the information is needed. At
-        # least one of (`postalcode` + `country`) or `at` needs to be provided. Please
-        # note that only 1 postal code can be requested. [See this example](#note).
+        # least one of (postalcode + country) or at needs to be provided. Please note that
+        # only 1 postal code can be requested. [See this example](#note).
         postalcode: nil,
         request_options: {}
       )

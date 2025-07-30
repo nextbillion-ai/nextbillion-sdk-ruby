@@ -87,11 +87,11 @@ module Nextbillionai
     # @return [Nextbillionai::Resources::Postalcode]
     attr_reader :postalcode
 
-    # @return [Nextbillionai::Resources::Areas]
-    attr_reader :areas
-
     # @return [Nextbillionai::Resources::Lookup]
     attr_reader :lookup
+
+    # @return [Nextbillionai::Resources::Areas]
+    attr_reader :areas
 
     # @api private
     #
@@ -161,8 +161,8 @@ module Nextbillionai
       @route_report = Nextbillionai::Resources::RouteReport.new(client: self)
       @snap_to_roads = Nextbillionai::Resources::SnapToRoads.new(client: self)
       @postalcode = Nextbillionai::Resources::Postalcode.new(client: self)
-      @areas = Nextbillionai::Resources::Areas.new(client: self)
       @lookup = Nextbillionai::Resources::Lookup.new(client: self)
+      @areas = Nextbillionai::Resources::Areas.new(client: self)
     end
   end
 end

@@ -6,7 +6,7 @@ module Nextbillionai
       # @see Nextbillionai::Resources::Skynet::Config#retrieve
       class ConfigRetrieveResponse < Nextbillionai::Internal::Type::BaseModel
         # @!attribute data
-        #   A data object containing the `config` response.
+        #   A data object containing the config response.
         #
         #   @return [Nextbillionai::Models::Skynet::ConfigRetrieveResponse::Data, nil]
         optional :data, -> { Nextbillionai::Models::Skynet::ConfigRetrieveResponse::Data }
@@ -20,7 +20,7 @@ module Nextbillionai
 
         # @!attribute status
         #   A string indicating the state of the response. On successful responses, the
-        #   value will be `Ok`. Indicative error messages are returned for different errors.
+        #   value will be Ok. Indicative error messages are returned for different errors.
         #   See the [API Error Codes](#api-error-codes) section below for more information.
         #
         #   @return [String, nil]
@@ -30,7 +30,7 @@ module Nextbillionai
         #   Some parameter documentations has been truncated, see
         #   {Nextbillionai::Models::Skynet::ConfigRetrieveResponse} for more details.
         #
-        #   @param data [Nextbillionai::Models::Skynet::ConfigRetrieveResponse::Data] A data object containing the `config` response.
+        #   @param data [Nextbillionai::Models::Skynet::ConfigRetrieveResponse::Data] A data object containing the config response.
         #
         #   @param message [String] Displays the error message in case of a failed request. If the request is succes
         #
@@ -44,7 +44,7 @@ module Nextbillionai
           optional :config, -> { Nextbillionai::Models::Skynet::ConfigRetrieveResponse::Data::Config }
 
           # @!method initialize(config: nil)
-          #   A data object containing the `config` response.
+          #   A data object containing the config response.
           #
           #   @param config [Nextbillionai::Models::Skynet::ConfigRetrieveResponse::Data::Config]
 
