@@ -1,0 +1,48 @@
+module Nextbillionai
+  module Models
+    type restriction_create_params =
+      { key: String, latlon: bool }
+      & Nextbillionai::Internal::Type::request_parameters
+
+    class RestrictionCreateParams < Nextbillionai::Models::RichGroupRequest
+      extend Nextbillionai::Internal::Type::RequestParameters::Converter
+      include Nextbillionai::Internal::Type::RequestParameters
+
+      def key: -> String
+
+      def key=: (String _) -> String
+
+      def latlon: -> bool?
+
+      def latlon=: (bool _) -> bool
+
+      def initialize: (
+        key: String,
+        ?latlon: bool,
+        ?request_options: Nextbillionai::request_opts
+      ) -> void
+
+      def to_hash: -> {
+        key: String,
+        latlon: bool,
+        request_options: Nextbillionai::RequestOptions
+      }
+
+      type restriction_type =
+        :turn | :parking | :fixedspeed | :maxspeed | :closure | :truck
+
+      module RestrictionType
+        extend Nextbillionai::Internal::Type::Enum
+
+        TURN: :turn
+        PARKING: :parking
+        FIXEDSPEED: :fixedspeed
+        MAXSPEED: :maxspeed
+        CLOSURE: :closure
+        TRUCK: :truck
+
+        def self?.values: -> ::Array[Nextbillionai::Models::RestrictionCreateParams::restriction_type]
+      end
+    end
+  end
+end

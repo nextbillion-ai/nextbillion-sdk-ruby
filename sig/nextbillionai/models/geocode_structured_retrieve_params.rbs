@@ -1,0 +1,94 @@
+module Nextbillionai
+  module Models
+    type geocode_structured_retrieve_params =
+      {
+        country_code: String,
+        key: String,
+        at: String,
+        city: String,
+        county: String,
+        house_number: String,
+        in_: String,
+        limit: Integer,
+        postal_code: String,
+        state: String,
+        street: String
+      }
+      & Nextbillionai::Internal::Type::request_parameters
+
+    class GeocodeStructuredRetrieveParams < Nextbillionai::Internal::Type::BaseModel
+      extend Nextbillionai::Internal::Type::RequestParameters::Converter
+      include Nextbillionai::Internal::Type::RequestParameters
+
+      attr_accessor country_code: String
+
+      attr_accessor key: String
+
+      attr_reader at: String?
+
+      def at=: (String) -> String
+
+      attr_reader city: String?
+
+      def city=: (String) -> String
+
+      attr_reader county: String?
+
+      def county=: (String) -> String
+
+      attr_reader house_number: String?
+
+      def house_number=: (String) -> String
+
+      attr_reader in_: String?
+
+      def in_=: (String) -> String
+
+      attr_reader limit: Integer?
+
+      def limit=: (Integer) -> Integer
+
+      attr_reader postal_code: String?
+
+      def postal_code=: (String) -> String
+
+      attr_reader state: String?
+
+      def state=: (String) -> String
+
+      attr_reader street: String?
+
+      def street=: (String) -> String
+
+      def initialize: (
+        country_code: String,
+        key: String,
+        ?at: String,
+        ?city: String,
+        ?county: String,
+        ?house_number: String,
+        ?in_: String,
+        ?limit: Integer,
+        ?postal_code: String,
+        ?state: String,
+        ?street: String,
+        ?request_options: Nextbillionai::request_opts
+      ) -> void
+
+      def to_hash: -> {
+        country_code: String,
+        key: String,
+        at: String,
+        city: String,
+        county: String,
+        house_number: String,
+        in_: String,
+        limit: Integer,
+        postal_code: String,
+        state: String,
+        street: String,
+        request_options: Nextbillionai::RequestOptions
+      }
+    end
+  end
+end

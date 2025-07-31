@@ -1,0 +1,812 @@
+module Nextbillionai
+  module Models
+    type navigation_retrieve_route_response =
+      {
+        msg: String,
+        routes: ::Array[Nextbillionai::Models::NavigationRetrieveRouteResponse::Route],
+        status: String,
+        warning: ::Array[String]
+      }
+
+    class NavigationRetrieveRouteResponse < Nextbillionai::Internal::Type::BaseModel
+      attr_reader msg: String?
+
+      def msg=: (String) -> String
+
+      attr_reader routes: ::Array[Nextbillionai::Models::NavigationRetrieveRouteResponse::Route]?
+
+      def routes=: (
+        ::Array[Nextbillionai::Models::NavigationRetrieveRouteResponse::Route]
+      ) -> ::Array[Nextbillionai::Models::NavigationRetrieveRouteResponse::Route]
+
+      attr_reader status: String?
+
+      def status=: (String) -> String
+
+      attr_reader warning: ::Array[String]?
+
+      def warning=: (::Array[String]) -> ::Array[String]
+
+      def initialize: (
+        ?msg: String,
+        ?routes: ::Array[Nextbillionai::Models::NavigationRetrieveRouteResponse::Route],
+        ?status: String,
+        ?warning: ::Array[String]
+      ) -> void
+
+      def to_hash: -> {
+        msg: String,
+        routes: ::Array[Nextbillionai::Models::NavigationRetrieveRouteResponse::Route],
+        status: String,
+        warning: ::Array[String]
+      }
+
+      type route =
+        {
+          distance: Float,
+          distance_full: Float,
+          duration: Integer,
+          end_location: Nextbillionai::Models::NavigationRetrieveRouteResponse::Route::EndLocation,
+          geojson: Nextbillionai::Models::NavigationRetrieveRouteResponse::Route::Geojson,
+          geometry: String,
+          legs: ::Array[Nextbillionai::Models::NavigationRetrieveRouteResponse::Route::Leg],
+          predicted_duration: Float,
+          raw_duration: Float,
+          special_objects: top,
+          start_location: Nextbillionai::Models::NavigationRetrieveRouteResponse::Route::StartLocation,
+          weight: Float
+        }
+
+      class Route < Nextbillionai::Internal::Type::BaseModel
+        attr_reader distance: Float?
+
+        def distance=: (Float) -> Float
+
+        attr_reader distance_full: Float?
+
+        def distance_full=: (Float) -> Float
+
+        attr_reader duration: Integer?
+
+        def duration=: (Integer) -> Integer
+
+        attr_reader end_location: Nextbillionai::Models::NavigationRetrieveRouteResponse::Route::EndLocation?
+
+        def end_location=: (
+          Nextbillionai::Models::NavigationRetrieveRouteResponse::Route::EndLocation
+        ) -> Nextbillionai::Models::NavigationRetrieveRouteResponse::Route::EndLocation
+
+        attr_reader geojson: Nextbillionai::Models::NavigationRetrieveRouteResponse::Route::Geojson?
+
+        def geojson=: (
+          Nextbillionai::Models::NavigationRetrieveRouteResponse::Route::Geojson
+        ) -> Nextbillionai::Models::NavigationRetrieveRouteResponse::Route::Geojson
+
+        attr_reader geometry: String?
+
+        def geometry=: (String) -> String
+
+        attr_reader legs: ::Array[Nextbillionai::Models::NavigationRetrieveRouteResponse::Route::Leg]?
+
+        def legs=: (
+          ::Array[Nextbillionai::Models::NavigationRetrieveRouteResponse::Route::Leg]
+        ) -> ::Array[Nextbillionai::Models::NavigationRetrieveRouteResponse::Route::Leg]
+
+        attr_reader predicted_duration: Float?
+
+        def predicted_duration=: (Float) -> Float
+
+        attr_reader raw_duration: Float?
+
+        def raw_duration=: (Float) -> Float
+
+        attr_reader special_objects: top?
+
+        def special_objects=: (top) -> top
+
+        attr_reader start_location: Nextbillionai::Models::NavigationRetrieveRouteResponse::Route::StartLocation?
+
+        def start_location=: (
+          Nextbillionai::Models::NavigationRetrieveRouteResponse::Route::StartLocation
+        ) -> Nextbillionai::Models::NavigationRetrieveRouteResponse::Route::StartLocation
+
+        attr_reader weight: Float?
+
+        def weight=: (Float) -> Float
+
+        def initialize: (
+          ?distance: Float,
+          ?distance_full: Float,
+          ?duration: Integer,
+          ?end_location: Nextbillionai::Models::NavigationRetrieveRouteResponse::Route::EndLocation,
+          ?geojson: Nextbillionai::Models::NavigationRetrieveRouteResponse::Route::Geojson,
+          ?geometry: String,
+          ?legs: ::Array[Nextbillionai::Models::NavigationRetrieveRouteResponse::Route::Leg],
+          ?predicted_duration: Float,
+          ?raw_duration: Float,
+          ?special_objects: top,
+          ?start_location: Nextbillionai::Models::NavigationRetrieveRouteResponse::Route::StartLocation,
+          ?weight: Float
+        ) -> void
+
+        def to_hash: -> {
+          distance: Float,
+          distance_full: Float,
+          duration: Integer,
+          end_location: Nextbillionai::Models::NavigationRetrieveRouteResponse::Route::EndLocation,
+          geojson: Nextbillionai::Models::NavigationRetrieveRouteResponse::Route::Geojson,
+          geometry: String,
+          legs: ::Array[Nextbillionai::Models::NavigationRetrieveRouteResponse::Route::Leg],
+          predicted_duration: Float,
+          raw_duration: Float,
+          special_objects: top,
+          start_location: Nextbillionai::Models::NavigationRetrieveRouteResponse::Route::StartLocation,
+          weight: Float
+        }
+
+        type end_location = { latitude: Float, longitude: Float }
+
+        class EndLocation < Nextbillionai::Internal::Type::BaseModel
+          attr_reader latitude: Float?
+
+          def latitude=: (Float) -> Float
+
+          attr_reader longitude: Float?
+
+          def longitude=: (Float) -> Float
+
+          def initialize: (?latitude: Float, ?longitude: Float) -> void
+
+          def to_hash: -> { latitude: Float, longitude: Float }
+        end
+
+        type geojson =
+          {
+            geometry: String,
+            properties: String,
+            type: Nextbillionai::Models::NavigationRetrieveRouteResponse::Route::Geojson::type_
+          }
+
+        class Geojson < Nextbillionai::Internal::Type::BaseModel
+          attr_reader geometry: String?
+
+          def geometry=: (String) -> String
+
+          attr_reader properties: String?
+
+          def properties=: (String) -> String
+
+          attr_reader type: Nextbillionai::Models::NavigationRetrieveRouteResponse::Route::Geojson::type_?
+
+          def type=: (
+            Nextbillionai::Models::NavigationRetrieveRouteResponse::Route::Geojson::type_
+          ) -> Nextbillionai::Models::NavigationRetrieveRouteResponse::Route::Geojson::type_
+
+          def initialize: (
+            ?geometry: String,
+            ?properties: String,
+            ?type: Nextbillionai::Models::NavigationRetrieveRouteResponse::Route::Geojson::type_
+          ) -> void
+
+          def to_hash: -> {
+            geometry: String,
+            properties: String,
+            type: Nextbillionai::Models::NavigationRetrieveRouteResponse::Route::Geojson::type_
+          }
+
+          type type_ =
+            :Point
+            | :MultiPoint
+            | :LineString
+            | :MultiLineString
+            | :Polygon
+            | :MultiPolygon
+            | :GeometryCollection
+            | :Feature
+            | :FeatureCollection
+            | :Link
+
+          module Type
+            extend Nextbillionai::Internal::Type::Enum
+
+            POINT: :Point
+            MULTI_POINT: :MultiPoint
+            LINE_STRING: :LineString
+            MULTI_LINE_STRING: :MultiLineString
+            POLYGON: :Polygon
+            MULTI_POLYGON: :MultiPolygon
+            GEOMETRY_COLLECTION: :GeometryCollection
+            FEATURE: :Feature
+            FEATURE_COLLECTION: :FeatureCollection
+            LINK: :Link
+
+            def self?.values: -> ::Array[Nextbillionai::Models::NavigationRetrieveRouteResponse::Route::Geojson::type_]
+          end
+        end
+
+        type leg =
+          {
+            distance: Nextbillionai::Models::NavigationRetrieveRouteResponse::Route::Leg::Distance,
+            duration: Nextbillionai::Models::NavigationRetrieveRouteResponse::Route::Leg::Duration,
+            end_location: Nextbillionai::Models::NavigationRetrieveRouteResponse::Route::Leg::EndLocation,
+            raw_duration: top,
+            start_location: Nextbillionai::Models::NavigationRetrieveRouteResponse::Route::Leg::StartLocation,
+            steps: ::Array[Nextbillionai::Models::NavigationRetrieveRouteResponse::Route::Leg::Step]
+          }
+
+        class Leg < Nextbillionai::Internal::Type::BaseModel
+          attr_reader distance: Nextbillionai::Models::NavigationRetrieveRouteResponse::Route::Leg::Distance?
+
+          def distance=: (
+            Nextbillionai::Models::NavigationRetrieveRouteResponse::Route::Leg::Distance
+          ) -> Nextbillionai::Models::NavigationRetrieveRouteResponse::Route::Leg::Distance
+
+          attr_reader duration: Nextbillionai::Models::NavigationRetrieveRouteResponse::Route::Leg::Duration?
+
+          def duration=: (
+            Nextbillionai::Models::NavigationRetrieveRouteResponse::Route::Leg::Duration
+          ) -> Nextbillionai::Models::NavigationRetrieveRouteResponse::Route::Leg::Duration
+
+          attr_reader end_location: Nextbillionai::Models::NavigationRetrieveRouteResponse::Route::Leg::EndLocation?
+
+          def end_location=: (
+            Nextbillionai::Models::NavigationRetrieveRouteResponse::Route::Leg::EndLocation
+          ) -> Nextbillionai::Models::NavigationRetrieveRouteResponse::Route::Leg::EndLocation
+
+          attr_reader raw_duration: top?
+
+          def raw_duration=: (top) -> top
+
+          attr_reader start_location: Nextbillionai::Models::NavigationRetrieveRouteResponse::Route::Leg::StartLocation?
+
+          def start_location=: (
+            Nextbillionai::Models::NavigationRetrieveRouteResponse::Route::Leg::StartLocation
+          ) -> Nextbillionai::Models::NavigationRetrieveRouteResponse::Route::Leg::StartLocation
+
+          attr_reader steps: ::Array[Nextbillionai::Models::NavigationRetrieveRouteResponse::Route::Leg::Step]?
+
+          def steps=: (
+            ::Array[Nextbillionai::Models::NavigationRetrieveRouteResponse::Route::Leg::Step]
+          ) -> ::Array[Nextbillionai::Models::NavigationRetrieveRouteResponse::Route::Leg::Step]
+
+          def initialize: (
+            ?distance: Nextbillionai::Models::NavigationRetrieveRouteResponse::Route::Leg::Distance,
+            ?duration: Nextbillionai::Models::NavigationRetrieveRouteResponse::Route::Leg::Duration,
+            ?end_location: Nextbillionai::Models::NavigationRetrieveRouteResponse::Route::Leg::EndLocation,
+            ?raw_duration: top,
+            ?start_location: Nextbillionai::Models::NavigationRetrieveRouteResponse::Route::Leg::StartLocation,
+            ?steps: ::Array[Nextbillionai::Models::NavigationRetrieveRouteResponse::Route::Leg::Step]
+          ) -> void
+
+          def to_hash: -> {
+            distance: Nextbillionai::Models::NavigationRetrieveRouteResponse::Route::Leg::Distance,
+            duration: Nextbillionai::Models::NavigationRetrieveRouteResponse::Route::Leg::Duration,
+            end_location: Nextbillionai::Models::NavigationRetrieveRouteResponse::Route::Leg::EndLocation,
+            raw_duration: top,
+            start_location: Nextbillionai::Models::NavigationRetrieveRouteResponse::Route::Leg::StartLocation,
+            steps: ::Array[Nextbillionai::Models::NavigationRetrieveRouteResponse::Route::Leg::Step]
+          }
+
+          type distance = { value: Integer }
+
+          class Distance < Nextbillionai::Internal::Type::BaseModel
+            attr_reader value: Integer?
+
+            def value=: (Integer) -> Integer
+
+            def initialize: (?value: Integer) -> void
+
+            def to_hash: -> { value: Integer }
+          end
+
+          type duration = { value: Integer }
+
+          class Duration < Nextbillionai::Internal::Type::BaseModel
+            attr_reader value: Integer?
+
+            def value=: (Integer) -> Integer
+
+            def initialize: (?value: Integer) -> void
+
+            def to_hash: -> { value: Integer }
+          end
+
+          type end_location = { latitude: Float, longitude: Float }
+
+          class EndLocation < Nextbillionai::Internal::Type::BaseModel
+            attr_reader latitude: Float?
+
+            def latitude=: (Float) -> Float
+
+            attr_reader longitude: Float?
+
+            def longitude=: (Float) -> Float
+
+            def initialize: (?latitude: Float, ?longitude: Float) -> void
+
+            def to_hash: -> { latitude: Float, longitude: Float }
+          end
+
+          type start_location = { latitude: Float, longitude: Float }
+
+          class StartLocation < Nextbillionai::Internal::Type::BaseModel
+            attr_reader latitude: Float?
+
+            def latitude=: (Float) -> Float
+
+            attr_reader longitude: Float?
+
+            def longitude=: (Float) -> Float
+
+            def initialize: (?latitude: Float, ?longitude: Float) -> void
+
+            def to_hash: -> { latitude: Float, longitude: Float }
+          end
+
+          type step =
+            {
+              distance: Nextbillionai::Models::NavigationRetrieveRouteResponse::Route::Leg::Step::Distance,
+              driving_side: String,
+              duration: Nextbillionai::Models::NavigationRetrieveRouteResponse::Route::Leg::Step::Duration,
+              end_location: Nextbillionai::Models::NavigationRetrieveRouteResponse::Route::Leg::Step::EndLocation,
+              geojson: Nextbillionai::Models::NavigationRetrieveRouteResponse::Route::Leg::Step::Geojson,
+              geometry: String,
+              intersections: ::Array[Nextbillionai::Models::NavigationRetrieveRouteResponse::Route::Leg::Step::Intersection],
+              maneuver: Nextbillionai::Models::NavigationRetrieveRouteResponse::Route::Leg::Step::Maneuver,
+              name: String,
+              reference: String,
+              road_shield_type: Nextbillionai::Models::NavigationRetrieveRouteResponse::Route::Leg::Step::RoadShieldType,
+              start_location: Nextbillionai::Models::NavigationRetrieveRouteResponse::Route::Leg::Step::StartLocation
+            }
+
+          class Step < Nextbillionai::Internal::Type::BaseModel
+            attr_reader distance: Nextbillionai::Models::NavigationRetrieveRouteResponse::Route::Leg::Step::Distance?
+
+            def distance=: (
+              Nextbillionai::Models::NavigationRetrieveRouteResponse::Route::Leg::Step::Distance
+            ) -> Nextbillionai::Models::NavigationRetrieveRouteResponse::Route::Leg::Step::Distance
+
+            attr_reader driving_side: String?
+
+            def driving_side=: (String) -> String
+
+            attr_reader duration: Nextbillionai::Models::NavigationRetrieveRouteResponse::Route::Leg::Step::Duration?
+
+            def duration=: (
+              Nextbillionai::Models::NavigationRetrieveRouteResponse::Route::Leg::Step::Duration
+            ) -> Nextbillionai::Models::NavigationRetrieveRouteResponse::Route::Leg::Step::Duration
+
+            attr_reader end_location: Nextbillionai::Models::NavigationRetrieveRouteResponse::Route::Leg::Step::EndLocation?
+
+            def end_location=: (
+              Nextbillionai::Models::NavigationRetrieveRouteResponse::Route::Leg::Step::EndLocation
+            ) -> Nextbillionai::Models::NavigationRetrieveRouteResponse::Route::Leg::Step::EndLocation
+
+            attr_reader geojson: Nextbillionai::Models::NavigationRetrieveRouteResponse::Route::Leg::Step::Geojson?
+
+            def geojson=: (
+              Nextbillionai::Models::NavigationRetrieveRouteResponse::Route::Leg::Step::Geojson
+            ) -> Nextbillionai::Models::NavigationRetrieveRouteResponse::Route::Leg::Step::Geojson
+
+            attr_reader geometry: String?
+
+            def geometry=: (String) -> String
+
+            attr_reader intersections: ::Array[Nextbillionai::Models::NavigationRetrieveRouteResponse::Route::Leg::Step::Intersection]?
+
+            def intersections=: (
+              ::Array[Nextbillionai::Models::NavigationRetrieveRouteResponse::Route::Leg::Step::Intersection]
+            ) -> ::Array[Nextbillionai::Models::NavigationRetrieveRouteResponse::Route::Leg::Step::Intersection]
+
+            attr_reader maneuver: Nextbillionai::Models::NavigationRetrieveRouteResponse::Route::Leg::Step::Maneuver?
+
+            def maneuver=: (
+              Nextbillionai::Models::NavigationRetrieveRouteResponse::Route::Leg::Step::Maneuver
+            ) -> Nextbillionai::Models::NavigationRetrieveRouteResponse::Route::Leg::Step::Maneuver
+
+            attr_reader name: String?
+
+            def name=: (String) -> String
+
+            attr_reader reference: String?
+
+            def reference=: (String) -> String
+
+            attr_reader road_shield_type: Nextbillionai::Models::NavigationRetrieveRouteResponse::Route::Leg::Step::RoadShieldType?
+
+            def road_shield_type=: (
+              Nextbillionai::Models::NavigationRetrieveRouteResponse::Route::Leg::Step::RoadShieldType
+            ) -> Nextbillionai::Models::NavigationRetrieveRouteResponse::Route::Leg::Step::RoadShieldType
+
+            attr_reader start_location: Nextbillionai::Models::NavigationRetrieveRouteResponse::Route::Leg::Step::StartLocation?
+
+            def start_location=: (
+              Nextbillionai::Models::NavigationRetrieveRouteResponse::Route::Leg::Step::StartLocation
+            ) -> Nextbillionai::Models::NavigationRetrieveRouteResponse::Route::Leg::Step::StartLocation
+
+            def initialize: (
+              ?distance: Nextbillionai::Models::NavigationRetrieveRouteResponse::Route::Leg::Step::Distance,
+              ?driving_side: String,
+              ?duration: Nextbillionai::Models::NavigationRetrieveRouteResponse::Route::Leg::Step::Duration,
+              ?end_location: Nextbillionai::Models::NavigationRetrieveRouteResponse::Route::Leg::Step::EndLocation,
+              ?geojson: Nextbillionai::Models::NavigationRetrieveRouteResponse::Route::Leg::Step::Geojson,
+              ?geometry: String,
+              ?intersections: ::Array[Nextbillionai::Models::NavigationRetrieveRouteResponse::Route::Leg::Step::Intersection],
+              ?maneuver: Nextbillionai::Models::NavigationRetrieveRouteResponse::Route::Leg::Step::Maneuver,
+              ?name: String,
+              ?reference: String,
+              ?road_shield_type: Nextbillionai::Models::NavigationRetrieveRouteResponse::Route::Leg::Step::RoadShieldType,
+              ?start_location: Nextbillionai::Models::NavigationRetrieveRouteResponse::Route::Leg::Step::StartLocation
+            ) -> void
+
+            def to_hash: -> {
+              distance: Nextbillionai::Models::NavigationRetrieveRouteResponse::Route::Leg::Step::Distance,
+              driving_side: String,
+              duration: Nextbillionai::Models::NavigationRetrieveRouteResponse::Route::Leg::Step::Duration,
+              end_location: Nextbillionai::Models::NavigationRetrieveRouteResponse::Route::Leg::Step::EndLocation,
+              geojson: Nextbillionai::Models::NavigationRetrieveRouteResponse::Route::Leg::Step::Geojson,
+              geometry: String,
+              intersections: ::Array[Nextbillionai::Models::NavigationRetrieveRouteResponse::Route::Leg::Step::Intersection],
+              maneuver: Nextbillionai::Models::NavigationRetrieveRouteResponse::Route::Leg::Step::Maneuver,
+              name: String,
+              reference: String,
+              road_shield_type: Nextbillionai::Models::NavigationRetrieveRouteResponse::Route::Leg::Step::RoadShieldType,
+              start_location: Nextbillionai::Models::NavigationRetrieveRouteResponse::Route::Leg::Step::StartLocation
+            }
+
+            type distance = { value: Integer }
+
+            class Distance < Nextbillionai::Internal::Type::BaseModel
+              attr_reader value: Integer?
+
+              def value=: (Integer) -> Integer
+
+              def initialize: (?value: Integer) -> void
+
+              def to_hash: -> { value: Integer }
+            end
+
+            type duration = { value: Integer }
+
+            class Duration < Nextbillionai::Internal::Type::BaseModel
+              attr_reader value: Integer?
+
+              def value=: (Integer) -> Integer
+
+              def initialize: (?value: Integer) -> void
+
+              def to_hash: -> { value: Integer }
+            end
+
+            type end_location = { latitude: Float, longitude: Float }
+
+            class EndLocation < Nextbillionai::Internal::Type::BaseModel
+              attr_reader latitude: Float?
+
+              def latitude=: (Float) -> Float
+
+              attr_reader longitude: Float?
+
+              def longitude=: (Float) -> Float
+
+              def initialize: (?latitude: Float, ?longitude: Float) -> void
+
+              def to_hash: -> { latitude: Float, longitude: Float }
+            end
+
+            type geojson = { geometry: String, type: String }
+
+            class Geojson < Nextbillionai::Internal::Type::BaseModel
+              attr_reader geometry: String?
+
+              def geometry=: (String) -> String
+
+              attr_reader type: String?
+
+              def type=: (String) -> String
+
+              def initialize: (?geometry: String, ?type: String) -> void
+
+              def to_hash: -> { geometry: String, type: String }
+            end
+
+            type intersection =
+              {
+                bearings: ::Array[Integer],
+                classes: ::Array[String],
+                entry: ::Array[bool],
+                intersection_in: Integer,
+                intersection_out: Integer,
+                lanes: ::Array[Nextbillionai::Models::NavigationRetrieveRouteResponse::Route::Leg::Step::Intersection::Lane],
+                location: Nextbillionai::Models::NavigationRetrieveRouteResponse::Route::Leg::Step::Intersection::Location
+              }
+
+            class Intersection < Nextbillionai::Internal::Type::BaseModel
+              attr_reader bearings: ::Array[Integer]?
+
+              def bearings=: (::Array[Integer]) -> ::Array[Integer]
+
+              attr_reader classes: ::Array[String]?
+
+              def classes=: (::Array[String]) -> ::Array[String]
+
+              attr_reader entry: ::Array[bool]?
+
+              def entry=: (::Array[bool]) -> ::Array[bool]
+
+              attr_reader intersection_in: Integer?
+
+              def intersection_in=: (Integer) -> Integer
+
+              attr_reader intersection_out: Integer?
+
+              def intersection_out=: (Integer) -> Integer
+
+              attr_reader lanes: ::Array[Nextbillionai::Models::NavigationRetrieveRouteResponse::Route::Leg::Step::Intersection::Lane]?
+
+              def lanes=: (
+                ::Array[Nextbillionai::Models::NavigationRetrieveRouteResponse::Route::Leg::Step::Intersection::Lane]
+              ) -> ::Array[Nextbillionai::Models::NavigationRetrieveRouteResponse::Route::Leg::Step::Intersection::Lane]
+
+              attr_reader location: Nextbillionai::Models::NavigationRetrieveRouteResponse::Route::Leg::Step::Intersection::Location?
+
+              def location=: (
+                Nextbillionai::Models::NavigationRetrieveRouteResponse::Route::Leg::Step::Intersection::Location
+              ) -> Nextbillionai::Models::NavigationRetrieveRouteResponse::Route::Leg::Step::Intersection::Location
+
+              def initialize: (
+                ?bearings: ::Array[Integer],
+                ?classes: ::Array[String],
+                ?entry: ::Array[bool],
+                ?intersection_in: Integer,
+                ?intersection_out: Integer,
+                ?lanes: ::Array[Nextbillionai::Models::NavigationRetrieveRouteResponse::Route::Leg::Step::Intersection::Lane],
+                ?location: Nextbillionai::Models::NavigationRetrieveRouteResponse::Route::Leg::Step::Intersection::Location
+              ) -> void
+
+              def to_hash: -> {
+                bearings: ::Array[Integer],
+                classes: ::Array[String],
+                entry: ::Array[bool],
+                intersection_in: Integer,
+                intersection_out: Integer,
+                lanes: ::Array[Nextbillionai::Models::NavigationRetrieveRouteResponse::Route::Leg::Step::Intersection::Lane],
+                location: Nextbillionai::Models::NavigationRetrieveRouteResponse::Route::Leg::Step::Intersection::Location
+              }
+
+              type lane = { indications: ::Array[String], valid: bool }
+
+              class Lane < Nextbillionai::Internal::Type::BaseModel
+                attr_reader indications: ::Array[String]?
+
+                def indications=: (::Array[String]) -> ::Array[String]
+
+                attr_reader valid: bool?
+
+                def valid=: (bool) -> bool
+
+                def initialize: (
+                  ?indications: ::Array[String],
+                  ?valid: bool
+                ) -> void
+
+                def to_hash: -> { indications: ::Array[String], valid: bool }
+              end
+
+              type location =
+                { latitude: Float, longitude: Float, name: String }
+
+              class Location < Nextbillionai::Internal::Type::BaseModel
+                attr_reader latitude: Float?
+
+                def latitude=: (Float) -> Float
+
+                attr_reader longitude: Float?
+
+                def longitude=: (Float) -> Float
+
+                attr_reader name: String?
+
+                def name=: (String) -> String
+
+                def initialize: (
+                  ?latitude: Float,
+                  ?longitude: Float,
+                  ?name: String
+                ) -> void
+
+                def to_hash: -> {
+                  latitude: Float,
+                  longitude: Float,
+                  name: String
+                }
+              end
+            end
+
+            type maneuver =
+              {
+                bearing_after: Float,
+                bearing_before: Float,
+                coordinate: Nextbillionai::Models::NavigationRetrieveRouteResponse::Route::Leg::Step::Maneuver::Coordinate,
+                instruction: String,
+                maneuver_type: String,
+                muted: bool,
+                roundabout_count: Integer,
+                voice_instruction: ::Array[Nextbillionai::Models::NavigationRetrieveRouteResponse::Route::Leg::Step::Maneuver::VoiceInstruction]
+              }
+
+            class Maneuver < Nextbillionai::Internal::Type::BaseModel
+              attr_reader bearing_after: Float?
+
+              def bearing_after=: (Float) -> Float
+
+              attr_reader bearing_before: Float?
+
+              def bearing_before=: (Float) -> Float
+
+              attr_reader coordinate: Nextbillionai::Models::NavigationRetrieveRouteResponse::Route::Leg::Step::Maneuver::Coordinate?
+
+              def coordinate=: (
+                Nextbillionai::Models::NavigationRetrieveRouteResponse::Route::Leg::Step::Maneuver::Coordinate
+              ) -> Nextbillionai::Models::NavigationRetrieveRouteResponse::Route::Leg::Step::Maneuver::Coordinate
+
+              attr_reader instruction: String?
+
+              def instruction=: (String) -> String
+
+              attr_reader maneuver_type: String?
+
+              def maneuver_type=: (String) -> String
+
+              attr_reader muted: bool?
+
+              def muted=: (bool) -> bool
+
+              attr_reader roundabout_count: Integer?
+
+              def roundabout_count=: (Integer) -> Integer
+
+              attr_reader voice_instruction: ::Array[Nextbillionai::Models::NavigationRetrieveRouteResponse::Route::Leg::Step::Maneuver::VoiceInstruction]?
+
+              def voice_instruction=: (
+                ::Array[Nextbillionai::Models::NavigationRetrieveRouteResponse::Route::Leg::Step::Maneuver::VoiceInstruction]
+              ) -> ::Array[Nextbillionai::Models::NavigationRetrieveRouteResponse::Route::Leg::Step::Maneuver::VoiceInstruction]
+
+              def initialize: (
+                ?bearing_after: Float,
+                ?bearing_before: Float,
+                ?coordinate: Nextbillionai::Models::NavigationRetrieveRouteResponse::Route::Leg::Step::Maneuver::Coordinate,
+                ?instruction: String,
+                ?maneuver_type: String,
+                ?muted: bool,
+                ?roundabout_count: Integer,
+                ?voice_instruction: ::Array[Nextbillionai::Models::NavigationRetrieveRouteResponse::Route::Leg::Step::Maneuver::VoiceInstruction]
+              ) -> void
+
+              def to_hash: -> {
+                bearing_after: Float,
+                bearing_before: Float,
+                coordinate: Nextbillionai::Models::NavigationRetrieveRouteResponse::Route::Leg::Step::Maneuver::Coordinate,
+                instruction: String,
+                maneuver_type: String,
+                muted: bool,
+                roundabout_count: Integer,
+                voice_instruction: ::Array[Nextbillionai::Models::NavigationRetrieveRouteResponse::Route::Leg::Step::Maneuver::VoiceInstruction]
+              }
+
+              type coordinate =
+                { latitude: Float, longitude: Float, name: String }
+
+              class Coordinate < Nextbillionai::Internal::Type::BaseModel
+                attr_reader latitude: Float?
+
+                def latitude=: (Float) -> Float
+
+                attr_reader longitude: Float?
+
+                def longitude=: (Float) -> Float
+
+                attr_reader name: String?
+
+                def name=: (String) -> String
+
+                def initialize: (
+                  ?latitude: Float,
+                  ?longitude: Float,
+                  ?name: String
+                ) -> void
+
+                def to_hash: -> {
+                  latitude: Float,
+                  longitude: Float,
+                  name: String
+                }
+              end
+
+              type voice_instruction =
+                {
+                  distance_along_geometry: Integer,
+                  instruction: String,
+                  unit: String
+                }
+
+              class VoiceInstruction < Nextbillionai::Internal::Type::BaseModel
+                attr_reader distance_along_geometry: Integer?
+
+                def distance_along_geometry=: (Integer) -> Integer
+
+                attr_reader instruction: String?
+
+                def instruction=: (String) -> String
+
+                attr_reader unit: String?
+
+                def unit=: (String) -> String
+
+                def initialize: (
+                  ?distance_along_geometry: Integer,
+                  ?instruction: String,
+                  ?unit: String
+                ) -> void
+
+                def to_hash: -> {
+                  distance_along_geometry: Integer,
+                  instruction: String,
+                  unit: String
+                }
+              end
+            end
+
+            type road_shield_type = { image_url: String, label: String }
+
+            class RoadShieldType < Nextbillionai::Internal::Type::BaseModel
+              attr_reader image_url: String?
+
+              def image_url=: (String) -> String
+
+              attr_reader label: String?
+
+              def label=: (String) -> String
+
+              def initialize: (?image_url: String, ?label: String) -> void
+
+              def to_hash: -> { image_url: String, label: String }
+            end
+
+            type start_location = { latitude: Float, longitude: Float }
+
+            class StartLocation < Nextbillionai::Internal::Type::BaseModel
+              attr_reader latitude: Float?
+
+              def latitude=: (Float) -> Float
+
+              attr_reader longitude: Float?
+
+              def longitude=: (Float) -> Float
+
+              def initialize: (?latitude: Float, ?longitude: Float) -> void
+
+              def to_hash: -> { latitude: Float, longitude: Float }
+            end
+          end
+        end
+
+        type start_location = { latitude: Float, longitude: Float }
+
+        class StartLocation < Nextbillionai::Internal::Type::BaseModel
+          attr_reader latitude: Float?
+
+          def latitude=: (Float) -> Float
+
+          attr_reader longitude: Float?
+
+          def longitude=: (Float) -> Float
+
+          def initialize: (?latitude: Float, ?longitude: Float) -> void
+
+          def to_hash: -> { latitude: Float, longitude: Float }
+        end
+      end
+    end
+  end
+end

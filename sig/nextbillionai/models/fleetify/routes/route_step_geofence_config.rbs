@@ -1,0 +1,47 @@
+module Nextbillionai
+  module Models
+    module Fleetify
+      class RouteStepGeofenceConfig = Routes::RouteStepGeofenceConfig
+
+      module Routes
+        type route_step_geofence_config =
+          {
+            radius: Float,
+            type: Nextbillionai::Models::Fleetify::Routes::RouteStepGeofenceConfig::type_
+          }
+
+        class RouteStepGeofenceConfig < Nextbillionai::Internal::Type::BaseModel
+          attr_reader radius: Float?
+
+          def radius=: (Float) -> Float
+
+          attr_reader type: Nextbillionai::Models::Fleetify::Routes::RouteStepGeofenceConfig::type_?
+
+          def type=: (
+            Nextbillionai::Models::Fleetify::Routes::RouteStepGeofenceConfig::type_
+          ) -> Nextbillionai::Models::Fleetify::Routes::RouteStepGeofenceConfig::type_
+
+          def initialize: (
+            ?radius: Float,
+            ?type: Nextbillionai::Models::Fleetify::Routes::RouteStepGeofenceConfig::type_
+          ) -> void
+
+          def to_hash: -> {
+            radius: Float,
+            type: Nextbillionai::Models::Fleetify::Routes::RouteStepGeofenceConfig::type_
+          }
+
+          type type_ = :circle
+
+          module Type
+            extend Nextbillionai::Internal::Type::Enum
+
+            CIRCLE: :circle
+
+            def self?.values: -> ::Array[Nextbillionai::Models::Fleetify::Routes::RouteStepGeofenceConfig::type_]
+          end
+        end
+      end
+    end
+  end
+end

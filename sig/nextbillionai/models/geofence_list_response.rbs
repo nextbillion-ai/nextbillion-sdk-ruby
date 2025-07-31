@@ -1,0 +1,61 @@
+module Nextbillionai
+  module Models
+    type geofence_list_response =
+      {
+        data: Nextbillionai::Models::GeofenceListResponse::Data,
+        status: String
+      }
+
+    class GeofenceListResponse < Nextbillionai::Internal::Type::BaseModel
+      attr_reader data: Nextbillionai::Models::GeofenceListResponse::Data?
+
+      def data=: (
+        Nextbillionai::Models::GeofenceListResponse::Data
+      ) -> Nextbillionai::Models::GeofenceListResponse::Data
+
+      attr_reader status: String?
+
+      def status=: (String) -> String
+
+      def initialize: (
+        ?data: Nextbillionai::Models::GeofenceListResponse::Data,
+        ?status: String
+      ) -> void
+
+      def to_hash: -> {
+        data: Nextbillionai::Models::GeofenceListResponse::Data,
+        status: String
+      }
+
+      type data =
+        {
+          list: ::Array[Nextbillionai::GeofenceAPI],
+          page: Nextbillionai::Skynet::Pagination
+        }
+
+      class Data < Nextbillionai::Internal::Type::BaseModel
+        attr_reader list: ::Array[Nextbillionai::GeofenceAPI]?
+
+        def list=: (
+          ::Array[Nextbillionai::GeofenceAPI]
+        ) -> ::Array[Nextbillionai::GeofenceAPI]
+
+        attr_reader page: Nextbillionai::Skynet::Pagination?
+
+        def page=: (
+          Nextbillionai::Skynet::Pagination
+        ) -> Nextbillionai::Skynet::Pagination
+
+        def initialize: (
+          ?list: ::Array[Nextbillionai::GeofenceAPI],
+          ?page: Nextbillionai::Skynet::Pagination
+        ) -> void
+
+        def to_hash: -> {
+          list: ::Array[Nextbillionai::GeofenceAPI],
+          page: Nextbillionai::Skynet::Pagination
+        }
+      end
+    end
+  end
+end

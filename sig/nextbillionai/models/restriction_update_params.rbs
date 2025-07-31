@@ -1,0 +1,32 @@
+module Nextbillionai
+  module Models
+    type restriction_update_params =
+      { key: String, latlon: bool }
+      & Nextbillionai::Internal::Type::request_parameters
+
+    class RestrictionUpdateParams < Nextbillionai::Models::RichGroupRequest
+      extend Nextbillionai::Internal::Type::RequestParameters::Converter
+      include Nextbillionai::Internal::Type::RequestParameters
+
+      def key: -> String
+
+      def key=: (String _) -> String
+
+      def latlon: -> bool?
+
+      def latlon=: (bool _) -> bool
+
+      def initialize: (
+        key: String,
+        ?latlon: bool,
+        ?request_options: Nextbillionai::request_opts
+      ) -> void
+
+      def to_hash: -> {
+        key: String,
+        latlon: bool,
+        request_options: Nextbillionai::RequestOptions
+      }
+    end
+  end
+end

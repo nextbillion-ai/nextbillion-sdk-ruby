@@ -1,0 +1,164 @@
+module Nextbillionai
+  module Models
+    type restriction_list_params =
+      {
+        area: String,
+        key: String,
+        limit: Integer,
+        offset: Integer,
+        mode: Nextbillionai::Models::RestrictionListParams::mode,
+        name: String,
+        restriction_type: Nextbillionai::Models::RestrictionListParams::restriction_type,
+        source: Nextbillionai::Models::RestrictionListParams::source,
+        state: Nextbillionai::Models::RestrictionListParams::state,
+        status: Nextbillionai::Models::RestrictionListParams::status,
+        transform: bool
+      }
+      & Nextbillionai::Internal::Type::request_parameters
+
+    class RestrictionListParams < Nextbillionai::Internal::Type::BaseModel
+      extend Nextbillionai::Internal::Type::RequestParameters::Converter
+      include Nextbillionai::Internal::Type::RequestParameters
+
+      attr_accessor area: String
+
+      attr_accessor key: String
+
+      attr_accessor limit: Integer
+
+      attr_accessor offset: Integer
+
+      attr_reader mode: Nextbillionai::Models::RestrictionListParams::mode?
+
+      def mode=: (
+        Nextbillionai::Models::RestrictionListParams::mode
+      ) -> Nextbillionai::Models::RestrictionListParams::mode
+
+      attr_reader name: String?
+
+      def name=: (String) -> String
+
+      attr_reader restriction_type: Nextbillionai::Models::RestrictionListParams::restriction_type?
+
+      def restriction_type=: (
+        Nextbillionai::Models::RestrictionListParams::restriction_type
+      ) -> Nextbillionai::Models::RestrictionListParams::restriction_type
+
+      attr_reader source: Nextbillionai::Models::RestrictionListParams::source?
+
+      def source=: (
+        Nextbillionai::Models::RestrictionListParams::source
+      ) -> Nextbillionai::Models::RestrictionListParams::source
+
+      attr_reader state: Nextbillionai::Models::RestrictionListParams::state?
+
+      def state=: (
+        Nextbillionai::Models::RestrictionListParams::state
+      ) -> Nextbillionai::Models::RestrictionListParams::state
+
+      attr_reader status: Nextbillionai::Models::RestrictionListParams::status?
+
+      def status=: (
+        Nextbillionai::Models::RestrictionListParams::status
+      ) -> Nextbillionai::Models::RestrictionListParams::status
+
+      attr_reader transform: bool?
+
+      def transform=: (bool) -> bool
+
+      def initialize: (
+        area: String,
+        key: String,
+        limit: Integer,
+        offset: Integer,
+        ?mode: Nextbillionai::Models::RestrictionListParams::mode,
+        ?name: String,
+        ?restriction_type: Nextbillionai::Models::RestrictionListParams::restriction_type,
+        ?source: Nextbillionai::Models::RestrictionListParams::source,
+        ?state: Nextbillionai::Models::RestrictionListParams::state,
+        ?status: Nextbillionai::Models::RestrictionListParams::status,
+        ?transform: bool,
+        ?request_options: Nextbillionai::request_opts
+      ) -> void
+
+      def to_hash: -> {
+        area: String,
+        key: String,
+        limit: Integer,
+        offset: Integer,
+        mode: Nextbillionai::Models::RestrictionListParams::mode,
+        name: String,
+        restriction_type: Nextbillionai::Models::RestrictionListParams::restriction_type,
+        source: Nextbillionai::Models::RestrictionListParams::source,
+        state: Nextbillionai::Models::RestrictionListParams::state,
+        status: Nextbillionai::Models::RestrictionListParams::status,
+        transform: bool,
+        request_options: Nextbillionai::RequestOptions
+      }
+
+      type mode = :"0w" | :"2w" | :"3w" | :"4w" | :"6w"
+
+      module Mode
+        extend Nextbillionai::Internal::Type::Enum
+
+        MODE_0W: :"0w"
+        MODE_2W: :"2w"
+        MODE_3W: :"3w"
+        MODE_4W: :"4w"
+        MODE_6W: :"6w"
+
+        def self?.values: -> ::Array[Nextbillionai::Models::RestrictionListParams::mode]
+      end
+
+      type restriction_type =
+        :turn | :parking | :fixedspeed | :maxspeed | :closure | :truck
+
+      module RestrictionType
+        extend Nextbillionai::Internal::Type::Enum
+
+        TURN: :turn
+        PARKING: :parking
+        FIXEDSPEED: :fixedspeed
+        MAXSPEED: :maxspeed
+        CLOSURE: :closure
+        TRUCK: :truck
+
+        def self?.values: -> ::Array[Nextbillionai::Models::RestrictionListParams::restriction_type]
+      end
+
+      type source = :rrt | :pbf
+
+      module Source
+        extend Nextbillionai::Internal::Type::Enum
+
+        RRT: :rrt
+        PBF: :pbf
+
+        def self?.values: -> ::Array[Nextbillionai::Models::RestrictionListParams::source]
+      end
+
+      type state = :enabled | :disabled | :deleted
+
+      module State
+        extend Nextbillionai::Internal::Type::Enum
+
+        ENABLED: :enabled
+        DISABLED: :disabled
+        DELETED: :deleted
+
+        def self?.values: -> ::Array[Nextbillionai::Models::RestrictionListParams::state]
+      end
+
+      type status = :active | :inactive
+
+      module Status
+        extend Nextbillionai::Internal::Type::Enum
+
+        ACTIVE: :active
+        INACTIVE: :inactive
+
+        def self?.values: -> ::Array[Nextbillionai::Models::RestrictionListParams::status]
+      end
+    end
+  end
+end

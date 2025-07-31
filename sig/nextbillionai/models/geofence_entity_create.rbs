@@ -1,0 +1,216 @@
+module Nextbillionai
+  module Models
+    type geofence_entity_create =
+      {
+        type: Nextbillionai::Models::GeofenceEntityCreate::type_,
+        circle: Nextbillionai::GeofenceEntityCreate::Circle,
+        custom_id: String,
+        isochrone: Nextbillionai::GeofenceEntityCreate::Isochrone,
+        meta_data: top,
+        name: String,
+        polygon: Nextbillionai::GeofenceEntityCreate::Polygon,
+        tags: ::Array[String]
+      }
+
+    class GeofenceEntityCreate < Nextbillionai::Internal::Type::BaseModel
+      attr_accessor type: Nextbillionai::Models::GeofenceEntityCreate::type_
+
+      attr_reader circle: Nextbillionai::GeofenceEntityCreate::Circle?
+
+      def circle=: (
+        Nextbillionai::GeofenceEntityCreate::Circle
+      ) -> Nextbillionai::GeofenceEntityCreate::Circle
+
+      attr_reader custom_id: String?
+
+      def custom_id=: (String) -> String
+
+      attr_reader isochrone: Nextbillionai::GeofenceEntityCreate::Isochrone?
+
+      def isochrone=: (
+        Nextbillionai::GeofenceEntityCreate::Isochrone
+      ) -> Nextbillionai::GeofenceEntityCreate::Isochrone
+
+      attr_reader meta_data: top?
+
+      def meta_data=: (top) -> top
+
+      attr_reader name: String?
+
+      def name=: (String) -> String
+
+      attr_reader polygon: Nextbillionai::GeofenceEntityCreate::Polygon?
+
+      def polygon=: (
+        Nextbillionai::GeofenceEntityCreate::Polygon
+      ) -> Nextbillionai::GeofenceEntityCreate::Polygon
+
+      attr_reader tags: ::Array[String]?
+
+      def tags=: (::Array[String]) -> ::Array[String]
+
+      def initialize: (
+        type: Nextbillionai::Models::GeofenceEntityCreate::type_,
+        ?circle: Nextbillionai::GeofenceEntityCreate::Circle,
+        ?custom_id: String,
+        ?isochrone: Nextbillionai::GeofenceEntityCreate::Isochrone,
+        ?meta_data: top,
+        ?name: String,
+        ?polygon: Nextbillionai::GeofenceEntityCreate::Polygon,
+        ?tags: ::Array[String]
+      ) -> void
+
+      def to_hash: -> {
+        type: Nextbillionai::Models::GeofenceEntityCreate::type_,
+        circle: Nextbillionai::GeofenceEntityCreate::Circle,
+        custom_id: String,
+        isochrone: Nextbillionai::GeofenceEntityCreate::Isochrone,
+        meta_data: top,
+        name: String,
+        polygon: Nextbillionai::GeofenceEntityCreate::Polygon,
+        tags: ::Array[String]
+      }
+
+      type type_ = :circle | :polygon | :isochrone
+
+      module Type
+        extend Nextbillionai::Internal::Type::Enum
+
+        CIRCLE: :circle
+        POLYGON: :polygon
+        ISOCHRONE: :isochrone
+
+        def self?.values: -> ::Array[Nextbillionai::Models::GeofenceEntityCreate::type_]
+      end
+
+      type circle =
+        {
+          center: Nextbillionai::GeofenceEntityCreate::Circle::Center,
+          radius: Float
+        }
+
+      class Circle < Nextbillionai::Internal::Type::BaseModel
+        attr_accessor center: Nextbillionai::GeofenceEntityCreate::Circle::Center
+
+        attr_accessor radius: Float
+
+        def initialize: (
+          center: Nextbillionai::GeofenceEntityCreate::Circle::Center,
+          radius: Float
+        ) -> void
+
+        def to_hash: -> {
+          center: Nextbillionai::GeofenceEntityCreate::Circle::Center,
+          radius: Float
+        }
+
+        type center = { lat: Float, lon: Float }
+
+        class Center < Nextbillionai::Internal::Type::BaseModel
+          attr_accessor lat: Float
+
+          attr_accessor lon: Float
+
+          def initialize: (lat: Float, lon: Float) -> void
+
+          def to_hash: -> { lat: Float, lon: Float }
+        end
+      end
+
+      type isochrone =
+        {
+          coordinates: String,
+          contours_meter: Integer,
+          contours_minute: Integer,
+          denoise: Float,
+          departure_time: Integer,
+          mode: Nextbillionai::Models::GeofenceEntityCreate::Isochrone::mode
+        }
+
+      class Isochrone < Nextbillionai::Internal::Type::BaseModel
+        attr_accessor coordinates: String
+
+        attr_reader contours_meter: Integer?
+
+        def contours_meter=: (Integer) -> Integer
+
+        attr_reader contours_minute: Integer?
+
+        def contours_minute=: (Integer) -> Integer
+
+        attr_reader denoise: Float?
+
+        def denoise=: (Float) -> Float
+
+        attr_reader departure_time: Integer?
+
+        def departure_time=: (Integer) -> Integer
+
+        attr_reader mode: Nextbillionai::Models::GeofenceEntityCreate::Isochrone::mode?
+
+        def mode=: (
+          Nextbillionai::Models::GeofenceEntityCreate::Isochrone::mode
+        ) -> Nextbillionai::Models::GeofenceEntityCreate::Isochrone::mode
+
+        def initialize: (
+          coordinates: String,
+          ?contours_meter: Integer,
+          ?contours_minute: Integer,
+          ?denoise: Float,
+          ?departure_time: Integer,
+          ?mode: Nextbillionai::Models::GeofenceEntityCreate::Isochrone::mode
+        ) -> void
+
+        def to_hash: -> {
+          coordinates: String,
+          contours_meter: Integer,
+          contours_minute: Integer,
+          denoise: Float,
+          departure_time: Integer,
+          mode: Nextbillionai::Models::GeofenceEntityCreate::Isochrone::mode
+        }
+
+        type mode = :car | :truck
+
+        module Mode
+          extend Nextbillionai::Internal::Type::Enum
+
+          CAR: :car
+          TRUCK: :truck
+
+          def self?.values: -> ::Array[Nextbillionai::Models::GeofenceEntityCreate::Isochrone::mode]
+        end
+      end
+
+      type polygon =
+        { geojson: Nextbillionai::GeofenceEntityCreate::Polygon::Geojson }
+
+      class Polygon < Nextbillionai::Internal::Type::BaseModel
+        attr_accessor geojson: Nextbillionai::GeofenceEntityCreate::Polygon::Geojson
+
+        def initialize: (
+          geojson: Nextbillionai::GeofenceEntityCreate::Polygon::Geojson
+        ) -> void
+
+        def to_hash: -> {
+          geojson: Nextbillionai::GeofenceEntityCreate::Polygon::Geojson
+        }
+
+        type geojson = { coordinates: ::Array[::Array[Float]], type: String }
+
+        class Geojson < Nextbillionai::Internal::Type::BaseModel
+          attr_accessor coordinates: ::Array[::Array[Float]]
+
+          attr_accessor type: String
+
+          def initialize: (
+            coordinates: ::Array[::Array[Float]],
+            type: String
+          ) -> void
+
+          def to_hash: -> { coordinates: ::Array[::Array[Float]], type: String }
+        end
+      end
+    end
+  end
+end

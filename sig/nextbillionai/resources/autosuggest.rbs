@@ -1,0 +1,17 @@
+module Nextbillionai
+  module Resources
+    class Autosuggest
+      def suggest: (
+        key: String,
+        q: String,
+        ?at: String,
+        ?in_: String,
+        ?lang: String,
+        ?limit: Integer,
+        ?request_options: Nextbillionai::request_opts
+      ) -> Nextbillionai::Models::AutosuggestSuggestResponse
+
+      def initialize: (client: Nextbillionai::Client) -> void
+    end
+  end
+end

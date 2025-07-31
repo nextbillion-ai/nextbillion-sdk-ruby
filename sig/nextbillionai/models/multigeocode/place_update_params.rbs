@@ -1,0 +1,99 @@
+module Nextbillionai
+  module Models
+    module Multigeocode
+      type place_update_params =
+        {
+          key: String,
+          data_source: Nextbillionai::Multigeocode::PlaceUpdateParams::DataSource,
+          place: ::Array[Nextbillionai::Multigeocode::PlaceItem],
+          score: Integer
+        }
+        & Nextbillionai::Internal::Type::request_parameters
+
+      class PlaceUpdateParams < Nextbillionai::Internal::Type::BaseModel
+        extend Nextbillionai::Internal::Type::RequestParameters::Converter
+        include Nextbillionai::Internal::Type::RequestParameters
+
+        attr_accessor key: String
+
+        attr_reader data_source: Nextbillionai::Multigeocode::PlaceUpdateParams::DataSource?
+
+        def data_source=: (
+          Nextbillionai::Multigeocode::PlaceUpdateParams::DataSource
+        ) -> Nextbillionai::Multigeocode::PlaceUpdateParams::DataSource
+
+        attr_reader place: ::Array[Nextbillionai::Multigeocode::PlaceItem]?
+
+        def place=: (
+          ::Array[Nextbillionai::Multigeocode::PlaceItem]
+        ) -> ::Array[Nextbillionai::Multigeocode::PlaceItem]
+
+        attr_reader score: Integer?
+
+        def score=: (Integer) -> Integer
+
+        def initialize: (
+          key: String,
+          ?data_source: Nextbillionai::Multigeocode::PlaceUpdateParams::DataSource,
+          ?place: ::Array[Nextbillionai::Multigeocode::PlaceItem],
+          ?score: Integer,
+          ?request_options: Nextbillionai::request_opts
+        ) -> void
+
+        def to_hash: -> {
+          key: String,
+          data_source: Nextbillionai::Multigeocode::PlaceUpdateParams::DataSource,
+          place: ::Array[Nextbillionai::Multigeocode::PlaceItem],
+          score: Integer,
+          request_options: Nextbillionai::RequestOptions
+        }
+
+        type data_source =
+          {
+            ref_id: String,
+            source: String,
+            status: Nextbillionai::Models::Multigeocode::PlaceUpdateParams::DataSource::status
+          }
+
+        class DataSource < Nextbillionai::Internal::Type::BaseModel
+          attr_reader ref_id: String?
+
+          def ref_id=: (String) -> String
+
+          attr_reader source: String?
+
+          def source=: (String) -> String
+
+          attr_reader status: Nextbillionai::Models::Multigeocode::PlaceUpdateParams::DataSource::status?
+
+          def status=: (
+            Nextbillionai::Models::Multigeocode::PlaceUpdateParams::DataSource::status
+          ) -> Nextbillionai::Models::Multigeocode::PlaceUpdateParams::DataSource::status
+
+          def initialize: (
+            ?ref_id: String,
+            ?source: String,
+            ?status: Nextbillionai::Models::Multigeocode::PlaceUpdateParams::DataSource::status
+          ) -> void
+
+          def to_hash: -> {
+            ref_id: String,
+            source: String,
+            status: Nextbillionai::Models::Multigeocode::PlaceUpdateParams::DataSource::status
+          }
+
+          type status = :enable | :disable
+
+          module Status
+            extend Nextbillionai::Internal::Type::Enum
+
+            ENABLE: :enable
+            DISABLE: :disable
+
+            def self?.values: -> ::Array[Nextbillionai::Models::Multigeocode::PlaceUpdateParams::DataSource::status]
+          end
+        end
+      end
+    end
+  end
+end

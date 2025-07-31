@@ -1,0 +1,114 @@
+module Nextbillionai
+  module Models
+    type multigeocode_search_response =
+      {
+        entities: ::Array[Nextbillionai::Models::MultigeocodeSearchResponse::Entity]
+      }
+
+    class MultigeocodeSearchResponse < Nextbillionai::Internal::Type::BaseModel
+      attr_reader entities: ::Array[Nextbillionai::Models::MultigeocodeSearchResponse::Entity]?
+
+      def entities=: (
+        ::Array[Nextbillionai::Models::MultigeocodeSearchResponse::Entity]
+      ) -> ::Array[Nextbillionai::Models::MultigeocodeSearchResponse::Entity]
+
+      def initialize: (
+        ?entities: ::Array[Nextbillionai::Models::MultigeocodeSearchResponse::Entity]
+      ) -> void
+
+      def to_hash: -> {
+        entities: ::Array[Nextbillionai::Models::MultigeocodeSearchResponse::Entity]
+      }
+
+      type entity =
+        {
+          data_source: Nextbillionai::Models::MultigeocodeSearchResponse::Entity::DataSource,
+          doc_id: String,
+          place: ::Array[Nextbillionai::Multigeocode::PlaceItem],
+          score: Integer
+        }
+
+      class Entity < Nextbillionai::Internal::Type::BaseModel
+        attr_reader data_source: Nextbillionai::Models::MultigeocodeSearchResponse::Entity::DataSource?
+
+        def data_source=: (
+          Nextbillionai::Models::MultigeocodeSearchResponse::Entity::DataSource
+        ) -> Nextbillionai::Models::MultigeocodeSearchResponse::Entity::DataSource
+
+        attr_reader doc_id: String?
+
+        def doc_id=: (String) -> String
+
+        attr_reader place: ::Array[Nextbillionai::Multigeocode::PlaceItem]?
+
+        def place=: (
+          ::Array[Nextbillionai::Multigeocode::PlaceItem]
+        ) -> ::Array[Nextbillionai::Multigeocode::PlaceItem]
+
+        attr_reader score: Integer?
+
+        def score=: (Integer) -> Integer
+
+        def initialize: (
+          ?data_source: Nextbillionai::Models::MultigeocodeSearchResponse::Entity::DataSource,
+          ?doc_id: String,
+          ?place: ::Array[Nextbillionai::Multigeocode::PlaceItem],
+          ?score: Integer
+        ) -> void
+
+        def to_hash: -> {
+          data_source: Nextbillionai::Models::MultigeocodeSearchResponse::Entity::DataSource,
+          doc_id: String,
+          place: ::Array[Nextbillionai::Multigeocode::PlaceItem],
+          score: Integer
+        }
+
+        type data_source =
+          {
+            ref_id: String,
+            source: String,
+            status: Nextbillionai::Models::MultigeocodeSearchResponse::Entity::DataSource::status
+          }
+
+        class DataSource < Nextbillionai::Internal::Type::BaseModel
+          attr_reader ref_id: String?
+
+          def ref_id=: (String) -> String
+
+          attr_reader source: String?
+
+          def source=: (String) -> String
+
+          attr_reader status: Nextbillionai::Models::MultigeocodeSearchResponse::Entity::DataSource::status?
+
+          def status=: (
+            Nextbillionai::Models::MultigeocodeSearchResponse::Entity::DataSource::status
+          ) -> Nextbillionai::Models::MultigeocodeSearchResponse::Entity::DataSource::status
+
+          def initialize: (
+            ?ref_id: String,
+            ?source: String,
+            ?status: Nextbillionai::Models::MultigeocodeSearchResponse::Entity::DataSource::status
+          ) -> void
+
+          def to_hash: -> {
+            ref_id: String,
+            source: String,
+            status: Nextbillionai::Models::MultigeocodeSearchResponse::Entity::DataSource::status
+          }
+
+          type status = :enable | :disable
+
+          module Status
+            extend Nextbillionai::Internal::Type::Enum
+
+            ENABLE: :enable
+            DISABLE: :disable
+
+            def self?.values: -> ::Array[Nextbillionai::Models::MultigeocodeSearchResponse::Entity::DataSource::status]
+          end
+        end
+      end
+    end
+  end
+end

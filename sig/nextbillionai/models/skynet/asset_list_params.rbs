@@ -1,0 +1,89 @@
+module Nextbillionai
+  module Models
+    module Skynet
+      type asset_list_params =
+        {
+          key: String,
+          cluster: Nextbillionai::Models::Skynet::AssetListParams::cluster,
+          include_all_of_attributes: String,
+          include_any_of_attributes: String,
+          pn: Integer,
+          ps: Integer,
+          sort: String,
+          tags: String
+        }
+        & Nextbillionai::Internal::Type::request_parameters
+
+      class AssetListParams < Nextbillionai::Internal::Type::BaseModel
+        extend Nextbillionai::Internal::Type::RequestParameters::Converter
+        include Nextbillionai::Internal::Type::RequestParameters
+
+        attr_accessor key: String
+
+        attr_reader cluster: Nextbillionai::Models::Skynet::AssetListParams::cluster?
+
+        def cluster=: (
+          Nextbillionai::Models::Skynet::AssetListParams::cluster
+        ) -> Nextbillionai::Models::Skynet::AssetListParams::cluster
+
+        attr_reader include_all_of_attributes: String?
+
+        def include_all_of_attributes=: (String) -> String
+
+        attr_reader include_any_of_attributes: String?
+
+        def include_any_of_attributes=: (String) -> String
+
+        attr_reader pn: Integer?
+
+        def pn=: (Integer) -> Integer
+
+        attr_reader ps: Integer?
+
+        def ps=: (Integer) -> Integer
+
+        attr_reader sort: String?
+
+        def sort=: (String) -> String
+
+        attr_reader tags: String?
+
+        def tags=: (String) -> String
+
+        def initialize: (
+          key: String,
+          ?cluster: Nextbillionai::Models::Skynet::AssetListParams::cluster,
+          ?include_all_of_attributes: String,
+          ?include_any_of_attributes: String,
+          ?pn: Integer,
+          ?ps: Integer,
+          ?sort: String,
+          ?tags: String,
+          ?request_options: Nextbillionai::request_opts
+        ) -> void
+
+        def to_hash: -> {
+          key: String,
+          cluster: Nextbillionai::Models::Skynet::AssetListParams::cluster,
+          include_all_of_attributes: String,
+          include_any_of_attributes: String,
+          pn: Integer,
+          ps: Integer,
+          sort: String,
+          tags: String,
+          request_options: Nextbillionai::RequestOptions
+        }
+
+        type cluster = :america
+
+        module Cluster
+          extend Nextbillionai::Internal::Type::Enum
+
+          AMERICA: :america
+
+          def self?.values: -> ::Array[Nextbillionai::Models::Skynet::AssetListParams::cluster]
+        end
+      end
+    end
+  end
+end

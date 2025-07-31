@@ -1,0 +1,28 @@
+module Nextbillionai
+  module Models
+    type batch_retrieve_params =
+      { key: String, track_id: String }
+      & Nextbillionai::Internal::Type::request_parameters
+
+    class BatchRetrieveParams < Nextbillionai::Internal::Type::BaseModel
+      extend Nextbillionai::Internal::Type::RequestParameters::Converter
+      include Nextbillionai::Internal::Type::RequestParameters
+
+      attr_accessor key: String
+
+      attr_accessor track_id: String
+
+      def initialize: (
+        key: String,
+        track_id: String,
+        ?request_options: Nextbillionai::request_opts
+      ) -> void
+
+      def to_hash: -> {
+        key: String,
+        track_id: String,
+        request_options: Nextbillionai::RequestOptions
+      }
+    end
+  end
+end
