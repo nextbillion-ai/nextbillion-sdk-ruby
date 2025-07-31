@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.0-alpha.5 (2025-07-31)
+
+Full Changelog: [v0.1.0-alpha.4...v0.1.0-alpha.5](https://github.com/nextbillion-ai/nextbillion-sdk-ruby/compare/v0.1.0-alpha.4...v0.1.0-alpha.5)
+
+### Bug Fixes
+
+* List&lt;List&gt; problem in java by naming dto.Event ([809a0a1](https://github.com/nextbillion-ai/nextbillion-sdk-ruby/commit/809a0a1feda028b874e0b1220f33bb4593688aa2))
+
 ## 0.1.0-alpha.4 (2025-07-30)
 
 Full Changelog: [v0.1.0-alpha.3...v0.1.0-alpha.4](https://github.com/nextbillion-ai/nextbillion-sdk-ruby/compare/v0.1.0-alpha.3...v0.1.0-alpha.4)
