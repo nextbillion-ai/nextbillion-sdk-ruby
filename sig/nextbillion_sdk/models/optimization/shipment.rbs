@@ -1,0 +1,315 @@
+module NextbillionSDK
+  module Models
+    module Optimization
+      type shipment =
+        {
+          delivery: NextbillionSDK::Optimization::Shipment::Delivery,
+          pickup: NextbillionSDK::Optimization::Shipment::Pickup,
+          amount: ::Array[Integer],
+          follow_lifo_order: bool,
+          incompatible_load_types: ::Array[String],
+          joint_order: Integer,
+          load_types: ::Array[String],
+          max_time_in_vehicle: Integer,
+          outsourcing_cost: Integer,
+          priority: Integer,
+          revenue: Integer,
+          skills: ::Array[Integer],
+          volume: NextbillionSDK::Optimization::Shipment::Volume,
+          zones: ::Array[Integer]
+        }
+
+      class Shipment < NextbillionSDK::Internal::Type::BaseModel
+        attr_accessor delivery: NextbillionSDK::Optimization::Shipment::Delivery
+
+        attr_accessor pickup: NextbillionSDK::Optimization::Shipment::Pickup
+
+        attr_reader amount: ::Array[Integer]?
+
+        def amount=: (::Array[Integer]) -> ::Array[Integer]
+
+        attr_reader follow_lifo_order: bool?
+
+        def follow_lifo_order=: (bool) -> bool
+
+        attr_reader incompatible_load_types: ::Array[String]?
+
+        def incompatible_load_types=: (::Array[String]) -> ::Array[String]
+
+        attr_reader joint_order: Integer?
+
+        def joint_order=: (Integer) -> Integer
+
+        attr_reader load_types: ::Array[String]?
+
+        def load_types=: (::Array[String]) -> ::Array[String]
+
+        attr_reader max_time_in_vehicle: Integer?
+
+        def max_time_in_vehicle=: (Integer) -> Integer
+
+        attr_reader outsourcing_cost: Integer?
+
+        def outsourcing_cost=: (Integer) -> Integer
+
+        attr_reader priority: Integer?
+
+        def priority=: (Integer) -> Integer
+
+        attr_reader revenue: Integer?
+
+        def revenue=: (Integer) -> Integer
+
+        attr_reader skills: ::Array[Integer]?
+
+        def skills=: (::Array[Integer]) -> ::Array[Integer]
+
+        attr_reader volume: NextbillionSDK::Optimization::Shipment::Volume?
+
+        def volume=: (
+          NextbillionSDK::Optimization::Shipment::Volume
+        ) -> NextbillionSDK::Optimization::Shipment::Volume
+
+        attr_reader zones: ::Array[Integer]?
+
+        def zones=: (::Array[Integer]) -> ::Array[Integer]
+
+        def initialize: (
+          delivery: NextbillionSDK::Optimization::Shipment::Delivery,
+          pickup: NextbillionSDK::Optimization::Shipment::Pickup,
+          ?amount: ::Array[Integer],
+          ?follow_lifo_order: bool,
+          ?incompatible_load_types: ::Array[String],
+          ?joint_order: Integer,
+          ?load_types: ::Array[String],
+          ?max_time_in_vehicle: Integer,
+          ?outsourcing_cost: Integer,
+          ?priority: Integer,
+          ?revenue: Integer,
+          ?skills: ::Array[Integer],
+          ?volume: NextbillionSDK::Optimization::Shipment::Volume,
+          ?zones: ::Array[Integer]
+        ) -> void
+
+        def to_hash: -> {
+          delivery: NextbillionSDK::Optimization::Shipment::Delivery,
+          pickup: NextbillionSDK::Optimization::Shipment::Pickup,
+          amount: ::Array[Integer],
+          follow_lifo_order: bool,
+          incompatible_load_types: ::Array[String],
+          joint_order: Integer,
+          load_types: ::Array[String],
+          max_time_in_vehicle: Integer,
+          outsourcing_cost: Integer,
+          priority: Integer,
+          revenue: Integer,
+          skills: ::Array[Integer],
+          volume: NextbillionSDK::Optimization::Shipment::Volume,
+          zones: ::Array[Integer]
+        }
+
+        type delivery =
+          {
+            id: String,
+            location_index: Integer,
+            description: String,
+            max_visit_lateness: Integer,
+            metadata: top,
+            sequence_order: Integer,
+            service: Integer,
+            setup: Integer,
+            time_windows: ::Array[::Array[Integer]]
+          }
+
+        class Delivery < NextbillionSDK::Internal::Type::BaseModel
+          attr_accessor id: String
+
+          attr_accessor location_index: Integer
+
+          attr_reader description: String?
+
+          def description=: (String) -> String
+
+          attr_reader max_visit_lateness: Integer?
+
+          def max_visit_lateness=: (Integer) -> Integer
+
+          attr_reader metadata: top?
+
+          def metadata=: (top) -> top
+
+          attr_reader sequence_order: Integer?
+
+          def sequence_order=: (Integer) -> Integer
+
+          attr_reader service: Integer?
+
+          def service=: (Integer) -> Integer
+
+          attr_reader setup: Integer?
+
+          def setup=: (Integer) -> Integer
+
+          attr_reader time_windows: ::Array[::Array[Integer]]?
+
+          def time_windows=: (
+            ::Array[::Array[Integer]]
+          ) -> ::Array[::Array[Integer]]
+
+          def initialize: (
+            id: String,
+            location_index: Integer,
+            ?description: String,
+            ?max_visit_lateness: Integer,
+            ?metadata: top,
+            ?sequence_order: Integer,
+            ?service: Integer,
+            ?setup: Integer,
+            ?time_windows: ::Array[::Array[Integer]]
+          ) -> void
+
+          def to_hash: -> {
+            id: String,
+            location_index: Integer,
+            description: String,
+            max_visit_lateness: Integer,
+            metadata: top,
+            sequence_order: Integer,
+            service: Integer,
+            setup: Integer,
+            time_windows: ::Array[::Array[Integer]]
+          }
+        end
+
+        type pickup =
+          {
+            id: String,
+            location_index: Integer,
+            description: String,
+            max_visit_lateness: Integer,
+            metadata: top,
+            sequence_order: Integer,
+            service: Integer,
+            setup: Integer,
+            time_windows: ::Array[::Array[Integer]]
+          }
+
+        class Pickup < NextbillionSDK::Internal::Type::BaseModel
+          attr_accessor id: String
+
+          attr_accessor location_index: Integer
+
+          attr_reader description: String?
+
+          def description=: (String) -> String
+
+          attr_reader max_visit_lateness: Integer?
+
+          def max_visit_lateness=: (Integer) -> Integer
+
+          attr_reader metadata: top?
+
+          def metadata=: (top) -> top
+
+          attr_reader sequence_order: Integer?
+
+          def sequence_order=: (Integer) -> Integer
+
+          attr_reader service: Integer?
+
+          def service=: (Integer) -> Integer
+
+          attr_reader setup: Integer?
+
+          def setup=: (Integer) -> Integer
+
+          attr_reader time_windows: ::Array[::Array[Integer]]?
+
+          def time_windows=: (
+            ::Array[::Array[Integer]]
+          ) -> ::Array[::Array[Integer]]
+
+          def initialize: (
+            id: String,
+            location_index: Integer,
+            ?description: String,
+            ?max_visit_lateness: Integer,
+            ?metadata: top,
+            ?sequence_order: Integer,
+            ?service: Integer,
+            ?setup: Integer,
+            ?time_windows: ::Array[::Array[Integer]]
+          ) -> void
+
+          def to_hash: -> {
+            id: String,
+            location_index: Integer,
+            description: String,
+            max_visit_lateness: Integer,
+            metadata: top,
+            sequence_order: Integer,
+            service: Integer,
+            setup: Integer,
+            time_windows: ::Array[::Array[Integer]]
+          }
+        end
+
+        type volume =
+          {
+            alignment: NextbillionSDK::Models::Optimization::Shipment::Volume::alignment,
+            depth: Float,
+            height: Float,
+            width: Float
+          }
+
+        class Volume < NextbillionSDK::Internal::Type::BaseModel
+          attr_reader alignment: NextbillionSDK::Models::Optimization::Shipment::Volume::alignment?
+
+          def alignment=: (
+            NextbillionSDK::Models::Optimization::Shipment::Volume::alignment
+          ) -> NextbillionSDK::Models::Optimization::Shipment::Volume::alignment
+
+          attr_reader depth: Float?
+
+          def depth=: (Float) -> Float
+
+          attr_reader height: Float?
+
+          def height=: (Float) -> Float
+
+          attr_reader width: Float?
+
+          def width=: (Float) -> Float
+
+          def initialize: (
+            ?alignment: NextbillionSDK::Models::Optimization::Shipment::Volume::alignment,
+            ?depth: Float,
+            ?height: Float,
+            ?width: Float
+          ) -> void
+
+          def to_hash: -> {
+            alignment: NextbillionSDK::Models::Optimization::Shipment::Volume::alignment,
+            depth: Float,
+            height: Float,
+            width: Float
+          }
+
+          type alignment =
+            :"`strict`" | :"`parallel`" | :"`fixed_bottom`" | :"`\" \"`"
+
+          module Alignment
+            extend NextbillionSDK::Internal::Type::Enum
+
+            STRICT: :"`strict`"
+            PARALLEL: :"`parallel`"
+            FIXED_BOTTOM: :"`fixed_bottom`"
+            Unknown1: :"`\" \"`"
+
+            def self?.values: -> ::Array[NextbillionSDK::Models::Optimization::Shipment::Volume::alignment]
+          end
+        end
+      end
+    end
+  end
+end

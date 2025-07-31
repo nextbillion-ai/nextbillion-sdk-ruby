@@ -1,0 +1,159 @@
+module NextbillionSDK
+  module Models
+    type isochrone_compute_response =
+      {
+        features: ::Array[NextbillionSDK::Models::IsochroneComputeResponse::Feature],
+        msg: String,
+        status: String,
+        type: String
+      }
+
+    class IsochroneComputeResponse < NextbillionSDK::Internal::Type::BaseModel
+      attr_reader features: ::Array[NextbillionSDK::Models::IsochroneComputeResponse::Feature]?
+
+      def features=: (
+        ::Array[NextbillionSDK::Models::IsochroneComputeResponse::Feature]
+      ) -> ::Array[NextbillionSDK::Models::IsochroneComputeResponse::Feature]
+
+      attr_reader msg: String?
+
+      def msg=: (String) -> String
+
+      attr_reader status: String?
+
+      def status=: (String) -> String
+
+      attr_reader type: String?
+
+      def type=: (String) -> String
+
+      def initialize: (
+        ?features: ::Array[NextbillionSDK::Models::IsochroneComputeResponse::Feature],
+        ?msg: String,
+        ?status: String,
+        ?type: String
+      ) -> void
+
+      def to_hash: -> {
+        features: ::Array[NextbillionSDK::Models::IsochroneComputeResponse::Feature],
+        msg: String,
+        status: String,
+        type: String
+      }
+
+      type feature =
+        {
+          geometry: NextbillionSDK::Models::IsochroneComputeResponse::Feature::Geometry,
+          properties: NextbillionSDK::Models::IsochroneComputeResponse::Feature::Properties,
+          type: String
+        }
+
+      class Feature < NextbillionSDK::Internal::Type::BaseModel
+        attr_reader geometry: NextbillionSDK::Models::IsochroneComputeResponse::Feature::Geometry?
+
+        def geometry=: (
+          NextbillionSDK::Models::IsochroneComputeResponse::Feature::Geometry
+        ) -> NextbillionSDK::Models::IsochroneComputeResponse::Feature::Geometry
+
+        attr_reader properties: NextbillionSDK::Models::IsochroneComputeResponse::Feature::Properties?
+
+        def properties=: (
+          NextbillionSDK::Models::IsochroneComputeResponse::Feature::Properties
+        ) -> NextbillionSDK::Models::IsochroneComputeResponse::Feature::Properties
+
+        attr_reader type: String?
+
+        def type=: (String) -> String
+
+        def initialize: (
+          ?geometry: NextbillionSDK::Models::IsochroneComputeResponse::Feature::Geometry,
+          ?properties: NextbillionSDK::Models::IsochroneComputeResponse::Feature::Properties,
+          ?type: String
+        ) -> void
+
+        def to_hash: -> {
+          geometry: NextbillionSDK::Models::IsochroneComputeResponse::Feature::Geometry,
+          properties: NextbillionSDK::Models::IsochroneComputeResponse::Feature::Properties,
+          type: String
+        }
+
+        type geometry = { coordinates: ::Array[Float], type: String }
+
+        class Geometry < NextbillionSDK::Internal::Type::BaseModel
+          attr_reader coordinates: ::Array[Float]?
+
+          def coordinates=: (::Array[Float]) -> ::Array[Float]
+
+          attr_reader type: String?
+
+          def type=: (String) -> String
+
+          def initialize: (?coordinates: ::Array[Float], ?type: String) -> void
+
+          def to_hash: -> { coordinates: ::Array[Float], type: String }
+        end
+
+        type properties =
+          {
+            color: String,
+            contour: Float,
+            fill: String,
+            fill_color: String,
+            fill_opacity: Float,
+            metric: String,
+            opacity: Float
+          }
+
+        class Properties < NextbillionSDK::Internal::Type::BaseModel
+          attr_reader color: String?
+
+          def color=: (String) -> String
+
+          attr_reader contour: Float?
+
+          def contour=: (Float) -> Float
+
+          attr_reader fill: String?
+
+          def fill=: (String) -> String
+
+          attr_reader fill_color: String?
+
+          def fill_color=: (String) -> String
+
+          attr_reader fill_opacity: Float?
+
+          def fill_opacity=: (Float) -> Float
+
+          attr_reader metric: String?
+
+          def metric=: (String) -> String
+
+          attr_reader opacity: Float?
+
+          def opacity=: (Float) -> Float
+
+          def initialize: (
+            ?color: String,
+            ?contour: Float,
+            ?fill: String,
+            ?fill_color: String,
+            ?fill_opacity: Float,
+            ?metric: String,
+            ?opacity: Float
+          ) -> void
+
+          def to_hash: -> {
+            color: String,
+            contour: Float,
+            fill: String,
+            fill_color: String,
+            fill_opacity: Float,
+            metric: String,
+            opacity: Float
+          }
+        end
+      end
+    end
+  end
+end

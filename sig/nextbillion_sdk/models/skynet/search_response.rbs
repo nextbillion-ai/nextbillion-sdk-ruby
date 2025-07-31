@@ -1,0 +1,185 @@
+module NextbillionSDK
+  module Models
+    module Skynet
+      type search_response =
+        {
+          data: NextbillionSDK::Skynet::SearchResponse::Data,
+          message: String,
+          status: String
+        }
+
+      class SearchResponse < NextbillionSDK::Internal::Type::BaseModel
+        attr_reader data: NextbillionSDK::Skynet::SearchResponse::Data?
+
+        def data=: (
+          NextbillionSDK::Skynet::SearchResponse::Data
+        ) -> NextbillionSDK::Skynet::SearchResponse::Data
+
+        attr_reader message: String?
+
+        def message=: (String) -> String
+
+        attr_reader status: String?
+
+        def status=: (String) -> String
+
+        def initialize: (
+          ?data: NextbillionSDK::Skynet::SearchResponse::Data,
+          ?message: String,
+          ?status: String
+        ) -> void
+
+        def to_hash: -> {
+          data: NextbillionSDK::Skynet::SearchResponse::Data,
+          message: String,
+          status: String
+        }
+
+        type data =
+          {
+            assets: ::Array[NextbillionSDK::Skynet::SearchResponse::Data::Asset],
+            page: NextbillionSDK::Skynet::Pagination
+          }
+
+        class Data < NextbillionSDK::Internal::Type::BaseModel
+          attr_reader assets: ::Array[NextbillionSDK::Skynet::SearchResponse::Data::Asset]?
+
+          def assets=: (
+            ::Array[NextbillionSDK::Skynet::SearchResponse::Data::Asset]
+          ) -> ::Array[NextbillionSDK::Skynet::SearchResponse::Data::Asset]
+
+          attr_reader page: NextbillionSDK::Skynet::Pagination?
+
+          def page=: (
+            NextbillionSDK::Skynet::Pagination
+          ) -> NextbillionSDK::Skynet::Pagination
+
+          def initialize: (
+            ?assets: ::Array[NextbillionSDK::Skynet::SearchResponse::Data::Asset],
+            ?page: NextbillionSDK::Skynet::Pagination
+          ) -> void
+
+          def to_hash: -> {
+            assets: ::Array[NextbillionSDK::Skynet::SearchResponse::Data::Asset],
+            page: NextbillionSDK::Skynet::Pagination
+          }
+
+          type asset =
+            {
+              id: String,
+              created_at: Integer,
+              description: String,
+              latest_location: NextbillionSDK::Skynet::Asset::TrackLocation,
+              meta_data: top,
+              name: String,
+              ranking_info: NextbillionSDK::Skynet::SearchResponse::Data::Asset::RankingInfo,
+              tags: ::Array[String],
+              tracked_at: Integer,
+              updated_at: Integer
+            }
+
+          class Asset < NextbillionSDK::Internal::Type::BaseModel
+            attr_reader id: String?
+
+            def id=: (String) -> String
+
+            attr_reader created_at: Integer?
+
+            def created_at=: (Integer) -> Integer
+
+            attr_reader description: String?
+
+            def description=: (String) -> String
+
+            attr_reader latest_location: NextbillionSDK::Skynet::Asset::TrackLocation?
+
+            def latest_location=: (
+              NextbillionSDK::Skynet::Asset::TrackLocation
+            ) -> NextbillionSDK::Skynet::Asset::TrackLocation
+
+            attr_reader meta_data: top?
+
+            def meta_data=: (top) -> top
+
+            attr_reader name: String?
+
+            def name=: (String) -> String
+
+            attr_reader ranking_info: NextbillionSDK::Skynet::SearchResponse::Data::Asset::RankingInfo?
+
+            def ranking_info=: (
+              NextbillionSDK::Skynet::SearchResponse::Data::Asset::RankingInfo
+            ) -> NextbillionSDK::Skynet::SearchResponse::Data::Asset::RankingInfo
+
+            attr_reader tags: ::Array[String]?
+
+            def tags=: (::Array[String]) -> ::Array[String]
+
+            attr_reader tracked_at: Integer?
+
+            def tracked_at=: (Integer) -> Integer
+
+            attr_reader updated_at: Integer?
+
+            def updated_at=: (Integer) -> Integer
+
+            def initialize: (
+              ?id: String,
+              ?created_at: Integer,
+              ?description: String,
+              ?latest_location: NextbillionSDK::Skynet::Asset::TrackLocation,
+              ?meta_data: top,
+              ?name: String,
+              ?ranking_info: NextbillionSDK::Skynet::SearchResponse::Data::Asset::RankingInfo,
+              ?tags: ::Array[String],
+              ?tracked_at: Integer,
+              ?updated_at: Integer
+            ) -> void
+
+            def to_hash: -> {
+              id: String,
+              created_at: Integer,
+              description: String,
+              latest_location: NextbillionSDK::Skynet::Asset::TrackLocation,
+              meta_data: top,
+              name: String,
+              ranking_info: NextbillionSDK::Skynet::SearchResponse::Data::Asset::RankingInfo,
+              tags: ::Array[String],
+              tracked_at: Integer,
+              updated_at: Integer
+            }
+
+            type ranking_info =
+              { distance: Float, duration: Float, index: Integer }
+
+            class RankingInfo < NextbillionSDK::Internal::Type::BaseModel
+              attr_reader distance: Float?
+
+              def distance=: (Float) -> Float
+
+              attr_reader duration: Float?
+
+              def duration=: (Float) -> Float
+
+              attr_reader index: Integer?
+
+              def index=: (Integer) -> Integer
+
+              def initialize: (
+                ?distance: Float,
+                ?duration: Float,
+                ?index: Integer
+              ) -> void
+
+              def to_hash: -> {
+                distance: Float,
+                duration: Float,
+                index: Integer
+              }
+            end
+          end
+        end
+      end
+    end
+  end
+end

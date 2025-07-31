@@ -1,0 +1,37 @@
+module NextbillionSDK
+  module Models
+    module Geofence
+      type batch_create_params =
+        {
+          key: String,
+          geofences: ::Array[NextbillionSDK::GeofenceEntityCreate]
+        }
+        & NextbillionSDK::Internal::Type::request_parameters
+
+      class BatchCreateParams < NextbillionSDK::Internal::Type::BaseModel
+        extend NextbillionSDK::Internal::Type::RequestParameters::Converter
+        include NextbillionSDK::Internal::Type::RequestParameters
+
+        attr_accessor key: String
+
+        attr_reader geofences: ::Array[NextbillionSDK::GeofenceEntityCreate]?
+
+        def geofences=: (
+          ::Array[NextbillionSDK::GeofenceEntityCreate]
+        ) -> ::Array[NextbillionSDK::GeofenceEntityCreate]
+
+        def initialize: (
+          key: String,
+          ?geofences: ::Array[NextbillionSDK::GeofenceEntityCreate],
+          ?request_options: NextbillionSDK::request_opts
+        ) -> void
+
+        def to_hash: -> {
+          key: String,
+          geofences: ::Array[NextbillionSDK::GeofenceEntityCreate],
+          request_options: NextbillionSDK::RequestOptions
+        }
+      end
+    end
+  end
+end

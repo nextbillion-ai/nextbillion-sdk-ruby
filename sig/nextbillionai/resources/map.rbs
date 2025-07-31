@@ -1,9 +1,0 @@
-module Nextbillionai
-  module Resources
-    class Map
-      def create_segment: (?request_options: Nextbillionai::request_opts) -> nil
-
-      def initialize: (client: Nextbillionai::Client) -> void
-    end
-  end
-end

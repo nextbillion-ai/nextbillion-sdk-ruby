@@ -1,0 +1,34 @@
+module NextbillionSDK
+  module Resources
+    class Optimization
+      attr_reader driver_assignment: NextbillionSDK::Resources::Optimization::DriverAssignment
+
+      attr_reader v2: NextbillionSDK::Resources::Optimization::V2
+
+      def compute: (
+        coordinates: String,
+        key: String,
+        ?approaches: NextbillionSDK::Models::OptimizationComputeParams::approaches,
+        ?destination: NextbillionSDK::Models::OptimizationComputeParams::destination,
+        ?geometries: NextbillionSDK::Models::OptimizationComputeParams::geometries,
+        ?mode: NextbillionSDK::Models::OptimizationComputeParams::mode,
+        ?roundtrip: bool,
+        ?source: NextbillionSDK::Models::OptimizationComputeParams::source,
+        ?with_geometry: bool,
+        ?request_options: NextbillionSDK::request_opts
+      ) -> NextbillionSDK::Models::OptimizationComputeResponse
+
+      def re_optimize: (
+        key: String,
+        existing_request_id: String,
+        ?job_changes: NextbillionSDK::OptimizationReOptimizeParams::JobChanges,
+        ?locations: ::Array[String],
+        ?shipment_changes: NextbillionSDK::OptimizationReOptimizeParams::ShipmentChanges,
+        ?vehicle_changes: NextbillionSDK::OptimizationReOptimizeParams::VehicleChanges,
+        ?request_options: NextbillionSDK::request_opts
+      ) -> NextbillionSDK::PostResponse
+
+      def initialize: (client: NextbillionSDK::Client) -> void
+    end
+  end
+end

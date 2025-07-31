@@ -1,0 +1,169 @@
+module NextbillionSDK
+  module Models
+    type restriction_list_params =
+      {
+        area: String,
+        key: String,
+        limit: Integer,
+        offset: Integer,
+        mode: NextbillionSDK::Models::RestrictionListParams::mode,
+        name: String,
+        restriction_type: NextbillionSDK::Models::RestrictionListParams::restriction_type,
+        source: NextbillionSDK::Models::RestrictionListParams::source,
+        state: NextbillionSDK::Models::RestrictionListParams::state,
+        status: NextbillionSDK::Models::RestrictionListParams::status,
+        transform: bool
+      }
+      & NextbillionSDK::Internal::Type::request_parameters
+
+    class RestrictionListParams < NextbillionSDK::Internal::Type::BaseModel
+      extend NextbillionSDK::Internal::Type::RequestParameters::Converter
+      include NextbillionSDK::Internal::Type::RequestParameters
+
+      attr_accessor area: String
+
+      attr_accessor key: String
+
+      attr_accessor limit: Integer
+
+      attr_accessor offset: Integer
+
+      attr_reader mode: NextbillionSDK::Models::RestrictionListParams::mode?
+
+      def mode=: (
+        NextbillionSDK::Models::RestrictionListParams::mode
+      ) -> NextbillionSDK::Models::RestrictionListParams::mode
+
+      attr_reader name: String?
+
+      def name=: (String) -> String
+
+      attr_reader restriction_type: NextbillionSDK::Models::RestrictionListParams::restriction_type?
+
+      def restriction_type=: (
+        NextbillionSDK::Models::RestrictionListParams::restriction_type
+      ) -> NextbillionSDK::Models::RestrictionListParams::restriction_type
+
+      attr_reader source: NextbillionSDK::Models::RestrictionListParams::source?
+
+      def source=: (
+        NextbillionSDK::Models::RestrictionListParams::source
+      ) -> NextbillionSDK::Models::RestrictionListParams::source
+
+      attr_reader state: NextbillionSDK::Models::RestrictionListParams::state?
+
+      def state=: (
+        NextbillionSDK::Models::RestrictionListParams::state
+      ) -> NextbillionSDK::Models::RestrictionListParams::state
+
+      attr_reader status: NextbillionSDK::Models::RestrictionListParams::status?
+
+      def status=: (
+        NextbillionSDK::Models::RestrictionListParams::status
+      ) -> NextbillionSDK::Models::RestrictionListParams::status
+
+      attr_reader transform: bool?
+
+      def transform=: (bool) -> bool
+
+      def initialize: (
+        area: String,
+        key: String,
+        limit: Integer,
+        offset: Integer,
+        ?mode: NextbillionSDK::Models::RestrictionListParams::mode,
+        ?name: String,
+        ?restriction_type: NextbillionSDK::Models::RestrictionListParams::restriction_type,
+        ?source: NextbillionSDK::Models::RestrictionListParams::source,
+        ?state: NextbillionSDK::Models::RestrictionListParams::state,
+        ?status: NextbillionSDK::Models::RestrictionListParams::status,
+        ?transform: bool,
+        ?request_options: NextbillionSDK::request_opts
+      ) -> void
+
+      def to_hash: -> {
+        area: String,
+        key: String,
+        limit: Integer,
+        offset: Integer,
+        mode: NextbillionSDK::Models::RestrictionListParams::mode,
+        name: String,
+        restriction_type: NextbillionSDK::Models::RestrictionListParams::restriction_type,
+        source: NextbillionSDK::Models::RestrictionListParams::source,
+        state: NextbillionSDK::Models::RestrictionListParams::state,
+        status: NextbillionSDK::Models::RestrictionListParams::status,
+        transform: bool,
+        request_options: NextbillionSDK::RequestOptions
+      }
+
+      type mode = :"`0w`" | :"`2w`" | :"`3w`" | :"`4w`" | :"`6w`"
+
+      module Mode
+        extend NextbillionSDK::Internal::Type::Enum
+
+        MODE_0W: :"`0w`"
+        MODE_2W: :"`2w`"
+        MODE_3W: :"`3w`"
+        MODE_4W: :"`4w`"
+        MODE_6W: :"`6w`"
+
+        def self?.values: -> ::Array[NextbillionSDK::Models::RestrictionListParams::mode]
+      end
+
+      type restriction_type =
+        :"`turn`"
+        | :"`parking`"
+        | :"`fixedspeed`"
+        | :"`maxspeed`"
+        | :"`closure`"
+        | :"`truck`"
+
+      module RestrictionType
+        extend NextbillionSDK::Internal::Type::Enum
+
+        TURN: :"`turn`"
+        PARKING: :"`parking`"
+        FIXEDSPEED: :"`fixedspeed`"
+        MAXSPEED: :"`maxspeed`"
+        CLOSURE: :"`closure`"
+        TRUCK: :"`truck`"
+
+        def self?.values: -> ::Array[NextbillionSDK::Models::RestrictionListParams::restriction_type]
+      end
+
+      type source = :rrt | :pbf
+
+      module Source
+        extend NextbillionSDK::Internal::Type::Enum
+
+        RRT: :rrt
+        PBF: :pbf
+
+        def self?.values: -> ::Array[NextbillionSDK::Models::RestrictionListParams::source]
+      end
+
+      type state = :"`enabled`" | :"`disabled`" | :"`deleted`"
+
+      module State
+        extend NextbillionSDK::Internal::Type::Enum
+
+        ENABLED: :"`enabled`"
+        DISABLED: :"`disabled`"
+        DELETED: :"`deleted`"
+
+        def self?.values: -> ::Array[NextbillionSDK::Models::RestrictionListParams::state]
+      end
+
+      type status = :"`active`" | :"`inactive`"
+
+      module Status
+        extend NextbillionSDK::Internal::Type::Enum
+
+        ACTIVE: :"`active`"
+        INACTIVE: :"`inactive`"
+
+        def self?.values: -> ::Array[NextbillionSDK::Models::RestrictionListParams::status]
+      end
+    end
+  end
+end

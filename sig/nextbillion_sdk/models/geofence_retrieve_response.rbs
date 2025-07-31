@@ -1,0 +1,45 @@
+module NextbillionSDK
+  module Models
+    type geofence_retrieve_response =
+      {
+        data: NextbillionSDK::Models::GeofenceRetrieveResponse::Data,
+        status: String
+      }
+
+    class GeofenceRetrieveResponse < NextbillionSDK::Internal::Type::BaseModel
+      attr_reader data: NextbillionSDK::Models::GeofenceRetrieveResponse::Data?
+
+      def data=: (
+        NextbillionSDK::Models::GeofenceRetrieveResponse::Data
+      ) -> NextbillionSDK::Models::GeofenceRetrieveResponse::Data
+
+      attr_reader status: String?
+
+      def status=: (String) -> String
+
+      def initialize: (
+        ?data: NextbillionSDK::Models::GeofenceRetrieveResponse::Data,
+        ?status: String
+      ) -> void
+
+      def to_hash: -> {
+        data: NextbillionSDK::Models::GeofenceRetrieveResponse::Data,
+        status: String
+      }
+
+      type data = { geofence: NextbillionSDK::GeofenceAPI }
+
+      class Data < NextbillionSDK::Internal::Type::BaseModel
+        attr_reader geofence: NextbillionSDK::GeofenceAPI?
+
+        def geofence=: (
+          NextbillionSDK::GeofenceAPI
+        ) -> NextbillionSDK::GeofenceAPI
+
+        def initialize: (?geofence: NextbillionSDK::GeofenceAPI) -> void
+
+        def to_hash: -> { geofence: NextbillionSDK::GeofenceAPI }
+      end
+    end
+  end
+end

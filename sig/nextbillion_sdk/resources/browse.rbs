@@ -1,0 +1,17 @@
+module NextbillionSDK
+  module Resources
+    class Browse
+      def search: (
+        key: String,
+        ?at: String,
+        ?categories: String,
+        ?in_: String,
+        ?lang: String,
+        ?limit: Integer,
+        ?request_options: NextbillionSDK::request_opts
+      ) -> NextbillionSDK::Models::BrowseSearchResponse
+
+      def initialize: (client: NextbillionSDK::Client) -> void
+    end
+  end
+end

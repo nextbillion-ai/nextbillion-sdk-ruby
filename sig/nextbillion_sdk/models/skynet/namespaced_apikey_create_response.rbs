@@ -1,0 +1,94 @@
+module NextbillionSDK
+  module Models
+    module Skynet
+      type namespaced_apikey_create_response =
+        {
+          error: String,
+          message: String,
+          result: NextbillionSDK::Models::Skynet::NamespacedApikeyCreateResponse::Result,
+          status: Integer
+        }
+
+      class NamespacedApikeyCreateResponse < NextbillionSDK::Internal::Type::BaseModel
+        attr_reader error: String?
+
+        def error=: (String) -> String
+
+        attr_reader message: String?
+
+        def message=: (String) -> String
+
+        attr_reader result: NextbillionSDK::Models::Skynet::NamespacedApikeyCreateResponse::Result?
+
+        def result=: (
+          NextbillionSDK::Models::Skynet::NamespacedApikeyCreateResponse::Result
+        ) -> NextbillionSDK::Models::Skynet::NamespacedApikeyCreateResponse::Result
+
+        attr_reader status: Integer?
+
+        def status=: (Integer) -> Integer
+
+        def initialize: (
+          ?error: String,
+          ?message: String,
+          ?result: NextbillionSDK::Models::Skynet::NamespacedApikeyCreateResponse::Result,
+          ?status: Integer
+        ) -> void
+
+        def to_hash: -> {
+          error: String,
+          message: String,
+          result: NextbillionSDK::Models::Skynet::NamespacedApikeyCreateResponse::Result,
+          status: Integer
+        }
+
+        type result =
+          {
+            apikey: String,
+            created_at: Integer,
+            expires_at: Integer,
+            namespace: String,
+            sub_id: String
+          }
+
+        class Result < NextbillionSDK::Internal::Type::BaseModel
+          attr_reader apikey: String?
+
+          def apikey=: (String) -> String
+
+          attr_reader created_at: Integer?
+
+          def created_at=: (Integer) -> Integer
+
+          attr_reader expires_at: Integer?
+
+          def expires_at=: (Integer) -> Integer
+
+          attr_reader namespace: String?
+
+          def namespace=: (String) -> String
+
+          attr_reader sub_id: String?
+
+          def sub_id=: (String) -> String
+
+          def initialize: (
+            ?apikey: String,
+            ?created_at: Integer,
+            ?expires_at: Integer,
+            ?namespace: String,
+            ?sub_id: String
+          ) -> void
+
+          def to_hash: -> {
+            apikey: String,
+            created_at: Integer,
+            expires_at: Integer,
+            namespace: String,
+            sub_id: String
+          }
+        end
+      end
+    end
+  end
+end

@@ -1,0 +1,54 @@
+module NextbillionSDK
+  module Models
+    module Skynet
+      type asset_retrieve_response =
+        {
+          data: NextbillionSDK::Models::Skynet::AssetRetrieveResponse::Data,
+          message: String,
+          status: String
+        }
+
+      class AssetRetrieveResponse < NextbillionSDK::Internal::Type::BaseModel
+        attr_reader data: NextbillionSDK::Models::Skynet::AssetRetrieveResponse::Data?
+
+        def data=: (
+          NextbillionSDK::Models::Skynet::AssetRetrieveResponse::Data
+        ) -> NextbillionSDK::Models::Skynet::AssetRetrieveResponse::Data
+
+        attr_reader message: String?
+
+        def message=: (String) -> String
+
+        attr_reader status: String?
+
+        def status=: (String) -> String
+
+        def initialize: (
+          ?data: NextbillionSDK::Models::Skynet::AssetRetrieveResponse::Data,
+          ?message: String,
+          ?status: String
+        ) -> void
+
+        def to_hash: -> {
+          data: NextbillionSDK::Models::Skynet::AssetRetrieveResponse::Data,
+          message: String,
+          status: String
+        }
+
+        type data = { asset: NextbillionSDK::Skynet::AssetDetails }
+
+        class Data < NextbillionSDK::Internal::Type::BaseModel
+          attr_reader asset: NextbillionSDK::Skynet::AssetDetails?
+
+          def asset=: (
+            NextbillionSDK::Skynet::AssetDetails
+          ) -> NextbillionSDK::Skynet::AssetDetails
+
+          def initialize: (?asset: NextbillionSDK::Skynet::AssetDetails) -> void
+
+          def to_hash: -> { asset: NextbillionSDK::Skynet::AssetDetails }
+        end
+      end
+    end
+  end
+end

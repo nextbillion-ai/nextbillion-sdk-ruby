@@ -1,8 +1,0 @@
-module Nextbillionai
-  module Models
-    type restriction_list_by_bbox_response =
-      ::Array[Nextbillionai::RichGroupResponse]
-
-    RestrictionListByBboxResponse: Nextbillionai::Internal::Type::Converter
-  end
-end

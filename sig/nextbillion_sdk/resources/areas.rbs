@@ -1,0 +1,12 @@
+module NextbillionSDK
+  module Resources
+    class Areas
+      def list: (
+        key: String,
+        ?request_options: NextbillionSDK::request_opts
+      ) -> NextbillionSDK::Models::area_list_response
+
+      def initialize: (client: NextbillionSDK::Client) -> void
+    end
+  end
+end

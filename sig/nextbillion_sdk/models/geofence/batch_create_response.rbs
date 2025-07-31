@@ -1,0 +1,45 @@
+module NextbillionSDK
+  module Models
+    module Geofence
+      type batch_create_response =
+        {
+          data: NextbillionSDK::Models::Geofence::BatchCreateResponse::Data,
+          status: String
+        }
+
+      class BatchCreateResponse < NextbillionSDK::Internal::Type::BaseModel
+        attr_reader data: NextbillionSDK::Models::Geofence::BatchCreateResponse::Data?
+
+        def data=: (
+          NextbillionSDK::Models::Geofence::BatchCreateResponse::Data
+        ) -> NextbillionSDK::Models::Geofence::BatchCreateResponse::Data
+
+        attr_reader status: String?
+
+        def status=: (String) -> String
+
+        def initialize: (
+          ?data: NextbillionSDK::Models::Geofence::BatchCreateResponse::Data,
+          ?status: String
+        ) -> void
+
+        def to_hash: -> {
+          data: NextbillionSDK::Models::Geofence::BatchCreateResponse::Data,
+          status: String
+        }
+
+        type data = { ids: ::Array[String] }
+
+        class Data < NextbillionSDK::Internal::Type::BaseModel
+          attr_reader ids: ::Array[String]?
+
+          def ids=: (::Array[String]) -> ::Array[String]
+
+          def initialize: (?ids: ::Array[String]) -> void
+
+          def to_hash: -> { ids: ::Array[String] }
+        end
+      end
+    end
+  end
+end

@@ -1,0 +1,18 @@
+module NextbillionSDK
+  module Resources
+    class Optimization
+      class DriverAssignment
+        def assign: (
+          key: String,
+          filter: NextbillionSDK::Optimization::DriverAssignmentAssignParams::Filter,
+          orders: ::Array[NextbillionSDK::Optimization::DriverAssignmentAssignParams::Order],
+          vehicles: ::Array[NextbillionSDK::Optimization::Vehicle],
+          ?options: NextbillionSDK::Optimization::DriverAssignmentAssignParams::Options,
+          ?request_options: NextbillionSDK::request_opts
+        ) -> NextbillionSDK::Models::Optimization::DriverAssignmentAssignResponse
+
+        def initialize: (client: NextbillionSDK::Client) -> void
+      end
+    end
+  end
+end

@@ -1,0 +1,21 @@
+module NextbillionSDK
+  module Resources
+    class RestrictionsItems
+      def list: (
+        max_lat: Float,
+        max_lon: Float,
+        min_lat: Float,
+        min_lon: Float,
+        ?group_id: Float,
+        ?mode: NextbillionSDK::Models::RestrictionsItemListParams::mode,
+        ?restriction_type: NextbillionSDK::Models::RestrictionsItemListParams::restriction_type,
+        ?source: String,
+        ?state: NextbillionSDK::Models::RestrictionsItemListParams::state,
+        ?status: NextbillionSDK::Models::RestrictionsItemListParams::status,
+        ?request_options: NextbillionSDK::request_opts
+      ) -> NextbillionSDK::Models::restrictions_item_list_response
+
+      def initialize: (client: NextbillionSDK::Client) -> void
+    end
+  end
+end

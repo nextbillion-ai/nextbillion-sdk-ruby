@@ -1,0 +1,77 @@
+module NextbillionSDK
+  module Models
+    module DistanceMatrix
+      type json_retrieve_response =
+        {
+          msg: String,
+          rows: ::Array[NextbillionSDK::Models::DistanceMatrix::JsonRetrieveResponse::Row],
+          status: String
+        }
+
+      class JsonRetrieveResponse < NextbillionSDK::Internal::Type::BaseModel
+        attr_reader msg: String?
+
+        def msg=: (String) -> String
+
+        attr_reader rows: ::Array[NextbillionSDK::Models::DistanceMatrix::JsonRetrieveResponse::Row]?
+
+        def rows=: (
+          ::Array[NextbillionSDK::Models::DistanceMatrix::JsonRetrieveResponse::Row]
+        ) -> ::Array[NextbillionSDK::Models::DistanceMatrix::JsonRetrieveResponse::Row]
+
+        attr_reader status: String?
+
+        def status=: (String) -> String
+
+        def initialize: (
+          ?msg: String,
+          ?rows: ::Array[NextbillionSDK::Models::DistanceMatrix::JsonRetrieveResponse::Row],
+          ?status: String
+        ) -> void
+
+        def to_hash: -> {
+          msg: String,
+          rows: ::Array[NextbillionSDK::Models::DistanceMatrix::JsonRetrieveResponse::Row],
+          status: String
+        }
+
+        type row =
+          {
+            elements: ::Array[NextbillionSDK::Models::DistanceMatrix::JsonRetrieveResponse::Row::Element]
+          }
+
+        class Row < NextbillionSDK::Internal::Type::BaseModel
+          attr_reader elements: ::Array[NextbillionSDK::Models::DistanceMatrix::JsonRetrieveResponse::Row::Element]?
+
+          def elements=: (
+            ::Array[NextbillionSDK::Models::DistanceMatrix::JsonRetrieveResponse::Row::Element]
+          ) -> ::Array[NextbillionSDK::Models::DistanceMatrix::JsonRetrieveResponse::Row::Element]
+
+          def initialize: (
+            ?elements: ::Array[NextbillionSDK::Models::DistanceMatrix::JsonRetrieveResponse::Row::Element]
+          ) -> void
+
+          def to_hash: -> {
+            elements: ::Array[NextbillionSDK::Models::DistanceMatrix::JsonRetrieveResponse::Row::Element]
+          }
+
+          type element = { distance: Float, duration: Float }
+
+          class Element < NextbillionSDK::Internal::Type::BaseModel
+            attr_reader distance: Float?
+
+            def distance=: (Float) -> Float
+
+            attr_reader duration: Float?
+
+            def duration=: (Float) -> Float
+
+            def initialize: (?distance: Float, ?duration: Float) -> void
+
+            def to_hash: -> { distance: Float, duration: Float }
+          end
+        end
+      end
+    end
+  end
+end
