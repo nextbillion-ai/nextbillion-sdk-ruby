@@ -1,0 +1,30 @@
+module NextbillionSDK
+  module Models
+    module Geofence
+      type batch_list_params =
+        { ids: String, key: String }
+        & NextbillionSDK::Internal::Type::request_parameters
+
+      class BatchListParams < NextbillionSDK::Internal::Type::BaseModel
+        extend NextbillionSDK::Internal::Type::RequestParameters::Converter
+        include NextbillionSDK::Internal::Type::RequestParameters
+
+        attr_accessor ids: String
+
+        attr_accessor key: String
+
+        def initialize: (
+          ids: String,
+          key: String,
+          ?request_options: NextbillionSDK::request_opts
+        ) -> void
+
+        def to_hash: -> {
+          ids: String,
+          key: String,
+          request_options: NextbillionSDK::RequestOptions
+        }
+      end
+    end
+  end
+end

@@ -1,0 +1,42 @@
+module NextbillionSDK
+  module Resources
+    class Skynet
+      class Search
+        attr_reader polygon: NextbillionSDK::Resources::Skynet::Search::Polygon
+
+        def around: (
+          center: String,
+          key: String,
+          radius: Float,
+          ?filter: String,
+          ?include_all_of_attributes: String,
+          ?include_any_of_attributes: String,
+          ?max_search_limit: bool,
+          ?pn: Integer,
+          ?ps: Integer,
+          ?sort_by: NextbillionSDK::Models::Skynet::SearchAroundParams::sort_by,
+          ?sort_destination: String,
+          ?sort_driving_mode: NextbillionSDK::Models::Skynet::SearchAroundParams::sort_driving_mode,
+          ?request_options: NextbillionSDK::request_opts
+        ) -> NextbillionSDK::Skynet::SearchResponse
+
+        def bound: (
+          bound: String,
+          key: String,
+          ?filter: String,
+          ?include_all_of_attributes: String,
+          ?include_any_of_attributes: String,
+          ?max_search_limit: bool,
+          ?pn: Integer,
+          ?ps: Integer,
+          ?sort_by: NextbillionSDK::Models::Skynet::SearchBoundParams::sort_by,
+          ?sort_destination: String,
+          ?sort_driving_mode: NextbillionSDK::Models::Skynet::SearchBoundParams::sort_driving_mode,
+          ?request_options: NextbillionSDK::request_opts
+        ) -> NextbillionSDK::Skynet::SearchResponse
+
+        def initialize: (client: NextbillionSDK::Client) -> void
+      end
+    end
+  end
+end

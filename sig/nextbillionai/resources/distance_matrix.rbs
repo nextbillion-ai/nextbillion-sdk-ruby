@@ -1,9 +1,0 @@
-module Nextbillionai
-  module Resources
-    class DistanceMatrix
-      attr_reader json: Nextbillionai::Resources::DistanceMatrix::Json
-
-      def initialize: (client: Nextbillionai::Client) -> void
-    end
-  end
-end

@@ -1,0 +1,22 @@
+module NextbillionSDK
+  module Resources
+    class SnapToRoads
+      def snap: (
+        key: String,
+        path: String,
+        ?approaches: NextbillionSDK::Models::SnapToRoadSnapParams::approaches,
+        ?avoid: NextbillionSDK::Models::SnapToRoadSnapParams::avoid,
+        ?geometry: NextbillionSDK::Models::SnapToRoadSnapParams::geometry,
+        ?mode: NextbillionSDK::Models::SnapToRoadSnapParams::mode,
+        ?option: NextbillionSDK::Models::SnapToRoadSnapParams::option,
+        ?radiuses: String,
+        ?road_info: NextbillionSDK::Models::SnapToRoadSnapParams::road_info,
+        ?timestamps: String,
+        ?tolerate_outlier: bool,
+        ?request_options: NextbillionSDK::request_opts
+      ) -> NextbillionSDK::Models::SnapToRoadSnapResponse
+
+      def initialize: (client: NextbillionSDK::Client) -> void
+    end
+  end
+end

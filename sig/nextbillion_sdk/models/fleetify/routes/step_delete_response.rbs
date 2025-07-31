@@ -1,0 +1,23 @@
+module NextbillionSDK
+  module Models
+    module Fleetify
+      module Routes
+        type step_delete_response = { message: String, status: Integer }
+
+        class StepDeleteResponse < NextbillionSDK::Internal::Type::BaseModel
+          attr_reader message: String?
+
+          def message=: (String) -> String
+
+          attr_reader status: Integer?
+
+          def status=: (Integer) -> Integer
+
+          def initialize: (?message: String, ?status: Integer) -> void
+
+          def to_hash: -> { message: String, status: Integer }
+        end
+      end
+    end
+  end
+end

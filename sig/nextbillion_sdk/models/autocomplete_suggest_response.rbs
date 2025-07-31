@@ -1,0 +1,236 @@
+module NextbillionSDK
+  module Models
+    type autocomplete_suggest_response =
+      {
+        items: ::Array[NextbillionSDK::Models::AutocompleteSuggestResponse::Item]
+      }
+
+    class AutocompleteSuggestResponse < NextbillionSDK::Internal::Type::BaseModel
+      attr_reader items: ::Array[NextbillionSDK::Models::AutocompleteSuggestResponse::Item]?
+
+      def items=: (
+        ::Array[NextbillionSDK::Models::AutocompleteSuggestResponse::Item]
+      ) -> ::Array[NextbillionSDK::Models::AutocompleteSuggestResponse::Item]
+
+      def initialize: (
+        ?items: ::Array[NextbillionSDK::Models::AutocompleteSuggestResponse::Item]
+      ) -> void
+
+      def to_hash: -> {
+        items: ::Array[NextbillionSDK::Models::AutocompleteSuggestResponse::Item]
+      }
+
+      type item =
+        {
+          id: String,
+          access: NextbillionSDK::Access,
+          address: NextbillionSDK::Address,
+          categories: ::Array[NextbillionSDK::Categories],
+          contacts: ::Array[NextbillionSDK::Contacts],
+          distance: Integer,
+          map_view: NextbillionSDK::MapView,
+          opening_hours: NextbillionSDK::Models::AutocompleteSuggestResponse::Item::OpeningHours,
+          position: NextbillionSDK::Position,
+          scoring: NextbillionSDK::Models::AutocompleteSuggestResponse::Item::Scoring,
+          title: String
+        }
+
+      class Item < NextbillionSDK::Internal::Type::BaseModel
+        attr_reader id: String?
+
+        def id=: (String) -> String
+
+        attr_reader access: NextbillionSDK::Access?
+
+        def access=: (NextbillionSDK::Access) -> NextbillionSDK::Access
+
+        attr_reader address: NextbillionSDK::Address?
+
+        def address=: (NextbillionSDK::Address) -> NextbillionSDK::Address
+
+        attr_reader categories: ::Array[NextbillionSDK::Categories]?
+
+        def categories=: (
+          ::Array[NextbillionSDK::Categories]
+        ) -> ::Array[NextbillionSDK::Categories]
+
+        attr_reader contacts: ::Array[NextbillionSDK::Contacts]?
+
+        def contacts=: (
+          ::Array[NextbillionSDK::Contacts]
+        ) -> ::Array[NextbillionSDK::Contacts]
+
+        attr_reader distance: Integer?
+
+        def distance=: (Integer) -> Integer
+
+        attr_reader map_view: NextbillionSDK::MapView?
+
+        def map_view=: (NextbillionSDK::MapView) -> NextbillionSDK::MapView
+
+        attr_reader opening_hours: NextbillionSDK::Models::AutocompleteSuggestResponse::Item::OpeningHours?
+
+        def opening_hours=: (
+          NextbillionSDK::Models::AutocompleteSuggestResponse::Item::OpeningHours
+        ) -> NextbillionSDK::Models::AutocompleteSuggestResponse::Item::OpeningHours
+
+        attr_reader position: NextbillionSDK::Position?
+
+        def position=: (NextbillionSDK::Position) -> NextbillionSDK::Position
+
+        attr_reader scoring: NextbillionSDK::Models::AutocompleteSuggestResponse::Item::Scoring?
+
+        def scoring=: (
+          NextbillionSDK::Models::AutocompleteSuggestResponse::Item::Scoring
+        ) -> NextbillionSDK::Models::AutocompleteSuggestResponse::Item::Scoring
+
+        attr_reader title: String?
+
+        def title=: (String) -> String
+
+        def initialize: (
+          ?id: String,
+          ?access: NextbillionSDK::Access,
+          ?address: NextbillionSDK::Address,
+          ?categories: ::Array[NextbillionSDK::Categories],
+          ?contacts: ::Array[NextbillionSDK::Contacts],
+          ?distance: Integer,
+          ?map_view: NextbillionSDK::MapView,
+          ?opening_hours: NextbillionSDK::Models::AutocompleteSuggestResponse::Item::OpeningHours,
+          ?position: NextbillionSDK::Position,
+          ?scoring: NextbillionSDK::Models::AutocompleteSuggestResponse::Item::Scoring,
+          ?title: String
+        ) -> void
+
+        def to_hash: -> {
+          id: String,
+          access: NextbillionSDK::Access,
+          address: NextbillionSDK::Address,
+          categories: ::Array[NextbillionSDK::Categories],
+          contacts: ::Array[NextbillionSDK::Contacts],
+          distance: Integer,
+          map_view: NextbillionSDK::MapView,
+          opening_hours: NextbillionSDK::Models::AutocompleteSuggestResponse::Item::OpeningHours,
+          position: NextbillionSDK::Position,
+          scoring: NextbillionSDK::Models::AutocompleteSuggestResponse::Item::Scoring,
+          title: String
+        }
+
+        type opening_hours =
+          {
+            time_ranges: ::Array[NextbillionSDK::Models::AutocompleteSuggestResponse::Item::OpeningHours::TimeRange]
+          }
+
+        class OpeningHours < NextbillionSDK::Internal::Type::BaseModel
+          attr_reader time_ranges: ::Array[NextbillionSDK::Models::AutocompleteSuggestResponse::Item::OpeningHours::TimeRange]?
+
+          def time_ranges=: (
+            ::Array[NextbillionSDK::Models::AutocompleteSuggestResponse::Item::OpeningHours::TimeRange]
+          ) -> ::Array[NextbillionSDK::Models::AutocompleteSuggestResponse::Item::OpeningHours::TimeRange]
+
+          def initialize: (
+            ?time_ranges: ::Array[NextbillionSDK::Models::AutocompleteSuggestResponse::Item::OpeningHours::TimeRange]
+          ) -> void
+
+          def to_hash: -> {
+            time_ranges: ::Array[NextbillionSDK::Models::AutocompleteSuggestResponse::Item::OpeningHours::TimeRange]
+          }
+
+          type time_range =
+            {
+              end_time: NextbillionSDK::Models::AutocompleteSuggestResponse::Item::OpeningHours::TimeRange::EndTime,
+              start_time: NextbillionSDK::Models::AutocompleteSuggestResponse::Item::OpeningHours::TimeRange::StartTime
+            }
+
+          class TimeRange < NextbillionSDK::Internal::Type::BaseModel
+            attr_reader end_time: NextbillionSDK::Models::AutocompleteSuggestResponse::Item::OpeningHours::TimeRange::EndTime?
+
+            def end_time=: (
+              NextbillionSDK::Models::AutocompleteSuggestResponse::Item::OpeningHours::TimeRange::EndTime
+            ) -> NextbillionSDK::Models::AutocompleteSuggestResponse::Item::OpeningHours::TimeRange::EndTime
+
+            attr_reader start_time: NextbillionSDK::Models::AutocompleteSuggestResponse::Item::OpeningHours::TimeRange::StartTime?
+
+            def start_time=: (
+              NextbillionSDK::Models::AutocompleteSuggestResponse::Item::OpeningHours::TimeRange::StartTime
+            ) -> NextbillionSDK::Models::AutocompleteSuggestResponse::Item::OpeningHours::TimeRange::StartTime
+
+            def initialize: (
+              ?end_time: NextbillionSDK::Models::AutocompleteSuggestResponse::Item::OpeningHours::TimeRange::EndTime,
+              ?start_time: NextbillionSDK::Models::AutocompleteSuggestResponse::Item::OpeningHours::TimeRange::StartTime
+            ) -> void
+
+            def to_hash: -> {
+              end_time: NextbillionSDK::Models::AutocompleteSuggestResponse::Item::OpeningHours::TimeRange::EndTime,
+              start_time: NextbillionSDK::Models::AutocompleteSuggestResponse::Item::OpeningHours::TimeRange::StartTime
+            }
+
+            type end_time = { date: String, hour: Integer, minute: Integer }
+
+            class EndTime < NextbillionSDK::Internal::Type::BaseModel
+              attr_reader date: String?
+
+              def date=: (String) -> String
+
+              attr_reader hour: Integer?
+
+              def hour=: (Integer) -> Integer
+
+              attr_reader minute: Integer?
+
+              def minute=: (Integer) -> Integer
+
+              def initialize: (
+                ?date: String,
+                ?hour: Integer,
+                ?minute: Integer
+              ) -> void
+
+              def to_hash: -> { date: String, hour: Integer, minute: Integer }
+            end
+
+            type start_time = { date: String, hour: Integer, minute: Integer }
+
+            class StartTime < NextbillionSDK::Internal::Type::BaseModel
+              attr_reader date: String?
+
+              def date=: (String) -> String
+
+              attr_reader hour: Integer?
+
+              def hour=: (Integer) -> Integer
+
+              attr_reader minute: Integer?
+
+              def minute=: (Integer) -> Integer
+
+              def initialize: (
+                ?date: String,
+                ?hour: Integer,
+                ?minute: Integer
+              ) -> void
+
+              def to_hash: -> { date: String, hour: Integer, minute: Integer }
+            end
+          end
+        end
+
+        type scoring = { field_score: top, query_score: Float }
+
+        class Scoring < NextbillionSDK::Internal::Type::BaseModel
+          attr_reader field_score: top?
+
+          def field_score=: (top) -> top
+
+          attr_reader query_score: Float?
+
+          def query_score=: (Float) -> Float
+
+          def initialize: (?field_score: top, ?query_score: Float) -> void
+
+          def to_hash: -> { field_score: top, query_score: Float }
+        end
+      end
+    end
+  end
+end

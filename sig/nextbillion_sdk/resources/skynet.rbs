@@ -1,0 +1,26 @@
+module NextbillionSDK
+  module Resources
+    class Skynet
+      attr_reader asset: NextbillionSDK::Resources::Skynet::Asset
+
+      attr_reader monitor: NextbillionSDK::Resources::Skynet::Monitor
+
+      attr_reader trip: NextbillionSDK::Resources::Skynet::Trip
+
+      attr_reader namespaced_apikeys: NextbillionSDK::Resources::Skynet::NamespacedApikeys
+
+      attr_reader config: NextbillionSDK::Resources::Skynet::Config
+
+      attr_reader search: NextbillionSDK::Resources::Skynet::Search
+
+      def subscribe: (
+        action: NextbillionSDK::Models::SkynetSubscribeParams::action,
+        ?id: String,
+        ?params: NextbillionSDK::SkynetSubscribeParams::Params,
+        ?request_options: NextbillionSDK::request_opts
+      ) -> NextbillionSDK::Models::SkynetSubscribeResponse
+
+      def initialize: (client: NextbillionSDK::Client) -> void
+    end
+  end
+end

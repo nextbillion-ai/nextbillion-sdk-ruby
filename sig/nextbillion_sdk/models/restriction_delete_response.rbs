@@ -1,0 +1,19 @@
+module NextbillionSDK
+  module Models
+    type restriction_delete_response = { id: Float, state: String }
+
+    class RestrictionDeleteResponse < NextbillionSDK::Internal::Type::BaseModel
+      attr_reader id: Float?
+
+      def id=: (Float) -> Float
+
+      attr_reader state: String?
+
+      def state=: (String) -> String
+
+      def initialize: (?id: Float, ?state: String) -> void
+
+      def to_hash: -> { id: Float, state: String }
+    end
+  end
+end

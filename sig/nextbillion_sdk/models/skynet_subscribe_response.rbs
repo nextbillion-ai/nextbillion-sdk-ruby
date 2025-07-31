@@ -1,0 +1,38 @@
+module NextbillionSDK
+  module Models
+    type skynet_subscribe_response =
+      { id: String, error: String, status: String, timestamp: Integer }
+
+    class SkynetSubscribeResponse < NextbillionSDK::Internal::Type::BaseModel
+      attr_reader id: String?
+
+      def id=: (String) -> String
+
+      attr_reader error: String?
+
+      def error=: (String) -> String
+
+      attr_reader status: String?
+
+      def status=: (String) -> String
+
+      attr_reader timestamp: Integer?
+
+      def timestamp=: (Integer) -> Integer
+
+      def initialize: (
+        ?id: String,
+        ?error: String,
+        ?status: String,
+        ?timestamp: Integer
+      ) -> void
+
+      def to_hash: -> {
+        id: String,
+        error: String,
+        status: String,
+        timestamp: Integer
+      }
+    end
+  end
+end

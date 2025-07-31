@@ -1,0 +1,47 @@
+module NextbillionSDK
+  module Models
+    type route_report_create_params =
+      {
+        key: String,
+        original_shape: String,
+        original_shape_type: NextbillionSDK::Models::RouteReportCreateParams::original_shape_type
+      }
+      & NextbillionSDK::Internal::Type::request_parameters
+
+    class RouteReportCreateParams < NextbillionSDK::Internal::Type::BaseModel
+      extend NextbillionSDK::Internal::Type::RequestParameters::Converter
+      include NextbillionSDK::Internal::Type::RequestParameters
+
+      attr_accessor key: String
+
+      attr_accessor original_shape: String
+
+      attr_accessor original_shape_type: NextbillionSDK::Models::RouteReportCreateParams::original_shape_type
+
+      def initialize: (
+        key: String,
+        original_shape: String,
+        original_shape_type: NextbillionSDK::Models::RouteReportCreateParams::original_shape_type,
+        ?request_options: NextbillionSDK::request_opts
+      ) -> void
+
+      def to_hash: -> {
+        key: String,
+        original_shape: String,
+        original_shape_type: NextbillionSDK::Models::RouteReportCreateParams::original_shape_type,
+        request_options: NextbillionSDK::RequestOptions
+      }
+
+      type original_shape_type = :"`polyline`" | :"`polyline6`"
+
+      module OriginalShapeType
+        extend NextbillionSDK::Internal::Type::Enum
+
+        POLYLINE: :"`polyline`"
+        POLYLINE6: :"`polyline6`"
+
+        def self?.values: -> ::Array[NextbillionSDK::Models::RouteReportCreateParams::original_shape_type]
+      end
+    end
+  end
+end

@@ -1,0 +1,25 @@
+module NextbillionSDK
+  module Models
+    module Geofence
+      type polygon_geojson =
+        { coordinates: ::Array[::Array[Float]], type: String }
+
+      class PolygonGeojson < NextbillionSDK::Internal::Type::BaseModel
+        attr_reader coordinates: ::Array[::Array[Float]]?
+
+        def coordinates=: (::Array[::Array[Float]]) -> ::Array[::Array[Float]]
+
+        attr_reader type: String?
+
+        def type=: (String) -> String
+
+        def initialize: (
+          ?coordinates: ::Array[::Array[Float]],
+          ?type: String
+        ) -> void
+
+        def to_hash: -> { coordinates: ::Array[::Array[Float]], type: String }
+      end
+    end
+  end
+end

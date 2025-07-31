@@ -1,0 +1,17 @@
+module NextbillionSDK
+  module Resources
+    class Autocomplete
+      def suggest: (
+        key: String,
+        q: String,
+        ?at: String,
+        ?in_: String,
+        ?lang: String,
+        ?limit: Integer,
+        ?request_options: NextbillionSDK::request_opts
+      ) -> NextbillionSDK::Models::AutocompleteSuggestResponse
+
+      def initialize: (client: NextbillionSDK::Client) -> void
+    end
+  end
+end

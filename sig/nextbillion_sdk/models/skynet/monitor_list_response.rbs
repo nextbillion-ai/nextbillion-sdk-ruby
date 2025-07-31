@@ -1,0 +1,70 @@
+module NextbillionSDK
+  module Models
+    module Skynet
+      type monitor_list_response =
+        {
+          data: NextbillionSDK::Models::Skynet::MonitorListResponse::Data,
+          message: String,
+          status: String
+        }
+
+      class MonitorListResponse < NextbillionSDK::Internal::Type::BaseModel
+        attr_reader data: NextbillionSDK::Models::Skynet::MonitorListResponse::Data?
+
+        def data=: (
+          NextbillionSDK::Models::Skynet::MonitorListResponse::Data
+        ) -> NextbillionSDK::Models::Skynet::MonitorListResponse::Data
+
+        attr_reader message: String?
+
+        def message=: (String) -> String
+
+        attr_reader status: String?
+
+        def status=: (String) -> String
+
+        def initialize: (
+          ?data: NextbillionSDK::Models::Skynet::MonitorListResponse::Data,
+          ?message: String,
+          ?status: String
+        ) -> void
+
+        def to_hash: -> {
+          data: NextbillionSDK::Models::Skynet::MonitorListResponse::Data,
+          message: String,
+          status: String
+        }
+
+        type data =
+          {
+            list: ::Array[NextbillionSDK::Skynet::SkynetMonitor],
+            page: NextbillionSDK::Skynet::Pagination
+          }
+
+        class Data < NextbillionSDK::Internal::Type::BaseModel
+          attr_reader list: ::Array[NextbillionSDK::Skynet::SkynetMonitor]?
+
+          def list=: (
+            ::Array[NextbillionSDK::Skynet::SkynetMonitor]
+          ) -> ::Array[NextbillionSDK::Skynet::SkynetMonitor]
+
+          attr_reader page: NextbillionSDK::Skynet::Pagination?
+
+          def page=: (
+            NextbillionSDK::Skynet::Pagination
+          ) -> NextbillionSDK::Skynet::Pagination
+
+          def initialize: (
+            ?list: ::Array[NextbillionSDK::Skynet::SkynetMonitor],
+            ?page: NextbillionSDK::Skynet::Pagination
+          ) -> void
+
+          def to_hash: -> {
+            list: ::Array[NextbillionSDK::Skynet::SkynetMonitor],
+            page: NextbillionSDK::Skynet::Pagination
+          }
+        end
+      end
+    end
+  end
+end

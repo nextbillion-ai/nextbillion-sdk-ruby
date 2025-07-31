@@ -1,0 +1,34 @@
+module NextbillionSDK
+  module Resources
+    class Mdm
+      def create_distance_matrix: (
+        key: String,
+        option: NextbillionSDK::Models::MdmCreateDistanceMatrixParams::option,
+        origins: String,
+        ?spliter: NextbillionSDK::Models::MdmCreateDistanceMatrixParams::spliter,
+        ?area: NextbillionSDK::Models::MdmCreateDistanceMatrixParams::area,
+        ?avoid: NextbillionSDK::Models::MdmCreateDistanceMatrixParams::avoid,
+        ?cross_border: bool,
+        ?departure_time: Integer,
+        ?destinations: String,
+        ?destinations_approach: NextbillionSDK::Models::MdmCreateDistanceMatrixParams::destinations_approach,
+        ?hazmat_type: NextbillionSDK::Models::MdmCreateDistanceMatrixParams::hazmat_type,
+        ?mode: NextbillionSDK::Models::MdmCreateDistanceMatrixParams::mode,
+        ?origins_approach: NextbillionSDK::Models::MdmCreateDistanceMatrixParams::origins_approach,
+        ?route_type: NextbillionSDK::Models::MdmCreateDistanceMatrixParams::route_type,
+        ?truck_axle_load: Float,
+        ?truck_size: String,
+        ?truck_weight: Integer,
+        ?request_options: NextbillionSDK::request_opts
+      ) -> NextbillionSDK::Models::MdmCreateDistanceMatrixResponse
+
+      def get_distance_matrix_status: (
+        id: String,
+        key: String,
+        ?request_options: NextbillionSDK::request_opts
+      ) -> NextbillionSDK::Models::MdmGetDistanceMatrixStatusResponse
+
+      def initialize: (client: NextbillionSDK::Client) -> void
+    end
+  end
+end

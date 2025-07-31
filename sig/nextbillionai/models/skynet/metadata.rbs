@@ -1,7 +1,0 @@
-module Nextbillionai
-  module Models
-    module Skynet
-      Metadata: Nextbillionai::Internal::Type::Converter
-    end
-  end
-end
