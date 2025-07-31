@@ -1,0 +1,146 @@
+module Nextbillionai
+  module Models
+    type optimization_compute_params =
+      {
+        coordinates: String,
+        key: String,
+        approaches: Nextbillionai::Models::OptimizationComputeParams::approaches,
+        destination: Nextbillionai::Models::OptimizationComputeParams::destination,
+        geometries: Nextbillionai::Models::OptimizationComputeParams::geometries,
+        mode: Nextbillionai::Models::OptimizationComputeParams::mode,
+        roundtrip: bool,
+        source: Nextbillionai::Models::OptimizationComputeParams::source,
+        with_geometry: bool
+      }
+      & Nextbillionai::Internal::Type::request_parameters
+
+    class OptimizationComputeParams < Nextbillionai::Internal::Type::BaseModel
+      extend Nextbillionai::Internal::Type::RequestParameters::Converter
+      include Nextbillionai::Internal::Type::RequestParameters
+
+      attr_accessor coordinates: String
+
+      attr_accessor key: String
+
+      attr_reader approaches: Nextbillionai::Models::OptimizationComputeParams::approaches?
+
+      def approaches=: (
+        Nextbillionai::Models::OptimizationComputeParams::approaches
+      ) -> Nextbillionai::Models::OptimizationComputeParams::approaches
+
+      attr_reader destination: Nextbillionai::Models::OptimizationComputeParams::destination?
+
+      def destination=: (
+        Nextbillionai::Models::OptimizationComputeParams::destination
+      ) -> Nextbillionai::Models::OptimizationComputeParams::destination
+
+      attr_reader geometries: Nextbillionai::Models::OptimizationComputeParams::geometries?
+
+      def geometries=: (
+        Nextbillionai::Models::OptimizationComputeParams::geometries
+      ) -> Nextbillionai::Models::OptimizationComputeParams::geometries
+
+      attr_reader mode: Nextbillionai::Models::OptimizationComputeParams::mode?
+
+      def mode=: (
+        Nextbillionai::Models::OptimizationComputeParams::mode
+      ) -> Nextbillionai::Models::OptimizationComputeParams::mode
+
+      attr_reader roundtrip: bool?
+
+      def roundtrip=: (bool) -> bool
+
+      attr_reader source: Nextbillionai::Models::OptimizationComputeParams::source?
+
+      def source=: (
+        Nextbillionai::Models::OptimizationComputeParams::source
+      ) -> Nextbillionai::Models::OptimizationComputeParams::source
+
+      attr_reader with_geometry: bool?
+
+      def with_geometry=: (bool) -> bool
+
+      def initialize: (
+        coordinates: String,
+        key: String,
+        ?approaches: Nextbillionai::Models::OptimizationComputeParams::approaches,
+        ?destination: Nextbillionai::Models::OptimizationComputeParams::destination,
+        ?geometries: Nextbillionai::Models::OptimizationComputeParams::geometries,
+        ?mode: Nextbillionai::Models::OptimizationComputeParams::mode,
+        ?roundtrip: bool,
+        ?source: Nextbillionai::Models::OptimizationComputeParams::source,
+        ?with_geometry: bool,
+        ?request_options: Nextbillionai::request_opts
+      ) -> void
+
+      def to_hash: -> {
+        coordinates: String,
+        key: String,
+        approaches: Nextbillionai::Models::OptimizationComputeParams::approaches,
+        destination: Nextbillionai::Models::OptimizationComputeParams::destination,
+        geometries: Nextbillionai::Models::OptimizationComputeParams::geometries,
+        mode: Nextbillionai::Models::OptimizationComputeParams::mode,
+        roundtrip: bool,
+        source: Nextbillionai::Models::OptimizationComputeParams::source,
+        with_geometry: bool,
+        request_options: Nextbillionai::RequestOptions
+      }
+
+      type approaches = :unrestricted | :curb
+
+      module Approaches
+        extend Nextbillionai::Internal::Type::Enum
+
+        UNRESTRICTED: :unrestricted
+        CURB: :curb
+
+        def self?.values: -> ::Array[Nextbillionai::Models::OptimizationComputeParams::approaches]
+      end
+
+      type destination = :any | :last
+
+      module Destination
+        extend Nextbillionai::Internal::Type::Enum
+
+        ANY: :any
+        LAST: :last
+
+        def self?.values: -> ::Array[Nextbillionai::Models::OptimizationComputeParams::destination]
+      end
+
+      type geometries = :polyline | :polyline6 | :geojson
+
+      module Geometries
+        extend Nextbillionai::Internal::Type::Enum
+
+        POLYLINE: :polyline
+        POLYLINE6: :polyline6
+        GEOJSON: :geojson
+
+        def self?.values: -> ::Array[Nextbillionai::Models::OptimizationComputeParams::geometries]
+      end
+
+      type mode = :car | :truck
+
+      module Mode
+        extend Nextbillionai::Internal::Type::Enum
+
+        CAR: :car
+        TRUCK: :truck
+
+        def self?.values: -> ::Array[Nextbillionai::Models::OptimizationComputeParams::mode]
+      end
+
+      type source = :any | :first
+
+      module Source
+        extend Nextbillionai::Internal::Type::Enum
+
+        ANY: :any
+        FIRST: :first
+
+        def self?.values: -> ::Array[Nextbillionai::Models::OptimizationComputeParams::source]
+      end
+    end
+  end
+end

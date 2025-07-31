@@ -1,0 +1,26 @@
+module Nextbillionai
+  module Resources
+    class Navigation
+      def retrieve_route: (
+        key: String,
+        ?altcount: Integer,
+        ?alternatives: bool,
+        ?approaches: Nextbillionai::Models::NavigationRetrieveRouteParams::approaches,
+        ?avoid: Nextbillionai::Models::NavigationRetrieveRouteParams::avoid,
+        ?bearings: String,
+        ?destination: String,
+        ?geometry: Nextbillionai::Models::NavigationRetrieveRouteParams::geometry,
+        ?lang: String,
+        ?mode: Nextbillionai::Models::NavigationRetrieveRouteParams::mode,
+        ?origin: String,
+        ?original_shape: String,
+        ?original_shape_type: Nextbillionai::Models::NavigationRetrieveRouteParams::original_shape_type,
+        ?overview: Nextbillionai::Models::NavigationRetrieveRouteParams::overview,
+        ?waypoints: String,
+        ?request_options: Nextbillionai::request_opts
+      ) -> Nextbillionai::Models::NavigationRetrieveRouteResponse
+
+      def initialize: (client: Nextbillionai::Client) -> void
+    end
+  end
+end

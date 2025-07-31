@@ -1,0 +1,185 @@
+module Nextbillionai
+  module Models
+    module Skynet
+      type search_response =
+        {
+          data: Nextbillionai::Skynet::SearchResponse::Data,
+          message: String,
+          status: String
+        }
+
+      class SearchResponse < Nextbillionai::Internal::Type::BaseModel
+        attr_reader data: Nextbillionai::Skynet::SearchResponse::Data?
+
+        def data=: (
+          Nextbillionai::Skynet::SearchResponse::Data
+        ) -> Nextbillionai::Skynet::SearchResponse::Data
+
+        attr_reader message: String?
+
+        def message=: (String) -> String
+
+        attr_reader status: String?
+
+        def status=: (String) -> String
+
+        def initialize: (
+          ?data: Nextbillionai::Skynet::SearchResponse::Data,
+          ?message: String,
+          ?status: String
+        ) -> void
+
+        def to_hash: -> {
+          data: Nextbillionai::Skynet::SearchResponse::Data,
+          message: String,
+          status: String
+        }
+
+        type data =
+          {
+            assets: ::Array[Nextbillionai::Skynet::SearchResponse::Data::Asset],
+            page: Nextbillionai::Skynet::Pagination
+          }
+
+        class Data < Nextbillionai::Internal::Type::BaseModel
+          attr_reader assets: ::Array[Nextbillionai::Skynet::SearchResponse::Data::Asset]?
+
+          def assets=: (
+            ::Array[Nextbillionai::Skynet::SearchResponse::Data::Asset]
+          ) -> ::Array[Nextbillionai::Skynet::SearchResponse::Data::Asset]
+
+          attr_reader page: Nextbillionai::Skynet::Pagination?
+
+          def page=: (
+            Nextbillionai::Skynet::Pagination
+          ) -> Nextbillionai::Skynet::Pagination
+
+          def initialize: (
+            ?assets: ::Array[Nextbillionai::Skynet::SearchResponse::Data::Asset],
+            ?page: Nextbillionai::Skynet::Pagination
+          ) -> void
+
+          def to_hash: -> {
+            assets: ::Array[Nextbillionai::Skynet::SearchResponse::Data::Asset],
+            page: Nextbillionai::Skynet::Pagination
+          }
+
+          type asset =
+            {
+              id: String,
+              created_at: Integer,
+              description: String,
+              latest_location: Nextbillionai::Skynet::Asset::TrackLocation,
+              meta_data: top,
+              name: String,
+              ranking_info: Nextbillionai::Skynet::SearchResponse::Data::Asset::RankingInfo,
+              tags: ::Array[String],
+              tracked_at: Integer,
+              updated_at: Integer
+            }
+
+          class Asset < Nextbillionai::Internal::Type::BaseModel
+            attr_reader id: String?
+
+            def id=: (String) -> String
+
+            attr_reader created_at: Integer?
+
+            def created_at=: (Integer) -> Integer
+
+            attr_reader description: String?
+
+            def description=: (String) -> String
+
+            attr_reader latest_location: Nextbillionai::Skynet::Asset::TrackLocation?
+
+            def latest_location=: (
+              Nextbillionai::Skynet::Asset::TrackLocation
+            ) -> Nextbillionai::Skynet::Asset::TrackLocation
+
+            attr_reader meta_data: top?
+
+            def meta_data=: (top) -> top
+
+            attr_reader name: String?
+
+            def name=: (String) -> String
+
+            attr_reader ranking_info: Nextbillionai::Skynet::SearchResponse::Data::Asset::RankingInfo?
+
+            def ranking_info=: (
+              Nextbillionai::Skynet::SearchResponse::Data::Asset::RankingInfo
+            ) -> Nextbillionai::Skynet::SearchResponse::Data::Asset::RankingInfo
+
+            attr_reader tags: ::Array[String]?
+
+            def tags=: (::Array[String]) -> ::Array[String]
+
+            attr_reader tracked_at: Integer?
+
+            def tracked_at=: (Integer) -> Integer
+
+            attr_reader updated_at: Integer?
+
+            def updated_at=: (Integer) -> Integer
+
+            def initialize: (
+              ?id: String,
+              ?created_at: Integer,
+              ?description: String,
+              ?latest_location: Nextbillionai::Skynet::Asset::TrackLocation,
+              ?meta_data: top,
+              ?name: String,
+              ?ranking_info: Nextbillionai::Skynet::SearchResponse::Data::Asset::RankingInfo,
+              ?tags: ::Array[String],
+              ?tracked_at: Integer,
+              ?updated_at: Integer
+            ) -> void
+
+            def to_hash: -> {
+              id: String,
+              created_at: Integer,
+              description: String,
+              latest_location: Nextbillionai::Skynet::Asset::TrackLocation,
+              meta_data: top,
+              name: String,
+              ranking_info: Nextbillionai::Skynet::SearchResponse::Data::Asset::RankingInfo,
+              tags: ::Array[String],
+              tracked_at: Integer,
+              updated_at: Integer
+            }
+
+            type ranking_info =
+              { distance: Float, duration: Float, index: Integer }
+
+            class RankingInfo < Nextbillionai::Internal::Type::BaseModel
+              attr_reader distance: Float?
+
+              def distance=: (Float) -> Float
+
+              attr_reader duration: Float?
+
+              def duration=: (Float) -> Float
+
+              attr_reader index: Integer?
+
+              def index=: (Integer) -> Integer
+
+              def initialize: (
+                ?distance: Float,
+                ?duration: Float,
+                ?index: Integer
+              ) -> void
+
+              def to_hash: -> {
+                distance: Float,
+                duration: Float,
+                index: Integer
+              }
+            end
+          end
+        end
+      end
+    end
+  end
+end

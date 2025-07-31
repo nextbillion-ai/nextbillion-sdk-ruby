@@ -1,0 +1,17 @@
+module Nextbillionai
+  module Models
+    module Geofence
+      type console_preview_params =
+        {  } & Nextbillionai::Internal::Type::request_parameters
+
+      class ConsolePreviewParams < Nextbillionai::Models::GeofenceEntityCreate
+        extend Nextbillionai::Internal::Type::RequestParameters::Converter
+        include Nextbillionai::Internal::Type::RequestParameters
+
+        def initialize: (?request_options: Nextbillionai::request_opts) -> void
+
+        def to_hash: -> { request_options: Nextbillionai::RequestOptions }
+      end
+    end
+  end
+end

@@ -60,7 +60,7 @@
     }
   ],
   "release-type": "ruby",
-  "version-file": "lib/nextbillion_sdk/version.rb",
+  "version-file": "lib/nextbillionai/version.rb",
   "extra-files": [
     {
       "type": "ruby-readme",

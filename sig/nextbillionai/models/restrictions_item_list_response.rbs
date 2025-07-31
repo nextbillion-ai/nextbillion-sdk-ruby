@@ -1,0 +1,166 @@
+module Nextbillionai
+  module Models
+    type restrictions_item_list_response_item =
+      {
+        id: Float,
+        area: String,
+        coordinate: Nextbillionai::Models::RestrictionsItemListResponseItem::Coordinate,
+        group_id: Float,
+        group_type: Nextbillionai::Models::RestrictionsItemListResponseItem::group_type,
+        mode: ::Array[Nextbillionai::Models::RestrictionsItemListResponseItem::mode],
+        repeat_on: String,
+        restriction_type: Nextbillionai::Models::RestrictionsItemListResponseItem::restriction_type,
+        source: Nextbillionai::Models::RestrictionsItemListResponseItem::source,
+        state: Nextbillionai::Models::RestrictionsItemListResponseItem::state,
+        status: Nextbillionai::Models::RestrictionsItemListResponseItem::status
+      }
+
+    class RestrictionsItemListResponseItem < Nextbillionai::Internal::Type::BaseModel
+      attr_accessor id: Float
+
+      attr_accessor area: String
+
+      attr_accessor coordinate: Nextbillionai::Models::RestrictionsItemListResponseItem::Coordinate
+
+      attr_accessor group_id: Float
+
+      attr_accessor group_type: Nextbillionai::Models::RestrictionsItemListResponseItem::group_type
+
+      attr_accessor mode: ::Array[Nextbillionai::Models::RestrictionsItemListResponseItem::mode]
+
+      attr_accessor repeat_on: String
+
+      attr_accessor restriction_type: Nextbillionai::Models::RestrictionsItemListResponseItem::restriction_type
+
+      attr_accessor source: Nextbillionai::Models::RestrictionsItemListResponseItem::source
+
+      attr_accessor state: Nextbillionai::Models::RestrictionsItemListResponseItem::state
+
+      attr_accessor status: Nextbillionai::Models::RestrictionsItemListResponseItem::status
+
+      def initialize: (
+        id: Float,
+        area: String,
+        coordinate: Nextbillionai::Models::RestrictionsItemListResponseItem::Coordinate,
+        group_id: Float,
+        group_type: Nextbillionai::Models::RestrictionsItemListResponseItem::group_type,
+        mode: ::Array[Nextbillionai::Models::RestrictionsItemListResponseItem::mode],
+        repeat_on: String,
+        restriction_type: Nextbillionai::Models::RestrictionsItemListResponseItem::restriction_type,
+        source: Nextbillionai::Models::RestrictionsItemListResponseItem::source,
+        state: Nextbillionai::Models::RestrictionsItemListResponseItem::state,
+        status: Nextbillionai::Models::RestrictionsItemListResponseItem::status
+      ) -> void
+
+      def to_hash: -> {
+        id: Float,
+        area: String,
+        coordinate: Nextbillionai::Models::RestrictionsItemListResponseItem::Coordinate,
+        group_id: Float,
+        group_type: Nextbillionai::Models::RestrictionsItemListResponseItem::group_type,
+        mode: ::Array[Nextbillionai::Models::RestrictionsItemListResponseItem::mode],
+        repeat_on: String,
+        restriction_type: Nextbillionai::Models::RestrictionsItemListResponseItem::restriction_type,
+        source: Nextbillionai::Models::RestrictionsItemListResponseItem::source,
+        state: Nextbillionai::Models::RestrictionsItemListResponseItem::state,
+        status: Nextbillionai::Models::RestrictionsItemListResponseItem::status
+      }
+
+      type coordinate = { lat: Float, lon: Float }
+
+      class Coordinate < Nextbillionai::Internal::Type::BaseModel
+        attr_reader lat: Float?
+
+        def lat=: (Float) -> Float
+
+        attr_reader lon: Float?
+
+        def lon=: (Float) -> Float
+
+        def initialize: (?lat: Float, ?lon: Float) -> void
+
+        def to_hash: -> { lat: Float, lon: Float }
+      end
+
+      type group_type = :segment | :turn
+
+      module GroupType
+        extend Nextbillionai::Internal::Type::Enum
+
+        SEGMENT: :segment
+        TURN: :turn
+
+        def self?.values: -> ::Array[Nextbillionai::Models::RestrictionsItemListResponseItem::group_type]
+      end
+
+      type mode = :"0w" | :"1w" | :"2w" | :"3w" | :"4w" | :"6w"
+
+      module Mode
+        extend Nextbillionai::Internal::Type::Enum
+
+        MODE_0W: :"0w"
+        MODE_1W: :"1w"
+        MODE_2W: :"2w"
+        MODE_3W: :"3w"
+        MODE_4W: :"4w"
+        MODE_6W: :"6w"
+
+        def self?.values: -> ::Array[Nextbillionai::Models::RestrictionsItemListResponseItem::mode]
+      end
+
+      type restriction_type =
+        :closure | :fixedspeed | :maxspeed | :turn | :truck
+
+      module RestrictionType
+        extend Nextbillionai::Internal::Type::Enum
+
+        CLOSURE: :closure
+        FIXEDSPEED: :fixedspeed
+        MAXSPEED: :maxspeed
+        TURN: :turn
+        TRUCK: :truck
+
+        def self?.values: -> ::Array[Nextbillionai::Models::RestrictionsItemListResponseItem::restriction_type]
+      end
+
+      type source = :rrt | :pbf
+
+      module Source
+        extend Nextbillionai::Internal::Type::Enum
+
+        RRT: :rrt
+        PBF: :pbf
+
+        def self?.values: -> ::Array[Nextbillionai::Models::RestrictionsItemListResponseItem::source]
+      end
+
+      type state = :enabled | :disabled | :deleted
+
+      module State
+        extend Nextbillionai::Internal::Type::Enum
+
+        ENABLED: :enabled
+        DISABLED: :disabled
+        DELETED: :deleted
+
+        def self?.values: -> ::Array[Nextbillionai::Models::RestrictionsItemListResponseItem::state]
+      end
+
+      type status = :active | :inactive
+
+      module Status
+        extend Nextbillionai::Internal::Type::Enum
+
+        ACTIVE: :active
+        INACTIVE: :inactive
+
+        def self?.values: -> ::Array[Nextbillionai::Models::RestrictionsItemListResponseItem::status]
+      end
+    end
+
+    type restrictions_item_list_response =
+      ::Array[Nextbillionai::Models::RestrictionsItemListResponseItem]
+
+    RestrictionsItemListResponse: Nextbillionai::Internal::Type::Converter
+  end
+end

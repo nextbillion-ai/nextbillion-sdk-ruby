@@ -1,0 +1,30 @@
+module Nextbillionai
+  module Resources
+    class Fleetify
+      class Routes
+        attr_reader steps: Nextbillionai::Resources::Fleetify::Routes::Steps
+
+        def create: (
+          key: String,
+          driver_email: String,
+          steps: ::Array[Nextbillionai::Fleetify::Routes::RouteStepsRequest],
+          ?distance: Integer,
+          ?document_template_id: String,
+          ?ro_request_id: String,
+          ?routing: Nextbillionai::Fleetify::RouteCreateParams::Routing,
+          ?request_options: Nextbillionai::request_opts
+        ) -> Nextbillionai::Models::Fleetify::RouteCreateResponse
+
+        def redispatch: (
+          String route_id,
+          key: String,
+          operations: ::Array[Nextbillionai::Fleetify::RouteRedispatchParams::Operation],
+          ?distance: Float,
+          ?request_options: Nextbillionai::request_opts
+        ) -> Nextbillionai::Models::Fleetify::RouteRedispatchResponse
+
+        def initialize: (client: Nextbillionai::Client) -> void
+      end
+    end
+  end
+end

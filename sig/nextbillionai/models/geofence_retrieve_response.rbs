@@ -1,0 +1,45 @@
+module Nextbillionai
+  module Models
+    type geofence_retrieve_response =
+      {
+        data: Nextbillionai::Models::GeofenceRetrieveResponse::Data,
+        status: String
+      }
+
+    class GeofenceRetrieveResponse < Nextbillionai::Internal::Type::BaseModel
+      attr_reader data: Nextbillionai::Models::GeofenceRetrieveResponse::Data?
+
+      def data=: (
+        Nextbillionai::Models::GeofenceRetrieveResponse::Data
+      ) -> Nextbillionai::Models::GeofenceRetrieveResponse::Data
+
+      attr_reader status: String?
+
+      def status=: (String) -> String
+
+      def initialize: (
+        ?data: Nextbillionai::Models::GeofenceRetrieveResponse::Data,
+        ?status: String
+      ) -> void
+
+      def to_hash: -> {
+        data: Nextbillionai::Models::GeofenceRetrieveResponse::Data,
+        status: String
+      }
+
+      type data = { geofence: Nextbillionai::GeofenceAPI }
+
+      class Data < Nextbillionai::Internal::Type::BaseModel
+        attr_reader geofence: Nextbillionai::GeofenceAPI?
+
+        def geofence=: (
+          Nextbillionai::GeofenceAPI
+        ) -> Nextbillionai::GeofenceAPI
+
+        def initialize: (?geofence: Nextbillionai::GeofenceAPI) -> void
+
+        def to_hash: -> { geofence: Nextbillionai::GeofenceAPI }
+      end
+    end
+  end
+end

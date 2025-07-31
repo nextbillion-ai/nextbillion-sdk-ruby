@@ -39,9 +39,9 @@ Layout/LineLength:
   AllowedPatterns:
     - "^\\s*#.*$"
     - ^require(_relative)?
-    - "NextbillionSDK::Internal::Type::BaseModel$"
+    - "Nextbillionai::Internal::Type::BaseModel$"
     - "^\\s*[A-Z0-9_]+ = :"
-    - "NextbillionSDK::(Models|Resources|Test)::"
+    - "Nextbillionai::(Models|Resources|Test)::"
   Max: 110
 
 Layout/MultilineArrayLineBreaks:
