@@ -17,7 +17,7 @@ To use this gem, install via Bundler by adding the following to your application
 <!-- x-release-please-start-version -->
 
 ```ruby
-gem "nextbillionai", "~> 0.1.0.pre.alpha.4"
+gem "nextbillionai", "~> 0.1.0.pre.alpha.5"
 ```
 
 <!-- x-release-please-end -->
@@ -34,7 +34,7 @@ nextbillion_sdk = Nextbillionai::Client.new(
 
 response = nextbillion_sdk.directions.compute_route(
   destination: "1.335368,103.785517",
-  origin: "1.312164,103.841062"
+  origin: "1.312164,103.841063"
 )
 
 puts(response.msg)
@@ -48,7 +48,7 @@ When the library is unable to connect to the API, or if the API returns a non-su
 begin
   direction = nextbillion_sdk.directions.compute_route(
     destination: "1.335368,103.785517",
-    origin: "1.312164,103.841062"
+    origin: "1.312164,103.841063"
   )
 rescue Nextbillionai::Errors::APIConnectionError => e
   puts("The server could not be reached")
@@ -94,7 +94,7 @@ nextbillion_sdk = Nextbillionai::Client.new(
 # Or, configure per-request:
 nextbillion_sdk.directions.compute_route(
   destination: "1.335368,103.785517",
-  origin: "1.312164,103.841062",
+  origin: "1.312164,103.841063",
   request_options: {max_retries: 5}
 )
 ```
@@ -112,7 +112,7 @@ nextbillion_sdk = Nextbillionai::Client.new(
 # Or, configure per-request:
 nextbillion_sdk.directions.compute_route(
   destination: "1.335368,103.785517",
-  origin: "1.312164,103.841062",
+  origin: "1.312164,103.841063",
   request_options: {timeout: 5}
 )
 ```
@@ -147,7 +147,7 @@ Note: the `extra_` parameters of the same name overrides the documented paramete
 response =
   nextbillion_sdk.directions.compute_route(
     destination: "1.335368,103.785517",
-    origin: "1.312164,103.841062",
+    origin: "1.312164,103.841063",
     request_options: {
       extra_query: {my_query_parameter: value},
       extra_body: {my_body_parameter: value},
@@ -195,7 +195,7 @@ You can provide typesafe request parameters like so:
 ```ruby
 nextbillion_sdk.directions.compute_route(
   destination: "1.335368,103.785517",
-  origin: "1.312164,103.841062"
+  origin: "1.312164,103.841063"
 )
 ```
 
@@ -205,13 +205,13 @@ Or, equivalently:
 # Hashes work, but are not typesafe:
 nextbillion_sdk.directions.compute_route(
   destination: "1.335368,103.785517",
-  origin: "1.312164,103.841062"
+  origin: "1.312164,103.841063"
 )
 
 # You can also splat a full Params class:
 params = Nextbillionai::DirectionComputeRouteParams.new(
   destination: "1.335368,103.785517",
-  origin: "1.312164,103.841062"
+  origin: "1.312164,103.841063"
 )
 nextbillion_sdk.directions.compute_route(**params)
 ```
