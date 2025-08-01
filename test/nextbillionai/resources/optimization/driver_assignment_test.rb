@@ -11,7 +11,7 @@ class Nextbillionai::Test::Resources::Optimization::DriverAssignmentTest < Nextb
         key: "key=API_KEY",
         filter: {},
         orders: [{id: "id", pickup: {}}],
-        vehicles: [{id: "id", location: {}}]
+        vehicles: [{id: "id", location: {lat: -90, lon: -180}}]
       )
 
     assert_pattern do

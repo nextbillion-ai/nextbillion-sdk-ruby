@@ -14,8 +14,8 @@ module Nextbillionai
         #   Specify the location coordinates where the vehicle is currently located. This
         #   input is mandatory for each vehicle.
         #
-        #   @return [Nextbillionai::Models::Optimization::Vehicle::Location]
-        required :location, -> { Nextbillionai::Optimization::Vehicle::Location }
+        #   @return [Nextbillionai::Models::Optimization::Location]
+        required :location, -> { Nextbillionai::Optimization::Location }
 
         # @!attribute attributes
         #   Specify custom attributes for the vehicle. Each attribute should be created as a
@@ -56,36 +56,13 @@ module Nextbillionai
         #
         #   @param id [String] Specify a unique ID for the vehicle.
         #
-        #   @param location [Nextbillionai::Models::Optimization::Vehicle::Location] Specify the location coordinates where the vehicle is currently located. This in
+        #   @param location [Nextbillionai::Models::Optimization::Location] Specify the location coordinates where the vehicle is currently located. This in
         #
         #   @param attributes [Object] Specify custom attributes for the vehicle. Each attribute should be created as a
         #
         #   @param priority [Integer] Specify the priority for this vehicle. A higher value indicates a higher priorit
         #
         #   @param remaining_waypoints [Array<Nextbillionai::Models::Optimization::Location>] An array of objects to collect the location coordinates of the stops remaining o
-
-        # @see Nextbillionai::Models::Optimization::Vehicle#location
-        class Location < Nextbillionai::Internal::Type::BaseModel
-          # @!attribute lat
-          #   Latitude of the vehicle's current location.
-          #
-          #   @return [Float, nil]
-          optional :lat, Float
-
-          # @!attribute lng
-          #   Longitude of the vehicle's current location.
-          #
-          #   @return [Float, nil]
-          optional :lng, Float
-
-          # @!method initialize(lat: nil, lng: nil)
-          #   Specify the location coordinates where the vehicle is currently located. This
-          #   input is mandatory for each vehicle.
-          #
-          #   @param lat [Float] Latitude of the vehicle's current location.
-          #
-          #   @param lng [Float] Longitude of the vehicle's current location.
-        end
       end
     end
   end

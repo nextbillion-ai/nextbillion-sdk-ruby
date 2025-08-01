@@ -18,13 +18,11 @@ module Nextbillionai
 
         # Specify the location coordinates where the vehicle is currently located. This
         # input is mandatory for each vehicle.
-        sig { returns(Nextbillionai::Optimization::Vehicle::Location) }
+        sig { returns(Nextbillionai::Optimization::Location) }
         attr_reader :location
 
         sig do
-          params(
-            location: Nextbillionai::Optimization::Vehicle::Location::OrHash
-          ).void
+          params(location: Nextbillionai::Optimization::Location::OrHash).void
         end
         attr_writer :location
 
@@ -73,7 +71,7 @@ module Nextbillionai
         sig do
           params(
             id: String,
-            location: Nextbillionai::Optimization::Vehicle::Location::OrHash,
+            location: Nextbillionai::Optimization::Location::OrHash,
             attributes: T.anything,
             priority: Integer,
             remaining_waypoints:
@@ -113,7 +111,7 @@ module Nextbillionai
           override.returns(
             {
               id: String,
-              location: Nextbillionai::Optimization::Vehicle::Location,
+              location: Nextbillionai::Optimization::Location,
               attributes: T.anything,
               priority: Integer,
               remaining_waypoints:
@@ -122,45 +120,6 @@ module Nextbillionai
           )
         end
         def to_hash
-        end
-
-        class Location < Nextbillionai::Internal::Type::BaseModel
-          OrHash =
-            T.type_alias do
-              T.any(
-                Nextbillionai::Optimization::Vehicle::Location,
-                Nextbillionai::Internal::AnyHash
-              )
-            end
-
-          # Latitude of the vehicle's current location.
-          sig { returns(T.nilable(Float)) }
-          attr_reader :lat
-
-          sig { params(lat: Float).void }
-          attr_writer :lat
-
-          # Longitude of the vehicle's current location.
-          sig { returns(T.nilable(Float)) }
-          attr_reader :lng
-
-          sig { params(lng: Float).void }
-          attr_writer :lng
-
-          # Specify the location coordinates where the vehicle is currently located. This
-          # input is mandatory for each vehicle.
-          sig { params(lat: Float, lng: Float).returns(T.attached_class) }
-          def self.new(
-            # Latitude of the vehicle's current location.
-            lat: nil,
-            # Longitude of the vehicle's current location.
-            lng: nil
-          )
-          end
-
-          sig { override.returns({ lat: Float, lng: Float }) }
-          def to_hash
-          end
         end
       end
     end
