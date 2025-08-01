@@ -1,5 +1,23 @@
 # Changelog
 
+## 0.1.0-alpha.5 (2025-08-01)
+
+Full Changelog: [v0.1.0-alpha.4...v0.1.0-alpha.5](https://github.com/nextbillion-ai/nextbillion-sdk-ruby/compare/v0.1.0-alpha.4...v0.1.0-alpha.5)
+
+### Features
+
+* **api:** manual updates ([00200c4](https://github.com/nextbillion-ai/nextbillion-sdk-ruby/commit/00200c44462ccfa224ea09c654136dbb57a008de))
+
+
+### Bug Fixes
+
+* List&lt;List&gt; problem in java by naming dto.Event ([809a0a1](https://github.com/nextbillion-ai/nextbillion-sdk-ruby/commit/809a0a1feda028b874e0b1220f33bb4593688aa2))
+
+
+### Chores
+
+* **internal:** increase visibility of internal helper method ([e238599](https://github.com/nextbillion-ai/nextbillion-sdk-ruby/commit/e23859972996f44b782c91856e9b3d6576310838))
+
 ## 0.1.0-alpha.4 (2025-07-30)
 
 Full Changelog: [v0.1.0-alpha.3...v0.1.0-alpha.4](https://github.com/nextbillion-ai/nextbillion-sdk-ruby/compare/v0.1.0-alpha.3...v0.1.0-alpha.4)
