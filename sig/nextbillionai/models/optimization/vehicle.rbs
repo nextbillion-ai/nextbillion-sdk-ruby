@@ -4,7 +4,7 @@ module Nextbillionai
       type vehicle =
         {
           id: String,
-          location: Nextbillionai::Optimization::Vehicle::Location,
+          location: Nextbillionai::Optimization::Location,
           attributes: top,
           priority: Integer,
           remaining_waypoints: ::Array[Nextbillionai::Optimization::Location]
@@ -13,7 +13,7 @@ module Nextbillionai
       class Vehicle < Nextbillionai::Internal::Type::BaseModel
         attr_accessor id: String
 
-        attr_accessor location: Nextbillionai::Optimization::Vehicle::Location
+        attr_accessor location: Nextbillionai::Optimization::Location
 
         attr_reader attributes: top?
 
@@ -31,7 +31,7 @@ module Nextbillionai
 
         def initialize: (
           id: String,
-          location: Nextbillionai::Optimization::Vehicle::Location,
+          location: Nextbillionai::Optimization::Location,
           ?attributes: top,
           ?priority: Integer,
           ?remaining_waypoints: ::Array[Nextbillionai::Optimization::Location]
@@ -39,27 +39,11 @@ module Nextbillionai
 
         def to_hash: -> {
           id: String,
-          location: Nextbillionai::Optimization::Vehicle::Location,
+          location: Nextbillionai::Optimization::Location,
           attributes: top,
           priority: Integer,
           remaining_waypoints: ::Array[Nextbillionai::Optimization::Location]
         }
-
-        type location = { lat: Float, lng: Float }
-
-        class Location < Nextbillionai::Internal::Type::BaseModel
-          attr_reader lat: Float?
-
-          def lat=: (Float) -> Float
-
-          attr_reader lng: Float?
-
-          def lng=: (Float) -> Float
-
-          def initialize: (?lat: Float, ?lng: Float) -> void
-
-          def to_hash: -> { lat: Float, lng: Float }
-        end
       end
     end
   end
