@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.0-alpha.6 (2025-08-06)
+
+Full Changelog: [v0.1.0-alpha.5...v0.1.0-alpha.6](https://github.com/nextbillion-ai/nextbillion-sdk-ruby/compare/v0.1.0-alpha.5...v0.1.0-alpha.6)
+
+### Chores
+
+* **api:** dedupe location types ([3c8eebd](https://github.com/nextbillion-ai/nextbillion-sdk-ruby/commit/3c8eebdbcd82ec1a65feba70b870239693852364))
+
 ## 0.1.0-alpha.5 (2025-08-01)
 
 Full Changelog: [v0.1.0-alpha.4...v0.1.0-alpha.5](https://github.com/nextbillion-ai/nextbillion-sdk-ruby/compare/v0.1.0-alpha.4...v0.1.0-alpha.5)
