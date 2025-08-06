@@ -29,7 +29,7 @@ class Nextbillionai::Test::Resources::Optimization::V2Test < Nextbillionai::Test
       @nextbillion_sdk.optimization.v2.submit(
         key: "key=API_KEY",
         locations: {location: ["string"]},
-        vehicles: [{id: "id", location: {}}]
+        vehicles: [{id: "id", location: {lat: -90, lon: -180}}]
       )
 
     assert_pattern do
