@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.0-alpha.7 (2025-08-09)
+
+Full Changelog: [v0.1.0-alpha.6...v0.1.0-alpha.7](https://github.com/nextbillion-ai/nextbillion-sdk-ruby/compare/v0.1.0-alpha.6...v0.1.0-alpha.7)
+
+### Chores
+
+* update @stainless-api/prism-cli to v5.15.0 ([f5c8070](https://github.com/nextbillion-ai/nextbillion-sdk-ruby/commit/f5c80704ce6b3b7a07cc114d14d9f5b520d9dfe4))
+
 ## 0.1.0-alpha.6 (2025-08-06)
 
 Full Changelog: [v0.1.0-alpha.5...v0.1.0-alpha.6](https://github.com/nextbillion-ai/nextbillion-sdk-ruby/compare/v0.1.0-alpha.5...v0.1.0-alpha.6)
