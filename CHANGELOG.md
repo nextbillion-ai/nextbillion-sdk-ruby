@@ -1,5 +1,16 @@
 # Changelog
 
+## 0.1.0-alpha.7 (2025-08-12)
+
+Full Changelog: [v0.1.0-alpha.6...v0.1.0-alpha.7](https://github.com/nextbillion-ai/nextbillion-sdk-ruby/compare/v0.1.0-alpha.6...v0.1.0-alpha.7)
+
+### Chores
+
+* collect metadata from type DSL ([971a634](https://github.com/nextbillion-ai/nextbillion-sdk-ruby/commit/971a63474dc67905f5366bc09cbce2d7862818eb))
+* **internal:** codegen related update ([f135039](https://github.com/nextbillion-ai/nextbillion-sdk-ruby/commit/f135039711f92ee652b8fa4ec465818189e2bf99))
+* **internal:** update comment in script ([37fb1ed](https://github.com/nextbillion-ai/nextbillion-sdk-ruby/commit/37fb1ed7a9b56d194f39519390c30accc201a99a))
+* update @stainless-api/prism-cli to v5.15.0 ([f5c8070](https://github.com/nextbillion-ai/nextbillion-sdk-ruby/commit/f5c80704ce6b3b7a07cc114d14d9f5b520d9dfe4))
+
 ## 0.1.0-alpha.6 (2025-08-06)
 
 Full Changelog: [v0.1.0-alpha.5...v0.1.0-alpha.6](https://github.com/nextbillion-ai/nextbillion-sdk-ruby/compare/v0.1.0-alpha.5...v0.1.0-alpha.6)
