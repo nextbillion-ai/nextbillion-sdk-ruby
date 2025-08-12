@@ -4,7 +4,7 @@ require_relative "../test_helper"
 
 class Nextbillionai::Test::Resources::AutosuggestTest < Nextbillionai::Test::ResourceTest
   def test_suggest_required_params
-    skip("skipped: tests are disabled for the time being")
+    skip("Prism tests are disabled")
 
     response = @nextbillion_sdk.autosuggest.suggest(key: "key=API_KEY", q: "q=125, Berliner, berlin")
 

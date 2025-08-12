@@ -4,7 +4,7 @@ require_relative "../../test_helper"
 
 class Nextbillionai::Test::Resources::Geofence::ConsoleTest < Nextbillionai::Test::ResourceTest
   def test_preview_required_params
-    skip("skipped: tests are disabled for the time being")
+    skip("Prism tests are disabled")
 
     response = @nextbillion_sdk.geofence.console.preview(type: :circle)
 
@@ -21,7 +21,7 @@ class Nextbillionai::Test::Resources::Geofence::ConsoleTest < Nextbillionai::Tes
   end
 
   def test_search_required_params
-    skip("skipped: tests are disabled for the time being")
+    skip("Prism tests are disabled")
 
     response = @nextbillion_sdk.geofence.console.search(query: "query")
 

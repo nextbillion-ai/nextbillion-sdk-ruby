@@ -4,7 +4,7 @@ require_relative "../../test_helper"
 
 class Nextbillionai::Test::Resources::Skynet::ConfigTest < Nextbillionai::Test::ResourceTest
   def test_retrieve_required_params
-    skip("skipped: tests are disabled for the time being")
+    skip("Prism tests are disabled")
 
     response = @nextbillion_sdk.skynet.config.retrieve(key: "key=API_KEY")
 
@@ -22,7 +22,7 @@ class Nextbillionai::Test::Resources::Skynet::ConfigTest < Nextbillionai::Test::
   end
 
   def test_update_required_params
-    skip("skipped: tests are disabled for the time being")
+    skip("Prism tests are disabled")
 
     response = @nextbillion_sdk.skynet.config.update(key: "key=API_KEY")
 
@@ -39,7 +39,7 @@ class Nextbillionai::Test::Resources::Skynet::ConfigTest < Nextbillionai::Test::
   end
 
   def test_test_webhook_required_params
-    skip("skipped: tests are disabled for the time being")
+    skip("Prism tests are disabled")
 
     response = @nextbillion_sdk.skynet.config.test_webhook(key: "key=API_KEY")
 

@@ -4,7 +4,7 @@ require_relative "../../../test_helper"
 
 class Nextbillionai::Test::Resources::Skynet::Search::PolygonTest < Nextbillionai::Test::ResourceTest
   def test_create_required_params
-    skip("skipped: tests are disabled for the time being")
+    skip("Prism tests are disabled")
 
     response =
       @nextbillion_sdk.skynet.search.polygon.create(
@@ -26,7 +26,7 @@ class Nextbillionai::Test::Resources::Skynet::Search::PolygonTest < Nextbilliona
   end
 
   def test_get_required_params
-    skip("skipped: tests are disabled for the time being")
+    skip("Prism tests are disabled")
 
     response =
       @nextbillion_sdk.skynet.search.polygon.get(

@@ -4,7 +4,7 @@ require_relative "../test_helper"
 
 class Nextbillionai::Test::Resources::DiscoverTest < Nextbillionai::Test::ResourceTest
   def test_retrieve_required_params
-    skip("skipped: tests are disabled for the time being")
+    skip("Prism tests are disabled")
 
     response = @nextbillion_sdk.discover.retrieve(key: "key=API_KEY", q: "q=125, Berliner, berlin")
 

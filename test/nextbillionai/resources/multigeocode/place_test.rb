@@ -4,7 +4,7 @@ require_relative "../../test_helper"
 
 class Nextbillionai::Test::Resources::Multigeocode::PlaceTest < Nextbillionai::Test::ResourceTest
   def test_create_required_params
-    skip("skipped: tests are disabled for the time being")
+    skip("Prism tests are disabled")
 
     response = @nextbillion_sdk.multigeocode.place.create(key: "key=API_KEY", place: [{geopoint: {}}])
 
@@ -20,7 +20,7 @@ class Nextbillionai::Test::Resources::Multigeocode::PlaceTest < Nextbillionai::T
   end
 
   def test_retrieve_required_params
-    skip("skipped: tests are disabled for the time being")
+    skip("Prism tests are disabled")
 
     response = @nextbillion_sdk.multigeocode.place.retrieve("docId", key: "key=API_KEY")
 
@@ -39,7 +39,7 @@ class Nextbillionai::Test::Resources::Multigeocode::PlaceTest < Nextbillionai::T
   end
 
   def test_update_required_params
-    skip("skipped: tests are disabled for the time being")
+    skip("Prism tests are disabled")
 
     response = @nextbillion_sdk.multigeocode.place.update("docId", key: "key=API_KEY")
 
@@ -56,7 +56,7 @@ class Nextbillionai::Test::Resources::Multigeocode::PlaceTest < Nextbillionai::T
   end
 
   def test_delete_required_params
-    skip("skipped: tests are disabled for the time being")
+    skip("Prism tests are disabled")
 
     response = @nextbillion_sdk.multigeocode.place.delete("docId", key: "key=API_KEY")
 

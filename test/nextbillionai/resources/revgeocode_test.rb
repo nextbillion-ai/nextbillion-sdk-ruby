@@ -4,7 +4,7 @@ require_relative "../test_helper"
 
 class Nextbillionai::Test::Resources::RevgeocodeTest < Nextbillionai::Test::ResourceTest
   def test_retrieve_required_params
-    skip("skipped: tests are disabled for the time being")
+    skip("Prism tests are disabled")
 
     response = @nextbillion_sdk.revgeocode.retrieve(at: "at=52.5308,13.3856", key: "key=API_KEY")
 

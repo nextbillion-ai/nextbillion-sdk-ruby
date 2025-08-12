@@ -4,7 +4,7 @@ require_relative "../test_helper"
 
 class Nextbillionai::Test::Resources::BrowseTest < Nextbillionai::Test::ResourceTest
   def test_search_required_params
-    skip("skipped: tests are disabled for the time being")
+    skip("Prism tests are disabled")
 
     response = @nextbillion_sdk.browse.search(key: "key=API_KEY")
 

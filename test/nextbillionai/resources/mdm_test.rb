@@ -4,7 +4,7 @@ require_relative "../test_helper"
 
 class Nextbillionai::Test::Resources::MdmTest < Nextbillionai::Test::ResourceTest
   def test_create_distance_matrix_required_params
-    skip("skipped: tests are disabled for the time being")
+    skip("Prism tests are disabled")
 
     response =
       @nextbillion_sdk.mdm.create_distance_matrix(key: "key=API_KEY", option: :flexible, origins: "origins")
@@ -24,7 +24,7 @@ class Nextbillionai::Test::Resources::MdmTest < Nextbillionai::Test::ResourceTes
   end
 
   def test_get_distance_matrix_status_required_params
-    skip("skipped: tests are disabled for the time being")
+    skip("Prism tests are disabled")
 
     response = @nextbillion_sdk.mdm.get_distance_matrix_status(id: "id", key: "key=API_KEY")
 

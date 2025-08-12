@@ -4,7 +4,7 @@ require_relative "../../test_helper"
 
 class Nextbillionai::Test::Resources::Geofence::BatchTest < Nextbillionai::Test::ResourceTest
   def test_create_required_params
-    skip("skipped: tests are disabled for the time being")
+    skip("Prism tests are disabled")
 
     response = @nextbillion_sdk.geofence.batch.create(key: "key=API_KEY")
 
@@ -21,7 +21,7 @@ class Nextbillionai::Test::Resources::Geofence::BatchTest < Nextbillionai::Test:
   end
 
   def test_list_required_params
-    skip("skipped: tests are disabled for the time being")
+    skip("Prism tests are disabled")
 
     response = @nextbillion_sdk.geofence.batch.list(ids: "ids", key: "key=API_KEY")
 
@@ -38,7 +38,7 @@ class Nextbillionai::Test::Resources::Geofence::BatchTest < Nextbillionai::Test:
   end
 
   def test_delete_required_params
-    skip("skipped: tests are disabled for the time being")
+    skip("Prism tests are disabled")
 
     response = @nextbillion_sdk.geofence.batch.delete(key: "key=API_KEY")
 
