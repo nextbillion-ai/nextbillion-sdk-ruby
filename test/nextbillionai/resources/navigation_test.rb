@@ -4,7 +4,7 @@ require_relative "../test_helper"
 
 class Nextbillionai::Test::Resources::NavigationTest < Nextbillionai::Test::ResourceTest
   def test_retrieve_route_required_params
-    skip("skipped: tests are disabled for the time being")
+    skip("Prism tests are disabled")
 
     response = @nextbillion_sdk.navigation.retrieve_route(key: "key=API_KEY")
 

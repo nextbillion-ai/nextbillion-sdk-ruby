@@ -4,7 +4,7 @@ require_relative "../../../test_helper"
 
 class Nextbillionai::Test::Resources::Fleetify::Routes::StepsTest < Nextbillionai::Test::ResourceTest
   def test_create_required_params
-    skip("skipped: tests are disabled for the time being")
+    skip("Prism tests are disabled")
 
     response =
       @nextbillion_sdk.fleetify.routes.steps.create(
@@ -30,7 +30,7 @@ class Nextbillionai::Test::Resources::Fleetify::Routes::StepsTest < Nextbilliona
   end
 
   def test_update_required_params
-    skip("skipped: tests are disabled for the time being")
+    skip("Prism tests are disabled")
 
     response =
       @nextbillion_sdk.fleetify.routes.steps.update(
@@ -55,7 +55,7 @@ class Nextbillionai::Test::Resources::Fleetify::Routes::StepsTest < Nextbilliona
   end
 
   def test_delete_required_params
-    skip("skipped: tests are disabled for the time being")
+    skip("Prism tests are disabled")
 
     response = @nextbillion_sdk.fleetify.routes.steps.delete("stepID", route_id: "routeID", key: "key")
 
@@ -72,7 +72,7 @@ class Nextbillionai::Test::Resources::Fleetify::Routes::StepsTest < Nextbilliona
   end
 
   def test_complete_required_params
-    skip("skipped: tests are disabled for the time being")
+    skip("Prism tests are disabled")
 
     response = @nextbillion_sdk.fleetify.routes.steps.complete("stepID", route_id: "routeID", key: "key")
 

@@ -4,7 +4,7 @@ require_relative "../../test_helper"
 
 class Nextbillionai::Test::Resources::Skynet::AssetTest < Nextbillionai::Test::ResourceTest
   def test_create_required_params
-    skip("skipped: tests are disabled for the time being")
+    skip("Prism tests are disabled")
 
     response = @nextbillion_sdk.skynet.asset.create(key: "key=API_KEY")
 
@@ -22,7 +22,7 @@ class Nextbillionai::Test::Resources::Skynet::AssetTest < Nextbillionai::Test::R
   end
 
   def test_retrieve_required_params
-    skip("skipped: tests are disabled for the time being")
+    skip("Prism tests are disabled")
 
     response = @nextbillion_sdk.skynet.asset.retrieve("id", key: "key=API_KEY")
 
@@ -40,7 +40,7 @@ class Nextbillionai::Test::Resources::Skynet::AssetTest < Nextbillionai::Test::R
   end
 
   def test_update_required_params
-    skip("skipped: tests are disabled for the time being")
+    skip("Prism tests are disabled")
 
     response = @nextbillion_sdk.skynet.asset.update("id", key: "key=API_KEY")
 
@@ -57,7 +57,7 @@ class Nextbillionai::Test::Resources::Skynet::AssetTest < Nextbillionai::Test::R
   end
 
   def test_list_required_params
-    skip("skipped: tests are disabled for the time being")
+    skip("Prism tests are disabled")
 
     response = @nextbillion_sdk.skynet.asset.list(key: "key=API_KEY")
 
@@ -75,7 +75,7 @@ class Nextbillionai::Test::Resources::Skynet::AssetTest < Nextbillionai::Test::R
   end
 
   def test_delete_required_params
-    skip("skipped: tests are disabled for the time being")
+    skip("Prism tests are disabled")
 
     response = @nextbillion_sdk.skynet.asset.delete("id", key: "key=API_KEY")
 
@@ -92,7 +92,7 @@ class Nextbillionai::Test::Resources::Skynet::AssetTest < Nextbillionai::Test::R
   end
 
   def test_bind_required_params
-    skip("skipped: tests are disabled for the time being")
+    skip("Prism tests are disabled")
 
     response = @nextbillion_sdk.skynet.asset.bind("id", key: "key=API_KEY", device_id: "device_id")
 
@@ -109,7 +109,7 @@ class Nextbillionai::Test::Resources::Skynet::AssetTest < Nextbillionai::Test::R
   end
 
   def test_track_required_params
-    skip("skipped: tests are disabled for the time being")
+    skip("Prism tests are disabled")
 
     response =
       @nextbillion_sdk.skynet.asset.track(
@@ -132,7 +132,7 @@ class Nextbillionai::Test::Resources::Skynet::AssetTest < Nextbillionai::Test::R
   end
 
   def test_update_attributes_required_params
-    skip("skipped: tests are disabled for the time being")
+    skip("Prism tests are disabled")
 
     response =
       @nextbillion_sdk.skynet.asset.update_attributes(

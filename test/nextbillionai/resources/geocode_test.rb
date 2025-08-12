@@ -4,7 +4,7 @@ require_relative "../test_helper"
 
 class Nextbillionai::Test::Resources::GeocodeTest < Nextbillionai::Test::ResourceTest
   def test_retrieve_required_params
-    skip("skipped: tests are disabled for the time being")
+    skip("Prism tests are disabled")
 
     response = @nextbillion_sdk.geocode.retrieve(key: "key=API_KEY", q: "q=125, Berliner, berlin")
 
@@ -20,7 +20,7 @@ class Nextbillionai::Test::Resources::GeocodeTest < Nextbillionai::Test::Resourc
   end
 
   def test_batch_create_required_params
-    skip("skipped: tests are disabled for the time being")
+    skip("Prism tests are disabled")
 
     response =
       @nextbillion_sdk.geocode.batch_create(
@@ -40,7 +40,7 @@ class Nextbillionai::Test::Resources::GeocodeTest < Nextbillionai::Test::Resourc
   end
 
   def test_structured_retrieve_required_params
-    skip("skipped: tests are disabled for the time being")
+    skip("Prism tests are disabled")
 
     response = @nextbillion_sdk.geocode.structured_retrieve(country_code: "countryCode", key: "key=API_KEY")
 

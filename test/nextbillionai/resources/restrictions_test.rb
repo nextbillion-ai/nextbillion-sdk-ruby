@@ -4,7 +4,7 @@ require_relative "../test_helper"
 
 class Nextbillionai::Test::Resources::RestrictionsTest < Nextbillionai::Test::ResourceTest
   def test_create_required_params
-    skip("skipped: tests are disabled for the time being")
+    skip("Prism tests are disabled")
 
     response = @nextbillion_sdk.restrictions.create(:turn, key: "key=API_KEY", area: "area", name: "name")
 
@@ -38,7 +38,7 @@ class Nextbillionai::Test::Resources::RestrictionsTest < Nextbillionai::Test::Re
   end
 
   def test_retrieve_required_params
-    skip("skipped: tests are disabled for the time being")
+    skip("Prism tests are disabled")
 
     response = @nextbillion_sdk.restrictions.retrieve(0, key: "key=API_KEY")
 
@@ -72,7 +72,7 @@ class Nextbillionai::Test::Resources::RestrictionsTest < Nextbillionai::Test::Re
   end
 
   def test_update_required_params
-    skip("skipped: tests are disabled for the time being")
+    skip("Prism tests are disabled")
 
     response = @nextbillion_sdk.restrictions.update(0, key: "key=API_KEY", area: "area", name: "name")
 
@@ -106,7 +106,7 @@ class Nextbillionai::Test::Resources::RestrictionsTest < Nextbillionai::Test::Re
   end
 
   def test_list_required_params
-    skip("skipped: tests are disabled for the time being")
+    skip("Prism tests are disabled")
 
     response = @nextbillion_sdk.restrictions.list(area: "area", key: "key=API_KEY", limit: 0, offset: 0)
 
@@ -123,7 +123,7 @@ class Nextbillionai::Test::Resources::RestrictionsTest < Nextbillionai::Test::Re
   end
 
   def test_delete_required_params
-    skip("skipped: tests are disabled for the time being")
+    skip("Prism tests are disabled")
 
     response = @nextbillion_sdk.restrictions.delete(0, key: "key=API_KEY")
 
@@ -140,7 +140,7 @@ class Nextbillionai::Test::Resources::RestrictionsTest < Nextbillionai::Test::Re
   end
 
   def test_list_by_bbox_required_params
-    skip("skipped: tests are disabled for the time being")
+    skip("Prism tests are disabled")
 
     response =
       @nextbillion_sdk.restrictions.list_by_bbox(
@@ -157,7 +157,7 @@ class Nextbillionai::Test::Resources::RestrictionsTest < Nextbillionai::Test::Re
   end
 
   def test_set_state_required_params
-    skip("skipped: tests are disabled for the time being")
+    skip("Prism tests are disabled")
 
     response = @nextbillion_sdk.restrictions.set_state(0, key: "key=API_KEY", state: :enabled)
 

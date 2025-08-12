@@ -4,7 +4,7 @@ require_relative "../../test_helper"
 
 class Nextbillionai::Test::Resources::Skynet::MonitorTest < Nextbillionai::Test::ResourceTest
   def test_create_required_params
-    skip("skipped: tests are disabled for the time being")
+    skip("Prism tests are disabled")
 
     response = @nextbillion_sdk.skynet.monitor.create(key: "key=API_KEY", tags: ["string"], type: :enter)
 
@@ -22,7 +22,7 @@ class Nextbillionai::Test::Resources::Skynet::MonitorTest < Nextbillionai::Test:
   end
 
   def test_retrieve_required_params
-    skip("skipped: tests are disabled for the time being")
+    skip("Prism tests are disabled")
 
     response = @nextbillion_sdk.skynet.monitor.retrieve("id", key: "key=API_KEY")
 
@@ -40,7 +40,7 @@ class Nextbillionai::Test::Resources::Skynet::MonitorTest < Nextbillionai::Test:
   end
 
   def test_update_required_params
-    skip("skipped: tests are disabled for the time being")
+    skip("Prism tests are disabled")
 
     response = @nextbillion_sdk.skynet.monitor.update("id", key: "key=API_KEY")
 
@@ -57,7 +57,7 @@ class Nextbillionai::Test::Resources::Skynet::MonitorTest < Nextbillionai::Test:
   end
 
   def test_list_required_params
-    skip("skipped: tests are disabled for the time being")
+    skip("Prism tests are disabled")
 
     response = @nextbillion_sdk.skynet.monitor.list(key: "key=API_KEY")
 
@@ -75,7 +75,7 @@ class Nextbillionai::Test::Resources::Skynet::MonitorTest < Nextbillionai::Test:
   end
 
   def test_delete_required_params
-    skip("skipped: tests are disabled for the time being")
+    skip("Prism tests are disabled")
 
     response = @nextbillion_sdk.skynet.monitor.delete("id", key: "key=API_KEY")
 

@@ -4,7 +4,7 @@ require_relative "../test_helper"
 
 class Nextbillionai::Test::Resources::SkynetTest < Nextbillionai::Test::ResourceTest
   def test_subscribe_required_params
-    skip("skipped: tests are disabled for the time being")
+    skip("Prism tests are disabled")
 
     response = @nextbillion_sdk.skynet.subscribe(action: :TRIP_SUBSCRIBE)
 

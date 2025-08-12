@@ -4,7 +4,7 @@ require_relative "../../test_helper"
 
 class Nextbillionai::Test::Resources::Skynet::SearchTest < Nextbillionai::Test::ResourceTest
   def test_around_required_params
-    skip("skipped: tests are disabled for the time being")
+    skip("Prism tests are disabled")
 
     response =
       @nextbillion_sdk.skynet.search.around(center: "56.597801,43.967836", key: "key=API_KEY", radius: 0)
@@ -23,7 +23,7 @@ class Nextbillionai::Test::Resources::Skynet::SearchTest < Nextbillionai::Test::
   end
 
   def test_bound_required_params
-    skip("skipped: tests are disabled for the time being")
+    skip("Prism tests are disabled")
 
     response =
       @nextbillion_sdk.skynet.search.bound(

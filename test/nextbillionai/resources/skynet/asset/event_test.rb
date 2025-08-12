@@ -4,7 +4,7 @@ require_relative "../../../test_helper"
 
 class Nextbillionai::Test::Resources::Skynet::Asset::EventTest < Nextbillionai::Test::ResourceTest
   def test_list_required_params
-    skip("skipped: tests are disabled for the time being")
+    skip("Prism tests are disabled")
 
     response = @nextbillion_sdk.skynet.asset.event.list("id", key: "key=API_KEY")
 

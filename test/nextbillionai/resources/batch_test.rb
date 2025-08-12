@@ -4,7 +4,7 @@ require_relative "../test_helper"
 
 class Nextbillionai::Test::Resources::BatchTest < Nextbillionai::Test::ResourceTest
   def test_create_required_params
-    skip("skipped: tests are disabled for the time being")
+    skip("Prism tests are disabled")
 
     response = @nextbillion_sdk.batch.create(key: "key=API_KEY")
 
@@ -22,7 +22,7 @@ class Nextbillionai::Test::Resources::BatchTest < Nextbillionai::Test::ResourceT
   end
 
   def test_retrieve_required_params
-    skip("skipped: tests are disabled for the time being")
+    skip("Prism tests are disabled")
 
     response = @nextbillion_sdk.batch.retrieve(key: "key=API_KEY", track_id: "track_id")
 

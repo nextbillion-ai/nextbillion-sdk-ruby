@@ -4,7 +4,7 @@ require_relative "../test_helper"
 
 class Nextbillionai::Test::Resources::RestrictionsItemsTest < Nextbillionai::Test::ResourceTest
   def test_list_required_params
-    skip("skipped: tests are disabled for the time being")
+    skip("Prism tests are disabled")
 
     response = @nextbillion_sdk.restrictions_items.list(max_lat: 0, max_lon: 0, min_lat: 0, min_lon: 0)
 
