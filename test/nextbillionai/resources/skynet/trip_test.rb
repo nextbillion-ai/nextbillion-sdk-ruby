@@ -4,7 +4,7 @@ require_relative "../../test_helper"
 
 class Nextbillionai::Test::Resources::Skynet::TripTest < Nextbillionai::Test::ResourceTest
   def test_retrieve_required_params
-    skip("skipped: tests are disabled for the time being")
+    skip("Prism tests are disabled")
 
     response = @nextbillion_sdk.skynet.trip.retrieve("id", key: "key=API_KEY")
 
@@ -22,7 +22,7 @@ class Nextbillionai::Test::Resources::Skynet::TripTest < Nextbillionai::Test::Re
   end
 
   def test_update_required_params
-    skip("skipped: tests are disabled for the time being")
+    skip("Prism tests are disabled")
 
     response = @nextbillion_sdk.skynet.trip.update("id", key: "key=API_KEY", asset_id: "asset_id")
 
@@ -39,7 +39,7 @@ class Nextbillionai::Test::Resources::Skynet::TripTest < Nextbillionai::Test::Re
   end
 
   def test_delete_required_params
-    skip("skipped: tests are disabled for the time being")
+    skip("Prism tests are disabled")
 
     response = @nextbillion_sdk.skynet.trip.delete("id", key: "key=API_KEY")
 
@@ -56,7 +56,7 @@ class Nextbillionai::Test::Resources::Skynet::TripTest < Nextbillionai::Test::Re
   end
 
   def test_end__required_params
-    skip("skipped: tests are disabled for the time being")
+    skip("Prism tests are disabled")
 
     response = @nextbillion_sdk.skynet.trip.end_(key: "key=API_KEY", id: "id")
 
@@ -73,7 +73,7 @@ class Nextbillionai::Test::Resources::Skynet::TripTest < Nextbillionai::Test::Re
   end
 
   def test_get_summary_required_params
-    skip("skipped: tests are disabled for the time being")
+    skip("Prism tests are disabled")
 
     response = @nextbillion_sdk.skynet.trip.get_summary("id", key: "key=API_KEY")
 
@@ -91,7 +91,7 @@ class Nextbillionai::Test::Resources::Skynet::TripTest < Nextbillionai::Test::Re
   end
 
   def test_start_required_params
-    skip("skipped: tests are disabled for the time being")
+    skip("Prism tests are disabled")
 
     response = @nextbillion_sdk.skynet.trip.start(key: "key=API_KEY", asset_id: "asset_id")
 

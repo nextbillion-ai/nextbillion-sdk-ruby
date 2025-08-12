@@ -4,7 +4,7 @@ require_relative "../../test_helper"
 
 class Nextbillionai::Test::Resources::Fleetify::DocumentTemplatesTest < Nextbillionai::Test::ResourceTest
   def test_create_required_params
-    skip("skipped: tests are disabled for the time being")
+    skip("Prism tests are disabled")
 
     response =
       @nextbillion_sdk.fleetify.document_templates.create(
@@ -27,7 +27,7 @@ class Nextbillionai::Test::Resources::Fleetify::DocumentTemplatesTest < Nextbill
   end
 
   def test_retrieve_required_params
-    skip("skipped: tests are disabled for the time being")
+    skip("Prism tests are disabled")
 
     response = @nextbillion_sdk.fleetify.document_templates.retrieve("id", key: "key")
 
@@ -45,7 +45,7 @@ class Nextbillionai::Test::Resources::Fleetify::DocumentTemplatesTest < Nextbill
   end
 
   def test_update_required_params
-    skip("skipped: tests are disabled for the time being")
+    skip("Prism tests are disabled")
 
     response = @nextbillion_sdk.fleetify.document_templates.update("id", key: "key")
 
@@ -63,7 +63,7 @@ class Nextbillionai::Test::Resources::Fleetify::DocumentTemplatesTest < Nextbill
   end
 
   def test_list_required_params
-    skip("skipped: tests are disabled for the time being")
+    skip("Prism tests are disabled")
 
     response = @nextbillion_sdk.fleetify.document_templates.list(key: "key")
 
@@ -81,7 +81,7 @@ class Nextbillionai::Test::Resources::Fleetify::DocumentTemplatesTest < Nextbill
   end
 
   def test_delete_required_params
-    skip("skipped: tests are disabled for the time being")
+    skip("Prism tests are disabled")
 
     response = @nextbillion_sdk.fleetify.document_templates.delete("id", key: "key")
 

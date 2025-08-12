@@ -4,7 +4,7 @@ require_relative "../test_helper"
 
 class Nextbillionai::Test::Resources::OptimizationTest < Nextbillionai::Test::ResourceTest
   def test_compute_required_params
-    skip("skipped: tests are disabled for the time being")
+    skip("Prism tests are disabled")
 
     response =
       @nextbillion_sdk.optimization.compute(
@@ -27,7 +27,7 @@ class Nextbillionai::Test::Resources::OptimizationTest < Nextbillionai::Test::Re
   end
 
   def test_re_optimize_required_params
-    skip("skipped: tests are disabled for the time being")
+    skip("Prism tests are disabled")
 
     response =
       @nextbillion_sdk.optimization.re_optimize(
