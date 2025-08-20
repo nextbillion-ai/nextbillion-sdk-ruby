@@ -70,10 +70,7 @@ module Nextbillionai
             #   object represents one tracked location.
             #
             #   @return [Array<Nextbillionai::Models::Skynet::Asset::TrackLocation>, nil]
-            optional :list,
-                     -> {
-                       Nextbillionai::Internal::Type::ArrayOf[Nextbillionai::Skynet::Asset::TrackLocation]
-                     }
+            optional :list, -> { Nextbillionai::Internal::Type::ArrayOf[Nextbillionai::Skynet::Asset::TrackLocation] }
 
             # @!attribute page
             #   An object with pagination details of the search results. Use this object to

@@ -157,6 +157,7 @@ end
 class Nextbillionai::Test::EnumModelTest < Minitest::Test
   class E0
     include Nextbillionai::Internal::Type::Enum
+
     attr_reader :values
 
     def initialize(*values) = (@values = values)
@@ -476,6 +477,7 @@ class Nextbillionai::Test::UnionTest < Minitest::Test
 
   module U1
     extend Nextbillionai::Internal::Type::Union
+
     variant const: :a
     variant const: 2
   end
@@ -492,6 +494,7 @@ class Nextbillionai::Test::UnionTest < Minitest::Test
 
   module U2
     extend Nextbillionai::Internal::Type::Union
+
     discriminator :type
 
     variant :a, M1
@@ -500,6 +503,7 @@ class Nextbillionai::Test::UnionTest < Minitest::Test
 
   module U3
     extend Nextbillionai::Internal::Type::Union
+
     discriminator :type
 
     variant :a, M1
@@ -508,6 +512,7 @@ class Nextbillionai::Test::UnionTest < Minitest::Test
 
   module U4
     extend Nextbillionai::Internal::Type::Union
+
     discriminator :type
 
     variant String
@@ -601,6 +606,7 @@ end
 class Nextbillionai::Test::BaseModelQoLTest < Minitest::Test
   class E0
     include Nextbillionai::Internal::Type::Enum
+
     attr_reader :values
 
     def initialize(*values) = (@values = values)

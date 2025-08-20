@@ -20,10 +20,7 @@ module Nextbillionai
         #   to be created.
         #
         #   @return [Array<Nextbillionai::Models::GeofenceEntityCreate>, nil]
-        optional :geofences,
-                 -> {
-                   Nextbillionai::Internal::Type::ArrayOf[Nextbillionai::GeofenceEntityCreate]
-                 }
+        optional :geofences, -> { Nextbillionai::Internal::Type::ArrayOf[Nextbillionai::GeofenceEntityCreate] }
 
         # @!method initialize(key:, geofences: nil, request_options: {})
         #   Some parameter documentations has been truncated, see

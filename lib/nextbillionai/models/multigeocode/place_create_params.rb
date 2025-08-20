@@ -21,9 +21,7 @@ module Nextbillionai
         #
         #   @return [Array<Nextbillionai::Models::Multigeocode::PlaceCreateParams::Place>]
         required :place,
-                 -> {
-                   Nextbillionai::Internal::Type::ArrayOf[Nextbillionai::Multigeocode::PlaceCreateParams::Place]
-                 }
+                 -> { Nextbillionai::Internal::Type::ArrayOf[Nextbillionai::Multigeocode::PlaceCreateParams::Place] }
 
         # @!attribute data_source
         #   It contains information about the dataset that returns the specific result

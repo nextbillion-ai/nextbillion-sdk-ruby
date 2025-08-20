@@ -21,9 +21,7 @@ module Nextbillionai
         #
         #   @return [Array<Nextbillionai::Models::Fleetify::RouteRedispatchParams::Operation>]
         required :operations,
-                 -> {
-                   Nextbillionai::Internal::Type::ArrayOf[Nextbillionai::Fleetify::RouteRedispatchParams::Operation]
-                 }
+                 -> { Nextbillionai::Internal::Type::ArrayOf[Nextbillionai::Fleetify::RouteRedispatchParams::Operation] }
 
         # @!attribute distance
         #   Specify the distance of the route.
@@ -53,10 +51,7 @@ module Nextbillionai
           #   Specify the type of operation to be performed for the step.
           #
           #   @return [Symbol, Nextbillionai::Models::Fleetify::RouteRedispatchParams::Operation::Operation]
-          required :operation,
-                   enum: -> {
-                     Nextbillionai::Fleetify::RouteRedispatchParams::Operation::Operation
-                   }
+          required :operation, enum: -> { Nextbillionai::Fleetify::RouteRedispatchParams::Operation::Operation }
 
           # @!method initialize(data:, operation:)
           #   @param data [Nextbillionai::Models::Fleetify::RouteRedispatchParams::Operation::Data]

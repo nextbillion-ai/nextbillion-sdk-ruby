@@ -29,9 +29,7 @@ module Nextbillionai
         #
         #   @return [Array<Nextbillionai::Models::Optimization::DriverAssignmentAssignParams::Order>]
         required :orders,
-                 -> {
-                   Nextbillionai::Internal::Type::ArrayOf[Nextbillionai::Optimization::DriverAssignmentAssignParams::Order]
-                 }
+                 -> { Nextbillionai::Internal::Type::ArrayOf[Nextbillionai::Optimization::DriverAssignmentAssignParams::Order] }
 
         # @!attribute vehicles
         #   Collects the details of vehicles available to fulfill the orders. Each object
@@ -39,10 +37,7 @@ module Nextbillionai
         #   A maximum of 100 vehicles is allowed per request.
         #
         #   @return [Array<Nextbillionai::Models::Optimization::Vehicle>]
-        required :vehicles,
-                 -> {
-                   Nextbillionai::Internal::Type::ArrayOf[Nextbillionai::Optimization::Vehicle]
-                 }
+        required :vehicles, -> { Nextbillionai::Internal::Type::ArrayOf[Nextbillionai::Optimization::Vehicle] }
 
         # @!attribute options
         #   Configure the assignment constraints and response settings.
@@ -147,9 +142,7 @@ module Nextbillionai
           #
           #   @return [Array<Nextbillionai::Models::Optimization::DriverAssignmentAssignParams::Order::Dropoff>, nil]
           optional :dropoffs,
-                   -> {
-                     Nextbillionai::Internal::Type::ArrayOf[Nextbillionai::Optimization::DriverAssignmentAssignParams::Order::Dropoff]
-                   }
+                   -> { Nextbillionai::Internal::Type::ArrayOf[Nextbillionai::Optimization::DriverAssignmentAssignParams::Order::Dropoff] }
 
           # @!attribute priority
           #   Specify the priority for this order. A higher value indicates a higher priority.
@@ -501,9 +494,7 @@ module Nextbillionai
           #
           #   @return [Array<Nextbillionai::Models::Optimization::DriverAssignmentAssignParams::Options::OrderAttributePriorityMapping>, nil]
           optional :order_attribute_priority_mappings,
-                   -> {
-                     Nextbillionai::Internal::Type::ArrayOf[Nextbillionai::Optimization::DriverAssignmentAssignParams::Options::OrderAttributePriorityMapping]
-                   }
+                   -> { Nextbillionai::Internal::Type::ArrayOf[Nextbillionai::Optimization::DriverAssignmentAssignParams::Options::OrderAttributePriorityMapping] }
 
           # @!attribute travel_cost
           #   Choose a travel cost that will be used by the service for assigning vehicles
@@ -521,9 +512,7 @@ module Nextbillionai
           #
           #   @return [Array<Nextbillionai::Models::Optimization::DriverAssignmentAssignParams::Options::VehicleAttributePriorityMapping>, nil]
           optional :vehicle_attribute_priority_mappings,
-                   -> {
-                     Nextbillionai::Internal::Type::ArrayOf[Nextbillionai::Optimization::DriverAssignmentAssignParams::Options::VehicleAttributePriorityMapping]
-                   }
+                   -> { Nextbillionai::Internal::Type::ArrayOf[Nextbillionai::Optimization::DriverAssignmentAssignParams::Options::VehicleAttributePriorityMapping] }
 
           # @!method initialize(alternate_assignments: nil, dropoff_details: nil, order_attribute_priority_mappings: nil, travel_cost: nil, vehicle_attribute_priority_mappings: nil)
           #   Some parameter documentations has been truncated, see

@@ -44,9 +44,7 @@ module Nextbillionai
           #
           #   @return [Array<Nextbillionai::Models::Skynet::SearchResponse::Data::Asset>, nil]
           optional :assets,
-                   -> {
-                     Nextbillionai::Internal::Type::ArrayOf[Nextbillionai::Skynet::SearchResponse::Data::Asset]
-                   }
+                   -> { Nextbillionai::Internal::Type::ArrayOf[Nextbillionai::Skynet::SearchResponse::Data::Asset] }
 
           # @!attribute page
           #   An object with pagination details of the search results. Use this object to

@@ -50,8 +50,7 @@ module Nextbillionai
       #   create restrictions.
       #
       #   @return [Array<Array<Float>>, nil]
-      optional :geofence,
-               Nextbillionai::Internal::Type::ArrayOf[Nextbillionai::Internal::Type::ArrayOf[Float]]
+      optional :geofence, Nextbillionai::Internal::Type::ArrayOf[Nextbillionai::Internal::Type::ArrayOf[Float]]
 
       # @!attribute height
       #   Specify the maximum truck height, in centimeter, that will be allowed under the
@@ -81,10 +80,7 @@ module Nextbillionai
       #   applied for all modes.
       #
       #   @return [Array<Symbol, Nextbillionai::Models::RichGroupRequest::Mode>, nil]
-      optional :mode,
-               -> {
-                 Nextbillionai::Internal::Type::ArrayOf[enum: Nextbillionai::RichGroupRequest::Mode]
-               }
+      optional :mode, -> { Nextbillionai::Internal::Type::ArrayOf[enum: Nextbillionai::RichGroupRequest::Mode] }
 
       # @!attribute repeat_on
       #   It represents the days and times when the restriction is in effect. Users can

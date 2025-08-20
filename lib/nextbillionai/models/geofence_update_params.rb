@@ -280,8 +280,7 @@ module Nextbillionai
           #   geofence boundary.
           #
           #   @return [Array<Array<Float>>, nil]
-          optional :geometry,
-                   Nextbillionai::Internal::Type::ArrayOf[Nextbillionai::Internal::Type::ArrayOf[Float]]
+          optional :geometry, Nextbillionai::Internal::Type::ArrayOf[Nextbillionai::Internal::Type::ArrayOf[Float]]
 
           # @!attribute type
           #   Type of the geoJSON geometry. Should always be Polygon.

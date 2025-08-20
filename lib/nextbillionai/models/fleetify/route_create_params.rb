@@ -31,9 +31,7 @@ module Nextbillionai
         #
         #   @return [Array<Nextbillionai::Models::Fleetify::Routes::RouteStepsRequest>]
         required :steps,
-                 -> {
-                   Nextbillionai::Internal::Type::ArrayOf[Nextbillionai::Fleetify::Routes::RouteStepsRequest]
-                 }
+                 -> { Nextbillionai::Internal::Type::ArrayOf[Nextbillionai::Fleetify::Routes::RouteStepsRequest] }
 
         # @!attribute distance
         #   Specify the total distance, in meters, for an informative display in Driver's

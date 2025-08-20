@@ -29,10 +29,7 @@ module Nextbillionai
         #   attribute in the [Vehicle Object](#vehicle-object) section.
         #
         #   @return [Array<Nextbillionai::Models::Optimization::Vehicle>]
-        required :vehicles,
-                 -> {
-                   Nextbillionai::Internal::Type::ArrayOf[Nextbillionai::Optimization::Vehicle]
-                 }
+        required :vehicles, -> { Nextbillionai::Internal::Type::ArrayOf[Nextbillionai::Optimization::Vehicle] }
 
         # @!attribute cost_matrix
         #   An array of arrays to denote the user-defined costs of traveling between each
@@ -57,9 +54,7 @@ module Nextbillionai
         #
         #   @return [Array<Nextbillionai::Models::Optimization::V2SubmitParams::Depot>, nil]
         optional :depots,
-                 -> {
-                   Nextbillionai::Internal::Type::ArrayOf[Nextbillionai::Optimization::V2SubmitParams::Depot]
-                 }
+                 -> { Nextbillionai::Internal::Type::ArrayOf[Nextbillionai::Optimization::V2SubmitParams::Depot] }
 
         # @!attribute description
         #   Define the optimization job using any custom message. This description is
@@ -157,9 +152,7 @@ module Nextbillionai
         #
         #   @return [Array<Nextbillionai::Models::Optimization::V2SubmitParams::Relation>, nil]
         optional :relations,
-                 -> {
-                   Nextbillionai::Internal::Type::ArrayOf[Nextbillionai::Optimization::V2SubmitParams::Relation]
-                 }
+                 -> { Nextbillionai::Internal::Type::ArrayOf[Nextbillionai::Optimization::V2SubmitParams::Relation] }
 
         # @!attribute shipments
         #   The shipments object is used to collect the details of shipments that need to be
@@ -171,10 +164,7 @@ module Nextbillionai
         #   to build a valid request.
         #
         #   @return [Array<Nextbillionai::Models::Optimization::Shipment>, nil]
-        optional :shipments,
-                 -> {
-                   Nextbillionai::Internal::Type::ArrayOf[Nextbillionai::Optimization::Shipment]
-                 }
+        optional :shipments, -> { Nextbillionai::Internal::Type::ArrayOf[Nextbillionai::Optimization::Shipment] }
 
         # @!attribute solution
         #   This attribute is related to the re-optimization feature. It allows for the
@@ -185,9 +175,7 @@ module Nextbillionai
         #
         #   @return [Array<Nextbillionai::Models::Optimization::V2SubmitParams::Solution>, nil]
         optional :solution,
-                 -> {
-                   Nextbillionai::Internal::Type::ArrayOf[Nextbillionai::Optimization::V2SubmitParams::Solution]
-                 }
+                 -> { Nextbillionai::Internal::Type::ArrayOf[Nextbillionai::Optimization::V2SubmitParams::Solution] }
 
         # @!attribute unassigned
         #   unassigned attribute is related to the re-optimization feature. This attribute
@@ -229,9 +217,7 @@ module Nextbillionai
         #
         #   @return [Array<Nextbillionai::Models::Optimization::V2SubmitParams::Zone>, nil]
         optional :zones,
-                 -> {
-                   Nextbillionai::Internal::Type::ArrayOf[Nextbillionai::Optimization::V2SubmitParams::Zone]
-                 }
+                 -> { Nextbillionai::Internal::Type::ArrayOf[Nextbillionai::Optimization::V2SubmitParams::Zone] }
 
         # @!method initialize(key:, locations:, vehicles:, cost_matrix: nil, depots: nil, description: nil, distance_matrix: nil, duration_matrix: nil, existing_solution_id: nil, jobs: nil, options: nil, relations: nil, shipments: nil, solution: nil, unassigned: nil, zones: nil, request_options: {})
         #   Some parameter documentations has been truncated, see
@@ -302,9 +288,7 @@ module Nextbillionai
           #
           #   @return [Array<Symbol, Nextbillionai::Models::Optimization::V2SubmitParams::Locations::Approach>, nil]
           optional :approaches,
-                   -> {
-                     Nextbillionai::Internal::Type::ArrayOf[enum: Nextbillionai::Optimization::V2SubmitParams::Locations::Approach]
-                   }
+                   -> { Nextbillionai::Internal::Type::ArrayOf[enum: Nextbillionai::Optimization::V2SubmitParams::Locations::Approach] }
 
           # @!method initialize(location:, id: nil, approaches: nil)
           #   Some parameter documentations has been truncated, see
@@ -650,9 +634,7 @@ module Nextbillionai
               #
               #   @return [Symbol, Nextbillionai::Models::Optimization::V2SubmitParams::Options::Grouping::RouteGrouping::ZoneSource, nil]
               optional :zone_source,
-                       enum: -> {
-                         Nextbillionai::Optimization::V2SubmitParams::Options::Grouping::RouteGrouping::ZoneSource
-                       }
+                       enum: -> { Nextbillionai::Optimization::V2SubmitParams::Options::Grouping::RouteGrouping::ZoneSource }
 
               # @!method initialize(penalty_factor: nil, zone_diameter: nil, zone_source: nil)
               #   Some parameter documentations has been truncated, see
@@ -810,10 +792,7 @@ module Nextbillionai
               #   Please note that type is mandatory only when using custom attribute.
               #
               #   @return [Symbol, Nextbillionai::Models::Optimization::V2SubmitParams::Options::Objective::Custom::Type]
-              required :type,
-                       enum: -> {
-                         Nextbillionai::Optimization::V2SubmitParams::Options::Objective::Custom::Type
-                       }
+              required :type, enum: -> { Nextbillionai::Optimization::V2SubmitParams::Options::Objective::Custom::Type }
 
               # @!attribute value
               #   The value parameter accepts four inputs, two of them are valid for min type and
@@ -838,9 +817,7 @@ module Nextbillionai
               #
               #   @return [Symbol, Nextbillionai::Models::Optimization::V2SubmitParams::Options::Objective::Custom::Value]
               required :value,
-                       enum: -> {
-                         Nextbillionai::Optimization::V2SubmitParams::Options::Objective::Custom::Value
-                       }
+                       enum: -> { Nextbillionai::Optimization::V2SubmitParams::Options::Objective::Custom::Value }
 
               # @!method initialize(type:, value:)
               #   Some parameter documentations has been truncated, see
@@ -977,9 +954,7 @@ module Nextbillionai
             #
             #   @return [Array<Symbol, Nextbillionai::Models::Optimization::V2SubmitParams::Options::Routing::Allow>, nil]
             optional :allow,
-                     -> {
-                       Nextbillionai::Internal::Type::ArrayOf[enum: Nextbillionai::Optimization::V2SubmitParams::Options::Routing::Allow]
-                     }
+                     -> { Nextbillionai::Internal::Type::ArrayOf[enum: Nextbillionai::Optimization::V2SubmitParams::Options::Routing::Allow] }
 
             # @!attribute avoid
             #   Specify the type of objects/maneuvers that the route should avoid.
@@ -1001,9 +976,7 @@ module Nextbillionai
             #
             #   @return [Array<Symbol, Nextbillionai::Models::Optimization::V2SubmitParams::Options::Routing::Avoid>, nil]
             optional :avoid,
-                     -> {
-                       Nextbillionai::Internal::Type::ArrayOf[enum: Nextbillionai::Optimization::V2SubmitParams::Options::Routing::Avoid]
-                     }
+                     -> { Nextbillionai::Internal::Type::ArrayOf[enum: Nextbillionai::Optimization::V2SubmitParams::Options::Routing::Avoid] }
 
             # @!attribute context
             #   Use this parameter to apply a single speed value for all ETA and drive time
@@ -1011,10 +984,7 @@ module Nextbillionai
             #   parameter also impacts the cost of the solution.
             #
             #   @return [Symbol, Nextbillionai::Models::Optimization::V2SubmitParams::Options::Routing::Context, nil]
-            optional :context,
-                     enum: -> {
-                       Nextbillionai::Optimization::V2SubmitParams::Options::Routing::Context
-                     }
+            optional :context, enum: -> { Nextbillionai::Optimization::V2SubmitParams::Options::Routing::Context }
 
             # @!attribute cross_border
             #   Specify if crossing an international border is allowed for operations near
@@ -1056,9 +1026,7 @@ module Nextbillionai
             #
             #   @return [Array<Symbol, Nextbillionai::Models::Optimization::V2SubmitParams::Options::Routing::HazmatType>, nil]
             optional :hazmat_type,
-                     -> {
-                       Nextbillionai::Internal::Type::ArrayOf[enum: Nextbillionai::Optimization::V2SubmitParams::Options::Routing::HazmatType]
-                     }
+                     -> { Nextbillionai::Internal::Type::ArrayOf[enum: Nextbillionai::Optimization::V2SubmitParams::Options::Routing::HazmatType] }
 
             # @!attribute mode
             #   Define the traveling mode to be used for determining the optimized routes.
@@ -1244,9 +1212,7 @@ module Nextbillionai
           #
           #   @return [Array<Nextbillionai::Models::Optimization::V2SubmitParams::Relation::Step>]
           required :steps,
-                   -> {
-                     Nextbillionai::Internal::Type::ArrayOf[Nextbillionai::Optimization::V2SubmitParams::Relation::Step]
-                   }
+                   -> { Nextbillionai::Internal::Type::ArrayOf[Nextbillionai::Optimization::V2SubmitParams::Relation::Step] }
 
           # @!attribute type
           #   Specifies the type of relation constraint. The following types are supported:
@@ -1430,9 +1396,7 @@ module Nextbillionai
           #
           #   @return [Array<Nextbillionai::Models::Optimization::V2SubmitParams::Solution::Step>]
           required :steps,
-                   -> {
-                     Nextbillionai::Internal::Type::ArrayOf[Nextbillionai::Optimization::V2SubmitParams::Solution::Step]
-                   }
+                   -> { Nextbillionai::Internal::Type::ArrayOf[Nextbillionai::Optimization::V2SubmitParams::Solution::Step] }
 
           # @!attribute vehicle
           #   Specify the ID of the vehicle that was assigned to the route. This field is
