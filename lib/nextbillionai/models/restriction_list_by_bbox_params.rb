@@ -43,9 +43,7 @@ module Nextbillionai
       #
       #   @return [Array<Symbol, Nextbillionai::Models::RestrictionListByBboxParams::Mode>, nil]
       optional :mode,
-               -> {
-                 Nextbillionai::Internal::Type::ArrayOf[enum: Nextbillionai::RestrictionListByBboxParams::Mode]
-               }
+               -> { Nextbillionai::Internal::Type::ArrayOf[enum: Nextbillionai::RestrictionListByBboxParams::Mode] }
 
       # @!attribute restriction_type
       #   Specify the type of restrictions to fetch.

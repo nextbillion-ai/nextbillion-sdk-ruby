@@ -186,10 +186,7 @@ module Nextbillionai
             #   Status of the step.
             #
             #   @return [Symbol, Nextbillionai::Models::Fleetify::Routes::RouteStepsResponse::Completion::Status, nil]
-            optional :status,
-                     enum: -> {
-                       Nextbillionai::Fleetify::Routes::RouteStepsResponse::Completion::Status
-                     }
+            optional :status, enum: -> { Nextbillionai::Fleetify::Routes::RouteStepsResponse::Completion::Status }
 
             # @!method initialize(completed_at: nil, completed_by_mode: nil, completion_mode: nil, document: nil, document_modified_at: nil, geofence_config: nil, status: nil)
             #   Some parameter documentations has been truncated, see

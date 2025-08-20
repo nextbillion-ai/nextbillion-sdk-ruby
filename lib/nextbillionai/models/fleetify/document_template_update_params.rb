@@ -22,9 +22,7 @@ module Nextbillionai
         #
         #   @return [Array<Nextbillionai::Models::Fleetify::DocumentTemplateContentRequest>, nil]
         optional :content,
-                 -> {
-                   Nextbillionai::Internal::Type::ArrayOf[Nextbillionai::Fleetify::DocumentTemplateContentRequest]
-                 }
+                 -> { Nextbillionai::Internal::Type::ArrayOf[Nextbillionai::Fleetify::DocumentTemplateContentRequest] }
 
         # @!attribute name
         #   Specify the document template name to be updated.

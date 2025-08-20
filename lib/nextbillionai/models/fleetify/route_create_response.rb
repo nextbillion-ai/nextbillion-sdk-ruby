@@ -96,9 +96,7 @@ module Nextbillionai
           #
           #   @return [Array<Nextbillionai::Models::Fleetify::Routes::RouteStepsResponse>, nil]
           optional :steps,
-                   -> {
-                     Nextbillionai::Internal::Type::ArrayOf[Nextbillionai::Fleetify::Routes::RouteStepsResponse]
-                   }
+                   -> { Nextbillionai::Internal::Type::ArrayOf[Nextbillionai::Fleetify::Routes::RouteStepsResponse] }
 
           # @!attribute total_steps
           #   Returns the total number of steps in the dispatched route.

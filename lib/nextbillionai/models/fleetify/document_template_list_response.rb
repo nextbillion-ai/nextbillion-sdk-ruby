@@ -53,9 +53,7 @@ module Nextbillionai
           #
           #   @return [Array<Nextbillionai::Models::Fleetify::DocumentTemplateContentResponse>, nil]
           optional :content,
-                   -> {
-                     Nextbillionai::Internal::Type::ArrayOf[Nextbillionai::Fleetify::DocumentTemplateContentResponse]
-                   }
+                   -> { Nextbillionai::Internal::Type::ArrayOf[Nextbillionai::Fleetify::DocumentTemplateContentResponse] }
 
           # @!attribute name
           #   Returns the name of the document template.
