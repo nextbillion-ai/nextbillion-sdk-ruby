@@ -27,7 +27,7 @@ module Nextbillionai
           #
           # @param ps [Integer] Body param: Denotes number of search results per page. Use this along with the p
           #
-          # @param sort [Nextbillionai::Models::Skynet::Search::PolygonCreateParams::Sort] Body param:
+          # @param sort [Nextbillionai::Models::Skynet::Search::PolygonCreateParams::Sort] Body param
           #
           # @param request_options [Nextbillionai::RequestOptions, Hash{Symbol=>Object}, nil]
           #
