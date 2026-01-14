@@ -47,7 +47,7 @@ module Nextbillionai
       #
       # @param key [String] Query param: A key is a unique identifier that is required to authenticate a req
       #
-      # @param body [Array<Nextbillionai::Models::GeocodeBatchCreateParams::Body>] Body param:
+      # @param body [Array<Nextbillionai::Models::GeocodeBatchCreateParams::Body>] Body param
       #
       # @param request_options [Nextbillionai::RequestOptions, Hash{Symbol=>Object}, nil]
       #

@@ -78,7 +78,7 @@ module Nextbillionai
         # Query param: A key is a unique identifier that is required to authenticate a
         # request to the API.
         key:,
-        # Body param:
+        # Body param
         body:,
         request_options: {}
       )

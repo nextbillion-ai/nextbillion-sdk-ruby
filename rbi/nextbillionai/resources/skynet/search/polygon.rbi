@@ -64,7 +64,7 @@ module Nextbillionai
             # pn parameter to implement pagination for your searched results. Please note that
             # ps has a default value of 20 and accepts integers only in the range of [1, 100].
             ps: nil,
-            # Body param:
+            # Body param
             sort: nil,
             request_options: {}
           )
