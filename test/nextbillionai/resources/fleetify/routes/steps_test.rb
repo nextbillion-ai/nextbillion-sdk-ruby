@@ -9,7 +9,7 @@ class Nextbillionai::Test::Resources::Fleetify::Routes::StepsTest < Nextbilliona
     response =
       @nextbillion_sdk.fleetify.routes.steps.create(
         "routeID",
-        key: "key",
+        key: "key=API_KEY",
         arrival: 0,
         location: [0],
         position: 0,
