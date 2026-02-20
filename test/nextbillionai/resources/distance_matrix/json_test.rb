@@ -4,7 +4,7 @@ require_relative "../../test_helper"
 
 class Nextbillionai::Test::Resources::DistanceMatrix::JsonTest < Nextbillionai::Test::ResourceTest
   def test_create
-    skip("Prism tests are disabled")
+    skip("Mock server tests are disabled")
 
     response = @nextbillion_sdk.distance_matrix.json.create
 
@@ -14,7 +14,7 @@ class Nextbillionai::Test::Resources::DistanceMatrix::JsonTest < Nextbillionai::
   end
 
   def test_retrieve_required_params
-    skip("Prism tests are disabled")
+    skip("Mock server tests are disabled")
 
     response =
       @nextbillion_sdk.distance_matrix.json.retrieve(

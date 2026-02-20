@@ -4,7 +4,7 @@ require_relative "../test_helper"
 
 class Nextbillionai::Test::Resources::IsochroneTest < Nextbillionai::Test::ResourceTest
   def test_compute_required_params
-    skip("Prism tests are disabled")
+    skip("Mock server tests are disabled")
 
     response =
       @nextbillion_sdk.isochrone.compute(

@@ -4,7 +4,7 @@ require_relative "../test_helper"
 
 class Nextbillionai::Test::Resources::DirectionsTest < Nextbillionai::Test::ResourceTest
   def test_compute_route_required_params
-    skip("Prism tests are disabled")
+    skip("Mock server tests are disabled")
 
     response =
       @nextbillion_sdk.directions.compute_route(

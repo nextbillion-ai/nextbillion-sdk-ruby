@@ -4,7 +4,7 @@ require_relative "../../../test_helper"
 
 class Nextbillionai::Test::Resources::Skynet::Asset::LocationTest < Nextbillionai::Test::ResourceTest
   def test_list_required_params
-    skip("Prism tests are disabled")
+    skip("Mock server tests are disabled")
 
     response = @nextbillion_sdk.skynet.asset.location.list("id", key: "key=API_KEY")
 
@@ -22,7 +22,7 @@ class Nextbillionai::Test::Resources::Skynet::Asset::LocationTest < Nextbilliona
   end
 
   def test_get_last_required_params
-    skip("Prism tests are disabled")
+    skip("Mock server tests are disabled")
 
     response = @nextbillion_sdk.skynet.asset.location.get_last("id", key: "key=API_KEY")
 
