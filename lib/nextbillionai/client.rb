@@ -39,9 +39,11 @@ module Nextbillionai
     # @return [Nextbillionai::Resources::Browse]
     attr_reader :browse
 
+    # <p>Get travel time and find optimal routes. Add guided navigation and gain trip data insights.</p>
     # @return [Nextbillionai::Resources::Mdm]
     attr_reader :mdm
 
+    # <p>Get travel time and find optimal routes. Add guided navigation and gain trip data insights.</p>
     # @return [Nextbillionai::Resources::Isochrone]
     attr_reader :isochrone
 
@@ -57,6 +59,7 @@ module Nextbillionai
     # @return [Nextbillionai::Resources::Autocomplete]
     attr_reader :autocomplete
 
+    # <p>Get travel time and find optimal routes. Add guided navigation and gain trip data insights.</p>
     # @return [Nextbillionai::Resources::Navigation]
     attr_reader :navigation
 
@@ -66,9 +69,11 @@ module Nextbillionai
     # @return [Nextbillionai::Resources::Autosuggest]
     attr_reader :autosuggest
 
+    # <p>Get travel time and find optimal routes. Add guided navigation and gain trip data insights.</p>
     # @return [Nextbillionai::Resources::Directions]
     attr_reader :directions
 
+    # <p>Get travel time and find optimal routes. Add guided navigation and gain trip data insights.</p>
     # @return [Nextbillionai::Resources::Batch]
     attr_reader :batch
 
@@ -78,9 +83,11 @@ module Nextbillionai
     # @return [Nextbillionai::Resources::Revgeocode]
     attr_reader :revgeocode
 
+    # <p>Get travel time and find optimal routes. Add guided navigation and gain trip data insights.</p>
     # @return [Nextbillionai::Resources::RouteReport]
     attr_reader :route_report
 
+    # <p>Get travel time and find optimal routes. Add guided navigation and gain trip data insights.</p>
     # @return [Nextbillionai::Resources::SnapToRoads]
     attr_reader :snap_to_roads
 

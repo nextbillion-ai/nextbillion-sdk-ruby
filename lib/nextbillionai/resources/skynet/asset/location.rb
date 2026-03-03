@@ -37,10 +37,11 @@ module Nextbillionai
           # @see Nextbillionai::Models::Skynet::Asset::LocationListParams
           def list(id, params)
             parsed, options = Nextbillionai::Skynet::Asset::LocationListParams.dump_request(params)
+            query = Nextbillionai::Internal::Util.encode_query_params(parsed)
             @client.request(
               method: :get,
               path: ["skynet/asset/%1$s/location/list", id],
-              query: parsed,
+              query: query,
               model: Nextbillionai::Models::Skynet::Asset::LocationListResponse,
               options: options
             )
@@ -66,10 +67,11 @@ module Nextbillionai
           # @see Nextbillionai::Models::Skynet::Asset::LocationGetLastParams
           def get_last(id, params)
             parsed, options = Nextbillionai::Skynet::Asset::LocationGetLastParams.dump_request(params)
+            query = Nextbillionai::Internal::Util.encode_query_params(parsed)
             @client.request(
               method: :get,
               path: ["skynet/asset/%1$s/location/last", id],
-              query: parsed,
+              query: query,
               model: Nextbillionai::Models::Skynet::Asset::LocationGetLastResponse,
               options: options
             )

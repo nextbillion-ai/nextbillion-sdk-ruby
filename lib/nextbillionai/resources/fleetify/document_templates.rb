@@ -24,12 +24,13 @@ module Nextbillionai
         #
         # @see Nextbillionai::Models::Fleetify::DocumentTemplateCreateParams
         def create(params)
-          parsed, options = Nextbillionai::Fleetify::DocumentTemplateCreateParams.dump_request(params)
           query_params = [:key]
+          parsed, options = Nextbillionai::Fleetify::DocumentTemplateCreateParams.dump_request(params)
+          query = Nextbillionai::Internal::Util.encode_query_params(parsed.slice(*query_params))
           @client.request(
             method: :post,
             path: "fleetify/document_templates",
-            query: parsed.slice(*query_params),
+            query: query,
             body: parsed.except(*query_params),
             model: Nextbillionai::Models::Fleetify::DocumentTemplateCreateResponse,
             options: options
@@ -55,10 +56,11 @@ module Nextbillionai
         # @see Nextbillionai::Models::Fleetify::DocumentTemplateRetrieveParams
         def retrieve(id, params)
           parsed, options = Nextbillionai::Fleetify::DocumentTemplateRetrieveParams.dump_request(params)
+          query = Nextbillionai::Internal::Util.encode_query_params(parsed)
           @client.request(
             method: :get,
             path: ["fleetify/document_templates/%1$s", id],
-            query: parsed,
+            query: query,
             model: Nextbillionai::Models::Fleetify::DocumentTemplateRetrieveResponse,
             options: options
           )
@@ -86,12 +88,13 @@ module Nextbillionai
         #
         # @see Nextbillionai::Models::Fleetify::DocumentTemplateUpdateParams
         def update(id, params)
-          parsed, options = Nextbillionai::Fleetify::DocumentTemplateUpdateParams.dump_request(params)
           query_params = [:key]
+          parsed, options = Nextbillionai::Fleetify::DocumentTemplateUpdateParams.dump_request(params)
+          query = Nextbillionai::Internal::Util.encode_query_params(parsed.slice(*query_params))
           @client.request(
             method: :put,
             path: ["fleetify/document_templates/%1$s", id],
-            query: parsed.slice(*query_params),
+            query: query,
             body: parsed.except(*query_params),
             model: Nextbillionai::Models::Fleetify::DocumentTemplateUpdateResponse,
             options: options
@@ -114,10 +117,11 @@ module Nextbillionai
         # @see Nextbillionai::Models::Fleetify::DocumentTemplateListParams
         def list(params)
           parsed, options = Nextbillionai::Fleetify::DocumentTemplateListParams.dump_request(params)
+          query = Nextbillionai::Internal::Util.encode_query_params(parsed)
           @client.request(
             method: :get,
             path: "fleetify/document_templates",
-            query: parsed,
+            query: query,
             model: Nextbillionai::Models::Fleetify::DocumentTemplateListResponse,
             options: options
           )
@@ -142,10 +146,11 @@ module Nextbillionai
         # @see Nextbillionai::Models::Fleetify::DocumentTemplateDeleteParams
         def delete(id, params)
           parsed, options = Nextbillionai::Fleetify::DocumentTemplateDeleteParams.dump_request(params)
+          query = Nextbillionai::Internal::Util.encode_query_params(parsed)
           @client.request(
             method: :delete,
             path: ["fleetify/document_templates/%1$s", id],
-            query: parsed,
+            query: query,
             model: Nextbillionai::Models::Fleetify::DocumentTemplateDeleteResponse,
             options: options
           )

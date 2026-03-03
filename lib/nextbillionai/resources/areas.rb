@@ -19,10 +19,11 @@ module Nextbillionai
       # @see Nextbillionai::Models::AreaListParams
       def list(params)
         parsed, options = Nextbillionai::AreaListParams.dump_request(params)
+        query = Nextbillionai::Internal::Util.encode_query_params(parsed)
         @client.request(
           method: :get,
           path: "areas",
-          query: parsed,
+          query: query,
           model: Nextbillionai::Internal::Type::ArrayOf[Nextbillionai::Models::AreaListResponseItem],
           options: options
         )

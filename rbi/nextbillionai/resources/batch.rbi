@@ -2,6 +2,7 @@
 
 module Nextbillionai
   module Resources
+    # <p>Get travel time and find optimal routes. Add guided navigation and gain trip data insights.</p>
     class Batch
       # Create Batch Routing
       sig do

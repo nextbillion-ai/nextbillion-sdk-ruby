@@ -51,10 +51,11 @@ module Nextbillionai
       # @see Nextbillionai::Models::OptimizationComputeParams
       def compute(params)
         parsed, options = Nextbillionai::OptimizationComputeParams.dump_request(params)
+        query = Nextbillionai::Internal::Util.encode_query_params(parsed)
         @client.request(
           method: :get,
           path: "optimization/json",
-          query: parsed,
+          query: query,
           model: Nextbillionai::Models::OptimizationComputeResponse,
           options: options
         )
@@ -85,12 +86,13 @@ module Nextbillionai
       #
       # @see Nextbillionai::Models::OptimizationReOptimizeParams
       def re_optimize(params)
-        parsed, options = Nextbillionai::OptimizationReOptimizeParams.dump_request(params)
         query_params = [:key]
+        parsed, options = Nextbillionai::OptimizationReOptimizeParams.dump_request(params)
+        query = Nextbillionai::Internal::Util.encode_query_params(parsed.slice(*query_params))
         @client.request(
           method: :post,
           path: "optimization/re_optimization",
-          query: parsed.slice(*query_params),
+          query: query,
           body: parsed.except(*query_params),
           model: Nextbillionai::PostResponse,
           options: options

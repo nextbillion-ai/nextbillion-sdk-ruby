@@ -33,12 +33,13 @@ module Nextbillionai
         #
         # @see Nextbillionai::Models::Multigeocode::PlaceCreateParams
         def create(params)
-          parsed, options = Nextbillionai::Multigeocode::PlaceCreateParams.dump_request(params)
           query_params = [:key]
+          parsed, options = Nextbillionai::Multigeocode::PlaceCreateParams.dump_request(params)
+          query = Nextbillionai::Internal::Util.encode_query_params(parsed.slice(*query_params))
           @client.request(
             method: :post,
             path: "multigeocode/place",
-            query: parsed.slice(*query_params),
+            query: query,
             body: parsed.except(*query_params),
             model: Nextbillionai::Models::Multigeocode::PlaceCreateResponse,
             options: options
@@ -64,10 +65,11 @@ module Nextbillionai
         # @see Nextbillionai::Models::Multigeocode::PlaceRetrieveParams
         def retrieve(doc_id, params)
           parsed, options = Nextbillionai::Multigeocode::PlaceRetrieveParams.dump_request(params)
+          query = Nextbillionai::Internal::Util.encode_query_params(parsed)
           @client.request(
             method: :get,
             path: ["multigeocode/place/%1$s", doc_id],
-            query: parsed,
+            query: query,
             model: Nextbillionai::Models::Multigeocode::PlaceRetrieveResponse,
             options: options
           )
@@ -108,12 +110,13 @@ module Nextbillionai
         #
         # @see Nextbillionai::Models::Multigeocode::PlaceUpdateParams
         def update(doc_id, params)
-          parsed, options = Nextbillionai::Multigeocode::PlaceUpdateParams.dump_request(params)
           query_params = [:key]
+          parsed, options = Nextbillionai::Multigeocode::PlaceUpdateParams.dump_request(params)
+          query = Nextbillionai::Internal::Util.encode_query_params(parsed.slice(*query_params))
           @client.request(
             method: :put,
             path: ["multigeocode/place/%1$s", doc_id],
-            query: parsed.slice(*query_params),
+            query: query,
             body: parsed.except(*query_params),
             model: Nextbillionai::Models::Multigeocode::PlaceUpdateResponse,
             options: options
@@ -144,10 +147,11 @@ module Nextbillionai
         # @see Nextbillionai::Models::Multigeocode::PlaceDeleteParams
         def delete(doc_id, params)
           parsed, options = Nextbillionai::Multigeocode::PlaceDeleteParams.dump_request(params)
+          query = Nextbillionai::Internal::Util.encode_query_params(parsed)
           @client.request(
             method: :delete,
             path: ["multigeocode/place/%1$s", doc_id],
-            query: parsed,
+            query: query,
             model: Nextbillionai::Models::Multigeocode::PlaceDeleteResponse,
             options: options
           )

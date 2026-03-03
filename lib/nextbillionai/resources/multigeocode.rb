@@ -46,12 +46,13 @@ module Nextbillionai
       #
       # @see Nextbillionai::Models::MultigeocodeSearchParams
       def search(params)
-        parsed, options = Nextbillionai::MultigeocodeSearchParams.dump_request(params)
         query_params = [:key]
+        parsed, options = Nextbillionai::MultigeocodeSearchParams.dump_request(params)
+        query = Nextbillionai::Internal::Util.encode_query_params(parsed.slice(*query_params))
         @client.request(
           method: :post,
           path: "multigeocode/search",
-          query: parsed.slice(*query_params),
+          query: query,
           body: parsed.except(*query_params),
           model: Nextbillionai::Models::MultigeocodeSearchResponse,
           options: options

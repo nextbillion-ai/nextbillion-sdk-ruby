@@ -40,12 +40,13 @@ module Nextbillionai
         #
         # @see Nextbillionai::Models::Skynet::AssetCreateParams
         def create(params)
-          parsed, options = Nextbillionai::Skynet::AssetCreateParams.dump_request(params)
           query_params = [:key, :cluster]
+          parsed, options = Nextbillionai::Skynet::AssetCreateParams.dump_request(params)
+          query = Nextbillionai::Internal::Util.encode_query_params(parsed.slice(*query_params))
           @client.request(
             method: :post,
             path: "skynet/asset",
-            query: parsed.slice(*query_params),
+            query: query,
             body: parsed.except(*query_params),
             model: Nextbillionai::Models::Skynet::AssetCreateResponse,
             options: options
@@ -72,10 +73,11 @@ module Nextbillionai
         # @see Nextbillionai::Models::Skynet::AssetRetrieveParams
         def retrieve(id, params)
           parsed, options = Nextbillionai::Skynet::AssetRetrieveParams.dump_request(params)
+          query = Nextbillionai::Internal::Util.encode_query_params(parsed)
           @client.request(
             method: :get,
             path: ["skynet/asset/%1$s", id],
-            query: parsed,
+            query: query,
             model: Nextbillionai::Models::Skynet::AssetRetrieveResponse,
             options: options
           )
@@ -111,12 +113,13 @@ module Nextbillionai
         #
         # @see Nextbillionai::Models::Skynet::AssetUpdateParams
         def update(id, params)
-          parsed, options = Nextbillionai::Skynet::AssetUpdateParams.dump_request(params)
           query_params = [:key, :cluster]
+          parsed, options = Nextbillionai::Skynet::AssetUpdateParams.dump_request(params)
+          query = Nextbillionai::Internal::Util.encode_query_params(parsed.slice(*query_params))
           @client.request(
             method: :put,
             path: ["skynet/asset/%1$s", id],
-            query: parsed.slice(*query_params),
+            query: query,
             body: parsed.except(*query_params),
             model: Nextbillionai::Skynet::SimpleResp,
             options: options
@@ -154,10 +157,11 @@ module Nextbillionai
         # @see Nextbillionai::Models::Skynet::AssetListParams
         def list(params)
           parsed, options = Nextbillionai::Skynet::AssetListParams.dump_request(params)
+          query = Nextbillionai::Internal::Util.encode_query_params(parsed)
           @client.request(
             method: :get,
             path: "skynet/asset/list",
-            query: parsed,
+            query: query,
             model: Nextbillionai::Models::Skynet::AssetListResponse,
             options: options
           )
@@ -183,10 +187,11 @@ module Nextbillionai
         # @see Nextbillionai::Models::Skynet::AssetDeleteParams
         def delete(id, params)
           parsed, options = Nextbillionai::Skynet::AssetDeleteParams.dump_request(params)
+          query = Nextbillionai::Internal::Util.encode_query_params(parsed)
           @client.request(
             method: :delete,
             path: ["skynet/asset/%1$s", id],
-            query: parsed,
+            query: query,
             model: Nextbillionai::Skynet::SimpleResp,
             options: options
           )
@@ -211,12 +216,13 @@ module Nextbillionai
         #
         # @see Nextbillionai::Models::Skynet::AssetBindParams
         def bind(id, params)
-          parsed, options = Nextbillionai::Skynet::AssetBindParams.dump_request(params)
           query_params = [:key]
+          parsed, options = Nextbillionai::Skynet::AssetBindParams.dump_request(params)
+          query = Nextbillionai::Internal::Util.encode_query_params(parsed.slice(*query_params))
           @client.request(
             method: :post,
             path: ["skynet/asset/%1$s/bind", id],
-            query: parsed.slice(*query_params),
+            query: query,
             body: parsed.except(*query_params),
             model: Nextbillionai::Skynet::SimpleResp,
             options: options
@@ -246,12 +252,13 @@ module Nextbillionai
         #
         # @see Nextbillionai::Models::Skynet::AssetTrackParams
         def track(id, params)
-          parsed, options = Nextbillionai::Skynet::AssetTrackParams.dump_request(params)
           query_params = [:key, :cluster]
+          parsed, options = Nextbillionai::Skynet::AssetTrackParams.dump_request(params)
+          query = Nextbillionai::Internal::Util.encode_query_params(parsed.slice(*query_params))
           @client.request(
             method: :post,
             path: ["skynet/asset/%1$s/track", id],
-            query: parsed.slice(*query_params),
+            query: query,
             body: parsed.except(*query_params),
             model: Nextbillionai::Skynet::SimpleResp,
             options: options
@@ -277,12 +284,13 @@ module Nextbillionai
         #
         # @see Nextbillionai::Models::Skynet::AssetUpdateAttributesParams
         def update_attributes(id, params)
-          parsed, options = Nextbillionai::Skynet::AssetUpdateAttributesParams.dump_request(params)
           query_params = [:key]
+          parsed, options = Nextbillionai::Skynet::AssetUpdateAttributesParams.dump_request(params)
+          query = Nextbillionai::Internal::Util.encode_query_params(parsed.slice(*query_params))
           @client.request(
             method: :put,
             path: ["skynet/asset/%1$s/attributes", id],
-            query: parsed.slice(*query_params),
+            query: query,
             body: parsed.except(*query_params),
             model: Nextbillionai::Skynet::SimpleResp,
             options: options

@@ -42,12 +42,13 @@ module Nextbillionai
           #
           # @see Nextbillionai::Models::Fleetify::Routes::StepCreateParams
           def create(route_id, params)
-            parsed, options = Nextbillionai::Fleetify::Routes::StepCreateParams.dump_request(params)
             query_params = [:key]
+            parsed, options = Nextbillionai::Fleetify::Routes::StepCreateParams.dump_request(params)
+            query = Nextbillionai::Internal::Util.encode_query_params(parsed.slice(*query_params))
             @client.request(
               method: :post,
               path: ["fleetify/routes/%1$s/steps", route_id],
-              query: parsed.slice(*query_params),
+              query: query,
               body: parsed.except(*query_params),
               model: Nextbillionai::Models::Fleetify::Routes::StepCreateResponse,
               options: options
@@ -93,16 +94,17 @@ module Nextbillionai
           #
           # @see Nextbillionai::Models::Fleetify::Routes::StepUpdateParams
           def update(step_id, params)
+            query_params = [:key]
             parsed, options = Nextbillionai::Fleetify::Routes::StepUpdateParams.dump_request(params)
+            query = Nextbillionai::Internal::Util.encode_query_params(parsed.slice(*query_params))
             route_id =
               parsed.delete(:route_id) do
                 raise ArgumentError.new("missing required path argument #{_1}")
               end
-            query_params = [:key]
             @client.request(
               method: :put,
               path: ["fleetify/routes/%1$s/steps/%2$s", route_id, step_id],
-              query: parsed.slice(*query_params),
+              query: query,
               body: parsed.except(*query_params),
               model: Nextbillionai::Models::Fleetify::Routes::StepUpdateResponse,
               options: options
@@ -129,6 +131,7 @@ module Nextbillionai
           # @see Nextbillionai::Models::Fleetify::Routes::StepDeleteParams
           def delete(step_id, params)
             parsed, options = Nextbillionai::Fleetify::Routes::StepDeleteParams.dump_request(params)
+            query = Nextbillionai::Internal::Util.encode_query_params(parsed)
             route_id =
               parsed.delete(:route_id) do
                 raise ArgumentError.new("missing required path argument #{_1}")
@@ -136,7 +139,7 @@ module Nextbillionai
             @client.request(
               method: :delete,
               path: ["fleetify/routes/%1$s/steps/%2$s", route_id, step_id],
-              query: parsed,
+              query: query,
               model: Nextbillionai::Models::Fleetify::Routes::StepDeleteResponse,
               options: options
             )
@@ -173,16 +176,17 @@ module Nextbillionai
           #
           # @see Nextbillionai::Models::Fleetify::Routes::StepCompleteParams
           def complete(step_id, params)
+            query_params = [:key]
             parsed, options = Nextbillionai::Fleetify::Routes::StepCompleteParams.dump_request(params)
+            query = Nextbillionai::Internal::Util.encode_query_params(parsed.slice(*query_params))
             route_id =
               parsed.delete(:route_id) do
                 raise ArgumentError.new("missing required path argument #{_1}")
               end
-            query_params = [:key]
             @client.request(
               method: :patch,
               path: ["fleetify/routes/%1$s/steps/%2$s", route_id, step_id],
-              query: parsed.slice(*query_params),
+              query: query,
               body: parsed.except(*query_params),
               model: NilClass,
               options: options

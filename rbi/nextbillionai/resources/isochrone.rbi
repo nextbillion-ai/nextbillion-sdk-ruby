@@ -2,6 +2,7 @@
 
 module Nextbillionai
   module Resources
+    # <p>Get travel time and find optimal routes. Add guided navigation and gain trip data insights.</p>
     class Isochrone
       # The NextBillion.ai Isochrone API computes areas that are reachable within a
       # specified amount of time from a location, and returns the reachable regions as

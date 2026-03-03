@@ -56,10 +56,11 @@ module Nextbillionai
         # @see Nextbillionai::Models::Geofence::ConsoleSearchParams
         def search(params)
           parsed, options = Nextbillionai::Geofence::ConsoleSearchParams.dump_request(params)
+          query = Nextbillionai::Internal::Util.encode_query_params(parsed)
           @client.request(
             method: :get,
             path: "geofence/console/search",
-            query: parsed,
+            query: query,
             model: Nextbillionai::Models::Geofence::ConsoleSearchResponse,
             options: options
           )

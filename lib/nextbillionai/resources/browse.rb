@@ -29,10 +29,11 @@ module Nextbillionai
       # @see Nextbillionai::Models::BrowseSearchParams
       def search(params)
         parsed, options = Nextbillionai::BrowseSearchParams.dump_request(params)
+        query = Nextbillionai::Internal::Util.encode_query_params(parsed)
         @client.request(
           method: :get,
           path: "browse",
-          query: parsed.transform_keys(in_: "in"),
+          query: query.transform_keys(in_: "in"),
           model: Nextbillionai::Models::BrowseSearchResponse,
           options: options
         )
