@@ -29,10 +29,11 @@ module Nextbillionai
       # @see Nextbillionai::Models::AutocompleteSuggestParams
       def suggest(params)
         parsed, options = Nextbillionai::AutocompleteSuggestParams.dump_request(params)
+        query = Nextbillionai::Internal::Util.encode_query_params(parsed)
         @client.request(
           method: :get,
           path: "autocomplete",
-          query: parsed.transform_keys(in_: "in"),
+          query: query.transform_keys(in_: "in"),
           model: Nextbillionai::Models::AutocompleteSuggestResponse,
           options: options
         )

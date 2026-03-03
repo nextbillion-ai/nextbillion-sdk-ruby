@@ -2,6 +2,7 @@
 
 module Nextbillionai
   module Resources
+    # <p>Get travel time and find optimal routes. Add guided navigation and gain trip data insights.</p>
     class Mdm
       # Create a massive distance matrix task
       sig do

@@ -58,12 +58,13 @@ module Nextbillionai
       #
       # @see Nextbillionai::Models::RestrictionCreateParams
       def create(restriction_type, params)
-        parsed, options = Nextbillionai::RestrictionCreateParams.dump_request(params)
         query_params = [:key, :latlon]
+        parsed, options = Nextbillionai::RestrictionCreateParams.dump_request(params)
+        query = Nextbillionai::Internal::Util.encode_query_params(parsed.slice(*query_params))
         @client.request(
           method: :post,
           path: ["restrictions/%1$s", restriction_type],
-          query: parsed.slice(*query_params),
+          query: query,
           body: parsed.except(*query_params),
           model: Nextbillionai::RichGroupResponse,
           options: options
@@ -90,10 +91,11 @@ module Nextbillionai
       # @see Nextbillionai::Models::RestrictionRetrieveParams
       def retrieve(id, params)
         parsed, options = Nextbillionai::RestrictionRetrieveParams.dump_request(params)
+        query = Nextbillionai::Internal::Util.encode_query_params(parsed)
         @client.request(
           method: :get,
           path: ["restrictions/%1$s", id],
-          query: parsed,
+          query: query,
           model: Nextbillionai::RichGroupResponse,
           options: options
         )
@@ -154,12 +156,13 @@ module Nextbillionai
       #
       # @see Nextbillionai::Models::RestrictionUpdateParams
       def update(id, params)
-        parsed, options = Nextbillionai::RestrictionUpdateParams.dump_request(params)
         query_params = [:key, :latlon]
+        parsed, options = Nextbillionai::RestrictionUpdateParams.dump_request(params)
+        query = Nextbillionai::Internal::Util.encode_query_params(parsed.slice(*query_params))
         @client.request(
           method: :patch,
           path: ["restrictions/%1$s", id],
-          query: parsed.slice(*query_params),
+          query: query,
           body: parsed.except(*query_params),
           model: Nextbillionai::RichGroupResponse,
           options: options
@@ -202,10 +205,11 @@ module Nextbillionai
       # @see Nextbillionai::Models::RestrictionListParams
       def list(params)
         parsed, options = Nextbillionai::RestrictionListParams.dump_request(params)
+        query = Nextbillionai::Internal::Util.encode_query_params(parsed)
         @client.request(
           method: :get,
           path: "restrictions/list",
-          query: parsed,
+          query: query,
           model: Nextbillionai::Models::RestrictionListResponse,
           options: options
         )
@@ -229,10 +233,11 @@ module Nextbillionai
       # @see Nextbillionai::Models::RestrictionDeleteParams
       def delete(id, params)
         parsed, options = Nextbillionai::RestrictionDeleteParams.dump_request(params)
+        query = Nextbillionai::Internal::Util.encode_query_params(parsed)
         @client.request(
           method: :delete,
           path: ["restrictions/%1$s", id],
-          query: parsed,
+          query: query,
           model: Nextbillionai::Models::RestrictionDeleteResponse,
           options: options
         )
@@ -274,10 +279,11 @@ module Nextbillionai
       # @see Nextbillionai::Models::RestrictionListByBboxParams
       def list_by_bbox(params)
         parsed, options = Nextbillionai::RestrictionListByBboxParams.dump_request(params)
+        query = Nextbillionai::Internal::Util.encode_query_params(parsed)
         @client.request(
           method: :get,
           path: "restrictions",
-          query: parsed,
+          query: query,
           model: Nextbillionai::Internal::Type::ArrayOf[Nextbillionai::RichGroupResponse],
           options: options
         )
@@ -302,12 +308,13 @@ module Nextbillionai
       #
       # @see Nextbillionai::Models::RestrictionSetStateParams
       def set_state(id, params)
-        parsed, options = Nextbillionai::RestrictionSetStateParams.dump_request(params)
         query_params = [:key]
+        parsed, options = Nextbillionai::RestrictionSetStateParams.dump_request(params)
+        query = Nextbillionai::Internal::Util.encode_query_params(parsed.slice(*query_params))
         @client.request(
           method: :put,
           path: ["restrictions/%1$s/state", id],
-          query: parsed.slice(*query_params),
+          query: query,
           body: parsed.except(*query_params),
           model: Nextbillionai::RichGroupResponse,
           options: options

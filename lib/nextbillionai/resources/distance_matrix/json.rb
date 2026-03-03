@@ -3,6 +3,7 @@
 module Nextbillionai
   module Resources
     class DistanceMatrix
+      # <p>Get travel time and find optimal routes. Add guided navigation and gain trip data insights.</p>
       class Json
         # asfd
         #
@@ -58,10 +59,11 @@ module Nextbillionai
         # @see Nextbillionai::Models::DistanceMatrix::JsonRetrieveParams
         def retrieve(params)
           parsed, options = Nextbillionai::DistanceMatrix::JsonRetrieveParams.dump_request(params)
+          query = Nextbillionai::Internal::Util.encode_query_params(parsed)
           @client.request(
             method: :get,
             path: "distancematrix/json",
-            query: parsed,
+            query: query,
             model: Nextbillionai::Models::DistanceMatrix::JsonRetrieveResponse,
             options: options
           )

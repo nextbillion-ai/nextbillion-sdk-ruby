@@ -26,12 +26,13 @@ module Nextbillionai
       #
       # @see Nextbillionai::Models::PostalcodeRetrieveCoordinatesParams
       def retrieve_coordinates(params)
-        parsed, options = Nextbillionai::PostalcodeRetrieveCoordinatesParams.dump_request(params)
         query_params = [:key]
+        parsed, options = Nextbillionai::PostalcodeRetrieveCoordinatesParams.dump_request(params)
+        query = Nextbillionai::Internal::Util.encode_query_params(parsed.slice(*query_params))
         @client.request(
           method: :post,
           path: "postalcode",
-          query: parsed.slice(*query_params),
+          query: query,
           body: parsed.except(*query_params),
           model: Nextbillionai::Models::PostalcodeRetrieveCoordinatesResponse,
           options: options

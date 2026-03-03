@@ -46,10 +46,11 @@ module Nextbillionai
         # @see Nextbillionai::Models::Skynet::SearchAroundParams
         def around(params)
           parsed, options = Nextbillionai::Skynet::SearchAroundParams.dump_request(params)
+          query = Nextbillionai::Internal::Util.encode_query_params(parsed)
           @client.request(
             method: :get,
             path: "skynet/search/around",
-            query: parsed,
+            query: query,
             model: Nextbillionai::Skynet::SearchResponse,
             options: options
           )
@@ -92,10 +93,11 @@ module Nextbillionai
         # @see Nextbillionai::Models::Skynet::SearchBoundParams
         def bound(params)
           parsed, options = Nextbillionai::Skynet::SearchBoundParams.dump_request(params)
+          query = Nextbillionai::Internal::Util.encode_query_params(parsed)
           @client.request(
             method: :get,
             path: "skynet/search/bound",
-            query: parsed,
+            query: query,
             model: Nextbillionai::Skynet::SearchResponse,
             options: options
           )

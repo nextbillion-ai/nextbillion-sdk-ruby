@@ -3,6 +3,7 @@
 module Nextbillionai
   module Resources
     class DistanceMatrix
+      # <p>Get travel time and find optimal routes. Add guided navigation and gain trip data insights.</p>
       sig { returns(Nextbillionai::Resources::DistanceMatrix::Json) }
       attr_reader :json
 

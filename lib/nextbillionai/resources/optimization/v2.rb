@@ -22,10 +22,11 @@ module Nextbillionai
         # @see Nextbillionai::Models::Optimization::V2RetrieveResultParams
         def retrieve_result(params)
           parsed, options = Nextbillionai::Optimization::V2RetrieveResultParams.dump_request(params)
+          query = Nextbillionai::Internal::Util.encode_query_params(parsed)
           @client.request(
             method: :get,
             path: "optimization/v2/result",
-            query: parsed,
+            query: query,
             model: Nextbillionai::Models::Optimization::V2RetrieveResultResponse,
             options: options
           )
@@ -76,12 +77,13 @@ module Nextbillionai
         #
         # @see Nextbillionai::Models::Optimization::V2SubmitParams
         def submit(params)
-          parsed, options = Nextbillionai::Optimization::V2SubmitParams.dump_request(params)
           query_params = [:key]
+          parsed, options = Nextbillionai::Optimization::V2SubmitParams.dump_request(params)
+          query = Nextbillionai::Internal::Util.encode_query_params(parsed.slice(*query_params))
           @client.request(
             method: :post,
             path: "optimization/v2",
-            query: parsed.slice(*query_params),
+            query: query,
             body: parsed.except(*query_params),
             model: Nextbillionai::PostResponse,
             options: options

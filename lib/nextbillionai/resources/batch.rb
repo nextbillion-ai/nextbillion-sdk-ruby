@@ -2,6 +2,7 @@
 
 module Nextbillionai
   module Resources
+    # <p>Get travel time and find optimal routes. Add guided navigation and gain trip data insights.</p>
     class Batch
       # Some parameter documentations has been truncated, see
       # {Nextbillionai::Models::BatchCreateParams} for more details.
@@ -20,12 +21,13 @@ module Nextbillionai
       #
       # @see Nextbillionai::Models::BatchCreateParams
       def create(params)
-        parsed, options = Nextbillionai::BatchCreateParams.dump_request(params)
         query_params = [:key]
+        parsed, options = Nextbillionai::BatchCreateParams.dump_request(params)
+        query = Nextbillionai::Internal::Util.encode_query_params(parsed.slice(*query_params))
         @client.request(
           method: :post,
           path: "batch",
-          query: parsed.slice(*query_params),
+          query: query,
           body: parsed.except(*query_params),
           model: Nextbillionai::Models::BatchCreateResponse,
           options: options
@@ -50,10 +52,11 @@ module Nextbillionai
       # @see Nextbillionai::Models::BatchRetrieveParams
       def retrieve(params)
         parsed, options = Nextbillionai::BatchRetrieveParams.dump_request(params)
+        query = Nextbillionai::Internal::Util.encode_query_params(parsed)
         @client.request(
           method: :get,
           path: "batch",
-          query: parsed,
+          query: query,
           model: Nextbillionai::Models::BatchRetrieveResponse,
           options: options
         )

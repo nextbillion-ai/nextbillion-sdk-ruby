@@ -40,12 +40,13 @@ module Nextbillionai
       #
       # @see Nextbillionai::Models::GeofenceCreateParams
       def create(params)
-        parsed, options = Nextbillionai::GeofenceCreateParams.dump_request(params)
         query_params = [:key]
+        parsed, options = Nextbillionai::GeofenceCreateParams.dump_request(params)
+        query = Nextbillionai::Internal::Util.encode_query_params(parsed.slice(*query_params))
         @client.request(
           method: :post,
           path: "geofence",
-          query: parsed.slice(*query_params),
+          query: query,
           body: parsed.except(*query_params),
           model: Nextbillionai::Models::GeofenceCreateResponse,
           options: options
@@ -70,10 +71,11 @@ module Nextbillionai
       # @see Nextbillionai::Models::GeofenceRetrieveParams
       def retrieve(id, params)
         parsed, options = Nextbillionai::GeofenceRetrieveParams.dump_request(params)
+        query = Nextbillionai::Internal::Util.encode_query_params(parsed)
         @client.request(
           method: :get,
           path: ["geofence/%1$s", id],
-          query: parsed,
+          query: query,
           model: Nextbillionai::Models::GeofenceRetrieveResponse,
           options: options
         )
@@ -110,12 +112,13 @@ module Nextbillionai
       #
       # @see Nextbillionai::Models::GeofenceUpdateParams
       def update(id, params)
-        parsed, options = Nextbillionai::GeofenceUpdateParams.dump_request(params)
         query_params = [:key]
+        parsed, options = Nextbillionai::GeofenceUpdateParams.dump_request(params)
+        query = Nextbillionai::Internal::Util.encode_query_params(parsed.slice(*query_params))
         @client.request(
           method: :put,
           path: ["geofence/%1$s", id],
-          query: parsed.slice(*query_params),
+          query: query,
           body: parsed.except(*query_params),
           model: Nextbillionai::Skynet::SimpleResp,
           options: options
@@ -144,10 +147,11 @@ module Nextbillionai
       # @see Nextbillionai::Models::GeofenceListParams
       def list(params)
         parsed, options = Nextbillionai::GeofenceListParams.dump_request(params)
+        query = Nextbillionai::Internal::Util.encode_query_params(parsed)
         @client.request(
           method: :get,
           path: "geofence/list",
-          query: parsed,
+          query: query,
           model: Nextbillionai::Models::GeofenceListResponse,
           options: options
         )
@@ -171,10 +175,11 @@ module Nextbillionai
       # @see Nextbillionai::Models::GeofenceDeleteParams
       def delete(id, params)
         parsed, options = Nextbillionai::GeofenceDeleteParams.dump_request(params)
+        query = Nextbillionai::Internal::Util.encode_query_params(parsed)
         @client.request(
           method: :delete,
           path: ["geofence/%1$s", id],
-          query: parsed,
+          query: query,
           model: Nextbillionai::Skynet::SimpleResp,
           options: options
         )
@@ -202,10 +207,11 @@ module Nextbillionai
       # @see Nextbillionai::Models::GeofenceContainsParams
       def contains(params)
         parsed, options = Nextbillionai::GeofenceContainsParams.dump_request(params)
+        query = Nextbillionai::Internal::Util.encode_query_params(parsed)
         @client.request(
           method: :get,
           path: "geofence/contain",
-          query: parsed,
+          query: query,
           model: Nextbillionai::Models::GeofenceContainsResponse,
           options: options
         )

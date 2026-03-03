@@ -29,12 +29,13 @@ module Nextbillionai
         #
         # @see Nextbillionai::Models::Optimization::DriverAssignmentAssignParams
         def assign(params)
-          parsed, options = Nextbillionai::Optimization::DriverAssignmentAssignParams.dump_request(params)
           query_params = [:key]
+          parsed, options = Nextbillionai::Optimization::DriverAssignmentAssignParams.dump_request(params)
+          query = Nextbillionai::Internal::Util.encode_query_params(parsed.slice(*query_params))
           @client.request(
             method: :post,
             path: "optimization/driver-assignment/v1",
-            query: parsed.slice(*query_params),
+            query: query,
             body: parsed.except(*query_params),
             model: Nextbillionai::Models::Optimization::DriverAssignmentAssignResponse,
             options: options

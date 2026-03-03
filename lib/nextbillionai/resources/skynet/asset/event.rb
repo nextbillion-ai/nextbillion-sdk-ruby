@@ -35,10 +35,11 @@ module Nextbillionai
           # @see Nextbillionai::Models::Skynet::Asset::EventListParams
           def list(id, params)
             parsed, options = Nextbillionai::Skynet::Asset::EventListParams.dump_request(params)
+            query = Nextbillionai::Internal::Util.encode_query_params(parsed)
             @client.request(
               method: :get,
               path: ["skynet/asset/%1$s/event/list", id],
-              query: parsed,
+              query: query,
               model: Nextbillionai::Models::Skynet::Asset::EventListResponse,
               options: options
             )

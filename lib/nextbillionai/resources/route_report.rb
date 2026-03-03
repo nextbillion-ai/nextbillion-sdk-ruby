@@ -2,6 +2,7 @@
 
 module Nextbillionai
   module Resources
+    # <p>Get travel time and find optimal routes. Add guided navigation and gain trip data insights.</p>
     class RouteReport
       # Some parameter documentations has been truncated, see
       # {Nextbillionai::Models::RouteReportCreateParams} for more details.
@@ -22,12 +23,13 @@ module Nextbillionai
       #
       # @see Nextbillionai::Models::RouteReportCreateParams
       def create(params)
-        parsed, options = Nextbillionai::RouteReportCreateParams.dump_request(params)
         query_params = [:key]
+        parsed, options = Nextbillionai::RouteReportCreateParams.dump_request(params)
+        query = Nextbillionai::Internal::Util.encode_query_params(parsed.slice(*query_params))
         @client.request(
           method: :post,
           path: "route_report",
-          query: parsed.slice(*query_params),
+          query: query,
           body: parsed.except(*query_params),
           model: Nextbillionai::Models::RouteReportCreateResponse,
           options: options

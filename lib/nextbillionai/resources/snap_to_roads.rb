@@ -2,6 +2,7 @@
 
 module Nextbillionai
   module Resources
+    # <p>Get travel time and find optimal routes. Add guided navigation and gain trip data insights.</p>
     class SnapToRoads
       # Some parameter documentations has been truncated, see
       # {Nextbillionai::Models::SnapToRoadSnapParams} for more details.
@@ -42,10 +43,11 @@ module Nextbillionai
       # @see Nextbillionai::Models::SnapToRoadSnapParams
       def snap(params)
         parsed, options = Nextbillionai::SnapToRoadSnapParams.dump_request(params)
+        query = Nextbillionai::Internal::Util.encode_query_params(parsed)
         @client.request(
           method: :get,
           path: "snapToRoads/json",
-          query: parsed,
+          query: query,
           model: Nextbillionai::Models::SnapToRoadSnapResponse,
           options: options
         )

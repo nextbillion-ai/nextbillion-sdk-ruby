@@ -21,12 +21,13 @@ module Nextbillionai
         #
         # @see Nextbillionai::Models::Geofence::BatchCreateParams
         def create(params)
-          parsed, options = Nextbillionai::Geofence::BatchCreateParams.dump_request(params)
           query_params = [:key]
+          parsed, options = Nextbillionai::Geofence::BatchCreateParams.dump_request(params)
+          query = Nextbillionai::Internal::Util.encode_query_params(parsed.slice(*query_params))
           @client.request(
             method: :post,
             path: "geofence/batch",
-            query: parsed.slice(*query_params),
+            query: query,
             body: parsed.except(*query_params),
             model: Nextbillionai::Models::Geofence::BatchCreateResponse,
             options: options
@@ -51,10 +52,11 @@ module Nextbillionai
         # @see Nextbillionai::Models::Geofence::BatchListParams
         def list(params)
           parsed, options = Nextbillionai::Geofence::BatchListParams.dump_request(params)
+          query = Nextbillionai::Internal::Util.encode_query_params(parsed)
           @client.request(
             method: :get,
             path: "geofence/batch",
-            query: parsed,
+            query: query,
             model: Nextbillionai::Models::Geofence::BatchListResponse,
             options: options
           )
@@ -77,12 +79,13 @@ module Nextbillionai
         #
         # @see Nextbillionai::Models::Geofence::BatchDeleteParams
         def delete(params)
-          parsed, options = Nextbillionai::Geofence::BatchDeleteParams.dump_request(params)
           query_params = [:key]
+          parsed, options = Nextbillionai::Geofence::BatchDeleteParams.dump_request(params)
+          query = Nextbillionai::Internal::Util.encode_query_params(parsed.slice(*query_params))
           @client.request(
             method: :delete,
             path: "geofence/batch",
-            query: parsed.slice(*query_params),
+            query: query,
             body: parsed.except(*query_params),
             model: Nextbillionai::Skynet::SimpleResp,
             options: options
