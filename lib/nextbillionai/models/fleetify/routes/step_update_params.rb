@@ -14,6 +14,11 @@ module Nextbillionai
           #   @return [String]
           required :route_id, String
 
+          # @!attribute step_id
+          #
+          #   @return [String]
+          required :step_id, String
+
           # @!attribute key
           #   A key is a unique identifier that is required to authenticate a request to the
           #   API.
@@ -109,11 +114,13 @@ module Nextbillionai
           #   @return [Symbol, Nextbillionai::Models::Fleetify::Routes::StepUpdateParams::Type, nil]
           optional :type, enum: -> { Nextbillionai::Fleetify::Routes::StepUpdateParams::Type }
 
-          # @!method initialize(route_id:, key:, arrival:, position:, address: nil, completion_mode: nil, document_template_id: nil, duration: nil, geofence_config: nil, location: nil, meta: nil, type: nil, request_options: {})
+          # @!method initialize(route_id:, step_id:, key:, arrival:, position:, address: nil, completion_mode: nil, document_template_id: nil, duration: nil, geofence_config: nil, location: nil, meta: nil, type: nil, request_options: {})
           #   Some parameter documentations has been truncated, see
           #   {Nextbillionai::Models::Fleetify::Routes::StepUpdateParams} for more details.
           #
           #   @param route_id [String]
+          #
+          #   @param step_id [String]
           #
           #   @param key [String] A key is a unique identifier that is required to authenticate a request to the A
           #

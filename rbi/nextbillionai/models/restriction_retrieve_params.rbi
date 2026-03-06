@@ -14,6 +14,9 @@ module Nextbillionai
           )
         end
 
+      sig { returns(Integer) }
+      attr_accessor :id
+
       # A key is a unique identifier that is required to authenticate a request to the
       # API.
       sig { returns(String) }
@@ -28,12 +31,14 @@ module Nextbillionai
 
       sig do
         params(
+          id: Integer,
           key: String,
           transform: T::Boolean,
           request_options: Nextbillionai::RequestOptions::OrHash
         ).returns(T.attached_class)
       end
       def self.new(
+        id:,
         # A key is a unique identifier that is required to authenticate a request to the
         # API.
         key:,
@@ -46,6 +51,7 @@ module Nextbillionai
       sig do
         override.returns(
           {
+            id: Integer,
             key: String,
             transform: T::Boolean,
             request_options: Nextbillionai::RequestOptions

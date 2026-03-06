@@ -7,6 +7,11 @@ module Nextbillionai
       extend Nextbillionai::Internal::Type::RequestParameters::Converter
       include Nextbillionai::Internal::Type::RequestParameters
 
+      # @!attribute restriction_type
+      #
+      #   @return [Symbol, Nextbillionai::Models::RestrictionCreateParams::RestrictionType]
+      required :restriction_type, enum: -> { Nextbillionai::RestrictionCreateParams::RestrictionType }
+
       # @!attribute key
       #   A key is a unique identifier that is required to authenticate a request to the
       #   API.
@@ -23,9 +28,11 @@ module Nextbillionai
       #   @return [Boolean, nil]
       optional :latlon, Nextbillionai::Internal::Type::Boolean
 
-      # @!method initialize(key:, latlon: nil, request_options: {})
+      # @!method initialize(restriction_type:, key:, latlon: nil, request_options: {})
       #   Some parameter documentations has been truncated, see
       #   {Nextbillionai::Models::RestrictionCreateParams} for more details.
+      #
+      #   @param restriction_type [Symbol, Nextbillionai::Models::RestrictionCreateParams::RestrictionType]
       #
       #   @param key [String] A key is a unique identifier that is required to authenticate a request to the A
       #

@@ -3,7 +3,7 @@ module Nextbillionai
     module Fleetify
       module Routes
         type step_delete_params =
-          { route_id: String, key: String }
+          { route_id: String, step_id: String, key: String }
           & Nextbillionai::Internal::Type::request_parameters
 
         class StepDeleteParams < Nextbillionai::Internal::Type::BaseModel
@@ -12,16 +12,20 @@ module Nextbillionai
 
           attr_accessor route_id: String
 
+          attr_accessor step_id: String
+
           attr_accessor key: String
 
           def initialize: (
             route_id: String,
+            step_id: String,
             key: String,
             ?request_options: Nextbillionai::request_opts
           ) -> void
 
           def to_hash: -> {
             route_id: String,
+            step_id: String,
             key: String,
             request_options: Nextbillionai::RequestOptions
           }

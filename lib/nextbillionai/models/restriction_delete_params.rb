@@ -7,6 +7,11 @@ module Nextbillionai
       extend Nextbillionai::Internal::Type::RequestParameters::Converter
       include Nextbillionai::Internal::Type::RequestParameters
 
+      # @!attribute id
+      #
+      #   @return [Integer]
+      required :id, Integer
+
       # @!attribute key
       #   A key is a unique identifier that is required to authenticate a request to the
       #   API.
@@ -14,9 +19,11 @@ module Nextbillionai
       #   @return [String]
       required :key, String
 
-      # @!method initialize(key:, request_options: {})
+      # @!method initialize(id:, key:, request_options: {})
       #   Some parameter documentations has been truncated, see
       #   {Nextbillionai::Models::RestrictionDeleteParams} for more details.
+      #
+      #   @param id [Integer]
       #
       #   @param key [String] A key is a unique identifier that is required to authenticate a request to the A
       #

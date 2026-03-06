@@ -15,6 +15,9 @@ module Nextbillionai
             )
           end
 
+        sig { returns(String) }
+        attr_accessor :route_id
+
         # A key is a unique identifier that is required to authenticate a request to the
         # API.
         sig { returns(String) }
@@ -38,6 +41,7 @@ module Nextbillionai
 
         sig do
           params(
+            route_id: String,
             key: String,
             operations:
               T::Array[
@@ -48,6 +52,7 @@ module Nextbillionai
           ).returns(T.attached_class)
         end
         def self.new(
+          route_id:,
           # A key is a unique identifier that is required to authenticate a request to the
           # API.
           key:,
@@ -63,6 +68,7 @@ module Nextbillionai
         sig do
           override.returns(
             {
+              route_id: String,
               key: String,
               operations:
                 T::Array[
