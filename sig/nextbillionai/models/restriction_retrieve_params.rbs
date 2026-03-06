@@ -1,12 +1,14 @@
 module Nextbillionai
   module Models
     type restriction_retrieve_params =
-      { key: String, transform: bool }
+      { id: Integer, key: String, transform: bool }
       & Nextbillionai::Internal::Type::request_parameters
 
     class RestrictionRetrieveParams < Nextbillionai::Internal::Type::BaseModel
       extend Nextbillionai::Internal::Type::RequestParameters::Converter
       include Nextbillionai::Internal::Type::RequestParameters
+
+      attr_accessor id: Integer
 
       attr_accessor key: String
 
@@ -15,12 +17,14 @@ module Nextbillionai
       def transform=: (bool) -> bool
 
       def initialize: (
+        id: Integer,
         key: String,
         ?transform: bool,
         ?request_options: Nextbillionai::request_opts
       ) -> void
 
       def to_hash: -> {
+        id: Integer,
         key: String,
         transform: bool,
         request_options: Nextbillionai::RequestOptions

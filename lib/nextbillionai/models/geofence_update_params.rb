@@ -7,6 +7,11 @@ module Nextbillionai
       extend Nextbillionai::Internal::Type::RequestParameters::Converter
       include Nextbillionai::Internal::Type::RequestParameters
 
+      # @!attribute id
+      #
+      #   @return [String]
+      required :id, String
+
       # @!attribute key
       #   A key is a unique identifier that is required to authenticate a request to the
       #   API.
@@ -81,9 +86,11 @@ module Nextbillionai
       #   @return [Symbol, Nextbillionai::Models::GeofenceUpdateParams::Type, nil]
       optional :type, enum: -> { Nextbillionai::GeofenceUpdateParams::Type }
 
-      # @!method initialize(key:, circle: nil, isochrone: nil, meta_data: nil, name: nil, polygon: nil, tags: nil, type: nil, request_options: {})
+      # @!method initialize(id:, key:, circle: nil, isochrone: nil, meta_data: nil, name: nil, polygon: nil, tags: nil, type: nil, request_options: {})
       #   Some parameter documentations has been truncated, see
       #   {Nextbillionai::Models::GeofenceUpdateParams} for more details.
+      #
+      #   @param id [String]
       #
       #   @param key [String] A key is a unique identifier that is required to authenticate a request to the A
       #

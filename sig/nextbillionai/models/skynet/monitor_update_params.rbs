@@ -3,6 +3,7 @@ module Nextbillionai
     module Skynet
       type monitor_update_params =
         {
+          id: String,
           key: String,
           description: String,
           geofence_config: Nextbillionai::Skynet::MonitorUpdateParams::GeofenceConfig,
@@ -20,6 +21,8 @@ module Nextbillionai
       class MonitorUpdateParams < Nextbillionai::Internal::Type::BaseModel
         extend Nextbillionai::Internal::Type::RequestParameters::Converter
         include Nextbillionai::Internal::Type::RequestParameters
+
+        attr_accessor id: String
 
         attr_accessor key: String
 
@@ -74,6 +77,7 @@ module Nextbillionai
         ) -> Nextbillionai::Models::Skynet::MonitorUpdateParams::type_
 
         def initialize: (
+          id: String,
           key: String,
           ?description: String,
           ?geofence_config: Nextbillionai::Skynet::MonitorUpdateParams::GeofenceConfig,
@@ -89,6 +93,7 @@ module Nextbillionai
         ) -> void
 
         def to_hash: -> {
+          id: String,
           key: String,
           description: String,
           geofence_config: Nextbillionai::Skynet::MonitorUpdateParams::GeofenceConfig,

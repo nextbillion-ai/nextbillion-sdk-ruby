@@ -3,6 +3,7 @@ module Nextbillionai
     module Skynet
       type asset_track_params =
         {
+          id: String,
           key: String,
           device_id: String,
           locations: Nextbillionai::Skynet::AssetTrackParams::Locations,
@@ -13,6 +14,8 @@ module Nextbillionai
       class AssetTrackParams < Nextbillionai::Internal::Type::BaseModel
         extend Nextbillionai::Internal::Type::RequestParameters::Converter
         include Nextbillionai::Internal::Type::RequestParameters
+
+        attr_accessor id: String
 
         attr_accessor key: String
 
@@ -27,6 +30,7 @@ module Nextbillionai
         ) -> Nextbillionai::Models::Skynet::AssetTrackParams::cluster
 
         def initialize: (
+          id: String,
           key: String,
           device_id: String,
           locations: Nextbillionai::Skynet::AssetTrackParams::Locations,
@@ -35,6 +39,7 @@ module Nextbillionai
         ) -> void
 
         def to_hash: -> {
+          id: String,
           key: String,
           device_id: String,
           locations: Nextbillionai::Skynet::AssetTrackParams::Locations,

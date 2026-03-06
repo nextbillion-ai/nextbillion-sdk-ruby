@@ -8,6 +8,11 @@ module Nextbillionai
         extend Nextbillionai::Internal::Type::RequestParameters::Converter
         include Nextbillionai::Internal::Type::RequestParameters
 
+        # @!attribute id
+        #
+        #   @return [String]
+        required :id, String
+
         # @!attribute key
         #   A key is a unique identifier that is required to authenticate a request to the
         #   API.
@@ -70,9 +75,11 @@ module Nextbillionai
         optional :stops,
                  -> { Nextbillionai::Internal::Type::ArrayOf[Nextbillionai::Skynet::TripUpdateParams::Stop] }
 
-        # @!method initialize(key:, asset_id:, cluster: nil, attributes: nil, description: nil, meta_data: nil, name: nil, stops: nil, request_options: {})
+        # @!method initialize(id:, key:, asset_id:, cluster: nil, attributes: nil, description: nil, meta_data: nil, name: nil, stops: nil, request_options: {})
         #   Some parameter documentations has been truncated, see
         #   {Nextbillionai::Models::Skynet::TripUpdateParams} for more details.
+        #
+        #   @param id [String]
         #
         #   @param key [String] A key is a unique identifier that is required to authenticate a request to the A
         #

@@ -4,6 +4,7 @@ module Nextbillionai
       module Asset
         type location_list_params =
           {
+            id: String,
             key: String,
             cluster: Nextbillionai::Models::Skynet::Asset::LocationListParams::cluster,
             correction: String,
@@ -18,6 +19,8 @@ module Nextbillionai
         class LocationListParams < Nextbillionai::Internal::Type::BaseModel
           extend Nextbillionai::Internal::Type::RequestParameters::Converter
           include Nextbillionai::Internal::Type::RequestParameters
+
+          attr_accessor id: String
 
           attr_accessor key: String
 
@@ -54,6 +57,7 @@ module Nextbillionai
           def start_time=: (Integer) -> Integer
 
           def initialize: (
+            id: String,
             key: String,
             ?cluster: Nextbillionai::Models::Skynet::Asset::LocationListParams::cluster,
             ?correction: String,
@@ -66,6 +70,7 @@ module Nextbillionai
           ) -> void
 
           def to_hash: -> {
+            id: String,
             key: String,
             cluster: Nextbillionai::Models::Skynet::Asset::LocationListParams::cluster,
             correction: String,

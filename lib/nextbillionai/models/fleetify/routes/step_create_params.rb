@@ -9,6 +9,11 @@ module Nextbillionai
           extend Nextbillionai::Internal::Type::RequestParameters::Converter
           include Nextbillionai::Internal::Type::RequestParameters
 
+          # @!attribute route_id
+          #
+          #   @return [String]
+          required :route_id, String
+
           # @!attribute key
           #   A key is a unique identifier that is required to authenticate a request to the
           #   API.
@@ -109,9 +114,11 @@ module Nextbillionai
           #   @return [Nextbillionai::Models::Fleetify::Routes::StepCreateParams::Meta, nil]
           optional :meta, -> { Nextbillionai::Fleetify::Routes::StepCreateParams::Meta }
 
-          # @!method initialize(key:, arrival:, location:, position:, type:, address: nil, completion_mode: nil, document_template_id: nil, duration: nil, geofence_config: nil, meta: nil, request_options: {})
+          # @!method initialize(route_id:, key:, arrival:, location:, position:, type:, address: nil, completion_mode: nil, document_template_id: nil, duration: nil, geofence_config: nil, meta: nil, request_options: {})
           #   Some parameter documentations has been truncated, see
           #   {Nextbillionai::Models::Fleetify::Routes::StepCreateParams} for more details.
+          #
+          #   @param route_id [String]
           #
           #   @param key [String] A key is a unique identifier that is required to authenticate a request to the A
           #
