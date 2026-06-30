@@ -146,9 +146,7 @@ module Nextbillionai
             #
             #   @return [Array<Nextbillionai::Models::Skynet::Asset::TrackLocation>, nil]
             optional :route,
-                     -> {
-                       Nextbillionai::Internal::Type::ArrayOf[Nextbillionai::Skynet::Asset::TrackLocation]
-                     }
+                     -> { Nextbillionai::Internal::Type::ArrayOf[Nextbillionai::Skynet::Asset::TrackLocation] }
 
             # @!attribute started_at
             #   Returns the time, expressed as UNIX epoch timestamp in milliseconds, when the

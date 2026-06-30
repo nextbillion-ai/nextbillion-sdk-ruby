@@ -73,9 +73,7 @@ module Nextbillionai
           #
           #   @return [Array<Nextbillionai::Models::Fleetify::DocumentTemplateContentResponse::Meta::Option>, nil]
           optional :options,
-                   -> {
-                     Nextbillionai::Internal::Type::ArrayOf[Nextbillionai::Fleetify::DocumentTemplateContentResponse::Meta::Option]
-                   }
+                   -> { Nextbillionai::Internal::Type::ArrayOf[Nextbillionai::Fleetify::DocumentTemplateContentResponse::Meta::Option] }
 
           # @!method initialize(options: nil)
           #   Some parameter documentations has been truncated, see

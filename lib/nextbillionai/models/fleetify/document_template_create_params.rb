@@ -22,9 +22,7 @@ module Nextbillionai
         #
         #   @return [Array<Nextbillionai::Models::Fleetify::DocumentTemplateContentRequest>]
         required :content,
-                 -> {
-                   Nextbillionai::Internal::Type::ArrayOf[Nextbillionai::Fleetify::DocumentTemplateContentRequest]
-                 }
+                 -> { Nextbillionai::Internal::Type::ArrayOf[Nextbillionai::Fleetify::DocumentTemplateContentRequest] }
 
         # @!attribute name
         #   Specify a name for the document template to be created.

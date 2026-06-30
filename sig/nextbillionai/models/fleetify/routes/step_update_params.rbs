@@ -5,6 +5,7 @@ module Nextbillionai
         type step_update_params =
           {
             route_id: String,
+            step_id: String,
             key: String,
             arrival: Integer,
             position: Integer,
@@ -24,6 +25,8 @@ module Nextbillionai
           include Nextbillionai::Internal::Type::RequestParameters
 
           attr_accessor route_id: String
+
+          attr_accessor step_id: String
 
           attr_accessor key: String
 
@@ -73,6 +76,7 @@ module Nextbillionai
 
           def initialize: (
             route_id: String,
+            step_id: String,
             key: String,
             arrival: Integer,
             position: Integer,
@@ -89,6 +93,7 @@ module Nextbillionai
 
           def to_hash: -> {
             route_id: String,
+            step_id: String,
             key: String,
             arrival: Integer,
             position: Integer,

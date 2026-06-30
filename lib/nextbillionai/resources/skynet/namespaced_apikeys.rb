@@ -22,10 +22,11 @@ module Nextbillionai
         # @see Nextbillionai::Models::Skynet::NamespacedApikeyCreateParams
         def create(params)
           parsed, options = Nextbillionai::Skynet::NamespacedApikeyCreateParams.dump_request(params)
+          query = Nextbillionai::Internal::Util.encode_query_params(parsed)
           @client.request(
             method: :post,
             path: "skynet/namespaced-apikeys",
-            query: parsed,
+            query: query,
             model: Nextbillionai::Models::Skynet::NamespacedApikeyCreateResponse,
             options: options
           )
@@ -51,10 +52,11 @@ module Nextbillionai
         # @see Nextbillionai::Models::Skynet::NamespacedApikeyDeleteParams
         def delete(params)
           parsed, options = Nextbillionai::Skynet::NamespacedApikeyDeleteParams.dump_request(params)
+          query = Nextbillionai::Internal::Util.encode_query_params(parsed)
           @client.request(
             method: :delete,
             path: "skynet/namespaced-apikeys",
-            query: parsed,
+            query: query,
             model: Nextbillionai::Models::Skynet::NamespacedApikeyDeleteResponse,
             options: options
           )

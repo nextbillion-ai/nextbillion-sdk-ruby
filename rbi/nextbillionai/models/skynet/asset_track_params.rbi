@@ -15,6 +15,9 @@ module Nextbillionai
             )
           end
 
+        sig { returns(String) }
+        attr_accessor :id
+
         # A key is a unique identifier that is required to authenticate a request to the
         # API.
         sig { returns(String) }
@@ -59,6 +62,7 @@ module Nextbillionai
 
         sig do
           params(
+            id: String,
             key: String,
             device_id: String,
             locations:
@@ -68,6 +72,7 @@ module Nextbillionai
           ).returns(T.attached_class)
         end
         def self.new(
+          id:,
           # A key is a unique identifier that is required to authenticate a request to the
           # API.
           key:,
@@ -88,6 +93,7 @@ module Nextbillionai
         sig do
           override.returns(
             {
+              id: String,
               key: String,
               device_id: String,
               locations: Nextbillionai::Skynet::AssetTrackParams::Locations,

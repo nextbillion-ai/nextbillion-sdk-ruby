@@ -119,10 +119,7 @@ module Nextbillionai
           #   distance for sorting the assets in search result.
           #
           #   @return [Symbol, Nextbillionai::Models::Skynet::Search::PolygonGetParams::SortDrivingMode, nil]
-          optional :sort_driving_mode,
-                   enum: -> {
-                     Nextbillionai::Skynet::Search::PolygonGetParams::SortDrivingMode
-                   }
+          optional :sort_driving_mode, enum: -> { Nextbillionai::Skynet::Search::PolygonGetParams::SortDrivingMode }
 
           # @!method initialize(key:, polygon:, filter: nil, include_all_of_attributes: nil, include_any_of_attributes: nil, max_search_limit: nil, pn: nil, ps: nil, sort_by: nil, sort_destination: nil, sort_driving_mode: nil, request_options: {})
           #   Some parameter documentations has been truncated, see

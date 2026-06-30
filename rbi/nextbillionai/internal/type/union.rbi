@@ -16,7 +16,8 @@ module Nextbillionai
             T::Array[
               [
                 T.nilable(Symbol),
-                T.proc.returns(Nextbillionai::Internal::Type::Converter::Input)
+                T.proc.returns(Nextbillionai::Internal::Type::Converter::Input),
+                Nextbillionai::Internal::AnyHash
               ]
             ]
           )
@@ -25,7 +26,13 @@ module Nextbillionai
         end
 
         # @api private
-        sig { returns(T::Array[[T.nilable(Symbol), T.anything]]) }
+        sig do
+          returns(
+            T::Array[
+              [T.nilable(Symbol), T.anything, Nextbillionai::Internal::AnyHash]
+            ]
+          )
+        end
         protected def derefed_variants
         end
 

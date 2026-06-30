@@ -124,6 +124,14 @@ class Nextbillionai::Test::UtilUriHandlingTest < Minitest::Test
           path: "/c",
           query: {"d" => ["e"]}
         }
+      ],
+      [
+        "h://a.b/c?d=e",
+        "h://nope",
+        {
+          path: "h://a.b/c",
+          query: {"d" => ["e"]}
+        }
       ]
     ]
 
@@ -163,6 +171,8 @@ class Nextbillionai::Test::RegexMatchTest < Minitest::Test
     cases = {
       "application/json" => true,
       "application/jsonl" => false,
+      "application/arbitrary+json" => true,
+      "application/ARBITRARY+json" => true,
       "application/vnd.github.v3+json" => true,
       "application/vnd.api+json" => true
     }
@@ -213,22 +223,38 @@ class Nextbillionai::Test::UtilFormDataEncodingTest < Minitest::Test
     end
   end
 
+  def test_encoding_length
+    headers, = Nextbillionai::Internal::Util.encode_content(
+      {"content-type" => "multipart/form-data"},
+      Pathname(__FILE__)
+    )
+    assert_pattern do
+      headers.fetch("content-type") => /boundary=(.+)$/
+    end
+    field, = Regexp.last_match.captures
+    assert(field.length < 70 - 6)
+  end
+
   def test_file_encode
     file = Pathname(__FILE__)
+    fileinput = Nextbillionai::Internal::Type::Converter.dump(Nextbillionai::Internal::Type::FileInput, "abc")
     headers = {"content-type" => "multipart/form-data"}
     cases = {
-      "abc" => "abc",
-      StringIO.new("abc") => "abc",
-      Nextbillionai::FilePart.new("abc") => "abc",
-      Nextbillionai::FilePart.new(StringIO.new("abc")) => "abc",
-      file => /^class Nextbillionai/,
-      Nextbillionai::FilePart.new(file) => /^class Nextbillionai/
+      "abc" => ["", "abc"],
+      StringIO.new("abc") => ["", "abc"],
+      fileinput => %w[upload abc],
+      Nextbillionai::FilePart.new(StringIO.new("abc")) => ["", "abc"],
+      file => [file.basename.to_path, /^class Nextbillionai/],
+      Nextbillionai::FilePart.new(file, filename: "d o g") => ["d%20o%20g", /^class Nextbillionai/]
     }
-    cases.each do |body, val|
+    cases.each do |body, testcase|
+      filename, val = testcase
       encoded = Nextbillionai::Internal::Util.encode_content(headers, body)
       cgi = FakeCGI.new(*encoded)
+      io = cgi[""]
       assert_pattern do
-        cgi[""].read => ^val
+        io.original_filename => ^filename
+        io.read => ^val
       end
     end
   end
@@ -242,18 +268,21 @@ class Nextbillionai::Test::UtilFormDataEncodingTest < Minitest::Test
       {strio: StringIO.new("a")} => {"strio" => "a"},
       {strio: Nextbillionai::FilePart.new("a")} => {"strio" => "a"},
       {pathname: Pathname(__FILE__)} => {"pathname" => -> { _1.read in /^class Nextbillionai/ }},
-      {pathname: Nextbillionai::FilePart.new(Pathname(__FILE__))} => {
-        "pathname" => -> {
-          _1.read in /^class Nextbillionai/
-        }
-      }
+      {pathname: Nextbillionai::FilePart.new(Pathname(__FILE__))} => {"pathname" => -> { _1.read in /^class Nextbillionai/ }}
     }
     cases.each do |body, testcase|
       encoded = Nextbillionai::Internal::Util.encode_content(headers, body)
       cgi = FakeCGI.new(*encoded)
       testcase.each do |key, val|
         assert_pattern do
-          cgi[key] => ^val
+          parsed =
+            case (p = cgi[key])
+            in StringIO
+              p.read
+            else
+              p
+            end
+          parsed => ^val
         end
       end
     end
@@ -291,6 +320,54 @@ class Nextbillionai::Test::UtilIOAdapterTest < Minitest::Test
 end
 
 class Nextbillionai::Test::UtilFusedEnumTest < Minitest::Test
+  def test_rewind_closing
+    touched = false
+    once = 0
+    steps = 0
+    enum = Enumerator.new do |y|
+      next if touched
+
+      10.times do
+        steps = _1
+        y << _1
+      end
+    ensure
+      once = once.succ
+    end
+
+    fused = Nextbillionai::Internal::Util.fused_enum(enum, external: true) do
+      touched = true
+      loop { enum.next }
+    end
+    Nextbillionai::Internal::Util.close_fused!(fused)
+
+    assert_equal(1, once)
+    assert_equal(0, steps)
+  end
+
+  def test_thread_interrupts
+    once = 0
+    que = Queue.new
+    enum = Enumerator.new do |y|
+      10.times { y << _1 }
+    ensure
+      once = once.succ
+    end
+
+    fused_1 = Nextbillionai::Internal::Util.fused_enum(enum, external: true) { loop { enum.next } }
+    fused_2 = Nextbillionai::Internal::Util.chain_fused(fused_1) { fused_1.each(&_1) }
+    fused_3 = Nextbillionai::Internal::Util.chain_fused(fused_2) { fused_2.each(&_1) }
+
+    th = ::Thread.new do
+      que << "🐶"
+      fused_3.each { sleep(10) }
+    end
+
+    assert_equal("🐶", que.pop)
+    th.kill.join
+    assert_equal(1, once)
+  end
+
   def test_closing
     arr = [1, 2, 3]
     once = 0
@@ -324,9 +401,9 @@ class Nextbillionai::Test::UtilFusedEnumTest < Minitest::Test
   end
 
   def test_external_iteration
-    it = [1, 2, 3].to_enum
-    first = it.next
-    fused = Nextbillionai::Internal::Util.fused_enum(it, external: true)
+    iter = [1, 2, 3].to_enum
+    first = iter.next
+    fused = Nextbillionai::Internal::Util.fused_enum(iter, external: true)
 
     assert_equal(1, first)
     assert_equal([2, 3], fused.to_a)

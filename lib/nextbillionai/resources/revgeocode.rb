@@ -25,10 +25,11 @@ module Nextbillionai
       # @see Nextbillionai::Models::RevgeocodeRetrieveParams
       def retrieve(params)
         parsed, options = Nextbillionai::RevgeocodeRetrieveParams.dump_request(params)
+        query = Nextbillionai::Internal::Util.encode_query_params(parsed)
         @client.request(
           method: :get,
           path: "revgeocode",
-          query: parsed.transform_keys(in_: "in"),
+          query: query.transform_keys(in_: "in"),
           model: Nextbillionai::Models::RevgeocodeRetrieveResponse,
           options: options
         )

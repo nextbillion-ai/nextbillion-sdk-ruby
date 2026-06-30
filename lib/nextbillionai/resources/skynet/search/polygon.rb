@@ -27,7 +27,7 @@ module Nextbillionai
           #
           # @param ps [Integer] Body param: Denotes number of search results per page. Use this along with the p
           #
-          # @param sort [Nextbillionai::Models::Skynet::Search::PolygonCreateParams::Sort] Body param:
+          # @param sort [Nextbillionai::Models::Skynet::Search::PolygonCreateParams::Sort] Body param
           #
           # @param request_options [Nextbillionai::RequestOptions, Hash{Symbol=>Object}, nil]
           #
@@ -35,12 +35,13 @@ module Nextbillionai
           #
           # @see Nextbillionai::Models::Skynet::Search::PolygonCreateParams
           def create(params)
-            parsed, options = Nextbillionai::Skynet::Search::PolygonCreateParams.dump_request(params)
             query_params = [:key]
+            parsed, options = Nextbillionai::Skynet::Search::PolygonCreateParams.dump_request(params)
+            query = Nextbillionai::Internal::Util.encode_query_params(parsed.slice(*query_params))
             @client.request(
               method: :post,
               path: "skynet/search/polygon",
-              query: parsed.slice(*query_params),
+              query: query,
               body: parsed.except(*query_params),
               model: Nextbillionai::Skynet::SearchResponse,
               options: options
@@ -84,10 +85,11 @@ module Nextbillionai
           # @see Nextbillionai::Models::Skynet::Search::PolygonGetParams
           def get(params)
             parsed, options = Nextbillionai::Skynet::Search::PolygonGetParams.dump_request(params)
+            query = Nextbillionai::Internal::Util.encode_query_params(parsed)
             @client.request(
               method: :get,
               path: "skynet/search/polygon",
-              query: parsed,
+              query: query,
               model: Nextbillionai::Skynet::SearchResponse,
               options: options
             )

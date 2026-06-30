@@ -44,12 +44,13 @@ module Nextbillionai
         #
         # @see Nextbillionai::Models::Skynet::MonitorCreateParams
         def create(params)
-          parsed, options = Nextbillionai::Skynet::MonitorCreateParams.dump_request(params)
           query_params = [:key, :cluster]
+          parsed, options = Nextbillionai::Skynet::MonitorCreateParams.dump_request(params)
+          query = Nextbillionai::Internal::Util.encode_query_params(parsed.slice(*query_params))
           @client.request(
             method: :post,
             path: "skynet/monitor",
-            query: parsed.slice(*query_params),
+            query: query,
             body: parsed.except(*query_params),
             model: Nextbillionai::Models::Skynet::MonitorCreateResponse,
             options: options
@@ -74,10 +75,11 @@ module Nextbillionai
         # @see Nextbillionai::Models::Skynet::MonitorRetrieveParams
         def retrieve(id, params)
           parsed, options = Nextbillionai::Skynet::MonitorRetrieveParams.dump_request(params)
+          query = Nextbillionai::Internal::Util.encode_query_params(parsed)
           @client.request(
             method: :get,
             path: ["skynet/monitor/%1$s", id],
-            query: parsed,
+            query: query,
             model: Nextbillionai::Models::Skynet::MonitorRetrieveResponse,
             options: options
           )
@@ -120,12 +122,13 @@ module Nextbillionai
         #
         # @see Nextbillionai::Models::Skynet::MonitorUpdateParams
         def update(id, params)
-          parsed, options = Nextbillionai::Skynet::MonitorUpdateParams.dump_request(params)
           query_params = [:key]
+          parsed, options = Nextbillionai::Skynet::MonitorUpdateParams.dump_request(params)
+          query = Nextbillionai::Internal::Util.encode_query_params(parsed.slice(*query_params))
           @client.request(
             method: :put,
             path: ["skynet/monitor/%1$s", id],
-            query: parsed.slice(*query_params),
+            query: query,
             body: parsed.except(*query_params),
             model: Nextbillionai::Skynet::SimpleResp,
             options: options
@@ -158,10 +161,11 @@ module Nextbillionai
         # @see Nextbillionai::Models::Skynet::MonitorListParams
         def list(params)
           parsed, options = Nextbillionai::Skynet::MonitorListParams.dump_request(params)
+          query = Nextbillionai::Internal::Util.encode_query_params(parsed)
           @client.request(
             method: :get,
             path: "skynet/monitor/list",
-            query: parsed,
+            query: query,
             model: Nextbillionai::Models::Skynet::MonitorListResponse,
             options: options
           )
@@ -185,10 +189,11 @@ module Nextbillionai
         # @see Nextbillionai::Models::Skynet::MonitorDeleteParams
         def delete(id, params)
           parsed, options = Nextbillionai::Skynet::MonitorDeleteParams.dump_request(params)
+          query = Nextbillionai::Internal::Util.encode_query_params(parsed)
           @client.request(
             method: :delete,
             path: ["skynet/monitor/%1$s", id],
-            query: parsed,
+            query: query,
             model: Nextbillionai::Skynet::SimpleResp,
             options: options
           )

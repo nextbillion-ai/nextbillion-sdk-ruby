@@ -14,6 +14,13 @@ module Nextbillionai
           )
         end
 
+      sig do
+        returns(
+          Nextbillionai::RestrictionCreateParams::RestrictionType::OrSymbol
+        )
+      end
+      attr_accessor :restriction_type
+
       # A key is a unique identifier that is required to authenticate a request to the
       # API.
       sig { returns(String) }
@@ -31,12 +38,15 @@ module Nextbillionai
 
       sig do
         params(
+          restriction_type:
+            Nextbillionai::RestrictionCreateParams::RestrictionType::OrSymbol,
           key: String,
           latlon: T::Boolean,
           request_options: Nextbillionai::RequestOptions::OrHash
         ).returns(T.attached_class)
       end
       def self.new(
+        restriction_type:,
         # A key is a unique identifier that is required to authenticate a request to the
         # API.
         key:,
@@ -52,6 +62,8 @@ module Nextbillionai
       sig do
         override.returns(
           {
+            restriction_type:
+              Nextbillionai::RestrictionCreateParams::RestrictionType::OrSymbol,
             key: String,
             latlon: T::Boolean,
             request_options: Nextbillionai::RequestOptions

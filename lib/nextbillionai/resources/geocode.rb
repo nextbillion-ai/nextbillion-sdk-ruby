@@ -29,10 +29,11 @@ module Nextbillionai
       # @see Nextbillionai::Models::GeocodeRetrieveParams
       def retrieve(params)
         parsed, options = Nextbillionai::GeocodeRetrieveParams.dump_request(params)
+        query = Nextbillionai::Internal::Util.encode_query_params(parsed)
         @client.request(
           method: :get,
           path: "geocode",
-          query: parsed.transform_keys(in_: "in"),
+          query: query.transform_keys(in_: "in"),
           model: Nextbillionai::Models::GeocodeRetrieveResponse,
           options: options
         )
@@ -47,7 +48,7 @@ module Nextbillionai
       #
       # @param key [String] Query param: A key is a unique identifier that is required to authenticate a req
       #
-      # @param body [Array<Nextbillionai::Models::GeocodeBatchCreateParams::Body>] Body param:
+      # @param body [Array<Nextbillionai::Models::GeocodeBatchCreateParams::Body>] Body param
       #
       # @param request_options [Nextbillionai::RequestOptions, Hash{Symbol=>Object}, nil]
       #
@@ -56,10 +57,11 @@ module Nextbillionai
       # @see Nextbillionai::Models::GeocodeBatchCreateParams
       def batch_create(params)
         parsed, options = Nextbillionai::GeocodeBatchCreateParams.dump_request(params)
+        query = Nextbillionai::Internal::Util.encode_query_params(parsed.except(:body))
         @client.request(
           method: :post,
           path: "geocode/batch",
-          query: parsed.except(:body),
+          query: query,
           body: parsed[:body],
           model: Nextbillionai::Models::GeocodeBatchCreateResponse,
           options: options
@@ -102,10 +104,11 @@ module Nextbillionai
       # @see Nextbillionai::Models::GeocodeStructuredRetrieveParams
       def structured_retrieve(params)
         parsed, options = Nextbillionai::GeocodeStructuredRetrieveParams.dump_request(params)
+        query = Nextbillionai::Internal::Util.encode_query_params(parsed)
         @client.request(
           method: :get,
           path: "geocode/structured",
-          query: parsed.transform_keys(
+          query: query.transform_keys(
             country_code: "countryCode",
             house_number: "houseNumber",
             in_: "in",

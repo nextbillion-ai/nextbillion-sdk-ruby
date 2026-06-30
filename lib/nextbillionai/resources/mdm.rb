@@ -2,6 +2,7 @@
 
 module Nextbillionai
   module Resources
+    # <p>Get travel time and find optimal routes. Add guided navigation and gain trip data insights.</p>
     class Mdm
       # Some parameter documentations has been truncated, see
       # {Nextbillionai::Models::MdmCreateDistanceMatrixParams} for more details.
@@ -50,12 +51,13 @@ module Nextbillionai
       #
       # @see Nextbillionai::Models::MdmCreateDistanceMatrixParams
       def create_distance_matrix(params)
-        parsed, options = Nextbillionai::MdmCreateDistanceMatrixParams.dump_request(params)
         query_params = [:key, :option, :spliter]
+        parsed, options = Nextbillionai::MdmCreateDistanceMatrixParams.dump_request(params)
+        query = Nextbillionai::Internal::Util.encode_query_params(parsed.slice(*query_params))
         @client.request(
           method: :post,
           path: "mdm/create",
-          query: parsed.slice(*query_params),
+          query: query,
           body: parsed.except(*query_params),
           model: Nextbillionai::Models::MdmCreateDistanceMatrixResponse,
           options: options
@@ -80,10 +82,11 @@ module Nextbillionai
       # @see Nextbillionai::Models::MdmGetDistanceMatrixStatusParams
       def get_distance_matrix_status(params)
         parsed, options = Nextbillionai::MdmGetDistanceMatrixStatusParams.dump_request(params)
+        query = Nextbillionai::Internal::Util.encode_query_params(parsed)
         @client.request(
           method: :get,
           path: "mdm/status",
-          query: parsed,
+          query: query,
           model: Nextbillionai::Models::MdmGetDistanceMatrixStatusResponse,
           options: options
         )

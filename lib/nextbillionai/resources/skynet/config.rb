@@ -22,10 +22,11 @@ module Nextbillionai
         # @see Nextbillionai::Models::Skynet::ConfigRetrieveParams
         def retrieve(params)
           parsed, options = Nextbillionai::Skynet::ConfigRetrieveParams.dump_request(params)
+          query = Nextbillionai::Internal::Util.encode_query_params(parsed)
           @client.request(
             method: :get,
             path: "skynet/config",
-            query: parsed,
+            query: query,
             model: Nextbillionai::Models::Skynet::ConfigRetrieveResponse,
             options: options
           )
@@ -50,12 +51,13 @@ module Nextbillionai
         #
         # @see Nextbillionai::Models::Skynet::ConfigUpdateParams
         def update(params)
-          parsed, options = Nextbillionai::Skynet::ConfigUpdateParams.dump_request(params)
           query_params = [:key, :cluster]
+          parsed, options = Nextbillionai::Skynet::ConfigUpdateParams.dump_request(params)
+          query = Nextbillionai::Internal::Util.encode_query_params(parsed.slice(*query_params))
           @client.request(
             method: :put,
             path: "skynet/config",
-            query: parsed.slice(*query_params),
+            query: query,
             body: parsed.except(*query_params),
             model: Nextbillionai::Skynet::SimpleResp,
             options: options
@@ -78,10 +80,11 @@ module Nextbillionai
         # @see Nextbillionai::Models::Skynet::ConfigTestWebhookParams
         def test_webhook(params)
           parsed, options = Nextbillionai::Skynet::ConfigTestWebhookParams.dump_request(params)
+          query = Nextbillionai::Internal::Util.encode_query_params(parsed)
           @client.request(
             method: :post,
             path: "skynet/config/testwebhook",
-            query: parsed,
+            query: query,
             model: Nextbillionai::Models::Skynet::ConfigTestWebhookResponse,
             options: options
           )

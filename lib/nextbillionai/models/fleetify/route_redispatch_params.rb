@@ -8,6 +8,11 @@ module Nextbillionai
         extend Nextbillionai::Internal::Type::RequestParameters::Converter
         include Nextbillionai::Internal::Type::RequestParameters
 
+        # @!attribute route_id
+        #
+        #   @return [String]
+        required :route_id, String
+
         # @!attribute key
         #   A key is a unique identifier that is required to authenticate a request to the
         #   API.
@@ -21,9 +26,7 @@ module Nextbillionai
         #
         #   @return [Array<Nextbillionai::Models::Fleetify::RouteRedispatchParams::Operation>]
         required :operations,
-                 -> {
-                   Nextbillionai::Internal::Type::ArrayOf[Nextbillionai::Fleetify::RouteRedispatchParams::Operation]
-                 }
+                 -> { Nextbillionai::Internal::Type::ArrayOf[Nextbillionai::Fleetify::RouteRedispatchParams::Operation] }
 
         # @!attribute distance
         #   Specify the distance of the route.
@@ -31,9 +34,11 @@ module Nextbillionai
         #   @return [Float, nil]
         optional :distance, Float
 
-        # @!method initialize(key:, operations:, distance: nil, request_options: {})
+        # @!method initialize(route_id:, key:, operations:, distance: nil, request_options: {})
         #   Some parameter documentations has been truncated, see
         #   {Nextbillionai::Models::Fleetify::RouteRedispatchParams} for more details.
+        #
+        #   @param route_id [String]
         #
         #   @param key [String] A key is a unique identifier that is required to authenticate a request to the A
         #
@@ -53,10 +58,7 @@ module Nextbillionai
           #   Specify the type of operation to be performed for the step.
           #
           #   @return [Symbol, Nextbillionai::Models::Fleetify::RouteRedispatchParams::Operation::Operation]
-          required :operation,
-                   enum: -> {
-                     Nextbillionai::Fleetify::RouteRedispatchParams::Operation::Operation
-                   }
+          required :operation, enum: -> { Nextbillionai::Fleetify::RouteRedispatchParams::Operation::Operation }
 
           # @!method initialize(data:, operation:)
           #   @param data [Nextbillionai::Models::Fleetify::RouteRedispatchParams::Operation::Data]

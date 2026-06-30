@@ -2,6 +2,7 @@
 
 module Nextbillionai
   module Resources
+    # <p>Get travel time and find optimal routes. Add guided navigation and gain trip data insights.</p>
     class SnapToRoads
       # Nextbillion.ai Snap To Roads API takes a series of locations along a route, and
       # returns the new locations on this route that are snapped to the best-matched

@@ -157,7 +157,7 @@ module Nextbillionai
           in Hash | nil => coerced
             coerced
           else
-            message = "Expected a #{Hash} or #{Nextbillionai::Internal::Type::BaseModel}, got #{data.inspect}"
+            message = "Expected a #{Hash} or #{Nextbillionai::Internal::Type::BaseModel}, got #{input.inspect}"
             raise ArgumentError.new(message)
           end
         end
@@ -237,6 +237,11 @@ module Nextbillionai
         end
       end
 
+      # @type [Regexp]
+      #
+      # https://www.rfc-editor.org/rfc/rfc3986.html#section-3.3
+      RFC_3986_NOT_PCHARS = /[^A-Za-z0-9\-._~!$&'()*+,;=:@]+/
+
       class << self
         # @api private
         #
@@ -244,7 +249,16 @@ module Nextbillionai
         #
         # @return [String]
         def uri_origin(uri)
-          "#{uri.scheme}://#{uri.host}#{uri.port == uri.default_port ? '' : ":#{uri.port}"}"
+          "#{uri.scheme}://#{uri.host}#{":#{uri.port}" unless uri.port == uri.default_port}"
+        end
+
+        # @api private
+        #
+        # @param path [String, Integer]
+        #
+        # @return [String]
+        def encode_path(path)
+          path.to_s.gsub(Nextbillionai::Internal::Util::RFC_3986_NOT_PCHARS) { ERB::Util.url_encode(_1) }
         end
 
         # @api private
@@ -259,7 +273,7 @@ module Nextbillionai
           in []
             ""
           in [String => p, *interpolations]
-            encoded = interpolations.map { ERB::Util.url_encode(_1) }
+            encoded = interpolations.map { encode_path(_1) }
             format(p, *encoded)
           end
         end
@@ -346,8 +360,9 @@ module Nextbillionai
           base_path, base_query = lhs.fetch_values(:path, :query)
           slashed = base_path.end_with?("/") ? base_path : "#{base_path}/"
 
-          parsed_path, parsed_query = parse_uri(rhs.fetch(:path)).fetch_values(:path, :query)
-          override = URI::Generic.build(**rhs.slice(:scheme, :host, :port), path: parsed_path)
+          merged = {**parse_uri(rhs.fetch(:path)), **rhs.except(:path, :query)}
+          parsed_path, parsed_query = merged.fetch_values(:path, :query)
+          override = URI::Generic.build(**merged.slice(:scheme, :host, :port), path: parsed_path)
 
           joined = URI.join(URI::Generic.build(lhs.except(:path, :query)), slashed, override)
           query = deep_merge(
@@ -473,10 +488,9 @@ module Nextbillionai
         # @return [Enumerable<String>]
         def writable_enum(&blk)
           Enumerator.new do |y|
-            buf = String.new
             y.define_singleton_method(:write) do
-              self << buf.replace(_1)
-              buf.bytesize
+              self << _1.dup
+              _1.bytesize
             end
 
             blk.call(y)
@@ -485,11 +499,42 @@ module Nextbillionai
       end
 
       # @type [Regexp]
-      JSON_CONTENT = %r{^application/(?:vnd(?:\.[^.]+)*\+)?json(?!l)}
+      JSON_CONTENT = %r{^application/(?:[a-zA-Z0-9.-]+\+)?json(?!l)}
       # @type [Regexp]
       JSONL_CONTENT = %r{^application/(:?x-(?:n|l)djson)|(:?(?:x-)?jsonl)}
 
       class << self
+        # @api private
+        #
+        # @param query [Hash{Symbol=>Object}]
+        #
+        # @return [Hash{Symbol=>Object}]
+        def encode_query_params(query)
+          out = {}
+          query.each { write_query_param_element!(out, _1, _2) }
+          out
+        end
+
+        # @api private
+        #
+        # @param collection [Hash{Symbol=>Object}]
+        # @param key [String]
+        # @param element [Object]
+        #
+        # @return [nil]
+        private def write_query_param_element!(collection, key, element)
+          case element
+          in Hash
+            element.each do |name, value|
+              write_query_param_element!(collection, "#{key}[#{name}]", value)
+            end
+          in Array
+            collection[key] = element.map(&:to_s).join(",")
+          else
+            collection[key] = element.to_s
+          end
+        end
+
         # @api private
         #
         # @param y [Enumerator::Yielder]
@@ -540,16 +585,15 @@ module Nextbillionai
           y << "Content-Disposition: form-data"
 
           unless key.nil?
-            name = ERB::Util.url_encode(key.to_s)
-            y << "; name=\"#{name}\""
+            y << "; name=\"#{key}\""
           end
 
           case val
           in Nextbillionai::FilePart unless val.filename.nil?
-            filename = ERB::Util.url_encode(val.filename)
+            filename = encode_path(val.filename)
             y << "; filename=\"#{filename}\""
           in Pathname | IO
-            filename = ERB::Util.url_encode(::File.basename(val.to_path))
+            filename = encode_path(::File.basename(val.to_path))
             y << "; filename=\"#{filename}\""
           else
           end
@@ -566,7 +610,9 @@ module Nextbillionai
         #
         # @return [Array(String, Enumerable<String>)]
         private def encode_multipart_streaming(body)
-          boundary = SecureRandom.urlsafe_base64(60)
+          # rubocop:disable Style/CaseEquality
+          # RFC 1521 Section 7.2.1 says we should have 70 char maximum for boundary length
+          boundary = SecureRandom.urlsafe_base64(46)
 
           closing = []
           strio = writable_enum do |y|
@@ -574,7 +620,7 @@ module Nextbillionai
             in Hash
               body.each do |key, val|
                 case val
-                in Array if val.all? { primitive?(_1) }
+                in Array if val.all? { primitive?(_1) || Nextbillionai::Internal::Type::FileInput === _1 }
                   val.each do |v|
                     write_multipart_chunk(y, boundary: boundary, key: key, val: v, closing: closing)
                   end
@@ -590,6 +636,7 @@ module Nextbillionai
 
           fused_io = fused_enum(strio) { closing.each(&:call) }
           [boundary, fused_io]
+          # rubocop:enable Style/CaseEquality
         end
 
         # @api private
@@ -647,7 +694,7 @@ module Nextbillionai
         #
         # Assumes each chunk in stream has `Encoding::BINARY`.
         #
-        # @param headers [Hash{String=>String}, Net::HTTPHeader]
+        # @param headers [Hash{String=>String}]
         # @param stream [Enumerable<String>]
         # @param suppress_error [Boolean]
         #
@@ -656,7 +703,8 @@ module Nextbillionai
         def decode_content(headers, stream:, suppress_error: false)
           case (content_type = headers["content-type"])
           in Nextbillionai::Internal::Util::JSON_CONTENT
-            json = stream.to_a.join
+            return nil if (json = stream.to_a.join).empty?
+
             begin
               JSON.parse(json, symbolize_names: true)
             rescue JSON::ParserError => e
@@ -666,7 +714,11 @@ module Nextbillionai
           in Nextbillionai::Internal::Util::JSONL_CONTENT
             lines = decode_lines(stream)
             chain_fused(lines) do |y|
-              lines.each { y << JSON.parse(_1, symbolize_names: true) }
+              lines.each do
+                next if _1.empty?
+
+                y << JSON.parse(_1, symbolize_names: true)
+              end
             end
           in %r{^text/event-stream}
             lines = decode_lines(stream)

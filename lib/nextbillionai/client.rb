@@ -39,9 +39,11 @@ module Nextbillionai
     # @return [Nextbillionai::Resources::Browse]
     attr_reader :browse
 
+    # <p>Get travel time and find optimal routes. Add guided navigation and gain trip data insights.</p>
     # @return [Nextbillionai::Resources::Mdm]
     attr_reader :mdm
 
+    # <p>Get travel time and find optimal routes. Add guided navigation and gain trip data insights.</p>
     # @return [Nextbillionai::Resources::Isochrone]
     attr_reader :isochrone
 
@@ -57,6 +59,7 @@ module Nextbillionai
     # @return [Nextbillionai::Resources::Autocomplete]
     attr_reader :autocomplete
 
+    # <p>Get travel time and find optimal routes. Add guided navigation and gain trip data insights.</p>
     # @return [Nextbillionai::Resources::Navigation]
     attr_reader :navigation
 
@@ -66,9 +69,11 @@ module Nextbillionai
     # @return [Nextbillionai::Resources::Autosuggest]
     attr_reader :autosuggest
 
+    # <p>Get travel time and find optimal routes. Add guided navigation and gain trip data insights.</p>
     # @return [Nextbillionai::Resources::Directions]
     attr_reader :directions
 
+    # <p>Get travel time and find optimal routes. Add guided navigation and gain trip data insights.</p>
     # @return [Nextbillionai::Resources::Batch]
     attr_reader :batch
 
@@ -78,9 +83,11 @@ module Nextbillionai
     # @return [Nextbillionai::Resources::Revgeocode]
     attr_reader :revgeocode
 
+    # <p>Get travel time and find optimal routes. Add guided navigation and gain trip data insights.</p>
     # @return [Nextbillionai::Resources::RouteReport]
     attr_reader :route_report
 
+    # <p>Get travel time and find optimal routes. Add guided navigation and gain trip data insights.</p>
     # @return [Nextbillionai::Resources::SnapToRoads]
     attr_reader :snap_to_roads
 
@@ -128,6 +135,19 @@ module Nextbillionai
         raise ArgumentError.new("api_key is required, and can be set via environ: \"NEXTBILLION_SDK_API_KEY\"")
       end
 
+      headers = {}
+      custom_headers_env = ENV["NEXTBILLION_SDK_CUSTOM_HEADERS"]
+      unless custom_headers_env.nil?
+        parsed = {}
+        custom_headers_env.split("\n").each do |line|
+          colon = line.index(":")
+          unless colon.nil?
+            parsed[line[0...colon].strip] = line[(colon + 1)..].strip
+          end
+        end
+        headers = parsed.merge(headers)
+      end
+
       @api_key = api_key.to_s
 
       super(
@@ -135,7 +155,8 @@ module Nextbillionai
         timeout: timeout,
         max_retries: max_retries,
         initial_retry_delay: initial_retry_delay,
-        max_retry_delay: max_retry_delay
+        max_retry_delay: max_retry_delay,
+        headers: headers
       )
 
       @fleetify = Nextbillionai::Resources::Fleetify.new(client: self)

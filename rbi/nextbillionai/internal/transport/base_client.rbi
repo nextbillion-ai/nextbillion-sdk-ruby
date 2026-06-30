@@ -85,10 +85,9 @@ module Nextbillionai
 
           # @api private
           sig do
-            params(
-              status: Integer,
-              headers: T.any(T::Hash[String, String], Net::HTTPHeader)
-            ).returns(T::Boolean)
+            params(status: Integer, headers: T::Hash[String, String]).returns(
+              T::Boolean
+            )
           end
           def should_retry?(status, headers:)
           end
@@ -99,7 +98,7 @@ module Nextbillionai
               request:
                 Nextbillionai::Internal::Transport::BaseClient::RequestInput,
               status: Integer,
-              response_headers: T.any(T::Hash[String, String], Net::HTTPHeader)
+              response_headers: T::Hash[String, String]
             ).returns(
               Nextbillionai::Internal::Transport::BaseClient::RequestInput
             )
@@ -179,6 +178,11 @@ module Nextbillionai
         # @api private
         sig { overridable.returns(T::Hash[String, String]) }
         private def auth_query
+        end
+
+        # @api private
+        sig { returns(String) }
+        private def user_agent
         end
 
         # @api private

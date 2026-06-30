@@ -34,12 +34,13 @@ module Nextbillionai
         #
         # @see Nextbillionai::Models::Fleetify::RouteCreateParams
         def create(params)
-          parsed, options = Nextbillionai::Fleetify::RouteCreateParams.dump_request(params)
           query_params = [:key]
+          parsed, options = Nextbillionai::Fleetify::RouteCreateParams.dump_request(params)
+          query = Nextbillionai::Internal::Util.encode_query_params(parsed.slice(*query_params))
           @client.request(
             method: :post,
             path: "fleetify/routes",
-            query: parsed.slice(*query_params),
+            query: query,
             body: parsed.except(*query_params),
             model: Nextbillionai::Models::Fleetify::RouteCreateResponse,
             options: options
@@ -67,12 +68,13 @@ module Nextbillionai
         #
         # @see Nextbillionai::Models::Fleetify::RouteRedispatchParams
         def redispatch(route_id, params)
-          parsed, options = Nextbillionai::Fleetify::RouteRedispatchParams.dump_request(params)
           query_params = [:key]
+          parsed, options = Nextbillionai::Fleetify::RouteRedispatchParams.dump_request(params)
+          query = Nextbillionai::Internal::Util.encode_query_params(parsed.slice(*query_params))
           @client.request(
             method: :post,
             path: ["fleetify/routes/%1$s/redispatch", route_id],
-            query: parsed.slice(*query_params),
+            query: query,
             body: parsed.except(*query_params),
             model: Nextbillionai::Models::Fleetify::RouteRedispatchResponse,
             options: options

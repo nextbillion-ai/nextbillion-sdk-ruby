@@ -29,10 +29,11 @@ module Nextbillionai
       # @see Nextbillionai::Models::DiscoverRetrieveParams
       def retrieve(params)
         parsed, options = Nextbillionai::DiscoverRetrieveParams.dump_request(params)
+        query = Nextbillionai::Internal::Util.encode_query_params(parsed)
         @client.request(
           method: :get,
           path: "discover",
-          query: parsed.transform_keys(in_: "in"),
+          query: query.transform_keys(in_: "in"),
           model: Nextbillionai::Models::DiscoverRetrieveResponse,
           options: options
         )

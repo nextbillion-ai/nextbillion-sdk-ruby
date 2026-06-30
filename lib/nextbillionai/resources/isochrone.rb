@@ -2,6 +2,7 @@
 
 module Nextbillionai
   module Resources
+    # <p>Get travel time and find optimal routes. Add guided navigation and gain trip data insights.</p>
     class Isochrone
       # Some parameter documentations has been truncated, see
       # {Nextbillionai::Models::IsochroneComputeParams} for more details.
@@ -39,10 +40,11 @@ module Nextbillionai
       # @see Nextbillionai::Models::IsochroneComputeParams
       def compute(params)
         parsed, options = Nextbillionai::IsochroneComputeParams.dump_request(params)
+        query = Nextbillionai::Internal::Util.encode_query_params(parsed)
         @client.request(
           method: :get,
           path: "isochrone/json",
-          query: parsed,
+          query: query,
           model: Nextbillionai::Models::IsochroneComputeResponse,
           options: options
         )

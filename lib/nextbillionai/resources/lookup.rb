@@ -21,10 +21,11 @@ module Nextbillionai
       # @see Nextbillionai::Models::LookupByIDParams
       def by_id(params)
         parsed, options = Nextbillionai::LookupByIDParams.dump_request(params)
+        query = Nextbillionai::Internal::Util.encode_query_params(parsed)
         @client.request(
           method: :get,
           path: "lookup",
-          query: parsed,
+          query: query,
           model: Nextbillionai::Models::LookupByIDResponse,
           options: options
         )

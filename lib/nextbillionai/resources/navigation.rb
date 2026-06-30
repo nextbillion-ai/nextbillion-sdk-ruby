@@ -2,6 +2,7 @@
 
 module Nextbillionai
   module Resources
+    # <p>Get travel time and find optimal routes. Add guided navigation and gain trip data insights.</p>
     class Navigation
       # Some parameter documentations has been truncated, see
       # {Nextbillionai::Models::NavigationRetrieveRouteParams} for more details.
@@ -52,10 +53,11 @@ module Nextbillionai
       # @see Nextbillionai::Models::NavigationRetrieveRouteParams
       def retrieve_route(params)
         parsed, options = Nextbillionai::NavigationRetrieveRouteParams.dump_request(params)
+        query = Nextbillionai::Internal::Util.encode_query_params(parsed)
         @client.request(
           method: :get,
           path: "navigation/json",
-          query: parsed,
+          query: query,
           model: Nextbillionai::Models::NavigationRetrieveRouteResponse,
           options: options
         )

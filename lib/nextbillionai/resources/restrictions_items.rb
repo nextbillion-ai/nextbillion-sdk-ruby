@@ -24,10 +24,11 @@ module Nextbillionai
       # @see Nextbillionai::Models::RestrictionsItemListParams
       def list(params)
         parsed, options = Nextbillionai::RestrictionsItemListParams.dump_request(params)
+        query = Nextbillionai::Internal::Util.encode_query_params(parsed)
         @client.request(
           method: :get,
           path: "restrictions_items",
-          query: parsed,
+          query: query,
           model: Nextbillionai::Internal::Type::ArrayOf[Nextbillionai::Models::RestrictionsItemListResponseItem],
           options: options
         )

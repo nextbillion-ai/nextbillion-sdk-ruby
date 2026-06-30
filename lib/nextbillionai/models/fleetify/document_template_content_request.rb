@@ -95,9 +95,7 @@ module Nextbillionai
           #
           #   @return [Array<Nextbillionai::Models::Fleetify::DocumentTemplateContentRequest::Meta::Option>]
           required :options,
-                   -> {
-                     Nextbillionai::Internal::Type::ArrayOf[Nextbillionai::Fleetify::DocumentTemplateContentRequest::Meta::Option]
-                   }
+                   -> { Nextbillionai::Internal::Type::ArrayOf[Nextbillionai::Fleetify::DocumentTemplateContentRequest::Meta::Option] }
 
           # @!method initialize(options:)
           #   Some parameter documentations has been truncated, see

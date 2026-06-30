@@ -4,12 +4,12 @@ require_relative "../../../test_helper"
 
 class Nextbillionai::Test::Resources::Fleetify::Routes::StepsTest < Nextbillionai::Test::ResourceTest
   def test_create_required_params
-    skip("skipped: tests are disabled for the time being")
+    skip("Mock server tests are disabled")
 
     response =
       @nextbillion_sdk.fleetify.routes.steps.create(
         "routeID",
-        key: "key",
+        key: "key=API_KEY",
         arrival: 0,
         location: [0],
         position: 0,
@@ -30,7 +30,7 @@ class Nextbillionai::Test::Resources::Fleetify::Routes::StepsTest < Nextbilliona
   end
 
   def test_update_required_params
-    skip("skipped: tests are disabled for the time being")
+    skip("Mock server tests are disabled")
 
     response =
       @nextbillion_sdk.fleetify.routes.steps.update(
@@ -55,7 +55,7 @@ class Nextbillionai::Test::Resources::Fleetify::Routes::StepsTest < Nextbilliona
   end
 
   def test_delete_required_params
-    skip("skipped: tests are disabled for the time being")
+    skip("Mock server tests are disabled")
 
     response = @nextbillion_sdk.fleetify.routes.steps.delete("stepID", route_id: "routeID", key: "key")
 
@@ -72,7 +72,7 @@ class Nextbillionai::Test::Resources::Fleetify::Routes::StepsTest < Nextbilliona
   end
 
   def test_complete_required_params
-    skip("skipped: tests are disabled for the time being")
+    skip("Mock server tests are disabled")
 
     response = @nextbillion_sdk.fleetify.routes.steps.complete("stepID", route_id: "routeID", key: "key")
 
